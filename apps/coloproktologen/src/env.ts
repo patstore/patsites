@@ -1,0 +1,35 @@
+/** Client env. Replaces Gatsby `GATSBY_*` variables. Secrets stay in `server/env.ts`. */
+export const env = {
+    patstoreApiUrl:
+        import.meta.env.VITE_PATSTORE_API_URL ||
+        import.meta.env.GATSBY_PATSTORE_API_URL ||
+        "",
+    patstoreGraphqlUrl:
+        import.meta.env.VITE_PATSTORE_GRAPHQL_API_URL ||
+        import.meta.env.GATSBY_PATSTORE_GRAPHQL_API_URL ||
+        "",
+    patstoreAppId:
+        import.meta.env.VITE_PATSTORE_APP_ID ||
+        import.meta.env.GATSBY_PATSTORE_APP_ID ||
+        "",
+    patstoreRestKey:
+        import.meta.env.VITE_PATSTORE_REST_KEY ||
+        import.meta.env.GATSBY_PATSTORE_REST_KEY ||
+        "",
+    patstoreProjectId:
+        import.meta.env.VITE_PATSTORE_PROJECT_ID ||
+        import.meta.env.GATSBY_PATSTORE_PROJECT_ID ||
+        "",
+    sessionToken:
+        import.meta.env.VITE_SESSION_TOKEN ||
+        import.meta.env.GATSBY_SESSION_TOKEN ||
+        "bcd_token",
+    bytescaleAccountId:
+        import.meta.env.VITE_BYTESCALE_ACCOUNT_ID ||
+        import.meta.env.GATSBY_BYTESCALE_ACCOUNT_ID ||
+        "",
+    googleMapsApiKey:
+        import.meta.env.VITE_GOOGLE_MAPS_API_KEY ||
+        import.meta.env.GATSBY_GOOGLE_MAPS_API_KEY ||
+        ""
+} as const;

@@ -1,0 +1,14 @@
+node_modules/
+.cache/
+dist/
+.output/
+.netlify
+
+# Generated CMS files and the snapshot are local build output.
+data/files/
+data/build-time-data.json.backup
+
+# Secrets stay on the machine. Names are listed in .env.example.
+.env
+.env.*
+!.env.example

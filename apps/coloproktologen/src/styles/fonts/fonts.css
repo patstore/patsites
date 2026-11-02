@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("./Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-weight: 125 950; /* Adjust the range based on the weights you plan to use */
+  font-stretch: 75% 125%; /* Adjust the stretch range if necessary */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Inter/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
+  font-weight: 125 950; /* Adjust the range based on the weights you plan to use */
+  font-stretch: 75% 125%; /* Adjust the stretch range if necessary */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("./Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf") format("truetype");
+  font-weight: 125 950; /* Adjust the range based on the weights you plan to use */
+  font-stretch: 75% 125%; /* Adjust the stretch range if necessary */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("./Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-weight: 125 950; /* Adjust the range based on the weights you plan to use */
+  font-stretch: 75% 125%; /* Adjust the stretch range if necessary */
+  font-style: normal;
+}

@@ -1,0 +1,41 @@
+{
+  "name": "@repo/server",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "PatStore static generation, server rendering, and Zod application schemas",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./live": {
+      "types": "./src/live.ts",
+      "default": "./src/live.ts"
+    },
+    "./vite": {
+      "types": "./src/vite.ts",
+      "default": "./src/vite.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "check-types": "tsc --noEmit",
+    "generate": "node --experimental-strip-types src/cli.ts",
+    "test": "node --experimental-strip-types --test src/state.test.ts src/fields.test.ts"
+  },
+  "dependencies": {
+    "graphql": "^16.14.2",
+    "graphql-request": "^7.4.0",
+    "zod": "^4.0.13"
+  },
+  "peerDependencies": {
+    "vite": "^8.0.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "26.4.1",
+    "typescript": "7.0.2",
+    "vite": "^8.0.0"
+  }
+}

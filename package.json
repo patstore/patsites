@@ -1,6 +1,7 @@
 {
   "name": "patsites",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -11,7 +12,8 @@
   "devDependencies": {
     "prettier": "3.9.6",
     "turbo": "^2.11.10",
-    "typescript": "7.0.2"
+    "typescript": "7.0.2",
+    "vite": "^8.3.5"
   },
   "packageManager": "pnpm@11.25.0",
   "engines": {

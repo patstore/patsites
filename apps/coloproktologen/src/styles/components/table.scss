@@ -1,0 +1,27 @@
+table {
+    width: 100%;
+    position: relative;
+    overflow-x: auto;
+    border-spacing: 0;
+}
+
+table thead tr th {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 6px;
+    font-size: 12px;
+    text-align: left;;
+}
+
+table tbody tr td {
+    border: none;
+    padding: 6px;
+    font-size: 12px;
+}
+
+table tr:nth-child(2n) {
+    background-color: rgba(0, 0, 0, 0.05); 
+}
+
+th {
+  font-weight: bold;
+}

@@ -1,0 +1,87 @@
+import path from "node:path";
+import { defineConfig, loadEnv, mergeConfig } from "vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import netlify from "@netlify/vite-plugin-tanstack-start";
+import viteReact from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+import { monorepoCompiler } from "../../vite.config.ts";
+import { serverDataPlugin } from "@repo/server/vite";
+import { contentPlugin } from "@repo/core/vite";
+
+export default defineConfig(({ mode, command }) => {
+  const env = loadEnv(mode, process.cwd(), "");
+  for (const [key, value] of Object.entries(env)) {
+    if (process.env[key] === undefined) {
+      process.env[key] = value;
+    }
+  }
+
+  const enableNetlifyDev =
+    process.env.NETLIFY_LOCAL === "1" || process.env.NETLIFY_DEV === "true";
+
+  return mergeConfig(monorepoCompiler, {
+    cacheDir: path.resolve(import.meta.dirname, ".cache/vite"),
+    publicDir: "static",
+    server: {
+      port: 3001,
+      fs: {
+        allow: [path.resolve(import.meta.dirname, "../..")],
+      },
+    },
+    resolve: {
+      alias: {
+        "@data": path.resolve(import.meta.dirname, "./data/index.ts"),
+        lodash: "lodash-es",
+      },
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler",
+        },
+      },
+    },
+    ssr: {
+      noExternal: [
+        "@apollo/client",
+        "@apollo/client/core",
+        "@apollo/client/react",
+        "@repo/core",
+        "@repo/server",
+        "@tanstack/react-router",
+        "lodash-es",
+        "date-fns",
+      ],
+    },
+    optimizeDeps: {
+      exclude: ["@repo/server"],
+      holdUntilCrawlEnd: true,
+      include: [
+        "@apollo/client/core",
+        "@apollo/client/react",
+        "@tanstack/react-router",
+        "lodash-es",
+        "date-fns",
+      ],
+    },
+    plugins: [
+      serverDataPlugin({
+        env,
+        outputDir: "data",
+        filesDir: "data/files",
+        states: null,
+      }),
+      contentPlugin({
+        routesDir: "src/routes",
+        outputDir: "data",
+        env,
+      }),
+      tsconfigPaths(),
+      tanstackStart(),
+      ...(command === "build" || enableNetlifyDev ? [netlify()] : []),
+      viteReact({
+        jsxImportSource: "@emotion/react",
+      }),
+    ],
+  });
+});

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["dom", "esnext"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "types": ["vite/client", "node"],
+    "paths": {
+      "@ui": ["./src/ui/index.ts"],
+      "@content": ["./src/content/index.ts"],
+      "@styles": ["./src/styles/index.ts"],
+      "@components": ["./src/components/index.ts"],
+      "@provider": ["./src/provider/index.ts"],
+      "@settings": ["./src/settings/index.ts"],
+      "@types": ["./src/types/index.ts"],
+      "@data": ["./data/index.ts"]
+    }
+  },
+  "include": ["./src/**/*", "./data/**/*", "./vite.config.ts"],
+  "exclude": ["node_modules", "dist", ".cache"]
+}
