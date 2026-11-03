@@ -22,7 +22,7 @@
     "build": "vite build",
     "check-types": "tsc --noEmit",
     "generate": "node --experimental-strip-types src/cli.ts",
-    "test": "node --experimental-strip-types --test src/state.test.ts src/fields.test.ts"
+    "test": "node --experimental-strip-types --test src/state.test.ts src/fields.test.ts src/codegen.test.ts src/publish-files.test.ts"
   },
   "dependencies": {
     "graphql": "^16.14.2",

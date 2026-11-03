@@ -4,6 +4,7 @@ import type { Plugin, ResolvedConfig } from "vite";
 import { writeContentArtifacts } from "./codegen.ts";
 import { fetchStaticRecords } from "./fetch.ts";
 import { readPatStoreEnv } from "./modules.ts";
+import { publishDownloadedFiles, publishPublicDir } from "./publish-files.ts";
 import { normalizeStates } from "./state.ts";
 import type { ContentSnapshot } from "./types.ts";
 
@@ -130,13 +131,25 @@ export function serverDataPlugin(options: ServerDataPluginOptions = {}): Plugin 
       }
     },
     closeBundle() {
-      if (!filesDir || !fs.existsSync(filesDir)) {
+      const environment = this.environment;
+      const isClient =
+        !environment ||
+        environment.name === "client" ||
+        environment.config.consumer === "client";
+      if (!isClient) {
         return;
       }
+
       const root = config?.root ?? process.cwd();
-      const destination = path.join(root, "dist", "client", "data", "files");
-      fs.mkdirSync(destination, { recursive: true });
-      fs.cpSync(filesDir, destination, { recursive: true });
+      const configuredOutDir = environment?.config.build.outDir;
+      const outDir = configuredOutDir
+        ? path.resolve(root, configuredOutDir)
+        : path.join(root, "dist", "client");
+
+      publishDownloadedFiles(filesDir, outDir);
+      if (environment?.config.build.copyPublicDir === false && environment.config.publicDir) {
+        publishPublicDir(environment.config.publicDir, outDir);
+      }
     },
   };
 }

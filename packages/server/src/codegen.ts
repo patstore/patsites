@@ -4,15 +4,37 @@ import { getStorageKey } from "./collection-keys.ts";
 import { classTypeName, describeModule, schemaExportName } from "./fields.ts";
 import type { ContentSnapshot, PatStoreModule } from "./types.ts";
 
+/** Older article HTML still points at the retired Netlify host. */
+export function rewriteLegacySiteLinks<T>(value: T): T {
+  if (typeof value === "string") {
+    return value.replace(
+      /https?:\/\/(?:www\.)?koloproktologie\.netlify\.app/gi,
+      "https://koloproktologie.org",
+    ) as T;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => rewriteLegacySiteLinks(item)) as T;
+  }
+  if (value && typeof value === "object") {
+    const copy: Record<string, unknown> = {};
+    for (const [key, item] of Object.entries(value)) {
+      copy[key] = rewriteLegacySiteLinks(item);
+    }
+    return copy as T;
+  }
+  return value;
+}
+
 export function writeContentArtifacts(outputDir: string, snapshot: ContentSnapshot): void {
   fs.mkdirSync(outputDir, { recursive: true });
-  const modules = Array.isArray(snapshot._modules) ? snapshot._modules : [];
+  const rewritten = rewriteLegacySiteLinks(snapshot);
+  const modules = Array.isArray(rewritten._modules) ? rewritten._modules : [];
   fs.writeFileSync(
     path.join(outputDir, "build-time-data.json"),
-    JSON.stringify(snapshot, null, 2),
+    JSON.stringify(rewritten, null, 2),
     "utf8",
   );
-  fs.writeFileSync(path.join(outputDir, "types.ts"), renderTypes(modules, snapshot), "utf8");
+  fs.writeFileSync(path.join(outputDir, "types.ts"), renderTypes(modules, rewritten), "utf8");
   fs.writeFileSync(path.join(outputDir, "schema.ts"), renderSchema(modules), "utf8");
   fs.writeFileSync(path.join(outputDir, "useFindData.ts"), renderHook(modules), "utf8");
   fs.writeFileSync(path.join(outputDir, "index.ts"), renderIndex(modules), "utf8");
