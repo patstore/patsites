@@ -41,16 +41,16 @@ const Datenschutzerklaerung: React.FC = () => {
                 </section>
 
                 <section>
-                    <h2>3. Hosting der Website (Netlify)</h2>
+                    <h2>3. Hosting der Website (Vercel)</h2>
                     <p>
-                        Unsere Website wird bei <strong>Netlify, Inc.</strong>,
-                        2325 3rd Street, Suite 215, San Francisco, California
-                        94107, USA, gehostet. Netlify stellt die Infrastruktur
-                        und Plattformleistungen zur Verfügung, die für den
-                        Betrieb unserer Website erforderlich sind.
+                        Unsere Website wird bei <strong>Vercel Inc.</strong>,
+                        440 N Barranca Avenue #4133, Covina, CA 91723, USA,
+                        gehostet. Vercel stellt die Infrastruktur und
+                        Plattformleistungen zur Verfügung, die für den Betrieb
+                        unserer Website erforderlich sind.
                     </p>
                     <p>
-                        Beim Aufruf unserer Website erfasst Netlify automatisch
+                        Beim Aufruf unserer Website erfasst Vercel automatisch
                         bestimmte technische Informationen (Server-Logfiles),
                         darunter:
                     </p>
@@ -69,17 +69,17 @@ const Datenschutzerklaerung: React.FC = () => {
                         sicheren Betrieb der Website).
                     </p>
                     <p>
-                        Netlify hat seinen Sitz in den USA. Eine Übermittlung
+                        Vercel hat seinen Sitz in den USA. Eine Übermittlung
                         personenbezogener Daten in ein Drittland außerhalb der
-                        EU/EWR kann daher stattfinden. Netlify ist nach dem
+                        EU/EWR kann daher stattfinden. Vercel ist nach dem
                         EU‑U.S. Data Privacy Framework zertifiziert. Weitere
                         Informationen:
                         <a
-                            href="https://www.netlify.com/privacy/"
+                            href="https://vercel.com/legal/privacy-policy"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            https://www.netlify.com/privacy/
+                            https://vercel.com/legal/privacy-policy
                         </a>
                         .
                     </p>

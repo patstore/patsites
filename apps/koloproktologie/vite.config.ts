@@ -1,17 +1,15 @@
 import path from "node:path";
 import { defineConfig, loadEnv, mergeConfig } from "vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import netlify from "@netlify/vite-plugin-tanstack-start";
+import { nitro } from "nitro/vite";
 import viteReact from "@vitejs/plugin-react";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { monorepoCompiler } from "../../vite.config.ts";
 import { serverDataPlugin } from "@repo/server/vite";
 import { contentPlugin } from "@repo/core/vite";
 
-export default defineConfig(({ mode, command }) => {
+export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
-  const enableNetlifyDev =
-    process.env.NETLIFY_LOCAL === "1" || process.env.NETLIFY_DEV === "true";
 
   return mergeConfig(monorepoCompiler, {
     cacheDir: path.resolve(import.meta.dirname, ".cache/vite"),
@@ -71,7 +69,7 @@ export default defineConfig(({ mode, command }) => {
       }),
       tsconfigPaths(),
       tanstackStart(),
-      ...(command === "build" || enableNetlifyDev ? [netlify()] : []),
+      nitro(process.env.VERCEL ? { preset: "vercel" } : {}),
       viteReact({
         jsxImportSource: "@emotion/react",
       }),
