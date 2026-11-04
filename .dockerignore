@@ -1,0 +1,11 @@
+.git
+.turbo
+**/.cache
+**/node_modules
+**/.output
+**/.vercel
+**/dist
+**/data/files
+**/.env
+**/.env.*
+!**/.env.example
