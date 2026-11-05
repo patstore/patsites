@@ -22,7 +22,6 @@ import {HomeHeader} from "./content";
 import {PreviewWrapper} from "@repo/ui";
 
 const Home: React.FC = () => {
-    console.log({preview: env.previewMode})
     return (
         <Layout>
             {/* <PreviewWrapper preview={env.VITE_PREVIEW_MODE === "true"}>

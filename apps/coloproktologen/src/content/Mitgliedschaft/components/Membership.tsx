@@ -6,6 +6,7 @@ import React from "react";
 import services from "../constants/services";
 
 const Membership: React.FC = () => {
+    const downloadUrl = (filename: string) => `/${filename}`;
     return (
         <>
             <ContentContainer id="mitglied-werden" largeBackground={settings.colors.light}>
@@ -86,10 +87,25 @@ const Membership: React.FC = () => {
                             flex={["1 1 100%", "1 1 100%", "1 1 30%"]}
                             noTextBreak
                             key={service.title}
-                        >
-                            {/* <h4 css={{ textTransform: "uppercase" }}>{service.title}</h4>
-                            <p>{service.text}</p> */}
-                        </SmallContentElement>
+                            content={ service.files ? (
+                                <div>
+                                    <h4>Downloads</h4>
+                                    <p>
+                                        Hier finden Sie die Downloads für die {service.title}.
+                                    </p>
+                                    <ul>
+
+                                        {service.files?.map((file) => (
+                                            <li>
+                                                <a href={downloadUrl(file)} target="_blank">
+                                                    {file}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ) : undefined}
+                        />
                     ))}
                 </FlexBox>
             </ContentContainer>

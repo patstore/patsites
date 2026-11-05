@@ -9,7 +9,10 @@ const services = [
     },
     {
         title: "Kompetenzzentren",
-        text: "Ordentliche Mitglieder in Praxen, Versorgungszentren und Klinikabteilungen können eine Anerkennung als Kompetenzzentrum beantragen."
+        text: "Ordentliche Mitglieder in Praxen, Versorgungszentren und Klinikabteilungen können eine Anerkennung als Kompetenzzentrum beantragen.",
+        files: [
+            "KompZent_Kriterien.pdf", "KompZent_Neuantrag_Gastroenterologie.pdf", "KompZent_Neuantrag_Koloproktologie.pdf", "KompZent_Neuantrag_Proktologie.pdf"
+        ]
     },
     {
         title: "Ansprechpartner",

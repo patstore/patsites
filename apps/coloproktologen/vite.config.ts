@@ -75,7 +75,20 @@ export default defineConfig(({ mode }) => {
       }),
       tsconfigPaths(),
       tanstackStart(),
-      nitro(),
+      nitro({
+        publicAssets: [
+          {
+            baseURL: "/",
+            dir: path.resolve(import.meta.dirname, "static"),
+            fallthrough: true,
+          },
+        ],
+        routeRules: {
+          "/app/profile": {
+            redirect: { to: "/app/benutzerkonto", status: 301 },
+          },
+        },
+      }),
       viteReact({
         jsxImportSource: "@emotion/react",
       }),
