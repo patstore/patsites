@@ -1,2 +1,2 @@
-export { default as axiosclient } from "./axios";
+export { apiGet, apiRequest } from "./api";
 export { default as useDataHandler } from "./useDataHandler";

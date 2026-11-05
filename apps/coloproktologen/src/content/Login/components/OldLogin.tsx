@@ -1,12 +1,9 @@
-import { env } from "@env";
 import { navigate } from "@router";
 import { Button } from "@ui";
 import React from "react";
 import { horizontalContainer, formContainer, oldContentBox } from "../styles";
 import { LoginFormProps } from "../types";
-import Cookies from "js-cookie";
 import { Formik } from "formik";
-import { axiosclient } from "@provider";
 import * as Yup from "yup";
 
 const loginSchema = Yup.object().shape({
@@ -62,11 +59,6 @@ const OldLogin: React.FC<LoginFormProps> = ({ title, text }) => {
           }
           setSubmitting(false);
           resetForm();
-          const data = await response.json();
-          Cookies.set(env.sessionToken, data.token, {
-            expires: 365,
-            sameSite: "strict",
-          });
           navigate("/app/profile");
         }}
       >
@@ -144,7 +136,7 @@ const OldLogin: React.FC<LoginFormProps> = ({ title, text }) => {
                                     const data = await response.json();
                                     Cookies.set(
                                         process.env
-                                            .GATSBY_SESSION_TOKEN as string,
+                                            .VITE_SESSION_TOKEN as string,
                                         data.token,
                                         { expires: 365, sameSite: "strict" }
                                     );

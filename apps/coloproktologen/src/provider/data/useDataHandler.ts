@@ -1,51 +1,45 @@
-import Cookies from "js-cookie";
-import axiosapi from "./axios";
-import axiosclient from "./axios";
+import { apiRequest } from "./api";
 
 const useDataHandler = () => {
-  const updateData = async ({ className, objectId, updateObject }) => {
-    const data = [];
-    await axiosapi().put(`classes/${className}/${objectId}`, updateObject);
-    return data;
-  };
+    const updateData = async () => {
+        throw new Error("Änderungen laufen über eine eigene Server-Route.");
+    };
 
-  const deleteData = async ({ className, objectId }) => {
-    await axiosclient().delete(`classes/${className}/${objectId}`);
-  };
+    const deleteData = async () => {
+        throw new Error("Löschen läuft über eine eigene Server-Route.");
+    };
 
-  const createData = async ({
-    className,
-    updateObject,
-  }: {
-    className: string;
-    updateObject?: any;
-  }) => {
-    const data = await axiosapi().post(`classes/${className}`, updateObject);
+    const createData = async ({
+        className,
+        updateObject
+    }: {
+        className: string;
+        updateObject?: { data?: unknown; reference_id?: string; type?: string };
+    }) => {
+        if (className !== "Item" || !updateObject?.reference_id) {
+            throw new Error(`Keine Server-Route für ${className}`);
+        }
+        return apiRequest("/api/forms/submit", {
+            data: updateObject.data,
+            referenceId: updateObject.reference_id
+        });
+    };
 
-    return data;
-  };
+    const getData = async () => {
+        throw new Error("Abfragen laufen über eine eigene Server-Route.");
+    };
 
-  const getData = async ({ className, query }) => {
-    const path = query
-      ? `classes/${className}?where={${query}}`
-      : `classes/${className}`;
-    const response = await axiosapi().get(path);
-    return response.data?.results ?? [];
-  };
+    const createUser = async () => {
+        throw new Error("Nutzer werden über eine eigene Server-Route angelegt.");
+    };
 
-  const createUser = async ({ updateObject }) => {
-    const results = await axiosapi().post("users/", updateObject);
-    Cookies.set("sd_session", results.data.sessionToken, { expires: 90 });
-    return results;
-  };
-
-  return {
-    updateData,
-    createData,
-    deleteData,
-    getData,
-    createUser,
-  };
+    return {
+        updateData,
+        createData,
+        deleteData,
+        getData,
+        createUser
+    };
 };
 
 export default useDataHandler;

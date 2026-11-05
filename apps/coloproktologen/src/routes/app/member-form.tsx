@@ -11,7 +11,7 @@ export const Route = createFileRoute("/app/member-form")({
 function MemberFormPage() {
     const { loading, user } = useSiteContext();
     const hasAccess = Boolean(
-        user && (user.roles.includes(MEMBER_FORM_ROLE) || user.is_superuser)
+        user && (user.roles?.includes(MEMBER_FORM_ROLE) || user.is_superuser)
     );
 
     if (!loading && !hasAccess) {

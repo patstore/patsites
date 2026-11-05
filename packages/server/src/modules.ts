@@ -4,24 +4,20 @@ import type { DataField, ModuleField, PatStoreEnv, PatStoreModule } from "./type
 const ENV_GROUPS = {
   graphqlUrl: [
     "VITE_PATSTORE_GRAPHQL_API_URL",
-    "GATSBY_PATSTORE_GRAPHQL_API_URL",
     "PATSTORE_GRAPHQL_API_URL",
   ],
-  appId: ["VITE_PATSTORE_APP_ID", "GATSBY_PATSTORE_APP_ID", "PATSTORE_APP_ID"],
+  appId: ["VITE_PATSTORE_APP_ID", "PATSTORE_APP_ID"],
   projectId: [
     "VITE_PATSTORE_PROJECT_ID",
-    "GATSBY_PATSTORE_PROJECT_ID",
     "PATSTORE_PROJECT_ID",
   ],
   restKey: [
     "VITE_PATSTORE_REST_KEY",
-    "GATSBY_PATSTORE_REST_KEY",
     "PATSTORE_REST_KEY",
   ],
-  apiUrl: ["VITE_PATSTORE_API_URL", "GATSBY_PATSTORE_API_URL", "PATSTORE_API_URL"],
+  apiUrl: ["VITE_PATSTORE_API_URL", "PATSTORE_API_URL"],
   fileUrl: [
     "VITE_PATSTORE_FILE_URL",
-    "GATSBY_PATSTORE_FILE_URL",
     "PATSTORE_FILE_URL",
   ],
 } as const;

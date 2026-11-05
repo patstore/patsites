@@ -37,6 +37,7 @@ export { SEO, resolveSeo, type SeoData, type SeoProps } from "./seo/index.ts";
 export {
   EMPTY_SCROLL,
   SmoothScroll,
+  useOptionalScroll,
   useScroll,
   useSmoothScroll,
   type ScrollOrientation,

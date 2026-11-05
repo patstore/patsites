@@ -1,4 +1,4 @@
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 import { PasswordResponse } from "../types";
 
 const fetchUserData = async ({
@@ -15,15 +15,12 @@ const fetchUserData = async ({
     };
 
     try {
-        const resp = await axiosclient().post(
-            "functions/get_user_from_password_key",
+        const resp = await apiRequest<{ result: PasswordResponse }>(
+            "/api/password/user",
             { email, key }
         );
-
-        const userData = resp.data;
-
-        response = userData.result;
-    } catch (error) {
+        response = resp.result;
+    } catch {
         response = {
             success: false,
             message: "Für diese E-Mail Adresse ist kein Account hinterlegt",

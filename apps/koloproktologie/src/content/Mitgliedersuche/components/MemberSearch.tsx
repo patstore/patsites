@@ -1,4 +1,4 @@
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 import settings from "@settings";
 import { highlightContent } from "@styles";
 import { Button, ContentContainer, Divider } from "@ui";
@@ -17,14 +17,14 @@ const MemberSearch: React.FC<MemberSearchProps> = ({ setResults }) => {
 
     const searchHandler = useCallback(async () => {
         setLoading(true);
-        await axiosclient()
-            .post("functions/find_member", {
-                last_name: search.last_name,
+        const response = await apiRequest<{ result: Parameters<typeof setResults>[0] }>(
+            "/api/members/search",
+            {
+                lastName: search.last_name,
                 zip: search.zip
-            })
-            .then((response) => {
-                setResults(response.data.result);
-            });
+            }
+        );
+        setResults(response.result);
 
         setLoading(false);
     }, [search]);

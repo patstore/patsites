@@ -2,7 +2,6 @@ node_modules/
 .cache/
 dist/
 .output/
-.netlify
 
 # Generated CMS files and the snapshot are local build output.
 data/files/

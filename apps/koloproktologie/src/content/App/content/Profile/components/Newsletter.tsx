@@ -16,7 +16,7 @@ import {
 } from "../styles";
 import { Button, Divider } from "@ui";
 import { isEqual } from "lodash-es";
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 import {
     emailListHandler,
     createInitialValues,
@@ -61,26 +61,12 @@ const Newsletter: React.FC<{
                             email: finalEmail || ""
                         });
 
-                        await axiosclient().put(
-                            `classes/_User/${user.objectId}`,
-                            {
-                                emails: newEmails
-                            }
-                        );
-                        await axiosclient().post("functions/send_email", {
-                            email: "info@koloproktologie.org",
-                            name: "Geschäftsstelle DGK",
-                            subject: "Änderungen an DGK Rundmail-Einstellungen",
-                            project_id: "JRxDkaxCoI",
-                            content: `
-                                <p>Änderungen an DGK Rundmail-Einstellungen</p>
-                                <p>Vorname: ${user.first_name}</p>
-                                <p>Nachname: ${user.last_name}</p>
-                                <p>Alte Opt-In Einstellung: ${oldOptIn ? "Ja" : "Nein"}</p>
-                                <p>Neue Opt-In Einstellung: ${isOptedIn ? "Ja" : "Nein"}</p>
-                                <p>Alte Email-Adresse: ${oldEmail || "Nicht vorhanden"}</p>
-                                <p>Neue Email-Adresse: ${finalEmail || "Nicht vorhanden"}</p>
-                                `
+                        await apiRequest("/api/account/newsletter", {
+                            emails: newEmails,
+                            previousOptedIn: Boolean(oldOptIn),
+                            optedIn: isOptedIn,
+                            previousEmail: oldEmail || "",
+                            nextEmail: finalEmail || ""
                         });
                         await getUser();
                         setSubmitting(false);

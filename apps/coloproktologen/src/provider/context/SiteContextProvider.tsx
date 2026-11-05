@@ -1,4 +1,3 @@
-import { env } from "@env";
 import React, {
     useMemo,
     useContext,
@@ -8,10 +7,9 @@ import React, {
     useEffect
 } from "react";
 import { SiteContext as SiteContextProps } from "./types";
-import { axiosclient } from "../data";
+import { apiGet, apiRequest } from "../data";
 import EmailModal from "./components/EmailModal";
 import { useLocation } from "@tanstack/react-router";
-import Cookies from "js-cookie";
 import { ColoproktologenUser } from "@types";
 import useGetLocation from "../hooks/patstore/useGetLocation";
 
@@ -24,7 +22,7 @@ const SiteContext = createContext({
     loading: false,
     user: undefined,
     getUser: async () => {
-        await axiosclient().get("/users/me");
+        await apiGet("/api/session");
     },
     locations: [],
     users: []
@@ -40,9 +38,9 @@ export const SiteContextProvider = ({
     const { locations } = useGetLocation();
 
     const findUsers = useCallback(() => {
-        axiosclient().post("/functions/find_bcd_specialists")
+        apiRequest<{ result: ColoproktologenUser[] }>("/api/specialists")
             .then((response) => {
-                setUsers(response.data.result);
+                setUsers(response.result ?? []);
             })
             .catch((error) => {
                 console.error(error);
@@ -61,47 +59,29 @@ export const SiteContextProvider = ({
     const [applicationOpen, setApplicationOpen] = useState(false);
 
     const getUser = useCallback(async () => {
-        await axiosclient()
-            .get("/users/me")
-            .then((response) => {
-                setUser(response.data as ColoproktologenUser);
-                setLoading(false);
-            })
-            .catch((error) => {
-                if (process.env.NODE_ENV === "development") {
-                    console.error(error);
-                }
-                setLoading(false);
-            });
-    }, []);
-
-    const localToken = Cookies.get(env.sessionToken);
-
-    useEffect(() => {
-        if (!localToken) {
-            setLoading(false);
-            return;
-        }
-        if (!user) {
-            getUser();
-        } else {
-            setLoading(false);
-        }
-    }, [pathname, localToken, user, getUser]);
-
-    useEffect(() => {
-        if (user?.expires_at) {
-            const expires_at_date = new Date(user.expires_at.iso);
-            const current_date = new Date();
-            if (expires_at_date < current_date) {
-                Cookies.remove(env.sessionToken);
-                setUser(undefined);
-                if (pathname.includes("/app")) {
-                    window.location.href = "/login";
-                }
+        try {
+            const response = await apiGet<{
+                user: ColoproktologenUser | null;
+                expired?: boolean;
+            }>("/api/session");
+            if (response.expired && pathname.includes("/app")) {
+                window.location.href = "/login";
+                return;
             }
+            setUser(response.user ?? undefined);
+        } catch (error) {
+            if (process.env.NODE_ENV === "development") {
+                console.error(error);
+            }
+            setUser(undefined);
+        } finally {
+            setLoading(false);
         }
-    }, [user]);
+    }, [pathname]);
+
+    useEffect(() => {
+        getUser();
+    }, [getUser]);
 
     const siteContext = useMemo(() => {
         return {

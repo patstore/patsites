@@ -1,5 +1,4 @@
-import { env } from "@env";
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 import { memberContainer } from "@styles";
 import { Button, ContentContainer, Divider } from "@ui";
 import { Formik, FormikHelpers } from "formik";
@@ -70,14 +69,12 @@ const MemberForm: React.FC = () => {
         newsletter_email: values.newsletter_email || undefined,
         member_id: values.member_id,
         fachrichtung: values.fachrichtung,
-        project_id: env.patstoreProjectId,
         expires_at: values.expires_at,
         is_retiree: values.is_retiree
     });
 
     const extractErrorMessage = (error: unknown, fallback: string): string => {
-        const err = error as { response?: { data?: { error?: string } } };
-        return err.response?.data?.error ?? fallback;
+        return error instanceof Error && error.message ? error.message : fallback;
     };
 
     const resetFeedback = () => {
@@ -98,11 +95,10 @@ const MemberForm: React.FC = () => {
                 ...buildPayload(pendingValues),
                 add_membership: true
             };
-            const response: CloudResult = await axiosclient().post(
-                "/functions/create_bcd_member",
-                payload
-            );
-            if (response.data.result.success === true) {
+            const response = await apiRequest<{
+                result: CloudResult["data"]["result"];
+            }>("/api/members/create", payload);
+            if (response.result.success === true) {
                 setSuccessMessage(
                     `Die Mitgliedschaft wurde ${existingUser.first_name} ${existingUser.last_name} erfolgreich hinzugefügt.`
                 );
@@ -111,7 +107,7 @@ const MemberForm: React.FC = () => {
                 setPendingValues(null);
             } else {
                 setSubmitError(
-                    response.data.result.message ??
+                    response.result.message ??
                         "Die Mitgliedschaft konnte nicht hinzugefügt werden."
                 );
             }
@@ -159,35 +155,32 @@ const MemberForm: React.FC = () => {
                             resetFeedback();
                             setSubmitting(true);
                             try {
-                                const lookup: CloudResult = await axiosclient().post(
-                                    "/functions/find_existing_user_from_email",
-                                    {
-                                        email: values.email,
-                                        project_id: env.patstoreProjectId
-                                    }
-                                );
+                                const lookup = await apiRequest<{
+                                    result: CloudResult["data"]["result"];
+                                }>("/api/members/lookup", {
+                                    email: values.email
+                                });
 
                                 if (
-                                    lookup.data.result.success === true &&
-                                    lookup.data.result.user
+                                    lookup.result.success === true &&
+                                    lookup.result.user
                                 ) {
-                                    setExistingUser(lookup.data.result.user);
+                                    setExistingUser(lookup.result.user);
                                     setPendingValues(values);
                                     return;
                                 }
 
-                                const response: CloudResult = await axiosclient().post(
-                                    "/functions/create_bcd_member",
-                                    buildPayload(values)
-                                );
-                                if (response.data.result.success === true) {
+                                const response = await apiRequest<{
+                                    result: CloudResult["data"]["result"];
+                                }>("/api/members/create", buildPayload(values));
+                                if (response.result.success === true) {
                                     setSuccessMessage(
                                         "Ihre Angaben wurden übermittelt. Das neue Mitglied erhält seine / ihre Zugangsdaten per E-Mail."
                                     );
                                     resetForm();
-                                } else if (response.data.result.success === false) {
+                                } else if (response.result.success === false) {
                                     setSubmitError(
-                                        response.data.result.message ??
+                                        response.result.message ??
                                             "Die Registrierung konnte nicht abgeschlossen werden."
                                     );
                                 }

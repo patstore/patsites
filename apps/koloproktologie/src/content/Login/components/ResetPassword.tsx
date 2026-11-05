@@ -1,4 +1,4 @@
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 import settings from "@settings";
 import { Button, SlideIn } from "@ui";
 import { Formik } from "formik";
@@ -44,23 +44,19 @@ const ResetPassword: React.FC = () => {
                             setError("");
                             setSubmitting(true);
 
-                            const response = await axiosclient().post(
-                                "/functions/send_password_reset",
-                                {
-                                    email: values.email,
-                                    project_id:
-                                        import.meta.env.VITE_PATSTORE_PROJECT_ID
-                                }
+                            await apiRequest("/api/password/reset", {
+                                email: values.email
+                            });
+                            setSuccess(
+                                "Sie erhalten in Kürze eine E-Mail mit einem Link, um Ihr Passwort zurückzusetzen."
                             );
-
-                            if (response.statusText === "OK") {
-                                setSuccess(
-                                    "Sie erhalten in Kürze eine E-Mail mit einem Link, um Ihr Passwort zurückzusetzen."
-                                );
-                            }
                             setSubmitting(false);
-                        } catch (error: any) {
-                            setError(error.response.data.error);
+                        } catch (error: unknown) {
+                            setError(
+                                error instanceof Error
+                                    ? error.message
+                                    : "Das Passwort konnte nicht zurückgesetzt werden."
+                            );
                             setSubmitting(false);
                             resetForm();
                         }

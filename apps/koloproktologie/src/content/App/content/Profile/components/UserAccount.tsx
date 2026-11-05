@@ -3,7 +3,7 @@ import { KoloproktologieUser } from "@types";
 import { Formik } from "formik";
 import { profileContentContainer } from "../styles";
 import { Button, Divider, FlexBox } from "@ui";
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 import * as Yup from "yup";
 import { isEqual } from "lodash-es";
 
@@ -44,28 +44,9 @@ const UserAccount: React.FC<{
                             }}
                             onSubmit={async (values, { setSubmitting }) => {
                                 setSubmitting(true);
-                                await axiosclient().put(
-                                    `classes/_User/${user.objectId}`,
-                                    {
-                                        // address: values.address,
-                                        // title: values.title,
-                                        // first_name: values.first_name,
-                                        // last_name: values.last_name
-                                        email: values.email
-                                    }
-                                );
-                                await axiosclient().post("functions/send_email", {
-                                    email: "info@koloproktologie.org",
-                                    name: "Geschäftsstelle DGK",
-                                    subject: "Änderungen am Benutzerkonto",
-                                    project_id: "JRxDkaxCoI",
-                                    content: `
-                                        <p>Änderungen am Benutzerkonto</p>
-                                        <p>Vorname: ${values.first_name}</p>
-                                        <p>Nachname: ${values.last_name}</p>
-                                        <p>Alte E-Mail: ${user.email}</p>
-                                        <p>Neue E-Mail: ${values.email}</p>
-                                        `
+                                await apiRequest("/api/account/email", {
+                                    email: values.email,
+                                    notify: true
                                 });
                                 await getUser();
                                 setSubmitting(false);

@@ -2,13 +2,11 @@ import { Button, Divider } from "@ui";
 import React, { FC, useState } from "react";
 import { horizontalContainer, formContainer } from "../styles";
 import { LoginFormProps } from "../types";
-import Cookies from "js-cookie";
 import { useNavigate } from "@tanstack/react-router";
 import ResetPassword from "./ResetPassword";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { buttonsContainer } from "@styles";
-import { env } from "../../../env";
 
 const loginSchema = Yup.object().shape({
     username: Yup.string().required("Bitte geben Sie Ihren Benutzernamen ein"),
@@ -51,10 +49,6 @@ const LoginForm: FC<LoginFormProps> = ({ title, text }) => {
                         return;
                     }
 
-                    Cookies.set(env.sessionToken, data.token, {
-                        expires: 365,
-                        sameSite: "strict"
-                    });
                     setSubmitting(false);
                     navigate({ to: "/app/profile" });
                 }}

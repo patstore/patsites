@@ -10,6 +10,27 @@ import {
 import { FlexBox } from "@ui";
 import { ColoproktologenUser } from "@types";
 
+function isAppRoute(location: string) {
+    return location === "/app" || location.startsWith("/app/");
+}
+
+function menuForLocation(mainMenu: Menu, location: string) {
+    if (isAppRoute(location)) {
+        return mainMenu.find((menu) => menu.key === "user");
+    }
+    return mainMenu.find((menu) => Boolean(menu.link) && location.includes(menu.link));
+}
+
+function itemIsActive(link: string | undefined, location: string, hash: string | undefined) {
+    if (!link) {
+        return false;
+    }
+    if (link.includes("#")) {
+        return Boolean(hash && link.includes(hash));
+    }
+    return location === link || location.startsWith(`${link}/`);
+}
+
 const SubHeader: React.FC<{ mainMenu: Menu, user?: ColoproktologenUser }> = ({ mainMenu, user }) => {
     const { pathname: location } = useLocation();
     const [hash, setHash] = useState<string | undefined>(undefined);
@@ -37,9 +58,7 @@ const SubHeader: React.FC<{ mainMenu: Menu, user?: ColoproktologenUser }> = ({ m
         );
 
         // Find all elements that have IDs matching the menu item links
-        const currentMenu = mainMenu.find((menu) =>
-            location.includes(menu?.link || "")
-        );
+        const currentMenu = menuForLocation(mainMenu, location);
 
         if (currentMenu?.menuItems) {
             currentMenu.menuItems.forEach((item) => {
@@ -59,7 +78,7 @@ const SubHeader: React.FC<{ mainMenu: Menu, user?: ColoproktologenUser }> = ({ m
     }, [location, mainMenu]);
 
     const currentMenu = useMemo(
-        () => mainMenu.find((menu) => location.includes(menu?.link || "")),
+        () => menuForLocation(mainMenu, location),
         [location, mainMenu]
     );
 
@@ -72,7 +91,7 @@ const SubHeader: React.FC<{ mainMenu: Menu, user?: ColoproktologenUser }> = ({ m
     }
     let showMemberForm = false
     if (user) {
-        showMemberForm = user.roles.includes("CfX2FrZlwb") || user.is_superuser
+        showMemberForm = user.roles?.includes("CfX2FrZlwb") || user.is_superuser
     }
 
     return (
@@ -97,7 +116,7 @@ const SubHeader: React.FC<{ mainMenu: Menu, user?: ColoproktologenUser }> = ({ m
                             <Link
                                 to={item.link as string}
                                 key={item.key}
-                                css={subHeaderLink(Boolean(hash && item.link?.includes(hash)))}
+                                css={subHeaderLink(itemIsActive(item.link, location, hash))}
                             >
                                 {item.name}
                             </Link>
@@ -106,7 +125,7 @@ const SubHeader: React.FC<{ mainMenu: Menu, user?: ColoproktologenUser }> = ({ m
                     {showMemberForm && (
                         <Link
                             to="/app/member-form"
-                            css={subHeaderLink(false)}
+                            css={subHeaderLink(location.startsWith("/app/member-form"))}
                         >
                             Mitgliederformular
                         </Link>

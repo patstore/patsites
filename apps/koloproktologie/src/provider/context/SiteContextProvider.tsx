@@ -7,12 +7,10 @@ import React, {
     useEffect
 } from "react";
 import { SiteContext as SiteContextProps } from "./types";
-import { axiosclient } from "../data";
+import { apiGet } from "../data";
 import EmailModal from "./components/EmailModal";
 import { useLocation } from "@tanstack/react-router";
-import Cookies from "js-cookie";
 import { KoloproktologieUser } from "@types";
-import { env } from "../../env";
 
 const SiteContext = createContext({
     siteTitle: "",
@@ -23,7 +21,7 @@ const SiteContext = createContext({
     loading: true,
     user: undefined,
     getUser: async () => {
-        await axiosclient().get("/users/me");
+        await apiGet("/api/session");
     }
 } as SiteContextProps);
 
@@ -40,23 +38,21 @@ export const SiteContextProvider = ({
     const [applicationOpen, setApplicationOpen] = useState(false);
 
     const getUser = useCallback(async () => {
-        await axiosclient()
-            .get("/users/me")
-            .then((response) => {
-                setUser(response.data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                setLoading(false);
-            });
+        try {
+            const response = await apiGet<{ user: KoloproktologieUser | null }>(
+                "/api/session"
+            );
+            setUser(response.user ?? undefined);
+        } catch {
+            setUser(undefined);
+        } finally {
+            setLoading(false);
+        }
     }, []);
 
-    const localToken = Cookies.get(env.sessionToken);
     useEffect(() => {
-        if (!user && localToken) {
-            getUser();
-        }
-    }, [pathname, localToken]);
+        getUser();
+    }, [pathname, getUser]);
 
     const siteContext = useMemo(() => {
         return {

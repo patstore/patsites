@@ -4,19 +4,12 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-import axios, { AxiosError } from "axios";
+import { apiRequest } from "@provider";
 
-const compileAxiosError = (error: AxiosError) => {
-    if (!error) {
-        return {
-            success: false,
-            message: "Unbekannter Fehler",
-            type: "unknown-error"
-        };
-    }
+const compileRequestError = (error: unknown) => {
     return {
         success: false,
-        message: error.message,
+        message: error instanceof Error ? error.message : "Unbekannter Fehler",
         type: "network-error"
     };
 };
@@ -44,14 +37,6 @@ const PasswordForm: React.FC<{
     const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
 
-    const axiosclient = axios.create({
-        baseURL: import.meta.env.VITE_PATSTORE_API_URL,
-        headers: {
-            "X-Parse-Application-Id": import.meta.env.VITE_PATSTORE_APP_ID,
-            "X-Parse-REST-API-Key": import.meta.env.VITE_PATSTORE_REST_KEY
-        }
-    });
-
     const formik = useFormik({
         validationSchema: SignupSchema,
         initialValues: {
@@ -62,24 +47,23 @@ const PasswordForm: React.FC<{
         onSubmit: async (values) => {
             setDisabled(true);
 
-            const response = await axiosclient
-                .post("functions/change_user_password", {
-                    user_id: userId,
-                    key: passwordKey,
-                    password: values.password
-                })
-                .then((response) => {
-                    return response.data.result;
-                })
+            const response = await apiRequest<{
+                result: { success: boolean; message?: string };
+            }>("/api/password/change", {
+                userId,
+                key: passwordKey,
+                password: values.password
+            })
+                .then((data) => data.result)
                 .catch((error) => {
                     setDisabled(false);
-                    return compileAxiosError(error);
+                    return compileRequestError(error);
                 });
 
             if (response && response.success === true) {
                 setSuccess(true);
             } else if (response && response.success === false) {
-                setError(response.message);
+                setError(response.message ?? "Das Passwort konnte nicht geändert werden.");
                 // setDisabled(false);
             } else {
                 setDisabled(false);

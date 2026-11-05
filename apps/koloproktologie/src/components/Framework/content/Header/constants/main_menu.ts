@@ -1,5 +1,3 @@
-import { axiosclient } from "@provider";
-import Cookies from "js-cookie";
 import { KoloproktologieUser } from "@types";
 
 const main_menu = ({ user }: { user?: KoloproktologieUser }) => [
@@ -142,9 +140,7 @@ const userMenu = [
         name: "Ausloggen",
         key: "logout",
         function: async () => {
-            await axiosclient().post("logout");
-            Cookies.remove(process.env.GATSBY_SESSION_TOKEN as string);
-
+            await fetch("/api/logout", { method: "POST" });
             return (window.location.pathname = "/login");
         }
     }

@@ -4,7 +4,7 @@ import { Formik } from "formik";
 import { profileContentContainer } from "../styles";
 import { Button, Divider } from "@ui";
 import { isEqual } from "lodash-es";
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 
 const UserAccount: React.FC<{
   user: ColoproktologenUser;
@@ -27,22 +27,10 @@ const UserAccount: React.FC<{
                     }}
                     onSubmit={async (values, { setSubmitting, resetForm }) => {
                         setSubmitting(true);
-                        await axiosclient().put(`classes/_User/${user.objectId}`, {
-                            email: values.email
-                        });
-                        await axiosclient().post("functions/send_email", {
-                            email: "info@coloproktologen.de",
-                            name: "Geschäftsstelle BCD",
-                            subject: "Änderungen am Benutzerkonto",
-                            project_id: "EgRR0prozh",
-                            content: `
-                                <p>Änderungen am Benutzerkonto</p>
-                                <p>Vorname: ${values.first_name}</p>
-                                <p>Nachname: ${values.last_name}</p>
-                                <p>Alte E-Mail: ${user.email}</p>
-                                <p>Neue E-Mail: ${values.email}</p>
-                                `
-                        });   
+                        await apiRequest("/api/account/email", {
+                            email: values.email,
+                            notify: true
+                        }); 
 
                         await getUser();
                         setSuccess(true);

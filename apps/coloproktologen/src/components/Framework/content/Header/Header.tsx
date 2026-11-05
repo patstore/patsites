@@ -1,5 +1,6 @@
 import staticAsset0 from "./images/logo_bcd.webp";
 import { Link } from "@router";
+import { useLocation } from "@tanstack/react-router";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import settings from "@settings";
@@ -14,6 +15,8 @@ import SubHeader from "./components/SubHeader";
 
 const Header: React.FC = () => {
     const { user } = useSiteContext();
+    const { pathname } = useLocation();
+    const isAppRoute = pathname === "/app" || pathname.startsWith("/app/");
 
     const mainMenu = main_menu({ user });
 
@@ -22,6 +25,11 @@ const Header: React.FC = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
 
     const handleScroll = () => {
+        if (isAppRoute) {
+            setHeaderAnimate("start");
+            return;
+        }
+
         const currentScrollY = window.scrollY;
 
         // Check if user is scrolling up
@@ -43,7 +51,15 @@ const Header: React.FC = () => {
             setIsClient(true);
         }
         return () => window.removeEventListener("scroll", handleScroll, false);
-    }, [lastScrollY, isClient]);
+    }, [lastScrollY, isClient, isAppRoute]);
+
+    useEffect(() => {
+        if (isAppRoute) {
+            setHeaderAnimate("start");
+            return;
+        }
+        setHeaderAnimate(window.scrollY > 200 ? "site" : "start");
+    }, [isAppRoute]);
 
     useEffect(() => {
         setIsClient(true);

@@ -1,4 +1,4 @@
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 import { PasswordResponse } from "../types";
 
 const fetchUserData = async ({
@@ -15,14 +15,11 @@ const fetchUserData = async ({
     };
 
     try {
-        const resp = await axiosclient().post(
-            "functions/get_user_from_password_key",
+        const resp = await apiRequest<{ result: PasswordResponse }>(
+            "/api/password/user",
             { email, key }
         );
-
-        const userData = resp.data;
-
-        response = userData.result;
+        response = resp.result;
     } catch (error) {
         if (process.env.NODE_ENV === "development") {
             console.error(error);

@@ -3,7 +3,7 @@ import { Formik } from "formik";
 import { profileContentContainer } from "../styles";
 import { Button, Divider, FlexBox } from "@ui";
 import { isEqual } from "lodash-es";
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 import * as Yup from "yup";
 import { ColoproktologenUser } from "@types";
 
@@ -49,7 +49,7 @@ const Password: React.FC<{
               }}
               onSubmit={async (values, { setSubmitting, resetForm }) => {
                 try {
-                  await axiosclient().put(`classes/_User/${user.objectId}`, {
+                  await apiRequest("/api/account/password", {
                     password: values.new_password,
                   });
                   await getUser();

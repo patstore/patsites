@@ -40,7 +40,7 @@ console.log({user})
 
     const location = locationData?.location;
 
-    if (user?.roles.includes("qGOcXa3Rsr")) {
+    if (user?.roles?.includes("qGOcXa3Rsr")) {
         return (
             <ContentContainer>
                 <div css={memberContainer}>
@@ -55,7 +55,7 @@ console.log({user})
         );
     }
 
-    if (user?.expires_at) {
+    if (user?.roles?.includes("tKlza4ZBib")) {
         return (
             <ContentContainer>
                 <div css={memberContainer}>

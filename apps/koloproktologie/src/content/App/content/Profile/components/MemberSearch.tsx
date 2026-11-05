@@ -4,7 +4,7 @@ import { Formik } from "formik";
 import { checkboxContainer, profileContentContainer } from "../styles";
 import { Button, Divider } from "@ui";
 import { isEqual } from "lodash-es";
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 import memberValidationSchema from "../constants/member_validation";
 
 const MemberSearch: React.FC<{
@@ -28,30 +28,26 @@ const MemberSearch: React.FC<{
                         country: user.data?.dgk?.country
                     }}
                     onSubmit={async (values, { setSubmitting, resetForm }) => {
-                        await axiosclient().put(
-                            `classes/_User/${user.objectId}`,
-                            {
-                                data: {
-                                    ...user.data,
-                                    dgk: {
-                                        ...user.data?.dgk,
-                                        title: values.title,
-                                        name: values.name,
-                                        postal_code: values.postal_code,
-                                        city: values.city,
-                                        country: values.country
-                                    }
-                                },
-                                settings: {
-                                    ...user.settings,
-                                    dgk: {
-                                        ...user.settings?.dgk,
-                                        accept_search: values.accept_search
-                                    }
+                        await apiRequest("/api/account/listing", {
+                            data: {
+                                ...user.data,
+                                dgk: {
+                                    ...user.data?.dgk,
+                                    title: values.title,
+                                    name: values.name,
+                                    postal_code: values.postal_code,
+                                    city: values.city,
+                                    country: values.country
                                 }
-                                // email: values.email
+                            },
+                            settings: {
+                                ...user.settings,
+                                dgk: {
+                                    ...user.settings?.dgk,
+                                    accept_search: values.accept_search
+                                }
                             }
-                        );
+                        });
                         await getUser();
                         resetForm();
                         setSubmitting(false);

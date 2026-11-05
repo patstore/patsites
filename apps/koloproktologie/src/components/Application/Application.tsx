@@ -2,7 +2,7 @@ import { Form, Formik, FormikConsumer } from "formik";
 import React, { useMemo, useState } from "react";
 import form_data from "./constants/form_data";
 import { Button, FlexBox, SlideIn } from "@ui";
-import { axiosclient, useDataHandler, useSiteContext } from "@provider";
+import { apiRequest, useSiteContext } from "@provider";
 import settings from "@settings";
 import RenderFields from "./components/RenderFields";
 import validationSchema from "./constants/validation_schema";
@@ -14,11 +14,9 @@ import {
     formHeader
 } from "./styles";
 import { FieldData } from "./types";
-import getEmailArray from "./functions/getEmails";
 
 const Application: React.FC = () => {
     const { applicationOpen, setApplicationOpen } = useSiteContext();
-    const { createData } = useDataHandler();
     const initialValues = Object.keys(form_data).reduce(
         (acc, key) => {
             const fields = form_data[key as keyof typeof form_data].fields;
@@ -38,121 +36,7 @@ const Application: React.FC = () => {
     const dataHandler = async (values: typeof initialValues) => {
         setLoading(true);
 
-        const newsLetterEmail =
-            values.newsletter.toString() === "true"
-                ? values.newsletter_email === "existing"
-                    ? values.email
-                    : values.newsletter_email_address || "" || null
-                : null;
-
-        await axiosclient().post("functions/create_user_from_data", {
-            pre_title: values.title,
-            title: values.address,
-            project_id: import.meta.env.VITE_PATSTORE_PROJECT_ID,
-            name: values.first_name + " " + values.last_name,
-            email: values.email,
-            first_name: values.first_name,
-            last_name: values.last_name,
-            password: values.password,
-            roles: ["tEsx6N2IUm"],
-            data: {
-                dgk: {
-                    address: "",
-                    title: "",
-                    name: "",
-                    postal_code: "",
-                    city: "",
-                    country: ""
-                },
-                bcd: {
-                    klinikposition: "",
-                    fachrichtung: "",
-                    belegklinik: "",
-                    tel: "",
-                    fax: "",
-                    email: "",
-                    location: ""
-                }
-            },
-            newsletter_optin:
-                values.newsletter.toString() === "true" ? true : false,
-            newsletter_email:
-                values.newsletter_email === "existing"
-                    ? values.email
-                    : values.newsletter_email_address,
-            type: "dgk",
-            settings: {
-                dgk: {
-                    accept_search: false
-                },
-                bcd: {
-                    publish_specialist: false
-                }
-            },
-            emails: getEmailArray("dgk", values.email, newsLetterEmail)
-        });
-
-        await axiosclient().post("functions/send_form_notification", {
-            project_id: import.meta.env.VITE_PATSTORE_PROJECT_ID,
-            form_id: "vlb5giBjHl",
-            form_data: {
-                Anrede: values.address,
-                Titel: values.title,
-                Vorname: values.first_name,
-                Nachname: values.last_name,
-                Email: values.email,
-                Telefon: values.phone,
-                Adresse: values.street,
-                PLZ: values.zip,
-                Ort: values.city,
-                Land: values.country,
-                Geburtsdatum: values.date_of_birth,
-                Newsletter: values.newsletter ? "Ja" : "Nein",
-                Newsletter_Email: values.newsletter
-                    ? values.newsletter_email === "existing"
-                        ? values.email
-                        : values.newsletter_email_address
-                    : "-",
-                Newsletter_Optin_Datum: values.newsletter
-                    ? new Date().toISOString()
-                    : "-",
-                Staatsexamen: values.state_examination,
-                Staatsexamenort: values.state_examination_location,
-                Approbation: values.approbation,
-                Approbationort: values.approbation_location,
-                Promotion: values.promotion,
-                Promotionort: values.promotion_location,
-                Habitation: values.habitilation,
-                Habitationort: values.habitilation_location,
-                Mitgliedsbeitrag: values.billing,
-                Mitgliedsbeitrag_Zahlungsweise: values.bill_payment
-                    ? "Rechnung"
-                    : "SEPA",
-                Kontoinhaber: values.account_owner,
-                SEPA_Land: values.sepa_country,
-                IBAN: values.sepa_iban,
-                BIC: values.sepa_bic,
-                Datenschutz: values.data_protection ? "Ja" : "Nein",
-                Satzung: values.statue ? "Ja" : "Nein"
-            }
-        });
-
-        const dataObject = { ...values };
-        if (dataObject.password) {
-            delete dataObject.password;
-        }
-
-        await createData({
-            className: "Item",
-            updateObject: {
-                data: {
-                    name: values.first_name + " " + values.last_name,
-                    ...dataObject
-                },
-                reference_id: "vlb5giBjHl",
-                type: "form"
-            }
-        });
+        await apiRequest("/api/membership/apply", values);
         setLoading(false);
         setApplicationOpen(false);
     };

@@ -4,7 +4,7 @@ import { EmailModalProps } from "../types";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { Button, Divider } from "@ui";
-import { axiosclient } from "../../data";
+import { apiRequest } from "../../data";
 
 const loginSchema = Yup.object().shape({
     email: Yup.string().email("Bitte geben Sie eine gültige E-Mail-Adresse ein")
@@ -51,10 +51,8 @@ const EmailModal: React.FC<EmailModalProps> = ({
                     }}
                     onSubmit={async (values, { setSubmitting }) => {
                         setSubmitting(true);
-                        await axiosclient().put(`classes/_User/${userId}`, {
+                        await apiRequest("/api/account/email", {
                             email: values.email
-
-                            // email: values.email
                         });
                         await getUser();
                         setSubmitting(false);

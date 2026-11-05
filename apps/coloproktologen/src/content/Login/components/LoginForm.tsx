@@ -1,10 +1,8 @@
-import { env } from "@env";
 import { navigate } from "@router";
 import { Button, Divider } from "@ui";
 import React, { FC, useState } from "react";
 import { horizontalContainer, formContainer } from "../styles";
 import { LoginFormProps } from "../types";
-import Cookies from "js-cookie";
 import ResetPassword from "./ResetPassword";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -41,16 +39,13 @@ const LoginForm: FC<LoginFormProps> = ({ title, text }) => {
                         })
                     });
 
+                    const data = await response.json().catch(() => ({}));
                     if (!response.ok) {
-                        const error = await response.json();
-                        setError(error.message);
+                        setError(data.message);
+                        setSubmitting(false);
+                        return;
                     }
                     setSubmitting(false);
-                    const data = await response.json();
-                    Cookies.set(env.sessionToken, data.token, {
-                        expires: 365,
-                        sameSite: "strict"
-                    });
                     navigate("/app/profile");
                 }}
             >

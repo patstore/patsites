@@ -3,6 +3,7 @@
 **/.cache
 **/node_modules
 **/.output
+**/.netlify
 **/.vercel
 **/dist
 **/data/files

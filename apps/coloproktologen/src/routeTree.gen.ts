@@ -26,8 +26,11 @@ import { Route as SubscriptionRouteImport } from './routes/subscription'
 import { Route as ApiDownloadRouteImport } from './routes/api/download'
 import { Route as ApiGeocode_postalcodeRouteImport } from './routes/api/geocode_postalcode'
 import { Route as ApiLoginRouteImport } from './routes/api/login'
+import { Route as ApiLogoutRouteImport } from './routes/api/logout'
 import { Route as ApiRssRouteImport } from './routes/api/rss'
 import { Route as ApiSearch_specialistsRouteImport } from './routes/api/search_specialists'
+import { Route as ApiSessionRouteImport } from './routes/api/session'
+import { Route as ApiSpecialistsRouteImport } from './routes/api/specialists'
 import { Route as AppIndexRouteImport } from './routes/app/index'
 import { Route as AppBenutzerkontoRouteImport } from './routes/app/benutzerkonto'
 import { Route as AppLeistungenRouteImport } from './routes/app/leistungen'
@@ -37,8 +40,18 @@ import { Route as AppProtokolleRouteImport } from './routes/app/protokolle'
 import { Route as AppRundmailsRouteImport } from './routes/app/rundmails'
 import { Route as AppSpezialistensucheRouteImport } from './routes/app/spezialistensuche'
 import { Route as PasswordKeyRouteImport } from './routes/password/$key'
+import { Route as ApiAccountClinicRouteImport } from './routes/api/account/clinic'
+import { Route as ApiAccountEmailRouteImport } from './routes/api/account/email'
+import { Route as ApiAccountNewsletterRouteImport } from './routes/api/account/newsletter'
+import { Route as ApiAccountPasswordRouteImport } from './routes/api/account/password'
+import { Route as ApiFormsSubmitRouteImport } from './routes/api/forms/submit'
+import { Route as ApiMembersCreateRouteImport } from './routes/api/members/create'
+import { Route as ApiMembersLookupRouteImport } from './routes/api/members/lookup'
 import { Route as ApiNewsletterOptoutRouteImport } from './routes/api/newsletter/optout'
 import { Route as ApiNewsletterUserRouteImport } from './routes/api/newsletter/user'
+import { Route as ApiPasswordChangeRouteImport } from './routes/api/password/change'
+import { Route as ApiPasswordResetRouteImport } from './routes/api/password/reset'
+import { Route as ApiPasswordUserRouteImport } from './routes/api/password/user'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -125,6 +138,11 @@ const ApiLoginRoute = ApiLoginRouteImport.update({
   path: '/api/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiLogoutRoute = ApiLogoutRouteImport.update({
+  id: '/api/logout',
+  path: '/api/logout',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiRssRoute = ApiRssRouteImport.update({
   id: '/api/rss',
   path: '/api/rss',
@@ -133,6 +151,16 @@ const ApiRssRoute = ApiRssRouteImport.update({
 const ApiSearch_specialistsRoute = ApiSearch_specialistsRouteImport.update({
   id: '/api/search_specialists',
   path: '/api/search_specialists',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSessionRoute = ApiSessionRouteImport.update({
+  id: '/api/session',
+  path: '/api/session',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSpecialistsRoute = ApiSpecialistsRouteImport.update({
+  id: '/api/specialists',
+  path: '/api/specialists',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppIndexRoute = AppIndexRouteImport.update({
@@ -180,6 +208,41 @@ const PasswordKeyRoute = PasswordKeyRouteImport.update({
   path: '/password/$key',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAccountClinicRoute = ApiAccountClinicRouteImport.update({
+  id: '/api/account/clinic',
+  path: '/api/account/clinic',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAccountEmailRoute = ApiAccountEmailRouteImport.update({
+  id: '/api/account/email',
+  path: '/api/account/email',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAccountNewsletterRoute = ApiAccountNewsletterRouteImport.update({
+  id: '/api/account/newsletter',
+  path: '/api/account/newsletter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAccountPasswordRoute = ApiAccountPasswordRouteImport.update({
+  id: '/api/account/password',
+  path: '/api/account/password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiFormsSubmitRoute = ApiFormsSubmitRouteImport.update({
+  id: '/api/forms/submit',
+  path: '/api/forms/submit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMembersCreateRoute = ApiMembersCreateRouteImport.update({
+  id: '/api/members/create',
+  path: '/api/members/create',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMembersLookupRoute = ApiMembersLookupRouteImport.update({
+  id: '/api/members/lookup',
+  path: '/api/members/lookup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiNewsletterOptoutRoute = ApiNewsletterOptoutRouteImport.update({
   id: '/api/newsletter/optout',
   path: '/api/newsletter/optout',
@@ -188,6 +251,21 @@ const ApiNewsletterOptoutRoute = ApiNewsletterOptoutRouteImport.update({
 const ApiNewsletterUserRoute = ApiNewsletterUserRouteImport.update({
   id: '/api/newsletter/user',
   path: '/api/newsletter/user',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPasswordChangeRoute = ApiPasswordChangeRouteImport.update({
+  id: '/api/password/change',
+  path: '/api/password/change',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPasswordResetRoute = ApiPasswordResetRouteImport.update({
+  id: '/api/password/reset',
+  path: '/api/password/reset',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPasswordUserRoute = ApiPasswordUserRouteImport.update({
+  id: '/api/password/user',
+  path: '/api/password/user',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -209,8 +287,11 @@ export interface FileRoutesByFullPath {
   '/api/download': typeof ApiDownloadRoute
   '/api/geocode_postalcode': typeof ApiGeocode_postalcodeRoute
   '/api/login': typeof ApiLoginRoute
+  '/api/logout': typeof ApiLogoutRoute
   '/api/rss': typeof ApiRssRoute
   '/api/search_specialists': typeof ApiSearch_specialistsRoute
+  '/api/session': typeof ApiSessionRoute
+  '/api/specialists': typeof ApiSpecialistsRoute
   '/app/benutzerkonto': typeof AppBenutzerkontoRoute
   '/app/leistungen': typeof AppLeistungenRoute
   '/app/member-form': typeof AppMemberFormRoute
@@ -220,8 +301,18 @@ export interface FileRoutesByFullPath {
   '/app/spezialistensuche': typeof AppSpezialistensucheRoute
   '/password/$key': typeof PasswordKeyRoute
   '/app/': typeof AppIndexRoute
+  '/api/account/clinic': typeof ApiAccountClinicRoute
+  '/api/account/email': typeof ApiAccountEmailRoute
+  '/api/account/newsletter': typeof ApiAccountNewsletterRoute
+  '/api/account/password': typeof ApiAccountPasswordRoute
+  '/api/forms/submit': typeof ApiFormsSubmitRoute
+  '/api/members/create': typeof ApiMembersCreateRoute
+  '/api/members/lookup': typeof ApiMembersLookupRoute
   '/api/newsletter/optout': typeof ApiNewsletterOptoutRoute
   '/api/newsletter/user': typeof ApiNewsletterUserRoute
+  '/api/password/change': typeof ApiPasswordChangeRoute
+  '/api/password/reset': typeof ApiPasswordResetRoute
+  '/api/password/user': typeof ApiPasswordUserRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -240,8 +331,11 @@ export interface FileRoutesByTo {
   '/api/download': typeof ApiDownloadRoute
   '/api/geocode_postalcode': typeof ApiGeocode_postalcodeRoute
   '/api/login': typeof ApiLoginRoute
+  '/api/logout': typeof ApiLogoutRoute
   '/api/rss': typeof ApiRssRoute
   '/api/search_specialists': typeof ApiSearch_specialistsRoute
+  '/api/session': typeof ApiSessionRoute
+  '/api/specialists': typeof ApiSpecialistsRoute
   '/app/benutzerkonto': typeof AppBenutzerkontoRoute
   '/app/leistungen': typeof AppLeistungenRoute
   '/app/member-form': typeof AppMemberFormRoute
@@ -251,8 +345,18 @@ export interface FileRoutesByTo {
   '/app/spezialistensuche': typeof AppSpezialistensucheRoute
   '/password/$key': typeof PasswordKeyRoute
   '/app': typeof AppIndexRoute
+  '/api/account/clinic': typeof ApiAccountClinicRoute
+  '/api/account/email': typeof ApiAccountEmailRoute
+  '/api/account/newsletter': typeof ApiAccountNewsletterRoute
+  '/api/account/password': typeof ApiAccountPasswordRoute
+  '/api/forms/submit': typeof ApiFormsSubmitRoute
+  '/api/members/create': typeof ApiMembersCreateRoute
+  '/api/members/lookup': typeof ApiMembersLookupRoute
   '/api/newsletter/optout': typeof ApiNewsletterOptoutRoute
   '/api/newsletter/user': typeof ApiNewsletterUserRoute
+  '/api/password/change': typeof ApiPasswordChangeRoute
+  '/api/password/reset': typeof ApiPasswordResetRoute
+  '/api/password/user': typeof ApiPasswordUserRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -273,8 +377,11 @@ export interface FileRoutesById {
   '/api/download': typeof ApiDownloadRoute
   '/api/geocode_postalcode': typeof ApiGeocode_postalcodeRoute
   '/api/login': typeof ApiLoginRoute
+  '/api/logout': typeof ApiLogoutRoute
   '/api/rss': typeof ApiRssRoute
   '/api/search_specialists': typeof ApiSearch_specialistsRoute
+  '/api/session': typeof ApiSessionRoute
+  '/api/specialists': typeof ApiSpecialistsRoute
   '/app/benutzerkonto': typeof AppBenutzerkontoRoute
   '/app/leistungen': typeof AppLeistungenRoute
   '/app/member-form': typeof AppMemberFormRoute
@@ -284,8 +391,18 @@ export interface FileRoutesById {
   '/app/spezialistensuche': typeof AppSpezialistensucheRoute
   '/password/$key': typeof PasswordKeyRoute
   '/app/': typeof AppIndexRoute
+  '/api/account/clinic': typeof ApiAccountClinicRoute
+  '/api/account/email': typeof ApiAccountEmailRoute
+  '/api/account/newsletter': typeof ApiAccountNewsletterRoute
+  '/api/account/password': typeof ApiAccountPasswordRoute
+  '/api/forms/submit': typeof ApiFormsSubmitRoute
+  '/api/members/create': typeof ApiMembersCreateRoute
+  '/api/members/lookup': typeof ApiMembersLookupRoute
   '/api/newsletter/optout': typeof ApiNewsletterOptoutRoute
   '/api/newsletter/user': typeof ApiNewsletterUserRoute
+  '/api/password/change': typeof ApiPasswordChangeRoute
+  '/api/password/reset': typeof ApiPasswordResetRoute
+  '/api/password/user': typeof ApiPasswordUserRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -307,8 +424,11 @@ export interface FileRouteTypes {
     | '/api/download'
     | '/api/geocode_postalcode'
     | '/api/login'
+    | '/api/logout'
     | '/api/rss'
     | '/api/search_specialists'
+    | '/api/session'
+    | '/api/specialists'
     | '/app/benutzerkonto'
     | '/app/leistungen'
     | '/app/member-form'
@@ -318,8 +438,18 @@ export interface FileRouteTypes {
     | '/app/spezialistensuche'
     | '/password/$key'
     | '/app/'
+    | '/api/account/clinic'
+    | '/api/account/email'
+    | '/api/account/newsletter'
+    | '/api/account/password'
+    | '/api/forms/submit'
+    | '/api/members/create'
+    | '/api/members/lookup'
     | '/api/newsletter/optout'
     | '/api/newsletter/user'
+    | '/api/password/change'
+    | '/api/password/reset'
+    | '/api/password/user'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -338,8 +468,11 @@ export interface FileRouteTypes {
     | '/api/download'
     | '/api/geocode_postalcode'
     | '/api/login'
+    | '/api/logout'
     | '/api/rss'
     | '/api/search_specialists'
+    | '/api/session'
+    | '/api/specialists'
     | '/app/benutzerkonto'
     | '/app/leistungen'
     | '/app/member-form'
@@ -349,8 +482,18 @@ export interface FileRouteTypes {
     | '/app/spezialistensuche'
     | '/password/$key'
     | '/app'
+    | '/api/account/clinic'
+    | '/api/account/email'
+    | '/api/account/newsletter'
+    | '/api/account/password'
+    | '/api/forms/submit'
+    | '/api/members/create'
+    | '/api/members/lookup'
     | '/api/newsletter/optout'
     | '/api/newsletter/user'
+    | '/api/password/change'
+    | '/api/password/reset'
+    | '/api/password/user'
   id:
     | '__root__'
     | '/'
@@ -370,8 +513,11 @@ export interface FileRouteTypes {
     | '/api/download'
     | '/api/geocode_postalcode'
     | '/api/login'
+    | '/api/logout'
     | '/api/rss'
     | '/api/search_specialists'
+    | '/api/session'
+    | '/api/specialists'
     | '/app/benutzerkonto'
     | '/app/leistungen'
     | '/app/member-form'
@@ -381,8 +527,18 @@ export interface FileRouteTypes {
     | '/app/spezialistensuche'
     | '/password/$key'
     | '/app/'
+    | '/api/account/clinic'
+    | '/api/account/email'
+    | '/api/account/newsletter'
+    | '/api/account/password'
+    | '/api/forms/submit'
+    | '/api/members/create'
+    | '/api/members/lookup'
     | '/api/newsletter/optout'
     | '/api/newsletter/user'
+    | '/api/password/change'
+    | '/api/password/reset'
+    | '/api/password/user'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -403,11 +559,24 @@ export interface RootRouteChildren {
   ApiDownloadRoute: typeof ApiDownloadRoute
   ApiGeocode_postalcodeRoute: typeof ApiGeocode_postalcodeRoute
   ApiLoginRoute: typeof ApiLoginRoute
+  ApiLogoutRoute: typeof ApiLogoutRoute
   ApiRssRoute: typeof ApiRssRoute
   ApiSearch_specialistsRoute: typeof ApiSearch_specialistsRoute
+  ApiSessionRoute: typeof ApiSessionRoute
+  ApiSpecialistsRoute: typeof ApiSpecialistsRoute
   PasswordKeyRoute: typeof PasswordKeyRoute
+  ApiAccountClinicRoute: typeof ApiAccountClinicRoute
+  ApiAccountEmailRoute: typeof ApiAccountEmailRoute
+  ApiAccountNewsletterRoute: typeof ApiAccountNewsletterRoute
+  ApiAccountPasswordRoute: typeof ApiAccountPasswordRoute
+  ApiFormsSubmitRoute: typeof ApiFormsSubmitRoute
+  ApiMembersCreateRoute: typeof ApiMembersCreateRoute
+  ApiMembersLookupRoute: typeof ApiMembersLookupRoute
   ApiNewsletterOptoutRoute: typeof ApiNewsletterOptoutRoute
   ApiNewsletterUserRoute: typeof ApiNewsletterUserRoute
+  ApiPasswordChangeRoute: typeof ApiPasswordChangeRoute
+  ApiPasswordResetRoute: typeof ApiPasswordResetRoute
+  ApiPasswordUserRoute: typeof ApiPasswordUserRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -531,6 +700,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/logout': {
+      id: '/api/logout'
+      path: '/api/logout'
+      fullPath: '/api/logout'
+      preLoaderRoute: typeof ApiLogoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/rss': {
       id: '/api/rss'
       path: '/api/rss'
@@ -543,6 +719,20 @@ declare module '@tanstack/react-router' {
       path: '/api/search_specialists'
       fullPath: '/api/search_specialists'
       preLoaderRoute: typeof ApiSearch_specialistsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/session': {
+      id: '/api/session'
+      path: '/api/session'
+      fullPath: '/api/session'
+      preLoaderRoute: typeof ApiSessionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/specialists': {
+      id: '/api/specialists'
+      path: '/api/specialists'
+      fullPath: '/api/specialists'
+      preLoaderRoute: typeof ApiSpecialistsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/app/': {
@@ -608,6 +798,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PasswordKeyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/account/clinic': {
+      id: '/api/account/clinic'
+      path: '/api/account/clinic'
+      fullPath: '/api/account/clinic'
+      preLoaderRoute: typeof ApiAccountClinicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/account/email': {
+      id: '/api/account/email'
+      path: '/api/account/email'
+      fullPath: '/api/account/email'
+      preLoaderRoute: typeof ApiAccountEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/account/newsletter': {
+      id: '/api/account/newsletter'
+      path: '/api/account/newsletter'
+      fullPath: '/api/account/newsletter'
+      preLoaderRoute: typeof ApiAccountNewsletterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/account/password': {
+      id: '/api/account/password'
+      path: '/api/account/password'
+      fullPath: '/api/account/password'
+      preLoaderRoute: typeof ApiAccountPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/forms/submit': {
+      id: '/api/forms/submit'
+      path: '/api/forms/submit'
+      fullPath: '/api/forms/submit'
+      preLoaderRoute: typeof ApiFormsSubmitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/members/create': {
+      id: '/api/members/create'
+      path: '/api/members/create'
+      fullPath: '/api/members/create'
+      preLoaderRoute: typeof ApiMembersCreateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/members/lookup': {
+      id: '/api/members/lookup'
+      path: '/api/members/lookup'
+      fullPath: '/api/members/lookup'
+      preLoaderRoute: typeof ApiMembersLookupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/newsletter/optout': {
       id: '/api/newsletter/optout'
       path: '/api/newsletter/optout'
@@ -620,6 +859,27 @@ declare module '@tanstack/react-router' {
       path: '/api/newsletter/user'
       fullPath: '/api/newsletter/user'
       preLoaderRoute: typeof ApiNewsletterUserRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/password/change': {
+      id: '/api/password/change'
+      path: '/api/password/change'
+      fullPath: '/api/password/change'
+      preLoaderRoute: typeof ApiPasswordChangeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/password/reset': {
+      id: '/api/password/reset'
+      path: '/api/password/reset'
+      fullPath: '/api/password/reset'
+      preLoaderRoute: typeof ApiPasswordResetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/password/user': {
+      id: '/api/password/user'
+      path: '/api/password/user'
+      fullPath: '/api/password/user'
+      preLoaderRoute: typeof ApiPasswordUserRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -669,11 +929,24 @@ const rootRouteChildren: RootRouteChildren = {
   ApiDownloadRoute: ApiDownloadRoute,
   ApiGeocode_postalcodeRoute: ApiGeocode_postalcodeRoute,
   ApiLoginRoute: ApiLoginRoute,
+  ApiLogoutRoute: ApiLogoutRoute,
   ApiRssRoute: ApiRssRoute,
   ApiSearch_specialistsRoute: ApiSearch_specialistsRoute,
+  ApiSessionRoute: ApiSessionRoute,
+  ApiSpecialistsRoute: ApiSpecialistsRoute,
   PasswordKeyRoute: PasswordKeyRoute,
+  ApiAccountClinicRoute: ApiAccountClinicRoute,
+  ApiAccountEmailRoute: ApiAccountEmailRoute,
+  ApiAccountNewsletterRoute: ApiAccountNewsletterRoute,
+  ApiAccountPasswordRoute: ApiAccountPasswordRoute,
+  ApiFormsSubmitRoute: ApiFormsSubmitRoute,
+  ApiMembersCreateRoute: ApiMembersCreateRoute,
+  ApiMembersLookupRoute: ApiMembersLookupRoute,
   ApiNewsletterOptoutRoute: ApiNewsletterOptoutRoute,
   ApiNewsletterUserRoute: ApiNewsletterUserRoute,
+  ApiPasswordChangeRoute: ApiPasswordChangeRoute,
+  ApiPasswordResetRoute: ApiPasswordResetRoute,
+  ApiPasswordUserRoute: ApiPasswordUserRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

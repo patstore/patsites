@@ -1,12 +1,10 @@
 import React from "react";
 import {  formContainer, oldContentBox } from "../styles";
 import { LoginFormProps } from "../types";
-import Cookies from "js-cookie";
 import { useNavigate } from "@tanstack/react-router";
 import { Formik } from "formik";
 
 import * as Yup from "yup";
-import { env } from "../../../env";
 
 const loginSchema = Yup.object().shape({
     username: Yup.string().required("Bitte geben Sie Ihren Benutzernamen ein"),
@@ -64,12 +62,6 @@ const OldLogin: React.FC<LoginFormProps> = ({ title, text }) => {
                     }
                     setSubmitting(false);
                     resetForm();
-                    const data = await response.json();
-                    Cookies.set(
-                        env.sessionToken,
-                        data.token,
-                        { expires: 365, sameSite: "strict" }
-                    );
                     navigate({ to: "/app/profile" });
                 }}
             >

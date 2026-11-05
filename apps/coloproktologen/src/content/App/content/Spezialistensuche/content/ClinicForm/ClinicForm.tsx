@@ -12,13 +12,11 @@ import ClinicData from "./components/ClinicData";
 import DoctorData from "./components/DoctorData";
 import { ClinicDataProps, ClinicFormProps, DoctorData as DoctorDataTypes } from "./types";
 import Preview from "./components/Preview";
-import { useDataHandler, useSiteContext } from "@provider";
+import { apiRequest, useSiteContext } from "@provider";
 import { buttonsContainer } from "@styles";
 
 const ClinicForm: React.FC<ClinicFormProps> = ({ setSelectClinic }) => {
     const { user, getUser } = useSiteContext();
-
-    const { createData, updateData } = useDataHandler();
     const [selectedClinic, setSelectedClinic] = useState<
     ClinicDataProps["clinicData"]
   >({
@@ -88,78 +86,14 @@ const ClinicForm: React.FC<ClinicFormProps> = ({ setSelectClinic }) => {
 
     const saveAndCloseHandler = useCallback(async () => {
         if (!user) return;
-        if (!selectedClinic.objectId) {
-            const locationResponse = await createData({
-                className: "Location",
-                updateObject: {
-                    project: {
-                        __type: "Pointer",
-                        className: "Project",
-                        objectId: "EgRR0prozh"
-                    },
-                    module: {
-                        __type: "Pointer",
-                        className: "Module",
-                        objectId: "oG2z7k0IQP"
-                    },
-                    title: selectedClinic.title,
-                    description: selectedClinic.description,
-                    coordinates: {
-                        __type: "GeoPoint",
-                        latitude: selectedClinic.coordinates.latitude,
-                        longitude: selectedClinic.coordinates.longitude
-                    },
-                    data: {
-                        strasse: selectedClinic.data.strasse,
-                        plz: selectedClinic.data.plz,
-                        ort: selectedClinic.data.ort,
-                        tel: selectedClinic.data.tel,
-                        fax: selectedClinic.data.fax,
-                        email: selectedClinic.data.email
-                    }
-                }
-            });
-            
-            const locationId = locationResponse.data.objectId;
-            await updateData({
-                className: "_User",
-                objectId: user.objectId,
-                updateObject: {
-                    location: locationId,
-                    description: doctorData.klinikposition,
-                    data: {
-                        ...user.data,
-                        bcd: {
-                            ...user.data.bcd,
-                            ...doctorData
-                        }
-                    }
-                }
-            });
-            await getUser();
-            setSelectClinic(false);
-        } else {
-            await updateData({
-                className: "_User",
-                objectId: user.objectId,
-                updateObject: {
-                    location: selectedClinic.objectId,
-                    description: doctorData.klinikposition,
-                    data: {
-                        ...user.data,
-                        bcd: {
-                            ...user?.data?.bcd,
-                            ...doctorData
-                        }
-                    }
-                }
-            })
-
-            await getUser();
-            setSelectClinic(false);
-
-        }
-    }, [doctorData, selectedClinic, user]);
+        await apiRequest("/api/account/clinic", {
+            locationId: selectedClinic.objectId,
+            clinic: selectedClinic.objectId ? undefined : selectedClinic,
+            doctorData
+        });
+        await getUser();
+        setSelectClinic(false);
+    }, [doctorData, getUser, selectedClinic, user]);
 
     if (!user) return null;
 

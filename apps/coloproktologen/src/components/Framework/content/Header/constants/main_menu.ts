@@ -1,6 +1,3 @@
-import { env } from "@env";
-import { axiosclient } from "@provider";
-import Cookies from "js-cookie";
 import { ColoproktologenUser } from "@types";
 
 const main_menu = ({ user }: { user?: ColoproktologenUser }) => [
@@ -164,7 +161,7 @@ const main_menu = ({ user }: { user?: ColoproktologenUser }) => [
         key: "user",
         menuItems: user ? userMenu : [],
         hasSubmenu: user ? true : false,
-        link: !user ? "/login" : "/app/profile"
+        link: !user ? "/login" : "/app/benutzerkonto"
     }
 ];
 
@@ -203,9 +200,7 @@ const userMenu = [
         name: "Ausloggen",
         key: "logout",
         function: async () => {
-            await axiosclient().post("/logout");
-            Cookies.remove(env.sessionToken);
-
+            await fetch("/api/logout", { method: "POST" });
             return (window.location.pathname = "/login");
         }
     }

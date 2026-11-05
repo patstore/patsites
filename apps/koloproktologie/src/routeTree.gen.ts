@@ -26,7 +26,9 @@ import { Route as AktivitaetenLeitlinienRouteImport } from './routes/aktivitaete
 import { Route as AktivitaetenSchirmherrschaftRouteImport } from './routes/aktivitaeten/schirmherrschaft'
 import { Route as AktivitaetenZertifizierungRouteImport } from './routes/aktivitaeten/zertifizierung'
 import { Route as ApiLoginRouteImport } from './routes/api/login'
+import { Route as ApiLogoutRouteImport } from './routes/api/logout'
 import { Route as ApiRssRouteImport } from './routes/api/rss'
+import { Route as ApiSessionRouteImport } from './routes/api/session'
 import { Route as AppIndexRouteImport } from './routes/app/index'
 import { Route as AppMitgliederbereichRouteImport } from './routes/app/mitgliederbereich'
 import { Route as AppProfileRouteImport } from './routes/app/profile'
@@ -43,8 +45,18 @@ import { Route as FortbildungGrundkursRouteImport } from './routes/fortbildung/g
 import { Route as FortbildungManualRouteImport } from './routes/fortbildung/manual'
 import { Route as FortbildungVeranstaltungenRouteImport } from './routes/fortbildung/veranstaltungen'
 import { Route as PasswordKeyRouteImport } from './routes/password/$key'
+import { Route as ApiAccountEmailRouteImport } from './routes/api/account/email'
+import { Route as ApiAccountListingRouteImport } from './routes/api/account/listing'
+import { Route as ApiAccountNewsletterRouteImport } from './routes/api/account/newsletter'
+import { Route as ApiAccountPasswordRouteImport } from './routes/api/account/password'
+import { Route as ApiFormsSubmitRouteImport } from './routes/api/forms/submit'
+import { Route as ApiMembersSearchRouteImport } from './routes/api/members/search'
+import { Route as ApiMembershipApplyRouteImport } from './routes/api/membership/apply'
 import { Route as ApiNewsletterOptoutRouteImport } from './routes/api/newsletter/optout'
 import { Route as ApiNewsletterUserRouteImport } from './routes/api/newsletter/user'
+import { Route as ApiPasswordChangeRouteImport } from './routes/api/password/change'
+import { Route as ApiPasswordResetRouteImport } from './routes/api/password/reset'
+import { Route as ApiPasswordUserRouteImport } from './routes/api/password/user'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -136,9 +148,19 @@ const ApiLoginRoute = ApiLoginRouteImport.update({
   path: '/api/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiLogoutRoute = ApiLogoutRouteImport.update({
+  id: '/api/logout',
+  path: '/api/logout',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiRssRoute = ApiRssRouteImport.update({
   id: '/api/rss',
   path: '/api/rss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSessionRoute = ApiSessionRouteImport.update({
+  id: '/api/session',
+  path: '/api/session',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AppIndexRoute = AppIndexRouteImport.update({
@@ -223,6 +245,41 @@ const PasswordKeyRoute = PasswordKeyRouteImport.update({
   path: '/password/$key',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAccountEmailRoute = ApiAccountEmailRouteImport.update({
+  id: '/api/account/email',
+  path: '/api/account/email',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAccountListingRoute = ApiAccountListingRouteImport.update({
+  id: '/api/account/listing',
+  path: '/api/account/listing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAccountNewsletterRoute = ApiAccountNewsletterRouteImport.update({
+  id: '/api/account/newsletter',
+  path: '/api/account/newsletter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAccountPasswordRoute = ApiAccountPasswordRouteImport.update({
+  id: '/api/account/password',
+  path: '/api/account/password',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiFormsSubmitRoute = ApiFormsSubmitRouteImport.update({
+  id: '/api/forms/submit',
+  path: '/api/forms/submit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMembersSearchRoute = ApiMembersSearchRouteImport.update({
+  id: '/api/members/search',
+  path: '/api/members/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiMembershipApplyRoute = ApiMembershipApplyRouteImport.update({
+  id: '/api/membership/apply',
+  path: '/api/membership/apply',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiNewsletterOptoutRoute = ApiNewsletterOptoutRouteImport.update({
   id: '/api/newsletter/optout',
   path: '/api/newsletter/optout',
@@ -231,6 +288,21 @@ const ApiNewsletterOptoutRoute = ApiNewsletterOptoutRouteImport.update({
 const ApiNewsletterUserRoute = ApiNewsletterUserRouteImport.update({
   id: '/api/newsletter/user',
   path: '/api/newsletter/user',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPasswordChangeRoute = ApiPasswordChangeRouteImport.update({
+  id: '/api/password/change',
+  path: '/api/password/change',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPasswordResetRoute = ApiPasswordResetRouteImport.update({
+  id: '/api/password/reset',
+  path: '/api/password/reset',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPasswordUserRoute = ApiPasswordUserRouteImport.update({
+  id: '/api/password/user',
+  path: '/api/password/user',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -252,7 +324,9 @@ export interface FileRoutesByFullPath {
   '/aktivitaeten/schirmherrschaft': typeof AktivitaetenSchirmherrschaftRoute
   '/aktivitaeten/zertifizierung': typeof AktivitaetenZertifizierungRoute
   '/api/login': typeof ApiLoginRoute
+  '/api/logout': typeof ApiLogoutRoute
   '/api/rss': typeof ApiRssRoute
+  '/api/session': typeof ApiSessionRoute
   '/app/mitgliederbereich': typeof AppMitgliederbereichRoute
   '/app/profile': typeof AppProfileRoute
   '/dgk/beitragsordnung': typeof DgkBeitragsordnungRoute
@@ -269,8 +343,18 @@ export interface FileRoutesByFullPath {
   '/fortbildung/veranstaltungen': typeof FortbildungVeranstaltungenRoute
   '/password/$key': typeof PasswordKeyRoute
   '/app/': typeof AppIndexRoute
+  '/api/account/email': typeof ApiAccountEmailRoute
+  '/api/account/listing': typeof ApiAccountListingRoute
+  '/api/account/newsletter': typeof ApiAccountNewsletterRoute
+  '/api/account/password': typeof ApiAccountPasswordRoute
+  '/api/forms/submit': typeof ApiFormsSubmitRoute
+  '/api/members/search': typeof ApiMembersSearchRoute
+  '/api/membership/apply': typeof ApiMembershipApplyRoute
   '/api/newsletter/optout': typeof ApiNewsletterOptoutRoute
   '/api/newsletter/user': typeof ApiNewsletterUserRoute
+  '/api/password/change': typeof ApiPasswordChangeRoute
+  '/api/password/reset': typeof ApiPasswordResetRoute
+  '/api/password/user': typeof ApiPasswordUserRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -289,7 +373,9 @@ export interface FileRoutesByTo {
   '/aktivitaeten/schirmherrschaft': typeof AktivitaetenSchirmherrschaftRoute
   '/aktivitaeten/zertifizierung': typeof AktivitaetenZertifizierungRoute
   '/api/login': typeof ApiLoginRoute
+  '/api/logout': typeof ApiLogoutRoute
   '/api/rss': typeof ApiRssRoute
+  '/api/session': typeof ApiSessionRoute
   '/app/mitgliederbereich': typeof AppMitgliederbereichRoute
   '/app/profile': typeof AppProfileRoute
   '/dgk/beitragsordnung': typeof DgkBeitragsordnungRoute
@@ -306,8 +392,18 @@ export interface FileRoutesByTo {
   '/fortbildung/veranstaltungen': typeof FortbildungVeranstaltungenRoute
   '/password/$key': typeof PasswordKeyRoute
   '/app': typeof AppIndexRoute
+  '/api/account/email': typeof ApiAccountEmailRoute
+  '/api/account/listing': typeof ApiAccountListingRoute
+  '/api/account/newsletter': typeof ApiAccountNewsletterRoute
+  '/api/account/password': typeof ApiAccountPasswordRoute
+  '/api/forms/submit': typeof ApiFormsSubmitRoute
+  '/api/members/search': typeof ApiMembersSearchRoute
+  '/api/membership/apply': typeof ApiMembershipApplyRoute
   '/api/newsletter/optout': typeof ApiNewsletterOptoutRoute
   '/api/newsletter/user': typeof ApiNewsletterUserRoute
+  '/api/password/change': typeof ApiPasswordChangeRoute
+  '/api/password/reset': typeof ApiPasswordResetRoute
+  '/api/password/user': typeof ApiPasswordUserRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -328,7 +424,9 @@ export interface FileRoutesById {
   '/aktivitaeten/schirmherrschaft': typeof AktivitaetenSchirmherrschaftRoute
   '/aktivitaeten/zertifizierung': typeof AktivitaetenZertifizierungRoute
   '/api/login': typeof ApiLoginRoute
+  '/api/logout': typeof ApiLogoutRoute
   '/api/rss': typeof ApiRssRoute
+  '/api/session': typeof ApiSessionRoute
   '/app/mitgliederbereich': typeof AppMitgliederbereichRoute
   '/app/profile': typeof AppProfileRoute
   '/dgk/beitragsordnung': typeof DgkBeitragsordnungRoute
@@ -345,8 +443,18 @@ export interface FileRoutesById {
   '/fortbildung/veranstaltungen': typeof FortbildungVeranstaltungenRoute
   '/password/$key': typeof PasswordKeyRoute
   '/app/': typeof AppIndexRoute
+  '/api/account/email': typeof ApiAccountEmailRoute
+  '/api/account/listing': typeof ApiAccountListingRoute
+  '/api/account/newsletter': typeof ApiAccountNewsletterRoute
+  '/api/account/password': typeof ApiAccountPasswordRoute
+  '/api/forms/submit': typeof ApiFormsSubmitRoute
+  '/api/members/search': typeof ApiMembersSearchRoute
+  '/api/membership/apply': typeof ApiMembershipApplyRoute
   '/api/newsletter/optout': typeof ApiNewsletterOptoutRoute
   '/api/newsletter/user': typeof ApiNewsletterUserRoute
+  '/api/password/change': typeof ApiPasswordChangeRoute
+  '/api/password/reset': typeof ApiPasswordResetRoute
+  '/api/password/user': typeof ApiPasswordUserRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -368,7 +476,9 @@ export interface FileRouteTypes {
     | '/aktivitaeten/schirmherrschaft'
     | '/aktivitaeten/zertifizierung'
     | '/api/login'
+    | '/api/logout'
     | '/api/rss'
+    | '/api/session'
     | '/app/mitgliederbereich'
     | '/app/profile'
     | '/dgk/beitragsordnung'
@@ -385,8 +495,18 @@ export interface FileRouteTypes {
     | '/fortbildung/veranstaltungen'
     | '/password/$key'
     | '/app/'
+    | '/api/account/email'
+    | '/api/account/listing'
+    | '/api/account/newsletter'
+    | '/api/account/password'
+    | '/api/forms/submit'
+    | '/api/members/search'
+    | '/api/membership/apply'
     | '/api/newsletter/optout'
     | '/api/newsletter/user'
+    | '/api/password/change'
+    | '/api/password/reset'
+    | '/api/password/user'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -405,7 +525,9 @@ export interface FileRouteTypes {
     | '/aktivitaeten/schirmherrschaft'
     | '/aktivitaeten/zertifizierung'
     | '/api/login'
+    | '/api/logout'
     | '/api/rss'
+    | '/api/session'
     | '/app/mitgliederbereich'
     | '/app/profile'
     | '/dgk/beitragsordnung'
@@ -422,8 +544,18 @@ export interface FileRouteTypes {
     | '/fortbildung/veranstaltungen'
     | '/password/$key'
     | '/app'
+    | '/api/account/email'
+    | '/api/account/listing'
+    | '/api/account/newsletter'
+    | '/api/account/password'
+    | '/api/forms/submit'
+    | '/api/members/search'
+    | '/api/membership/apply'
     | '/api/newsletter/optout'
     | '/api/newsletter/user'
+    | '/api/password/change'
+    | '/api/password/reset'
+    | '/api/password/user'
   id:
     | '__root__'
     | '/'
@@ -443,7 +575,9 @@ export interface FileRouteTypes {
     | '/aktivitaeten/schirmherrschaft'
     | '/aktivitaeten/zertifizierung'
     | '/api/login'
+    | '/api/logout'
     | '/api/rss'
+    | '/api/session'
     | '/app/mitgliederbereich'
     | '/app/profile'
     | '/dgk/beitragsordnung'
@@ -460,8 +594,18 @@ export interface FileRouteTypes {
     | '/fortbildung/veranstaltungen'
     | '/password/$key'
     | '/app/'
+    | '/api/account/email'
+    | '/api/account/listing'
+    | '/api/account/newsletter'
+    | '/api/account/password'
+    | '/api/forms/submit'
+    | '/api/members/search'
+    | '/api/membership/apply'
     | '/api/newsletter/optout'
     | '/api/newsletter/user'
+    | '/api/password/change'
+    | '/api/password/reset'
+    | '/api/password/user'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -482,7 +626,9 @@ export interface RootRouteChildren {
   AktivitaetenSchirmherrschaftRoute: typeof AktivitaetenSchirmherrschaftRoute
   AktivitaetenZertifizierungRoute: typeof AktivitaetenZertifizierungRoute
   ApiLoginRoute: typeof ApiLoginRoute
+  ApiLogoutRoute: typeof ApiLogoutRoute
   ApiRssRoute: typeof ApiRssRoute
+  ApiSessionRoute: typeof ApiSessionRoute
   DgkBeitragsordnungRoute: typeof DgkBeitragsordnungRoute
   DgkCongressRoute: typeof DgkCongressRoute
   DgkGeschichteRoute: typeof DgkGeschichteRoute
@@ -496,8 +642,18 @@ export interface RootRouteChildren {
   FortbildungManualRoute: typeof FortbildungManualRoute
   FortbildungVeranstaltungenRoute: typeof FortbildungVeranstaltungenRoute
   PasswordKeyRoute: typeof PasswordKeyRoute
+  ApiAccountEmailRoute: typeof ApiAccountEmailRoute
+  ApiAccountListingRoute: typeof ApiAccountListingRoute
+  ApiAccountNewsletterRoute: typeof ApiAccountNewsletterRoute
+  ApiAccountPasswordRoute: typeof ApiAccountPasswordRoute
+  ApiFormsSubmitRoute: typeof ApiFormsSubmitRoute
+  ApiMembersSearchRoute: typeof ApiMembersSearchRoute
+  ApiMembershipApplyRoute: typeof ApiMembershipApplyRoute
   ApiNewsletterOptoutRoute: typeof ApiNewsletterOptoutRoute
   ApiNewsletterUserRoute: typeof ApiNewsletterUserRoute
+  ApiPasswordChangeRoute: typeof ApiPasswordChangeRoute
+  ApiPasswordResetRoute: typeof ApiPasswordResetRoute
+  ApiPasswordUserRoute: typeof ApiPasswordUserRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -621,11 +777,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/logout': {
+      id: '/api/logout'
+      path: '/api/logout'
+      fullPath: '/api/logout'
+      preLoaderRoute: typeof ApiLogoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/rss': {
       id: '/api/rss'
       path: '/api/rss'
       fullPath: '/api/rss'
       preLoaderRoute: typeof ApiRssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/session': {
+      id: '/api/session'
+      path: '/api/session'
+      fullPath: '/api/session'
+      preLoaderRoute: typeof ApiSessionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/app/': {
@@ -740,6 +910,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PasswordKeyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/account/email': {
+      id: '/api/account/email'
+      path: '/api/account/email'
+      fullPath: '/api/account/email'
+      preLoaderRoute: typeof ApiAccountEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/account/listing': {
+      id: '/api/account/listing'
+      path: '/api/account/listing'
+      fullPath: '/api/account/listing'
+      preLoaderRoute: typeof ApiAccountListingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/account/newsletter': {
+      id: '/api/account/newsletter'
+      path: '/api/account/newsletter'
+      fullPath: '/api/account/newsletter'
+      preLoaderRoute: typeof ApiAccountNewsletterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/account/password': {
+      id: '/api/account/password'
+      path: '/api/account/password'
+      fullPath: '/api/account/password'
+      preLoaderRoute: typeof ApiAccountPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/forms/submit': {
+      id: '/api/forms/submit'
+      path: '/api/forms/submit'
+      fullPath: '/api/forms/submit'
+      preLoaderRoute: typeof ApiFormsSubmitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/members/search': {
+      id: '/api/members/search'
+      path: '/api/members/search'
+      fullPath: '/api/members/search'
+      preLoaderRoute: typeof ApiMembersSearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/membership/apply': {
+      id: '/api/membership/apply'
+      path: '/api/membership/apply'
+      fullPath: '/api/membership/apply'
+      preLoaderRoute: typeof ApiMembershipApplyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/newsletter/optout': {
       id: '/api/newsletter/optout'
       path: '/api/newsletter/optout'
@@ -752,6 +971,27 @@ declare module '@tanstack/react-router' {
       path: '/api/newsletter/user'
       fullPath: '/api/newsletter/user'
       preLoaderRoute: typeof ApiNewsletterUserRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/password/change': {
+      id: '/api/password/change'
+      path: '/api/password/change'
+      fullPath: '/api/password/change'
+      preLoaderRoute: typeof ApiPasswordChangeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/password/reset': {
+      id: '/api/password/reset'
+      path: '/api/password/reset'
+      fullPath: '/api/password/reset'
+      preLoaderRoute: typeof ApiPasswordResetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/password/user': {
+      id: '/api/password/user'
+      path: '/api/password/user'
+      fullPath: '/api/password/user'
+      preLoaderRoute: typeof ApiPasswordUserRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -791,7 +1031,9 @@ const rootRouteChildren: RootRouteChildren = {
   AktivitaetenSchirmherrschaftRoute: AktivitaetenSchirmherrschaftRoute,
   AktivitaetenZertifizierungRoute: AktivitaetenZertifizierungRoute,
   ApiLoginRoute: ApiLoginRoute,
+  ApiLogoutRoute: ApiLogoutRoute,
   ApiRssRoute: ApiRssRoute,
+  ApiSessionRoute: ApiSessionRoute,
   DgkBeitragsordnungRoute: DgkBeitragsordnungRoute,
   DgkCongressRoute: DgkCongressRoute,
   DgkGeschichteRoute: DgkGeschichteRoute,
@@ -805,8 +1047,18 @@ const rootRouteChildren: RootRouteChildren = {
   FortbildungManualRoute: FortbildungManualRoute,
   FortbildungVeranstaltungenRoute: FortbildungVeranstaltungenRoute,
   PasswordKeyRoute: PasswordKeyRoute,
+  ApiAccountEmailRoute: ApiAccountEmailRoute,
+  ApiAccountListingRoute: ApiAccountListingRoute,
+  ApiAccountNewsletterRoute: ApiAccountNewsletterRoute,
+  ApiAccountPasswordRoute: ApiAccountPasswordRoute,
+  ApiFormsSubmitRoute: ApiFormsSubmitRoute,
+  ApiMembersSearchRoute: ApiMembersSearchRoute,
+  ApiMembershipApplyRoute: ApiMembershipApplyRoute,
   ApiNewsletterOptoutRoute: ApiNewsletterOptoutRoute,
   ApiNewsletterUserRoute: ApiNewsletterUserRoute,
+  ApiPasswordChangeRoute: ApiPasswordChangeRoute,
+  ApiPasswordResetRoute: ApiPasswordResetRoute,
+  ApiPasswordUserRoute: ApiPasswordUserRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

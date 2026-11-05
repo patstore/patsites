@@ -17,7 +17,8 @@ export type ColoproktologenUser = {
 	password?: string;
 	location?: string;
   description: string;
-  roles: string[];
+  /** Role objectIds from `_Role.users`, attached by the session endpoint. */
+  roles?: string[];
   is_superuser: boolean;
   expires_at: {
 	__type: "Date";

@@ -16,13 +16,17 @@
     "./vite": {
       "types": "./src/vite.ts",
       "default": "./src/vite.ts"
+    },
+    "./auth": {
+      "types": "./src/auth/index.ts",
+      "default": "./src/auth/index.ts"
     }
   },
   "scripts": {
     "build": "vite build",
     "check-types": "tsc --noEmit",
     "generate": "node --experimental-strip-types src/cli.ts",
-    "test": "node --experimental-strip-types --test src/state.test.ts src/fields.test.ts src/codegen.test.ts src/publish-files.test.ts"
+    "test": "node --experimental-strip-types --test src/state.test.ts src/fields.test.ts src/codegen.test.ts src/publish-files.test.ts src/auth/cookie.test.ts src/auth/roles.test.ts"
   },
   "dependencies": {
     "graphql": "^16.14.2",

@@ -11,6 +11,7 @@ import { headerVariants } from "./animations";
 import { FlexBox } from "@ui";
 import { headerContainer, menuContainer } from "./styles";
 import main_menu from "./constants/main_menu";
+import { useOptionalScroll } from "@repo/core";
 import { useSiteContext } from "@provider";
 
 const Header: React.FC = () => {
@@ -20,22 +21,32 @@ const Header: React.FC = () => {
 
     const [headerAnimate, setHeaderAnimate] = useState("start");
     const [isHome, setIsHome] = useState(false);
-    const handleScroll = () => {
-        if (window.scrollY > 200) {
-            setHeaderAnimate("site");
-        } else {
-            setHeaderAnimate("start");
-        }
-    };
+    const scrollApi = useOptionalScroll();
 
     useEffect(() => {
-        window.addEventListener("scroll", handleScroll, false);
-        document.documentElement.style.setProperty(
-            "--scroll-y",
-            `${window.scrollY}px`
-        );
-        return () => window.removeEventListener("scroll", handleScroll, false);
-    }, []);
+        const applyScroll = (scrollY: number) => {
+            setHeaderAnimate(scrollY > 200 ? "site" : "start");
+            document.documentElement.style.setProperty(
+                "--scroll-y",
+                `${scrollY}px`
+            );
+        };
+
+        if (!scrollApi) {
+            const handleWindowScroll = () => applyScroll(window.scrollY);
+            handleWindowScroll();
+            window.addEventListener("scroll", handleWindowScroll, {
+                passive: true
+            });
+            return () =>
+                window.removeEventListener("scroll", handleWindowScroll);
+        }
+
+        const handleLenisScroll = () =>
+            applyScroll(scrollApi.getSnapshot().scroll);
+        handleLenisScroll();
+        return scrollApi.subscribe(handleLenisScroll);
+    }, [scrollApi]);
 
     const colorScheme = React.useMemo(() => {
         let background = "transparent";

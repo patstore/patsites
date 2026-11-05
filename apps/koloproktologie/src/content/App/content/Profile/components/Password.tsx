@@ -4,7 +4,7 @@ import { Formik } from "formik";
 import { profileContentContainer } from "../styles";
 import { Button, Divider, FlexBox } from "@ui";
 import { isEqual } from "lodash-es";
-import { axiosclient } from "@provider";
+import { apiRequest } from "@provider";
 import * as Yup from "yup";
 
 const passwordSchema = Yup.object().shape({
@@ -50,12 +50,9 @@ const Password: React.FC<{
                                 { setSubmitting, resetForm }
                             ) => {
                                 try {
-                                    await axiosclient().put(
-                                        `classes/_User/${user.objectId}`,
-                                        {
-                                            password: values.new_password
-                                        }
-                                    );
+                                    await apiRequest("/api/account/password", {
+                                        password: values.new_password
+                                    });
                                     await getUser();
                                     resetForm();
                                     // Add success message handling here
