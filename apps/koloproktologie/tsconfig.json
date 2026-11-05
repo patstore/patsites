@@ -22,7 +22,8 @@
       "@provider": ["./src/provider/index.ts"],
       "@settings": ["./src/settings/index.ts"],
       "@types": ["./src/types/index.ts"],
-      "@data": ["./data/index.ts"]
+      "@data": ["./data/index.ts"],
+      "@env": ["./src/env.ts"],
     }
   },
   "include": ["./src/**/*", "./data/**/*", "./vite.config.ts"],

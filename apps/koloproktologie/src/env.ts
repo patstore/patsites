@@ -1,5 +1,8 @@
 
 export const env = {
+    previewMode:
+        import.meta.env.VITE_PREVIEW_MODE ||
+        "false",
     patstoreApiUrl:
         import.meta.env.VITE_PATSTORE_API_URL ||
         "",

@@ -1,9 +1,10 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-05T09:14:37.451Z",
+    "generatedAt": "2026-11-05T17:08:55.041Z",
     "projectId": "JRxDkaxCoI",
     "moduleCount": 12,
-    "states": null
+    "states": null,
+    "recordScope": "project"
   },
   "_modules": [
     {
@@ -2316,700 +2317,800 @@
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5a7d8ca691d9686423795b6ef7d9db10_Kongress%20am%20Park%20bei%20Daemmerung.jpg",
       "localPath": "mPpSBgqNT9-Kongress am Park bei Dämmerung.jpg",
       "filename": "mPpSBgqNT9-Kongress am Park bei Dämmerung.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/mPpSBgqNT9-Kongress am Park bei Dämmerung-480w.webp"
     },
     {
       "objectId": "k3UyasdAuA",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b850e00543509670eff9f0e7f34a829b_Wissenschaft%20lebt%20vom%20Austauschneu.jpg",
       "localPath": "k3UyasdAuA-Wissenschaft lebt vom Austauschneu.jpg",
       "filename": "k3UyasdAuA-Wissenschaft lebt vom Austauschneu.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/k3UyasdAuA-Wissenschaft lebt vom Austauschneu-480w.webp"
     },
     {
       "objectId": "11guQUfbDD",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/937dd3c08a3b6475d2f1b9289467d08a_Wissenschaft%20lebt%20vom%20Austausch.jpg",
       "localPath": "11guQUfbDD-Wissenschaft lebt vom Austausch.jpg",
       "filename": "11guQUfbDD-Wissenschaft lebt vom Austausch.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/11guQUfbDD-Wissenschaft lebt vom Austausch-480w.webp"
     },
     {
       "objectId": "cYqudg2rqd",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a264a72fcd6c21c61bc3bcd7e2fc1492_Wissenschaft%20lebt%20vom%20Austausch.jpg",
       "localPath": "cYqudg2rqd-Wissenschaft lebt vom Austausch.jpg",
       "filename": "cYqudg2rqd-Wissenschaft lebt vom Austausch.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/cYqudg2rqd-Wissenschaft lebt vom Austausch-480w.webp"
     },
     {
       "objectId": "OYpEvXZi8x",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8b5e82fbbb6f37c7ac487cdd44371bb4_Wissenschaftliche%20Preise_Infografik.jpg",
       "localPath": "OYpEvXZi8x-Wissenschaftliche Preise_Infografik.jpg",
       "filename": "OYpEvXZi8x-Wissenschaftliche Preise_Infografik.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/OYpEvXZi8x-Wissenschaftliche Preise_Infografik-480w.webp"
     },
     {
       "objectId": "wr5RPPBLRf",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/06de06d660589b01431b042130151298_DGK_Einreichungsschluss_Newsletter_600px.jpg",
       "localPath": "wr5RPPBLRf-DGK_Einreichungsschluss_Newsletter_600px.jpg",
       "filename": "wr5RPPBLRf-DGK_Einreichungsschluss_Newsletter_600px.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/wr5RPPBLRf-DGK_Einreichungsschluss_Newsletter_600px-480w.webp"
     },
     {
       "objectId": "pcZqdKOQgD",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ab6f429fb4785427eb3cd3c38e72ba44_Wissenschaftliche_Preise_DGK_einzeln_blauer_Rahmen.jpg",
       "localPath": "pcZqdKOQgD-Wissenschaftliche_Preise_DGK_einzeln_blauer_Rahmen.jpg",
       "filename": "pcZqdKOQgD-Wissenschaftliche_Preise_DGK_einzeln_blauer_Rahmen.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/pcZqdKOQgD-Wissenschaftliche_Preise_DGK_einzeln_blauer_Rahmen-480w.webp"
     },
     {
       "objectId": "bD4XT6HTlJ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a8b836a67681c47f9d3c1283462f7e46_wiss_preise.png",
       "localPath": "bD4XT6HTlJ-wiss_preise.png",
       "filename": "bD4XT6HTlJ-wiss_preise.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/bD4XT6HTlJ-wiss_preise-480w.webp"
     },
     {
       "objectId": "Qe2oVTEnGK",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/56bb05b27597cd35cea79c7d79b362ad_call_for_abstracts.png",
       "localPath": "Qe2oVTEnGK-call_for_abstracts.png",
       "filename": "Qe2oVTEnGK-call_for_abstracts.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Qe2oVTEnGK-call_for_abstracts-480w.webp"
     },
     {
       "objectId": "3bj4CvGqJr",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/00d9504c71046f07bb0f1df35fd6dda1_Health%20Summit.png",
       "localPath": "3bj4CvGqJr-Health Summit.png",
       "filename": "3bj4CvGqJr-Health Summit.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/3bj4CvGqJr-Health Summit-480w.webp"
     },
     {
       "objectId": "0gpqwTJPpM",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9e8d91393793708cd816358999e10936_DGK2027%20-%20Header%20neu.png",
       "localPath": "0gpqwTJPpM-DGK2027 - Header neu.png",
       "filename": "0gpqwTJPpM-DGK2027 - Header neu.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/0gpqwTJPpM-DGK2027 - Header neu-480w.webp"
     },
     {
       "objectId": "RMacvIu7CC",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e3783c274a9ab74da72eb556297d1fc5_Bild5.png",
       "localPath": "RMacvIu7CC-Bild5.png",
       "filename": "RMacvIu7CC-Bild5.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/RMacvIu7CC-Bild5-480w.webp"
     },
     {
       "objectId": "gRvDvxlaAP",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/75d49ede1b8eb231806348206c115245_TA%20Hager%20Thorolf%20Kronach.png",
       "localPath": "gRvDvxlaAP-TA Hager Thorolf Kronach.png",
       "filename": "gRvDvxlaAP-TA Hager Thorolf Kronach.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/gRvDvxlaAP-TA Hager Thorolf Kronach-480w.webp"
     },
     {
       "objectId": "w3UB1CPieU",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/38a1958244ec9154593de4333286d002_Logo_DGK_mit_Bez.jpg",
       "localPath": "w3UB1CPieU-Logo_DGK_mit_Bez.jpg",
       "filename": "w3UB1CPieU-Logo_DGK_mit_Bez.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/w3UB1CPieU-Logo_DGK_mit_Bez-480w.webp"
     },
     {
       "objectId": "at0T1ifsyE",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ea8bdc9f1a2536fe60515f8fea4963c2_DGK2027_STD.png",
       "localPath": "at0T1ifsyE-Poster_Kongress_2027.png",
       "filename": "at0T1ifsyE-Poster_Kongress_2027.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/at0T1ifsyE-Poster_Kongress_2027-480w.webp"
     },
     {
       "objectId": "rXNIDjYxSP",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0d74bf6d6d809190a07d121d3729f2f8_von%20Ehrlich.jpg",
       "localPath": "rXNIDjYxSP-von Ehrlich.jpg",
       "filename": "rXNIDjYxSP-von Ehrlich.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/rXNIDjYxSP-von Ehrlich-480w.webp"
     },
     {
       "objectId": "dGGojQWUeq",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d4a1ec4bcd9d49c6c9a8aa510ddd82c9_Logo_DGK_mit_Bez.jpg",
       "localPath": "dGGojQWUeq-Logo_DGK_mit_Bez.jpg",
       "filename": "dGGojQWUeq-Logo_DGK_mit_Bez.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/dGGojQWUeq-Logo_DGK_mit_Bez-480w.webp"
     },
     {
       "objectId": "9oIh9UD8Eh",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/26c847e4b3b778e2052c8293735a80c0_Schardey_Jens%20Kirsch.jpg",
       "localPath": "9oIh9UD8Eh-Schardey_Jens Kirsch.jpg",
       "filename": "9oIh9UD8Eh-Schardey_Jens Kirsch.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/9oIh9UD8Eh-Schardey_Jens Kirsch-480w.webp"
     },
     {
       "objectId": "eu5a4R7yHF",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9b74f9b1fff24c37f12760c242cfd8ea_Programmheft.jpg",
       "localPath": "eu5a4R7yHF-Programmheft.jpg",
       "filename": "eu5a4R7yHF-Programmheft.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/eu5a4R7yHF-Programmheft-480w.webp"
     },
     {
       "objectId": "F1zKHiNHI8",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9d509276ced21f34cf9bc46cdbebfa99_Short.jpg",
       "localPath": "F1zKHiNHI8-Short.jpg",
       "filename": "F1zKHiNHI8-Short.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/F1zKHiNHI8-Short-480w.webp"
     },
     {
       "objectId": "GvJ8ZDx5Z3",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6ec2e0c5984a314188e3b747ad3d6221_Stelzner_geaendert.jpg",
       "localPath": "GvJ8ZDx5Z3-Stelzner_geändert.jpg",
       "filename": "GvJ8ZDx5Z3-Stelzner_geändert.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/GvJ8ZDx5Z3-Stelzner_geändert-480w.webp"
     },
     {
       "objectId": "QxzEqbDlkI",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/74939d5d7180ab73af81fe59a52ba58c_20260314-10.webp",
       "localPath": "QxzEqbDlkI-20260314-10.webp",
       "filename": "QxzEqbDlkI-20260314-10.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/QxzEqbDlkI-20260314-10-480w.webp"
     },
     {
       "objectId": "Gbzb1oLCBI",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d275dadca3eaa177e3439f08d834ffcc_20260314-8.webp",
       "localPath": "Gbzb1oLCBI-20260314-8.webp",
       "filename": "Gbzb1oLCBI-20260314-8.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Gbzb1oLCBI-20260314-8-480w.webp"
     },
     {
       "objectId": "aQEisocBzZ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f919854eadb65b89d2e3818d56d3b51f_20260313-100.webp",
       "localPath": "aQEisocBzZ-20260313-100.webp",
       "filename": "aQEisocBzZ-20260313-100.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/aQEisocBzZ-20260313-100-480w.webp"
     },
     {
       "objectId": "wWxnLqTnU7",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a39d0502f9bf6c147a250a58c0ac09ce_20260313-67.webp",
       "localPath": "wWxnLqTnU7-20260313-67.webp",
       "filename": "wWxnLqTnU7-20260313-67.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/wWxnLqTnU7-20260313-67-480w.webp"
     },
     {
       "objectId": "nHYf7SHQ9F",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a31fbb695b75f786da16e37eaf1f24a3_20260313-60.webp",
       "localPath": "nHYf7SHQ9F-20260313-60.webp",
       "filename": "nHYf7SHQ9F-20260313-60.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/nHYf7SHQ9F-20260313-60-480w.webp"
     },
     {
       "objectId": "F7O2duHXk4",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/950a1184fbf9465b59b8e8ffaf1e3275_20260313-58.webp",
       "localPath": "F7O2duHXk4-20260313-58.webp",
       "filename": "F7O2duHXk4-20260313-58.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/F7O2duHXk4-20260313-58-480w.webp"
     },
     {
       "objectId": "UDCGEKk3eU",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/dc1bfd04397f7292eb3d122fed84a35c_20260313-57.webp",
       "localPath": "UDCGEKk3eU-20260313-57.webp",
       "filename": "UDCGEKk3eU-20260313-57.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/UDCGEKk3eU-20260313-57-480w.webp"
     },
     {
       "objectId": "qz5Rj6Wup7",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c290d71386774d3adc0178029b3438c6_20260313-44.webp",
       "localPath": "qz5Rj6Wup7-20260313-44.webp",
       "filename": "qz5Rj6Wup7-20260313-44.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/qz5Rj6Wup7-20260313-44-480w.webp"
     },
     {
       "objectId": "jd5anEQUu9",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6ff0bc32b7be3bc4422ef375cd29f6e0_20260313-42.webp",
       "localPath": "jd5anEQUu9-20260313-42.webp",
       "filename": "jd5anEQUu9-20260313-42.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/jd5anEQUu9-20260313-42-480w.webp"
     },
     {
       "objectId": "75lXrnrE5V",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/19a827f79ec43756c17772da1ff1ee14_20260313-29.webp",
       "localPath": "75lXrnrE5V-20260313-29.webp",
       "filename": "75lXrnrE5V-20260313-29.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/75lXrnrE5V-20260313-29-480w.webp"
     },
     {
       "objectId": "WDZPWsFsop",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9ade82f7d94c7b6b789f46cb570f3599_20260313-26.webp",
       "localPath": "WDZPWsFsop-20260313-26.webp",
       "filename": "WDZPWsFsop-20260313-26.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/WDZPWsFsop-20260313-26-480w.webp"
     },
     {
       "objectId": "m2lDaEHjng",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/50e94472f03c6fbb72943da6bb8ff3fd_20260313-11.webp",
       "localPath": "m2lDaEHjng-20260313-11.webp",
       "filename": "m2lDaEHjng-20260313-11.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/m2lDaEHjng-20260313-11-480w.webp"
     },
     {
       "objectId": "boEUHA0Iv6",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/85a82d3020caa76093ca796c3c7465c1_20260313-1.webp",
       "localPath": "boEUHA0Iv6-20260313-1.webp",
       "filename": "boEUHA0Iv6-20260313-1.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/boEUHA0Iv6-20260313-1-480w.webp"
     },
     {
       "objectId": "9JDNP9wJcC",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a1d2d4770ca232fa7504a1c0e2741af0_20260312-79.webp",
       "localPath": "9JDNP9wJcC-20260312-79.webp",
       "filename": "9JDNP9wJcC-20260312-79.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/9JDNP9wJcC-20260312-79-480w.webp"
     },
     {
       "objectId": "eOQU84IChS",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c106ce85c56b92a1b86540c41ebe753b_20260312-78.webp",
       "localPath": "eOQU84IChS-20260312-78.webp",
       "filename": "eOQU84IChS-20260312-78.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/eOQU84IChS-20260312-78-480w.webp"
     },
     {
       "objectId": "Vct7yxbo0H",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/3820c8ff54f5af296d9b68c239f95d83_20260312-62.webp",
       "localPath": "Vct7yxbo0H-20260312-62.webp",
       "filename": "Vct7yxbo0H-20260312-62.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Vct7yxbo0H-20260312-62-480w.webp"
     },
     {
       "objectId": "sAADwoeXbq",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/2dcb25fc8f8122777a79a8ea32124990_20260312-52.webp",
       "localPath": "sAADwoeXbq-20260312-52.webp",
       "filename": "sAADwoeXbq-20260312-52.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/sAADwoeXbq-20260312-52-480w.webp"
     },
     {
       "objectId": "TNvHLHQbGc",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bfe839aff39f26822d7d8511d908ff53_20260312-51.webp",
       "localPath": "TNvHLHQbGc-20260312-51.webp",
       "filename": "TNvHLHQbGc-20260312-51.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/TNvHLHQbGc-20260312-51-480w.webp"
     },
     {
       "objectId": "VydzpwAwfX",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9aef108e36ad227a9a510214cdf76021_20260312-49.webp",
       "localPath": "VydzpwAwfX-20260312-49.webp",
       "filename": "VydzpwAwfX-20260312-49.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/VydzpwAwfX-20260312-49-480w.webp"
     },
     {
       "objectId": "YfWHtx0BfZ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d79362b07af298ae7ea613017b9834ee_20260312-26.webp",
       "localPath": "YfWHtx0BfZ-20260312-26.webp",
       "filename": "YfWHtx0BfZ-20260312-26.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/YfWHtx0BfZ-20260312-26-480w.webp"
     },
     {
       "objectId": "Il63TdewZU",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/874531965721837effae4e427734bf5a_20260312-25.webp",
       "localPath": "Il63TdewZU-20260312-25.webp",
       "filename": "Il63TdewZU-20260312-25.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Il63TdewZU-20260312-25-480w.webp"
     },
     {
       "objectId": "6f6QEYvjFG",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f5881b6af901a79f25627c2b161a3b67_20260312-24.webp",
       "localPath": "6f6QEYvjFG-20260312-24.webp",
       "filename": "6f6QEYvjFG-20260312-24.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/6f6QEYvjFG-20260312-24-480w.webp"
     },
     {
       "objectId": "RPEsMgtAzz",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/3803a5c1bb9a21be49123f90cd58d05c_20260312-15.webp",
       "localPath": "RPEsMgtAzz-20260312-15.webp",
       "filename": "RPEsMgtAzz-20260312-15.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/RPEsMgtAzz-20260312-15-480w.webp"
     },
     {
       "objectId": "KeudDRvezg",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/83a8c921555063cdc20089e85086a085_20260312-13.webp",
       "localPath": "KeudDRvezg-20260312-13.webp",
       "filename": "KeudDRvezg-20260312-13.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/KeudDRvezg-20260312-13-480w.webp"
     },
     {
       "objectId": "FpgXxz24nq",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/952b4d15d0f57682e6fe2feaafe3579c_20260312-65.webp",
       "localPath": "FpgXxz24nq-20260312-65.webp",
       "filename": "FpgXxz24nq-20260312-65.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/FpgXxz24nq-20260312-65-480w.webp"
     },
     {
       "objectId": "y8KUBxgHIg",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/40351d358e30ed47adce71230c5633a3_jens_kirsch_2026_gesch.jpg",
       "localPath": "y8KUBxgHIg-jens_kirsch_2026_gesch.jpg",
       "filename": "y8KUBxgHIg-jens_kirsch_2026_gesch.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/y8KUBxgHIg-jens_kirsch_2026_gesch-480w.webp"
     },
     {
       "objectId": "T7kkdsnGgT",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/06c39c7c33c18ea549e98a1134f2e1cc_Header%20DGK_Rundmail.jpg",
       "localPath": "T7kkdsnGgT-Header DGK_Rundmail.jpg",
       "filename": "T7kkdsnGgT-Header DGK_Rundmail.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/T7kkdsnGgT-Header DGK_Rundmail-480w.webp"
     },
     {
       "objectId": "DRtpJ5QCP2",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f82b8fea0513667e502ec1b549a0e3a6_Header%20DGK_Rundmail.jpg",
       "localPath": "DRtpJ5QCP2-Header DGK_Rundmail.jpg",
       "filename": "DRtpJ5QCP2-Header DGK_Rundmail.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DRtpJ5QCP2-Header DGK_Rundmail-480w.webp"
     },
     {
       "objectId": "SXN9MW5qhx",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/65de0bd2e5fa5479c5a131c6e8226246_Hospitation%20Hillary%20Mabeya%20-%20geschn.jpeg",
       "localPath": "SXN9MW5qhx-Hospitation Hillary Mabeya.jpeg",
       "filename": "SXN9MW5qhx-Hospitation Hillary Mabeya.jpeg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/SXN9MW5qhx-Hospitation Hillary Mabeya-480w.webp"
     },
     {
       "objectId": "PcQDa7mgEx",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c34f19bfaf1782287d896d7da8812d66_karoline_horisberger.jpg",
       "localPath": "PcQDa7mgEx-karoline_horisberger.jpg",
       "filename": "PcQDa7mgEx-karoline_horisberger.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/PcQDa7mgEx-karoline_horisberger-480w.webp"
     },
     {
       "objectId": "97XB7tBTyq",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/2847dfd1777e0a01d7dc22d59180970d_tabize.jpg",
       "localPath": "97XB7tBTyq-tabize.jpg",
       "filename": "97XB7tBTyq-tabize.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/97XB7tBTyq-tabize-480w.webp"
     },
     {
       "objectId": "EnOak5EQZ3",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/908c04850f598639cff5800e7e4785ed_schmitz.png",
       "localPath": "EnOak5EQZ3-schmitz.png",
       "filename": "EnOak5EQZ3-schmitz.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/EnOak5EQZ3-schmitz-480w.webp"
     },
     {
       "objectId": "TNmEbfCbzD",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b9291a0b9dc9918c400d8bd2bb4886c2_OFA2687.webp",
       "localPath": "TNmEbfCbzD-Kongress.webp",
       "filename": "TNmEbfCbzD-Kongress.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/TNmEbfCbzD-Kongress-480w.webp"
     },
     {
       "objectId": "DK73tHIxGx",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9b90bfe5aa669b9fae96f5658d348069_OFA2676.webp",
       "localPath": "DK73tHIxGx-Kongress.webp",
       "filename": "DK73tHIxGx-Kongress.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DK73tHIxGx-Kongress-480w.webp"
     },
     {
       "objectId": "w7YPRWBj9y",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e515bb238fc817724a5a4b87b3f16ab9_OFA2575.webp",
       "localPath": "w7YPRWBj9y-Kongress.webp",
       "filename": "w7YPRWBj9y-Kongress.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/w7YPRWBj9y-Kongress-480w.webp"
     },
     {
       "objectId": "mBoR84ZoBS",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a4fb4a56e2648d27b9e0f56615de9e63_OFA2839.webp",
       "localPath": "mBoR84ZoBS-Kongress.webp",
       "filename": "mBoR84ZoBS-Kongress.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/mBoR84ZoBS-Kongress-480w.webp"
     },
     {
       "objectId": "EtjOGjveAz",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/061a0e053617bdf411da8fbb389bb4f2_OFA2773.webp",
       "localPath": "EtjOGjveAz-Kongress.webp",
       "filename": "EtjOGjveAz-Kongress.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/EtjOGjveAz-Kongress-480w.webp"
     },
     {
       "objectId": "dvHMC2TNuB",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8ba157fa4c7b16370d80fa7de5e2c11e_OFA2680.webp",
       "localPath": "dvHMC2TNuB-Kongress.webp",
       "filename": "dvHMC2TNuB-Kongress.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/dvHMC2TNuB-Kongress-480w.webp"
     },
     {
       "objectId": "MK7wuBE8Gx",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a795663a1c18d1ef740b8bc5495df95e_tabize.jpg",
       "localPath": "MK7wuBE8Gx-Kongress.jpg",
       "filename": "MK7wuBE8Gx-Kongress.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/MK7wuBE8Gx-Kongress-480w.webp"
     },
     {
       "objectId": "nDioOgq0oM",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a84b436f2b2c0825dd661fbf1e835980_dr_karoline_hoisberger.jpg",
       "localPath": "nDioOgq0oM-Horisberger.jpg",
       "filename": "nDioOgq0oM-Horisberger.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/nDioOgq0oM-Horisberger-480w.webp"
     },
     {
       "objectId": "XAY5zp8tdM",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a2c8ed1cb529a913445bdd69a21063a6_prae_kongress_stipendium_2026.jpg",
       "localPath": "XAY5zp8tdM-prae_kongress_stipendium_2026.jpg",
       "filename": "XAY5zp8tdM-prae_kongress_stipendium_2026.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/XAY5zp8tdM-prae_kongress_stipendium_2026-480w.webp"
     },
     {
       "objectId": "LdsrT1I8Wc",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b000fbe8cb7f621a90163cc569815999_dr_thomas_schiedeck.JPG",
       "localPath": "LdsrT1I8Wc-dr_thomas_schiedeck.JPG",
       "filename": "LdsrT1I8Wc-dr_thomas_schiedeck.JPG",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/LdsrT1I8Wc-dr_thomas_schiedeck-480w.webp"
     },
     {
       "objectId": "KE02rudnec",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/574d65d176d1936df15f2046900618dd_dgk_news_14_03_2025.jpg",
       "localPath": "KE02rudnec-dgk_news_14_03_2025.jpg",
       "filename": "KE02rudnec-dgk_news_14_03_2025.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/KE02rudnec-dgk_news_14_03_2025-480w.webp"
     },
     {
       "objectId": "jhDMQ41sOT",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/4907b24bf98a81377902a5f0064e3fa0_poster_preis_2023.jpg",
       "localPath": "jhDMQ41sOT-poster_preis_2023.jpg",
       "filename": "jhDMQ41sOT-poster_preis_2023.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/jhDMQ41sOT-poster_preis_2023-480w.webp"
     },
     {
       "objectId": "l47snaJiQW",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6df4e68e3f3a0f8a3c8c86f702ef21e5_jens_kirsch_2023.jpg",
       "localPath": "l47snaJiQW-jens_kirsch_2023.jpg",
       "filename": "l47snaJiQW-jens_kirsch_2023.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/l47snaJiQW-jens_kirsch_2023-480w.webp"
     },
     {
       "objectId": "DowI6gFpjU",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/78c801989eee66f028cea17e9f726df3_posterpreis_2024.jpg",
       "localPath": "DowI6gFpjU-posterpreis_2024.jpg",
       "filename": "DowI6gFpjU-posterpreis_2024.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DowI6gFpjU-posterpreis_2024-480w.webp"
     },
     {
       "objectId": "3VFCFC9lY9",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5b588efe420548664629b77e77c6c0d2_jens_kirsch_2024.jpg",
       "localPath": "3VFCFC9lY9-jens_kirsch_2024.jpg",
       "filename": "3VFCFC9lY9-jens_kirsch_2024.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/3VFCFC9lY9-jens_kirsch_2024-480w.webp"
     },
     {
       "objectId": "g526DVbpKG",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9c1c598b81aef811bfd3663a1bb77bfa_dr_florian_kuehn.jpg",
       "localPath": "g526DVbpKG-dr_florian_kuehn.jpg",
       "filename": "g526DVbpKG-dr_florian_kuehn.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/g526DVbpKG-dr_florian_kuehn-480w.webp"
     },
     {
       "objectId": "db7j8qCj6R",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/06417fe24043f1030a1529b89f36b0a9_dr_thorolf_hager.jpg",
       "localPath": "db7j8qCj6R-dr_thorolf_hager.jpg",
       "filename": "db7j8qCj6R-dr_thorolf_hager.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/db7j8qCj6R-dr_thorolf_hager-480w.webp"
     },
     {
       "objectId": "C3tuFErsAr",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f5388489f889a3c66833b9d320c287e0_dr_martin_kreis.jpg",
       "localPath": "C3tuFErsAr-dr_martin_kreis.jpg",
       "filename": "C3tuFErsAr-dr_martin_kreis.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/C3tuFErsAr-dr_martin_kreis-480w.webp"
     },
     {
       "objectId": "LNk4dTmZU6",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/088730a2ea4a65815c691b80af408d8d_dr_roland_croner%202.jpg",
       "localPath": "LNk4dTmZU6-dr_roland_croner 2.jpg",
       "filename": "LNk4dTmZU6-dr_roland_croner 2.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/LNk4dTmZU6-dr_roland_croner 2-480w.webp"
     },
     {
       "objectId": "DBchuGkjSc",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6f49442fce1d23acd083f3833ce41253_footer_background.jpg",
       "localPath": "DBchuGkjSc-footer_background.jpg",
       "filename": "DBchuGkjSc-footer_background.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DBchuGkjSc-footer_background-480w.webp"
     },
     {
       "objectId": "nMnz0IBANX",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/19df7cb3f8431a7be7ad0c1584a76e60_NDK_Unterstuetzer_Logo.png",
       "localPath": "nMnz0IBANX-NDK_Unterstuetzer_Logo.png",
       "filename": "nMnz0IBANX-NDK_Unterstuetzer_Logo.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/nMnz0IBANX-NDK_Unterstuetzer_Logo-480w.webp"
     },
     {
       "objectId": "uq0gZiCiQh",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b41112b9e74a49fdab5d6d272a689c43_dr_thomas_seufferlein.jpg",
       "localPath": "uq0gZiCiQh-dr_thomas_seufferlein.jpg",
       "filename": "uq0gZiCiQh-dr_thomas_seufferlein.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/uq0gZiCiQh-dr_thomas_seufferlein-480w.webp"
     },
     {
       "objectId": "3dn5x32FA1",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6f1a1ba0be5b7969d514f40cbf70e37c_dr_oliver_schwandner.jpg",
       "localPath": "3dn5x32FA1-dr_oliver_schwandner.jpg",
       "filename": "3dn5x32FA1-dr_oliver_schwandner.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/3dn5x32FA1-dr_oliver_schwandner-480w.webp"
     },
     {
       "objectId": "pcN38mGDpp",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8cfe2c414d1513a728af7253edffd900_dr_felix_aigner.jpg",
       "localPath": "pcN38mGDpp-dr_felix_aigner.jpg",
       "filename": "pcN38mGDpp-dr_felix_aigner.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/pcN38mGDpp-dr_felix_aigner-480w.webp"
     },
     {
       "objectId": "wHCjtdxXUG",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5fb13a64224b4cee39380ddbe00c8990_dr_dieter_bussen.jpg",
       "localPath": "wHCjtdxXUG-dr_dieter_bussen.jpg",
       "filename": "wHCjtdxXUG-dr_dieter_bussen.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/wHCjtdxXUG-dr_dieter_bussen-480w.webp"
     },
     {
       "objectId": "BAY8cx5ZbU",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/37f652d53399df2defb86e49c09a080a_dr_alexander_herold.jpg",
       "localPath": "BAY8cx5ZbU-dr_alexander_herold.jpg",
       "filename": "BAY8cx5ZbU-dr_alexander_herold.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/BAY8cx5ZbU-dr_alexander_herold-480w.webp"
     },
     {
       "objectId": "idIJFXKDcT",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/fd7c23e3160e2fdf0aff89e968c45f95_dr_reinhard_ruppert.jpg",
       "localPath": "idIJFXKDcT-dr_reinhard_ruppert.jpg",
       "filename": "idIJFXKDcT-dr_reinhard_ruppert.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/idIJFXKDcT-dr_reinhard_ruppert-480w.webp"
     },
     {
       "objectId": "82GBDtWB3g",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c51b9a8a7cd1044e2a0aeac790ac34a4_dr_reinhard_ruppert.jpg",
       "localPath": "82GBDtWB3g-dr_reinhard_ruppert.jpg",
       "filename": "82GBDtWB3g-dr_reinhard_ruppert.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/82GBDtWB3g-dr_reinhard_ruppert-480w.webp"
     },
     {
       "objectId": "eJ254yh5Ko",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a27a52f58962201d29e6da25775b81ca_Prof_Hager.jpg",
       "localPath": "eJ254yh5Ko-Prof_Hager.jpg",
       "filename": "eJ254yh5Ko-Prof_Hager.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/eJ254yh5Ko-Prof_Hager-480w.webp"
     },
     {
       "objectId": "PHHqIK3TpZ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/eb1031b4753dcb20d8121a98ace1d6f3_Prof_Dr_Dieter-Bussen.jpg",
       "localPath": "PHHqIK3TpZ-Prof_Dr_Dieter-Bussen.jpg",
       "filename": "PHHqIK3TpZ-Prof_Dr_Dieter-Bussen.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/PHHqIK3TpZ-Prof_Dr_Dieter-Bussen-480w.webp"
     },
     {
       "objectId": "TaKJMHbmIL",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9f0c84496724a0ca8e9955ed17024a1d_Prof_Dr_Alexander-Herold.jpg",
       "localPath": "TaKJMHbmIL-Prof_Dr_Alexander-Herold.jpg",
       "filename": "TaKJMHbmIL-Prof_Dr_Alexander-Herold.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/TaKJMHbmIL-Prof_Dr_Alexander-Herold-480w.webp"
     },
     {
       "objectId": "vrcH743moh",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5667557f7182dc18f68e7054f51df4dd_Posterpreis_1_md.jpg",
       "localPath": "vrcH743moh-Posterpreis_1_md.jpg",
       "filename": "vrcH743moh-Posterpreis_1_md.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/vrcH743moh-Posterpreis_1_md-480w.webp"
     },
     {
       "objectId": "3gW9mDVOij",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d412ccbe7c390397df8951ceee903be7_coloproctology_header.jpg",
       "localPath": "3gW9mDVOij-coloproctology_header.jpg",
       "filename": "3gW9mDVOij-coloproctology_header.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/3gW9mDVOij-coloproctology_header-480w.webp"
     },
     {
       "objectId": "M26QRG9ipf",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/1bb9a86a657b71a87ef0149550596086_Kongress_2024.jpg",
       "localPath": "M26QRG9ipf-Kongress_2024.jpg",
       "filename": "M26QRG9ipf-Kongress_2024.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/M26QRG9ipf-Kongress_2024-480w.webp"
     },
     {
       "objectId": "5jrxpBfd2Z",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9414c0901cbef2e6fa32e496b600e7de_programm_2026.jpg",
       "localPath": "5jrxpBfd2Z-programm_2026.jpg",
       "filename": "5jrxpBfd2Z-programm_2026.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/5jrxpBfd2Z-programm_2026-480w.webp"
     },
     {
       "objectId": "Uu1cFkT7EZ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d300738c065badae4d610b42dde4914e_Dr_Reinhard-Ruppert.jpg",
       "localPath": "Uu1cFkT7EZ-Dr_Reinhard-Ruppert.jpg",
       "filename": "Uu1cFkT7EZ-Dr_Reinhard-Ruppert.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Uu1cFkT7EZ-Dr_Reinhard-Ruppert-480w.webp"
     },
     {
       "objectId": "jN4tCXdJBG",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9a8461cb2a3b1bcae22254aa43241e65_Prof_Dr_Felix-Aigner.jpg",
       "localPath": "jN4tCXdJBG-Prof_Dr_Felix-Aigner.jpg",
       "filename": "jN4tCXdJBG-Prof_Dr_Felix-Aigner.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/jN4tCXdJBG-Prof_Dr_Felix-Aigner-480w.webp"
     },
     {
       "objectId": "8ieZGlyvpQ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5ceb9fc78b6117c684e7183f9c905cbe_Prof_Dr_Martin-E_Kreis.jpg",
       "localPath": "8ieZGlyvpQ-Prof_Dr_Martin-E_Kreis.jpg",
       "filename": "8ieZGlyvpQ-Prof_Dr_Martin-E_Kreis.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/8ieZGlyvpQ-Prof_Dr_Martin-E_Kreis-480w.webp"
     },
     {
       "objectId": "Nxa6qL4FMB",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0a80ad797965b63b2a72353f416690e8_Prof_Dr_Florian_Kuehn.jpg",
       "localPath": "Nxa6qL4FMB-Prof_Dr_Florian_Kuehn.jpg",
       "filename": "Nxa6qL4FMB-Prof_Dr_Florian_Kuehn.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Nxa6qL4FMB-Prof_Dr_Florian_Kuehn-480w.webp"
     },
     {
       "objectId": "P0osG16PaW",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/21dbd1b8b12a4be87afa392774419910_Prof_Dr_Oliver-Schwandner.jpg",
       "localPath": "P0osG16PaW-Prof_Dr_Oliver-Schwandner.jpg",
       "filename": "P0osG16PaW-Prof_Dr_Oliver-Schwandner.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/P0osG16PaW-Prof_Dr_Oliver-Schwandner-480w.webp"
     },
     {
       "objectId": "HypqVR3uFf",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/4e4704c085b265af43dc95c947f90ac9_Prof_Roland_Croner.jpg",
       "localPath": "HypqVR3uFf-Prof_Roland_Croner.jpg",
       "filename": "HypqVR3uFf-Prof_Roland_Croner.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/HypqVR3uFf-Prof_Roland_Croner-480w.webp"
     },
     {
       "objectId": "9CN05AZ8x6",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/2223f0da3fee991749726b180ee1ba3b_Prof_Dr_Thomas-Seufferlein.jpg",
       "localPath": "9CN05AZ8x6-Prof_Dr_Thomas-Seufferlein.jpg",
       "filename": "9CN05AZ8x6-Prof_Dr_Thomas-Seufferlein.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/9CN05AZ8x6-Prof_Dr_Thomas-Seufferlein-480w.webp"
     },
     {
       "objectId": "aVPYus4jlJ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f1bd74b0f0e3e1ba7b17bd391200b88b_Prof_Dr_Thomas-Schiedeck.jpg",
       "localPath": "aVPYus4jlJ-Prof_Dr_Thomas-Schiedeck.jpg",
       "filename": "aVPYus4jlJ-Prof_Dr_Thomas-Schiedeck.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/aVPYus4jlJ-Prof_Dr_Thomas-Schiedeck-480w.webp"
     },
     {
       "objectId": "XE5BTjrGIp",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/13b542aa31f391ba4065d960ea0abe95__OFA2908.jpg",
       "localPath": "XE5BTjrGIp-OFA2908.jpg",
       "filename": "XE5BTjrGIp-OFA2908.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/XE5BTjrGIp-OFA2908-480w.webp"
     },
     {
       "objectId": "rZRyAWxhc4",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/cd7fdcc7d0d940004f4b855a5fe8e2f7_Manu_stable_md.jpg",
       "localPath": "rZRyAWxhc4-Manuals_2_Auflage_xs.jpg",
       "filename": "rZRyAWxhc4-Manuals_2_Auflage_xs.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/rZRyAWxhc4-Manuals_2_Auflage_xs-480w.webp"
     },
     {
       "objectId": "exwby21oGa",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/11bf3b688b3d729cd36dd3947ca39c9f_preis-2025.jpg",
       "localPath": "exwby21oGa-preis-2025.jpg",
       "filename": "exwby21oGa-preis-2025.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/exwby21oGa-preis-2025-480w.webp"
     },
     {
       "objectId": "GvbvVsaPkN",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f13ea3f0e39917efa77850e6816dad6a_Logo_DGK_lettering.webp",
       "localPath": "GvbvVsaPkN-Logo_DGK_lettering.webp",
       "filename": "GvbvVsaPkN-Logo_DGK_lettering.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/GvbvVsaPkN-Logo_DGK_lettering-480w.webp"
     }
   ],
   "videos": [
@@ -5094,7 +5195,8 @@
         "name": "5a7d8ca691d9686423795b6ef7d9db10_Kongress am Park bei Daemmerung.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5a7d8ca691d9686423795b6ef7d9db10_Kongress%20am%20Park%20bei%20Daemmerung.jpg"
       },
-      "filePath": "mPpSBgqNT9-Kongress am Park bei Dämmerung.jpg"
+      "filePath": "mPpSBgqNT9-Kongress am Park bei Dämmerung.jpg",
+      "thumbnailPath": "thumbnails/mPpSBgqNT9-Kongress am Park bei Dämmerung-480w.webp"
     },
     {
       "id": "SW1hZ2U6azNVeWFzZEF1QQ==",
@@ -5107,7 +5209,8 @@
         "name": "b850e00543509670eff9f0e7f34a829b_Wissenschaft lebt vom Austauschneu.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b850e00543509670eff9f0e7f34a829b_Wissenschaft%20lebt%20vom%20Austauschneu.jpg"
       },
-      "filePath": "k3UyasdAuA-Wissenschaft lebt vom Austauschneu.jpg"
+      "filePath": "k3UyasdAuA-Wissenschaft lebt vom Austauschneu.jpg",
+      "thumbnailPath": "thumbnails/k3UyasdAuA-Wissenschaft lebt vom Austauschneu-480w.webp"
     },
     {
       "id": "SW1hZ2U6MTFndVFVZmJERA==",
@@ -5120,7 +5223,8 @@
         "name": "937dd3c08a3b6475d2f1b9289467d08a_Wissenschaft lebt vom Austausch.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/937dd3c08a3b6475d2f1b9289467d08a_Wissenschaft%20lebt%20vom%20Austausch.jpg"
       },
-      "filePath": "11guQUfbDD-Wissenschaft lebt vom Austausch.jpg"
+      "filePath": "11guQUfbDD-Wissenschaft lebt vom Austausch.jpg",
+      "thumbnailPath": "thumbnails/11guQUfbDD-Wissenschaft lebt vom Austausch-480w.webp"
     },
     {
       "id": "SW1hZ2U6Y1lxdWRnMnJxZA==",
@@ -5133,7 +5237,8 @@
         "name": "a264a72fcd6c21c61bc3bcd7e2fc1492_Wissenschaft lebt vom Austausch.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a264a72fcd6c21c61bc3bcd7e2fc1492_Wissenschaft%20lebt%20vom%20Austausch.jpg"
       },
-      "filePath": "cYqudg2rqd-Wissenschaft lebt vom Austausch.jpg"
+      "filePath": "cYqudg2rqd-Wissenschaft lebt vom Austausch.jpg",
+      "thumbnailPath": "thumbnails/cYqudg2rqd-Wissenschaft lebt vom Austausch-480w.webp"
     },
     {
       "id": "SW1hZ2U6T1lwRXZYWmk4eA==",
@@ -5146,7 +5251,8 @@
         "name": "8b5e82fbbb6f37c7ac487cdd44371bb4_Wissenschaftliche Preise_Infografik.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8b5e82fbbb6f37c7ac487cdd44371bb4_Wissenschaftliche%20Preise_Infografik.jpg"
       },
-      "filePath": "OYpEvXZi8x-Wissenschaftliche Preise_Infografik.jpg"
+      "filePath": "OYpEvXZi8x-Wissenschaftliche Preise_Infografik.jpg",
+      "thumbnailPath": "thumbnails/OYpEvXZi8x-Wissenschaftliche Preise_Infografik-480w.webp"
     },
     {
       "id": "SW1hZ2U6d3I1UlBQQkxSZg==",
@@ -5159,7 +5265,8 @@
         "name": "06de06d660589b01431b042130151298_DGK_Einreichungsschluss_Newsletter_600px.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/06de06d660589b01431b042130151298_DGK_Einreichungsschluss_Newsletter_600px.jpg"
       },
-      "filePath": "wr5RPPBLRf-DGK_Einreichungsschluss_Newsletter_600px.jpg"
+      "filePath": "wr5RPPBLRf-DGK_Einreichungsschluss_Newsletter_600px.jpg",
+      "thumbnailPath": "thumbnails/wr5RPPBLRf-DGK_Einreichungsschluss_Newsletter_600px-480w.webp"
     },
     {
       "id": "SW1hZ2U6cGNacWRLT1FnRA==",
@@ -5172,7 +5279,8 @@
         "name": "ab6f429fb4785427eb3cd3c38e72ba44_Wissenschaftliche_Preise_DGK_einzeln_blauer_Rahmen.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ab6f429fb4785427eb3cd3c38e72ba44_Wissenschaftliche_Preise_DGK_einzeln_blauer_Rahmen.jpg"
       },
-      "filePath": "pcZqdKOQgD-Wissenschaftliche_Preise_DGK_einzeln_blauer_Rahmen.jpg"
+      "filePath": "pcZqdKOQgD-Wissenschaftliche_Preise_DGK_einzeln_blauer_Rahmen.jpg",
+      "thumbnailPath": "thumbnails/pcZqdKOQgD-Wissenschaftliche_Preise_DGK_einzeln_blauer_Rahmen-480w.webp"
     },
     {
       "id": "SW1hZ2U6YkQ0WFQ2SFRsSg==",
@@ -5185,7 +5293,8 @@
         "name": "a8b836a67681c47f9d3c1283462f7e46_wiss_preise.png",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a8b836a67681c47f9d3c1283462f7e46_wiss_preise.png"
       },
-      "filePath": "bD4XT6HTlJ-wiss_preise.png"
+      "filePath": "bD4XT6HTlJ-wiss_preise.png",
+      "thumbnailPath": "thumbnails/bD4XT6HTlJ-wiss_preise-480w.webp"
     },
     {
       "id": "SW1hZ2U6UWUyb1ZURW5HSw==",
@@ -5198,7 +5307,8 @@
         "name": "56bb05b27597cd35cea79c7d79b362ad_call_for_abstracts.png",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/56bb05b27597cd35cea79c7d79b362ad_call_for_abstracts.png"
       },
-      "filePath": "Qe2oVTEnGK-call_for_abstracts.png"
+      "filePath": "Qe2oVTEnGK-call_for_abstracts.png",
+      "thumbnailPath": "thumbnails/Qe2oVTEnGK-call_for_abstracts-480w.webp"
     },
     {
       "id": "SW1hZ2U6M2JqNEN2R3FKcg==",
@@ -5211,7 +5321,8 @@
         "name": "00d9504c71046f07bb0f1df35fd6dda1_Health Summit.png",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/00d9504c71046f07bb0f1df35fd6dda1_Health%20Summit.png"
       },
-      "filePath": "3bj4CvGqJr-Health Summit.png"
+      "filePath": "3bj4CvGqJr-Health Summit.png",
+      "thumbnailPath": "thumbnails/3bj4CvGqJr-Health Summit-480w.webp"
     },
     {
       "id": "SW1hZ2U6MGdwcXdUSlBwTQ==",
@@ -5224,7 +5335,8 @@
         "name": "9e8d91393793708cd816358999e10936_DGK2027 - Header neu.png",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9e8d91393793708cd816358999e10936_DGK2027%20-%20Header%20neu.png"
       },
-      "filePath": "0gpqwTJPpM-DGK2027 - Header neu.png"
+      "filePath": "0gpqwTJPpM-DGK2027 - Header neu.png",
+      "thumbnailPath": "thumbnails/0gpqwTJPpM-DGK2027 - Header neu-480w.webp"
     },
     {
       "id": "SW1hZ2U6Uk1hY3ZJdTdDQw==",
@@ -5248,7 +5360,8 @@
         "name": "e3783c274a9ab74da72eb556297d1fc5_Bild5.png",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e3783c274a9ab74da72eb556297d1fc5_Bild5.png"
       },
-      "filePath": "RMacvIu7CC-Bild5.png"
+      "filePath": "RMacvIu7CC-Bild5.png",
+      "thumbnailPath": "thumbnails/RMacvIu7CC-Bild5-480w.webp"
     },
     {
       "id": "SW1hZ2U6Z1J2RHZ4bGFBUA==",
@@ -5261,7 +5374,8 @@
         "name": "75d49ede1b8eb231806348206c115245_TA Hager Thorolf Kronach.png",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/75d49ede1b8eb231806348206c115245_TA%20Hager%20Thorolf%20Kronach.png"
       },
-      "filePath": "gRvDvxlaAP-TA Hager Thorolf Kronach.png"
+      "filePath": "gRvDvxlaAP-TA Hager Thorolf Kronach.png",
+      "thumbnailPath": "thumbnails/gRvDvxlaAP-TA Hager Thorolf Kronach-480w.webp"
     },
     {
       "id": "SW1hZ2U6dzNVQjFDUGllVQ==",
@@ -5274,7 +5388,8 @@
         "name": "38a1958244ec9154593de4333286d002_Logo_DGK_mit_Bez.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/38a1958244ec9154593de4333286d002_Logo_DGK_mit_Bez.jpg"
       },
-      "filePath": "w3UB1CPieU-Logo_DGK_mit_Bez.jpg"
+      "filePath": "w3UB1CPieU-Logo_DGK_mit_Bez.jpg",
+      "thumbnailPath": "thumbnails/w3UB1CPieU-Logo_DGK_mit_Bez-480w.webp"
     },
     {
       "id": "SW1hZ2U6YXQwVDFpZnN5RQ==",
@@ -5293,7 +5408,8 @@
         "name": "ea8bdc9f1a2536fe60515f8fea4963c2_DGK2027_STD.png",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ea8bdc9f1a2536fe60515f8fea4963c2_DGK2027_STD.png"
       },
-      "filePath": "at0T1ifsyE-Poster_Kongress_2027.png"
+      "filePath": "at0T1ifsyE-Poster_Kongress_2027.png",
+      "thumbnailPath": "thumbnails/at0T1ifsyE-Poster_Kongress_2027-480w.webp"
     },
     {
       "id": "SW1hZ2U6clhOSURqWXhTUA==",
@@ -5306,7 +5422,8 @@
         "name": "0d74bf6d6d809190a07d121d3729f2f8_von Ehrlich.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0d74bf6d6d809190a07d121d3729f2f8_von%20Ehrlich.jpg"
       },
-      "filePath": "rXNIDjYxSP-von Ehrlich.jpg"
+      "filePath": "rXNIDjYxSP-von Ehrlich.jpg",
+      "thumbnailPath": "thumbnails/rXNIDjYxSP-von Ehrlich-480w.webp"
     },
     {
       "id": "SW1hZ2U6ZEdHb2pRV1VlcQ==",
@@ -5319,7 +5436,8 @@
         "name": "d4a1ec4bcd9d49c6c9a8aa510ddd82c9_Logo_DGK_mit_Bez.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d4a1ec4bcd9d49c6c9a8aa510ddd82c9_Logo_DGK_mit_Bez.jpg"
       },
-      "filePath": "dGGojQWUeq-Logo_DGK_mit_Bez.jpg"
+      "filePath": "dGGojQWUeq-Logo_DGK_mit_Bez.jpg",
+      "thumbnailPath": "thumbnails/dGGojQWUeq-Logo_DGK_mit_Bez-480w.webp"
     },
     {
       "id": "SW1hZ2U6OW9JaDlVRDhFaA==",
@@ -5332,7 +5450,8 @@
         "name": "26c847e4b3b778e2052c8293735a80c0_Schardey_Jens Kirsch.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/26c847e4b3b778e2052c8293735a80c0_Schardey_Jens%20Kirsch.jpg"
       },
-      "filePath": "9oIh9UD8Eh-Schardey_Jens Kirsch.jpg"
+      "filePath": "9oIh9UD8Eh-Schardey_Jens Kirsch.jpg",
+      "thumbnailPath": "thumbnails/9oIh9UD8Eh-Schardey_Jens Kirsch-480w.webp"
     },
     {
       "id": "SW1hZ2U6ZXU1YTRSN3lIRg==",
@@ -5351,7 +5470,8 @@
         "name": "9b74f9b1fff24c37f12760c242cfd8ea_Programmheft.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9b74f9b1fff24c37f12760c242cfd8ea_Programmheft.jpg"
       },
-      "filePath": "eu5a4R7yHF-Programmheft.jpg"
+      "filePath": "eu5a4R7yHF-Programmheft.jpg",
+      "thumbnailPath": "thumbnails/eu5a4R7yHF-Programmheft-480w.webp"
     },
     {
       "id": "SW1hZ2U6RjF6S0hpTkhJOA==",
@@ -5364,7 +5484,8 @@
         "name": "9d509276ced21f34cf9bc46cdbebfa99_Short.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9d509276ced21f34cf9bc46cdbebfa99_Short.jpg"
       },
-      "filePath": "F1zKHiNHI8-Short.jpg"
+      "filePath": "F1zKHiNHI8-Short.jpg",
+      "thumbnailPath": "thumbnails/F1zKHiNHI8-Short-480w.webp"
     },
     {
       "id": "SW1hZ2U6R3ZKOFpEeDVaMw==",
@@ -5383,7 +5504,8 @@
         "name": "6ec2e0c5984a314188e3b747ad3d6221_Stelzner_geaendert.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6ec2e0c5984a314188e3b747ad3d6221_Stelzner_geaendert.jpg"
       },
-      "filePath": "GvJ8ZDx5Z3-Stelzner_geändert.jpg"
+      "filePath": "GvJ8ZDx5Z3-Stelzner_geändert.jpg",
+      "thumbnailPath": "thumbnails/GvJ8ZDx5Z3-Stelzner_geändert-480w.webp"
     },
     {
       "id": "SW1hZ2U6UXh6RXFiRGxrSQ==",
@@ -5396,7 +5518,8 @@
         "name": "74939d5d7180ab73af81fe59a52ba58c_20260314-10.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/74939d5d7180ab73af81fe59a52ba58c_20260314-10.webp"
       },
-      "filePath": "QxzEqbDlkI-20260314-10.webp"
+      "filePath": "QxzEqbDlkI-20260314-10.webp",
+      "thumbnailPath": "thumbnails/QxzEqbDlkI-20260314-10-480w.webp"
     },
     {
       "id": "SW1hZ2U6R2J6YjFvTENCSQ==",
@@ -5409,7 +5532,8 @@
         "name": "d275dadca3eaa177e3439f08d834ffcc_20260314-8.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d275dadca3eaa177e3439f08d834ffcc_20260314-8.webp"
       },
-      "filePath": "Gbzb1oLCBI-20260314-8.webp"
+      "filePath": "Gbzb1oLCBI-20260314-8.webp",
+      "thumbnailPath": "thumbnails/Gbzb1oLCBI-20260314-8-480w.webp"
     },
     {
       "id": "SW1hZ2U6YVFFaXNvY0J6Wg==",
@@ -5422,7 +5546,8 @@
         "name": "f919854eadb65b89d2e3818d56d3b51f_20260313-100.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f919854eadb65b89d2e3818d56d3b51f_20260313-100.webp"
       },
-      "filePath": "aQEisocBzZ-20260313-100.webp"
+      "filePath": "aQEisocBzZ-20260313-100.webp",
+      "thumbnailPath": "thumbnails/aQEisocBzZ-20260313-100-480w.webp"
     },
     {
       "id": "SW1hZ2U6d1d4bkxxVG5VNw==",
@@ -5435,7 +5560,8 @@
         "name": "a39d0502f9bf6c147a250a58c0ac09ce_20260313-67.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a39d0502f9bf6c147a250a58c0ac09ce_20260313-67.webp"
       },
-      "filePath": "wWxnLqTnU7-20260313-67.webp"
+      "filePath": "wWxnLqTnU7-20260313-67.webp",
+      "thumbnailPath": "thumbnails/wWxnLqTnU7-20260313-67-480w.webp"
     },
     {
       "id": "SW1hZ2U6bkhZZjdTSFE5Rg==",
@@ -5448,7 +5574,8 @@
         "name": "a31fbb695b75f786da16e37eaf1f24a3_20260313-60.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a31fbb695b75f786da16e37eaf1f24a3_20260313-60.webp"
       },
-      "filePath": "nHYf7SHQ9F-20260313-60.webp"
+      "filePath": "nHYf7SHQ9F-20260313-60.webp",
+      "thumbnailPath": "thumbnails/nHYf7SHQ9F-20260313-60-480w.webp"
     },
     {
       "id": "SW1hZ2U6RjdPMmR1SFhrNA==",
@@ -5461,7 +5588,8 @@
         "name": "950a1184fbf9465b59b8e8ffaf1e3275_20260313-58.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/950a1184fbf9465b59b8e8ffaf1e3275_20260313-58.webp"
       },
-      "filePath": "F7O2duHXk4-20260313-58.webp"
+      "filePath": "F7O2duHXk4-20260313-58.webp",
+      "thumbnailPath": "thumbnails/F7O2duHXk4-20260313-58-480w.webp"
     },
     {
       "id": "SW1hZ2U6VURDR0VLazNlVQ==",
@@ -5474,7 +5602,8 @@
         "name": "dc1bfd04397f7292eb3d122fed84a35c_20260313-57.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/dc1bfd04397f7292eb3d122fed84a35c_20260313-57.webp"
       },
-      "filePath": "UDCGEKk3eU-20260313-57.webp"
+      "filePath": "UDCGEKk3eU-20260313-57.webp",
+      "thumbnailPath": "thumbnails/UDCGEKk3eU-20260313-57-480w.webp"
     },
     {
       "id": "SW1hZ2U6cXo1Umo2V3VwNw==",
@@ -5487,7 +5616,8 @@
         "name": "c290d71386774d3adc0178029b3438c6_20260313-44.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c290d71386774d3adc0178029b3438c6_20260313-44.webp"
       },
-      "filePath": "qz5Rj6Wup7-20260313-44.webp"
+      "filePath": "qz5Rj6Wup7-20260313-44.webp",
+      "thumbnailPath": "thumbnails/qz5Rj6Wup7-20260313-44-480w.webp"
     },
     {
       "id": "SW1hZ2U6amQ1YW5FUVV1OQ==",
@@ -5500,7 +5630,8 @@
         "name": "6ff0bc32b7be3bc4422ef375cd29f6e0_20260313-42.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6ff0bc32b7be3bc4422ef375cd29f6e0_20260313-42.webp"
       },
-      "filePath": "jd5anEQUu9-20260313-42.webp"
+      "filePath": "jd5anEQUu9-20260313-42.webp",
+      "thumbnailPath": "thumbnails/jd5anEQUu9-20260313-42-480w.webp"
     },
     {
       "id": "SW1hZ2U6NzVsWHJuckU1Vg==",
@@ -5513,7 +5644,8 @@
         "name": "19a827f79ec43756c17772da1ff1ee14_20260313-29.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/19a827f79ec43756c17772da1ff1ee14_20260313-29.webp"
       },
-      "filePath": "75lXrnrE5V-20260313-29.webp"
+      "filePath": "75lXrnrE5V-20260313-29.webp",
+      "thumbnailPath": "thumbnails/75lXrnrE5V-20260313-29-480w.webp"
     },
     {
       "id": "SW1hZ2U6V0RaUFdzRnNvcA==",
@@ -5526,7 +5658,8 @@
         "name": "9ade82f7d94c7b6b789f46cb570f3599_20260313-26.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9ade82f7d94c7b6b789f46cb570f3599_20260313-26.webp"
       },
-      "filePath": "WDZPWsFsop-20260313-26.webp"
+      "filePath": "WDZPWsFsop-20260313-26.webp",
+      "thumbnailPath": "thumbnails/WDZPWsFsop-20260313-26-480w.webp"
     },
     {
       "id": "SW1hZ2U6bTJsRGFFSGpuZw==",
@@ -5539,7 +5672,8 @@
         "name": "50e94472f03c6fbb72943da6bb8ff3fd_20260313-11.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/50e94472f03c6fbb72943da6bb8ff3fd_20260313-11.webp"
       },
-      "filePath": "m2lDaEHjng-20260313-11.webp"
+      "filePath": "m2lDaEHjng-20260313-11.webp",
+      "thumbnailPath": "thumbnails/m2lDaEHjng-20260313-11-480w.webp"
     },
     {
       "id": "SW1hZ2U6Ym9FVUhBMEl2Ng==",
@@ -5552,7 +5686,8 @@
         "name": "85a82d3020caa76093ca796c3c7465c1_20260313-1.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/85a82d3020caa76093ca796c3c7465c1_20260313-1.webp"
       },
-      "filePath": "boEUHA0Iv6-20260313-1.webp"
+      "filePath": "boEUHA0Iv6-20260313-1.webp",
+      "thumbnailPath": "thumbnails/boEUHA0Iv6-20260313-1-480w.webp"
     },
     {
       "id": "SW1hZ2U6OUpETlA5d0pjQw==",
@@ -5565,7 +5700,8 @@
         "name": "a1d2d4770ca232fa7504a1c0e2741af0_20260312-79.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a1d2d4770ca232fa7504a1c0e2741af0_20260312-79.webp"
       },
-      "filePath": "9JDNP9wJcC-20260312-79.webp"
+      "filePath": "9JDNP9wJcC-20260312-79.webp",
+      "thumbnailPath": "thumbnails/9JDNP9wJcC-20260312-79-480w.webp"
     },
     {
       "id": "SW1hZ2U6ZU9RVTg0SUNoUw==",
@@ -5578,7 +5714,8 @@
         "name": "c106ce85c56b92a1b86540c41ebe753b_20260312-78.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c106ce85c56b92a1b86540c41ebe753b_20260312-78.webp"
       },
-      "filePath": "eOQU84IChS-20260312-78.webp"
+      "filePath": "eOQU84IChS-20260312-78.webp",
+      "thumbnailPath": "thumbnails/eOQU84IChS-20260312-78-480w.webp"
     },
     {
       "id": "SW1hZ2U6VmN0N3l4Ym8wSA==",
@@ -5591,7 +5728,8 @@
         "name": "3820c8ff54f5af296d9b68c239f95d83_20260312-62.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/3820c8ff54f5af296d9b68c239f95d83_20260312-62.webp"
       },
-      "filePath": "Vct7yxbo0H-20260312-62.webp"
+      "filePath": "Vct7yxbo0H-20260312-62.webp",
+      "thumbnailPath": "thumbnails/Vct7yxbo0H-20260312-62-480w.webp"
     },
     {
       "id": "SW1hZ2U6c0FBRHdvZVhicQ==",
@@ -5604,7 +5742,8 @@
         "name": "2dcb25fc8f8122777a79a8ea32124990_20260312-52.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/2dcb25fc8f8122777a79a8ea32124990_20260312-52.webp"
       },
-      "filePath": "sAADwoeXbq-20260312-52.webp"
+      "filePath": "sAADwoeXbq-20260312-52.webp",
+      "thumbnailPath": "thumbnails/sAADwoeXbq-20260312-52-480w.webp"
     },
     {
       "id": "SW1hZ2U6VE52SExIUWJHYw==",
@@ -5617,7 +5756,8 @@
         "name": "bfe839aff39f26822d7d8511d908ff53_20260312-51.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bfe839aff39f26822d7d8511d908ff53_20260312-51.webp"
       },
-      "filePath": "TNvHLHQbGc-20260312-51.webp"
+      "filePath": "TNvHLHQbGc-20260312-51.webp",
+      "thumbnailPath": "thumbnails/TNvHLHQbGc-20260312-51-480w.webp"
     },
     {
       "id": "SW1hZ2U6VnlkenB3QXdmWA==",
@@ -5630,7 +5770,8 @@
         "name": "9aef108e36ad227a9a510214cdf76021_20260312-49.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9aef108e36ad227a9a510214cdf76021_20260312-49.webp"
       },
-      "filePath": "VydzpwAwfX-20260312-49.webp"
+      "filePath": "VydzpwAwfX-20260312-49.webp",
+      "thumbnailPath": "thumbnails/VydzpwAwfX-20260312-49-480w.webp"
     },
     {
       "id": "SW1hZ2U6WWZXSHR4MEJmWg==",
@@ -5643,7 +5784,8 @@
         "name": "d79362b07af298ae7ea613017b9834ee_20260312-26.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d79362b07af298ae7ea613017b9834ee_20260312-26.webp"
       },
-      "filePath": "YfWHtx0BfZ-20260312-26.webp"
+      "filePath": "YfWHtx0BfZ-20260312-26.webp",
+      "thumbnailPath": "thumbnails/YfWHtx0BfZ-20260312-26-480w.webp"
     },
     {
       "id": "SW1hZ2U6SWw2M1RkZXdaVQ==",
@@ -5656,7 +5798,8 @@
         "name": "874531965721837effae4e427734bf5a_20260312-25.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/874531965721837effae4e427734bf5a_20260312-25.webp"
       },
-      "filePath": "Il63TdewZU-20260312-25.webp"
+      "filePath": "Il63TdewZU-20260312-25.webp",
+      "thumbnailPath": "thumbnails/Il63TdewZU-20260312-25-480w.webp"
     },
     {
       "id": "SW1hZ2U6NmY2UUVZdmpGRw==",
@@ -5669,7 +5812,8 @@
         "name": "f5881b6af901a79f25627c2b161a3b67_20260312-24.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f5881b6af901a79f25627c2b161a3b67_20260312-24.webp"
       },
-      "filePath": "6f6QEYvjFG-20260312-24.webp"
+      "filePath": "6f6QEYvjFG-20260312-24.webp",
+      "thumbnailPath": "thumbnails/6f6QEYvjFG-20260312-24-480w.webp"
     },
     {
       "id": "SW1hZ2U6UlBFc01ndEF6eg==",
@@ -5682,7 +5826,8 @@
         "name": "3803a5c1bb9a21be49123f90cd58d05c_20260312-15.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/3803a5c1bb9a21be49123f90cd58d05c_20260312-15.webp"
       },
-      "filePath": "RPEsMgtAzz-20260312-15.webp"
+      "filePath": "RPEsMgtAzz-20260312-15.webp",
+      "thumbnailPath": "thumbnails/RPEsMgtAzz-20260312-15-480w.webp"
     },
     {
       "id": "SW1hZ2U6S2V1ZERSdmV6Zw==",
@@ -5695,7 +5840,8 @@
         "name": "83a8c921555063cdc20089e85086a085_20260312-13.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/83a8c921555063cdc20089e85086a085_20260312-13.webp"
       },
-      "filePath": "KeudDRvezg-20260312-13.webp"
+      "filePath": "KeudDRvezg-20260312-13.webp",
+      "thumbnailPath": "thumbnails/KeudDRvezg-20260312-13-480w.webp"
     },
     {
       "id": "SW1hZ2U6RnBnWHh6MjRucQ==",
@@ -5708,7 +5854,8 @@
         "name": "952b4d15d0f57682e6fe2feaafe3579c_20260312-65.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/952b4d15d0f57682e6fe2feaafe3579c_20260312-65.webp"
       },
-      "filePath": "FpgXxz24nq-20260312-65.webp"
+      "filePath": "FpgXxz24nq-20260312-65.webp",
+      "thumbnailPath": "thumbnails/FpgXxz24nq-20260312-65-480w.webp"
     },
     {
       "id": "SW1hZ2U6eThLVUJ4Z0hJZw==",
@@ -5732,7 +5879,8 @@
         "name": "40351d358e30ed47adce71230c5633a3_jens_kirsch_2026_gesch.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/40351d358e30ed47adce71230c5633a3_jens_kirsch_2026_gesch.jpg"
       },
-      "filePath": "y8KUBxgHIg-jens_kirsch_2026_gesch.jpg"
+      "filePath": "y8KUBxgHIg-jens_kirsch_2026_gesch.jpg",
+      "thumbnailPath": "thumbnails/y8KUBxgHIg-jens_kirsch_2026_gesch-480w.webp"
     },
     {
       "id": "SW1hZ2U6VDdra2RzbkdnVA==",
@@ -5745,7 +5893,8 @@
         "name": "06c39c7c33c18ea549e98a1134f2e1cc_Header DGK_Rundmail.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/06c39c7c33c18ea549e98a1134f2e1cc_Header%20DGK_Rundmail.jpg"
       },
-      "filePath": "T7kkdsnGgT-Header DGK_Rundmail.jpg"
+      "filePath": "T7kkdsnGgT-Header DGK_Rundmail.jpg",
+      "thumbnailPath": "thumbnails/T7kkdsnGgT-Header DGK_Rundmail-480w.webp"
     },
     {
       "id": "SW1hZ2U6RFJ0cEo1UUNQMg==",
@@ -5758,7 +5907,8 @@
         "name": "f82b8fea0513667e502ec1b549a0e3a6_Header DGK_Rundmail.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f82b8fea0513667e502ec1b549a0e3a6_Header%20DGK_Rundmail.jpg"
       },
-      "filePath": "DRtpJ5QCP2-Header DGK_Rundmail.jpg"
+      "filePath": "DRtpJ5QCP2-Header DGK_Rundmail.jpg",
+      "thumbnailPath": "thumbnails/DRtpJ5QCP2-Header DGK_Rundmail-480w.webp"
     },
     {
       "id": "SW1hZ2U6U1hOOU1XNXFoeA==",
@@ -5777,7 +5927,8 @@
         "name": "65de0bd2e5fa5479c5a131c6e8226246_Hospitation Hillary Mabeya - geschn.jpeg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/65de0bd2e5fa5479c5a131c6e8226246_Hospitation%20Hillary%20Mabeya%20-%20geschn.jpeg"
       },
-      "filePath": "SXN9MW5qhx-Hospitation Hillary Mabeya.jpeg"
+      "filePath": "SXN9MW5qhx-Hospitation Hillary Mabeya.jpeg",
+      "thumbnailPath": "thumbnails/SXN9MW5qhx-Hospitation Hillary Mabeya-480w.webp"
     },
     {
       "id": "SW1hZ2U6UGNRRGE3bWdFeA==",
@@ -5790,7 +5941,8 @@
         "name": "c34f19bfaf1782287d896d7da8812d66_karoline_horisberger.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c34f19bfaf1782287d896d7da8812d66_karoline_horisberger.jpg"
       },
-      "filePath": "PcQDa7mgEx-karoline_horisberger.jpg"
+      "filePath": "PcQDa7mgEx-karoline_horisberger.jpg",
+      "thumbnailPath": "thumbnails/PcQDa7mgEx-karoline_horisberger-480w.webp"
     },
     {
       "id": "SW1hZ2U6OTdYQjd0QlR5cQ==",
@@ -5809,7 +5961,8 @@
         "name": "2847dfd1777e0a01d7dc22d59180970d_tabize.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/2847dfd1777e0a01d7dc22d59180970d_tabize.jpg"
       },
-      "filePath": "97XB7tBTyq-tabize.jpg"
+      "filePath": "97XB7tBTyq-tabize.jpg",
+      "thumbnailPath": "thumbnails/97XB7tBTyq-tabize-480w.webp"
     },
     {
       "id": "SW1hZ2U6RW5PYWs1RVFaMw==",
@@ -5828,7 +5981,8 @@
         "name": "908c04850f598639cff5800e7e4785ed_schmitz.png",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/908c04850f598639cff5800e7e4785ed_schmitz.png"
       },
-      "filePath": "EnOak5EQZ3-schmitz.png"
+      "filePath": "EnOak5EQZ3-schmitz.png",
+      "thumbnailPath": "thumbnails/EnOak5EQZ3-schmitz-480w.webp"
     },
     {
       "id": "SW1hZ2U6VE5tRWJmQ2J6RA==",
@@ -5841,7 +5995,8 @@
         "name": "b9291a0b9dc9918c400d8bd2bb4886c2_OFA2687.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b9291a0b9dc9918c400d8bd2bb4886c2_OFA2687.webp"
       },
-      "filePath": "TNmEbfCbzD-Kongress.webp"
+      "filePath": "TNmEbfCbzD-Kongress.webp",
+      "thumbnailPath": "thumbnails/TNmEbfCbzD-Kongress-480w.webp"
     },
     {
       "id": "SW1hZ2U6REs3M3RISXhHeA==",
@@ -5854,7 +6009,8 @@
         "name": "9b90bfe5aa669b9fae96f5658d348069_OFA2676.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9b90bfe5aa669b9fae96f5658d348069_OFA2676.webp"
       },
-      "filePath": "DK73tHIxGx-Kongress.webp"
+      "filePath": "DK73tHIxGx-Kongress.webp",
+      "thumbnailPath": "thumbnails/DK73tHIxGx-Kongress-480w.webp"
     },
     {
       "id": "SW1hZ2U6dzdZUFJXQmo5eQ==",
@@ -5867,7 +6023,8 @@
         "name": "e515bb238fc817724a5a4b87b3f16ab9_OFA2575.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e515bb238fc817724a5a4b87b3f16ab9_OFA2575.webp"
       },
-      "filePath": "w7YPRWBj9y-Kongress.webp"
+      "filePath": "w7YPRWBj9y-Kongress.webp",
+      "thumbnailPath": "thumbnails/w7YPRWBj9y-Kongress-480w.webp"
     },
     {
       "id": "SW1hZ2U6bUJvUjg0Wm9CUw==",
@@ -5880,7 +6037,8 @@
         "name": "a4fb4a56e2648d27b9e0f56615de9e63_OFA2839.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a4fb4a56e2648d27b9e0f56615de9e63_OFA2839.webp"
       },
-      "filePath": "mBoR84ZoBS-Kongress.webp"
+      "filePath": "mBoR84ZoBS-Kongress.webp",
+      "thumbnailPath": "thumbnails/mBoR84ZoBS-Kongress-480w.webp"
     },
     {
       "id": "SW1hZ2U6RXRqT0dqdmVBeg==",
@@ -5893,7 +6051,8 @@
         "name": "061a0e053617bdf411da8fbb389bb4f2_OFA2773.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/061a0e053617bdf411da8fbb389bb4f2_OFA2773.webp"
       },
-      "filePath": "EtjOGjveAz-Kongress.webp"
+      "filePath": "EtjOGjveAz-Kongress.webp",
+      "thumbnailPath": "thumbnails/EtjOGjveAz-Kongress-480w.webp"
     },
     {
       "id": "SW1hZ2U6ZHZITUMyVE51Qg==",
@@ -5906,7 +6065,8 @@
         "name": "8ba157fa4c7b16370d80fa7de5e2c11e_OFA2680.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8ba157fa4c7b16370d80fa7de5e2c11e_OFA2680.webp"
       },
-      "filePath": "dvHMC2TNuB-Kongress.webp"
+      "filePath": "dvHMC2TNuB-Kongress.webp",
+      "thumbnailPath": "thumbnails/dvHMC2TNuB-Kongress-480w.webp"
     },
     {
       "id": "SW1hZ2U6TUs3d3VCRThHeA==",
@@ -5919,7 +6079,8 @@
         "name": "a795663a1c18d1ef740b8bc5495df95e_tabize.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a795663a1c18d1ef740b8bc5495df95e_tabize.jpg"
       },
-      "filePath": "MK7wuBE8Gx-Kongress.jpg"
+      "filePath": "MK7wuBE8Gx-Kongress.jpg",
+      "thumbnailPath": "thumbnails/MK7wuBE8Gx-Kongress-480w.webp"
     },
     {
       "id": "SW1hZ2U6bkRpb09ncTBvTQ==",
@@ -5932,7 +6093,8 @@
         "name": "a84b436f2b2c0825dd661fbf1e835980_dr_karoline_hoisberger.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a84b436f2b2c0825dd661fbf1e835980_dr_karoline_hoisberger.jpg"
       },
-      "filePath": "nDioOgq0oM-Horisberger.jpg"
+      "filePath": "nDioOgq0oM-Horisberger.jpg",
+      "thumbnailPath": "thumbnails/nDioOgq0oM-Horisberger-480w.webp"
     },
     {
       "id": "SW1hZ2U6WEFZNXpwOHRkTQ==",
@@ -5945,7 +6107,8 @@
         "name": "a2c8ed1cb529a913445bdd69a21063a6_prae_kongress_stipendium_2026.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a2c8ed1cb529a913445bdd69a21063a6_prae_kongress_stipendium_2026.jpg"
       },
-      "filePath": "XAY5zp8tdM-prae_kongress_stipendium_2026.jpg"
+      "filePath": "XAY5zp8tdM-prae_kongress_stipendium_2026.jpg",
+      "thumbnailPath": "thumbnails/XAY5zp8tdM-prae_kongress_stipendium_2026-480w.webp"
     },
     {
       "id": "SW1hZ2U6TGRzclQxSThXYw==",
@@ -5964,7 +6127,8 @@
         "name": "b000fbe8cb7f621a90163cc569815999_dr_thomas_schiedeck.JPG",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b000fbe8cb7f621a90163cc569815999_dr_thomas_schiedeck.JPG"
       },
-      "filePath": "LdsrT1I8Wc-dr_thomas_schiedeck.JPG"
+      "filePath": "LdsrT1I8Wc-dr_thomas_schiedeck.JPG",
+      "thumbnailPath": "thumbnails/LdsrT1I8Wc-dr_thomas_schiedeck-480w.webp"
     },
     {
       "id": "SW1hZ2U6S0UwMnJ1ZG5lYw==",
@@ -5977,7 +6141,8 @@
         "name": "574d65d176d1936df15f2046900618dd_dgk_news_14_03_2025.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/574d65d176d1936df15f2046900618dd_dgk_news_14_03_2025.jpg"
       },
-      "filePath": "KE02rudnec-dgk_news_14_03_2025.jpg"
+      "filePath": "KE02rudnec-dgk_news_14_03_2025.jpg",
+      "thumbnailPath": "thumbnails/KE02rudnec-dgk_news_14_03_2025-480w.webp"
     },
     {
       "id": "SW1hZ2U6amhETVE0MXNPVA==",
@@ -5996,7 +6161,8 @@
         "name": "4907b24bf98a81377902a5f0064e3fa0_poster_preis_2023.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/4907b24bf98a81377902a5f0064e3fa0_poster_preis_2023.jpg"
       },
-      "filePath": "jhDMQ41sOT-poster_preis_2023.jpg"
+      "filePath": "jhDMQ41sOT-poster_preis_2023.jpg",
+      "thumbnailPath": "thumbnails/jhDMQ41sOT-poster_preis_2023-480w.webp"
     },
     {
       "id": "SW1hZ2U6bDQ3c25hSmlRVw==",
@@ -6015,7 +6181,8 @@
         "name": "6df4e68e3f3a0f8a3c8c86f702ef21e5_jens_kirsch_2023.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6df4e68e3f3a0f8a3c8c86f702ef21e5_jens_kirsch_2023.jpg"
       },
-      "filePath": "l47snaJiQW-jens_kirsch_2023.jpg"
+      "filePath": "l47snaJiQW-jens_kirsch_2023.jpg",
+      "thumbnailPath": "thumbnails/l47snaJiQW-jens_kirsch_2023-480w.webp"
     },
     {
       "id": "SW1hZ2U6RG93STZnRnBqVQ==",
@@ -6034,7 +6201,8 @@
         "name": "78c801989eee66f028cea17e9f726df3_posterpreis_2024.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/78c801989eee66f028cea17e9f726df3_posterpreis_2024.jpg"
       },
-      "filePath": "DowI6gFpjU-posterpreis_2024.jpg"
+      "filePath": "DowI6gFpjU-posterpreis_2024.jpg",
+      "thumbnailPath": "thumbnails/DowI6gFpjU-posterpreis_2024-480w.webp"
     },
     {
       "id": "SW1hZ2U6M1ZGQ0ZDOWxZOQ==",
@@ -6053,7 +6221,8 @@
         "name": "5b588efe420548664629b77e77c6c0d2_jens_kirsch_2024.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5b588efe420548664629b77e77c6c0d2_jens_kirsch_2024.jpg"
       },
-      "filePath": "3VFCFC9lY9-jens_kirsch_2024.jpg"
+      "filePath": "3VFCFC9lY9-jens_kirsch_2024.jpg",
+      "thumbnailPath": "thumbnails/3VFCFC9lY9-jens_kirsch_2024-480w.webp"
     },
     {
       "id": "SW1hZ2U6ZzUyNkRWYnBLRw==",
@@ -6072,7 +6241,8 @@
         "name": "9c1c598b81aef811bfd3663a1bb77bfa_dr_florian_kuehn.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9c1c598b81aef811bfd3663a1bb77bfa_dr_florian_kuehn.jpg"
       },
-      "filePath": "g526DVbpKG-dr_florian_kuehn.jpg"
+      "filePath": "g526DVbpKG-dr_florian_kuehn.jpg",
+      "thumbnailPath": "thumbnails/g526DVbpKG-dr_florian_kuehn-480w.webp"
     },
     {
       "id": "SW1hZ2U6ZGI3ajhxQ2o2Ug==",
@@ -6091,7 +6261,8 @@
         "name": "06417fe24043f1030a1529b89f36b0a9_dr_thorolf_hager.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/06417fe24043f1030a1529b89f36b0a9_dr_thorolf_hager.jpg"
       },
-      "filePath": "db7j8qCj6R-dr_thorolf_hager.jpg"
+      "filePath": "db7j8qCj6R-dr_thorolf_hager.jpg",
+      "thumbnailPath": "thumbnails/db7j8qCj6R-dr_thorolf_hager-480w.webp"
     },
     {
       "id": "SW1hZ2U6QzN0dUZFcnNBcg==",
@@ -6110,7 +6281,8 @@
         "name": "f5388489f889a3c66833b9d320c287e0_dr_martin_kreis.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f5388489f889a3c66833b9d320c287e0_dr_martin_kreis.jpg"
       },
-      "filePath": "C3tuFErsAr-dr_martin_kreis.jpg"
+      "filePath": "C3tuFErsAr-dr_martin_kreis.jpg",
+      "thumbnailPath": "thumbnails/C3tuFErsAr-dr_martin_kreis-480w.webp"
     },
     {
       "id": "SW1hZ2U6TE5rNGRUbVpVNg==",
@@ -6129,7 +6301,8 @@
         "name": "088730a2ea4a65815c691b80af408d8d_dr_roland_croner 2.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/088730a2ea4a65815c691b80af408d8d_dr_roland_croner%202.jpg"
       },
-      "filePath": "LNk4dTmZU6-dr_roland_croner 2.jpg"
+      "filePath": "LNk4dTmZU6-dr_roland_croner 2.jpg",
+      "thumbnailPath": "thumbnails/LNk4dTmZU6-dr_roland_croner 2-480w.webp"
     },
     {
       "id": "SW1hZ2U6REJjaHVHa2pTYw==",
@@ -6142,7 +6315,8 @@
         "name": "6f49442fce1d23acd083f3833ce41253_footer_background.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6f49442fce1d23acd083f3833ce41253_footer_background.jpg"
       },
-      "filePath": "DBchuGkjSc-footer_background.jpg"
+      "filePath": "DBchuGkjSc-footer_background.jpg",
+      "thumbnailPath": "thumbnails/DBchuGkjSc-footer_background-480w.webp"
     },
     {
       "id": "SW1hZ2U6bk1uejBJQkFOWA==",
@@ -6155,7 +6329,8 @@
         "name": "19df7cb3f8431a7be7ad0c1584a76e60_NDK_Unterstuetzer_Logo.png",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/19df7cb3f8431a7be7ad0c1584a76e60_NDK_Unterstuetzer_Logo.png"
       },
-      "filePath": "nMnz0IBANX-NDK_Unterstuetzer_Logo.png"
+      "filePath": "nMnz0IBANX-NDK_Unterstuetzer_Logo.png",
+      "thumbnailPath": "thumbnails/nMnz0IBANX-NDK_Unterstuetzer_Logo-480w.webp"
     },
     {
       "id": "SW1hZ2U6dXEwZ1ppQ2lRaA==",
@@ -6174,7 +6349,8 @@
         "name": "b41112b9e74a49fdab5d6d272a689c43_dr_thomas_seufferlein.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b41112b9e74a49fdab5d6d272a689c43_dr_thomas_seufferlein.jpg"
       },
-      "filePath": "uq0gZiCiQh-dr_thomas_seufferlein.jpg"
+      "filePath": "uq0gZiCiQh-dr_thomas_seufferlein.jpg",
+      "thumbnailPath": "thumbnails/uq0gZiCiQh-dr_thomas_seufferlein-480w.webp"
     },
     {
       "id": "SW1hZ2U6M2RuNXgzMkZBMQ==",
@@ -6193,7 +6369,8 @@
         "name": "6f1a1ba0be5b7969d514f40cbf70e37c_dr_oliver_schwandner.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6f1a1ba0be5b7969d514f40cbf70e37c_dr_oliver_schwandner.jpg"
       },
-      "filePath": "3dn5x32FA1-dr_oliver_schwandner.jpg"
+      "filePath": "3dn5x32FA1-dr_oliver_schwandner.jpg",
+      "thumbnailPath": "thumbnails/3dn5x32FA1-dr_oliver_schwandner-480w.webp"
     },
     {
       "id": "SW1hZ2U6cGNOMzhtR0RwcA==",
@@ -6212,7 +6389,8 @@
         "name": "8cfe2c414d1513a728af7253edffd900_dr_felix_aigner.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8cfe2c414d1513a728af7253edffd900_dr_felix_aigner.jpg"
       },
-      "filePath": "pcN38mGDpp-dr_felix_aigner.jpg"
+      "filePath": "pcN38mGDpp-dr_felix_aigner.jpg",
+      "thumbnailPath": "thumbnails/pcN38mGDpp-dr_felix_aigner-480w.webp"
     },
     {
       "id": "SW1hZ2U6d0hDanRkeFhVRw==",
@@ -6231,7 +6409,8 @@
         "name": "5fb13a64224b4cee39380ddbe00c8990_dr_dieter_bussen.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5fb13a64224b4cee39380ddbe00c8990_dr_dieter_bussen.jpg"
       },
-      "filePath": "wHCjtdxXUG-dr_dieter_bussen.jpg"
+      "filePath": "wHCjtdxXUG-dr_dieter_bussen.jpg",
+      "thumbnailPath": "thumbnails/wHCjtdxXUG-dr_dieter_bussen-480w.webp"
     },
     {
       "id": "SW1hZ2U6QkFZOGN4NVpiVQ==",
@@ -6250,7 +6429,8 @@
         "name": "37f652d53399df2defb86e49c09a080a_dr_alexander_herold.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/37f652d53399df2defb86e49c09a080a_dr_alexander_herold.jpg"
       },
-      "filePath": "BAY8cx5ZbU-dr_alexander_herold.jpg"
+      "filePath": "BAY8cx5ZbU-dr_alexander_herold.jpg",
+      "thumbnailPath": "thumbnails/BAY8cx5ZbU-dr_alexander_herold-480w.webp"
     },
     {
       "id": "SW1hZ2U6aWRJSkZYS0RjVA==",
@@ -6269,7 +6449,8 @@
         "name": "fd7c23e3160e2fdf0aff89e968c45f95_dr_reinhard_ruppert.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/fd7c23e3160e2fdf0aff89e968c45f95_dr_reinhard_ruppert.jpg"
       },
-      "filePath": "idIJFXKDcT-dr_reinhard_ruppert.jpg"
+      "filePath": "idIJFXKDcT-dr_reinhard_ruppert.jpg",
+      "thumbnailPath": "thumbnails/idIJFXKDcT-dr_reinhard_ruppert-480w.webp"
     },
     {
       "id": "SW1hZ2U6ODJHQkR0V0IzZw==",
@@ -6282,7 +6463,8 @@
         "name": "c51b9a8a7cd1044e2a0aeac790ac34a4_dr_reinhard_ruppert.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c51b9a8a7cd1044e2a0aeac790ac34a4_dr_reinhard_ruppert.jpg"
       },
-      "filePath": "82GBDtWB3g-dr_reinhard_ruppert.jpg"
+      "filePath": "82GBDtWB3g-dr_reinhard_ruppert.jpg",
+      "thumbnailPath": "thumbnails/82GBDtWB3g-dr_reinhard_ruppert-480w.webp"
     },
     {
       "id": "SW1hZ2U6ZUoyNTR5aDVLbw==",
@@ -6295,7 +6477,8 @@
         "name": "a27a52f58962201d29e6da25775b81ca_Prof_Hager.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a27a52f58962201d29e6da25775b81ca_Prof_Hager.jpg"
       },
-      "filePath": "eJ254yh5Ko-Prof_Hager.jpg"
+      "filePath": "eJ254yh5Ko-Prof_Hager.jpg",
+      "thumbnailPath": "thumbnails/eJ254yh5Ko-Prof_Hager-480w.webp"
     },
     {
       "id": "SW1hZ2U6UEhIcUlLM1RwWg==",
@@ -6308,7 +6491,8 @@
         "name": "eb1031b4753dcb20d8121a98ace1d6f3_Prof_Dr_Dieter-Bussen.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/eb1031b4753dcb20d8121a98ace1d6f3_Prof_Dr_Dieter-Bussen.jpg"
       },
-      "filePath": "PHHqIK3TpZ-Prof_Dr_Dieter-Bussen.jpg"
+      "filePath": "PHHqIK3TpZ-Prof_Dr_Dieter-Bussen.jpg",
+      "thumbnailPath": "thumbnails/PHHqIK3TpZ-Prof_Dr_Dieter-Bussen-480w.webp"
     },
     {
       "id": "SW1hZ2U6VGFLSk1IYm1JTA==",
@@ -6321,7 +6505,8 @@
         "name": "9f0c84496724a0ca8e9955ed17024a1d_Prof_Dr_Alexander-Herold.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9f0c84496724a0ca8e9955ed17024a1d_Prof_Dr_Alexander-Herold.jpg"
       },
-      "filePath": "TaKJMHbmIL-Prof_Dr_Alexander-Herold.jpg"
+      "filePath": "TaKJMHbmIL-Prof_Dr_Alexander-Herold.jpg",
+      "thumbnailPath": "thumbnails/TaKJMHbmIL-Prof_Dr_Alexander-Herold-480w.webp"
     },
     {
       "id": "SW1hZ2U6dnJjSDc0M21vaA==",
@@ -6334,7 +6519,8 @@
         "name": "5667557f7182dc18f68e7054f51df4dd_Posterpreis_1_md.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5667557f7182dc18f68e7054f51df4dd_Posterpreis_1_md.jpg"
       },
-      "filePath": "vrcH743moh-Posterpreis_1_md.jpg"
+      "filePath": "vrcH743moh-Posterpreis_1_md.jpg",
+      "thumbnailPath": "thumbnails/vrcH743moh-Posterpreis_1_md-480w.webp"
     },
     {
       "id": "SW1hZ2U6M2dXOW1EVk9pag==",
@@ -6347,7 +6533,8 @@
         "name": "d412ccbe7c390397df8951ceee903be7_coloproctology_header.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d412ccbe7c390397df8951ceee903be7_coloproctology_header.jpg"
       },
-      "filePath": "3gW9mDVOij-coloproctology_header.jpg"
+      "filePath": "3gW9mDVOij-coloproctology_header.jpg",
+      "thumbnailPath": "thumbnails/3gW9mDVOij-coloproctology_header-480w.webp"
     },
     {
       "id": "SW1hZ2U6TTI2UVJHOWlwZg==",
@@ -6360,7 +6547,8 @@
         "name": "1bb9a86a657b71a87ef0149550596086_Kongress_2024.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/1bb9a86a657b71a87ef0149550596086_Kongress_2024.jpg"
       },
-      "filePath": "M26QRG9ipf-Kongress_2024.jpg"
+      "filePath": "M26QRG9ipf-Kongress_2024.jpg",
+      "thumbnailPath": "thumbnails/M26QRG9ipf-Kongress_2024-480w.webp"
     },
     {
       "id": "SW1hZ2U6NWpyeHBCZmQyWg==",
@@ -6373,7 +6561,8 @@
         "name": "9414c0901cbef2e6fa32e496b600e7de_programm_2026.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9414c0901cbef2e6fa32e496b600e7de_programm_2026.jpg"
       },
-      "filePath": "5jrxpBfd2Z-programm_2026.jpg"
+      "filePath": "5jrxpBfd2Z-programm_2026.jpg",
+      "thumbnailPath": "thumbnails/5jrxpBfd2Z-programm_2026-480w.webp"
     },
     {
       "id": "SW1hZ2U6VXUxY0ZrVDdFWg==",
@@ -6386,7 +6575,8 @@
         "name": "d300738c065badae4d610b42dde4914e_Dr_Reinhard-Ruppert.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d300738c065badae4d610b42dde4914e_Dr_Reinhard-Ruppert.jpg"
       },
-      "filePath": "Uu1cFkT7EZ-Dr_Reinhard-Ruppert.jpg"
+      "filePath": "Uu1cFkT7EZ-Dr_Reinhard-Ruppert.jpg",
+      "thumbnailPath": "thumbnails/Uu1cFkT7EZ-Dr_Reinhard-Ruppert-480w.webp"
     },
     {
       "id": "SW1hZ2U6ak40dENYZEpCRw==",
@@ -6399,7 +6589,8 @@
         "name": "9a8461cb2a3b1bcae22254aa43241e65_Prof_Dr_Felix-Aigner.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9a8461cb2a3b1bcae22254aa43241e65_Prof_Dr_Felix-Aigner.jpg"
       },
-      "filePath": "jN4tCXdJBG-Prof_Dr_Felix-Aigner.jpg"
+      "filePath": "jN4tCXdJBG-Prof_Dr_Felix-Aigner.jpg",
+      "thumbnailPath": "thumbnails/jN4tCXdJBG-Prof_Dr_Felix-Aigner-480w.webp"
     },
     {
       "id": "SW1hZ2U6OGllWkdseXZwUQ==",
@@ -6412,7 +6603,8 @@
         "name": "5ceb9fc78b6117c684e7183f9c905cbe_Prof_Dr_Martin-E_Kreis.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5ceb9fc78b6117c684e7183f9c905cbe_Prof_Dr_Martin-E_Kreis.jpg"
       },
-      "filePath": "8ieZGlyvpQ-Prof_Dr_Martin-E_Kreis.jpg"
+      "filePath": "8ieZGlyvpQ-Prof_Dr_Martin-E_Kreis.jpg",
+      "thumbnailPath": "thumbnails/8ieZGlyvpQ-Prof_Dr_Martin-E_Kreis-480w.webp"
     },
     {
       "id": "SW1hZ2U6TnhhNnFMNEZNQg==",
@@ -6425,7 +6617,8 @@
         "name": "0a80ad797965b63b2a72353f416690e8_Prof_Dr_Florian_Kuehn.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0a80ad797965b63b2a72353f416690e8_Prof_Dr_Florian_Kuehn.jpg"
       },
-      "filePath": "Nxa6qL4FMB-Prof_Dr_Florian_Kuehn.jpg"
+      "filePath": "Nxa6qL4FMB-Prof_Dr_Florian_Kuehn.jpg",
+      "thumbnailPath": "thumbnails/Nxa6qL4FMB-Prof_Dr_Florian_Kuehn-480w.webp"
     },
     {
       "id": "SW1hZ2U6UDBvc0cxNlBhVw==",
@@ -6438,7 +6631,8 @@
         "name": "21dbd1b8b12a4be87afa392774419910_Prof_Dr_Oliver-Schwandner.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/21dbd1b8b12a4be87afa392774419910_Prof_Dr_Oliver-Schwandner.jpg"
       },
-      "filePath": "P0osG16PaW-Prof_Dr_Oliver-Schwandner.jpg"
+      "filePath": "P0osG16PaW-Prof_Dr_Oliver-Schwandner.jpg",
+      "thumbnailPath": "thumbnails/P0osG16PaW-Prof_Dr_Oliver-Schwandner-480w.webp"
     },
     {
       "id": "SW1hZ2U6SHlwcVZSM3VGZg==",
@@ -6451,7 +6645,8 @@
         "name": "4e4704c085b265af43dc95c947f90ac9_Prof_Roland_Croner.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/4e4704c085b265af43dc95c947f90ac9_Prof_Roland_Croner.jpg"
       },
-      "filePath": "HypqVR3uFf-Prof_Roland_Croner.jpg"
+      "filePath": "HypqVR3uFf-Prof_Roland_Croner.jpg",
+      "thumbnailPath": "thumbnails/HypqVR3uFf-Prof_Roland_Croner-480w.webp"
     },
     {
       "id": "SW1hZ2U6OUNOMDVBWjh4Ng==",
@@ -6464,7 +6659,8 @@
         "name": "2223f0da3fee991749726b180ee1ba3b_Prof_Dr_Thomas-Seufferlein.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/2223f0da3fee991749726b180ee1ba3b_Prof_Dr_Thomas-Seufferlein.jpg"
       },
-      "filePath": "9CN05AZ8x6-Prof_Dr_Thomas-Seufferlein.jpg"
+      "filePath": "9CN05AZ8x6-Prof_Dr_Thomas-Seufferlein.jpg",
+      "thumbnailPath": "thumbnails/9CN05AZ8x6-Prof_Dr_Thomas-Seufferlein-480w.webp"
     },
     {
       "id": "SW1hZ2U6YVZQWXVzNGpsSg==",
@@ -6477,7 +6673,8 @@
         "name": "f1bd74b0f0e3e1ba7b17bd391200b88b_Prof_Dr_Thomas-Schiedeck.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f1bd74b0f0e3e1ba7b17bd391200b88b_Prof_Dr_Thomas-Schiedeck.jpg"
       },
-      "filePath": "aVPYus4jlJ-Prof_Dr_Thomas-Schiedeck.jpg"
+      "filePath": "aVPYus4jlJ-Prof_Dr_Thomas-Schiedeck.jpg",
+      "thumbnailPath": "thumbnails/aVPYus4jlJ-Prof_Dr_Thomas-Schiedeck-480w.webp"
     },
     {
       "id": "SW1hZ2U6WEU1QlRqckdJcA==",
@@ -6490,7 +6687,8 @@
         "name": "13b542aa31f391ba4065d960ea0abe95__OFA2908.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/13b542aa31f391ba4065d960ea0abe95__OFA2908.jpg"
       },
-      "filePath": "XE5BTjrGIp-OFA2908.jpg"
+      "filePath": "XE5BTjrGIp-OFA2908.jpg",
+      "thumbnailPath": "thumbnails/XE5BTjrGIp-OFA2908-480w.webp"
     },
     {
       "id": "SW1hZ2U6clpSeUFXeGhjNA==",
@@ -6503,7 +6701,8 @@
         "name": "cd7fdcc7d0d940004f4b855a5fe8e2f7_Manu_stable_md.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/cd7fdcc7d0d940004f4b855a5fe8e2f7_Manu_stable_md.jpg"
       },
-      "filePath": "rZRyAWxhc4-Manuals_2_Auflage_xs.jpg"
+      "filePath": "rZRyAWxhc4-Manuals_2_Auflage_xs.jpg",
+      "thumbnailPath": "thumbnails/rZRyAWxhc4-Manuals_2_Auflage_xs-480w.webp"
     },
     {
       "id": "SW1hZ2U6ZXh3YnkyMW9HYQ==",
@@ -6516,7 +6715,8 @@
         "name": "11bf3b688b3d729cd36dd3947ca39c9f_preis-2025.jpg",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/11bf3b688b3d729cd36dd3947ca39c9f_preis-2025.jpg"
       },
-      "filePath": "exwby21oGa-preis-2025.jpg"
+      "filePath": "exwby21oGa-preis-2025.jpg",
+      "thumbnailPath": "thumbnails/exwby21oGa-preis-2025-480w.webp"
     },
     {
       "id": "SW1hZ2U6R3ZidlZzYVBrTg==",
@@ -6565,7 +6765,8 @@
         "name": "f13ea3f0e39917efa77850e6816dad6a_Logo_DGK_lettering.webp",
         "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f13ea3f0e39917efa77850e6816dad6a_Logo_DGK_lettering.webp"
       },
-      "filePath": "GvbvVsaPkN-Logo_DGK_lettering.webp"
+      "filePath": "GvbvVsaPkN-Logo_DGK_lettering.webp",
+      "thumbnailPath": "thumbnails/GvbvVsaPkN-Logo_DGK_lettering-480w.webp"
     }
   ],
   "events": [

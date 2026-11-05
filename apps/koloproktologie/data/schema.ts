@@ -79,7 +79,7 @@ export const entrySchema = z.looseObject({
   description: z.string().nullable().optional(),
   text: z.string().nullable().optional(),
   image: z.string().nullable().optional(),
-  date: z.string().nullable().optional(),
+  date: z.any().nullable().optional(),
   state: z.string().nullable().optional(),
   documents: z.array(z.string()).nullable().optional(),
 });
@@ -100,7 +100,7 @@ export const downloadSchema = z.looseObject({
   categories: z.array(z.string()).nullable().optional(),
   title: z.string().nullable(),
   description: z.string().nullable().optional(),
-  date: z.string().nullable().optional(),
+  date: z.any().nullable().optional(),
   file: z.object({ __typename: z.string().optional(), name: z.string().optional(), url: z.string() }).nullable().optional(),
   filePath: z.string().optional(),
 });
@@ -165,7 +165,7 @@ export const articleSchema = z.looseObject({
   title: z.string().nullable(),
   description: z.string().nullable().optional(),
   text: z.string().nullable().optional(),
-  date: z.string().nullable().optional(),
+  date: z.any().nullable().optional(),
   state: z.string().nullable().optional(),
   documents: z.array(z.string()).nullable().optional(),
 });

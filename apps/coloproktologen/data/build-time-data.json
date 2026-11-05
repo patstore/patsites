@@ -1,9 +1,10 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-05T07:30:56.106Z",
+    "generatedAt": "2026-11-05T16:48:17.694Z",
     "projectId": "EgRR0prozh",
     "moduleCount": 10,
-    "states": null
+    "states": null,
+    "recordScope": "project"
   },
   "_modules": [
     {
@@ -1972,1715 +1973,1960 @@
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/3f4115b63b4e96c804215795a050c608_Kongress%20am%20Park%20bei%20Daemmerung.jpg",
       "localPath": "Qe8CmMzThP-Kongress am Park bei Dämmerung.jpg",
       "filename": "Qe8CmMzThP-Kongress am Park bei Dämmerung.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Qe8CmMzThP-Kongress am Park bei Dämmerung-480w.webp"
     },
     {
       "objectId": "LnTLmwKZQd",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d6024fb3b10f38c0cf4c4ba57914e688_Wissenschaftliche%20Preise_Infografik.jpg",
       "localPath": "LnTLmwKZQd-Wissenschaftliche Preise_Infografik.jpg",
       "filename": "LnTLmwKZQd-Wissenschaftliche Preise_Infografik.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/LnTLmwKZQd-Wissenschaftliche Preise_Infografik-480w.webp"
     },
     {
       "objectId": "nQUPZ5HY7J",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/569a9d3b1572aa29c6502181ac6cb030_Wissenschaft%20lebt%20vom%20Austauschneu.jpg",
       "localPath": "nQUPZ5HY7J-Wissenschaft lebt vom Austauschneu.jpg",
       "filename": "nQUPZ5HY7J-Wissenschaft lebt vom Austauschneu.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/nQUPZ5HY7J-Wissenschaft lebt vom Austauschneu-480w.webp"
     },
     {
       "objectId": "OLaM87oorw",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/95fea2fad1a391e5c530144274112d08_wiss_preise.png",
       "localPath": "OLaM87oorw-wiss_preise.png",
       "filename": "OLaM87oorw-wiss_preise.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/OLaM87oorw-wiss_preise-480w.webp"
     },
     {
       "objectId": "irVd0zx0FC",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/36420e0d3924ad81cb7930e061ad1fe7_call_for_abstracts.png",
       "localPath": "irVd0zx0FC-call_for_abstracts.png",
       "filename": "irVd0zx0FC-call_for_abstracts.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/irVd0zx0FC-call_for_abstracts-480w.webp"
     },
     {
       "objectId": "lE4CdP6Xxz",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c2b48bd9cbd6d01bb021aa3e98c7f0f7_BCD-Mitgliedpng.jpg",
       "localPath": "lE4CdP6Xxz-BCD-Mitgliedpng.jpg",
       "filename": "lE4CdP6Xxz-BCD-Mitgliedpng.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/lE4CdP6Xxz-BCD-Mitgliedpng-480w.webp"
     },
     {
       "objectId": "188q3BIlDV",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/60376433799edfc65fc7d229a2beb7ae_Tabelle%20Rundmail.jpg",
       "localPath": "188q3BIlDV-Tabelle Rundmail.jpg",
       "filename": "188q3BIlDV-Tabelle Rundmail.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/188q3BIlDV-Tabelle Rundmail-480w.webp"
     },
     {
       "objectId": "JKEu2qFezo",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7497fe32f9ceae071813c6b1fd282f6e_Tabelle%20Rundmail.jpg",
       "localPath": "JKEu2qFezo-Tabelle Rundmail.jpg",
       "filename": "JKEu2qFezo-Tabelle Rundmail.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/JKEu2qFezo-Tabelle Rundmail-480w.webp"
     },
     {
       "objectId": "BxDK7Fh1I9",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/53e75a899777f2c29fdb0ba4c1f426c7_Tabelle%20Rundmail.jpg",
       "localPath": "BxDK7Fh1I9-Tabelle Rundmail.jpg",
       "filename": "BxDK7Fh1I9-Tabelle Rundmail.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/BxDK7Fh1I9-Tabelle Rundmail-480w.webp"
     },
     {
       "objectId": "Gmb4OgPuME",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/27e7c056265936c05bfcda88c82990ee_DGK2027%20-%20Header%20neu.png",
       "localPath": "Gmb4OgPuME-DGK2027 - Header neu.png",
       "filename": "Gmb4OgPuME-DGK2027 - Header neu.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Gmb4OgPuME-DGK2027 - Header neu-480w.webp"
     },
     {
       "objectId": "W5tJXo2rxA",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/811b5ce10d5e877e740d7049bc0ed887_DGK2027---Header.png",
       "localPath": "W5tJXo2rxA-DGK2027---Header.png",
       "filename": "W5tJXo2rxA-DGK2027---Header.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/W5tJXo2rxA-DGK2027---Header-480w.webp"
     },
     {
       "objectId": "a7fnWvdRq0",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8fb50451f4d37fe458fc10b3c8753f6c_TA%20Hager%20Thorolf%20Kronach.png",
       "localPath": "a7fnWvdRq0-TA Hager Thorolf Kronach.png",
       "filename": "a7fnWvdRq0-TA Hager Thorolf Kronach.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/a7fnWvdRq0-TA Hager Thorolf Kronach-480w.webp"
     },
     {
       "objectId": "UYfFxrN7g6",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/07b1e07508f4426c62cc5065a424727f_Header%20BCD_Rundmail_bw.jpg",
       "localPath": "UYfFxrN7g6-Header BCD_Rundmail_bw.jpg",
       "filename": "UYfFxrN7g6-Header BCD_Rundmail_bw.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/UYfFxrN7g6-Header BCD_Rundmail_bw-480w.webp"
     },
     {
       "objectId": "BMM4YBKsDj",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/59a4f0cfce1ed2d1013cd7e8a341aaaf_20240315-DSC_8694-Verbessert-RR.jpg",
       "localPath": "BMM4YBKsDj-20240315-DSC_8694-Verbessert-RR.jpg",
       "filename": "BMM4YBKsDj-20240315-DSC_8694-Verbessert-RR.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/BMM4YBKsDj-20240315-DSC_8694-Verbessert-RR-480w.webp"
     },
     {
       "objectId": "vEYAqn2YJC",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/24c360259c2da23128005adcb919c9bd_DGK2027_STD.png",
       "localPath": "vEYAqn2YJC-Poster_Kongress_2027.png",
       "filename": "vEYAqn2YJC-Poster_Kongress_2027.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/vEYAqn2YJC-Poster_Kongress_2027-480w.webp"
     },
     {
       "objectId": "bgtCGLVymw",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/460d5e3d11644fb20defb77edd2644ba_IMG_1353.jpg",
       "localPath": "bgtCGLVymw-kongress_2026_02.jpg",
       "filename": "bgtCGLVymw-kongress_2026_02.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/bgtCGLVymw-kongress_2026_02-480w.webp"
     },
     {
       "objectId": "Gmy74OZ0Fp",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e3975f685588db1373c2bf16749b1926_IMG_1306.jpg",
       "localPath": "Gmy74OZ0Fp-kongress_2026_01.jpg",
       "filename": "Gmy74OZ0Fp-kongress_2026_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Gmy74OZ0Fp-kongress_2026_01-480w.webp"
     },
     {
       "objectId": "4PWami9MI7",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7ed85402f9799b015641d697bcd5ab95_20260312-51.webp",
       "localPath": "4PWami9MI7-20260312-51.webp",
       "filename": "4PWami9MI7-20260312-51.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/4PWami9MI7-20260312-51-480w.webp"
     },
     {
       "objectId": "ahjUG8HdcA",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/06fb066bded2a594f807c1ee13030cbc_20260312-49.webp",
       "localPath": "ahjUG8HdcA-20260312-49.webp",
       "filename": "ahjUG8HdcA-20260312-49.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/ahjUG8HdcA-20260312-49-480w.webp"
     },
     {
       "objectId": "Dq8XQtVAgS",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/cf77506082cdfd2b54557748f6365dfd_20260312-26.webp",
       "localPath": "Dq8XQtVAgS-20260312-26.webp",
       "filename": "Dq8XQtVAgS-20260312-26.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Dq8XQtVAgS-20260312-26-480w.webp"
     },
     {
       "objectId": "4GZOFhJDdE",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/382303a395279e2cc8e1378e9d46872f_20260312-25.webp",
       "localPath": "4GZOFhJDdE-20260312-25.webp",
       "filename": "4GZOFhJDdE-20260312-25.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/4GZOFhJDdE-20260312-25-480w.webp"
     },
     {
       "objectId": "7A6QRdoqsT",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9b24e67cd185b3c8e4f07d5ad1ac3e94_20260312-24.webp",
       "localPath": "7A6QRdoqsT-20260312-24.webp",
       "filename": "7A6QRdoqsT-20260312-24.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/7A6QRdoqsT-20260312-24-480w.webp"
     },
     {
       "objectId": "7S129fIofy",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b453a5884edcf7662cb2ece35a443095_20260312-15.webp",
       "localPath": "7S129fIofy-20260312-15.webp",
       "filename": "7S129fIofy-20260312-15.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/7S129fIofy-20260312-15-480w.webp"
     },
     {
       "objectId": "t8aYXUYwyi",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c2d37acaaa5505c3039077ff597487c4_20260312-13.webp",
       "localPath": "t8aYXUYwyi-20260312-13.webp",
       "filename": "t8aYXUYwyi-20260312-13.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/t8aYXUYwyi-20260312-13-480w.webp"
     },
     {
       "objectId": "HsK3FKC95e",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/26b2c7c7889344283c3b0425c6217435_20260313-42.webp",
       "localPath": "HsK3FKC95e-20260313-42.webp",
       "filename": "HsK3FKC95e-20260313-42.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/HsK3FKC95e-20260313-42-480w.webp"
     },
     {
       "objectId": "g31VDPeJhh",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/11b51a75740839d30230def768066d00_20260313-29.webp",
       "localPath": "g31VDPeJhh-20260313-29.webp",
       "filename": "g31VDPeJhh-20260313-29.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/g31VDPeJhh-20260313-29-480w.webp"
     },
     {
       "objectId": "hPZ453U5dI",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bf4d17723b2517233534ae4c3c34f24e_20260313-26.webp",
       "localPath": "hPZ453U5dI-20260313-26.webp",
       "filename": "hPZ453U5dI-20260313-26.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/hPZ453U5dI-20260313-26-480w.webp"
     },
     {
       "objectId": "KRdBPqurTC",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/33da0a0260edd8925a8e56b5b00522da_20260313-11.webp",
       "localPath": "KRdBPqurTC-20260313-11.webp",
       "filename": "KRdBPqurTC-20260313-11.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/KRdBPqurTC-20260313-11-480w.webp"
     },
     {
       "objectId": "0G41HIiTNf",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c735ff1231376b7b8bdf66beb9b62777_20260313-1.webp",
       "localPath": "0G41HIiTNf-20260313-1.webp",
       "filename": "0G41HIiTNf-20260313-1.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/0G41HIiTNf-20260313-1-480w.webp"
     },
     {
       "objectId": "TbOEn4JjIG",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7470aa5cdffc2d5626b2543a5c774b25_20260312-79.webp",
       "localPath": "TbOEn4JjIG-20260312-79.webp",
       "filename": "TbOEn4JjIG-20260312-79.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/TbOEn4JjIG-20260312-79-480w.webp"
     },
     {
       "objectId": "NcUfVqQyp1",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c26578cc3661fc7137327fae43bc4c15_20260312-78.webp",
       "localPath": "NcUfVqQyp1-20260312-78.webp",
       "filename": "NcUfVqQyp1-20260312-78.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/NcUfVqQyp1-20260312-78-480w.webp"
     },
     {
       "objectId": "Fh9ShUHela",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0b028ae8a2991dfeb3e4218c9665b91a_20260312-65.webp",
       "localPath": "Fh9ShUHela-20260312-65.webp",
       "filename": "Fh9ShUHela-20260312-65.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Fh9ShUHela-20260312-65-480w.webp"
     },
     {
       "objectId": "BmuoOdcoOe",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b693eaec565293660bc42b0d607f0287_20260312-62.webp",
       "localPath": "BmuoOdcoOe-20260312-62.webp",
       "filename": "BmuoOdcoOe-20260312-62.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/BmuoOdcoOe-20260312-62-480w.webp"
     },
     {
       "objectId": "3K3niVjvaV",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/caf5e32a84be811c7f5c54c5c10df255_20260312-52.webp",
       "localPath": "3K3niVjvaV-20260312-52.webp",
       "filename": "3K3niVjvaV-20260312-52.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/3K3niVjvaV-20260312-52-480w.webp"
     },
     {
       "objectId": "Kw00kFq1Mn",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/75809da4c1c06be1edb847a2c4f0c06e_20260314-10.webp",
       "localPath": "Kw00kFq1Mn-20260314-10.webp",
       "filename": "Kw00kFq1Mn-20260314-10.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Kw00kFq1Mn-20260314-10-480w.webp"
     },
     {
       "objectId": "FQ194SND0K",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/410c105c3ae773537114e4fed33f26d9_20260314-8.webp",
       "localPath": "FQ194SND0K-20260314-8.webp",
       "filename": "FQ194SND0K-20260314-8.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/FQ194SND0K-20260314-8-480w.webp"
     },
     {
       "objectId": "4uN361rEX1",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0ef844c78c2345c08109b639b62430b8_20260313-100.webp",
       "localPath": "4uN361rEX1-20260313-100.webp",
       "filename": "4uN361rEX1-20260313-100.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/4uN361rEX1-20260313-100-480w.webp"
     },
     {
       "objectId": "HrEnw3bIxX",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6852bde6dd9f4c5354fc0fafbbe5018d_20260313-67.webp",
       "localPath": "HrEnw3bIxX-20260313-67.webp",
       "filename": "HrEnw3bIxX-20260313-67.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/HrEnw3bIxX-20260313-67-480w.webp"
     },
     {
       "objectId": "CbmvYjkRR4",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c8fea8332f4bdc527db65be2ab5df549_20260313-60.webp",
       "localPath": "CbmvYjkRR4-20260313-60.webp",
       "filename": "CbmvYjkRR4-20260313-60.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/CbmvYjkRR4-20260313-60-480w.webp"
     },
     {
       "objectId": "FUMWn7A0F2",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/886f38323ddf70187daf165a6b50fb5c_20260313-58.webp",
       "localPath": "FUMWn7A0F2-20260313-58.webp",
       "filename": "FUMWn7A0F2-20260313-58.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/FUMWn7A0F2-20260313-58-480w.webp"
     },
     {
       "objectId": "ymiubvB9ZN",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0357a806b86b480880a9dff0d67d0854_20260313-57.webp",
       "localPath": "ymiubvB9ZN-20260313-57.webp",
       "filename": "ymiubvB9ZN-20260313-57.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/ymiubvB9ZN-20260313-57-480w.webp"
     },
     {
       "objectId": "eervgATuq7",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7a5463b38696bdc1388261f79e45ba5d_20260313-44.webp",
       "localPath": "eervgATuq7-20260313-44.webp",
       "filename": "eervgATuq7-20260313-44.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/eervgATuq7-20260313-44-480w.webp"
     },
     {
       "objectId": "P31q0zLf6L",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0742a3dc70d3550ec44007c6cb8663f0_vorstand_2026.webp",
       "localPath": "P31q0zLf6L-Vorstand 2026.webp",
       "filename": "P31q0zLf6L-Vorstand 2026.webp",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/P31q0zLf6L-Vorstand 2026-480w.webp"
     },
     {
       "objectId": "CK9NNKLznR",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/1333c129cf0ba06a92dc172386b2f21f_20260313-7.jpg",
       "localPath": "CK9NNKLznR-20260313-7.jpg",
       "filename": "CK9NNKLznR-20260313-7.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/CK9NNKLznR-20260313-7-480w.webp"
     },
     {
       "objectId": "UK3e6w3kxk",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/07336927f5e134511e17a89af268c5da_20260313-6.jpg",
       "localPath": "UK3e6w3kxk-20260313-6.jpg",
       "filename": "UK3e6w3kxk-20260313-6.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/UK3e6w3kxk-20260313-6-480w.webp"
     },
     {
       "objectId": "4Z6O6TJLiR",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/658e322ea595848304fe5f755cd7d681_20260313-5.jpg",
       "localPath": "4Z6O6TJLiR-20260313-5.jpg",
       "filename": "4Z6O6TJLiR-20260313-5.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/4Z6O6TJLiR-20260313-5-480w.webp"
     },
     {
       "objectId": "q6dGQqinwm",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9e004c91f3a88738478d34c3be456c08_20260313-3.jpg",
       "localPath": "q6dGQqinwm-20260313-3.jpg",
       "filename": "q6dGQqinwm-20260313-3.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/q6dGQqinwm-20260313-3-480w.webp"
     },
     {
       "objectId": "jAyDijJ9bF",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/1c875c083649ca4f82c031429fba6fe8_20260313-4.jpg",
       "localPath": "jAyDijJ9bF-20260313-4.jpg",
       "filename": "jAyDijJ9bF-20260313-4.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/jAyDijJ9bF-20260313-4-480w.webp"
     },
     {
       "objectId": "3h5fdvCKv3",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c07fa9324025a814ccf434bc62f2edc9_Header%20BCD_Rundmail.jpg",
       "localPath": "3h5fdvCKv3-Header BCD_Rundmail.jpg",
       "filename": "3h5fdvCKv3-Header BCD_Rundmail.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/3h5fdvCKv3-Header BCD_Rundmail-480w.webp"
     },
     {
       "objectId": "EqUwqBOtQm",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/850f832dee0e3a41928a5f0aa562ffe5_Header%20BCD_Rundmail.jpg",
       "localPath": "EqUwqBOtQm-Header BCD_Rundmail.jpg",
       "filename": "EqUwqBOtQm-Header BCD_Rundmail.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/EqUwqBOtQm-Header BCD_Rundmail-480w.webp"
     },
     {
       "objectId": "S3BTGW0WZd",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5f8bfa8c70d4ffb8df2199fbec17d1fb_DSC10Verbessert-RR_lg.jpg",
       "localPath": "S3BTGW0WZd-Kongress_2024_10.jpg",
       "filename": "S3BTGW0WZd-Kongress_2024_10.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/S3BTGW0WZd-Kongress_2024_10-480w.webp"
     },
     {
       "objectId": "iVBYKeiMHa",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b0c667b6939710e928c5509f626bbf60_DSC7Verbessert-RR_lg.jpg",
       "localPath": "iVBYKeiMHa-Kongress_2024_07.jpg",
       "filename": "iVBYKeiMHa-Kongress_2024_07.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/iVBYKeiMHa-Kongress_2024_07-480w.webp"
     },
     {
       "objectId": "Xb4crNC9zV",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9e086cfa52119ebb54fc226f509d2378_DSC_0601.jpg",
       "localPath": "Xb4crNC9zV-Kongress_2013_22.jpg",
       "filename": "Xb4crNC9zV-Kongress_2013_22.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Xb4crNC9zV-Kongress_2013_22-480w.webp"
     },
     {
       "objectId": "EQnYDFkh6M",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/44db7bde96d113c2569e0ef2e6faa801_Martina_Stoll.jpg",
       "localPath": "EQnYDFkh6M-Kongress_2013_23.jpg",
       "filename": "EQnYDFkh6M-Kongress_2013_23.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/EQnYDFkh6M-Kongress_2013_23-480w.webp"
     },
     {
       "objectId": "Ndssfd304Z",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a197856b6f3c6bf713ae81d6f236755a_DSC_0592.jpg",
       "localPath": "Ndssfd304Z-Kongress_2013_21.jpg",
       "filename": "Ndssfd304Z-Kongress_2013_21.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Ndssfd304Z-Kongress_2013_21-480w.webp"
     },
     {
       "objectId": "8YaFHs3ZWO",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/015c25a67f45fab53dc6b98586db29e5_DSC_0439.jpg",
       "localPath": "8YaFHs3ZWO-Kongress_2013_17.jpg",
       "filename": "8YaFHs3ZWO-Kongress_2013_17.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/8YaFHs3ZWO-Kongress_2013_17-480w.webp"
     },
     {
       "objectId": "zixv7BVSF4",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ae22414737f578ea67462fcfae9f3087_DSC_0544.jpg",
       "localPath": "zixv7BVSF4-Kongress_2013_20.jpg",
       "filename": "zixv7BVSF4-Kongress_2013_20.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/zixv7BVSF4-Kongress_2013_20-480w.webp"
     },
     {
       "objectId": "nb47p0gSsg",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/85d62f394de124c023dc32914f9b3846_DSC_0511.jpg",
       "localPath": "nb47p0gSsg-Kongress_2013_18.jpg",
       "filename": "nb47p0gSsg-Kongress_2013_18.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/nb47p0gSsg-Kongress_2013_18-480w.webp"
     },
     {
       "objectId": "lOnTIDr0oo",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e536957cefaf5a620fced0e484425736_DSC_0532.jpg",
       "localPath": "lOnTIDr0oo-Kongress_2013_19.jpg",
       "filename": "lOnTIDr0oo-Kongress_2013_19.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/lOnTIDr0oo-Kongress_2013_19-480w.webp"
     },
     {
       "objectId": "7mqJAqulmR",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9ffbc24259265f2b490be6a669e0aad0_DSC_0327.jpg",
       "localPath": "7mqJAqulmR-Kongress_2013_13.jpg",
       "filename": "7mqJAqulmR-Kongress_2013_13.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/7mqJAqulmR-Kongress_2013_13-480w.webp"
     },
     {
       "objectId": "6IXLgVP2M3",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/1e26f5341574130a2180ab5e0110c646_DSC_0187.jpg",
       "localPath": "6IXLgVP2M3-Kongress_2013_11.jpg",
       "filename": "6IXLgVP2M3-Kongress_2013_11.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/6IXLgVP2M3-Kongress_2013_11-480w.webp"
     },
     {
       "objectId": "oqCFzQM68A",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/cadb8a16a07d1bd34d718100b7a10bc1_DSC_0426.jpg",
       "localPath": "oqCFzQM68A-Kongress_2013_16.jpg",
       "filename": "oqCFzQM68A-Kongress_2013_16.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/oqCFzQM68A-Kongress_2013_16-480w.webp"
     },
     {
       "objectId": "OIQYhlSBNh",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7cd998866a4214665daaebfab3448af5_DSC_0203.jpg",
       "localPath": "OIQYhlSBNh-Kongress_2013_12.jpg",
       "filename": "OIQYhlSBNh-Kongress_2013_12.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/OIQYhlSBNh-Kongress_2013_12-480w.webp"
     },
     {
       "objectId": "z9Zg789RXU",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bb8b3347c6f5c0aee58616536ada25f6_DSC_0407.jpg",
       "localPath": "z9Zg789RXU-Kongress_2013_14.jpg",
       "filename": "z9Zg789RXU-Kongress_2013_14.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/z9Zg789RXU-Kongress_2013_14-480w.webp"
     },
     {
       "objectId": "uWA7vVeAng",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/05db930d2bcc64fa6379893af038774b_DSC_0412.jpg",
       "localPath": "uWA7vVeAng-Kongress_2013_15.jpg",
       "filename": "uWA7vVeAng-Kongress_2013_15.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/uWA7vVeAng-Kongress_2013_15-480w.webp"
     },
     {
       "objectId": "GtLipBJnSm",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/40573dc6ed67aadead8ef8ffad96844e_DSC_0184.jpg",
       "localPath": "GtLipBJnSm-Kongress_2013_10.jpg",
       "filename": "GtLipBJnSm-Kongress_2013_10.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/GtLipBJnSm-Kongress_2013_10-480w.webp"
     },
     {
       "objectId": "UDuNwLIN5J",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e73b10ec4110fc1569114fa01ed1aa95_0488c.jpg",
       "localPath": "UDuNwLIN5J-Kongress_2013_01.jpg",
       "filename": "UDuNwLIN5J-Kongress_2013_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/UDuNwLIN5J-Kongress_2013_01-480w.webp"
     },
     {
       "objectId": "F1kHlavm1A",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/dc99b646d4a64a57d0cb1d30d5b49256_DSC_0144.jpg",
       "localPath": "F1kHlavm1A-Kongress_2013_08.jpg",
       "filename": "F1kHlavm1A-Kongress_2013_08.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/F1kHlavm1A-Kongress_2013_08-480w.webp"
     },
     {
       "objectId": "HtovHbiBKp",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/4550fee6d4ccb278ddfa3a7fd0e4ffd6_DSC_0181.jpg",
       "localPath": "HtovHbiBKp-Kongress_2013_09.jpg",
       "filename": "HtovHbiBKp-Kongress_2013_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/HtovHbiBKp-Kongress_2013_09-480w.webp"
     },
     {
       "objectId": "ZzHQeSkYYr",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5ca4eda3399a89f99b382233e905d2ff_CIMG5241.jpg",
       "localPath": "ZzHQeSkYYr-Kongress_2013_04.jpg",
       "filename": "ZzHQeSkYYr-Kongress_2013_04.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/ZzHQeSkYYr-Kongress_2013_04-480w.webp"
     },
     {
       "objectId": "FD8Lro78ZL",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f3cbc2b7fda032847eeba4610d09bcae_CIMG5255.jpg",
       "localPath": "FD8Lro78ZL-Kongress_2013_05.jpg",
       "filename": "FD8Lro78ZL-Kongress_2013_05.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/FD8Lro78ZL-Kongress_2013_05-480w.webp"
     },
     {
       "objectId": "myEpUFbUcP",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ca6a856bc80945a1ea55f2d4717672ac_CIMG5203.jpg",
       "localPath": "myEpUFbUcP-Kongress_2013_03.jpg",
       "filename": "myEpUFbUcP-Kongress_2013_03.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/myEpUFbUcP-Kongress_2013_03-480w.webp"
     },
     {
       "objectId": "2dTJCP3X42",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5e73e04d43c75c825d9939a2c36928af_DSC_0028.jpg",
       "localPath": "2dTJCP3X42-Kongress_2013_06.jpg",
       "filename": "2dTJCP3X42-Kongress_2013_06.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/2dTJCP3X42-Kongress_2013_06-480w.webp"
     },
     {
       "objectId": "nqfr3bHz3C",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9dc5fb09a6b00800fc1a32edc42900e1_DSC_0047.jpg",
       "localPath": "nqfr3bHz3C-Kongress_2013_07.jpg",
       "filename": "nqfr3bHz3C-Kongress_2013_07.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/nqfr3bHz3C-Kongress_2013_07-480w.webp"
     },
     {
       "objectId": "fc6ddDdkIy",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f663448ba695342ec722f57320c30e7d_CIMG5190.jpg",
       "localPath": "fc6ddDdkIy-Kongress_2013_02.jpg",
       "filename": "fc6ddDdkIy-Kongress_2013_02.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/fc6ddDdkIy-Kongress_2013_02-480w.webp"
     },
     {
       "objectId": "ZrYqZkH7Y8",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ce4d34976b69189df6f5450a25ea9273_IMG_1060.jpg",
       "localPath": "ZrYqZkH7Y8-Kongress_41_2015_14.jpg",
       "filename": "ZrYqZkH7Y8-Kongress_41_2015_14.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/ZrYqZkH7Y8-Kongress_41_2015_14-480w.webp"
     },
     {
       "objectId": "WILYZAAC8S",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/64a9f6e2bc9aba2d3fbed51dd53446d3_DSC012711.jpg",
       "localPath": "WILYZAAC8S-Kongress_41_2015_13.jpg",
       "filename": "WILYZAAC8S-Kongress_41_2015_13.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/WILYZAAC8S-Kongress_41_2015_13-480w.webp"
     },
     {
       "objectId": "C7fDbstnrt",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/aa0091b6bb0289cef3d9c5a823d64dcb_DSC01421.jpg",
       "localPath": "C7fDbstnrt-Kongress_41_2015_10.jpg",
       "filename": "C7fDbstnrt-Kongress_41_2015_10.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/C7fDbstnrt-Kongress_41_2015_10-480w.webp"
     },
     {
       "objectId": "Hynwxyyeqc",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e14f84bf0f0d0d4d21bac68d0c3b7ba1_DSC01422.jpg",
       "localPath": "Hynwxyyeqc-Kongress_41_2015_11.jpg",
       "filename": "Hynwxyyeqc-Kongress_41_2015_11.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Hynwxyyeqc-Kongress_41_2015_11-480w.webp"
     },
     {
       "objectId": "DzguC1TzWP",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/4e45982cef79b0e928bf3e830d3b3f31_DSC01295.jpg",
       "localPath": "DzguC1TzWP-Kongress_41_2015_08.jpg",
       "filename": "DzguC1TzWP-Kongress_41_2015_08.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DzguC1TzWP-Kongress_41_2015_08-480w.webp"
     },
     {
       "objectId": "zRm1mgat4G",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/04c4495ffd5a0d1e3f0d3baddd07ef51_DSC01427.jpg",
       "localPath": "zRm1mgat4G-Kongress_41_2015_12.jpg",
       "filename": "zRm1mgat4G-Kongress_41_2015_12.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/zRm1mgat4G-Kongress_41_2015_12-480w.webp"
     },
     {
       "objectId": "620nPpRDFH",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b31ea7af0693a53fa3158d2820aed5bd_DSC01367.jpg",
       "localPath": "620nPpRDFH-Kongress_41_2015_09.jpg",
       "filename": "620nPpRDFH-Kongress_41_2015_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/620nPpRDFH-Kongress_41_2015_09-480w.webp"
     },
     {
       "objectId": "4HjQM1p1CG",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/aabb4718eee054df48678cf547ae9ada_DSC01294_1.jpg",
       "localPath": "4HjQM1p1CG-Kongress_41_2015_07.jpg",
       "filename": "4HjQM1p1CG-Kongress_41_2015_07.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/4HjQM1p1CG-Kongress_41_2015_07-480w.webp"
     },
     {
       "objectId": "trJPZlaMBx",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c20aad1f30a258bb7123a05bad112387_DSC01293.jpg",
       "localPath": "trJPZlaMBx-Kongress_41_2015_06.jpg",
       "filename": "trJPZlaMBx-Kongress_41_2015_06.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/trJPZlaMBx-Kongress_41_2015_06-480w.webp"
     },
     {
       "objectId": "kE7yWWPQYv",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0e98e7099c6bf6f1ea27d5497d3ebf9d_DSC01241.jpg",
       "localPath": "kE7yWWPQYv-Kongress_41_2015_01.jpg",
       "filename": "kE7yWWPQYv-Kongress_41_2015_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/kE7yWWPQYv-Kongress_41_2015_01-480w.webp"
     },
     {
       "objectId": "W90BU5LzZp",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a2408ef844e6595ba90df0671f29ca8b_DSC01265.jpg",
       "localPath": "W90BU5LzZp-Kongress_41_2015_03.jpg",
       "filename": "W90BU5LzZp-Kongress_41_2015_03.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/W90BU5LzZp-Kongress_41_2015_03-480w.webp"
     },
     {
       "objectId": "gMq4e02imx",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/74b05b3df6e42f737fa4e9ba33ab8343_DSC01251.jpg",
       "localPath": "gMq4e02imx-Kongress_41_2015_02.jpg",
       "filename": "gMq4e02imx-Kongress_41_2015_02.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/gMq4e02imx-Kongress_41_2015_02-480w.webp"
     },
     {
       "objectId": "p110dUhqyE",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b56f395a640e2581adbf1784463ca407_DSC01273.jpg",
       "localPath": "p110dUhqyE-Kongress_41_2015_05.jpg",
       "filename": "p110dUhqyE-Kongress_41_2015_05.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/p110dUhqyE-Kongress_41_2015_05-480w.webp"
     },
     {
       "objectId": "rLcIzOjNjs",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/cfacb13b9a9a2afe4a30ea6dbc5bad0a_DSC01271.jpg",
       "localPath": "rLcIzOjNjs-Kongress_41_2015_04.jpg",
       "filename": "rLcIzOjNjs-Kongress_41_2015_04.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/rLcIzOjNjs-Kongress_41_2015_04-480w.webp"
     },
     {
       "objectId": "jZLNWB5etJ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7ea0e7f13420d60945b36b02bcd64ca9_29.jpg",
       "localPath": "jZLNWB5etJ-Kongress_2015_28.jpg",
       "filename": "jZLNWB5etJ-Kongress_2015_28.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/jZLNWB5etJ-Kongress_2015_28-480w.webp"
     },
     {
       "objectId": "qBqliSXM3o",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ddb91aa3a8378aa91b41f87b4ba4862c_30.jpg",
       "localPath": "qBqliSXM3o-Kongress_2015_29.jpg",
       "filename": "qBqliSXM3o-Kongress_2015_29.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/qBqliSXM3o-Kongress_2015_29-480w.webp"
     },
     {
       "objectId": "8CM9Qhk9Kz",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/450eaa0a3b9c49eda9588c2a80acf41a_28.jpg",
       "localPath": "8CM9Qhk9Kz-Kongress_2015_27.jpg",
       "filename": "8CM9Qhk9Kz-Kongress_2015_27.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/8CM9Qhk9Kz-Kongress_2015_27-480w.webp"
     },
     {
       "objectId": "32wbt8YVMU",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7d192a609e02231097cbb5cdaadfeca3_26.jpg",
       "localPath": "32wbt8YVMU-Kongress_2015_25.jpg",
       "filename": "32wbt8YVMU-Kongress_2015_25.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/32wbt8YVMU-Kongress_2015_25-480w.webp"
     },
     {
       "objectId": "DL8Jty3JJl",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a3c3e023f112abc1e41c93bbfbf0108c_27.jpg",
       "localPath": "DL8Jty3JJl-Kongress_2015_26.jpg",
       "filename": "DL8Jty3JJl-Kongress_2015_26.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DL8Jty3JJl-Kongress_2015_26-480w.webp"
     },
     {
       "objectId": "1XLcUTiYS5",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8d0ad535460a115991be9be60ab0f2a0_25.jpg",
       "localPath": "1XLcUTiYS5-Kongress_2015_24.jpg",
       "filename": "1XLcUTiYS5-Kongress_2015_24.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/1XLcUTiYS5-Kongress_2015_24-480w.webp"
     },
     {
       "objectId": "lbmjCRBkvC",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/64181fe001fa7d0aa6a24a70379c32f9_24.jpg",
       "localPath": "lbmjCRBkvC-Kongress_2015_23.jpg",
       "filename": "lbmjCRBkvC-Kongress_2015_23.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/lbmjCRBkvC-Kongress_2015_23-480w.webp"
     },
     {
       "objectId": "tcoumdj25L",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a250b2c5a030bc3bce89ddf69a8111c3_23.jpg",
       "localPath": "tcoumdj25L-Kongress_2015_22.jpg",
       "filename": "tcoumdj25L-Kongress_2015_22.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/tcoumdj25L-Kongress_2015_22-480w.webp"
     },
     {
       "objectId": "trKCbNdpTa",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8bffd5a588c6c160444fdd3c74b69aba_20.jpg",
       "localPath": "trKCbNdpTa-Kongress_2015_19.jpg",
       "filename": "trKCbNdpTa-Kongress_2015_19.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/trKCbNdpTa-Kongress_2015_19-480w.webp"
     },
     {
       "objectId": "6yyBNqkF91",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7e80aa750db86f1388a432b6ef311db3_18.jpg",
       "localPath": "6yyBNqkF91-Kongress_2015_17.jpg",
       "filename": "6yyBNqkF91-Kongress_2015_17.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/6yyBNqkF91-Kongress_2015_17-480w.webp"
     },
     {
       "objectId": "PJIG6qfPGD",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/554334fd3ce45c17bbd6fb9c37fa384e_19.jpg",
       "localPath": "PJIG6qfPGD-Kongress_2015_18.jpg",
       "filename": "PJIG6qfPGD-Kongress_2015_18.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/PJIG6qfPGD-Kongress_2015_18-480w.webp"
     },
     {
       "objectId": "Ht5o5Je5tf",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8609e4e83d006077ab34706a4d7eff83_22.jpg",
       "localPath": "Ht5o5Je5tf-Kongress_2015_21.jpg",
       "filename": "Ht5o5Je5tf-Kongress_2015_21.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Ht5o5Je5tf-Kongress_2015_21-480w.webp"
     },
     {
       "objectId": "bibLFPpd0D",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c8af217700df2f5c77432aeaec84f60e_21.jpg",
       "localPath": "bibLFPpd0D-Kongress_2015_20.jpg",
       "filename": "bibLFPpd0D-Kongress_2015_20.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/bibLFPpd0D-Kongress_2015_20-480w.webp"
     },
     {
       "objectId": "FN5DJPHFjv",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d8cb2742ed3d27415a9f91be9afe7cf7_17.jpg",
       "localPath": "FN5DJPHFjv-Kongress_2015_16.jpg",
       "filename": "FN5DJPHFjv-Kongress_2015_16.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/FN5DJPHFjv-Kongress_2015_16-480w.webp"
     },
     {
       "objectId": "0lMa3y0AGE",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/09dfc7e4bc73fdcec5338fb8f0fe7a11_16.jpg",
       "localPath": "0lMa3y0AGE-Kongress_2015_15.jpg",
       "filename": "0lMa3y0AGE-Kongress_2015_15.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/0lMa3y0AGE-Kongress_2015_15-480w.webp"
     },
     {
       "objectId": "YAT13BgLwK",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f2e7534273dd118237d47ec4681ddf81_14.jpg",
       "localPath": "YAT13BgLwK-Kongress_2015_12.jpg",
       "filename": "YAT13BgLwK-Kongress_2015_12.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/YAT13BgLwK-Kongress_2015_12-480w.webp"
     },
     {
       "objectId": "K1eWz7We0K",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/78f0885dfbfb98caa3f57a6bb9e6c32d_14_1.jpg",
       "localPath": "K1eWz7We0K-Kongress_2015_13.jpg",
       "filename": "K1eWz7We0K-Kongress_2015_13.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/K1eWz7We0K-Kongress_2015_13-480w.webp"
     },
     {
       "objectId": "kj1fJ3bPJD",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e03da4dca8c6b9b01938daffcba4f28b_13.jpg",
       "localPath": "kj1fJ3bPJD-Kongress_2015_11.jpg",
       "filename": "kj1fJ3bPJD-Kongress_2015_11.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/kj1fJ3bPJD-Kongress_2015_11-480w.webp"
     },
     {
       "objectId": "1GE1qBD0pp",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/826792529c308af72141ea8d478e08eb_12.jpg",
       "localPath": "1GE1qBD0pp-Kongress_2015_10.jpg",
       "filename": "1GE1qBD0pp-Kongress_2015_10.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/1GE1qBD0pp-Kongress_2015_10-480w.webp"
     },
     {
       "objectId": "3UUpTj7SH1",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8a4defce948a05ba5647f1de6dbf7fac_15_1.jpg",
       "localPath": "3UUpTj7SH1-Kongress_2015_14.jpg",
       "filename": "3UUpTj7SH1-Kongress_2015_14.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/3UUpTj7SH1-Kongress_2015_14-480w.webp"
     },
     {
       "objectId": "BiWXuGiWIX",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/acd1b5ab8aa52584e2613d3e1fea70d2_11.jpg",
       "localPath": "BiWXuGiWIX-Kongress_2015_09.jpg",
       "filename": "BiWXuGiWIX-Kongress_2015_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/BiWXuGiWIX-Kongress_2015_09-480w.webp"
     },
     {
       "objectId": "DZhMUuvzlH",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a7b1dbaff388734fc114cc6c9c883651_08.jpg",
       "localPath": "DZhMUuvzlH-Kongress_2015_07.jpg",
       "filename": "DZhMUuvzlH-Kongress_2015_07.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DZhMUuvzlH-Kongress_2015_07-480w.webp"
     },
     {
       "objectId": "gv6fH2Xtd7",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/96d0a8d9aff730157aa04614bf7f8631_07.jpg",
       "localPath": "gv6fH2Xtd7-Kongress_2015_06.jpg",
       "filename": "gv6fH2Xtd7-Kongress_2015_06.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/gv6fH2Xtd7-Kongress_2015_06-480w.webp"
     },
     {
       "objectId": "jVZUJl2I7h",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/de2b89659ee7793248389e9587856488_06.jpg",
       "localPath": "jVZUJl2I7h-Kongress_2015_05.jpg",
       "filename": "jVZUJl2I7h-Kongress_2015_05.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/jVZUJl2I7h-Kongress_2015_05-480w.webp"
     },
     {
       "objectId": "5YyBoDsUiE",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f3a397d51da3e9a0d641ca07c9aecaac_10.jpg",
       "localPath": "5YyBoDsUiE-Kongress_2015_08.jpg",
       "filename": "5YyBoDsUiE-Kongress_2015_08.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/5YyBoDsUiE-Kongress_2015_08-480w.webp"
     },
     {
       "objectId": "KxS4kfHwy9",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/da32d99c7eafeed8c6ff995bad5ad276_02.jpg",
       "localPath": "KxS4kfHwy9-Kongress_2015_01.jpg",
       "filename": "KxS4kfHwy9-Kongress_2015_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/KxS4kfHwy9-Kongress_2015_01-480w.webp"
     },
     {
       "objectId": "87QD7ZMDzF",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a02f77d5976fdf378ad4644d0fb8edc9_04.jpg",
       "localPath": "87QD7ZMDzF-Kongress_2015_03.jpg",
       "filename": "87QD7ZMDzF-Kongress_2015_03.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/87QD7ZMDzF-Kongress_2015_03-480w.webp"
     },
     {
       "objectId": "2I1s6kUYy7",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f4147b4b705104fed9184a6203ae681c_03.jpg",
       "localPath": "2I1s6kUYy7-Kongress_2015_02.jpg",
       "filename": "2I1s6kUYy7-Kongress_2015_02.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/2I1s6kUYy7-Kongress_2015_02-480w.webp"
     },
     {
       "objectId": "6m30Piaiwh",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/aaf2d0e07ef2a6134123f0bcdfdd17df_05.jpg",
       "localPath": "6m30Piaiwh-Kongress_2015_04.jpg",
       "filename": "6m30Piaiwh-Kongress_2015_04.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/6m30Piaiwh-Kongress_2015_04-480w.webp"
     },
     {
       "objectId": "q7m1HE8XHN",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c14ec436d27624dc4756a9e657d238b4_16.jpg",
       "localPath": "q7m1HE8XHN-Kongress_2016_18.jpg",
       "filename": "q7m1HE8XHN-Kongress_2016_18.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/q7m1HE8XHN-Kongress_2016_18-480w.webp"
     },
     {
       "objectId": "KYFeZ1rc6a",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/daf36fbf20d2d2d41c1e10dac6455e42_14.jpg",
       "localPath": "KYFeZ1rc6a-Kongress_2016_16.jpg",
       "filename": "KYFeZ1rc6a-Kongress_2016_16.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/KYFeZ1rc6a-Kongress_2016_16-480w.webp"
     },
     {
       "objectId": "STRLKIoRVm",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/44917a7250fabf1b1c4593a8904126a7_15.jpg",
       "localPath": "STRLKIoRVm-Kongress_2016_17.jpg",
       "filename": "STRLKIoRVm-Kongress_2016_17.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/STRLKIoRVm-Kongress_2016_17-480w.webp"
     },
     {
       "objectId": "mPooD2j4jX",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/120341b690a6b1c94063a858c09688e6_12.jpg",
       "localPath": "mPooD2j4jX-Kongress_2016_14.jpg",
       "filename": "mPooD2j4jX-Kongress_2016_14.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/mPooD2j4jX-Kongress_2016_14-480w.webp"
     },
     {
       "objectId": "8HoDQ1zGm9",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/538cfdb1aececfad3a570b791fadcc4a_11.jpg",
       "localPath": "8HoDQ1zGm9-Kongress_2016_13.jpg",
       "filename": "8HoDQ1zGm9-Kongress_2016_13.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/8HoDQ1zGm9-Kongress_2016_13-480w.webp"
     },
     {
       "objectId": "X83VhmAbY2",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e41e1bcd363d9e6a45155313a32f0fc5_13.jpg",
       "localPath": "X83VhmAbY2-Kongress_2016_15.jpg",
       "filename": "X83VhmAbY2-Kongress_2016_15.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/X83VhmAbY2-Kongress_2016_15-480w.webp"
     },
     {
       "objectId": "mrDtSfP1Gf",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/832e71ef19c233b20ccdff58f76bf901_9_2.jpg",
       "localPath": "mrDtSfP1Gf-Kongress_2016_11.jpg",
       "filename": "mrDtSfP1Gf-Kongress_2016_11.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/mrDtSfP1Gf-Kongress_2016_11-480w.webp"
     },
     {
       "objectId": "HnXN5tOOy6",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/42994150950dc96e57ad0cb3e5261312_9_1.jpg",
       "localPath": "HnXN5tOOy6-Kongress_2016_10.jpg",
       "filename": "HnXN5tOOy6-Kongress_2016_10.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/HnXN5tOOy6-Kongress_2016_10-480w.webp"
     },
     {
       "objectId": "2M2aFeKGo7",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/74769dab9f2305c3034d63a3d99d8c8e_10.jpg",
       "localPath": "2M2aFeKGo7-Kongress_2016_12.jpg",
       "filename": "2M2aFeKGo7-Kongress_2016_12.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/2M2aFeKGo7-Kongress_2016_12-480w.webp"
     },
     {
       "objectId": "hCEo8sYv7q",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/34901c27654b5d0d8331bb1a067d316c_8.jpg",
       "localPath": "hCEo8sYv7q-Kongress_2016_09.jpg",
       "filename": "hCEo8sYv7q-Kongress_2016_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/hCEo8sYv7q-Kongress_2016_09-480w.webp"
     },
     {
       "objectId": "G5SnJHQaq6",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/3d2d72a3816890a79ed624a681848997_6.jpg",
       "localPath": "G5SnJHQaq6-Kongress_2016_07.jpg",
       "filename": "G5SnJHQaq6-Kongress_2016_07.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/G5SnJHQaq6-Kongress_2016_07-480w.webp"
     },
     {
       "objectId": "DozlfW1kkM",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/cf69e165373a3097e6df52b78353b862_7.jpg",
       "localPath": "DozlfW1kkM-Kongress_2016_08.jpg",
       "filename": "DozlfW1kkM-Kongress_2016_08.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DozlfW1kkM-Kongress_2016_08-480w.webp"
     },
     {
       "objectId": "zNRNa4PpBG",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/1132af5eacd4f807e35c15c4a71b0506_3_0.jpg",
       "localPath": "zNRNa4PpBG-Kongress_2016_03.jpg",
       "filename": "zNRNa4PpBG-Kongress_2016_03.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/zNRNa4PpBG-Kongress_2016_03-480w.webp"
     },
     {
       "objectId": "mgGYa3Abba",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5a85eae4897bf14842539c1cd9e0fd78_5.jpg",
       "localPath": "mgGYa3Abba-Kongress_2016_06.jpg",
       "filename": "mgGYa3Abba-Kongress_2016_06.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/mgGYa3Abba-Kongress_2016_06-480w.webp"
     },
     {
       "objectId": "buVFBk2PH3",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/59cc9a289937495ed13fc0da8cbb6033_3_2.jpg",
       "localPath": "buVFBk2PH3-Kongress_2016_05.jpg",
       "filename": "buVFBk2PH3-Kongress_2016_05.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/buVFBk2PH3-Kongress_2016_05-480w.webp"
     },
     {
       "objectId": "d8CvWUnFm7",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/58cbafaaecb5cfc4dc499b2c054766ff_3_1.jpg",
       "localPath": "d8CvWUnFm7-Kongress_2016_04.jpg",
       "filename": "d8CvWUnFm7-Kongress_2016_04.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/d8CvWUnFm7-Kongress_2016_04-480w.webp"
     },
     {
       "objectId": "jTpOAFO0pH",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/35ca906b290f53ba4ed06dd70c54e8a7_1.jpg",
       "localPath": "jTpOAFO0pH-Kongress_2016_01.jpg",
       "filename": "jTpOAFO0pH-Kongress_2016_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/jTpOAFO0pH-Kongress_2016_01-480w.webp"
     },
     {
       "objectId": "wRXVsz5d4u",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/296e5f4dadda6125b334271dde5f8d97_2.jpg",
       "localPath": "wRXVsz5d4u-Kongress_2016_02.jpg",
       "filename": "wRXVsz5d4u-Kongress_2016_02.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/wRXVsz5d4u-Kongress_2016_02-480w.webp"
     },
     {
       "objectId": "Kp1kbPf8yi",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/814ee4f6da70f69053a44024dff521ca_DSC02392.jpg",
       "localPath": "Kp1kbPf8yi-Kongress_2017_15.jpg",
       "filename": "Kp1kbPf8yi-Kongress_2017_15.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Kp1kbPf8yi-Kongress_2017_15-480w.webp"
     },
     {
       "objectId": "NY4W8i7R4V",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b36ce916b36e61c0aee4adb878b0418e_DSC02375.jpg",
       "localPath": "NY4W8i7R4V-Kongress_2017_13.jpg",
       "filename": "NY4W8i7R4V-Kongress_2017_13.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/NY4W8i7R4V-Kongress_2017_13-480w.webp"
     },
     {
       "objectId": "Z1ljxat7BL",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/39a6feb42d2ac401be77a312e21cfa2e_DSC02329.jpg",
       "localPath": "Z1ljxat7BL-Kongress_2017_10.jpg",
       "filename": "Z1ljxat7BL-Kongress_2017_10.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Z1ljxat7BL-Kongress_2017_10-480w.webp"
     },
     {
       "objectId": "U0ai0GhQZo",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/87772afcd99f10ec04a65ab24df88fac_DSC02361.jpg",
       "localPath": "U0ai0GhQZo-Kongress_2017_12.jpg",
       "filename": "U0ai0GhQZo-Kongress_2017_12.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/U0ai0GhQZo-Kongress_2017_12-480w.webp"
     },
     {
       "objectId": "wUHoc36L1g",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/02e8ccd3d11b04f7d7a5a0b35b62a6c7_DSC02333.jpg",
       "localPath": "wUHoc36L1g-Kongress_2017_11.jpg",
       "filename": "wUHoc36L1g-Kongress_2017_11.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/wUHoc36L1g-Kongress_2017_11-480w.webp"
     },
     {
       "objectId": "eBoNPZ9RV5",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8f9e3c888e5bda2e13b807ded55d3ea9_DSC02317.jpg",
       "localPath": "eBoNPZ9RV5-Kongress_2017_09.jpg",
       "filename": "eBoNPZ9RV5-Kongress_2017_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/eBoNPZ9RV5-Kongress_2017_09-480w.webp"
     },
     {
       "objectId": "zxxYxRCIVr",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0488745ee83526d0ebc99f0fa6986702_DSC02386.jpg",
       "localPath": "zxxYxRCIVr-Kongress_2017_14.jpg",
       "filename": "zxxYxRCIVr-Kongress_2017_14.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/zxxYxRCIVr-Kongress_2017_14-480w.webp"
     },
     {
       "objectId": "tDHp6Uj9Ix",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/69c80ded68e04c64110a0a052bbd6bd4_DSC02235.jpg",
       "localPath": "tDHp6Uj9Ix-Kongress_2017_03.jpg",
       "filename": "tDHp6Uj9Ix-Kongress_2017_03.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/tDHp6Uj9Ix-Kongress_2017_03-480w.webp"
     },
     {
       "objectId": "uJ1msvIjen",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7739fefa3286d6b4b2e45e51790d8fcc_DSC02257.jpg",
       "localPath": "uJ1msvIjen-Kongress_2017_04.jpg",
       "filename": "uJ1msvIjen-Kongress_2017_04.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/uJ1msvIjen-Kongress_2017_04-480w.webp"
     },
     {
       "objectId": "3pm7i5KP75",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d0f4d04d7a5c9c052ab95d38c871291a_DSC02312.jpg",
       "localPath": "3pm7i5KP75-Kongress_2017_08.jpg",
       "filename": "3pm7i5KP75-Kongress_2017_08.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/3pm7i5KP75-Kongress_2017_08-480w.webp"
     },
     {
       "objectId": "76pVB65XET",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bfda846124e192157e6f973d64e38ecf_DSC02298.jpg",
       "localPath": "76pVB65XET-Kongress_2017_06.jpg",
       "filename": "76pVB65XET-Kongress_2017_06.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/76pVB65XET-Kongress_2017_06-480w.webp"
     },
     {
       "objectId": "v1xik0Ka65",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0dfffd55115b83c3e0bde884e0c2a545_DSC02215.jpg",
       "localPath": "v1xik0Ka65-Kongress_2017_02.jpg",
       "filename": "v1xik0Ka65-Kongress_2017_02.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/v1xik0Ka65-Kongress_2017_02-480w.webp"
     },
     {
       "objectId": "8gOF5QD42n",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b5dfb577bde8a0b6f89f5825fb83c258_DSC02261.jpg",
       "localPath": "8gOF5QD42n-Kongress_2017_05.jpg",
       "filename": "8gOF5QD42n-Kongress_2017_05.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/8gOF5QD42n-Kongress_2017_05-480w.webp"
     },
     {
       "objectId": "PIvDnafqXs",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bdf24394e13ebbca4db9acbb061f2779_DSC02306.jpg",
       "localPath": "PIvDnafqXs-Kongress_2017_07.jpg",
       "filename": "PIvDnafqXs-Kongress_2017_07.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/PIvDnafqXs-Kongress_2017_07-480w.webp"
     },
     {
       "objectId": "M1Vk1AViqq",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d6952d2857c8a1e9b10ab475c78c2cad_20170401.jpg",
       "localPath": "M1Vk1AViqq-Kongress_2017_01.jpg",
       "filename": "M1Vk1AViqq-Kongress_2017_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/M1Vk1AViqq-Kongress_2017_01-480w.webp"
     },
     {
       "objectId": "DJk4okSmVu",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/361a4238415d41e38545f9dc857c379f_Rueckblick_2017.png",
       "localPath": "DJk4okSmVu-Rueckblick_2017.png",
       "filename": "DJk4okSmVu-Rueckblick_2017.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DJk4okSmVu-Rueckblick_2017-480w.webp"
     },
     {
       "objectId": "qCLHVTt3gB",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/79306e39f2f3388b1ba223dfdabdc0ab_samstag03.jpg",
       "localPath": "qCLHVTt3gB-Kongress_2018_10.jpg",
       "filename": "qCLHVTt3gB-Kongress_2018_10.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/qCLHVTt3gB-Kongress_2018_10-480w.webp"
     },
     {
       "objectId": "cNLdTMVBHL",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/84e4189358b12661a62628904d20c6e2_samstag12.jpg",
       "localPath": "cNLdTMVBHL-Kongress_2018_13.jpg",
       "filename": "cNLdTMVBHL-Kongress_2018_13.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/cNLdTMVBHL-Kongress_2018_13-480w.webp"
     },
     {
       "objectId": "CdipOyJ7WX",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6d27878bac7f3c128f07c58f9a8767d0_samstag17.jpg",
       "localPath": "CdipOyJ7WX-Kongress_2018_14.jpg",
       "filename": "CdipOyJ7WX-Kongress_2018_14.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/CdipOyJ7WX-Kongress_2018_14-480w.webp"
     },
     {
       "objectId": "XwkZvloYSV",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f8fe3fa41b7edc09eaebfa70d6f8287d_samstag02.jpg",
       "localPath": "XwkZvloYSV-Kongress_2018_09.jpg",
       "filename": "XwkZvloYSV-Kongress_2018_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/XwkZvloYSV-Kongress_2018_09-480w.webp"
     },
     {
       "objectId": "Re8sssLbsA",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/93bdf07a1a4484eb69128f6a88917ce2_samstag05.jpg",
       "localPath": "Re8sssLbsA-Kongress_2018_11.jpg",
       "filename": "Re8sssLbsA-Kongress_2018_11.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Re8sssLbsA-Kongress_2018_11-480w.webp"
     },
     {
       "objectId": "ufH5epnx5l",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0ede4b52e26352426020e2befc30b356_samstag11.jpg",
       "localPath": "ufH5epnx5l-Kongress_2018_12.jpg",
       "filename": "ufH5epnx5l-Kongress_2018_12.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/ufH5epnx5l-Kongress_2018_12-480w.webp"
     },
     {
       "objectId": "I4tnaNbtId",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/23aa0dfe2dc6d191d1cc6dfd0ec45580_samstag01.jpg",
       "localPath": "I4tnaNbtId-Kongress_2018_09.jpg",
       "filename": "I4tnaNbtId-Kongress_2018_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/I4tnaNbtId-Kongress_2018_09-480w.webp"
     },
     {
       "objectId": "2BXBeC1fQN",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7b369cafdaa132fe8a238d61c1df2069_preis.jpg",
       "localPath": "2BXBeC1fQN-Kongress_2018_08.jpg",
       "filename": "2BXBeC1fQN-Kongress_2018_08.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/2BXBeC1fQN-Kongress_2018_08-480w.webp"
     },
     {
       "objectId": "PGBWNTA0aV",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a252d00dbc7e1ae303f3a8bdf9c505d3_post02.jpg",
       "localPath": "PGBWNTA0aV-Kongress_2018_07.jpg",
       "filename": "PGBWNTA0aV-Kongress_2018_07.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/PGBWNTA0aV-Kongress_2018_07-480w.webp"
     },
     {
       "objectId": "CfCLT1ZxRo",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a08b5d83e62706b7d8c05729362b7712_kirschpreis.jpg",
       "localPath": "CfCLT1ZxRo-Kongress_2018_04.jpg",
       "filename": "CfCLT1ZxRo-Kongress_2018_04.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/CfCLT1ZxRo-Kongress_2018_04-480w.webp"
     },
     {
       "objectId": "CHHLKaMPlf",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/2fd5b794bebbe2911b5531bf3dbd8e80_bcd_gruppe.jpg",
       "localPath": "CHHLKaMPlf-Kongress_2018_02.jpg",
       "filename": "CHHLKaMPlf-Kongress_2018_02.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/CHHLKaMPlf-Kongress_2018_02-480w.webp"
     },
     {
       "objectId": "y4RaBg47s0",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/cdb95d91aea2bd3231d56cbbfb041b34_kongress_eroeffnung03.jpg",
       "localPath": "y4RaBg47s0-Kongress_2018_05.jpg",
       "filename": "y4RaBg47s0-Kongress_2018_05.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/y4RaBg47s0-Kongress_2018_05-480w.webp"
     },
     {
       "objectId": "EoF2bIbo9z",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a262c53dbafb5bc5a206465ae8a746a2_ausstellung05.jpg",
       "localPath": "EoF2bIbo9z-Kongress_2018_01.jpg",
       "filename": "EoF2bIbo9z-Kongress_2018_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/EoF2bIbo9z-Kongress_2018_01-480w.webp"
     },
     {
       "objectId": "xaAyE46Wog",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e808ee496e4deab460ae483ae4e65f6f_berufspolitisches_seminar.jpg",
       "localPath": "xaAyE46Wog-Kongress_2018_03.jpg",
       "filename": "xaAyE46Wog-Kongress_2018_03.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/xaAyE46Wog-Kongress_2018_03-480w.webp"
     },
     {
       "objectId": "qX214twjHV",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a15dd74a7bd97518112d21fefbbd7828_martina_kirsch.jpg",
       "localPath": "qX214twjHV-Kongress_2018_06.jpg",
       "filename": "qX214twjHV-Kongress_2018_06.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/qX214twjHV-Kongress_2018_06-480w.webp"
     },
     {
       "objectId": "RFqWuxuVrG",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ed7365c9d073617baae65bfc48dee075_44_Kongress.jpg",
       "localPath": "RFqWuxuVrG-44_Kongress.jpg",
       "filename": "RFqWuxuVrG-44_Kongress.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/RFqWuxuVrG-44_Kongress-480w.webp"
     },
     {
       "objectId": "RJ4FpqwINP",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/13d79589e1f83ecf7c0373c4edd90704_vortrag_09.jpg",
       "localPath": "RJ4FpqwINP-Kongress_2019_16.jpg",
       "filename": "RJ4FpqwINP-Kongress_2019_16.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/RJ4FpqwINP-Kongress_2019_16-480w.webp"
     },
     {
       "objectId": "OJBAiCzRje",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ecdec55b44455614a79937466effd06e_saal.jpg",
       "localPath": "OJBAiCzRje-Kongress_2019_12.jpg",
       "filename": "OJBAiCzRje-Kongress_2019_12.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/OJBAiCzRje-Kongress_2019_12-480w.webp"
     },
     {
       "objectId": "rg1sIRbkUF",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7fea64bae5ec4266c40be586ffee396c_vortrag_03.jpg",
       "localPath": "rg1sIRbkUF-Kongress_2019_14.jpg",
       "filename": "rg1sIRbkUF-Kongress_2019_14.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/rg1sIRbkUF-Kongress_2019_14-480w.webp"
     },
     {
       "objectId": "AiYEtK2oJ7",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/672f414bd21eeaaa4a0caae1016e38f6_vortrag_08.jpg",
       "localPath": "AiYEtK2oJ7-Kongress_2019_15.jpg",
       "filename": "AiYEtK2oJ7-Kongress_2019_15.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/AiYEtK2oJ7-Kongress_2019_15-480w.webp"
     },
     {
       "objectId": "k5qYzq3IZw",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/24be07a6eb9b5d6fece3bdb20b5bbcc0_vortrag_02.jpg",
       "localPath": "k5qYzq3IZw-Kongress_2019_13.jpg",
       "filename": "k5qYzq3IZw-Kongress_2019_13.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/k5qYzq3IZw-Kongress_2019_13-480w.webp"
     },
     {
       "objectId": "DTiBxuwFn5",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c4fb5bed8ce0a1aaa46666a60e6bdfdc_preisverleihung_02.jpg",
       "localPath": "DTiBxuwFn5-Kongress_2019_11.jpg",
       "filename": "DTiBxuwFn5-Kongress_2019_11.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DTiBxuwFn5-Kongress_2019_11-480w.webp"
     },
     {
       "objectId": "HXGuCp1oW4",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a1a2a47b1b68ad42b58e1bb1af46253c_MFA.jpg",
       "localPath": "HXGuCp1oW4-Kongress_2019_08.jpg",
       "filename": "HXGuCp1oW4-Kongress_2019_08.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/HXGuCp1oW4-Kongress_2019_08-480w.webp"
     },
     {
       "objectId": "D3glB7XppG",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/1731464c7184e7f6d2039f1b982defbb_preisverleihung_01.jpg",
       "localPath": "D3glB7XppG-Kongress_2019_10.jpg",
       "filename": "D3glB7XppG-Kongress_2019_10.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/D3glB7XppG-Kongress_2019_10-480w.webp"
     },
     {
       "objectId": "30VCWMKSnm",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/af85162f0375c6faeb91be00e6e50e43_eroeffnung_strittmatter.jpg",
       "localPath": "30VCWMKSnm-Kongress_2019_04.jpg",
       "filename": "30VCWMKSnm-Kongress_2019_04.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/30VCWMKSnm-Kongress_2019_04-480w.webp"
     },
     {
       "objectId": "Cm7MD3FnWJ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/af78664b9d2b00357768af45892bfadf_MV_BCD.jpg",
       "localPath": "Cm7MD3FnWJ-Kongress_2019_09.jpg",
       "filename": "Cm7MD3FnWJ-Kongress_2019_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Cm7MD3FnWJ-Kongress_2019_09-480w.webp"
     },
     {
       "objectId": "8xANYtFoKb",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6cfa57146e944c7e6dca005cd9d342f5_ausstellung_eroeffnung_01.jpg",
       "localPath": "8xANYtFoKb-Kongress_2019_02.jpg",
       "filename": "8xANYtFoKb-Kongress_2019_02.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/8xANYtFoKb-Kongress_2019_02-480w.webp"
     },
     {
       "objectId": "eHlKpSOmW0",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8fefb955a738d7d9c846fc0d50f84031_furtwaengler_bussen_01.jpg",
       "localPath": "eHlKpSOmW0-Kongress_2019_06.jpg",
       "filename": "eHlKpSOmW0-Kongress_2019_06.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/eHlKpSOmW0-Kongress_2019_06-480w.webp"
     },
     {
       "objectId": "UozjylUPFo",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7abf2ce1e468c53ff39a2395bb523e07_esbq.jpg",
       "localPath": "UozjylUPFo-Kongress_2019_05.jpg",
       "filename": "UozjylUPFo-Kongress_2019_05.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/UozjylUPFo-Kongress_2019_05-480w.webp"
     },
     {
       "objectId": "PGHPUGe08Q",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/4aa0a281a579378b710735fb1540ab0f_ausstellung.jpg",
       "localPath": "PGHPUGe08Q-Kongress_2019_01.jpg",
       "filename": "PGHPUGe08Q-Kongress_2019_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/PGHPUGe08Q-Kongress_2019_01-480w.webp"
     },
     {
       "objectId": "XUZWhl74ke",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/dff97a9367d1a57111a17bbc5210c1b5_eroeffnung_post.jpg",
       "localPath": "XUZWhl74ke-Kongress_2019_03.jpg",
       "filename": "XUZWhl74ke-Kongress_2019_03.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/XUZWhl74ke-Kongress_2019_03-480w.webp"
     },
     {
       "objectId": "ejS9DmcMm6",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d2f0c5febec40519403d8714fd22909d_luetz_05.jpg",
       "localPath": "ejS9DmcMm6-Kongress_2019_07.jpg",
       "filename": "ejS9DmcMm6-Kongress_2019_07.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/ejS9DmcMm6-Kongress_2019_07-480w.webp"
     },
     {
       "objectId": "MD5w0HYuo8",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a430eadb6ef389f1360bac423552691b_Rueckblick_2019.jpg",
       "localPath": "MD5w0HYuo8-Rueckblick_2019.jpg",
       "filename": "MD5w0HYuo8-Rueckblick_2019.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/MD5w0HYuo8-Rueckblick_2019-480w.webp"
     },
     {
       "objectId": "DvwU02P5RZ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f6d981e89209b7b58f2a8a0399ee1aeb_Rueckblick_2020.jpg",
       "localPath": "DvwU02P5RZ-Rueckblick_2020.jpg",
       "filename": "DvwU02P5RZ-Rueckblick_2020.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DvwU02P5RZ-Rueckblick_2020-480w.webp"
     },
     {
       "objectId": "BPlCYmNKel",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ba04b82746c2c7e310022d22ba5e1c75_IMG_1661.jpg",
       "localPath": "BPlCYmNKel-Kongress_2021_16.jpg",
       "filename": "BPlCYmNKel-Kongress_2021_16.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/BPlCYmNKel-Kongress_2021_16-480w.webp"
     },
     {
       "objectId": "Hydup5aIcb",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ca76edc369bf615ce512950965245b2f_IMG_1649_003.jpg",
       "localPath": "Hydup5aIcb-Kongress_2021_11.jpg",
       "filename": "Hydup5aIcb-Kongress_2021_11.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Hydup5aIcb-Kongress_2021_11-480w.webp"
     },
     {
       "objectId": "yFOo4qSjEK",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/901caf0c70c1c22acdbc45e894427320_IMG_1654.jpg",
       "localPath": "yFOo4qSjEK-Kongress_2021_13.jpg",
       "filename": "yFOo4qSjEK-Kongress_2021_13.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/yFOo4qSjEK-Kongress_2021_13-480w.webp"
     },
     {
       "objectId": "kLWQjnbYOB",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/595150fc0d6e1458b71285af11a7fd09_IMG_1653.jpg",
       "localPath": "kLWQjnbYOB-Kongress_2021_12.jpg",
       "filename": "kLWQjnbYOB-Kongress_2021_12.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/kLWQjnbYOB-Kongress_2021_12-480w.webp"
     },
     {
       "objectId": "KBjm4hepkd",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/804d90a476b13fe40fe84f6067758fc7_IMG_1659.jpg",
       "localPath": "KBjm4hepkd-Kongress_2021_15.jpg",
       "filename": "KBjm4hepkd-Kongress_2021_15.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/KBjm4hepkd-Kongress_2021_15-480w.webp"
     },
     {
       "objectId": "IrMf0SX5i9",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c509b4e1d5da5a801dd3c1b7645e0f98_IMG_1656_002.jpg",
       "localPath": "IrMf0SX5i9-Kongress_2021_14.jpg",
       "filename": "IrMf0SX5i9-Kongress_2021_14.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/IrMf0SX5i9-Kongress_2021_14-480w.webp"
     },
     {
       "objectId": "mRKIKrF7fQ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6e0c02313d9f1dbf4114b21e72090319_47_DGK_Kongress_IMG_2882.jpg",
       "localPath": "mRKIKrF7fQ-Kongress_2021_09.jpg",
       "filename": "mRKIKrF7fQ-Kongress_2021_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/mRKIKrF7fQ-Kongress_2021_09-480w.webp"
     },
     {
       "objectId": "eHaartvY5K",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/4a6fcb52e1b7964cb7e1c7749eb62331_IMG_0454_002.jpg",
       "localPath": "eHaartvY5K-Kongress_2021_10.jpg",
       "filename": "eHaartvY5K-Kongress_2021_10.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/eHaartvY5K-Kongress_2021_10-480w.webp"
     },
     {
       "objectId": "UpswWgL07a",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/479d85904940633832b3cf310d680884_47_DGK_Kongress_IMG_2880.jpg",
       "localPath": "UpswWgL07a-Kongress_2021_08.jpg",
       "filename": "UpswWgL07a-Kongress_2021_08.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/UpswWgL07a-Kongress_2021_08-480w.webp"
     },
     {
       "objectId": "A3QwqRw8vz",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f5f545f3e176625222f096435b66a9f6_47_DGK_Kongress_IMG_2876.jpg",
       "localPath": "A3QwqRw8vz-Kongress_2021_05.jpg",
       "filename": "A3QwqRw8vz-Kongress_2021_05.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/A3QwqRw8vz-Kongress_2021_05-480w.webp"
     },
     {
       "objectId": "eKpFV81tbM",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/68324fe79b73d8de4e57b0fce7615d28_47_DGK_Kongress_IMG_2874.jpg",
       "localPath": "eKpFV81tbM-Kongress_2021_03.jpg",
       "filename": "eKpFV81tbM-Kongress_2021_03.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/eKpFV81tbM-Kongress_2021_03-480w.webp"
     },
     {
       "objectId": "JWdL2w6CVP",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/910485f293a5c83a99993c5b9e73c483_47_DGK_Kongress_IMG_2879.jpg",
       "localPath": "JWdL2w6CVP-Kongress_2021_07.jpg",
       "filename": "JWdL2w6CVP-Kongress_2021_07.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/JWdL2w6CVP-Kongress_2021_07-480w.webp"
     },
     {
       "objectId": "BTW3IRsp3Y",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/eaa13727dc63d6401f73eef579711c85_47_DGK_Kongress_IMG_2873.jpg",
       "localPath": "BTW3IRsp3Y-Kongress_2021_02.jpg",
       "filename": "BTW3IRsp3Y-Kongress_2021_02.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/BTW3IRsp3Y-Kongress_2021_02-480w.webp"
     },
     {
       "objectId": "tq877dGRC7",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/9a7ce27f88f11314e67cac47096db583_47_DGK_Kongress_IMG_2877.jpg",
       "localPath": "tq877dGRC7-Kongress_2021_06.jpg",
       "filename": "tq877dGRC7-Kongress_2021_06.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/tq877dGRC7-Kongress_2021_06-480w.webp"
     },
     {
       "objectId": "FyNvFJY8Cw",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/207c5d7531560cf513c015eb8e472329_47_DGK_Kongress_IMG_2871.jpg",
       "localPath": "FyNvFJY8Cw-Kongress_2021_01.jpg",
       "filename": "FyNvFJY8Cw-Kongress_2021_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/FyNvFJY8Cw-Kongress_2021_01-480w.webp"
     },
     {
       "objectId": "Lr10TpgF95",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6c75dd0ba1087e6895ccba8cf4c561f8_47_DGK_Kongress_IMG_2875.jpg",
       "localPath": "Lr10TpgF95-Kongress_2021_04.jpg",
       "filename": "Lr10TpgF95-Kongress_2021_04.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Lr10TpgF95-Kongress_2021_04-480w.webp"
     },
     {
       "objectId": "MPUR4qUZu0",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/1e5e13b39396173019ba7233510b5729_Rueckblick_2021.jpg",
       "localPath": "MPUR4qUZu0-Rueckblick_2021.jpg",
       "filename": "MPUR4qUZu0-Rueckblick_2021.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/MPUR4qUZu0-Rueckblick_2021-480w.webp"
     },
     {
       "objectId": "m3xtwtIKd0",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/050dd0d1d544af4e7a13589e8a5844ee_3_BCD.png",
       "localPath": "m3xtwtIKd0-Kongress_2022_02.png",
       "filename": "m3xtwtIKd0-Kongress_2022_02.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/m3xtwtIKd0-Kongress_2022_02-480w.webp"
     },
     {
       "objectId": "70mpCnY7Ua",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/5d974a9a672ec1f0ebc04c2489506d5a_11_BCD.jpg",
       "localPath": "70mpCnY7Ua-Kongress_2022_09.jpg",
       "filename": "70mpCnY7Ua-Kongress_2022_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/70mpCnY7Ua-Kongress_2022_09-480w.webp"
     },
     {
       "objectId": "xASuitS6pB",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f84f2f3b919d39754131c0846296ca36_12_BCD.jpg",
       "localPath": "xASuitS6pB-Kongress_2022_10.jpg",
       "filename": "xASuitS6pB-Kongress_2022_10.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/xASuitS6pB-Kongress_2022_10-480w.webp"
     },
     {
       "objectId": "gQzPTWzqzD",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6639796849213d45ff76b4f51c4c091f_10_BCD.jpg",
       "localPath": "gQzPTWzqzD-Kongress_2022_08.jpg",
       "filename": "gQzPTWzqzD-Kongress_2022_08.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/gQzPTWzqzD-Kongress_2022_08-480w.webp"
     },
     {
       "objectId": "dghsI461yo",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/8f89c4c0e8984c65f1df4a5cfdeab81d_9_BCD.jpg",
       "localPath": "dghsI461yo-Kongress_2022_07.jpg",
       "filename": "dghsI461yo-Kongress_2022_07.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/dghsI461yo-Kongress_2022_07-480w.webp"
     },
     {
       "objectId": "MEcjCiTpqz",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ca2844489b8dcc064ceddf4582ee4e04_7_BCD.jpg",
       "localPath": "MEcjCiTpqz-Kongress_2022_06.jpg",
       "filename": "MEcjCiTpqz-Kongress_2022_06.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/MEcjCiTpqz-Kongress_2022_06-480w.webp"
     },
     {
       "objectId": "qW4bG0ZmcW",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/47f02193563e4a03fb111f94afb1ea31_5_BCD.jpg",
       "localPath": "qW4bG0ZmcW-Kongress_2022_04.jpg",
       "filename": "qW4bG0ZmcW-Kongress_2022_04.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/qW4bG0ZmcW-Kongress_2022_04-480w.webp"
     },
     {
       "objectId": "k0WGS2JfdR",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ba3b453191f3851bb58b1c7326af074c_1_Vorstand.jpg",
       "localPath": "k0WGS2JfdR-Kongress_2022_01.jpg",
       "filename": "k0WGS2JfdR-Kongress_2022_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/k0WGS2JfdR-Kongress_2022_01-480w.webp"
     },
     {
       "objectId": "fCAgW5JUgj",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/c2b1c9d31f1f782015720018adf51607_4_BCD.jpg",
       "localPath": "fCAgW5JUgj-Kongress_2022_03.jpg",
       "filename": "fCAgW5JUgj-Kongress_2022_03.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/fCAgW5JUgj-Kongress_2022_03-480w.webp"
     },
     {
       "objectId": "Rgf36G0FnX",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/377e8e66867eb616da0cf3caca58b4ed_6_BCD.jpg",
       "localPath": "Rgf36G0FnX-Kongress_2022_05.jpg",
       "filename": "Rgf36G0FnX-Kongress_2022_05.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Rgf36G0FnX-Kongress_2022_05-480w.webp"
     },
     {
       "objectId": "JZVDdBZJsN",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/524c1777f5154e89de2b8393dfd40f7d_Rueckblick_2022.jpg",
       "localPath": "JZVDdBZJsN-Kongress_2022.jpg",
       "filename": "JZVDdBZJsN-Kongress_2022.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/JZVDdBZJsN-Kongress_2022-480w.webp"
     },
     {
       "objectId": "0AQMHMBLna",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/1d5ffd1bf8bde44172c7c2a415c77391_t_k5.jpeg",
       "localPath": "0AQMHMBLna-Test.jpeg",
       "filename": "0AQMHMBLna-Test.jpeg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/0AQMHMBLna-Test-480w.webp"
     },
     {
       "objectId": "mjTkwYzs4N",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/06f0dce5e81fcf24c35e52a64c3b3ed6_t_k5.jpeg",
       "localPath": "mjTkwYzs4N-t_k5.jpeg",
       "filename": "mjTkwYzs4N-t_k5.jpeg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/mjTkwYzs4N-t_k5-480w.webp"
     },
     {
       "objectId": "Nmd0qeDWuw",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/dd869fbd6b13d897c38712f4ec69efd7_t_k4.jpeg",
       "localPath": "Nmd0qeDWuw-t_k4.jpeg",
       "filename": "Nmd0qeDWuw-t_k4.jpeg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Nmd0qeDWuw-t_k4-480w.webp"
     },
     {
       "objectId": "JA6XxSsoDx",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6ab58cf1c98f16e493379d9656a01eda_t_k3.jpeg",
       "localPath": "JA6XxSsoDx-t_k3.jpeg",
       "filename": "JA6XxSsoDx-t_k3.jpeg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/JA6XxSsoDx-t_k3-480w.webp"
     },
     {
       "objectId": "AMYoVfuAGt",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0663adaeb61b97dd449f0e746794286e_t_k2.jpeg",
       "localPath": "AMYoVfuAGt-t_k2.jpeg",
       "filename": "AMYoVfuAGt-t_k2.jpeg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/AMYoVfuAGt-t_k2-480w.webp"
     },
     {
       "objectId": "KMEbhjFqru",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f5cf07a1d7c9184d9bc93ea0ec4335a3_t_k1.jpeg",
       "localPath": "KMEbhjFqru-t_k1.jpeg",
       "filename": "KMEbhjFqru-t_k1.jpeg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/KMEbhjFqru-t_k1-480w.webp"
     },
     {
       "objectId": "vwqMRTBrPW",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7f1b26b084154df774c7b58615da7433_t_Fuerst.jpeg",
       "localPath": "vwqMRTBrPW-t_Fuerst.jpeg",
       "filename": "vwqMRTBrPW-t_Fuerst.jpeg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/vwqMRTBrPW-t_Fuerst-480w.webp"
     },
     {
       "objectId": "HYFIdQjoSJ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e6b49a6ddd152bef7046e745f7538bd6_49_Kongress%201.jpg",
       "localPath": "HYFIdQjoSJ-49_Kongress (1).jpg",
       "filename": "HYFIdQjoSJ-49_Kongress (1).jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/HYFIdQjoSJ-49_Kongress (1)-480w.webp"
     },
     {
       "objectId": "eWq3g0BGyj",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f84ed98e38ae796e8396720c343fe21e_Klassik%20Radio%20Foyer_2020_IHK%20Neujahrsempfang_Conny%20Kurz.jpg",
       "localPath": "eWq3g0BGyj-Klassik Radio Foyer_2020_IHK Neujahrsempfang_Conny Kurz.jpg",
       "filename": "eWq3g0BGyj-Klassik Radio Foyer_2020_IHK Neujahrsempfang_Conny Kurz.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/eWq3g0BGyj-Klassik Radio Foyer_2020_IHK Neujahrsempfang_Conny Kurz-480w.webp"
     },
     {
       "objectId": "tsZ5JGEG6m",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e9d5bd2222f9e2a078dc8fa3cfe4c379_DSC14Verbessert-RR_md.jpg",
       "localPath": "tsZ5JGEG6m-Kongress_2024_14.jpg",
       "filename": "tsZ5JGEG6m-Kongress_2024_14.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/tsZ5JGEG6m-Kongress_2024_14-480w.webp"
     },
     {
       "objectId": "nAevgBE3TJ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/d3a3bfc5c44c3ea8003e4663774eb391_DSC13Verbessert-RR_md.jpg",
       "localPath": "nAevgBE3TJ-Kongress_2024_13.jpg",
       "filename": "nAevgBE3TJ-Kongress_2024_13.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/nAevgBE3TJ-Kongress_2024_13-480w.webp"
     },
     {
       "objectId": "KkF2eUK0CX",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bee2e48868f70f1e453145b1397261ba_DSC12_md.jpg",
       "localPath": "KkF2eUK0CX-Kongress_2024_12.jpg",
       "filename": "KkF2eUK0CX-Kongress_2024_12.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/KkF2eUK0CX-Kongress_2024_12-480w.webp"
     },
     {
       "objectId": "oAfW7UfzqF",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6e86ec17764a9fd8c9c89f826b987614_DSC9Verbessert-RR_md.jpg",
       "localPath": "oAfW7UfzqF-Kongress_2024_09.jpg",
       "filename": "oAfW7UfzqF-Kongress_2024_09.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/oAfW7UfzqF-Kongress_2024_09-480w.webp"
     },
     {
       "objectId": "3M6zpDbsKG",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/503a78e82e9473e352a1f76b8e80e968_DSC8Verbessert-RR_md.jpg",
       "localPath": "3M6zpDbsKG-Kongress_2024_08.jpg",
       "filename": "3M6zpDbsKG-Kongress_2024_08.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/3M6zpDbsKG-Kongress_2024_08-480w.webp"
     },
     {
       "objectId": "vdChVCJQJC",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/46173bec5afa1dddbc69eb38de4cc477_DSC3Verbessert-RR_md.jpg",
       "localPath": "vdChVCJQJC-Kongress_2024_03.jpg",
       "filename": "vdChVCJQJC-Kongress_2024_03.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/vdChVCJQJC-Kongress_2024_03-480w.webp"
     },
     {
       "objectId": "gJ6d8Jro67",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7a89fe0192047fe1b6d289e4d0c3e897_DSC6Verbessert-RR_md.jpg",
       "localPath": "gJ6d8Jro67-Kongress_2024_06.jpg",
       "filename": "gJ6d8Jro67-Kongress_2024_06.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/gJ6d8Jro67-Kongress_2024_06-480w.webp"
     },
     {
       "objectId": "R5KcJhcCmV",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ebe62a977569bad7dcef2532347ed520_DSC1_md.jpg",
       "localPath": "R5KcJhcCmV-Kongress_2024_01.jpg",
       "filename": "R5KcJhcCmV-Kongress_2024_01.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/R5KcJhcCmV-Kongress_2024_01-480w.webp"
     },
     {
       "objectId": "3cwrnhxiDF",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/7bb81b25b6578490ae91ad47557133f0_DSC4Verbessert-RR_md.jpg",
       "localPath": "3cwrnhxiDF-Kongress_2024_04.jpg",
       "filename": "3cwrnhxiDF-Kongress_2024_04.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/3cwrnhxiDF-Kongress_2024_04-480w.webp"
     },
     {
       "objectId": "8S6Qno89vt",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ee9736bccab71ca38b418495e7ab9eca_DSC5Verbessert-RR_md.jpg",
       "localPath": "8S6Qno89vt-Kongress_2024_05.jpg",
       "filename": "8S6Qno89vt-Kongress_2024_05.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/8S6Qno89vt-Kongress_2024_05-480w.webp"
     },
     {
       "objectId": "JNyxk9Zb0N",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/756afbff20023f746b7b7bef0add9f36_DSC11_md.jpg",
       "localPath": "JNyxk9Zb0N-Kongress_2024_11.jpg",
       "filename": "JNyxk9Zb0N-Kongress_2024_11.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/JNyxk9Zb0N-Kongress_2024_11-480w.webp"
     },
     {
       "objectId": "Fz2z8zMTWD",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/378ebd4f5b207b4b46540815f6d257ee_DSC2Kopie_lg.jpg",
       "localPath": "Fz2z8zMTWD-Kongress_2024_02.jpg",
       "filename": "Fz2z8zMTWD-Kongress_2024_02.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/Fz2z8zMTWD-Kongress_2024_02-480w.webp"
     },
     {
       "objectId": "x3CzRj6SdJ",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/fc0e61ed07b3dbbb54f30fce71d4ca67_poster_2026.jpg",
       "localPath": "x3CzRj6SdJ-poster_2026.jpg",
       "filename": "x3CzRj6SdJ-poster_2026.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/x3CzRj6SdJ-poster_2026-480w.webp"
     },
     {
       "objectId": "GMyg6Wtgn2",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/6854dc43d2389005f5020fd1f4ffd825_sterzing_xs.jpg",
       "localPath": "GMyg6Wtgn2-sterzing_xs.jpg",
       "filename": "GMyg6Wtgn2-sterzing_xs.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/GMyg6Wtgn2-sterzing_xs-480w.webp"
     },
     {
       "objectId": "E4nNbtiKIR",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/20c2645eff6e91576ff677ae0d89fa13_fuerst_xs.jpg",
       "localPath": "E4nNbtiKIR-fuerst_xs.jpg",
       "filename": "E4nNbtiKIR-fuerst_xs.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/E4nNbtiKIR-fuerst_xs-480w.webp"
     },
     {
       "objectId": "t7o14sfqh2",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/0906d738afa9971fa05c709736934135_breitkopf_xs.jpg",
       "localPath": "t7o14sfqh2-breitkopf_xs.jpg",
       "filename": "t7o14sfqh2-breitkopf_xs.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/t7o14sfqh2-breitkopf_xs-480w.webp"
     },
     {
       "objectId": "8nDIDC0qHs",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/a0b4621d3c7463ad57cf500a77117bdc_Heiner-Krammer_sm.jpg",
       "localPath": "8nDIDC0qHs-Heiner-Krammer_sm.jpg",
       "filename": "8nDIDC0qHs-Heiner-Krammer_sm.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/8nDIDC0qHs-Heiner-Krammer_sm-480w.webp"
     },
     {
       "objectId": "DLLFC8GCjd",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f7ae80a8ee5c62f94272c0598eb0ee63_jens_kirsch.jpg",
       "localPath": "DLLFC8GCjd-Jens Kirsch.jpg",
       "filename": "DLLFC8GCjd-Jens Kirsch.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/DLLFC8GCjd-Jens Kirsch-480w.webp"
     },
     {
       "objectId": "QXXppBdZSa",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/e0fe6d84ad1b1f8434a83c6d02ad756f_aufbaukurs.jpg",
       "localPath": "QXXppBdZSa-Aufbaukurs.jpg",
       "filename": "QXXppBdZSa-Aufbaukurs.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/QXXppBdZSa-Aufbaukurs-480w.webp"
     },
     {
       "objectId": "lYgVJHAdqI",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f908cf3ce52bad7cc440e86f6de07e4d_grundkurs.jpg",
       "localPath": "lYgVJHAdqI-Grundkurs.jpg",
       "filename": "lYgVJHAdqI-Grundkurs.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/lYgVJHAdqI-Grundkurs-480w.webp"
     },
     {
       "objectId": "HBWMZxglEg",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/f43510bbf44be55046bb4008fbb48365_berufspolitisches_seminar.jpg",
       "localPath": "HBWMZxglEg-Seminar.jpg",
       "filename": "HBWMZxglEg-Seminar.jpg",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/HBWMZxglEg-Seminar-480w.webp"
     },
     {
       "objectId": "kadR2jh8qc",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bcb3c8f9d9bd95d47e32b12dbb6ccafb_logo_bcd.png",
       "localPath": "kadR2jh8qc-Logo BCD.png",
       "filename": "kadR2jh8qc-Logo BCD.png",
-      "type": "image"
+      "type": "image",
+      "thumbnailPath": "thumbnails/kadR2jh8qc-Logo BCD-480w.webp"
     }
   ],
   "locations": [

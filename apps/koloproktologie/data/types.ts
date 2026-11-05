@@ -94,7 +94,7 @@ export interface EntryClass {
   description?: string | null;
   text?: string | null;
   image?: string | null;
-  date?: string | null;
+  date?: any | null;
   state?: string | null;
   documents?: string[] | null;
 }
@@ -115,7 +115,7 @@ export interface DownloadClass {
   categories?: string[] | null;
   title: string | null;
   description?: string | null;
-  date?: string | null;
+  date?: any | null;
   file?: { __typename?: string; name?: string; url: string } | null;
   filePath?: string;
 }
@@ -180,7 +180,7 @@ export interface ArticleClass {
   title: string | null;
   description?: string | null;
   text?: string | null;
-  date?: string | null;
+  date?: any | null;
   state?: string | null;
   documents?: string[] | null;
 }

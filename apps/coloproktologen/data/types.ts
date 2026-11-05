@@ -97,7 +97,7 @@ export interface EntryClass {
   description?: string | null;
   text?: string | null;
   image?: string | null;
-  date?: string | null;
+  date?: any | null;
   link?: string | null;
   documents?: string[] | null;
   file?: { __typename?: string; name?: string; url: string } | null;
@@ -113,7 +113,7 @@ export interface DownloadClass {
   title: string | null;
   description?: string | null;
   file?: { __typename?: string; name?: string; url: string } | null;
-  date?: string | null;
+  date?: any | null;
   filePath?: string;
 }
 
