@@ -10,7 +10,7 @@ export type KoloproktologieUser = {
     first_name: string;
     last_name: string;
     email: string | null;
-    title: string;
+    pre_title: string;
     salutation: string;
     password?: string;
     location?: string;

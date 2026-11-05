@@ -20,7 +20,7 @@ const UserAccount: React.FC<{
                     enableReinitialize
                     initialValues={{
                         address: user.title,
-                        title: user.pre_title,
+                        pre_title: user.pre_title,
                         first_name: user.first_name,
                         last_name: user.last_name,
                         email: user.email
@@ -65,7 +65,7 @@ const UserAccount: React.FC<{
                             <div>
                                 <label htmlFor="title">Titel</label>
                                 <input
-                                    value={values.title}
+                                    value={values.pre_title}
                                     id="title"
                                     type="text"
                                     placeholder="Titel"

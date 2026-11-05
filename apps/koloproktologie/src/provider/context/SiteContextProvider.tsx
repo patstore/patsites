@@ -50,6 +50,8 @@ export const SiteContextProvider = ({
         }
     }, []);
 
+    console.log({user})
+
     useEffect(() => {
         getUser();
     }, [pathname, getUser]);
