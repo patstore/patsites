@@ -1,0 +1,62 @@
+import React, { useMemo } from "react";
+import { sidebarHeader } from "../styles";
+import { Button, DateTile } from "@ui";
+import { CalendarProps } from "../types";
+import { useNavigate } from "@tanstack/react-router";
+import { useGetAppointment, useFindLocation } from "@provider";
+
+const Calendar: React.FC<CalendarProps> = ({ category, getAllEvents }) => {
+  const navigate = useNavigate();
+  const { appointments } = useGetAppointment();
+  const { findLocation } = useFindLocation();
+
+  const events = useMemo(() => {
+    if (getAllEvents) {
+      const filteredCalendar = [...appointments].filter(
+        (event) => new Date(event.date?.start) > new Date(),
+      );
+      filteredCalendar.sort(
+        (a, b) =>
+          new Date(a.date?.start).getTime() - new Date(b.date?.start).getTime(),
+      );
+      return filteredCalendar.slice(0, 5);
+    }
+    if (category) {
+      const filteredCalendar = [...appointments].filter(
+        (event) =>
+          new Date(event.date?.start) > new Date() &&
+          event?.categories?.includes(category),
+      );
+      filteredCalendar.sort(
+        (a, b) =>
+          new Date(a.date?.start).getTime() - new Date(b.date?.start).getTime(),
+      );
+      return filteredCalendar.slice(0, 5);
+    }
+    return [];
+  }, [appointments]);
+
+  return (
+    <div>
+      <div css={sidebarHeader}>Termine</div>
+      {events.length > 0 ? (
+        events.map((termin) => (
+          <DateTile
+            size="small"
+            key={termin.objectId}
+            title={termin.title || ""}
+            date={termin.date?.start || ""}
+            description={termin.description || ""}
+            location={findLocation(termin.date?.place)}
+            categories={termin.categories}
+          />
+        ))
+      ) : (
+        <p>Im Moment sind keine Termine hinterlegt</p>
+      )}
+      <Button text="Zu allen Terminen" onClick={() => navigate({ to: "/termine" })} />
+    </div>
+  );
+};
+
+export default Calendar;

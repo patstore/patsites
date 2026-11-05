@@ -31,6 +31,7 @@ export async function loadLiveRecords<
     return [];
   }
 
-  const records = await fetchClassRecords(client, module, env.projectId, context.states);
+  const scope = getStaticSnapshot()?._meta?.recordScope === "module" ? "module" : "project";
+  const records = await fetchClassRecords(client, module, env.projectId, context.states, scope);
   return filterByStates(records, context.states) as T[];
 }

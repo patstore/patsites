@@ -30,14 +30,25 @@ export function createGraphQLClient(env: PatStoreEnv): GraphQLClient {
   return new GraphQLClient(env.graphqlUrl, { headers: authHeaders(env) });
 }
 
-function projectWhere(projectId: string, states: Record<string, unknown> | null): Record<string, unknown> {
-  const where: Record<string, unknown> = {
-    project: { have: { objectId: { equalTo: projectId } } },
-  };
+export type RecordScope = "project" | "module";
+
+export function recordsWhere(
+  scope: RecordScope,
+  ids: { projectId: string; moduleId: string },
+  states: Record<string, unknown> | null,
+): Record<string, unknown> {
+  const where: Record<string, unknown> =
+    scope === "module"
+      ? { module: { have: { objectId: { equalTo: ids.moduleId } } } }
+      : { project: { have: { objectId: { equalTo: ids.projectId } } } };
   if (states) {
     where.state = states;
   }
   return where;
+}
+
+function projectWhere(projectId: string, states: Record<string, unknown> | null): Record<string, unknown> {
+  return recordsWhere("project", { projectId, moduleId: "" }, states);
 }
 
 const MODULE_SELECTION = `
@@ -69,14 +80,16 @@ export async function fetchClassRecords(
   module: PatStoreModule,
   projectId: string,
   states: readonly string[] | null,
+  scope: RecordScope = "project",
 ): Promise<Record<string, unknown>[]> {
   const className = module.connected_class;
   if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(className)) {
     throw new Error(`Unsupported class name: ${className}`);
   }
   let selection = buildSelection(module);
-  const where = projectWhere(
-    projectId,
+  const where = recordsWhere(
+    scope,
+    { projectId, moduleId: module.objectId },
     moduleHasStateField(module) ? stateWhere(states) : null,
   );
   const collectionKey = getCollectionKey(className);
@@ -144,16 +157,36 @@ async function paginate<T>(
   return records;
 }
 
+export interface SupplementalField {
+  id: string;
+  type?: string;
+}
+
+export interface ExtraClassFetch {
+  className: string;
+  /** Read this class from the module whose `connected_class` matches. */
+  moduleClass: string;
+  fields?: readonly SupplementalField[];
+  dataFields?: PatStoreModule["data_fields"];
+}
+
 export async function fetchStaticRecords(
   env: PatStoreEnv,
   options: {
     states?: readonly string[] | null;
     filesDir?: string;
     downloadFiles?: boolean;
+    recordScope?: RecordScope;
+    supplementFields?: Record<string, readonly SupplementalField[]>;
+    extraClasses?: readonly ExtraClassFetch[];
   } = {},
 ): Promise<StaticRecords> {
   const client = createGraphQLClient(env);
-  const modules = await fetchModules(client, env.projectId);
+  const scope = options.recordScope ?? "project";
+  const modules = applySupplementalFields(
+    await fetchModules(client, env.projectId),
+    options.supplementFields,
+  );
   const collections: Record<string, Record<string, unknown>[]> = {};
   const seen = new Set<string>();
   const downloader =
@@ -168,7 +201,7 @@ export async function fetchStaticRecords(
       continue;
     }
     seen.add(className);
-    const records = await fetchClassRecords(client, module, env.projectId, states);
+    const records = await fetchClassRecords(client, module, env.projectId, states, scope);
     if (downloader) {
       const fileFields = module.fields
         .filter((field) => isDownloadableFileField(field))
@@ -181,9 +214,85 @@ export async function fetchStaticRecords(
     console.log(`Fetched ${className} → ${getStorageKey(className)} (${records.length})`);
   }
 
+  for (const extra of options.extraClasses ?? []) {
+    const source = modules.find((module) => module.connected_class === extra.moduleClass);
+    if (!source || seen.has(extra.className) || !shouldStoreClass(extra.className)) {
+      continue;
+    }
+    seen.add(extra.className);
+    const module = syntheticModule(source, extra);
+    modules.push(module);
+    const records = await fetchClassRecords(client, module, env.projectId, states, scope);
+    if (downloader) {
+      const fileFields = module.fields
+        .filter((field) => isDownloadableFileField(field))
+        .map((field) => field.id);
+      for (const record of records) {
+        await downloader.attachFiles(record, fileFields);
+      }
+    }
+    collections[getStorageKey(extra.className)] = records;
+    console.log(`Fetched ${extra.className} → ${getStorageKey(extra.className)} (${records.length})`);
+  }
+
   return {
     modules,
     collections,
     downloadedFiles: downloader?.list() ?? [],
   };
+}
+
+function applySupplementalFields(
+  modules: PatStoreModule[],
+  extra: Record<string, readonly SupplementalField[]> | undefined,
+): PatStoreModule[] {
+  if (!extra) {
+    return modules;
+  }
+  return modules.map((module) => {
+    const additions = extra[module.connected_class];
+    if (!additions?.length) {
+      return module;
+    }
+    return {
+      ...module,
+      fields: mergeFields(module.fields, additions),
+    };
+  });
+}
+
+function syntheticModule(source: PatStoreModule, extra: ExtraClassFetch): PatStoreModule {
+  return {
+    objectId: source.objectId,
+    name: extra.className,
+    connected_class: extra.className,
+    fields: mergeFields([], extra.fields ?? []),
+    data_fields: extra.dataFields ? [...extra.dataFields] : [],
+  };
+}
+
+function mergeFields(
+  fields: PatStoreModule["fields"],
+  additions: readonly SupplementalField[],
+): PatStoreModule["fields"] {
+  const wanted = new Set(additions.map((field) => field.id).filter(Boolean));
+  const merged = fields.map((field) =>
+    wanted.has(field.id) ? { ...field, active: true } : field,
+  );
+  const seen = new Set(merged.map((field) => field.id));
+  for (const field of additions) {
+    if (!field.id || seen.has(field.id)) {
+      continue;
+    }
+    seen.add(field.id);
+    merged.push({
+      id: field.id,
+      label: field.id,
+      required: false,
+      type: field.type ?? "string",
+      active: true,
+      position: merged.length,
+    });
+  }
+  return merged;
 }

@@ -18,6 +18,7 @@
     "@emotion/styled": "^11.14.0",
     "@repo/core": "workspace:*",
     "@repo/server": "workspace:*",
+    "@repo/ui": "workspace:*",
     "@tanstack/react-router": "^1.170.16",
     "@tanstack/react-start": "^1.168.26",
     "@types/react-modal": "^3.16.3",

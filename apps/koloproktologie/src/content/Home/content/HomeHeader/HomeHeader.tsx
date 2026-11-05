@@ -89,8 +89,8 @@ const HomeHeader = () => {
                     </motion.div>
                 </AnimatePresence>
                 <div css={loaderContainer}>
-                    {home_header_content.map((item, index) => 
-                        <HomeHeaderTrack key={item.title} isActive={index === count} index={index} setCount={setCount} />
+                    {renderContent.map((item, index) => 
+                        <HomeHeaderTrack key={item.title} isActive={index === count} index={index} setCount={setCount} title={item.topline} />
                     )}
                 </div>
             </div>

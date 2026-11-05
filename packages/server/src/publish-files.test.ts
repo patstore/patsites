@@ -10,13 +10,25 @@ test("downloaded PatStore files are published at /data/files", () => {
   const filesDir = path.join(root, "data", "files");
   const outDir = path.join(root, "static-out");
   fs.mkdirSync(filesDir, { recursive: true });
+  fs.mkdirSync(path.join(filesDir, "thumbnails"), { recursive: true });
   fs.writeFileSync(path.join(filesDir, "at0T1ifsyE-Poster_Kongress_2027.png"), "png");
+  fs.writeFileSync(
+    path.join(filesDir, "thumbnails", "at0T1ifsyE-Poster_Kongress_2027-480w.webp"),
+    "webp",
+  );
 
   publishDownloadedFiles(filesDir, outDir);
 
   assert.equal(
     fs.readFileSync(path.join(outDir, "data", "files", "at0T1ifsyE-Poster_Kongress_2027.png"), "utf8"),
     "png",
+  );
+  assert.equal(
+    fs.readFileSync(
+      path.join(outDir, "data", "files", "thumbnails", "at0T1ifsyE-Poster_Kongress_2027-480w.webp"),
+      "utf8",
+    ),
+    "webp",
   );
 });
 

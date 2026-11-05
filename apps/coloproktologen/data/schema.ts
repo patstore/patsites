@@ -125,6 +125,7 @@ export const imageSchema = z.looseObject({
   connected_elements: z.array(z.any()).nullable().optional(),
   file: z.object({ __typename: z.string().optional(), name: z.string().optional(), url: z.string() }).nullable().optional(),
   filePath: z.string().optional(),
+  thumbnailPath: z.string().optional(),
 });
 
 export const userSchema = z.looseObject({

@@ -1,4 +1,5 @@
 import React from "react";
+import { env } from "@env";
 import { Banner, Layout } from "@components";
 import {
     ContentContainer,
@@ -18,11 +19,24 @@ import OpenAccess from "./components/OpenAccess";
 import HeadBanner from "./components/HeadBanner";
 import { homeHeaderTextContent } from "./styles";
 import {HomeHeader} from "./content";
+import {PreviewWrapper} from "@repo/ui";
 
 const Home: React.FC = () => {
     return (
         <Layout>
-            <HomeHeader />
+            {/* <PreviewWrapper preview={env.VITE_PREVIEW_MODE === "true"}>
+                <HomeHeader />
+            </PreviewWrapper> */}
+             <HeadContent
+                title="Deutsche Gesellschaft für Koloproktologie"
+                content={
+                    <p css={homeHeaderTextContent}>
+                        Expertise bündeln, Wissen teilen – gemeinsam für eine
+                        starke und zukunftsorientierte Koloproktologie
+                    </p>
+                }
+                backgroundImage={"/main_header_2026.jpg"}
+            />
             <HeadBanner borderBottom />
             <Banner isFixed={false} />
             <ContentContainer>

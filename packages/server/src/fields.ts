@@ -155,7 +155,6 @@ function describedType(field: ModuleField): {
     field.type === "image_preview" ||
     field.type === "date" ||
     field.type === "edit_date" ||
-    field.type === "date_picker" ||
     field.type === "person" ||
     field.type === "edit_person" ||
     field.type === "video" ||
@@ -262,6 +261,17 @@ export function describeModule(module: PatStoreModule): FieldDescription[] {
   if (moduleHasDownloadableFile(module)) {
     push({
       id: "filePath",
+      required: false,
+      tsType: "string",
+      zodExpr: "z.string().optional()",
+      zodType: z.string().optional(),
+      selection: "",
+    });
+  }
+
+  if (module.connected_class === "Image") {
+    push({
+      id: "thumbnailPath",
       required: false,
       tsType: "string",
       zodExpr: "z.string().optional()",

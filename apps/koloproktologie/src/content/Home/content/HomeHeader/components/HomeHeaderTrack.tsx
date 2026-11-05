@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import variants from '../constants/variants'
 import { useState } from 'react'
 
-const HomeHeaderTrack = ({isActive, index, setCount}: {isActive: boolean, index: number, setCount: (index: number) => void}) => {
+const HomeHeaderTrack = ({isActive, index, setCount, title}: {isActive: boolean, index: number, setCount: (index: number) => void, title: string}) => {
     const [hover, setHover] = useState(false)
     return (
         <button 
@@ -21,6 +21,10 @@ const HomeHeaderTrack = ({isActive, index, setCount}: {isActive: boolean, index:
                     transition={{ duration: 6, ease: "easeInOut" }}
                 />
             </div>
+            <span>{index + 1}</span>
+            <p>
+                {title}
+            </p>
         </button>
     )
 }

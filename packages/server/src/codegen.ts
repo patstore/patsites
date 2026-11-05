@@ -78,6 +78,7 @@ export interface DownloadedFile {
   localPath: string;
   filename: string;
   type: "image" | "document";
+  thumbnailPath?: string;
 }
 
 ${interfaces}

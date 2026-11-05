@@ -13,6 +13,7 @@ export interface DownloadedFile {
   localPath: string;
   filename: string;
   type: "image" | "document";
+  thumbnailPath?: string;
 }
 
 export interface VideoClass {
@@ -130,6 +131,7 @@ export interface ImageClass {
   connected_elements?: any[] | null;
   file?: { __typename?: string; name?: string; url: string } | null;
   filePath?: string;
+  thumbnailPath?: string;
 }
 
 export interface EventClass {

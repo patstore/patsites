@@ -29,6 +29,8 @@ export interface DownloadedFile {
   localPath: string;
   filename: string;
   type: "image" | "document";
+  /** Path under the files directory, for example `thumbnails/photo-480w.webp`. */
+  thumbnailPath?: string;
 }
 
 export interface ContentMeta {
@@ -37,6 +39,11 @@ export interface ContentMeta {
   moduleCount: number;
   /** States requested while generating this snapshot. Null means every state. */
   states: string[] | null;
+  /**
+   * `project` keeps records that point at the project.
+   * `module` keeps records attached to each module. Some projects only set the module.
+   */
+  recordScope?: "project" | "module";
 }
 
 export interface ContentSnapshot {

@@ -64,9 +64,9 @@ const Header: React.FC = () => {
         };
     }, [headerAnimate, isHome]);
 
-    // useEffect(() => {
-    //     setIsHome(window.location.pathname === "/");
-    // }, []);
+    useEffect(() => {
+        setIsHome(window.location.pathname === "/");
+    }, []);
 
     return (
         <motion.header

@@ -4,7 +4,6 @@ export const homeHeaderContainer = () =>
     settings.mq({
         width: "100%",
         height:["540px", "540px", "600px"],
-        paddingBottom: [ "60px"],
         overflow: "hidden",
         paddingTop: 
             ["60px"],
@@ -59,22 +58,32 @@ export const loaderContainer = () =>
         left: "0"
     });
 
-export const loaderItem = (isActive: boolean) =>
+export const loaderItem = (isActive: boolean, hover: boolean) =>
     settings.mq({
         width: "auto",
-        height: "30px",
         cursor: "pointer",
+        paddingBottom: "12px",
+        paddingLeft: "0",
+        paddingRight: "0",
         transition: "background-color 0.4s ease",
         display: "flex",
+        gap: "6px",
         flexDirection: "column",
         alignItems: "stretch",
-        justifyContent: "flex-end",
-      
+        justifyContent: "flex-start",
+        minWidth: "180px",
+        backgroundColor: isActive ? "rgba(0, 0, 0, 0.05)" : "transparent",
+        ":hover": {
+            backgroundColor: hover ? "rgba(0, 0, 0, 0.05)" : "transparent"
+        },
+        "p": {
+            textAlign: "left",
+        }
     });
 
 export const loaderTrack = (isActive: boolean) =>
     settings.mq({
-        width: "120px",
+        width: "100%",
         height: "2px",
         backgroundColor: isActive ? settings.colors.grey : settings.colors.light,
         cursor: "pointer",

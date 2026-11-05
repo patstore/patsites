@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { buildApplicationSchemas } from "./application.ts";
-import { buildSelection } from "./fields.ts";
+import { buildSelection, describeModule } from "./fields.ts";
 import type { PatStoreModule } from "./types.ts";
 
 const article: PatStoreModule = {
@@ -60,4 +60,37 @@ test("graphql selection skips inactive fields", () => {
   assert.match(selection, /\btitle\b/);
   assert.match(selection, /\bstate\b/);
   assert.doesNotMatch(selection, /\binternal\b/);
+});
+
+test("image records keep a local thumbnail path out of the graphql selection", () => {
+  const image: PatStoreModule = {
+    objectId: "image-module",
+    name: "Image",
+    connected_class: "Image",
+    data_fields: [],
+    fields: [
+      {
+        id: "title",
+        label: "Title",
+        required: true,
+        type: "edit_string",
+        active: true,
+        position: 1,
+      },
+      {
+        id: "file",
+        label: "File",
+        required: false,
+        type: "file",
+        active: true,
+        position: 2,
+      },
+    ],
+  };
+  const ids = describeModule(image).map((field) => field.id);
+  assert.ok(ids.includes("filePath"));
+  assert.ok(ids.includes("thumbnailPath"));
+  assert.ok(ids.indexOf("filePath") < ids.indexOf("thumbnailPath"));
+  assert.doesNotMatch(buildSelection(image), /thumbnailPath/);
+  assert.doesNotMatch(buildSelection(image), /filePath/);
 });

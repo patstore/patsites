@@ -2,7 +2,8 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import type { Plugin, ResolvedConfig } from "vite";
 import { writeContentArtifacts } from "./codegen.ts";
-import { fetchStaticRecords } from "./fetch.ts";
+import { fetchStaticRecords, type ExtraClassFetch, type RecordScope, type SupplementalField } from "./fetch.ts";
+import { resolveServedFile } from "./files.ts";
 import { readPatStoreEnv } from "./modules.ts";
 import { publishDownloadedFiles, publishPublicDir } from "./publish-files.ts";
 import { normalizeStates } from "./state.ts";
@@ -33,6 +34,15 @@ export interface ServerDataPluginOptions {
   /** Import alias for the generated data barrel. Default: `@data`. */
   dataAlias?: string | false;
   downloadFiles?: boolean;
+  /**
+   * `project` stores rows that point at the project.
+   * `module` stores rows attached to each module.
+   */
+  recordScope?: RecordScope;
+  /** Columns the module definition does not list, but the site still reads. */
+  supplementFields?: Record<string, readonly SupplementalField[]>;
+  /** Classes stored on another module, such as content blocks on the webpage module. */
+  extraClasses?: readonly ExtraClassFetch[];
 }
 
 export function serverDataPlugin(options: ServerDataPluginOptions = {}): Plugin {
@@ -65,13 +75,15 @@ export function serverDataPlugin(options: ServerDataPluginOptions = {}): Plugin 
           next();
           return;
         }
-        const filename = decodeURIComponent(url.slice(prefix.length).split("?")[0] ?? "");
-        if (!filename || filename.includes("..") || filename.includes("/") || filename.includes("\\")) {
+        let relative = "";
+        try {
+          relative = decodeURIComponent(url.slice(prefix.length).split("?")[0] ?? "");
+        } catch {
           next();
           return;
         }
-        const filePath = path.join(filesDir, filename);
-        if (!fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
+        const filePath = resolveServedFile(filesDir, relative);
+        if (!filePath || !fs.existsSync(filePath) || !fs.statSync(filePath).isFile()) {
           next();
           return;
         }
@@ -101,6 +113,9 @@ export function serverDataPlugin(options: ServerDataPluginOptions = {}): Plugin 
           states,
           filesDir,
           downloadFiles: options.downloadFiles !== false,
+          recordScope: options.recordScope,
+          supplementFields: options.supplementFields,
+          extraClasses: options.extraClasses,
         });
         if (fetched.modules.length === 0) {
           throw new Error("PatStore returned no modules");
@@ -111,6 +126,7 @@ export function serverDataPlugin(options: ServerDataPluginOptions = {}): Plugin 
             projectId: env.projectId,
             moduleCount: fetched.modules.length,
             states,
+            recordScope: options.recordScope ?? "project",
           },
           _modules: fetched.modules,
           downloadedFiles: fetched.downloadedFiles,
