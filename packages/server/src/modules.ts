@@ -18,11 +18,6 @@ const ENV_GROUPS = {
     "GATSBY_PATSTORE_REST_KEY",
     "PATSTORE_REST_KEY",
   ],
-  masterKey: [
-    "PATSTORE_MASTER_KEY",
-    "VITE_PATSTORE_MASTER_KEY",
-    "GATSBY_PATSTORE_MASTER_KEY",
-  ],
   apiUrl: ["VITE_PATSTORE_API_URL", "GATSBY_PATSTORE_API_URL", "PATSTORE_API_URL"],
   fileUrl: [
     "VITE_PATSTORE_FILE_URL",
@@ -35,7 +30,10 @@ function readNamed(
   source: Record<string, string | undefined>,
   names: readonly string[],
 ): string | undefined {
-  for (const name of names) {
+  if (!Array.isArray(names)) {
+    throw new Error(`Expected an array of names, got ${typeof names}`);
+  }
+    for (const name of names) {
     const value = source[name];
     if (value) {
       return value;
@@ -51,8 +49,7 @@ export function readPatStoreEnv(
   const appId = readNamed(source, ENV_GROUPS.appId);
   const projectId = readNamed(source, ENV_GROUPS.projectId);
   const restKey = readNamed(source, ENV_GROUPS.restKey);
-  const masterKey = readNamed(source, ENV_GROUPS.masterKey);
-  if (!graphqlUrl || !appId || !projectId || (!restKey && !masterKey)) {
+  if (!graphqlUrl || !appId || !projectId || (!restKey)) {
     return null;
   }
   return {
@@ -60,7 +57,6 @@ export function readPatStoreEnv(
     appId,
     projectId,
     restKey,
-    masterKey,
     apiUrl: readNamed(source, ENV_GROUPS.apiUrl),
     fileUrl: readNamed(source, ENV_GROUPS.fileUrl),
   };

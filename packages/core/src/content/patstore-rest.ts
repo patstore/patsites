@@ -4,7 +4,6 @@ import type { CmsPathValue, LocalizedPageContent } from "./types.ts";
 export type CmsRestEnv = {
   apiUrl: string;
   appId: string;
-  masterKey?: string;
   restKey?: string;
   projectId: string;
   className: string;
@@ -22,9 +21,7 @@ type WebpageRecord = {
 
 function authHeaders(env: CmsRestEnv): Record<string, string> {
   const headers: Record<string, string> = { "X-Parse-Application-Id": env.appId };
-  if (env.masterKey) {
-    headers["X-Parse-Master-Key"] = env.masterKey;
-  } else if (env.restKey) {
+  if (env.restKey) {
     headers["X-Parse-Rest-Api-Key"] = env.restKey;
   }
   return headers;

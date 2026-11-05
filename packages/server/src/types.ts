@@ -73,7 +73,6 @@ export interface PatStoreEnv {
   appId: string;
   projectId: string;
   restKey?: string;
-  masterKey?: string;
   apiUrl?: string;
   fileUrl?: string;
 }

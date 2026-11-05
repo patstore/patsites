@@ -18,8 +18,7 @@ export const Route = createFileRoute("/api/newsletter/optout")({
                 const {
                     patstoreApiUrl,
                     patstoreAppId,
-                    patstoreRestKey,
-                    patstoreMasterKey
+                    patstoreRestKey
                 } = serverEnv;
 
                 if (!patstoreApiUrl || !patstoreAppId || !patstoreRestKey) {
@@ -35,8 +34,7 @@ export const Route = createFileRoute("/api/newsletter/optout")({
                         headers: {
                             "X-Parse-Application-Id": patstoreAppId,
                             "X-Parse-REST-API-Key": patstoreRestKey,
-                            "Content-Type": "application/json",
-                            "X-Parse-Master-Key": patstoreMasterKey
+                            "Content-Type": "application/json"
                         }
                     });
 

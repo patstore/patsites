@@ -20,9 +20,6 @@ function authHeaders(env: PatStoreEnv): Record<string, string> {
   const headers: Record<string, string> = {
     "X-Parse-Application-Id": env.appId,
   };
-  if (env.masterKey) {
-    headers["X-Parse-Master-Key"] = env.masterKey;
-  }
   if (env.restKey) {
     headers["X-Parse-Rest-Api-Key"] = env.restKey;
   }

@@ -20,7 +20,6 @@ export type ContentPluginOptions = {
   /** Push the scanned field schema to PatStore. Default: on, unless `VITE_CMS_CONTENT_SYNC=false`. */
   sync?: boolean;
   strictSync?: boolean;
-  /** Full env from `loadEnv(mode, root, "")`, so unprefixed keys such as `PATSTORE_MASTER_KEY` are present. */
   env?: Record<string, string | undefined>;
 };
 
@@ -38,9 +37,8 @@ function readRestEnv(env: Record<string, string | undefined>, options: ContentPl
   const apiUrl = pick(env, ["VITE_PATSTORE_API_URL", "PATSTORE_API_URL"]);
   const appId = pick(env, ["VITE_PATSTORE_APP_ID", "PATSTORE_APP_ID"]);
   const projectId = pick(env, ["VITE_PATSTORE_PROJECT_ID", "PATSTORE_PROJECT_ID"]);
-  const masterKey = pick(env, ["PATSTORE_MASTER_KEY", "VITE_PATSTORE_MASTER_KEY"]);
   const restKey = pick(env, ["VITE_PATSTORE_REST_KEY", "PATSTORE_REST_KEY"]);
-  if (!apiUrl || !appId || !projectId || (!masterKey && !restKey)) {
+  if (!apiUrl || !appId || !projectId || !restKey) {
     return null;
   }
   const defaultLang = pick(env, ["DEFAULT_LANG", "VITE_DEFAULT_LANG"]) ?? "de";
@@ -48,7 +46,6 @@ function readRestEnv(env: Record<string, string | undefined>, options: ContentPl
     apiUrl,
     appId,
     projectId,
-    masterKey,
     restKey,
     className: options.className ?? pick(env, ["VITE_CMS_CONTENT_CLASS"]) ?? "Webpage",
     fieldName: options.fieldName ?? pick(env, ["VITE_CMS_CONTENT_FIELD"]) ?? "page_data",

@@ -15,7 +15,7 @@ export const Route = createFileRoute("/api/newsletter/optout")({
                     );
                 }
 
-                const { patstoreApiUrl, patstoreAppId, patstoreRestKey, patstoreMasterKey } =
+                const { patstoreApiUrl, patstoreAppId, patstoreRestKey } =
                     serverEnv;
 
                 if (!patstoreApiUrl || !patstoreAppId || !patstoreRestKey) {
@@ -29,8 +29,7 @@ export const Route = createFileRoute("/api/newsletter/optout")({
                     const headers = {
                         "X-Parse-Application-Id": patstoreAppId,
                         "X-Parse-REST-API-Key": patstoreRestKey,
-                        "Content-Type": "application/json",
-                        "X-Parse-Master-Key": patstoreMasterKey
+                        "Content-Type": "application/json"
                     };
                     const userResponse = await axios.get(
                         `${patstoreApiUrl}/classes/_User/${userId}`,

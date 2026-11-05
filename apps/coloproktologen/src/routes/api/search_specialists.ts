@@ -7,7 +7,7 @@ export const Route = createFileRoute("/api/search_specialists")({
         handlers: {
             POST: async ({ request }) => {
                 const { latitude, longitude, distance } = await request.json();
-                const { patstoreApiUrl, patstoreAppId, patstoreRestKey, patstoreMasterKey } =
+                const { patstoreApiUrl, patstoreAppId, patstoreRestKey } =
                     serverEnv;
 
                 if (!patstoreApiUrl || !patstoreAppId || !patstoreRestKey) {
@@ -28,8 +28,7 @@ export const Route = createFileRoute("/api/search_specialists")({
                         {
                             headers: {
                                 "X-Parse-Application-Id": patstoreAppId,
-                                "X-Parse-REST-API-Key": patstoreRestKey,
-                                "X-Parse-Master-Key": patstoreMasterKey
+                                "X-Parse-REST-API-Key": patstoreRestKey
                             }
                         }
                     );

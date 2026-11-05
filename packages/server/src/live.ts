@@ -18,7 +18,7 @@ export async function loadLiveRecords<
   const env = readPatStoreEnv(readProcessEnv());
   if (!env) {
     throw new Error(
-      "PatStore is not configured. Set PATSTORE_GRAPHQL_API_URL, PATSTORE_APP_ID, PATSTORE_PROJECT_ID, and PATSTORE_MASTER_KEY or PATSTORE_REST_KEY.",
+      "PatStore is not configured. Set PATSTORE_GRAPHQL_API_URL, PATSTORE_APP_ID, PATSTORE_PROJECT_ID, and PATSTORE_REST_KEY.",
     );
   }
 

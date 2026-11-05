@@ -24,10 +24,6 @@ export const env = {
         import.meta.env.VITE_SESSION_TOKEN ||
         import.meta.env.GATSBY_SESSION_TOKEN ||
         "bcd_token",
-    bytescaleAccountId:
-        import.meta.env.VITE_BYTESCALE_ACCOUNT_ID ||
-        import.meta.env.GATSBY_BYTESCALE_ACCOUNT_ID ||
-        "",
     googleMapsApiKey:
         import.meta.env.VITE_GOOGLE_MAPS_API_KEY ||
         import.meta.env.GATSBY_GOOGLE_MAPS_API_KEY ||

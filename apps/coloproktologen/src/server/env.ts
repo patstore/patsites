@@ -15,11 +15,6 @@ export const serverEnv = {
         process.env.VITE_PATSTORE_REST_KEY ||
         process.env.GATSBY_PATSTORE_REST_KEY ||
         "",
-    patstoreMasterKey:
-        process.env.PATSTORE_MASTER_KEY ||
-        process.env.VITE_PATSTORE_MASTER_KEY ||
-        process.env.GATSBY_PATSTORE_MASTER_KEY ||
-        "",
     patstoreProjectId:
         process.env.PATSTORE_PROJECT_ID ||
         process.env.VITE_PATSTORE_PROJECT_ID ||
