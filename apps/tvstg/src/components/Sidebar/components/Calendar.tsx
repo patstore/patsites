@@ -3,11 +3,11 @@ import { sidebarHeader } from "../styles";
 import { Button, DateTile } from "@ui";
 import { CalendarProps } from "../types";
 import { useNavigate } from "@tanstack/react-router";
-import { useGetAppointment, useFindLocation } from "@provider";
+import { useCollection, useFindLocation } from "@provider";
 
 const Calendar: React.FC<CalendarProps> = ({ category, getAllEvents }) => {
   const navigate = useNavigate();
-  const { appointments } = useGetAppointment();
+  const { items: appointments } = useCollection("Appointment");
   const { findLocation } = useFindLocation();
 
   const events = useMemo(() => {

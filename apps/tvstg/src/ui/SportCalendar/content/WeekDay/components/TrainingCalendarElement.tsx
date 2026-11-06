@@ -16,7 +16,7 @@ import {
   trainingTitleCell,
 } from "../styles";
 import { FullButton, Label } from "@ui";
-import { useFindImages, useGetGroup, useGetLocation } from "@provider";
+import { useFindImages, useCollection } from "@provider";
 import { TrainingCalendarElementProps } from "../types";
 import { SportSlideIn } from "@components";
 import { Image } from "@ui";
@@ -28,8 +28,8 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
   training,
   view,
 }) => {
-  const { findGroup } = useGetGroup();
-  const { findLocation } = useGetLocation();
+  const { find: findGroup } = useCollection("Group");
+  const { find: findLocation } = useCollection("Location");
   const { findImage, findImageUrl } = useFindImages();
   const [modalState, setModalState] = useState(false);
 

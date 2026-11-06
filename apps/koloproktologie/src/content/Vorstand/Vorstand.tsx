@@ -11,11 +11,12 @@ import React from "react";
 import { Layout } from "@components";
 import { Person as PersonType } from "./types";
 import settings from "@settings";
-import { useGetPerson } from "@provider";
+import { useCollection } from "@provider";
+import type { PersonClass } from "@data";
 import { topline } from "@styles";
 
 const Vorstand: React.FC = () => {
-    const { persons } = useGetPerson();
+    const { items: persons } = useCollection<PersonClass>("Person");
 
     const getData = () => {
         const vorstand: PersonType[] = [];

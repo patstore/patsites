@@ -1,12 +1,11 @@
-import { useMemo } from "react";
-import { useFindData } from "@data";
 import type { EventClass } from "@data";
+import { useCollection } from "../data";
+import { getDateString } from "../functions";
 
 interface LocationClass {
     objectId: string;
     title?: string | null;
 }
-import { getDateString } from "../functions";
 
 const useGetEvent: () => {
     findEvent: (id: string) => EventClass | undefined;
@@ -16,21 +15,8 @@ const useGetEvent: () => {
         location: string;
     };
 } = () => {
-    const { findByClassName } = useFindData();
-
-    const events = useMemo(
-        () => findByClassName("events"),
-        [findByClassName]
-    );
-
-    const allLocation = useMemo(
-        () => findByClassName("locations") as LocationClass[],
-        [findByClassName]
-    );
-
-    const findEvent: (id: string) => EventClass | undefined = (id) => {
-        return events.find((event) => event.objectId === id);
-    };
+    const { items: events, find: findEvent } = useCollection<EventClass>("Event");
+    const { items: allLocation } = useCollection<LocationClass>("Location");
 
     const getEventLocationString = (
         location: NonNullable<EventClass["dates"]>[0]["place"]

@@ -1,11 +1,12 @@
-import { getCurrentEvents, useFindImages, useGetEvent } from '@provider';
+import { getCurrentEvents, useFindImages, useCollection } from '@provider';
+import type { EventClass } from '@types';
 import settings from '@settings';
 import { buttonsContainer } from '@styles';
 import { Button, ContentContainer, Label, Gallery } from '@ui';
 import React from 'react'
 
 const Congress: React.FC = () => {
-    const {events} = useGetEvent();
+    const { items: events } = useCollection<EventClass>("Event");
     const currentEvents = getCurrentEvents(events);
     const { findImage } = useFindImages();
 

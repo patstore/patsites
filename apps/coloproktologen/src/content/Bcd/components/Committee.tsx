@@ -1,4 +1,4 @@
-import { useFindImages, useGetPerson } from "@provider";
+import { useFindImages, useCollection } from "@provider";
 import settings from "@settings";
 import { contentBox, topline } from "@styles";
 import { AppImage, ContentContainer, Divider, FlexBox } from "@ui";
@@ -62,7 +62,7 @@ const PersonCard: React.FC<PersonCardProps> = ({ person }) => {
 };
 
 const Committee: React.FC = () => {
-  const { persons } = useGetPerson();
+  const { items: persons } = useCollection<PatstorePerson>("Person");
   const sortedPersons = persons.sort((a, b) => (a?.data?.order || 0) - (b?.data?.order || 0));
 
   return (

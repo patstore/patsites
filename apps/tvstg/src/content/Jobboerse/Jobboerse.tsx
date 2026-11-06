@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "@components";
 import { FlexBox, HeadContent } from "@ui";
 import { siteContainer, wrapper } from "@styles";
-import { useGetEntry } from "@provider";
+import { useCollection } from "@provider";
 import JobElement from "./components/JobElement";
 
 export const JOBBOERSE_TITLE = "Jobbörse";
@@ -10,7 +10,7 @@ export const JOBBOERSE_TEXT =
   "Du möchtest dich im Verein engagieren? Hier findest du unsere offenen Stellen als Übungsleiter*in, Trainer*in und Helfer*in.";
 
 const Jobboerse: React.FC = () => {
-  const { entrys: jobs } = useGetEntry();
+  const { items: jobs } = useCollection("Entry");
 
   return (
     <Layout>

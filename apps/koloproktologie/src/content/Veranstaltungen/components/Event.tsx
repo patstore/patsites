@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button, ContentBox, FlexBox, SlideIn } from "@ui";
 import { EventProps } from "../types";
-import { useGetDownload } from "@provider";
+import { useCollection } from "@provider";
+import type { DownloadClass } from "@data";
 import settings from "@settings";
 
 const Event: React.FC<EventProps> = ({
@@ -13,7 +14,7 @@ const Event: React.FC<EventProps> = ({
     place,
     documents = []
 }) => {
-    const { findDownload } = useGetDownload();
+    const { find: findDownload } = useCollection<DownloadClass>("Download");
     const [open, setOpen] = useState(false);
 
     return (
@@ -32,10 +33,10 @@ const Event: React.FC<EventProps> = ({
                         return (
                             <div key={document}>
                                 <a
-                                    href={download.file.url}
+                                    href={download?.file?.url}
                                     target="__blank"
                                 >
-                                    {download.title}
+                                    {download?.title}
                                 </a>
                             </div>
                         );

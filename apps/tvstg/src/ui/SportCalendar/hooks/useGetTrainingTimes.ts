@@ -5,9 +5,7 @@ import Fuse from "fuse.js";
 import { Trainingszeit, UseGetTrainingTimes } from "../types";
 import {
   getWeekday,
-  useGetCategory,
-  useGetGroup,
-  useGetLocation,
+  useCollection,
 } from "@provider";
 import findAgeInGroups from "../functions/findAgeInGroups";
 import findAgeInGroup from "../functions/findAgeInGroup";
@@ -18,9 +16,9 @@ const useGetTrainingTimes: UseGetTrainingTimes = ({
   age,
   gender,
 }) => {
-  const { categorys: allCategories } = useGetCategory();
-  const { groups } = useGetGroup();
-  const { locations } = useGetLocation();
+  const { items: allCategories } = useCollection("Category");
+  const { items: groups } = useCollection("Group");
+  const { items: locations } = useCollection("Location");
 
   const groupCategories: (c: string[]) => string[] = React.useCallback(
     (cats) => {
@@ -75,7 +73,6 @@ const useGetTrainingTimes: UseGetTrainingTimes = ({
       if (
         group.title &&
         group.title !== "" &&
-        group.state === "published" &&
         group.times &&
         group.times.length > 0
       ) {

@@ -1,20 +1,33 @@
 import "@data";
-import { createDataContext, loadContent, type DataContext, type DataMode } from "@repo/server";
+import { fetchCollection } from "@repo/server";
 
-export { createDataContext, loadContent };
-export type { DataContext, DataMode };
+export { fetchCollection };
 
-/** Snapshot read. `states` can be any CMS state allow-list. */
-export const publishedStatic = createDataContext({
-  mode: "static",
-  states: ["published"],
-});
+const PUBLIC_CLASSES = [
+  "Article",
+  "Event",
+  "Location",
+  "Person",
+  "Image",
+  "Download",
+  "Video",
+  "Webpage",
+] as const;
 
-/**
- * Load records for this request.
- * `mode: "static"` reads the generated snapshot, including during server rendering.
- * `mode: "ssr"` fetches from PatStore on the server, with the same state allow-list.
- * Choose `states` on the server. Do not forward an unsanitized client value when
- * that would expose unpublished records.
- */
-export const loadServerContent = loadContent;
+/** Collections this site renders. The draft-mode flag chooses snapshot or PatStore. */
+export async function loadPublicContent(): Promise<
+  Record<string, { objectId?: string | null }[]>
+> {
+  const entries = await Promise.all(
+    PUBLIC_CLASSES.map(async (className) => {
+      try {
+        const records = await fetchCollection(className);
+        return [className, records] as const;
+      } catch (error) {
+        console.error(`Content for ${className} was not available`, error);
+        return [className, []] as const;
+      }
+    }),
+  );
+  return Object.fromEntries(entries) as Record<string, { objectId?: string | null }[]>;
+}

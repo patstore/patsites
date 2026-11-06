@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from "react";
 import { topline } from "@styles";
-import { getDateString, renderDownloadLinks, useGetDownload } from "@provider";
+import { getDateString, renderDownloadLinks } from "@provider";
 import { isArray } from "lodash-es";
 import { infoContainer } from "../styles";
 import { useQuery } from "@apollo/client/react";

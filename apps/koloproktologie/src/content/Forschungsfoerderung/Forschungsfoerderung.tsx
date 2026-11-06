@@ -6,10 +6,11 @@ import Project from "./components/Project";
 import Foerderung from "./components/Foerderung";
 import PreviousProjects from "./components/PreviousProjects";
 import settings from "@settings";
-import { useGetPerson } from "@provider";
+import { useCollection } from "@provider";
+import type { PersonClass } from "@data";
 
 const Forschungsfoerderung: React.FC = () => {
-    const { findPerson } = useGetPerson();
+    const { find: findPerson } = useCollection<PersonClass>("Person");
     const ansprechpartner = findPerson("5hGFkZk9RW");
 
     return (

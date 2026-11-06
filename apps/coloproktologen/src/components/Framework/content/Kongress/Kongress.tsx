@@ -3,7 +3,7 @@ import { FlexBox, SlideIn } from "@ui";
 import settings from "@settings";
 import { BsCalendar4Event } from "react-icons/bs";
 import { motion } from "motion/react";
-import { useGetEvent, getCurrentEvents } from "@provider";
+import { useCollection, getCurrentEvents } from "@provider";
 import { iconContainer, slide } from "./styles";
 import CongressContent from "./components/CongressContent";
 import { IoMdVideocam } from "react-icons/io";
@@ -27,7 +27,7 @@ const SHOW_VIDEO_PAGE = false;
 const Kongress = () => {
     const [slideIn, setSlideIn] = React.useState(false);
     const [show, setShow] = useState(true);
-    const { events } = useGetEvent();
+    const { items: events } = useCollection<EventClass>("Event");
     const [showContent, setShowContent] = useState(true);
 
     const currentEvents = getCurrentEvents(events as EventClass[]);

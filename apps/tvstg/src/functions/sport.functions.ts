@@ -4,7 +4,6 @@ import { slugify } from "../provider/functions/slugify";
 import { getCollection } from "@server/patstore.server";
 import {
   byDateDesc,
-  isPublished,
   summarizeArticle,
   withImages,
 } from "@server/site-data.server";
@@ -51,7 +50,7 @@ export const getSportCategory = createServerFn({ method: "GET" })
     }
 
     const articles = (await getCollection("Article"))
-      .filter((article) => isPublished(article) && article.categories.includes(sportart.objectId))
+      .filter((article) => article.categories.includes(sportart.objectId))
       .sort(byDateDesc)
       .slice(0, SPORT_PAGE_ARTICLES)
       .map(summarizeArticle);

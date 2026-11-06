@@ -1,5 +1,5 @@
 import { Layout } from "@components";
-import { getDateString, useGetVideo } from "@provider";
+import { getDateString, useCollection } from "@provider";
 import { ContentContainer, HeadContent } from "@ui";
 import React, { useCallback, useMemo, useState } from "react";
 import { Section, Video, VideoList } from "./types";
@@ -25,7 +25,7 @@ const matchesTitleOrDescription = (
 };
 
 const Videos: React.FC = () => {
-    const { videos } = useGetVideo();
+    const { items: videos } = useCollection<PatstoreVideo>("Video");
     const [filter, setFilter] = useState<string>("");
     const [filterBarDocked, setFilterBarDocked] = useState(false);
 

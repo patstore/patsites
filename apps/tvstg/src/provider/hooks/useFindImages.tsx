@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useGetImage } from "./collections";
+import { useCollection } from "./collections";
 
 export type ImageSource = {
   src: string;
@@ -8,7 +8,7 @@ export type ImageSource = {
 export const PLACEHOLDER_IMAGE: ImageSource = { src: "/tvstg_placeholder.png" };
 
 const useFindImages = () => {
-  const { images, findImage: findRecord } = useGetImage();
+  const { items: images, find: findRecord } = useCollection("Image");
 
   const findImage = useCallback(
     (id: string | null | undefined): ImageSource => {

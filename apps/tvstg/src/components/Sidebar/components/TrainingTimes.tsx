@@ -2,7 +2,7 @@ import React, { useCallback, useMemo, useState } from "react";
 import { RiBuilding3Line } from "react-icons/ri";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { sidebarelement, sidebarHeader } from "../styles";
-import { useGetGroup, useGetLocation } from "@provider";
+import { useCollection } from "@provider";
 import { Button, FlexBox } from "@ui";
 import { PatstoreGroup, PatstoreLocation } from "@types";
 import { SportSlideIn } from "../../SportSlideIn";
@@ -11,7 +11,7 @@ const TrainingElement: React.FC<{ training: PatstoreGroup }> = ({
   training,
 }) => {
   const [modalState, setModalState] = useState(false);
-  const { locations } = useGetLocation();
+  const { items: locations } = useCollection("Location");
   const getTrainingLocations: (
     time: PatstoreGroup["times"][number],
   ) => PatstoreLocation | null | undefined = useCallback(
@@ -90,7 +90,7 @@ const TrainingElement: React.FC<{ training: PatstoreGroup }> = ({
 };
 
 const TrainingTimes = ({ category }: { category: string }) => {
-  const { groups } = useGetGroup();
+  const { items: groups } = useCollection("Group");
 
   const traininigsGruppen = useMemo(() => {
     let trainingsgruppenArray: PatstoreGroup[] = [];

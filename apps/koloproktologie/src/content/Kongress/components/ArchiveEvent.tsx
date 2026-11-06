@@ -1,7 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
-import { EventClass } from "@data";
+import { EventClass, DownloadClass } from "@data";
 import { isArray } from "lodash-es";
-import { useGetDownload } from "@provider";
+import { useCollection } from "@provider";
 import { Divider, Gallery } from "@ui";
 import settings from "@settings";
 import { summaryStyle } from "../styles";
@@ -15,7 +15,7 @@ const ArchiveEvent = ({
     open: boolean;
     setOpenEvent: Dispatch<SetStateAction<EventClass["objectId"] | null>>;
 }) => {
-    const { findDownload } = useGetDownload();
+    const { find: findDownload } = useCollection<DownloadClass>("Download");
 
     let documentIds: string[] = [];
     if (isArray(event.documents) && event.documents.length > 0) {

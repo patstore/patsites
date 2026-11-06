@@ -1,9 +1,9 @@
 import { PatstoreWebpage } from "@types";
 import { useMemo } from "react";
-import { useGetWebpage } from "./collections";
+import { useCollection } from "./collections";
 
 const useFindWebpage = ({ path }: { path?: string }) => {
-  const { webpages } = useGetWebpage();
+  const { items: webpages } = useCollection("Webpage");
 
   return useMemo((): PatstoreWebpage | undefined => {
     if (!path) {

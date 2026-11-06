@@ -5,7 +5,8 @@ import NewsElement from "./components/NewsElement";
 import { FlexBox } from "@ui";
 import NewsButtons from "./components/NewsButtons";
 import { NewsProps } from "./types";
-import { useFindNews } from "@provider";
+import { useCollection } from "@provider";
+import type { PatstoreEntry } from "@types";
 import settings from "@settings";
 
 const News: React.FC<NewsProps> = ({
@@ -20,7 +21,8 @@ const News: React.FC<NewsProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [xOffset, setXOffset] = useState(0);
 
-  const { news } = useFindNews({ category });
+  const { items } = useCollection<PatstoreEntry>("Entry");
+  const news = items.filter((item) => item.categories?.includes(category));
 
   useEffect(() => {
     if (containerRef.current) {

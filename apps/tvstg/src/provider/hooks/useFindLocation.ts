@@ -1,8 +1,8 @@
 import { EventLocation } from "@types";
-import { useGetLocation } from "./collections";
+import { useCollection } from "./collections";
 
 const useFindLocation = () => {
-  const { locations } = useGetLocation();
+  const { items: locations } = useCollection("Location");
 
   const findLocation: (T: EventLocation) => string | undefined = (
     location: EventLocation,

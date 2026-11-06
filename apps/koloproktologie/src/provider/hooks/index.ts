@@ -1,9 +1,2 @@
-export { default as useFindCategories } from "./useFindCategories";
-export { default as useFindLocation } from "./useFindLocation";
-export { default as useFindWebpage } from "./useFindWebpage";
-export { default as useFindNews } from "./useFindNews";
 export { default as useGetImages } from "./useGetImages";
 export { default as useGetEvent } from "./useGetEvent";
-export { default as useGetPerson } from "./useGetPerson";
-export { default as useGetDownload } from "./patstore/useGetDownload";
-export { default as useGetVideo } from "./patstore/useGetVideo";

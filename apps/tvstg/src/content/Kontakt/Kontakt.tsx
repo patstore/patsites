@@ -6,11 +6,11 @@ import { FlexBox, HeadContent } from "@ui";
 import { mainContainer, sidebarContainer } from "@styles";
 import { sidebarHeader, sidebarContent } from "@components";
 import { useFindWebpage } from "@provider";
-import { useGetForm } from "@provider";
+import { useCollection } from "@provider";
 
 const Kontakt: React.FC = () => {
   const webpage = useFindWebpage({ path: "kontakt" });
-  const { forms } = useGetForm();
+  const { items: forms } = useCollection("Form");
   const form = forms.find((form) => form.title === "Kontaktformular");
 
   return (

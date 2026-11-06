@@ -4,9 +4,9 @@ Website of the TV Freiburg St. Georgen 1897 e.V. This app lives in the
 patsites monorepo and uses the same TanStack Start, Nitro, and PatStore
 setup as the other sites.
 
-Editorial collections (pages, people, categories, groups, downloads, images)
-are read from the build-time snapshot. Articles, appointments, and job
-postings are loaded from PatStore during server rendering.
+Editorial collections and live PatStore reads use the same server fetch.
+Set `VITE_DRAFT_MODE=true` to load unpublished records from PatStore.
+Leave it unset to read the published build snapshot.
 
 ## Development
 

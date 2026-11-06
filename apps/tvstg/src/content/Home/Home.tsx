@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { Layout, StreamedSidebar } from "@components";
-import { useGetArticle } from "@provider";
+import { useCollection } from "@provider";
 import {
   mainContainer,
   sidebarContainer,
@@ -16,12 +16,11 @@ export const HOME_SIDEBAR_CATEGORY = "1cU4dGw1Mu";
 export const HOME_ARTICLE_COUNT = 5;
 
 const Home: React.FC<{ sidebar: Promise<PatstoreData> }> = ({ sidebar }) => {
-  const { articles } = useGetArticle();
+  const { items: articles } = useCollection("Article");
 
   const blogArray = useMemo(
     () =>
       articles
-        .filter((article) => article.state === "published")
         .sort(
           (a, b) =>
             new Date(b?.date || "").getTime() - new Date(a?.date || "").getTime(),

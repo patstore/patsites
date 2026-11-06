@@ -1,8 +1,8 @@
 import { PatstoreCategory } from "@types";
-import { useGetCategory } from "./collections";
+import { useCollection } from "./collections";
 
 const useFindCategories = () => {
-  const { categorys } = useGetCategory();
+  const { items: categorys } = useCollection("Category");
 
   const findCategories: (T: string[]) => PatstoreCategory[] = (
     cats: string[],

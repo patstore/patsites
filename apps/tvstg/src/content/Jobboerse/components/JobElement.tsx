@@ -3,7 +3,7 @@ import { AiOutlineClockCircle, AiOutlineInfoCircle } from "react-icons/ai";
 import { RiTeamLine } from "react-icons/ri";
 import settings from "@settings";
 import { FlexBox, FullButton, Image, Label } from "@ui";
-import { useFindImages, useGetGroup, useGetPerson } from "@provider";
+import { useFindImages, useCollection } from "@provider";
 import { PatstoreEntry } from "@types";
 import {
   trainingElement,
@@ -15,8 +15,8 @@ import JobSlideIn from "./JobSlideIn";
 const iconStyle = { marginRight: ".3rem", minWidth: "18px" };
 
 const JobElement: React.FC<{ job: PatstoreEntry }> = ({ job }) => {
-  const { findGroup } = useGetGroup();
-  const { findPerson } = useGetPerson();
+  const { find: findGroup } = useCollection("Group");
+  const { find: findPerson } = useCollection("Person");
   const { findImage, findImageUrl } = useFindImages();
   const [modalState, setModalState] = useState(false);
 

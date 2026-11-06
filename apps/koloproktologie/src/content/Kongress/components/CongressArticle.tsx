@@ -1,9 +1,11 @@
-import { useFindNews, useGetImages } from "@provider";
+import { useCollection, useGetImages } from "@provider";
+import type { ArticleClass } from "@data";
+import type { PatstoreEvent } from "@types";
 import React, { useState } from "react";
 import { AppImage, Button, Divider, SlideIn } from "@ui";
 
 const CongressArticle: React.FC<{ event?: PatstoreEvent }> = ({ event }) => {
-    const { allNews } = useFindNews({ category: "" });
+    const { items: allNews } = useCollection<ArticleClass>("Article");
     const [showArticle, setShowArticle] = useState(false);
     const { findImageUrl } = useGetImages();
 

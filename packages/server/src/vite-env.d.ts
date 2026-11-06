@@ -1,5 +1,5 @@
 interface ImportMetaEnv {
-  readonly SSR: boolean;
+  readonly VITE_DRAFT_MODE?: string;
 }
 
 interface ImportMeta {

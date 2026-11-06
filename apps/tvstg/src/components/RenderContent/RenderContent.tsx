@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useFindWebpage, useGetContent } from "@provider";
+import { useFindWebpage, useCollection } from "@provider";
 import { ContentElement, RenderContentProps } from "./types";
 import RenderText from "./components/RenderText";
 import { WebpageContentDivider } from "@types";
@@ -10,7 +10,7 @@ import RenderDivider from "./components/RenderDivider";
 
 const RenderContent: React.FC<RenderContentProps> = ({ path, contentId }) => {
   const webpage = useFindWebpage({ path: path });
-  const { contents, findContent } = useGetContent();
+  const { items: contents, find: findContent } = useCollection("Content");
 
   const currentContent: ContentElement[] = useMemo(() => {
     const currentWebsite = webpage;

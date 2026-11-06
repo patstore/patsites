@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import { termineContainer } from "./styles";
-import { getBerlinDateParts, useGetAppointment } from "@provider";
+import { getBerlinDateParts, useCollection } from "@provider";
 import { Layout } from "@components";
 import { FlexBox, HeadContent, SwitchButton } from "@ui";
 import { siteContainer, wrapper } from "@styles";
@@ -16,7 +16,7 @@ type TermineProps = {
 };
 
 const Termine: React.FC<TermineProps> = ({ jahr, currentYear, onYearChange }) => {
-  const { appointments: calendar } = useGetAppointment();
+  const { items: calendar } = useCollection("Appointment");
 
   const switchButtons = useMemo(
     () =>

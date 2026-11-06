@@ -3,7 +3,8 @@ import { EmailClass, NewsItem } from "../types";
 import { Button, FlexBox, Label, SlideIn } from "@ui";
 import settings from "@settings";
 import { memberHighlightContent } from "../styles";
-import { useGetDownload } from "@provider";
+import { useCollection } from "@provider";
+import type { DownloadClass } from "@data";
 import { buttonsContainer } from "@styles";
 import { transformToWeb } from "../functions/transformToWeb";
 import Attachments from "./Attachments";
@@ -14,7 +15,7 @@ const News: React.FC<{
     label: string;
     type?: "email";
 }> = ({ item, label, type }) => {
-    const { findDownload } = useGetDownload();
+    const { find: findDownload } = useCollection<DownloadClass>("Download");
     const [open, setOpen] = useState(false);
 
     if (type === "email") {

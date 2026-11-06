@@ -21,7 +21,7 @@ export {
   readSnapshotRecords,
   registerStaticSnapshot,
 } from "./snapshot.ts";
-export { loadContent, loadStaticRecords } from "./content.ts";
+export { fetchCollection, isDraftMode, loadContent, loadStaticRecords } from "./content.ts";
 export {
   activeFields,
   findModule,

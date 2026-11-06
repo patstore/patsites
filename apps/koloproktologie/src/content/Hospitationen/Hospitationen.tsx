@@ -1,6 +1,7 @@
 import React from "react";
 import { Layout } from "@components";
-import { useFindNews, useGetPerson } from "@provider";
+import { useCollection } from "@provider";
+import type { ArticleClass, PersonClass } from "@data";
 import {
     Button,
     ContentContainer,
@@ -12,23 +13,17 @@ import {
 import settings from "@settings";
 import Report from "./components/Report";
 import { topline } from "../../styles/styles";
-import { ArticleClass } from "@data";
 
 const Hospitationen: React.FC = () => {
-    const { news: hospitationsArticles } = useFindNews({
-        category: "vfgLWYtZGW"
-    });
-    const { news: praeKongressArticles } = useFindNews({
-        category: "aP7gPudhLJ"
-    });
-    const { news: drittlaenderArticles } = useFindNews({
-        category: "fTlpOvAcjG"
-    });
-    const { news: espcArticles } = useFindNews({
-        category: "7YhCZBw7MY"
-    });
-    const { news: travelArticles } = useFindNews({ category: "gVS25Yggzf" });
-    const { findPerson } = useGetPerson();
+    const { items: articles } = useCollection<ArticleClass>("Article");
+    const { find: findPerson } = useCollection<PersonClass>("Person");
+    const inCategory = (category: string) =>
+        articles.filter((article) => article.categories?.includes(category));
+    const hospitationsArticles = inCategory("vfgLWYtZGW");
+    const praeKongressArticles = inCategory("aP7gPudhLJ");
+    const drittlaenderArticles = inCategory("fTlpOvAcjG");
+    const espcArticles = inCategory("7YhCZBw7MY");
+    const travelArticles = inCategory("gVS25Yggzf");
     const ansprechpartner = findPerson("5hGFkZk9RW");
 
     const sortArticlesByDate = (articles: ArticleClass[]) => {

@@ -1,8 +1,8 @@
-import { getDateString, useGetDownload, useGetEvent, useGetLocation } from "@provider";
+import { getDateString, useCollection } from "@provider";
 import { buttonsContainer, contentBox } from "@styles";
 import { Button, ContentContainer, FlexBox, Label } from "@ui";
 import React, { useMemo } from "react";
-import { EventClass, EventDate, LocationClass, PatstoreEvent } from "@types";
+import { EventClass, EventDate, LocationClass, PatstoreDownload, PatstoreEvent } from "@types";
 import { getRecordFileUrl } from "@provider";
 import settings from "@settings";
 import { downloadDocument, sortEventsByDate } from "@provider";
@@ -58,7 +58,7 @@ const getEventDateString = (dates: PatstoreEvent["dates"], locations: LocationCl
 
 
 const EventElement: React.FC<{ event: EventProps }> = ({ event }) => {
-    const { findDownload } = useGetDownload();
+    const { find: findDownload } = useCollection<PatstoreDownload>("Download");
     
     console.log(event);
 
@@ -99,8 +99,8 @@ const EventElement: React.FC<{ event: EventProps }> = ({ event }) => {
 };
 
 const Events: React.FC = () => {
-    const { events } = useGetEvent();
-    const { locations } = useGetLocation();
+    const { items: events } = useCollection<EventClass>("Event");
+    const { items: locations } = useCollection<LocationClass>("Location");
 
     const filteredEvents = useMemo(() => {
         const eventArray: EventProps[] = [];

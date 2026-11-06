@@ -1,7 +1,8 @@
 import { Button, SlideIn } from "@ui";
 import React, { ReactNode, useMemo, useState } from "react";
 import { topline } from "@styles";
-import { getDateString, getRecordFileUrl, renderDownloadLinks, useGetDownload } from "@provider";
+import { getDateString, getRecordFileUrl, renderDownloadLinks, useCollection } from "@provider";
+import type { PatstoreDownload } from "@types";
 import { isArray } from "lodash-es";
 import { infoContainer } from "../styles";
 import sanitizeHtml from 'sanitize-html';
@@ -19,7 +20,7 @@ const MitgliederInfoNews: React.FC<{
 }> = ({ title, text, description, date, categories, documents, isEmail, content }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { findDownload } = useGetDownload();
+  const { find: findDownload } = useCollection<PatstoreDownload>("Download");
 
   const newsContent = useMemo(() => {
     if (isEmail && content) {

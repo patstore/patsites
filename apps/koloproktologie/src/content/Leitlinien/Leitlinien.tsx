@@ -3,12 +3,13 @@ import { Layout } from "@components";
 import { ContentContainer, Divider, FlexBox, HeadContent, Person } from "@ui";
 import guidelines_dgk from "./constants/guidelines_dgk";
 import guidelines_cooperations from "./constants/guidelines_cooperations";
-import { useGetPerson } from "@provider";
+import { useCollection } from "@provider";
+import type { PersonClass } from "@data";
 import settings from "@settings";
 import { highlightContent } from "@styles";
 
 const Leitlinien: React.FC = () => {
-    const { findPerson } = useGetPerson();
+    const { find: findPerson } = useCollection<PersonClass>("Person");
     const beauftrager = findPerson("L0s8iziyOp");
 
     return (

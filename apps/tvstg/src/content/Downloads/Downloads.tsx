@@ -3,14 +3,13 @@ import { Layout } from "@components";
 import { FlexBox, HeadContent } from "@ui";
 import { siteContainer, wrapper } from "../../styles/styles";
 import { PatstoreCategory, PatstoreDownload } from "@types";
-import { useGetCategory } from "@provider";
+import { useCollection } from "@provider";
 import settings from "@settings";
 import { downloadsContainer } from "./styles";
-import { useGetDownload } from "@provider";
 
 const Downloads: React.FC = () => {
-  const { downloads } = useGetDownload();
-  const { categorys } = useGetCategory();
+  const { items: downloads } = useCollection("Download");
+  const { items: categorys } = useCollection("Category");
 
   const downloadCategoryArray: PatstoreCategory[] = useMemo(() => {
     const downloadKategorienArray: PatstoreCategory[] = [];

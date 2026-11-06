@@ -1,5 +1,5 @@
 import React, { FC, useMemo } from "react";
-import { useFindData } from "@data";
+import { useCollection } from "@provider";
 import { RenderContentProps } from "./types";
 import RenderText from "./components/RenderText";
 import { WebpageClass } from "@types";
@@ -9,8 +9,7 @@ import RenderTable from "./components/RenderTable";
 import RenderDivider from "./components/RenderDivider";
 
 const RenderContent: FC<RenderContentProps> = ({ path }) => {
-  const { findByClassName } = useFindData();
-  const website = findByClassName("webpages") as WebpageClass[];
+  const { items: website } = useCollection<WebpageClass>("Webpage");
 
   const currentContent: WebpageClass["content"] = useMemo(() => {
     const currentWebsite = website.find((item) => item.path?.includes(path));

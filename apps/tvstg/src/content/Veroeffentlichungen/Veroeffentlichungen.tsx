@@ -4,9 +4,8 @@ import { Layout } from "@components";
 import { FlexBox, HeadContent } from "@ui";
 import { siteContainer, wrapper } from "@styles";
 import {
+  useCollection,
   useFindImages,
-  useGetCategory,
-  useGetDownload
 } from "@provider";
 import { PatstoreDownload, UnwrapScalar } from "@types";
 import { Image } from "@ui";
@@ -28,8 +27,8 @@ const boxelement = {
 };
 
 const Veroeffentlichungen: React.FC = () => {
-  const { downloads } = useGetDownload();
-  const { categorys } = useGetCategory();
+  const { items: downloads } = useCollection("Download");
+  const { items: categorys } = useCollection("Category");
   const { findImage } = useFindImages();
 
   const mediaElements: UnwrapScalar<PatstoreDownload>[] = useMemo(() => {

@@ -10,18 +10,18 @@ import {
     TextContentElement
 } from "@ui";
 import settings from "@settings";
-import { useGetEvent, getCurrentEvents, useGetDownload } from "@provider";
+import { useGetEvent, getCurrentEvents, useCollection } from "@provider";
+import { EventClass, DownloadClass } from "@data";
 import { upcomingKongressContainer } from "./styles";
 import { topline } from "../../styles/styles";
 import KongressArchive from "./components/KongressArchive";
 import CongressArticle from "./components/CongressArticle";
-import { EventClass } from "@data";
 import { isArray } from "lodash-es";
 import Cooperation from "./components/Cooperation";
 
 const Kongress: React.FC = () => {
     const { events } = useGetEvent();
-    const { findDownload } = useGetDownload();
+    const { find: findDownload } = useCollection<DownloadClass>("Download");
 
     const currentEvents = getCurrentEvents(events || []);
 

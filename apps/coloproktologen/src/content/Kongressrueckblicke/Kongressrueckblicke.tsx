@@ -1,15 +1,16 @@
 import React from "react";
 import { Layout } from "@components";
-import { getCurrentEvents, getRecordFileUrl, useFindImages, useGetEvent, sortEventsByDate, useGetDownload } from "@provider";
+import { getCurrentEvents, getRecordFileUrl, useFindImages, sortEventsByDate, useCollection } from "@provider";
+import type { EventClass, PatstoreDownload } from "@types";
 import { AppImage, ContentContainer, Divider, FlexBox, HeadContent, Gallery, Button } from "@ui";
 import settings from "@settings";
 import { RiNodejsLine } from "react-icons/ri";
 
 const Kongressrueckblicke: React.FC = () => {
-    const { events } = useGetEvent();
+    const { items: events } = useCollection<EventClass>("Event");
     const currentEvents = getCurrentEvents(events);
     const { findImage } = useFindImages();
-    const { findDownload } = useGetDownload();
+    const { find: findDownload } = useCollection<PatstoreDownload>("Download");
 
     console.log(currentEvents);
 

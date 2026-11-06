@@ -2,12 +2,13 @@ import settings from "@settings";
 import React, { useState } from "react";
 import { NewsElementProps } from "../types";
 import { AppImage, ContentBox, Divider, FlexBox, SlideIn } from "@ui";
-import { getDateString, useGetDownload, useGetImages } from "@provider";
+import { getDateString, useCollection, useGetImages } from "@provider";
+import type { DownloadClass } from "@data";
 
 const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
     const [open, setOpen] = useState(false);
     const { findImageUrl } = useGetImages();
-    const { findDownload } = useGetDownload();
+    const { find: findDownload } = useCollection<DownloadClass>("Download");
     return (
         <div
             css={{

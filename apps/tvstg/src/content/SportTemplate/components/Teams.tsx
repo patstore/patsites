@@ -1,9 +1,9 @@
 import React, { useMemo } from "react";
 import TeamTile from "./TeamTile";
-import { useGetGroup } from "@provider";
+import { useCollection } from "@provider";
 
 const Mannschaften: React.FC<{ category: string }> = ({ category }) => {
-  const { groups } = useGetGroup();
+  const { items: groups } = useCollection("Group");
 
   const teams = useMemo(
     () =>

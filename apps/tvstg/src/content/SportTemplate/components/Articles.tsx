@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
 import settings from "@settings";
-import { useGetArticle } from "@provider";
+import { useCollection } from "@provider";
 import { BlogElement, FlexBox } from "@ui";
 
 const Articles: React.FC<{ category: string }> = ({ category }) => {
-  const { articles } = useGetArticle();
+  const { items: articles } = useCollection("Article");
 
   const siteArticles = useMemo(
     () =>

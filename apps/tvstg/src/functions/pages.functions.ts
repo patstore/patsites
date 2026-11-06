@@ -2,7 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { getBerlinDateParts } from "../provider/functions/berlinTime";
 import { getCollection } from "@server/patstore.server";
-import { isPublished, selectPageContent, withImages } from "@server/site-data.server";
+import { byDateDesc, selectPageContent, withImages } from "@server/site-data.server";
 
 /** CMS-managed page content, see `selectPageContent`. */
 export const getWebpageData = createServerFn({ method: "GET" })
@@ -22,16 +22,14 @@ export const getPersonsData = createServerFn({ method: "GET" }).handler(async ()
   withImages({ Person: await getCollection("Person") }),
 );
 
-/** Published job postings with the groups and contact persons they reference. */
+/** Job postings with the groups and contact persons they reference. */
 export const getJobsData = createServerFn({ method: "GET" }).handler(async () => {
   const [entries, groups, persons] = await Promise.all([
     getCollection("Entry"),
     getCollection("Group"),
     getCollection("Person"),
   ]);
-  const jobs = entries
-    .filter(isPublished)
-    .sort(
+  const jobs = entries.sort(
       (a, b) =>
         new Date(b.date || b.createdAt || "").getTime() -
         new Date(a.date || a.createdAt || "").getTime(),

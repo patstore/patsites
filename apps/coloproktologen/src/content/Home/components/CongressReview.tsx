@@ -1,12 +1,13 @@
 import { navigate } from "@router";
-import { getCurrentEvents, useFindImages, useGetEvent } from '@provider';
+import { getCurrentEvents, useFindImages, useCollection } from '@provider';
+import type { EventClass } from '@types';
 import { contentBox } from '@styles'
 import { Button, Divider, Gallery, Label } from '@ui'
 import React, { useState } from 'react'
 
 const CongressReview: React.FC = () => {
     const [showReview, setShowReview] = useState(false);
-    const {events} = useGetEvent();
+    const { items: events } = useCollection<EventClass>("Event");
     const {current} = getCurrentEvents(events);
     const {findImage} = useFindImages();
 

@@ -2,10 +2,11 @@ import settings from "@settings";
 import { ContentContainer, Divider, FlexBox, SmallContentElement } from "@ui";
 import React from "react";
 import { headlineContainer } from "@styles";
-import { getRecordFileUrl, useGetEntry } from "@provider";
+import { getRecordFileUrl, useCollection } from "@provider";
+import type { PatstoreEntry } from "@types";
 
 const Guidelines: React.FC = () => {
-    const {entrys} = useGetEntry();
+    const { items: entrys } = useCollection<PatstoreEntry>("Entry");
     const awmfGuidelines = entrys.filter((guideline) => guideline.categories?.includes("YadbzlPvy9"));
     const dgvsGuidelines = entrys.filter((guideline) => guideline.categories?.includes("FMI5NIZkkl"));
     

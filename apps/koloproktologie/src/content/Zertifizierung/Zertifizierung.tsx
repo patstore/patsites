@@ -1,5 +1,6 @@
 import { Layout } from "@components";
-import { useGetPerson } from "@provider";
+import { useCollection } from "@provider";
+import type { PersonClass } from "@data";
 import settings from "@settings";
 import {
     ContentContainer,
@@ -11,7 +12,7 @@ import {
 import React from "react";
 
 const Zertifizierung: React.FC = () => {
-    const { findPerson } = useGetPerson();
+    const { find: findPerson } = useCollection<PersonClass>("Person");
     const ansprechpartner = findPerson("hVhSGIfHH3");
 
     return (

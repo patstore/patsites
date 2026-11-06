@@ -1,8 +1,8 @@
 import { PatstoreContent } from "@types";
-import { useGetContent } from "./collections";
+import { useCollection } from "./collections";
 
 const useFindContent = () => {
-  const { contents } = useGetContent();
+  const { items: contents } = useCollection("Content");
 
   const findContent: (
     id: string | null | undefined,

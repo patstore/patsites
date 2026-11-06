@@ -10,6 +10,11 @@ import { contentPlugin } from "@repo/core/vite";
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
+  for (const [key, value] of Object.entries(env)) {
+    if (process.env[key] === undefined) {
+      process.env[key] = value;
+    }
+  }
 
   return mergeConfig(monorepoCompiler, {
     cacheDir: path.resolve(import.meta.dirname, ".cache/vite"),
@@ -69,7 +74,20 @@ export default defineConfig(({ mode }) => {
       }),
       tsconfigPaths(),
       tanstackStart(),
-      nitro(process.env.VERCEL ? { preset: "vercel" } : {}),
+      nitro({
+        publicAssets: [
+          {
+            baseURL: "/",
+            dir: path.resolve(import.meta.dirname, "static"),
+            fallthrough: true,
+          },
+        ],
+        routeRules: {
+          "/app/profile": {
+            redirect: { to: "/app/benutzerkonto", status: 301 },
+          },
+        },
+      }),
       viteReact({
         jsxImportSource: "@emotion/react",
       }),

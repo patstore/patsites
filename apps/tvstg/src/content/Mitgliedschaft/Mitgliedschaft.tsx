@@ -4,11 +4,11 @@ import "./styles.scss";
 import { Layout, RenderContent } from "@components";
 import { Divider, FlexBox, FullButton, HeadContent } from "@ui";
 import { siteContainer, wrapper } from "@styles";
-import { useFindWebpage, useGetDownload } from "@provider";
+import { useFindWebpage, useCollection } from "@provider";
 
 const Mitgliedschaft: React.FC = () => {
   const webpage = useFindWebpage({ path: "/mitgliedschaft" });
-  const { downloads } = useGetDownload();
+  const { items: downloads } = useCollection("Download");
 
   const mitgliedsAntrag = downloads.find(
     (download: any) => download.title === "Mitgliedsantrag",

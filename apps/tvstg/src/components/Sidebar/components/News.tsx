@@ -3,10 +3,10 @@ import settings from "@settings";
 import { sidebarelement, sidebarElementContainer, sidebarHeader } from "../styles";
 import { NewsProps } from "../types";
 import { FlexBox, Label } from "@ui";
-import { getDateString, useGetEntry } from "@provider";
+import { getDateString, useCollection } from "@provider";
 
 const News: React.FC<NewsProps> = ({ category, displayAllNews = false }) => {
-  const { entrys: news } = useGetEntry();
+  const { items: news } = useCollection("Entry");
 
   const newsArray = useMemo(() => {
     const sixtyDaysAgo = new Date();

@@ -4,8 +4,7 @@ import { ContactPerson, FlexBox } from "@ui";
 import {
   getWeekday,
   useFindImages,
-  useGetLocation,
-  useGetPerson,
+  useCollection,
 } from "@provider";
 import { PatstorePerson } from "@types";
 import { sidebarelement } from "../../Sidebar/styles";
@@ -25,9 +24,9 @@ export const Information: React.FC<InformationProps> = ({
   trainer,
   type,
 }) => {
-  const { persons } = useGetPerson();
+  const { items: persons } = useCollection("Person");
   const { findImage } = useFindImages();
-  const { findLocation } = useGetLocation();
+  const { find: findLocation } = useCollection("Location");
 
   const groupData = useMemo(() => {
     let alterText = "";

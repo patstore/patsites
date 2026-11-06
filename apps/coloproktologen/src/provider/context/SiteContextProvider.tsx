@@ -10,8 +10,8 @@ import { SiteContext as SiteContextProps } from "./types";
 import { apiGet, apiRequest } from "../data";
 import EmailModal from "./components/EmailModal";
 import { useLocation } from "@tanstack/react-router";
-import { ColoproktologenUser } from "@types";
-import useGetLocation from "../hooks/patstore/useGetLocation";
+import { ColoproktologenUser, LocationClass } from "@types";
+import { useCollection } from "../data";
 
 const SiteContext = createContext({
     siteTitle: "",
@@ -35,7 +35,7 @@ export const SiteContextProvider = ({
 }) => {
     const [loading, setLoading] = useState(true);
     const [users, setUsers] = useState<ColoproktologenUser[]>([]);
-    const { locations } = useGetLocation();
+    const { items: locations } = useCollection<LocationClass>("Location");
 
     const findUsers = useCallback(() => {
         apiRequest<{ result: ColoproktologenUser[] }>("/api/specialists")

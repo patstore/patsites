@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import settings from "@settings";
-import { useGetArticle, useGetCategory } from "@provider";
+import { useCollection } from "@provider";
 import { Layout } from "@components";
 import { BlogElement, FlexBox, HeadContent, SwitchButton } from "@ui";
 import { siteContainer, wrapper } from "@styles";
@@ -33,8 +33,8 @@ const Berichte: React.FC<BerichteProps> = ({
   onPageChange,
   pageHref,
 }) => {
-  const { articles } = useGetArticle();
-  const { categorys } = useGetCategory();
+  const { items: articles } = useCollection("Article");
+  const { items: categorys } = useCollection("Category");
 
   const buttons = useMemo(
     () => [

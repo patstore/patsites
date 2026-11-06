@@ -1,7 +1,7 @@
 import "@tanstack/react-start/server-only";
 import { readPatStoreEnv } from "@repo/server";
 import type { PatstoreClassName, PatstoreCollections, PatstoreImage } from "@types";
-import { loadServerContent, publishedSsr, publishedStatic } from "./content";
+import { fetchCollection } from "./content";
 
 const REQUEST_TIMEOUT_MS = 15_000;
 const ENV_NAMES = [
@@ -43,12 +43,6 @@ function serverProcessEnv(): Record<string, string | undefined> {
 }
 const BROWSER_IMAGE_EXTENSIONS = /\.(jpe?g|png|webp|gif|avif|svg)(\?.*)?$/i;
 
-/**
- * News, events, and job postings are read live so a publish shows up
- * without a new snapshot. Editorial collections come from the build snapshot.
- */
-const SSR_CLASSES = new Set<PatstoreClassName>(["Article", "Appointment", "Entry"]);
-
 function staticFileUrl(filePath: string): string {
   const encoded = filePath
     .split("/")
@@ -75,8 +69,7 @@ function toImages(items: Record<string, unknown>[]): PatstoreImage[] {
 export async function getCollection<K extends PatstoreClassName>(
   className: K,
 ): Promise<PatstoreCollections[K]> {
-  const context = SSR_CLASSES.has(className) ? publishedSsr : publishedStatic;
-  const items = await loadServerContent(className, context);
+  const items = await fetchCollection(className);
   return (className === "Image" ? toImages(items) : items) as PatstoreCollections[K];
 }
 

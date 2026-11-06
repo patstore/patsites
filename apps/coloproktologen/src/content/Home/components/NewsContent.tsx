@@ -1,4 +1,5 @@
-import { useFindNews, useFindImages } from "@provider";
+import { useCollection, useFindImages } from "@provider";
+import type { PatstoreEntry } from "@types";
 import settings from "@settings";
 import { Maybe } from "@types";
 import { AppImage, ContentContainer, FlexBox, SmallContentElement } from "@ui";
@@ -23,7 +24,8 @@ const NewsContentElement: React.FC<{
 };
 
 const NewsContent: React.FC = () => {
-    const { news } = useFindNews({ category: "hSXInJfDmK" });
+    const { items } = useCollection<PatstoreEntry>("Entry");
+    const news = items.filter((item) => item.categories?.includes("hSXInJfDmK"));
 
     return (
         <ContentContainer>

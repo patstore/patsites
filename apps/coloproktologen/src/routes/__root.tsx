@@ -17,31 +17,29 @@ import {
     resolveSeo,
     type ScrollOrientation
 } from "@repo/core";
-import { SiteContextProvider, client } from "@provider";
+import { SiteContextProvider, client, PatstoreScope } from "@provider";
 import { Layout } from "@components";
 import { HeadContent as PageHeadContent } from "@ui";
 import { Link, NavigateBridge } from "@router";
-import { loadServerContent, publishedStatic } from "../server/content";
+import { loadPublicContent } from "../server/content";
 import { defaultSeo, pageFade, routeTransitions, siteLocalization } from "./-shell";
 
 export const Route = createRootRoute({
     loader: async ({ location }) => {
+        const content = await loadPublicContent();
         let seo: unknown = null;
         try {
-            const pages = await loadServerContent<Record<string, unknown>>(
-                "Webpage",
-                publishedStatic
-            );
+            const pages = (content.Webpage ?? []) as Array<{ path?: string }>;
             const canonical = canonicalPagePath(location.pathname, siteLocalization);
             seo =
                 pages.find((page) => page.path === location.pathname || page.path === canonical) ??
                 null;
         } catch (error) {
-            console.error("Static content was not available during SSR", error);
+            console.error("Content was not available during SSR", error);
             seo = null;
         }
 
-        return { seo };
+        return { content, seo };
     },
     head: () => ({
         meta: [
@@ -73,10 +71,11 @@ function RootComponent() {
     const orientation = useRouterState({
         select: (state) => readOrientation(state.matches)
     });
-    const { seo } = Route.useLoaderData();
+    const { content, seo } = Route.useLoaderData();
 
     return (
         <RootDocument pathname={pathname} seo={seo}>
+            <PatstoreScope data={content}>
             <ApolloProvider client={client}>
                 <SiteContextProvider>
                     <LocalizationProvider pathname={pathname} {...siteLocalization}>
@@ -94,6 +93,7 @@ function RootComponent() {
                     </LocalizationProvider>
                 </SiteContextProvider>
             </ApolloProvider>
+            </PatstoreScope>
         </RootDocument>
     );
 }
