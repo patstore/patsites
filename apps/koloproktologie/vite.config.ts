@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => {
     cacheDir: path.resolve(import.meta.dirname, ".cache/vite"),
     publicDir: "static",
     server: {
-      port: 3000,
+      port: 4000,
       fs: {
         allow: [path.resolve(import.meta.dirname, "../..")],
       },

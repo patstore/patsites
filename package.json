@@ -5,6 +5,9 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:koloproktologie": "turbo dev --filter=koloproktologie",
+    "dev:coloproktologen": "turbo dev --filter=coloproktologen",
+    "dev:tvstg": "turbo dev --filter=tvstg",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"
