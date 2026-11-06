@@ -27,7 +27,6 @@ const Newsletter: React.FC<{
     user: ColoproktologenUser;
     getUser: () => Promise<void>;
 }> = ({ user, getUser }) => {
-    console.log(user.emails);
     return (
         <div css={{ width: "100%" }}>
             <h2>Rundmails des BCD</h2>

@@ -93,8 +93,6 @@ const Rundmails: React.FC = () => {
         return filteredEmails.sort((a: any, b: any) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()) || [];
     }, [emailData]);
 
-    console.log(emails);
-
     const news = useMemo(() => {
         const nws: NewsItem[] = newsData?.entries?.edges.map((edge: any) => sanitizeGraphQlNode(edge.node)) || [];
         return nws.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime()) || [];

@@ -3,7 +3,6 @@ import type { EventClass } from "@types";
 const now = new Date();
 
 export const getCurrentEvents = (events: EventClass[]) => {
-    console.log(events.filter((event) => event.categories?.includes("1CTfrEkW6Y")));
     const eventsWithDate = events.filter(
         (event) =>
             event.dates &&

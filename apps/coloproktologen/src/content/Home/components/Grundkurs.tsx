@@ -1,9 +1,77 @@
 import settings from '@settings'
 import { contentBox } from '@styles'
-import { Button, ContentContainer, FlexBox } from '@ui'
+import { Button, ContentBox, ContentContainer, FlexBox } from '@ui'
 import React from 'react'
+import { env } from '@env'
 
 const Grundkurs: React.FC = () => {
+    console.log(env.previewMode);
+    if (env.previewMode === "true") {
+        return (
+        <ContentContainer >
+            <FlexBox direction='column' align='start' gap={settings.sizes.small} hasFullWidth>
+                <h2>Wissen Vertiefen. <br />Berufspolitik mitgestalten.</h2>
+                <h3>
+                    KoloproktologieKongress 2027
+                </h3>
+                <p>
+                    11. - 13. März - Kongress am Park Augsburg
+                </p>
+            </FlexBox>
+            <FlexBox direction="row" align="stretch" changeToColumn gap={settings.sizes.medium}>
+                <ContentBox
+                    label='Grundkurs'
+                    title="Die Basis für Ihre Praxis"
+                    text="Grundlagen der Koloproktologie verständlich und praxisnah vertiefen."
+                    image="/20260312-51.webp"
+                    buttonText='Zum Kursprogramm'
+                    buttonBackground={settings.colors.primary}
+                    externalLink="https://www.koloproktologen-kongress.de/index.php"
+                >
+                    <div css={{paddingTop: "36px"}}>
+                        <p>
+                            11.März 2027 - 9:00 - 17:00 Uhr <br />
+                            Kongress am Park Augsburg
+                        </p>
+                    </div>
+                </ContentBox>
+                <ContentBox
+                    label='Aufbaukurs'
+                    title="Die Basis für Ihre Praxis"
+                    text="Erfahrene Referenten stellen ihr Vorgehen vor - von Sklerosierung und Logatur bis zur Fistelchirurgie."
+                    image="/aufbaukurs.jpg"
+                    externalLink="https://www.koloproktologen-kongress.de/index.php"
+                    buttonText='Zum Kursprogramm'
+                    buttonBackground={settings.colors.primary}
+                >
+                    <div css={{paddingTop: settings.sizes.medium}}>
+                        <p >
+                            11.März 2027 - 9:00 - 17:00 Uhr <br />
+                            Kongress am Park Augsburg
+                        </p>
+                    </div>
+                </ContentBox>
+                <ContentBox
+                    label='Berufspolitisches  Seminar'
+                    title="Berufspolitik im Fokus"
+                    text="Drei Jahre Hybrid-DRG - was bleibt offen? Ambulatnte Koloskopie und Stand der GOÄ-Novellierung."
+                    image="/grundkurs.jpg"
+                    buttonText='Zum Seminarprogramm'
+                    buttonBackground={settings.colors.primary}
+                    externalLink="https://www.koloproktologen-kongress.de/index.php"
+                >
+                    <div css={{paddingTop: settings.sizes.medium}}>
+                        <p >
+                            11.März 2027 - 9:00 - 17:00 Uhr <br />
+                            Kongress am Park Augsburg
+                        </p>
+                    </div>
+                </ContentBox>
+            </FlexBox>
+
+            </ContentContainer>
+        )
+    } else {
   return (
     <ContentContainer 
     >
@@ -40,6 +108,6 @@ const Grundkurs: React.FC = () => {
         </FlexBox>
     </ContentContainer>
   )
-}
+}}
 
 export default Grundkurs

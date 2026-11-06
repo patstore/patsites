@@ -91,7 +91,6 @@ const Home: React.FC = () => {
             </ContentContainer>
             <ContentContainer largeBackground={settings.colors.light}>
                 <CongressReview />
-
             </ContentContainer>
             <SpecialistSearch />
             {/* <OpenAccess /> */}

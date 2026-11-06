@@ -16,7 +16,6 @@ const Coloproctology: React.FC<{color?: "light" | "white"}> = ({color = "light"}
     }).then(data => data.json()).then(setRssData);
   }, []);
 
-  console.log(rssData);
   return (
     <ContentContainer 
       id="coloproctology" 

@@ -12,8 +12,6 @@ const Kongressrueckblicke: React.FC = () => {
     const { findImage } = useFindImages();
     const { find: findDownload } = useCollection<PatstoreDownload>("Download");
 
-    console.log(currentEvents);
-
     return <Layout>
         <HeadContent
             title="Kongressrückblick"

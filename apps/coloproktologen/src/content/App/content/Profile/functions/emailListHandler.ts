@@ -25,7 +25,6 @@ export const emailListHandler: EmailListHandler = ({
     const emailList = cloneDeep(emails) || [];
 
     if (typeof isOptedIn !== "boolean") {
-        console.log("Invalid isOptedIn");
         return emailList;
     }
 

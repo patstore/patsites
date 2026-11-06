@@ -28,7 +28,6 @@ const Rundmail: React.FC<{
  const documentsArray = useMemo(() => {
     const nws: Array<{ title?: string; file?: { url?: string } }> =
         downloads?.downloads?.edges.map((edge: any) => sanitizeGraphQlNode(edge.node)) || [];
-   console.log(nws);
     return nws || [];
 }, [downloads]);
 

@@ -25,8 +25,11 @@ const ContentBox: React.FC<ContentBoxProps> = ({
   onClick,
   icon,
   alignCenter = false,
+  externalLink
 }) => {
   const { findImage } = useFindImages();
+
+  const absoluteImagePath = image &&  (image.startsWith("/") || image.startsWith("http"));
 
   return (
     <motion.div
@@ -48,7 +51,7 @@ const ContentBox: React.FC<ContentBoxProps> = ({
             top: 0,
             left: 0,
           }}
-          src={findImage(image)}
+          src={absoluteImagePath ? image : findImage(image)}
           alt={title}
         />
       )}
@@ -66,8 +69,10 @@ const ContentBox: React.FC<ContentBoxProps> = ({
       <h4 css={{ color, textAlign: alignCenter ? "center" : "left" }}>
         {title}
       </h4>
-      <p css={{ color, textAlign: alignCenter ? "center" : "left" }}>{text}</p>
-      {children && children}
+      <div>
+        <p css={{ color, textAlign: alignCenter ? "center" : "left" }}>{text}</p>
+      </div>
+      {children && <div>{children}</div>}
       <div css={{ marginTop: "12px" }}></div>
       <FlexBox
         direction="row"
@@ -81,11 +86,12 @@ const ContentBox: React.FC<ContentBoxProps> = ({
             </Button>
           </Link>
         )}
-        {onClick && (
+        {(onClick || externalLink) && (
           <Button
             background={buttonBackground}
             text={buttonText}
             onClick={() => (link ? navigate(link) : onClick && onClick())}
+            externalLink={externalLink}
           >
             {<ArrowRight size={12} />}
           </Button>

@@ -60,8 +60,6 @@ const getEventDateString = (dates: PatstoreEvent["dates"], locations: LocationCl
 const EventElement: React.FC<{ event: EventProps }> = ({ event }) => {
     const { find: findDownload } = useCollection<PatstoreDownload>("Download");
     
-    console.log(event);
-
     return (
         <div css={contentBox()}>
             <FlexBox
@@ -117,8 +115,6 @@ const Events: React.FC = () => {
                 if (findDates.length > 0) {
                     findDates.forEach((date: EventDate) => {
                         const dateString = getEventDateString([date], locations);
-
-                        console.log(dateString);
                         eventArray.push({
                             id: `${event.objectId}-${date.start}`,
                             title: event.title || "",

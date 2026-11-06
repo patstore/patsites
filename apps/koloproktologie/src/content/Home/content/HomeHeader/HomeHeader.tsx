@@ -29,8 +29,6 @@ const HomeHeader = () => {
         setCount(0)
       }, [])
 
-      console.log(count)
-
       const renderContent = useMemo(() => {
         return ([
             {

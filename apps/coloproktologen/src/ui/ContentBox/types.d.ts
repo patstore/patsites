@@ -19,4 +19,5 @@ export type ContentBoxProps = ContentBoxElement & {
   onClick?: () => void;
   icon?: React.ReactNode;
   alignCenter?: boolean;
+  externalLink?: string;
 };

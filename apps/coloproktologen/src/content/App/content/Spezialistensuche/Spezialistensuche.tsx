@@ -13,7 +13,6 @@ import { SpecialistLocation, SpecialistUser } from "@content";
 const Spezialistensuche: React.FC = () => {
     const { user } = useSiteContext();
     const [selectClinic, setSelectClinic] = useState<boolean>(false);
-console.log({user})
     const { data: locationData } = useQuery(    
         gql`
       query getLocation($objectId: ID!) {
