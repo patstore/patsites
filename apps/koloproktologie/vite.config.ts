@@ -84,7 +84,7 @@ export default defineConfig(({ mode }) => {
         ],
         routeRules: {
           "/app/profile": {
-            redirect: { to: "/app/benutzerkonto", status: 301 },
+            redirect: { to: "/app/mitgliederbereich", status: 301 },
           },
         },
       }),
