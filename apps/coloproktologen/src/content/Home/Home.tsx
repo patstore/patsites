@@ -15,6 +15,8 @@ import NewsContent from "./components/NewsContent";
 import BcdContent from "./components/Bcd_Content";
 import Grundkurs from "./components/Grundkurs";
 import CongressReview from "./components/CongressReview";
+import CongressPreview from "./components/CongressPreview";
+import { env } from "@env";
 
 const Home: React.FC = () => {
     return (
@@ -89,9 +91,14 @@ const Home: React.FC = () => {
                     </div>
                 </FlexBox>
             </ContentContainer>
-            <ContentContainer largeBackground={settings.colors.light}>
-                <CongressReview />
-            </ContentContainer>
+            {env.previewMode ? (
+
+                <CongressPreview />
+            ) : (
+                <ContentContainer largeBackground={settings.colors.light}>
+                    <CongressReview />
+                </ContentContainer>
+            )}
             <SpecialistSearch />
             {/* <OpenAccess /> */}
             <ContentContainer largeBackground={settings.colors.light}>

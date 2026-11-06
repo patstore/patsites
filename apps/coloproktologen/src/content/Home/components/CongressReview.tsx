@@ -14,6 +14,8 @@ const CongressReview: React.FC = () => {
     if (!current || !current?.text) {
         return null;
     }
+
+    
   return (
     <div css={[contentBox("1 1 100%")]}>
         <Label text="Kongressrückblick" noMarginBottom />
