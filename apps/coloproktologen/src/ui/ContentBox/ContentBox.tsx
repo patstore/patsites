@@ -10,6 +10,7 @@ import settings from "@settings";
 import { ArrowRight } from "lucide-react";
 import { FlexBox } from "../FlexBox";
 import { Label } from "../Label";
+import { topline } from "@styles";
 const ContentBox: React.FC<ContentBoxProps> = ({
   title,
   text,
@@ -62,7 +63,7 @@ const ContentBox: React.FC<ContentBoxProps> = ({
           align="center"
           hasFullWidth
         >
-          <Label text={label}></Label>
+          {label && <div css={[topline, {fontSize: "10px !important", fontWeight: 500, marginBottom: 0}]}>{label}</div>}
           <h5 css={{ color }}>{date}</h5>
         </FlexBox>
       )}

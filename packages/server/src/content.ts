@@ -58,20 +58,22 @@ export function isDraftMode(): boolean {
 export async function fetchCollection<
   T extends Record<string, unknown> = Record<string, unknown>,
 >(className: string): Promise<T[]> {
-  if ("window" in globalThis) {
-    throw new Error("fetchCollection can only be called on the server.");
-  }
   const name = className.trim();
   if (!name || PRIVATE_CLASSES.has(name) || !shouldStoreClass(name)) {
     throw new Error(
       `${name || "This class"} is not public content. Account data is loaded through the session routes.`,
     );
   }
-  return loadContent<T>(
-    name,
-    createDataContext({
-      mode: isDraftMode() ? "ssr" : "static",
-      states: isDraftMode() ? null : ["published"],
-    }),
-  );
+  const context = createDataContext({
+    mode: isDraftMode() ? "ssr" : "static",
+    states: isDraftMode() ? null : ["published"],
+  });
+  // The published snapshot is bundled in the client. Live PatStore reads stay on the server.
+  if ("window" in globalThis) {
+    if (context.mode !== "static") {
+      throw new Error("fetchCollection can only be called on the server.");
+    }
+    return loadStaticRecords<T>(name, context);
+  }
+  return loadContent<T>(name, context);
 }

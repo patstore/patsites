@@ -16,6 +16,7 @@ const SmallContentElement: React.FC<SmallContentElementProps> = ({
   flex = "1 1 50%",
   noTextBreak = false,
   date,
+  buttonText,
 }) => {
   const [open, setOpen] = useState(false);
   const [hover, setHover] = useState(false);
@@ -80,7 +81,6 @@ const SmallContentElement: React.FC<SmallContentElementProps> = ({
           {contentOrLinkExists && (
             <motion.div
               animate={{
-                transform: hover ? "rotate(-45deg)" : "rotate(0deg)",
                 backgroundColor: hover
                   ? settings.colors.white
                   : settings.colors.primary,
@@ -90,9 +90,43 @@ const SmallContentElement: React.FC<SmallContentElementProps> = ({
                 duration: 0.5,
                 ease: "easeOut",
               }}
-              css={[roundIcon, { color: "inherit" }]}
+              css={{
+                display: "flex",
+                alignItems: "center",
+                gap: buttonText ? "6px" : 0,
+                height: "36px",
+                width: buttonText ? "auto" : "36px",
+                padding: buttonText ? "0 8px 0 14px" : 0,
+                borderRadius: "999px",
+                color: "inherit",
+              }}
             >
-              <ArrowRight strokeWidth={0.8} />
+              {buttonText && (
+                <span css={{ fontSize: "0.8rem", fontWeight: 600, lineHeight: 1 }}>
+                  {buttonText}
+                </span>
+              )}
+              <motion.div
+                animate={{
+                  transform: hover ? "rotate(-45deg)" : "rotate(0deg)",
+                }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeOut",
+                }}
+                css={
+                  buttonText
+                    ? {
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "inherit",
+                      }
+                    : [roundIcon, { color: "inherit", backgroundColor: "transparent" }]
+                }
+              >
+                <ArrowRight strokeWidth={0.8} />
+              </motion.div>
             </motion.div>
           )}
           {date && <h5 css={{margin: "0 !important", color: hover ? settings.colors.white : settings.colors.dark}}>{getDateString(date).date}</h5>}

@@ -84,6 +84,7 @@ const Membership: React.FC = () => {
                         <SmallContentElement
                             title={service.title}
                             text={service.text}
+                            buttonText={service.files ? "Dokumente und Downloads" : undefined}
                             flex={["1 1 100%", "1 1 100%", "1 1 30%"]}
                             noTextBreak
                             key={service.title}

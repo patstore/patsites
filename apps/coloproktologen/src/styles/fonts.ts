@@ -47,7 +47,7 @@ export const h4 = css({
     // maxWidth: "660px",
     // textTransform: "uppercase",
     lineHeight: 1.2,
-    fontSize: "14px",
+    fontSize: "15px",
     marginTop: settings.sizes.small,
     marginBottom: settings.sizes.small
 });

@@ -27,20 +27,11 @@ import { defaultSeo, pageFade, routeTransitions, siteLocalization } from "./-she
 export const Route = createRootRoute({
     loader: async ({ location }) => {
         const content = await loadPublicContent();
-        let seo: unknown = null;
-        try {
-            const pages = (content.Webpage ?? []) as Array<{ path?: string }>;
-            const canonical = canonicalPagePath(location.pathname, siteLocalization);
-            seo =
-                pages.find((page) => page.path === location.pathname || page.path === canonical) ??
-                null;
-        } catch (error) {
-            console.error("Content was not available during SSR", error);
-            seo = null;
-        }
-
-        return { content, seo };
+        return { content, seo: pageSeo(content, location.pathname) };
     },
+    // Keep the snapshot from the first load. A browser refetch used to replace
+    // Event and Image with empty lists and clear the congress panel.
+    staleTime: Number.POSITIVE_INFINITY,
     head: () => ({
         meta: [
             { charSet: "utf-8" },
@@ -53,6 +44,12 @@ export const Route = createRootRoute({
     component: RootComponent,
     notFoundComponent: NotFoundFallback
 });
+
+function pageSeo(content: { Webpage?: Array<{ path?: string }> } | undefined, pathname: string) {
+    const pages = content?.Webpage ?? [];
+    const canonical = canonicalPagePath(pathname, siteLocalization);
+    return pages.find((page) => page.path === pathname || page.path === canonical) ?? null;
+}
 
 function readOrientation(
     matches: ReadonlyArray<{ staticData: { scroll?: ScrollOrientation } }>
@@ -71,7 +68,8 @@ function RootComponent() {
     const orientation = useRouterState({
         select: (state) => readOrientation(state.matches)
     });
-    const { content, seo } = Route.useLoaderData();
+    const { content } = Route.useLoaderData();
+    const seo = pageSeo(content, pathname);
 
     return (
         <RootDocument pathname={pathname} seo={seo}>

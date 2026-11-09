@@ -70,26 +70,7 @@ const BasicCourse: React.FC = () => {
                         hasFullWidth
                         changeToColumn
                     >
-                        <div css={[contentBox(), { backgroundColor: settings.colors.white }]}>
-                            <h3>
-                                Praktisch erfahrene Referenten stellen die Grundlagen der:
-                            </h3>
-                            <ul>
-                                <li>Anatomie und Physiologie,</li>
-                                <li>der Anamnese und Diagnostik sowie</li>
-                                <li>
-                                    alle in der täglichen Praxis relevanten Krankheitsbilder von
-                                </li>
-                                <li>den dermatologischen Erkrankungen über die</li>
-                                <li>
-                                    typisch proktologischen Entitäten Hämorrhoiden, Fissuren,
-                                    Fisteln und Abszesse bis
-                                </li>
-                                <li>zu den funktionellen Störungen sowie</li>
-                                <li>den entzündlichen und tumorösen Veränderungen vor.</li>
-                            </ul>
-                        </div>
-                        <div css={[contentBox(), { backgroundColor: settings.colors.white }]}>
+                         <div css={[contentBox(), { backgroundColor: settings.colors.white }]}>
                             <h3>Kursziel:</h3>
                             <p>
                                 Der Kurs richtet sich an Fachärzte zur Vorbereitung auf die
@@ -108,6 +89,25 @@ const BasicCourse: React.FC = () => {
                                         11.03.2027, Deutscher Koloproktologen-Kongress 2027
                                     </a>
                                 </li>
+                            </ul>
+                        </div>
+                        <div css={[contentBox(), { backgroundColor: settings.colors.white }]}>
+                            <h3>
+                                Praktisch erfahrene Referenten stellen die Grundlagen der:
+                            </h3>
+                            <ul>
+                                <li>Anatomie und Physiologie,</li>
+                                <li>der Anamnese und Diagnostik sowie</li>
+                                <li>
+                                    alle in der täglichen Praxis relevanten Krankheitsbilder von
+                                </li>
+                                <li>den dermatologischen Erkrankungen über die</li>
+                                <li>
+                                    typisch proktologischen Entitäten Hämorrhoiden, Fissuren,
+                                    Fisteln und Abszesse bis
+                                </li>
+                                <li>zu den funktionellen Störungen sowie</li>
+                                <li>den entzündlichen und tumorösen Veränderungen vor.</li>
                             </ul>
                         </div>
                     </FlexBox>

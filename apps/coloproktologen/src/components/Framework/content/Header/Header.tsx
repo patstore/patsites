@@ -112,13 +112,16 @@ const Header: React.FC = () => {
                             css={{
                                 width: "130px",
                                 margin: "0 !important",
-                                overflow: "visible"
+                                overflow: "visible",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "flex-start"
                             }}
                         >
                             <AppImage
                                 src={staticAsset0} alt="Berufsverband Coloproktologie Deutschand e.V."
                                 objectFit="contain"
-                                height={54}
+                                height={48}
                             />
                         </Link>
                     </FlexBox>

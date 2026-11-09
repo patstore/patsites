@@ -8,4 +8,5 @@ export type SmallContentElementProps = {
   flex?: string[] | string;
   noTextBreak?: boolean;
   date?: string;
+  buttonText?: string;
 };

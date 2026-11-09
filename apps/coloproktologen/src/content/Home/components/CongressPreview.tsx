@@ -1,5 +1,5 @@
 import settings from "@settings";
-import { contentBox } from "@styles";
+import { contentBox, topline } from "@styles";
 import { Button, ContentContainer, FlexBox, Label } from "@ui";
 import React from "react";
 
@@ -29,16 +29,17 @@ const CongressPreview: React.FC = () => {
                 gap={settings.sizes.small}
                 hasFullWidth
             >
-                <Label text="Kongressvorschau" noMarginBottom />
+                <div css={topline}>
+                    Kongressvorschau
+                </div>
                 <h2 css={{maxWidth: "100% !important"}}>Der BCD beim Koloproktologen-Kongress 2027 </h2>
                 <h3>Der Berufsverband Coloproktologie Deutschland (BCD) gestaltet den 53. Deutschen Koloproktologen-Kongress aktiv mit!</h3>
                 <p css={{ marginBlockEnd: 0, fontWeight: "600 !important" }}>
-                    11.–13. März 2027 · Kongress am Park, Augsburg – hybrid
+                    11.–13. März 2027 · Kongress am Park, Augsburg – HYBRID
                 </p>
             </FlexBox>
             <p>
-            Neben dem wissenschaftlichen Programm stehen insbesondere praxisorientierte Fortbildungsangebote, die berufliche Weiterentwicklung und aktuelle berufspolitische Fragestellungen im Mittelpunkt unseres Engagements.
-
+                Neben dem wissenschaftlichen Programm stehen insbesondere praxisorientierte Fortbildungsangebote, die berufliche Weiterentwicklung und aktuelle berufspolitische Fragestellungen im Mittelpunkt unseres Engagements.
             </p>
             <FlexBox
                 direction="row"
