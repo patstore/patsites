@@ -99,7 +99,7 @@ const Home: React.FC = () => {
                     <CongressReview />
                 </ContentContainer>
             )}
-            {env.previewMode ? (
+            {!env.previewMode ? (
                 <>
                 <SpecialistSearch />
                 <ContentContainer largeBackground={settings.colors.light}>
