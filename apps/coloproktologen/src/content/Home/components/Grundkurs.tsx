@@ -49,7 +49,7 @@ const Grundkurs: React.FC = () => {
                 >
                     <div css={{paddingTop: settings.sizes.medium, paddingBottom: "12px"}}>
                         <p >
-                            11. März 2027 - 9:00 - 17:00 Uhr <br />
+                            11. März 2027 - 14:00 - 17:00 Uhr <br />
                             Kongress am Park Augsburg
                         </p>
                     </div>
@@ -66,7 +66,7 @@ const Grundkurs: React.FC = () => {
                     <div css={{paddingTop: settings.sizes.medium}}>
                         
                         <p css={{marginBlockEnd: "4px !important"}}>
-                            11.  März 2027 - 9:00 - 17:00 Uhr <br />
+                            13.  März 2027 - 11:30 - 12:45 Uhr <br />
                             Kongress am Park Augsburg
                         </p>
                         <p css={{fontSize: "10px !important", fontWeight: "bold !important", marginBlockEnd: "0 !important", marginBottom: 0}}>
