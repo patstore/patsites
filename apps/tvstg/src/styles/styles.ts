@@ -62,10 +62,9 @@ export const tr = {
 
 export const sectionHeader = css({
   marginTop: settings.sizes.medium,
-  marginBottom: settings.sizes.medium,
-  fontFamily: "Oswald, sans-serif",
+  fontFamily: "Inter, sans-serif",
   letterSpacing: "0.1rem",
-  fontSize: "1.5rem",
+  fontSize: "0.9rem",
   textTransform: "uppercase",
   // borderRadius: settings.sizes.small,
   fontWeight: 600,
@@ -80,6 +79,4 @@ export const sectionHeader = css({
   textAlign: "center",
   position: "relative",
   width: "100%",
-  borderBottom: `1px solid ${settings.colors.dark}`,
-  borderTop: `1px solid ${settings.colors.dark}`,
 });

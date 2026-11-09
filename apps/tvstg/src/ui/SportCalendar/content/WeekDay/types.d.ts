@@ -14,6 +14,7 @@ export type WeekDayProps = {
 export type TrainingCalendarElementProps = {
   training: TrainingTime;
   view: CalendarView;
+  striped?: boolean;
 };
 
 export type WeekDayButtonsProps = {

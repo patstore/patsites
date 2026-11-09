@@ -99,12 +99,13 @@ const Home: React.FC = () => {
                     <CongressReview />
                 </ContentContainer>
             )}
-            <SpecialistSearch />
-            {/* <OpenAccess /> */}
-            <ContentContainer largeBackground={settings.colors.light}>
-                <TextContentElement
-                    title="Die Proktologie entdecken"
-                    topline="Medizinische Kompetenz"
+            {env.previewMode ? (
+                <>
+                <SpecialistSearch />
+                <ContentContainer largeBackground={settings.colors.light}>
+                    <TextContentElement
+                        title="Die Proktologie entdecken"
+                        topline="Medizinische Kompetenz"
                 >
                     <div>
                         <p>
@@ -133,9 +134,46 @@ const Home: React.FC = () => {
                 </TextContentElement>
             </ContentContainer>
             <Grundkurs />
+            </>
+            ) : (
+                <>
+                <Grundkurs />
+                <ContentContainer largeBackground={settings.colors.light}>
+                    <TextContentElement
+                        title="Die Proktologie entdecken"
+                        topline="Medizinische Kompetenz"
+                >
+                    <div>
+                        <p>
+                            Als interdisziplinäres Fachgebiet vereint die Proktologie die
+                            Expertise aus verschiedenen Disziplinen wie der{" "}
+                            <strong>Chirurgie</strong>, <strong>Dermatologie</strong> und{" "}
+                            <strong>Gastroenterologie</strong>. Diese enge Zusammenarbeit
+                            schafft innovative Ansätze für Diagnostik und Therapie, die den
+                            individuellen Bedürfnissen der Patienten gerecht werden.
+                        </p>
+                        <p>
+                            Wachsende Anforderungen im Zuge von Innovation und Wandel prägen
+                            ihre Bedeutung als zukunftorienteres Systemfach.
+                        </p>
+                        <Divider />
+                        <div css={buttonsContainer}>
+                            <Button
+                                text="Für Ärzte"
+                                background={settings.colors.primary}
+                                color={settings.colors.white}
+                                size="large"
+                                internalLink="/aerzte"
+                            />
+                        </div>
+                    </div>
+                </TextContentElement>
+            </ContentContainer>
+            <SpecialistSearch />
+            </>
 
-            {/* <BSD /> */}
-            {/* <Education /> */}
+            )}
+
             <NewsContent />
         </Layout>
     );

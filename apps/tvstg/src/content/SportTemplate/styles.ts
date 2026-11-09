@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import settings from "@settings";
 
 export const subHeader = css({
-  fontFamily: "Oswald, sans-serif",
+  fontFamily: "Inter, sans-serif",
   letterSpacing: "0.04em",
   textTransform: "uppercase",
   color: settings.colors.white,

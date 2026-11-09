@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import settings from "@settings";
 
 export const h1 = settings.mq({
-  fontFamily: "Oswald, sans-serif",
+  fontFamily: "Inter, sans-serif",
   textTransform: "uppercase",
   margin: 0,
   padding: 0,
@@ -15,7 +15,7 @@ export const h1 = settings.mq({
 });
 
 export const h2 = settings.mq({
-  fontFamily: "Oswald, sans-serif",
+  fontFamily: "Inter, sans-serif",
   margin: "1.8rem 0 0.9rem 0",
   padding: 0,
   letterSpacing: "0.01rem",
@@ -30,7 +30,7 @@ export const h2 = settings.mq({
 export const h3 = settings.mq({
   fontSize: ["0.9rem", "1.1rem", "1.2rem"],
   textTransform: "none",
-  fontFamily: "Oswald, sans-serif",
+  fontFamily: "Inter, sans-serif",
   margin: "0 ",
   padding: 0,
   letterSpacing: "0.05rem",
@@ -44,14 +44,14 @@ export const h4 = css({
   margin: "0 0 0.5em 0",
   padding: 0,
   color: "inherit",
-  fontFamily: "'Oswald', sans-serif",
+  fontFamily: "Inter, sans-serif",
   fontWeight: 400,
   textRendering: "optimizeLegibility",
   fontSize: "1.1rem",
 });
 
 export const h5 = css({
-  fontFamily: "'Oswald', sans-serif",
+  fontFamily: "Inter, sans-serif",
   padding: 0,
   fontWeight: 600,
   color: "inherit",
@@ -63,7 +63,7 @@ export const h5 = css({
 });
 
 export const h6 = css({
-  fontFamily: "'Oswald', sans-serif",
+  fontFamily: "Inter, sans-serif",
   textTransform: "uppercase",
   letterSpacing: "0.08em",
   fontWeight: 600,
@@ -82,7 +82,7 @@ export const hgroup = css({
 
 export const p = css({
   fontFamily: "Open Sans, sans-serif",
-  fontSize: ["0.9rem", "0.96rem"],
+  fontSize: ["0.84rem", "0.9rem"],
   lineHeight: "1.6",
   padding: 0,
   marginBlockEnd: "0",

@@ -5,18 +5,17 @@ import React from 'react'
 import { env } from '@env'
 
 const Grundkurs: React.FC = () => {
-    console.log(env.previewMode);
     if (env.previewMode === "true") {
         return (
         <ContentContainer >
             <FlexBox direction='column' align='start' gap={settings.sizes.small} hasFullWidth>
-                <h2>Wissen Vertiefen. <br />Berufspolitik mitgestalten.</h2>
+                <h2>Wissen vertiefen. <br />Berufspolitik mitgestalten.</h2>
                 <h3>
-                    KoloproktologieKongress 2027
+                    Deutscher Koloproktologen Kongress 2027
                 </h3>
-                <p>
+                <h4 css={{fontWeight: 600}}>
                     11. - 13. März - Kongress am Park Augsburg
-                </p>
+                </h4>
             </FlexBox>
             <FlexBox direction="row" align="stretch" changeToColumn gap={settings.sizes.medium}>
                 <ContentBox
@@ -30,15 +29,15 @@ const Grundkurs: React.FC = () => {
                 >
                     <div css={{paddingTop: "36px"}}>
                         <p>
-                            11.März 2027 - 9:00 - 17:00 Uhr <br />
+                            11. März 2027 - 9:00 - 17:00 Uhr <br />
                             Kongress am Park Augsburg
                         </p>
                     </div>
                 </ContentBox>
                 <ContentBox
-                    label='Aufbaukurs'
+                    label='How I do it'
                     title="Die Basis für Ihre Praxis"
-                    text="Erfahrene Referenten stellen ihr Vorgehen vor - von Sklerosierung und Logatur bis zur Fistelchirurgie."
+                    text="Erfahrene Referenten stellen ihr Vorgehen vor - von Sklerosierung und Ligatur bis zur Fistelchirurgie."
                     image="/aufbaukurs.jpg"
                     externalLink="https://www.koloproktologen-kongress.de/index.php"
                     buttonText='Zum Kursprogramm'
@@ -46,7 +45,7 @@ const Grundkurs: React.FC = () => {
                 >
                     <div css={{paddingTop: settings.sizes.medium}}>
                         <p >
-                            11.März 2027 - 9:00 - 17:00 Uhr <br />
+                            11. März 2027 - 9:00 - 17:00 Uhr <br />
                             Kongress am Park Augsburg
                         </p>
                     </div>
@@ -54,7 +53,7 @@ const Grundkurs: React.FC = () => {
                 <ContentBox
                     label='Berufspolitisches  Seminar'
                     title="Berufspolitik im Fokus"
-                    text="Drei Jahre Hybrid-DRG - was bleibt offen? Ambulatnte Koloskopie und Stand der GOÄ-Novellierung."
+                    text="Drei Jahre Hybrid-DRG - was bleibt offen? Ambulante Koloskopie und Stand der GOÄ-Novellierung."
                     image="/grundkurs.jpg"
                     buttonText='Zum Seminarprogramm'
                     buttonBackground={settings.colors.primary}
@@ -62,7 +61,7 @@ const Grundkurs: React.FC = () => {
                 >
                     <div css={{paddingTop: settings.sizes.medium}}>
                         <p >
-                            11.März 2027 - 9:00 - 17:00 Uhr <br />
+                            11.  März 2027 - 9:00 - 17:00 Uhr <br />
                             Kongress am Park Augsburg
                         </p>
                     </div>

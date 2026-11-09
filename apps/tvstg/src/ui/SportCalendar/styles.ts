@@ -4,7 +4,6 @@ export const calendarContainer = {
   width: "100%",
   minHeight: "40vh",
   overflow: "auto",
-  h3: { fontWeight: "bold", marginBottom: 0 },
 };
 
 export const subHeaderContainer = {

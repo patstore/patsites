@@ -18,8 +18,8 @@ const colors = {
   light: "#F6F6F6",
   white: "#ffffff",
 
-  grey: "#a6a6a6", // oder #bcbcbc
-  lightgrey: "#F1F1F2",
+  grey: "#a6a6a6", // oder rgb(226, 226, 226)
+  lightgrey: "rgb(226, 226, 226)",
   darkgrey: "#444444",
 };
 

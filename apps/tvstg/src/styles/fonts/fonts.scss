@@ -1,3 +1,19 @@
+/* Inter variable — headline font (weight and optical size) */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../fonts/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+}
+
 /* oswald-200 - latin */
 @font-face {
     font-family: 'Oswald';
@@ -185,7 +201,7 @@
   }
 
   h1 {
-    font-family: Oswald, sans-serif;
+    font-family: var(--font-headline);
     text-transform: uppercase;
     
     margin-left: 0;
@@ -203,7 +219,7 @@
     line-height: 1.1;
   }
   h2 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-headline);
     margin-left: 0;
     margin-right: 0;
     margin-top: 1rem;
@@ -222,7 +238,7 @@
   h3 {
     font-size: 1.1em;
     text-transform: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-headline);
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
@@ -247,7 +263,7 @@
     padding-top: 0;
     margin-bottom: 0.5em;
     color: inherit;
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-headline);
     letter-spacing: 0.1em;
     font-weight: 500;
     text-rendering: optimizeLegibility;
@@ -256,7 +272,7 @@
 
   }
   h5 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-headline);
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
@@ -272,7 +288,7 @@
     line-height: 1.1;
   }
   h6 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--font-headline);
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 600;

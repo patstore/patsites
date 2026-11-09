@@ -1,6 +1,6 @@
 import React from "react";
 import { getWeekday } from "@provider";
-import { FlexBox, Label } from "@ui";
+import { FlexBox } from "@ui";
 import TrainingCalendarElement from "./components/TrainingCalendarElement";
 import { weekDayContainer } from "./styles";
 import { WeekDayProps } from "./types";
@@ -18,13 +18,17 @@ const WeekDay: React.FC<WeekDayProps> = ({ weekday, trainingszeiten, view }) => 
         direction="row"
         align="stretch"
         justify="flex-start"
-        // styles={{ gap: ["12px"] }}
         wrap
       >
         {trainingszeiten
           .sort((a, b) => a.start.localeCompare(b.start))
-          .map((value) => (
-            <TrainingCalendarElement key={value.id} training={value} view={view} />
+          .map((value, index) => (
+            <TrainingCalendarElement
+              key={value.id}
+              training={value}
+              view={view}
+              striped={view === "list" && index % 2 === 1}
+            />
           ))}
       </FlexBox>
     </div>
