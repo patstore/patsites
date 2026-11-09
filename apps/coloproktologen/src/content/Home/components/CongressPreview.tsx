@@ -30,15 +30,15 @@ const CongressPreview: React.FC = () => {
                 hasFullWidth
             >
                 <Label text="Kongressvorschau" noMarginBottom />
-                <h2 css={{maxWidth: "100%"}}>53. Deutscher Koloproktologen-Kongress</h2>
-                <p css={{ marginBlockEnd: 0 }}>
+                <h2 css={{maxWidth: "100% !important"}}>Der BCD beim Koloproktologen-Kongress 2027 </h2>
+                <h3>Der Berufsverband Coloproktologie Deutschland (BCD) gestaltet den 53. Deutschen Koloproktologen-Kongress aktiv mit!</h3>
+                <p css={{ marginBlockEnd: 0, fontWeight: "600 !important" }}>
                     11.–13. März 2027 · Kongress am Park, Augsburg – hybrid
                 </p>
             </FlexBox>
             <p>
-                Die Deutsche Gesellschaft für Koloproktologie, der Berufsverband
-                Coloproktologie Deutschland und die Chirurgische Arbeitsgemeinschaft
-                Coloproktologie laden zum 53. Deutschen Koloproktologen-Kongress ein.
+            Neben dem wissenschaftlichen Programm stehen insbesondere praxisorientierte Fortbildungsangebote, die berufliche Weiterentwicklung und aktuelle berufspolitische Fragestellungen im Mittelpunkt unseres Engagements.
+
             </p>
             <FlexBox
                 direction="row"

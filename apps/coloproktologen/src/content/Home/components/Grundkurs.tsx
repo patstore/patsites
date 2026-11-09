@@ -1,6 +1,6 @@
 import settings from '@settings'
 import { contentBox } from '@styles'
-import { Button, ContentBox, ContentContainer, FlexBox } from '@ui'
+import { Button, ContentBox, ContentContainer, FlexBox, Label } from '@ui'
 import React from 'react'
 import { env } from '@env'
 
@@ -8,7 +8,8 @@ const Grundkurs: React.FC = () => {
     if (env.previewMode === "true") {
         return (
         <ContentContainer >
-            <FlexBox direction='column' align='start' gap={settings.sizes.small} hasFullWidth>
+            <FlexBox direction='column' align='start' gap={0} hasFullWidth>
+                <Label text="Unsere Schwerpunkte" />
                 <h2>Wissen vertiefen. <br />Berufspolitik mitgestalten.</h2>
                 <h3>
                     Deutscher Koloproktologen Kongress 2027
@@ -16,6 +17,7 @@ const Grundkurs: React.FC = () => {
                 <h4 css={{fontWeight: 600}}>
                     11. - 13. März - Kongress am Park Augsburg
                 </h4>
+              
             </FlexBox>
             <FlexBox direction="row" align="stretch" changeToColumn gap={settings.sizes.medium}>
                 <ContentBox
@@ -27,7 +29,10 @@ const Grundkurs: React.FC = () => {
                     buttonBackground={settings.colors.primary}
                     externalLink="https://www.koloproktologen-kongress.de/index.php"
                 >
-                    <div css={{paddingTop: "36px"}}>
+                    <div css={{paddingTop: "22px"}}>
+                        <p css={{fontSize: "10px !important", marginBlockEnd: "0 !important", marginBottom: 0}}>
+                            *Für BCD Mitglieder kostenfrei.
+                        </p>
                         <p>
                             11. März 2027 - 9:00 - 17:00 Uhr <br />
                             Kongress am Park Augsburg
@@ -35,8 +40,8 @@ const Grundkurs: React.FC = () => {
                     </div>
                 </ContentBox>
                 <ContentBox
-                    label='How I do it'
-                    title="Die Basis für Ihre Praxis"
+                    label='Aufbaukurs'
+                    title="How I do it"
                     text="Erfahrene Referenten stellen ihr Vorgehen vor - von Sklerosierung und Ligatur bis zur Fistelchirurgie."
                     image="/aufbaukurs.jpg"
                     externalLink="https://www.koloproktologen-kongress.de/index.php"
