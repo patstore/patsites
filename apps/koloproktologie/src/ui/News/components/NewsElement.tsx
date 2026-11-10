@@ -3,12 +3,15 @@ import React, { useState } from "react";
 import { NewsElementProps } from "../types";
 import { AppImage, ContentBox, Divider, FlexBox, SlideIn } from "@ui";
 import { getDateString, useCollection, useGetImages } from "@provider";
-import type { DownloadClass } from "@data";
+import type { CategoryClass, DownloadClass } from "@data";
 
 const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
     const [open, setOpen] = useState(false);
     const { findImageUrl } = useGetImages();
     const { find: findDownload } = useCollection<DownloadClass>("Download");
+    const { items } = useCollection<CategoryClass>("Category");
+
+    console.log(items);
     return (
         <div
             css={{
@@ -49,6 +52,7 @@ const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
                 <Divider />
                 <h2>{news.title}</h2>
                 <div dangerouslySetInnerHTML={{ __html: news.text }} />
+                {/* {news.categories?.includes()} */}
                 {news.documents &&
                     news.documents.map((document: string) => (
                         <div key={document}>
