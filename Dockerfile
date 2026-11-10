@@ -33,7 +33,11 @@ ENV VITE_PATSTORE_API_URL=$VITE_PATSTORE_API_URL \
     VITE_PATSTORE_PROJECT_ID=$VITE_PATSTORE_PROJECT_ID \
     VITE_SESSION_TOKEN=$VITE_SESSION_TOKEN
 
-RUN pnpm --filter "$APP" build
+ARG PATSTORE_SNAPSHOT_BUST=0
+RUN echo "patstore snapshot ${PATSTORE_SNAPSHOT_BUST}" \
+    && pnpm --filter "$APP" build
+
+# RUN pnpm --filter "$APP" build
 
 FROM node:24-bookworm-slim AS runner
 
