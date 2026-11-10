@@ -16,7 +16,8 @@
     "./vite": {
       "types": "./src/content/plugin.ts",
       "default": "./src/content/plugin.ts"
-    }
+    },
+    "./scroll.css": "./src/scroll/scroll.css"
   },
   "scripts": {
     "check-types": "tsc --noEmit",

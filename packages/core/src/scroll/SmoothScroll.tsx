@@ -4,6 +4,7 @@ import { ScrollContext } from "./context.ts";
 import { EMPTY_SCROLL, type ScrollOrientation, type ScrollSnapshot, type ScrollToOptions } from "./types.ts";
 import { useSmoothScroll, type SmoothScrollOptions } from "./useSmoothScroll.ts";
 import "lenis/dist/lenis.css";
+import "./scroll.css";
 
 export type SmoothScrollProps = {
   children: ReactNode;
@@ -19,9 +20,16 @@ export type SmoothScrollProps = {
 const viewportStyle = (orientation: ScrollOrientation): CSSProperties => ({
   height: "100dvh",
   width: "100%",
-  overflow: "hidden",
+  // 100vw includes the scrollbar and overflows the screen. 100% matches the layout
+  // viewport. Desktop scrollbar thickness is set in scroll.css.
+  // The scrollport must be able to move. `overflow: hidden` blocks touch scrolling
+  // because Lenis does not take over touch unless syncTouch is enabled.
+  overflowX: orientation === "horizontal" ? "auto" : "hidden",
+  overflowY: orientation === "horizontal" ? "hidden" : "auto",
+  WebkitOverflowScrolling: "touch",
+  touchAction: orientation === "horizontal" ? "pan-x" : "pan-y",
   scrollBehavior: "auto",
-  overscrollBehavior: "none",
+  overscrollBehavior: "contain",
   ...(orientation === "horizontal" ? { whiteSpace: "nowrap" } : null),
 });
 

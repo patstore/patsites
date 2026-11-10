@@ -10,6 +10,7 @@ import { getSiteData } from "@functions/site.functions";
 import { Framework, seo } from "@components";
 import { PatstoreScope, SiteContextProvider } from "@provider";
 import globalCss from "../styles/global.scss?url";
+import "@repo/core/scroll.css";
 import favicon from "../images/tvstg_logo.png";
 
 export const Route = createRootRoute({

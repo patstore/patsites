@@ -70,11 +70,22 @@ export function useSmoothScroll({
         lerp: options?.lerp,
         easing: (time) => Math.min(1, 1.001 - Math.pow(2, -10 * time)),
         smoothWheel: options?.smoothWheel ?? true,
-        syncTouch: options?.syncTouch,
+        // Touch keeps the browser's own scrolling. Wheel stays smoothed.
+        syncTouch: options?.syncTouch ?? false,
         wheelMultiplier: options?.wheelMultiplier,
         touchMultiplier: options?.touchMultiplier,
         autoRaf: false,
       });
+
+      if (orientation === "horizontal") {
+        viewport.style.overflowX = "auto";
+        viewport.style.overflowY = "hidden";
+        viewport.style.touchAction = "pan-x";
+      } else {
+        viewport.style.overflowX = "hidden";
+        viewport.style.overflowY = "auto";
+        viewport.style.touchAction = "pan-y";
+      }
 
       const publish = () => {
         onChangeRef.current({
