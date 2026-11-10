@@ -28,7 +28,7 @@ const Home: React.FC = () => {
             {/* <PreviewWrapper preview={env.VITE_PREVIEW_MODE === "true"}>
                 <HomeHeader />
             </PreviewWrapper> */}
-             {env.previewMode === "true" ? <HomeHeader /> : (
+             {/* {env.previewMode === "true" ? <HomeHeader /> : ( */}
              <HeadContent
                 title="Deutsche Gesellschaft für Koloproktologie"
                 content={
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
                 }
                 backgroundImage={"/main_header_2026.jpg"}
             />
-            )}
+            {/* )} */}
             <HeadBanner borderBottom />
             <Banner isFixed={false} />
             <ContentContainer>
