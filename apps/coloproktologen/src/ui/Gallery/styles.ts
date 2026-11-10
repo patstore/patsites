@@ -13,7 +13,7 @@ export const horizontalGalleryWrapperStyle: React.CSSProperties = {
 	gap: "16px",
 	padding: "16px 0",
 	overflowX: "auto",
-	scrollbarWidth: "thin"
+	scrollbarWidth: "none"
 };
 
 export const mosaicGalleryWrapperStyle: React.CSSProperties = {

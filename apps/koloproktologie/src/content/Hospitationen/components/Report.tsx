@@ -2,7 +2,8 @@ import settings from "@settings";
 import React, { useState } from "react";
 import { AppImage, ContentBox, Label, SlideIn } from "@ui";
 import { ReportProps } from "../types";
-import { useGetImages } from "@provider";
+import { useCollection, useGetImages } from "@provider";
+import { DownloadClass } from "@data";
 
 const Report: React.FC<ReportProps> = ({
     id,
@@ -11,11 +12,17 @@ const Report: React.FC<ReportProps> = ({
     text,
     background,
     label,
-    image
+    image,
+    documents
 }) => {
     const [open, setOpen] = useState(false);
     const { findImageUrl } = useGetImages();
+    const { find: findDownload } = useCollection<DownloadClass>("Download");
 
+console.log(title)
+    const downloadDocuments = documents?.map((document) => findDownload(document));
+
+console.log(downloadDocuments);
     return (
         <div
             css={{
@@ -52,6 +59,17 @@ const Report: React.FC<ReportProps> = ({
                 )}
                 <p>{subtitle}</p>
                 <div dangerouslySetInnerHTML={{ __html: text }} />
+
+                {downloadDocuments && downloadDocuments.map((document) => (
+                    <div css={{marginBottom: "24px"}}>
+                        <p>
+                            Den gesamten Bericht finden Sie hier:
+                        </p>
+                        <a href={document?.file?.url} target="_blank" rel="noopener noreferrer">
+                            {document.title}
+                        </a>
+                    </div>
+                ))}
             </SlideIn>
         </div>
     );

@@ -9,9 +9,20 @@ const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
     const [open, setOpen] = useState(false);
     const { findImageUrl } = useGetImages();
     const { find: findDownload } = useCollection<DownloadClass>("Download");
-    const { items } = useCollection<CategoryClass>("Category");
+    const { items:categories } = useCollection<CategoryClass>("Category");
+    console.log(news);
 
-    console.log(items);
+    console.log(categories);
+
+    const newsCategories = categories.find((category) => news.categories?.includes(category.objectId) && category.link);
+
+    const createInternalLink = (link: string) => {
+        const path = link.replace(/^https?:\/\/(?:www\.)?koloproktologie\.org/i, "");
+        return path.startsWith("/") ? path : `/${path}`;
+    };
+
+
+    console.log(newsCategories);
     return (
         <div
             css={{
@@ -52,7 +63,9 @@ const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
                 <Divider />
                 <h2>{news.title}</h2>
                 <div dangerouslySetInnerHTML={{ __html: news.text }} />
-                {/* {news.categories?.includes()} */}
+                {newsCategories?.link && createInternalLink(newsCategories?.link) &&  
+                <a href={createInternalLink(newsCategories.link)}>Den kompletten Beitrag finden Sie hier</a>
+                }
                 {news.documents &&
                     news.documents.map((document: string) => (
                         <div key={document}>

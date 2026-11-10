@@ -22,11 +22,8 @@ const News: React.FC<NewsProps> = ({
     const [xOffset, setXOffset] = useState(0);
 
     const { items } = useCollection<ArticleClass>("Article");
-    const { items: categories } = useCollection<CategoryClass>("Category");
     const news = items.filter((article) => article.categories?.includes(category));
-    console.log(categories);
 
-    console.log(news);
     useEffect(() => {
         if (containerRef.current) {
             setContainerHeight(containerRef.current.offsetHeight);

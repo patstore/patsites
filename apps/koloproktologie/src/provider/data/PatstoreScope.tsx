@@ -22,6 +22,7 @@ const warned = new Set<string>();
 
 export function useCollection<T extends { objectId?: string | null }>(className: string) {
     const items = (useContext(ContentContext)[className] ?? EMPTY) as T[];
+
     const find = useCallback(
         (id: string | null | undefined) =>
             id ? items.find((item) => item.objectId === id) : undefined,

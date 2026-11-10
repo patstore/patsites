@@ -8,4 +8,5 @@ export type ReportProps = {
     background: string;
     label?: string;
     image?: string;
+    documents?: string[] | null;
 };

@@ -21,7 +21,7 @@ const viewportStyle = (orientation: ScrollOrientation): CSSProperties => ({
   height: "100dvh",
   width: "100%",
   // 100vw includes the scrollbar and overflows the screen. 100% matches the layout
-  // viewport. Desktop scrollbar thickness is set in scroll.css.
+  // viewport. The native scrollbar stays hidden in scroll.css so it adds no gutter.
   // The scrollport must be able to move. `overflow: hidden` blocks touch scrolling
   // because Lenis does not take over touch unless syncTouch is enabled.
   overflowX: orientation === "horizontal" ? "auto" : "hidden",

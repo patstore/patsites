@@ -34,6 +34,8 @@ const Hospitationen: React.FC = () => {
         });
     };
 
+    console.log("articles", espcArticles)
+
     return (
         <Layout>
             <HeadContent
@@ -353,6 +355,7 @@ const Hospitationen: React.FC = () => {
                                     text={tr.text}
                                     background={settings.colors.light}
                                     label={tr.label}
+                                    documents={tr.documents}
                                 />
                             ))}
                         </FlexBox>
@@ -416,6 +419,7 @@ const Hospitationen: React.FC = () => {
                                     text={tr.text}
                                     background={settings.colors.white}
                                     label={tr.label}
+                                    documents={tr.documents}
                                 />
                             ))}
                         </FlexBox>
