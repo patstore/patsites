@@ -19,7 +19,8 @@ import OpenAccess from "./components/OpenAccess";
 import HeadBanner from "./components/HeadBanner";
 import { homeHeaderTextContent } from "./styles";
 import {HomeHeader} from "./content";
-import {PreviewWrapper} from "@repo/ui";
+
+const previewMode =  "true"
 
 const Home: React.FC = () => {
     return (
@@ -27,7 +28,7 @@ const Home: React.FC = () => {
             {/* <PreviewWrapper preview={env.VITE_PREVIEW_MODE === "true"}>
                 <HomeHeader />
             </PreviewWrapper> */}
-             {env.previewMode === "true" ? <HomeHeader /> : (
+             {previewMode === "true" ? <HomeHeader /> : (
              <HeadContent
                 title="Deutsche Gesellschaft für Koloproktologie"
                 content={

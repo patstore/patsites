@@ -1,62 +1,76 @@
-import { useEffect, useMemo } from 'react'
-import { homeHeaderContainer, homeHeaderContent, homeHeaderCopy, homeHeaderMedia, homeHeaderMediaImage, loaderContainer } from './styles'
-import { home_header_content } from './constants/content'
-import { useCounter } from 'usehooks-ts'
+import { useEffect, useState } from 'react'
+import { Calendar, MapPin, Monitor, ArrowUpRight } from 'lucide-react'
+import { homeHeaderContainer, homeHeaderContent, homeHeaderCopy, homeHeaderFact, homeHeaderFacts, homeHeaderLink, homeHeaderMedia, homeHeaderMediaImage, homeHeaderWatermark, loaderContainer } from './styles'
 import HomeHeaderTrack from './components/HomeHeaderTrack'
 import { AnimatePresence, motion } from 'motion/react'
 import { homeHeaderMediaVariants, homeHeaderStaggerVariants, homeHeaderVariants } from './constants/variants'
-import congressImage from './images/main_header.jpg'
-import kongressPlakat from './images/kongressplakat.png'
+import saveTheDate from './images/main_header.jpg'
+import kongressPlakat from './images/kongress_center.png'
+import dgkLogo from './images/dgk-logo.png'
 import { topline } from '@styles'
+import { Button } from '@ui'
+
+const CONGRESS_URL = 'https://www.koloproktologen-kongress.de/'
+
+const facts = [
+    { icon: Calendar, label: '11.–13. März 2027' },
+    { icon: MapPin, label: 'Kongress am Park, Augsburg' },
+    { icon: Monitor, label: 'Hybrid: vor Ort oder online' },
+]
+
+const slides = [
+    {
+        topline: 'Save the Date',
+        title: '53. Deutscher Koloproktologen-Kongress',
+        text: 'Die Deutsche Gesellschaft für Koloproktologie lädt vom 11. bis 13. März 2027 in den Kongress am Park nach Augsburg ein.',
+        image: saveTheDate,
+        imageAlt: 'Ankündigung des 53. Deutschen Koloproktologen-Kongresses 2027 in Augsburg',
+        imageFit: 'cover' as const,
+        imagePosition: 'center',
+    },
+    {
+        topline: 'Programm',
+        title: 'Impulse. Perspektiven. Ein gemeinsames Programm.',
+        text: 'Der Call for Abstracts ist abgeschlossen. Herzlichen Dank an alle, die mit ihren wissenschaftlichen Beiträgen das Programm aktiv mitgestalten.',
+        image: kongressPlakat,
+        imageAlt: 'Kongress am Park in Augsburg am Abend, Veranstaltungsort des Koloproktologen-Kongresses 2027',
+        imageFit: 'cover' as const,
+        imagePosition: 'center 82%',
+    },
+]
 
 const HomeHeader = () => {
-    const { count, setCount, increment, decrement, reset } = useCounter(0)
+    const [count, setCount] = useState(0)
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            if (count === home_header_content.length - 1) {
-                reset()
-            } else {
-                increment()
-            }
-        
+            setCount((current) => (current === slides.length - 1 ? 0 : current + 1))
         }, 6000)
-      
+
         return () => clearTimeout(timeout)
-      }, [count])
+    }, [count])
 
-      useEffect(() => {
-        setCount(0)
-      }, [])
-
-      const renderContent = useMemo(() => {
-        return ([
-            {
-                topline: "Kongress",
-                title: "53. Deutscher Koloproktologen-Kongress 2027",
-                subtitle: "1.03.2027 - 13.03.2027 - Augsburg",
-                content: (
-                    <img css={homeHeaderMediaImage} src={congressImage} alt="Congress Image" />
-                )
-
-            },
-            {
-                topline: "Kongress",
-                title: "Impule. Perspektiven. Ein Gemeinsames Programm.",
-                subtitle: "Call for Abstracts abgeschlossen",
-                content: (
-                    <img css={homeHeaderMediaImage} src={kongressPlakat} alt="Congress Image" />
-                )
-            }
-        ])
-      }, [count])
+    const slide = slides[count]
 
     return (
         <div css={homeHeaderContainer()}>
-            <div css={homeHeaderContent}> 
+            <div
+                css={homeHeaderWatermark}
+                style={{
+                    WebkitMaskImage: `url(${dgkLogo})`,
+                    maskImage: `url(${dgkLogo})`,
+                }}
+                aria-hidden
+            />
+            <div css={loaderContainer}>
+                {slides.map((item, index) =>
+                    <HomeHeaderTrack key={item.topline} isActive={index === count} index={index} setCount={setCount} title={item.topline} />
+                )}
+            </div>
+            <div css={homeHeaderContent}>
                 <AnimatePresence mode='wait'>
                     <motion.div
-                        key={count}
+                        key={slide.topline}
                         css={homeHeaderCopy}
                         variants={homeHeaderStaggerVariants}
                         initial="initial"
@@ -64,33 +78,57 @@ const HomeHeader = () => {
                         exit="exit"
                     >
                         <motion.p variants={homeHeaderVariants} css={topline}>
-                            {renderContent[count].topline}
+                            {slide.topline}
                         </motion.p>
                         <motion.h1 variants={homeHeaderVariants}>
-                            {renderContent[count].title}
+                            {slide.title}
                         </motion.h1>
                         <motion.p variants={homeHeaderVariants}>
-                            {renderContent[count].subtitle}
+                            {slide.text}
                         </motion.p>
+                        <motion.div variants={homeHeaderVariants} css={homeHeaderFacts}>
+                            {facts.map((fact) => (
+                                <div key={fact.label} css={homeHeaderFact}>
+                                    <fact.icon size={16} strokeWidth={1.75} aria-hidden />
+                                    <p css={{margin: "0 !important"}}>{fact.label}</p>
+                                </div>
+                            ))}
+                        </motion.div>
+                        <motion.div
+                            variants={homeHeaderVariants}
+                            css={homeHeaderLink}
+                            href={CONGRESS_URL}
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <Button 
+                                text="Zum Kongress"
+
+                                // icon={<ArrowUpRight size={16} aria-hidden />}
+                                externalLink={CONGRESS_URL}
+                                
+                            >
+                                <ArrowUpRight size={16} aria-hidden />
+                            </Button>
+                        </motion.div>
                     </motion.div>
                 </AnimatePresence>
                 <AnimatePresence mode='wait'>
                     <motion.div
-                        key={count}
+                        key={slide.image}
                         css={homeHeaderMedia}
                         variants={homeHeaderMediaVariants}
                         initial="initial"
                         animate="animate"
                         exit="exit"
                     >
-                        {renderContent[count].content}
+                        <img
+                            css={[homeHeaderMediaImage, { objectFit: slide.imageFit, objectPosition: slide.imagePosition }]}
+                            src={slide.image}
+                            alt={slide.imageAlt}
+                        />
                     </motion.div>
                 </AnimatePresence>
-                <div css={loaderContainer}>
-                    {renderContent.map((item, index) => 
-                        <HomeHeaderTrack key={item.title} isActive={index === count} index={index} setCount={setCount} title={item.topline} />
-                    )}
-                </div>
             </div>
         </div>
     )

@@ -5,7 +5,7 @@ export const h1 = settings.mq({
     fontFamily: "Montserrat",
     fontWeight: 500,
     letterSpacing: "2px",
-    fontSize: ["24px", "36px", "42px"],
+    fontSize: ["30px", "36px", "42px"],
     margin: 0,
     lineHeight: "1.2",
     // textTransform: "uppercase",

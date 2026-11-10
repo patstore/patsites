@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import settings from "@settings";
 import { slideInAnimation } from "./animations";
 import { buttonContainer, contentContainer, overlay, popup } from "./styles";
@@ -26,27 +26,37 @@ const SlideIn: React.FC<SlideInProps> = ({
     noButtons = false,
 }) => {
     const isBrowser = typeof window !== "undefined";
+    const panelRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (open === false) {
-            const { body } = document;
-            const html = document.documentElement;
-            setTimeout(() => {
-                body.style.overflowY = "visible";
-                body.style.paddingRight = "0px";
-                html.style.overflowY = "visible";
-            }, 800);
+        if (!isBrowser || !open) {
+            return;
         }
 
-        if (open === true) {
-            document.documentElement.style.getPropertyValue("--scroll-y");
-            const { body } = document;
-            const html = document.documentElement;
-            body.style.overflowY = "hidden";
-            body.style.paddingRight = "10px";
-            html.style.overflowY = "hidden";
-        }
-    }, [open]);
+        const { body } = document;
+        const html = document.documentElement;
+        body.style.overflow = "hidden";
+        html.style.overflow = "hidden";
+
+        const blockBackgroundScroll = (event: WheelEvent | TouchEvent) => {
+            const panel = panelRef.current;
+            if (panel && event.target instanceof Node && panel.contains(event.target)) {
+                return;
+            }
+            event.preventDefault();
+            event.stopPropagation();
+        };
+
+        window.addEventListener("wheel", blockBackgroundScroll, { passive: false, capture: true });
+        window.addEventListener("touchmove", blockBackgroundScroll, { passive: false, capture: true });
+
+        return () => {
+            body.style.overflow = "";
+            html.style.overflow = "";
+            window.removeEventListener("wheel", blockBackgroundScroll, { capture: true });
+            window.removeEventListener("touchmove", blockBackgroundScroll, { capture: true });
+        };
+    }, [open, isBrowser]);
 
     const widthHandler = () => {
         if (width === "small") {
@@ -75,6 +85,8 @@ const SlideIn: React.FC<SlideInProps> = ({
                         />
                         <motion.div
                             key="slidein-animation"
+                            ref={panelRef}
+                            data-lenis-prevent
                             variants={slideInAnimation}
                             initial="initial"
                             animate="animate"
@@ -88,12 +100,16 @@ const SlideIn: React.FC<SlideInProps> = ({
                                 direction="column"
                                 align="flex-start"
                                 justify="space-between"
-                                styles={{ height: "100%", overflow: "hidden" }}
+                                styles={{ height: "100%", minHeight: 0, overflow: "hidden" }}
                             >
                                 <div
+                                    data-lenis-prevent
                                     css={[
                                         contentContainer,
                                         {
+                                            flex: "1 1 auto",
+                                            height: "auto",
+                                            minHeight: 0,
                                             overflow: hasNoOverflow
                                                 ? "hidden"
                                                 : "auto"

@@ -13,6 +13,7 @@ import { headerContainer, menuContainer } from "./styles";
 import main_menu from "./constants/main_menu";
 import { useOptionalScroll } from "@repo/core";
 import { useSiteContext } from "@provider";
+import { env } from "@env";
 
 const Header: React.FC = () => {
     const { user } = useSiteContext();
@@ -64,8 +65,11 @@ const Header: React.FC = () => {
         };
     }, [headerAnimate, isHome]);
 
+
     useEffect(() => {
-        setIsHome(window.location.pathname === "/");
+        if (env.previewMode !== "true") {
+            setIsHome(window.location.pathname === "/");
+        }
     }, []);
 
     return (
