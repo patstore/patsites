@@ -19,7 +19,6 @@ import OpenAccess from "./components/OpenAccess";
 import HeadBanner from "./components/HeadBanner";
 import { homeHeaderTextContent } from "./styles";
 import {HomeHeader} from "./content";
-import { env } from "@env";
 
 
 const Home: React.FC = () => {
