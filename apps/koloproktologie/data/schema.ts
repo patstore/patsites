@@ -67,6 +67,8 @@ export const categorySchema = z.looseObject({
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
   categories: z.array(z.string()).nullable().optional(),
+  title: z.string().nullable().optional(),
+  link: z.string().nullable().optional(),
 });
 
 export const entrySchema = z.looseObject({
@@ -161,6 +163,7 @@ export const articleSchema = z.looseObject({
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
   categories: z.array(z.string()).nullable().optional(),
+  author: z.string().nullable().optional(),
   image: z.string().nullable().optional(),
   title: z.string().nullable(),
   description: z.string().nullable().optional(),

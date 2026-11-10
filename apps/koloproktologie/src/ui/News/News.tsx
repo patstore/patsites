@@ -6,7 +6,7 @@ import { FlexBox } from "@ui";
 import NewsButtons from "./components/NewsButtons";
 import { NewsProps } from "./types";
 import { useCollection } from "@provider";
-import type { ArticleClass } from "@data";
+import type { ArticleClass, CategoryClass } from "@data";
 import settings from "@settings";
 
 const News: React.FC<NewsProps> = ({
@@ -22,8 +22,9 @@ const News: React.FC<NewsProps> = ({
     const [xOffset, setXOffset] = useState(0);
 
     const { items } = useCollection<ArticleClass>("Article");
+    const { items: categories } = useCollection<CategoryClass>("Category");
     const news = items.filter((article) => article.categories?.includes(category));
-
+    console.log(categories);
 
     console.log(news);
     useEffect(() => {

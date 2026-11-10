@@ -94,10 +94,27 @@ export function unwrapElement(value: unknown): unknown {
   return (value as { value: unknown }).value;
 }
 
+/** A Person pointer selected as `{ objectId }` is stored as that id. */
+function unwrapPointer(value: unknown): unknown {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return value;
+  }
+  const record = value as Record<string, unknown>;
+  const keys = Object.keys(record).filter((key) => key !== "__typename");
+  if (
+    typeof record.objectId === "string" &&
+    keys.length > 0 &&
+    keys.every((key) => key === "objectId" || key === "id")
+  ) {
+    return record.objectId;
+  }
+  return value;
+}
+
 export function normalizeValue(value: unknown): unknown {
-  const unwrapped = unwrapElement(value);
+  const unwrapped = unwrapPointer(unwrapElement(value));
   if (Array.isArray(unwrapped)) {
-    return unwrapped.map((entry) => unwrapElement(entry));
+    return unwrapped.map((entry) => unwrapPointer(unwrapElement(entry)));
   }
   return unwrapped;
 }

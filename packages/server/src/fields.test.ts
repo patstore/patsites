@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { buildApplicationSchemas } from "./application.ts";
-import { buildSelection, describeModule } from "./fields.ts";
+import { buildSelection, describeModule, selectionWithoutMissingField } from "./fields.ts";
+import { normalizeRecord } from "./modules.ts";
 import type { PatStoreModule } from "./types.ts";
 
 const article: PatStoreModule = {
@@ -53,6 +54,43 @@ test("application schemas follow active module fields", () => {
   });
   assert.equal("title" in (parsed as object), true);
   assert.equal((parsed as { title: string }).title, "Hello");
+});
+
+test("a person pointer is selected by objectId and stored as that id", () => {
+  const withAuthor: PatStoreModule = {
+    ...article,
+    fields: [
+      ...article.fields,
+      {
+        id: "author",
+        label: "Author",
+        required: false,
+        type: "edit_person",
+        active: true,
+        position: 4,
+      },
+    ],
+  };
+  assert.match(buildSelection(withAuthor), /author \{\s*objectId\s*\}/);
+  assert.equal(
+    describeModule(withAuthor).find((field) => field.id === "author")?.tsType,
+    "string | null",
+  );
+  assert.equal(
+    normalizeRecord({
+      objectId: "article",
+      author: { __typename: "Person", id: "Person:abc", objectId: "abc" },
+    }).author,
+    "abc",
+  );
+});
+
+test("a relation field without a subselection is removed instead of failing the class", () => {
+  const selection = "title\nauthor";
+  const error = new Error(
+    'Field "author" of type "Person" must have a selection of subfields. Did you mean "author { ... }"?',
+  );
+  assert.equal(selectionWithoutMissingField(selection, error), "title");
 });
 
 test("graphql selection skips inactive fields", () => {

@@ -82,6 +82,8 @@ export interface CategoryClass {
   createdAt?: string;
   updatedAt?: string;
   categories?: string[] | null;
+  title?: string | null;
+  link?: string | null;
 }
 
 export interface EntryClass {
@@ -176,6 +178,7 @@ export interface ArticleClass {
   createdAt?: string;
   updatedAt?: string;
   categories?: string[] | null;
+  author?: string | null;
   image?: string | null;
   title: string | null;
   description?: string | null;

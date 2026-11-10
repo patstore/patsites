@@ -5,6 +5,7 @@ export { fetchCollection };
 
 const PUBLIC_CLASSES = [
   "Article",
+  "Category",
   "Event",
   "Location",
   "Person",

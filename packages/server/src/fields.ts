@@ -93,6 +93,9 @@ function selectionFor(field: ModuleField): string {
   if (field.type === "geopoint" || field.type === "edit_geopoint") {
     return `${field.id} { latitude longitude }`;
   }
+  if (field.type === "person" || field.type === "edit_person") {
+    return `${field.id} { objectId }`;
+  }
   return field.id;
 }
 
@@ -321,7 +324,9 @@ export function selectionWithoutMissingField(
   error: unknown,
 ): string | null {
   const message = error instanceof Error ? error.message : String(error);
-  const match = /Cannot query field ["']([^"']+)["']/i.exec(message);
+  const match =
+    /Cannot query field ["']([^"']+)["']/i.exec(message) ??
+    /Field ["']([^"']+)["'] of type/i.exec(message);
   const fieldName = match?.[1];
   if (!fieldName) {
     return null;

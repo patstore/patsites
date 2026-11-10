@@ -4,6 +4,7 @@ import { fetchCollection } from "@repo/server";
 export { fetchCollection };
 
 const PUBLIC_CLASSES = [
+  "Category",
   "Entry",
   "Event",
   "Image",

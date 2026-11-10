@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-10T12:31:25.259Z",
+    "generatedAt": "2026-11-10T13:05:05.477Z",
     "projectId": "JRxDkaxCoI",
     "moduleCount": 12,
     "states": null,
@@ -765,7 +765,176 @@
       "objectId": "AGGDmnUVBq",
       "name": "Kategorien",
       "connected_class": "Category",
-      "fields": [],
+      "fields": [
+        {
+          "id": "title",
+          "label": "Titel",
+          "required": false,
+          "type": "edit_string",
+          "active": true,
+          "position": 1
+        },
+        {
+          "id": "createdAt",
+          "label": "Erstellt am",
+          "required": false,
+          "type": "date",
+          "active": false,
+          "position": 2
+        },
+        {
+          "id": "updatedAt",
+          "label": "Aktualisiert am",
+          "required": false,
+          "type": "date",
+          "active": false,
+          "position": 2
+        },
+        {
+          "id": "description",
+          "label": "Beschreibung",
+          "required": false,
+          "type": "edit_textfield",
+          "active": false,
+          "position": 2
+        },
+        {
+          "id": "text",
+          "label": "Text",
+          "required": false,
+          "type": "texteditor",
+          "active": false,
+          "position": 3
+        },
+        {
+          "id": "image",
+          "label": "Bild",
+          "required": false,
+          "type": "edit_image",
+          "active": false,
+          "position": 4
+        },
+        {
+          "id": "state",
+          "label": "Status",
+          "required": false,
+          "type": "edit_state",
+          "active": false,
+          "position": 5
+        },
+        {
+          "id": "gallery",
+          "label": "Galerie",
+          "required": false,
+          "type": "gallery",
+          "active": false,
+          "position": 6
+        },
+        {
+          "id": "color",
+          "label": "Farbe",
+          "required": false,
+          "type": "edit_color",
+          "active": false,
+          "position": 9
+        },
+        {
+          "id": "active",
+          "label": "Aktiv",
+          "required": false,
+          "type": "boolean",
+          "active": false,
+          "position": 10
+        },
+        {
+          "id": "file",
+          "label": "Datei",
+          "required": false,
+          "type": "file",
+          "active": false,
+          "position": 12
+        },
+        {
+          "id": "date",
+          "label": "Datum",
+          "required": false,
+          "type": "date_picker",
+          "active": false,
+          "position": 13
+        },
+        {
+          "id": "dates",
+          "label": "Termine",
+          "required": false,
+          "type": "edit_dates",
+          "active": false,
+          "position": 14
+        },
+        {
+          "id": "times",
+          "label": "Zeiten",
+          "required": false,
+          "type": "edit_times",
+          "active": false,
+          "position": 15
+        },
+        {
+          "id": "link",
+          "label": "Link",
+          "required": false,
+          "type": "edit_string",
+          "active": true,
+          "position": 16
+        },
+        {
+          "id": "documents",
+          "label": "Dokumente",
+          "required": false,
+          "type": "files",
+          "active": false,
+          "position": 17
+        },
+        {
+          "id": "created_by",
+          "label": "Erstellt von",
+          "required": false,
+          "type": "user",
+          "active": false,
+          "position": 5
+        },
+        {
+          "id": "updated_by",
+          "label": "Aktualisiert von",
+          "required": false,
+          "type": "user",
+          "active": false,
+          "position": 18
+        },
+        {
+          "id": "location",
+          "label": "Ort",
+          "required": false,
+          "type": "location",
+          "active": false,
+          "position": 19
+        },
+        {
+          "id": "slug",
+          "label": "Slug",
+          "required": false,
+          "type": "string",
+          "active": false,
+          "position": 20
+        },
+        {
+          "id": "lang",
+          "label": "Sprache",
+          "required": false,
+          "type": "lang",
+          "active": false,
+          "position": 21
+        }
+      ],
       "data_fields": []
     },
     {
@@ -1561,10 +1730,10 @@
       "connected_class": "Article",
       "fields": [
         {
-          "id": "image",
-          "label": "Bild",
+          "id": "author",
+          "label": "Autor",
           "required": false,
-          "type": "edit_image",
+          "type": "edit_person",
           "active": true,
           "position": 1
         },
@@ -1609,20 +1778,12 @@
           "position": 4
         },
         {
-          "id": "date",
-          "label": "Datum",
+          "id": "image",
+          "label": "Bild",
           "required": false,
-          "type": "date_picker",
+          "type": "edit_image",
           "active": true,
-          "position": 5
-        },
-        {
-          "id": "created_by",
-          "label": "Erstellt von",
-          "required": false,
-          "type": "user",
-          "active": false,
-          "position": 5
+          "position": 1
         },
         {
           "id": "state",
@@ -1631,30 +1792,6 @@
           "type": "edit_state",
           "active": true,
           "position": 6
-        },
-        {
-          "id": "dates",
-          "label": "Termine",
-          "required": false,
-          "type": "edit_dates",
-          "active": false,
-          "position": 7
-        },
-        {
-          "id": "link",
-          "label": "Link",
-          "required": false,
-          "type": "edit_string",
-          "active": false,
-          "position": 8
-        },
-        {
-          "id": "documents",
-          "label": "Dokumente",
-          "required": false,
-          "type": "files",
-          "active": true,
-          "position": 9
         },
         {
           "id": "gallery",
@@ -1689,12 +1826,52 @@
           "position": 13
         },
         {
+          "id": "date",
+          "label": "Datum",
+          "required": false,
+          "type": "date_picker",
+          "active": true,
+          "position": 5
+        },
+        {
+          "id": "dates",
+          "label": "Termine",
+          "required": false,
+          "type": "edit_dates",
+          "active": false,
+          "position": 7
+        },
+        {
           "id": "times",
           "label": "Zeiten",
           "required": false,
           "type": "edit_times",
           "active": false,
           "position": 15
+        },
+        {
+          "id": "link",
+          "label": "Link",
+          "required": false,
+          "type": "edit_string",
+          "active": false,
+          "position": 8
+        },
+        {
+          "id": "documents",
+          "label": "Dokumente",
+          "required": false,
+          "type": "files",
+          "active": true,
+          "position": 9
+        },
+        {
+          "id": "created_by",
+          "label": "Erstellt von",
+          "required": false,
+          "type": "user",
+          "active": false,
+          "position": 5
         },
         {
           "id": "updated_by",
@@ -1711,6 +1888,22 @@
           "type": "location",
           "active": false,
           "position": 19
+        },
+        {
+          "id": "slug",
+          "label": "Slug",
+          "required": false,
+          "type": "string",
+          "active": false,
+          "position": 20
+        },
+        {
+          "id": "lang",
+          "label": "Sprache",
+          "required": false,
+          "type": "lang",
+          "active": false,
+          "position": 21
         }
       ],
       "data_fields": []
@@ -3706,42 +3899,58 @@
     {
       "id": "Q2F0ZWdvcnk6OWJQYjdzVXdZVg==",
       "objectId": "9bPb7sUwYV",
-      "categories": null
+      "categories": null,
+      "title": "Infomail",
+      "link": null
     },
     {
       "id": "Q2F0ZWdvcnk6N1loQ1pCdzdNWQ==",
       "objectId": "7YhCZBw7MY",
-      "categories": null
+      "categories": null,
+      "title": "Espc",
+      "link": "https://koloproktologie.org/aktivitaeten/hospitationen/#espc"
     },
     {
       "id": "Q2F0ZWdvcnk6Z1ZTMjVZZ2d6Zg==",
       "objectId": "gVS25Yggzf",
-      "categories": null
+      "categories": null,
+      "title": "Reisestipendium",
+      "link": null
     },
     {
       "id": "Q2F0ZWdvcnk6ZlRscE92QWNqRw==",
       "objectId": "fTlpOvAcjG",
-      "categories": null
+      "categories": null,
+      "title": "Drittländer",
+      "link": null
     },
     {
       "id": "Q2F0ZWdvcnk6YVA3Z1B1ZGhMSg==",
       "objectId": "aP7gPudhLJ",
-      "categories": null
+      "categories": null,
+      "title": "Prä-Kongress-Stipendium",
+      "link": null
     },
     {
       "id": "Q2F0ZWdvcnk6dmZnTFdZdFpHVw==",
       "objectId": "vfgLWYtZGW",
-      "categories": null
+      "categories": null,
+      "title": "Hospitationsstipendium",
+      "link": null
     },
     {
       "id": "Q2F0ZWdvcnk6SENWRm9udzRZZQ==",
       "objectId": "HCVFonw4Ye",
-      "categories": null
+      "categories": null,
+      "title": null,
+      "link": null
     },
     {
       "id": "Q2F0ZWdvcnk6QWU2YlNCY1pySA==",
       "objectId": "Ae6bSBcZrH",
-      "categories": null
+      "categories": null,
+      "title": null,
+      "link": null
     }
   ],
   "entrys": [
@@ -7942,6 +8151,7 @@
         "dTmCePMOsW",
         "7YhCZBw7MY"
       ],
+      "author": null,
       "image": "b0TPjp3PEX",
       "title": "Test",
       "description": "test",
@@ -7957,9 +8167,10 @@
         "dTmCePMOsW",
         "7YhCZBw7MY"
       ],
+      "author": null,
       "image": "b0TPjp3PEX",
       "title": "ESCP-Stipendium 2026 Prag: Dr. Sophie Novacek",
-      "description": "ESCP-Jahrestagung 2026 in Prag\n\nEin persönlicher Bericht über die Teilnahme, die durch ein Hospitationsstipendium der DGK ermöglicht wurde.",
+      "description": "ESCP-Jahrestagung 2026 in Prag. Ein persönlicher Bericht über die Teilnahme, die durch ein Hospitationsstipendium der DGK ermöglicht wurde.",
       "text": "<p><span style=\"color: rgb(0, 0, 0); font-size: 12pt;\">Im Rahmen eines Hospitationsstipendiums der Deutschen Gesellschaft für<br>Koloproktologie hatte ich die Möglichkeit, vom 23. bis 25. September 2026 an der<br>Jahrestagung der European Society of Coloproctology (ESCP) in Prag teilzunehmen.<br>Als Assistenzärztin in der Abteilung für Allgemein-, Viszeral- und Minimalinvasive<br>Chirurgie am Isar Klinikum München war die Teilnahme an diesem Kongress für mich eine besondere Erfahrung. Es war mein erster internationaler Fachkongress und eine wertvolle Gelegenheit, mich über aktuelle wissenschaftliche Entwicklungen zu informieren und klinische Erfahrungen mit Kolleginnen und Kollegen aus verschiedenen Ländern auszutauschen.</span> <br><br><br><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://koloproktologie.org/aktivitaeten/hospitationen#escp\">Den kompletten Bericht können Sie unter den Hospitationen einsehen.</a><br><br></p>",
       "date": "2026-11-09",
       "state": "published",
@@ -7971,6 +8182,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "GvbvVsaPkN",
       "title": "LARS Austria Studie",
       "description": "Neue DGK-Forschungsförderung",
@@ -7985,6 +8197,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "GvbvVsaPkN",
       "title": "Adipositas und Darmkrebs",
       "description": "Neue DGK-Forschungsförderung",
@@ -7999,6 +8212,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "RMacvIu7CC",
       "title": "In memoriam",
       "description": "Mit tiefer Trauer, aber auch in großer Dankbarkeit, nehmen wir Abschied von unserem Gründer der Deutschen Gesellschaft für Koloproktologie ...\n",
@@ -8011,6 +8225,7 @@
       "id": "QXJ0aWNsZTpvM3h1NnJMZFhJ",
       "objectId": "o3xu6rLdXI",
       "categories": null,
+      "author": null,
       "image": null,
       "title": "Herstellung von Fettzelllinien zur Untersuchung des Einflusses von Stoffwechselfaktoren auf die Tumorabwehr bei Darmkrebs",
       "description": "Dr. Dr. med. Pia Jäger",
@@ -8025,6 +8240,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "GvbvVsaPkN",
       "title": "Kryptoglanduläre Analfistel - Leitlinie aktualisiert",
       "description": "Die Leitlinie wurde in Kooperation mit der DGK sowie weiteren Fachgesellschaften aktualisiert. ",
@@ -8039,6 +8255,7 @@
       "categories": [
         "m61cvmtDXq"
       ],
+      "author": null,
       "image": "GvbvVsaPkN",
       "title": "DGK Poster-Preise 2026",
       "description": null,
@@ -8053,6 +8270,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "eu5a4R7yHF",
       "title": "Wir fördern Nachwuchs: Reisestipendium Dr. Nicole Short",
       "description": "Im Rahme des Reisestipendiums konnte ich am 52. Deutschen Koloproktologen-Kongress in Augsburg teilnehmen, um mich fachlich auf den aktuellen Stand zu bringen.",
@@ -8067,6 +8285,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "GvbvVsaPkN",
       "title": "KI trifft Darmkrebsforschung",
       "description": "Neue DGK-Forschungsförderung",
@@ -8081,6 +8300,7 @@
       "categories": [
         "gVS25Yggzf"
       ],
+      "author": null,
       "image": null,
       "title": "Dr. Nicole Short - 52. Deutscher Koloproktologen-Kongress, Augsburg (12.–14.03.2026)",
       "description": "Ich habe mich sehr gefreut, im Rahmen eines Reisestipendiums der Deutschen Gesellschaft für Koloproktologie am 52. Deutschen Koloproktologen-Kongress vom 12. bis 14. März 2026 in Augsburg teilnehmen zu können.",
@@ -8095,6 +8315,7 @@
       "categories": [
         "9ERH02751I"
       ],
+      "author": null,
       "image": "y8KUBxgHIg",
       "title": "Jens J. Kirsch-Preis 2026",
       "description": null,
@@ -8109,6 +8330,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "y8KUBxgHIg",
       "title": "Preisträger Kongress 2026",
       "description": "Auch in diesem Jahr wurden im Rahmen unseres Kongresses exzellente wissenschaftliche Leistungen ausgezeichnet. Der Jens Kirsch-Preis würdigt die beste wissenschaftliche Arbeit, ergänzt durch drei Posterpreise. \n\n\n\n\n\n",
@@ -8123,6 +8345,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "GvJ8ZDx5Z3",
       "title": "Rebefundungsstudie zu nicht vorbehandelten Patientinnen und Patienten",
       "description": "Förderprojekt der DGK im Deutschen Ärzteblatt veröffentlicht!",
@@ -8139,6 +8362,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "GvbvVsaPkN",
       "title": "Mitgliederversammlung DGK",
       "description": "Freitag, 13. März 2026.",
@@ -8154,6 +8378,7 @@
         "vfgLWYtZGW",
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "SXN9MW5qhx",
       "title": "Hospitationsbericht Dr. Hillary Mabeya",
       "description": "Hospitationsbericht über 12-tägige Hospitation und Besuch des Deutschen Kontinenz Kongresses, Dr. Hillary Mabeya, Kenia",
@@ -8168,6 +8393,7 @@
       "categories": [
         "gVS25Yggzf"
       ],
+      "author": null,
       "image": null,
       "title": "cand. med. Mario Kaufmann",
       "description": "Ich habe mich sehr gefreut, als ich die Zusage für das Reisestipendium der DGK und DGAV zum 50. Deutschen Koloproktologen-Kongress erhalten habe, insbesondere da ich aktuell noch PJ-Student bin. Derzeit absolviere ich mein 4. PJ-Quartal (Wahlfach) in der Gefäßchirurgie (Leitung Dr. med. Kay Schwenke) an der Universitätsmedizin Mannheim (UMM). Meine vorherigen stationären Quartale habe ich ebenfalls an der UMM in der Chirurgie (Leitung Prof. Dr. med. Christoph Reißfelder) und der 2. Medizinischen Klinik für Gastroenterologie, Hepatologie, Infektiologie und Ernährungsmedizin (Leitung Prof. Dr. med. Matthias Ebert) absolviert.",
@@ -8182,6 +8408,7 @@
       "categories": [
         "7YhCZBw7MY"
       ],
+      "author": null,
       "image": null,
       "title": "ESCP-Stipendium 2023 Vilnius, Litauen: Dr. Markus Noll",
       "description": "Ich habe mich sehr gefreut, im Rahmen eines Reisestipendiums der Deutschen Gesellschaft für Koloproktologie am 18. Kongress der European Society of Coloproctology (ESCP) vom 27.09.2023 bis 29.09.2023 in Vilnius, Litauen teilzunehmen.",
@@ -8197,6 +8424,7 @@
         "7YhCZBw7MY",
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "97XB7tBTyq",
       "title": "ESCP-Stipendium 2025 Paris: Dr. Tabidze",
       "description": "Als Assistenzarzt der Klinik für Allgemein- und Viszeralchirurgie am Klinikum Chemnitz unter der Leitung von Herrn Prof. Mirow hatte ich die Ehre, vom 10. bis 12. September 2025 am Tripartite Colorectal Meeting der European Society of Coloproctology (ESCP) in Paris teilzunehmen.",
@@ -8211,6 +8439,7 @@
       "categories": [
         "aP7gPudhLJ"
       ],
+      "author": null,
       "image": null,
       "title": "Dr. Tuvshintur Baatarsukh",
       "description": "It was my privilege to get an internship at Caritas – Hospital St. Josef, a highly professionalized modern hospital. I have learned a lot during my training of 3 days duration, and I was very fortunate to get the opportunity of an internship in this hospital ...",
@@ -8225,6 +8454,7 @@
       "categories": [
         "aP7gPudhLJ"
       ],
+      "author": null,
       "image": null,
       "title": "Irina Gaidt",
       "description": "In diesem Jahr hatte ich Gelegenheit zu einer 3-tägigen Hospitation im Vorfeld des Deutschen Koloproktologenkongresses. Vom 11.03. bis zum 13.03.3024 wurde ich in der Klinik für Allgemein-, Viszeral-, Thoraxchirurgie und Adipositasmedzin im Krankenhaus St. Josef, Regensburg im Team von Chefarzt Prof. Dr. med. Alois Fürst herzlich aufgenommen ...\n",
@@ -8239,6 +8469,7 @@
       "categories": [
         "vfgLWYtZGW"
       ],
+      "author": null,
       "image": null,
       "title": "Doctor‐medic Octavian Stavila",
       "description": "End‐ und Dickdarm‐Zentrum Mannheim, Prof. Dr.med. D. Bussen / 27.01.‐7.02.2025\n\n",
@@ -8253,6 +8484,7 @@
       "categories": [
         "fTlpOvAcjG"
       ],
+      "author": null,
       "image": null,
       "title": "Prof. Dr. Sergelen Orgoi, Dr. Ankhtuya Purevdorj, Dr. Bayarmaa Ochirkhuree",
       "description": "Bericht zum Kongressbesuch der 30th United European Gastroeneterelogy vom 08.–11.Oktober 2022 in Wien und Hospitation 12.–14. Oktober 2022 im Marienhospital Osnabrück. Erschienen in coloproctology Band 45, Heft 2/2023.",
@@ -8268,6 +8500,7 @@
         "dTmCePMOsW",
         "7YhCZBw7MY"
       ],
+      "author": null,
       "image": "EnOak5EQZ3",
       "title": "ESCP-Stipendium 2025 Paris: Aline Schmitz",
       "description": "Dank des Reisestipendiums der Deutschen Gesellschaft für Koloproktologie (DGK) konnte ich vom 10. bis 12. September 2025 am Tripartite Colorectal Meeting in Paris teilnehmen ...",
@@ -8282,6 +8515,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "XAY5zp8tdM",
       "title": "Prä-Kongress-Stipendium 2026  - jetzt bewerben !",
       "description": "\n\n",
@@ -8296,6 +8530,7 @@
       "categories": [
         "dTmCePMOsW"
       ],
+      "author": null,
       "image": "KE02rudnec",
       "title": "DGK mit neuem Präsidenten",
       "description": null,
@@ -8310,6 +8545,7 @@
       "categories": [
         "9ERH02751I"
       ],
+      "author": null,
       "image": "l47snaJiQW",
       "title": "Jens J. Kirsch-Preis 2023",
       "description": null,
@@ -8324,6 +8560,7 @@
       "categories": [
         "m61cvmtDXq"
       ],
+      "author": null,
       "image": "jhDMQ41sOT",
       "title": "DGK Poster-Preis 2023",
       "description": null,
@@ -8338,6 +8575,7 @@
       "categories": [
         "m61cvmtDXq"
       ],
+      "author": null,
       "image": "DowI6gFpjU",
       "title": "DGK Poster-Preise 2024",
       "description": null,
@@ -8352,6 +8590,7 @@
       "categories": [
         "m61cvmtDXq"
       ],
+      "author": null,
       "image": "vrcH743moh",
       "title": "DGK Poster-Preise 2025",
       "description": null,
@@ -8366,6 +8605,7 @@
       "categories": [
         "9ERH02751I"
       ],
+      "author": null,
       "image": "3VFCFC9lY9",
       "title": "Jens J. Kirsch-Preis 2024",
       "description": null,
@@ -8380,6 +8620,7 @@
       "categories": [
         "9ERH02751I"
       ],
+      "author": null,
       "image": "XE5BTjrGIp",
       "title": "Jens J. Kirsch-Preis 2025",
       "description": null,
