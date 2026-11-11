@@ -14,6 +14,8 @@ export type {
   DownloadedFile,
   FileRecord,
   FileClass,
+  LocationClass,
+  EntryClass,
   ImageClass,
   FormClass,
   EventClass,

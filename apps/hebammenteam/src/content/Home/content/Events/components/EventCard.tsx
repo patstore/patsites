@@ -12,7 +12,7 @@ const EventCard = ({ event }: { event: EventClass }) => {
             <p>{event.description}</p>
         </div>
         <div className={styles.cell}>
-            <a href={event.slug}>
+            <a href={`/kurse/${event.slug}`}>
                 <button>
                     Zur Veranstaltung
                 </button>

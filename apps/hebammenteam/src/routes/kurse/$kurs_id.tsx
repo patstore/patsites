@@ -12,9 +12,9 @@ export const Route = createFileRoute("/kurse/$kurs_id")({
 
 function CoursePage() {
   const { kurs_id } = Route.useParams();
-  const { items } = useCollection("Webpage");
+  const { items } = useCollection("Event");
   const course = items.find(
-    (page) => courseSlug(page.path) === kurs_id || page.objectId === kurs_id,
+    (event) => event.slug === kurs_id || event.objectId === kurs_id,
   );
   if (!course) {
     throw notFound();

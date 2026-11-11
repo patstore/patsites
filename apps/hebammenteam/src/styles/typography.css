@@ -53,6 +53,12 @@ h6 {
   text-transform: uppercase;
 }
 
+p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
 a {
   color: var(--color-accent-dark);
   text-underline-offset: 0.15em;
@@ -64,4 +70,10 @@ a:hover {
 
 .button {
     font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+li {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-text);
 }

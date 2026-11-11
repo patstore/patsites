@@ -16,6 +16,32 @@ export interface DownloadedFile {
   thumbnailPath?: string;
 }
 
+export interface LocationClass {
+  objectId: string;
+  id?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  categories?: string[] | null;
+  title: string | null;
+  description?: string | null;
+  text?: string | null;
+  state?: string | null;
+  coordinates?: { latitude: number; longitude: number } | null;
+  gallery?: string[] | null;
+  date?: any | null;
+  label?: string | null;
+}
+
+export interface EntryClass {
+  objectId: string;
+  id?: string;
+  createdAt?: string;
+  updatedAt?: string;
+  categories?: string[] | null;
+  title?: string | null;
+  state?: string | null;
+}
+
 export interface ImageClass {
   objectId: string;
   id?: string;
@@ -49,11 +75,14 @@ export interface EventClass {
   createdAt?: string;
   updatedAt?: string;
   categories?: string[] | null;
-  location?: string | null;
   title?: string | null;
+  location?: string | null;
   description?: string | null;
   text?: string | null;
   state?: string | null;
+  dates?: any[] | null;
+  times?: any[] | null;
+  slug?: string | null;
 }
 
 export interface PersonClass {
@@ -86,6 +115,8 @@ export interface BuildTimeData {
   };
   _modules?: unknown[];
   downloadedFiles?: DownloadedFile[];
+  locations?: LocationClass[];
+  entrys?: EntryClass[];
   images?: ImageClass[];
   forms?: FormClass[];
   events?: EventClass[];

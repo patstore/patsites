@@ -1,12 +1,388 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-11T13:12:51.865Z",
+    "generatedAt": "2026-11-11T17:12:05.698Z",
     "projectId": "RlOdP8FOCV",
-    "moduleCount": 4,
+    "moduleCount": 6,
     "states": null,
     "recordScope": "module"
   },
   "_modules": [
+    {
+      "objectId": "senH5SNVT8",
+      "name": "Orte",
+      "connected_class": "Location",
+      "fields": [
+        {
+          "id": "coordinates",
+          "label": "Ort",
+          "required": false,
+          "type": "edit_geopoint",
+          "active": true,
+          "position": 6
+        },
+        {
+          "id": "address",
+          "label": "Adresse",
+          "required": true,
+          "type": "edit_textfield",
+          "active": false,
+          "position": 6
+        },
+        {
+          "id": "title",
+          "label": "Titel",
+          "required": true,
+          "type": "edit_string",
+          "active": true,
+          "position": 1
+        },
+        {
+          "id": "createdAt",
+          "label": "Erstellt am",
+          "required": false,
+          "type": "date",
+          "active": false,
+          "position": 2
+        },
+        {
+          "id": "updatedAt",
+          "label": "Aktualisiert am",
+          "required": false,
+          "type": "date",
+          "active": false,
+          "position": 2
+        },
+        {
+          "id": "description",
+          "label": "Beschreibung",
+          "required": false,
+          "type": "edit_textfield",
+          "active": true,
+          "position": 2
+        },
+        {
+          "id": "text",
+          "label": "Text",
+          "required": false,
+          "type": "texteditor",
+          "active": true,
+          "position": 3
+        },
+        {
+          "id": "image",
+          "label": "Bild",
+          "required": false,
+          "type": "edit_image",
+          "active": false,
+          "position": 4
+        },
+        {
+          "id": "state",
+          "label": "Status",
+          "required": false,
+          "type": "edit_state",
+          "active": true,
+          "position": 5
+        },
+        {
+          "id": "gallery",
+          "label": "Galerie",
+          "required": false,
+          "type": "gallery",
+          "active": true,
+          "position": 6
+        },
+        {
+          "id": "color",
+          "label": "Farbe",
+          "required": false,
+          "type": "edit_color",
+          "active": false,
+          "position": 9
+        },
+        {
+          "id": "active",
+          "label": "Aktiv",
+          "required": false,
+          "type": "boolean",
+          "active": false,
+          "position": 10
+        },
+        {
+          "id": "file",
+          "label": "Datei",
+          "required": false,
+          "type": "file",
+          "active": false,
+          "position": 12
+        },
+        {
+          "id": "date",
+          "label": "Datum",
+          "required": false,
+          "type": "date_picker",
+          "active": true,
+          "position": 13
+        },
+        {
+          "id": "dates",
+          "label": "Termine",
+          "required": false,
+          "type": "edit_dates",
+          "active": false,
+          "position": 14
+        },
+        {
+          "id": "times",
+          "label": "Zeiten",
+          "required": false,
+          "type": "edit_times",
+          "active": false,
+          "position": 15
+        },
+        {
+          "id": "link",
+          "label": "Link",
+          "required": false,
+          "type": "edit_string",
+          "active": false,
+          "position": 16
+        },
+        {
+          "id": "documents",
+          "label": "Dokumente",
+          "required": false,
+          "type": "files",
+          "active": false,
+          "position": 17
+        },
+        {
+          "id": "created_by",
+          "label": "Erstellt von",
+          "required": false,
+          "type": "user",
+          "active": false,
+          "position": 5
+        },
+        {
+          "id": "updated_by",
+          "label": "Aktualisiert von",
+          "required": false,
+          "type": "user",
+          "active": false,
+          "position": 18
+        },
+        {
+          "id": "location",
+          "label": "Ort",
+          "required": false,
+          "type": "location",
+          "active": false,
+          "position": 19
+        },
+        {
+          "id": "slug",
+          "label": "Slug",
+          "required": false,
+          "type": "string",
+          "active": false,
+          "position": 20
+        },
+        {
+          "id": "lang",
+          "label": "Sprache",
+          "required": false,
+          "type": "lang",
+          "active": false,
+          "position": 21
+        },
+        {
+          "id": "label",
+          "label": "label",
+          "required": false,
+          "type": "string",
+          "active": true,
+          "position": 23
+        }
+      ],
+      "data_fields": []
+    },
+    {
+      "objectId": "zeJCTBWVao",
+      "name": "Leistungen",
+      "connected_class": "Entry",
+      "fields": [
+        {
+          "id": "title",
+          "label": "Titel",
+          "required": false,
+          "type": "edit_string",
+          "active": true,
+          "position": 1
+        },
+        {
+          "id": "createdAt",
+          "label": "Erstellt am",
+          "required": false,
+          "type": "date",
+          "active": false,
+          "position": 2
+        },
+        {
+          "id": "updatedAt",
+          "label": "Aktualisiert am",
+          "required": false,
+          "type": "date",
+          "active": false,
+          "position": 2
+        },
+        {
+          "id": "description",
+          "label": "Beschreibung",
+          "required": false,
+          "type": "edit_textfield",
+          "active": false,
+          "position": 2
+        },
+        {
+          "id": "text",
+          "label": "Text",
+          "required": false,
+          "type": "texteditor",
+          "active": false,
+          "position": 3
+        },
+        {
+          "id": "image",
+          "label": "Bild",
+          "required": false,
+          "type": "edit_image",
+          "active": false,
+          "position": 4
+        },
+        {
+          "id": "state",
+          "label": "Status",
+          "required": false,
+          "type": "edit_state",
+          "active": true,
+          "position": 5
+        },
+        {
+          "id": "gallery",
+          "label": "Galerie",
+          "required": false,
+          "type": "gallery",
+          "active": false,
+          "position": 6
+        },
+        {
+          "id": "color",
+          "label": "Farbe",
+          "required": false,
+          "type": "edit_color",
+          "active": false,
+          "position": 9
+        },
+        {
+          "id": "active",
+          "label": "Aktiv",
+          "required": false,
+          "type": "boolean",
+          "active": false,
+          "position": 10
+        },
+        {
+          "id": "file",
+          "label": "Datei",
+          "required": false,
+          "type": "file",
+          "active": false,
+          "position": 12
+        },
+        {
+          "id": "date",
+          "label": "Datum",
+          "required": false,
+          "type": "date_picker",
+          "active": false,
+          "position": 13
+        },
+        {
+          "id": "dates",
+          "label": "Termine",
+          "required": false,
+          "type": "edit_dates",
+          "active": false,
+          "position": 14
+        },
+        {
+          "id": "times",
+          "label": "Zeiten",
+          "required": false,
+          "type": "edit_times",
+          "active": false,
+          "position": 15
+        },
+        {
+          "id": "link",
+          "label": "Link",
+          "required": false,
+          "type": "edit_string",
+          "active": false,
+          "position": 16
+        },
+        {
+          "id": "documents",
+          "label": "Dokumente",
+          "required": false,
+          "type": "files",
+          "active": false,
+          "position": 17
+        },
+        {
+          "id": "created_by",
+          "label": "Erstellt von",
+          "required": false,
+          "type": "user",
+          "active": false,
+          "position": 5
+        },
+        {
+          "id": "updated_by",
+          "label": "Aktualisiert von",
+          "required": false,
+          "type": "user",
+          "active": false,
+          "position": 18
+        },
+        {
+          "id": "location",
+          "label": "Ort",
+          "required": false,
+          "type": "location",
+          "active": false,
+          "position": 19
+        },
+        {
+          "id": "slug",
+          "label": "Slug",
+          "required": false,
+          "type": "string",
+          "active": false,
+          "position": 20
+        },
+        {
+          "id": "lang",
+          "label": "Sprache",
+          "required": false,
+          "type": "lang",
+          "active": false,
+          "position": 21
+        }
+      ],
+      "data_fields": []
+    },
     {
       "objectId": "cIpISCnqOe",
       "name": "Bilder",
@@ -237,14 +613,6 @@
       "connected_class": "Event",
       "fields": [
         {
-          "id": "location",
-          "label": "Ort",
-          "required": false,
-          "type": "location",
-          "active": true,
-          "position": 1
-        },
-        {
           "id": "title",
           "label": "Titel",
           "required": false,
@@ -253,12 +621,20 @@
           "position": 1
         },
         {
+          "id": "location",
+          "label": "Ort",
+          "required": false,
+          "type": "location",
+          "active": true,
+          "position": 2
+        },
+        {
           "id": "createdAt",
           "label": "Erstellt am",
           "required": false,
           "type": "date",
           "active": false,
-          "position": 2
+          "position": 3
         },
         {
           "id": "updatedAt",
@@ -266,7 +642,7 @@
           "required": false,
           "type": "date",
           "active": false,
-          "position": 2
+          "position": 4
         },
         {
           "id": "description",
@@ -274,7 +650,7 @@
           "required": false,
           "type": "edit_textfield",
           "active": true,
-          "position": 2
+          "position": 5
         },
         {
           "id": "text",
@@ -282,7 +658,7 @@
           "required": false,
           "type": "texteditor",
           "active": true,
-          "position": 3
+          "position": 6
         },
         {
           "id": "image",
@@ -290,7 +666,7 @@
           "required": false,
           "type": "edit_image",
           "active": false,
-          "position": 4
+          "position": 7
         },
         {
           "id": "state",
@@ -298,79 +674,7 @@
           "required": false,
           "type": "edit_state",
           "active": true,
-          "position": 5
-        },
-        {
-          "id": "gallery",
-          "label": "Galerie",
-          "required": false,
-          "type": "gallery",
-          "active": false,
-          "position": 6
-        },
-        {
-          "id": "color",
-          "label": "Farbe",
-          "required": false,
-          "type": "edit_color",
-          "active": false,
-          "position": 9
-        },
-        {
-          "id": "active",
-          "label": "Aktiv",
-          "required": false,
-          "type": "boolean",
-          "active": false,
-          "position": 10
-        },
-        {
-          "id": "file",
-          "label": "Datei",
-          "required": false,
-          "type": "file",
-          "active": false,
-          "position": 12
-        },
-        {
-          "id": "date",
-          "label": "Datum",
-          "required": false,
-          "type": "date_picker",
-          "active": false,
-          "position": 13
-        },
-        {
-          "id": "dates",
-          "label": "Termine",
-          "required": false,
-          "type": "edit_dates",
-          "active": false,
-          "position": 14
-        },
-        {
-          "id": "times",
-          "label": "Zeiten",
-          "required": false,
-          "type": "edit_times",
-          "active": false,
-          "position": 15
-        },
-        {
-          "id": "link",
-          "label": "Link",
-          "required": false,
-          "type": "edit_string",
-          "active": false,
-          "position": 16
-        },
-        {
-          "id": "documents",
-          "label": "Dokumente",
-          "required": false,
-          "type": "files",
-          "active": false,
-          "position": 17
+          "position": 8
         },
         {
           "id": "created_by",
@@ -378,7 +682,79 @@
           "required": false,
           "type": "user",
           "active": false,
-          "position": 5
+          "position": 9
+        },
+        {
+          "id": "gallery",
+          "label": "Galerie",
+          "required": false,
+          "type": "gallery",
+          "active": false,
+          "position": 10
+        },
+        {
+          "id": "color",
+          "label": "Farbe",
+          "required": false,
+          "type": "edit_color",
+          "active": false,
+          "position": 11
+        },
+        {
+          "id": "active",
+          "label": "Aktiv",
+          "required": false,
+          "type": "boolean",
+          "active": false,
+          "position": 12
+        },
+        {
+          "id": "file",
+          "label": "Datei",
+          "required": false,
+          "type": "file",
+          "active": false,
+          "position": 13
+        },
+        {
+          "id": "date",
+          "label": "Datum",
+          "required": false,
+          "type": "date_picker",
+          "active": false,
+          "position": 14
+        },
+        {
+          "id": "dates",
+          "label": "Termine",
+          "required": false,
+          "type": "edit_dates",
+          "active": true,
+          "position": 15
+        },
+        {
+          "id": "times",
+          "label": "Zeiten",
+          "required": false,
+          "type": "edit_times",
+          "active": true,
+          "position": 16
+        },
+        {
+          "id": "link",
+          "label": "Link",
+          "required": false,
+          "type": "edit_string",
+          "active": false,
+          "position": 17
+        },
+        {
+          "id": "documents",
+          "label": "Dokumente",
+          "required": false,
+          "type": "files",
+          "active": false,
+          "position": 18
         },
         {
           "id": "updated_by",
@@ -386,14 +762,14 @@
           "required": false,
           "type": "user",
           "active": false,
-          "position": 18
+          "position": 19
         },
         {
           "id": "slug",
           "label": "Slug",
           "required": false,
           "type": "string",
-          "active": false,
+          "active": true,
           "position": 20
         },
         {
@@ -617,6 +993,22 @@
   ],
   "downloadedFiles": [
     {
+      "objectId": "vfejpSIPrZ",
+      "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/53ef6281bdaea4aed8d113ff3af889d2_maria_hauber.jpg",
+      "localPath": "vfejpSIPrZ-Maria Hauber.jpg",
+      "filename": "vfejpSIPrZ-Maria Hauber.jpg",
+      "type": "image",
+      "thumbnailPath": "thumbnails/vfejpSIPrZ-Maria Hauber-480w.webp"
+    },
+    {
+      "objectId": "n5yBPeFBNW",
+      "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ca95fb129ee5196ba341d6c6216b94c4_anna_paust.jpg",
+      "localPath": "n5yBPeFBNW-Anna Paust.jpg",
+      "filename": "n5yBPeFBNW-Anna Paust.jpg",
+      "type": "image",
+      "thumbnailPath": "thumbnails/n5yBPeFBNW-Anna Paust-480w.webp"
+    },
+    {
       "objectId": "BifB5hLXxP",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/b39f526bd923fe671506ca53809206b0_maria_canders.jpg",
       "localPath": "BifB5hLXxP-Maria Canders.jpg",
@@ -625,7 +1017,119 @@
       "thumbnailPath": "thumbnails/BifB5hLXxP-Maria Canders-480w.webp"
     }
   ],
+  "locations": [
+    {
+      "id": "TG9jYXRpb246WFpEZ3cyd1M4Nw==",
+      "objectId": "XZDgw2wS87",
+      "categories": null,
+      "title": "Fortbildungsakademie am Geburtshaus/ neben dem Geburtshaus Freiburg",
+      "description": "Schreiberstraße 12-16\n\n79098 Freiburg im Breisgau",
+      "text": null,
+      "state": "draft",
+      "coordinates": null,
+      "gallery": null,
+      "date": null,
+      "label": "Fortbildungsakademie am Geburtshaus/ neben dem Geburtshaus Freiburg"
+    }
+  ],
+  "entrys": [
+    {
+      "id": "RW50cnk6WTE4eXBvM2ZDTQ==",
+      "objectId": "Y18ypo3fCM",
+      "categories": [
+        "04ONFOOVdp"
+      ],
+      "title": "Reiki",
+      "state": "published"
+    },
+    {
+      "id": "RW50cnk6U2laWkFtbmljdg==",
+      "objectId": "SiZZAmnicv",
+      "categories": [
+        "04ONFOOVdp"
+      ],
+      "title": "Akupunktur",
+      "state": "published"
+    },
+    {
+      "id": "RW50cnk6c3haZ2t2Z2tMcQ==",
+      "objectId": "sxZgkvgkLq",
+      "categories": [
+        "04ONFOOVdp"
+      ],
+      "title": "Homöopathie",
+      "state": "published"
+    },
+    {
+      "id": "RW50cnk6R2JJRTg3ejBtMw==",
+      "objectId": "GbIE87z0m3",
+      "categories": [
+        "GufWpSSNpS",
+        "HGU9ZoGvhW"
+      ],
+      "title": "Stillberatung",
+      "state": "published"
+    },
+    {
+      "id": "RW50cnk6MEFWcEZjOEhnZQ==",
+      "objectId": "0AVpFc8Hge",
+      "categories": [
+        "GufWpSSNpS",
+        "HGU9ZoGvhW"
+      ],
+      "title": "Wochenbettbetreuung",
+      "state": "published"
+    },
+    {
+      "id": "RW50cnk6ZnZFT3lxM05NeQ==",
+      "objectId": "fvEOyq3NMy",
+      "categories": [
+        "HGU9ZoGvhW",
+        "GufWpSSNpS",
+        "04ONFOOVdp"
+      ],
+      "title": "Hilfe bei Beschwerden",
+      "state": "published"
+    },
+    {
+      "id": "RW50cnk6NE5vcXhGRWYzYg==",
+      "objectId": "4NoqxFEf3b",
+      "categories": [
+        "HGU9ZoGvhW",
+        "GufWpSSNpS",
+        "04ONFOOVdp"
+      ],
+      "title": "Schwangerenvorsorge",
+      "state": "published"
+    }
+  ],
   "images": [
+    {
+      "id": "SW1hZ2U6dmZlanBTSVByWg==",
+      "objectId": "vfejpSIPrZ",
+      "categories": [],
+      "file": {
+        "name": "53ef6281bdaea4aed8d113ff3af889d2_maria_hauber.jpg",
+        "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/53ef6281bdaea4aed8d113ff3af889d2_maria_hauber.jpg"
+      },
+      "title": "Maria Hauber",
+      "connected_elements": [],
+      "filePath": "vfejpSIPrZ-Maria Hauber.jpg",
+      "thumbnailPath": "thumbnails/vfejpSIPrZ-Maria Hauber-480w.webp"
+    },
+    {
+      "id": "SW1hZ2U6bjV5QlBlRkJOVw==",
+      "objectId": "n5yBPeFBNW",
+      "categories": [],
+      "file": {
+        "name": "ca95fb129ee5196ba341d6c6216b94c4_anna_paust.jpg",
+        "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/ca95fb129ee5196ba341d6c6216b94c4_anna_paust.jpg"
+      },
+      "title": "Anna Paust",
+      "connected_elements": [],
+      "filePath": "n5yBPeFBNW-Anna Paust.jpg",
+      "thumbnailPath": "thumbnails/n5yBPeFBNW-Anna Paust-480w.webp"
+    },
     {
       "id": "SW1hZ2U6QmlmQjVoTFh4UA==",
       "objectId": "BifB5hLXxP",
@@ -646,16 +1150,148 @@
       "id": "RXZlbnQ6V0xBRWl0MThRQQ==",
       "objectId": "WLAEit18QA",
       "categories": [
-        "GufWpSSNpS"
+        "GufWpSSNpS",
+        "HGU9ZoGvhW"
       ],
-      "location": null,
-      "title": "\"Dein Geburtskompass\" Geburtsvorbereitung am Wochenende für Paare / Frau",
-      "description": "Mit einer Beschreibung",
+      "title": "Dein Geburtskompass",
+      "location": "XZDgw2wS87",
+      "description": "Geburtsvorbereitung am Wochenende für Paare / Frau",
       "text": "<p>Dieser Wochenendkurs lädt Dich/Euch ein, die Geburt Eures Kindes bewusst, informiert und gestärkt entgegen zu blicken – unabhängig davon, wo Ihr gebären möchtet.<br><br><strong>„Dein Geburtskompass“ </strong>vereint fundiertes Hebammenwissen mit ganzheitlicher Geburtsvorbereitung. Ziel ist es, Euch ein tiefes Verständnis für die physiologischen Abläufe der Geburt zu vermitteln und gleichzeitig das Vertrauen in Eure eigene Kraft und die Weisheit des Körpers zu stärken.</p><p><strong>Im Mittelpunkt steht ein authentisches Erleben des Geburtsprozesses</strong><br>Gemeinsam gehen wir den Geburtsweg Schritt für Schritt durch. Die verschiedenen Geburtsphasen werden nicht nur theoretisch erklärt, sondern lebendig erfahrbar gemacht – unter anderem durch realitätsnahe Demonstrationen von Wehen und körperlichen Reaktionen. So entsteht ein<br>tiefes, körperliches und emotionales Verständnis dafür, was während der Geburt geschieht.</p><p><strong>Ihr erhaltet:</strong><br>-Kompaktes und fundiertes Wissen rund um den Geburtsverlauf.<br>- Ein vertieftes Verständnis für Körper, Wehen und natürliche Prozesse.<br>- Praktische Atem- und Körperübungen zur Unterstützung der Geburt.<br>- Konkrete Tools und Handlungsstrategien für Partner, damit sie sicher und wirksam begleiten können.<br>- Sorgfältig ausgearbeitete Handouts zur Vertiefung und nachhaltigen Begleitung über den Kurs hinaus.<br>- Orientierung für eine selbstbestimmte Geburt – getragen von Vertrauen und Wissen.<br><br>Der Kurs beinhaltet außerdem einen geführten, erlebbaren Geburtsweg mit Blick auf die typischen Phasen und auf das, was in den einzelnen Abschnitten im Körper geschieht.</p><p><strong>Auch Partner erhalten konkrete Hilfen für ihre Rolle: </strong>Berührung, Haltung, Atmung und Kommunikation während der<br>Geburt. So entsteht ein Raum, in dem Wissen nicht nur vermittelt, sondern wirklich erlebt und verankert wird.</p><p>Aus meiner Erfahrung aus anderen Ländern bringe ich vielfältige Perspektiven und bewährte Ansätze mit in den Kurs ein; dieses Wissen bereichert die Inhalte, die Übungen und die Begleitung der Paare auf praktische und authentische Weise.</p><p>Der Kurs findet in einem liebevoll und harmonisch gestalteten Raum statt, der Euch zum Wohlfühlen, Ankommen und offenen Austausch einlädt.<br><br>Dieser Kurs stärkt:<br><strong>Vertrauen in Dich. Vertrauen in Euch. Vertrauen in den Geburtsprozess.</strong></p><p></p><p>&nbsp;<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \"Jedes Kind ist ein Zeichen der Hoffnung für diese Welt.\"</em></p><p><em>(Sprichwort aus Kamerun)</em></p>",
-      "state": "published"
+      "state": "published",
+      "dates": [
+        {
+          "id": "568c53cb-6dd8-4202-bf1e-5609049d074a",
+          "start": "2026-12-11T12:00",
+          "end": "2026-06-13T17:00",
+          "label": "Dein Geburtskompass",
+          "text": "",
+          "place": {
+            "type": "map",
+            "address": "",
+            "map": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "online": ""
+          },
+          "full_day": true
+        }
+      ],
+      "times": [
+        {
+          "start": "17:00",
+          "end": "20:30",
+          "weekday": "friday",
+          "place": {
+            "type": "online",
+            "address": "",
+            "map": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "online": ""
+          },
+          "id": "26f4e7e2-f185-40ca-b486-f4adfe1d55a1",
+          "text": "Nur für schwangere"
+        },
+        {
+          "start": "09:30",
+          "end": "13:00",
+          "weekday": "saturday",
+          "place": {
+            "type": "online",
+            "address": "",
+            "map": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "online": ""
+          },
+          "id": "0c972c9b-dc1f-434a-bb9d-6e7c10e67d90",
+          "text": "mit Partner*innen"
+        },
+        {
+          "start": "13:00",
+          "end": "15:00",
+          "weekday": "saturday",
+          "place": {
+            "type": "online",
+            "address": "",
+            "map": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "online": ""
+          },
+          "id": "d96c2b0f-ebc7-42fc-82f8-90d9b5d1076a",
+          "text": "Mittgaspause (zur eigenen Gestaltung)"
+        },
+        {
+          "start": "15:00",
+          "end": "17:30",
+          "weekday": "saturday",
+          "place": {
+            "type": "online",
+            "address": "",
+            "map": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "online": ""
+          },
+          "id": "2762d981-cf13-4843-8ed0-3b2e9abb1c9b",
+          "text": "auch mit Partner*innen"
+        },
+        {
+          "start": "09:30",
+          "end": "14:00",
+          "weekday": "sunday",
+          "place": {
+            "type": "online",
+            "address": "",
+            "map": {
+              "latitude": 0,
+              "longitude": 0
+            },
+            "online": ""
+          },
+          "id": "da5105a4-7a39-4a2d-8676-68d6e9ead261"
+        }
+      ],
+      "slug": "dein-geburtskompass"
     }
   ],
   "persons": [
+    {
+      "id": "UGVyc29uOjA0T05GT09WZHA=",
+      "objectId": "04ONFOOVdp",
+      "categories": null,
+      "title": "Maria Katrin Hauber",
+      "description": null,
+      "text": null,
+      "image": "vfejpSIPrZ",
+      "state": "published",
+      "email": null,
+      "gallery": null,
+      "date": null,
+      "label": "Maria Katrin Hauber",
+      "data": null
+    },
+    {
+      "id": "UGVyc29uOkhHVTlab0d2aFc=",
+      "objectId": "HGU9ZoGvhW",
+      "categories": null,
+      "title": "Anna Maisha Paust",
+      "description": null,
+      "text": null,
+      "image": "n5yBPeFBNW",
+      "state": "published",
+      "email": null,
+      "gallery": null,
+      "date": null,
+      "label": "Anna Maisha Paust",
+      "data": null
+    },
     {
       "id": "UGVyc29uOkd1ZldwU1NOcFM=",
       "objectId": "GufWpSSNpS",
@@ -664,7 +1300,7 @@
       "description": null,
       "text": "<p>1994,‎ ‏damals noch Studentin und jobbende Taxifahrerin in Freiburg,‭ ‬hatte ich das Glück,‭ ‬an drei Hausgeburten meiner Freundinnen teilnehmen zu dürfen‭ ‬– eine in der Schweiz,‭ ‬eine in Freiburg und eine in Dublin.‭ ‬Spätestens bei der dritten Geburt wurde mir bewusst,‭ ‬dass ich hier meine Berufung gefunden hatte.‭ ‬Ich absolvierte meine Ausbildung an der Hebammenschule in Lahr.‭ ‬Meine ersten Erfahrungen als junge Hebamme machte ich dann in einem Geburtshaus in der Schweiz.‭ ‬Dort erwarb ich viel Wissen über Geburten außerhalb der Klinik.‭ ‬Anschließend gründete ich mit zwei Kolleginnen eine Praxis in Konstanz.‭ ‬Mit viel Freude und Engagement begleiteten wir Familien durch Schwangerschaft,‭ ‬Geburt,‭ ‬Wochenbett und die Zeit danach.</p><p>2005‎ ‏kündigte sich bei mir selbst Nachwuchs an.‭ ‬Im folgenden Jahr,‭ ‬kurz nach der Geburt unserer Tochter,‭ ‬zog ich zur‭ „‬Familienzusammenführung‭“‬ zu meinem Partner nach Freiburg.‭ ‬Bei Coming Home habe ich nun Hebammen gefunden,‭ ‬die ihren Beruf mit der gleichen Leidenschaft und Herzenswärme ausüben.‭</p><p>Zur Zeit betreue ich keine Geburten, kümmere mich aber mit Begeisterung um das „Davor“ und „Danach“.</p>",
       "image": "BifB5hLXxP",
-      "state": "draft",
+      "state": "published",
       "email": null,
       "gallery": null,
       "date": null,
