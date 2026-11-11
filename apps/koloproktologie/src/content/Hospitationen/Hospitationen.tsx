@@ -352,7 +352,7 @@ const Hospitationen: React.FC = () => {
                                     subtitle={tr.description}
                                     text={tr.text}
                                     background={settings.colors.light}
-                                    label={tr.label}
+                                    label={"Tagungsbericht"}
                                     documents={tr.documents}
                                 />
                             ))}

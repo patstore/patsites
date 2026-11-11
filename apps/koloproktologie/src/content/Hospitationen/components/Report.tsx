@@ -32,7 +32,7 @@ const Report: React.FC<ReportProps> = ({
                 key={id}
                 title={title}
                 text={subtitle}
-                label={label || "Hopsitationsbericht"}
+                label={label || "Hospitationsbericht"}
                 // date={getDateString(news.date).date}
                 background={background}
                 color={settings.colors.dark}
@@ -45,7 +45,7 @@ const Report: React.FC<ReportProps> = ({
                 open={open}
                 cancelButtonHandler={() => setOpen(false)}
             >
-                <Label text={label || "Hopsitationsbericht"}></Label>
+                <Label text={label || "Hospitationsbericht"}></Label>
                 <h3>{title}</h3>
                 {image && (
                     <AppImage
