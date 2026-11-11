@@ -1,0 +1,18 @@
+.event_card {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: var(--padding-md);
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--padding-md);
+}
+
+.event_cell {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-md);
+    flex: 1;
+}

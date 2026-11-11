@@ -19,6 +19,9 @@
   background-color: var(--color-bg);
   font-family: var(--font);
   line-height: 1.5;
+  --border-radius: 12px;
+  --shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  --padding-md: 16px;
 }
 
 *,
@@ -127,4 +130,8 @@ button {
 .lead {
   color: var(--color-muted);
   font-size: 1.2rem;
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
 }

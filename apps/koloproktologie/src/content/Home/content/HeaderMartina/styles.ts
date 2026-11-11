@@ -69,7 +69,7 @@ export const headerMartinaStageImage = {
     width: "100%",
     height: "100%",
     objectFit: "cover" as const,
-    objectPosition: "center 28%",
+    objectPosition: "50% 90%",
     zIndex: 0
 };
 
