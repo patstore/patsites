@@ -28,7 +28,7 @@ const Team = ({ persons }: { persons: PatstorePerson[] }) => {
       ) : (
         <ul className={styles.grid}>
           {persons.map((person) => {
-            const portrait = findImageUrl(person.portrait || person.image);
+            const portrait = findImageUrl(person.image);
             const name = person.title || "Hebamme";
             return (
               <li key={person.objectId} className={styles.card}>

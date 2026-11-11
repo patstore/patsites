@@ -4,7 +4,7 @@ import { headerMartinaVariants } from "../constants/variants";
 import type { HeaderMartinaEventContent } from "../constants/content";
 import { headerMartinaEvent, headerMartinaEventButton } from "../styles";
 
-const HeaderMartinaEvent = ({ title, meta }: HeaderMartinaEventContent) => {
+const HeaderMartinaEvent = ({ title, meta, link }: HeaderMartinaEventContent) => {
     return (
         <motion.article
             css={headerMartinaEvent}
@@ -13,7 +13,7 @@ const HeaderMartinaEvent = ({ title, meta }: HeaderMartinaEventContent) => {
             <h2>{title}</h2>
             <p>{meta}</p>
             <div css={headerMartinaEventButton}>
-                <Button text="Mehr erfahren" />
+                <Button text="Mehr erfahren" externalLink={link} />
             </div>
         </motion.article>
     );

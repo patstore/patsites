@@ -5,7 +5,7 @@ import { NotFound, RouteError } from "@components";
 export function getRouter() {
   return createRouter({
     routeTree,
-    scrollRestoration: true,
+    scrollRestoration: false,
     defaultPreload: "intent",
     defaultNotFoundComponent: NotFound,
     defaultErrorComponent: RouteError,
@@ -15,5 +15,9 @@ export function getRouter() {
 declare module "@tanstack/react-router" {
   interface Register {
     router: ReturnType<typeof getRouter>;
+  }
+
+  interface StaticDataRouteOption {
+    scroll?: "vertical" | "horizontal";
   }
 }

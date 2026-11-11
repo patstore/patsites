@@ -1,18 +1,306 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-11T00:00:00.000Z",
-    "projectId": "",
-    "moduleCount": 0,
-    "states": ["published"],
+    "generatedAt": "2026-11-11T11:07:03.565Z",
+    "projectId": "RlOdP8FOCV",
+    "moduleCount": 3,
+    "states": null,
     "recordScope": "module"
   },
-  "_modules": [],
+  "_modules": [
+    {
+      "objectId": "e1RRVWd61T",
+      "name": "Formulare",
+      "connected_class": "Form",
+      "fields": [
+        {
+          "id": "text",
+          "label": "text",
+          "required": false,
+          "type": "string",
+          "active": true,
+          "position": 0
+        },
+        {
+          "id": "label",
+          "label": "label",
+          "required": false,
+          "type": "string",
+          "active": true,
+          "position": 1
+        },
+        {
+          "id": "date",
+          "label": "date",
+          "required": false,
+          "type": "string",
+          "active": true,
+          "position": 2
+        },
+        {
+          "id": "state",
+          "label": "state",
+          "required": false,
+          "type": "string",
+          "active": true,
+          "position": 3
+        },
+        {
+          "id": "form_fields",
+          "label": "form_fields",
+          "required": false,
+          "type": "form_fields",
+          "active": true,
+          "position": 4
+        },
+        {
+          "id": "gallery",
+          "label": "gallery",
+          "required": false,
+          "type": "gallery",
+          "active": true,
+          "position": 5
+        }
+      ],
+      "data_fields": []
+    },
+    {
+      "objectId": "ddwPobBkov",
+      "name": "Veranstaltungen",
+      "connected_class": "Event",
+      "fields": [
+        {
+          "id": "location",
+          "label": "Ort",
+          "required": false,
+          "type": "location",
+          "active": true,
+          "position": 1
+        },
+        {
+          "id": "title",
+          "label": "Titel",
+          "required": false,
+          "type": "edit_string",
+          "active": true,
+          "position": 1
+        },
+        {
+          "id": "createdAt",
+          "label": "Erstellt am",
+          "required": false,
+          "type": "date",
+          "active": false,
+          "position": 2
+        },
+        {
+          "id": "updatedAt",
+          "label": "Aktualisiert am",
+          "required": false,
+          "type": "date",
+          "active": false,
+          "position": 2
+        },
+        {
+          "id": "description",
+          "label": "Beschreibung",
+          "required": false,
+          "type": "edit_textfield",
+          "active": true,
+          "position": 2
+        },
+        {
+          "id": "text",
+          "label": "Text",
+          "required": false,
+          "type": "texteditor",
+          "active": true,
+          "position": 3
+        },
+        {
+          "id": "image",
+          "label": "Bild",
+          "required": false,
+          "type": "edit_image",
+          "active": false,
+          "position": 4
+        },
+        {
+          "id": "state",
+          "label": "Status",
+          "required": false,
+          "type": "edit_state",
+          "active": true,
+          "position": 5
+        },
+        {
+          "id": "gallery",
+          "label": "Galerie",
+          "required": false,
+          "type": "gallery",
+          "active": false,
+          "position": 6
+        },
+        {
+          "id": "color",
+          "label": "Farbe",
+          "required": false,
+          "type": "edit_color",
+          "active": false,
+          "position": 9
+        },
+        {
+          "id": "active",
+          "label": "Aktiv",
+          "required": false,
+          "type": "boolean",
+          "active": false,
+          "position": 10
+        },
+        {
+          "id": "file",
+          "label": "Datei",
+          "required": false,
+          "type": "file",
+          "active": false,
+          "position": 12
+        },
+        {
+          "id": "date",
+          "label": "Datum",
+          "required": false,
+          "type": "date_picker",
+          "active": false,
+          "position": 13
+        },
+        {
+          "id": "dates",
+          "label": "Termine",
+          "required": false,
+          "type": "edit_dates",
+          "active": false,
+          "position": 14
+        },
+        {
+          "id": "times",
+          "label": "Zeiten",
+          "required": false,
+          "type": "edit_times",
+          "active": false,
+          "position": 15
+        },
+        {
+          "id": "link",
+          "label": "Link",
+          "required": false,
+          "type": "edit_string",
+          "active": false,
+          "position": 16
+        },
+        {
+          "id": "documents",
+          "label": "Dokumente",
+          "required": false,
+          "type": "files",
+          "active": false,
+          "position": 17
+        },
+        {
+          "id": "created_by",
+          "label": "Erstellt von",
+          "required": false,
+          "type": "user",
+          "active": false,
+          "position": 5
+        },
+        {
+          "id": "updated_by",
+          "label": "Aktualisiert von",
+          "required": false,
+          "type": "user",
+          "active": false,
+          "position": 18
+        },
+        {
+          "id": "slug",
+          "label": "Slug",
+          "required": false,
+          "type": "string",
+          "active": false,
+          "position": 20
+        },
+        {
+          "id": "lang",
+          "label": "Sprache",
+          "required": false,
+          "type": "lang",
+          "active": false,
+          "position": 21
+        }
+      ],
+      "data_fields": []
+    },
+    {
+      "objectId": "ebEuO07uLi",
+      "name": "Personen",
+      "connected_class": "Person",
+      "fields": [
+        {
+          "id": "label",
+          "label": "label",
+          "required": false,
+          "type": "string",
+          "active": true,
+          "position": 0
+        },
+        {
+          "id": "date",
+          "label": "date",
+          "required": false,
+          "type": "string",
+          "active": true,
+          "position": 1
+        },
+        {
+          "id": "email",
+          "label": "email",
+          "required": false,
+          "type": "string",
+          "active": true,
+          "position": 2
+        },
+        {
+          "id": "image",
+          "label": "image",
+          "required": false,
+          "type": "string",
+          "active": true,
+          "position": 3
+        },
+        {
+          "id": "gallery",
+          "label": "gallery",
+          "required": false,
+          "type": "gallery",
+          "active": true,
+          "position": 4
+        }
+      ],
+      "data_fields": []
+    }
+  ],
   "downloadedFiles": [],
-  "webpages": [],
-  "contents": [],
-  "images": [],
-  "persons": [],
-  "categorys": [],
-  "locations": [],
-  "forms": []
+  "forms": [],
+  "events": [
+    {
+      "id": "RXZlbnQ6V0xBRWl0MThRQQ==",
+      "objectId": "WLAEit18QA",
+      "categories": null,
+      "location": null,
+      "title": "Das ist eine Veranstaltung",
+      "description": "Mit einer Beschreibung",
+      "text": null,
+      "state": "published"
+    }
+  ],
+  "persons": []
 }

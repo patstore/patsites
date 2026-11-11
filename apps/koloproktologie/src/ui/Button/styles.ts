@@ -14,7 +14,7 @@ export const buttonContainer = ({
         cursor: "pointer",
         color: color,
         backgroundColor: background,
-        padding: size === "large" ? "10px 20px" : "8px 16px",
+        padding: size === "large" ? "12px 24px" : "8px 16px",
         borderRadius: settings.sizes.large,
         display: "flex",
         flexDirection: "row",
@@ -27,7 +27,7 @@ export const buttonContainer = ({
         fontWeight: 600,
         letterSpacing: "0.6px",
         fontSize:
-            size === "large" ? settings.fontSize.small : settings.fontSize.tiny,
+            size === "large" ? settings.fontSize.medium : settings.fontSize.tiny,
         a: {
             textDecoration: "none !important"
         },

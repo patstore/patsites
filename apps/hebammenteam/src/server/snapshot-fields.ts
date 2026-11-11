@@ -22,7 +22,7 @@ export const supplementFields: Record<string, SupplementalField[]> = {
   ],
   Form: [text("text"), text("label"), text("date"), text("state"), { id: "form_fields", type: "form_fields" }, gallery],
   Location: [text("text"), text("label"), text("date"), gallery],
-  Person: [text("label"), text("date"), text("email"), text("image"), text("portrait"), gallery],
+  Person: [text("label"), text("date"), text("email"), text("image"), gallery],
   Webpage: [
     text("path"),
     text("text"),

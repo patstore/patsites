@@ -1,11 +1,13 @@
 import { useEffect, useId, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
+import { useOptionalScroll } from "@repo/core";
 import { legalNav, mainNav } from "./constants/navigation";
 import styles from "./HeaderMobile.module.css";
 
 const HeaderMobile = () => {
   const menuId = useId();
   const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const scroll = useOptionalScroll();
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -21,14 +23,18 @@ const HeaderMobile = () => {
         setMenuOpen(false);
       }
     };
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const viewport = scroll?.getViewport() ?? null;
+    if (viewport) {
+      viewport.dataset.scrollLocked = "true";
+    }
     window.addEventListener("keydown", onKeyDown);
     return () => {
-      document.body.style.overflow = previousOverflow;
+      if (viewport) {
+        delete viewport.dataset.scrollLocked;
+      }
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [menuOpen]);
+  }, [menuOpen, scroll]);
 
   return (
     <div className={styles.bar}>
@@ -49,7 +55,14 @@ const HeaderMobile = () => {
         <span />
       </button>
       {menuOpen ? (
-        <div className={styles.panel} id={menuId} role="dialog" aria-modal="true" aria-label="Menü">
+        <div
+          className={styles.panel}
+          id={menuId}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menü"
+          data-lenis-prevent
+        >
           <Link to="/" className={styles.brand}>
             <span className={styles.eyebrow}>Praxis</span>
             <span className={styles.brandName}>Hebammen-Team</span>

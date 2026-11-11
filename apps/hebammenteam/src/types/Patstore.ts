@@ -1,3 +1,5 @@
+import { EventClass } from "@data";
+
 export type Maybe<T> = T | null;
 
 export type PatstoreFile = {
@@ -33,7 +35,6 @@ export type PatstorePerson = PatstoreEntity & {
   date: Maybe<string>;
   email: Maybe<string>;
   image: Maybe<string>;
-  portrait: Maybe<string>;
 };
 
 export type WebpageBlock = {
@@ -75,6 +76,7 @@ export type PatstoreCollections = {
   Location: PatstoreLocation[];
   Person: PatstorePerson[];
   Webpage: PatstoreWebpage[];
+  Event: EventClass[];
 };
 
 export type PatstoreClassName = keyof PatstoreCollections;

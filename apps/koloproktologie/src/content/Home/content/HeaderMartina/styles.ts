@@ -41,6 +41,7 @@ export const headerMartinaProgram = settings.mq({
     alignSelf: ["flex-start", "flex-start", "center"],
     display: "flex",
     marginRight: ["0", "0", "0", "36px", "120px"],
+    marginTop: ["0", "0", "60px", "72px"],
     zIndex: 1,
     a: {
         textDecoration: "none !important",
@@ -94,6 +95,7 @@ export const headerMartinaEvent = settings.mq({
     boxShadow: "0 14px 32px rgba(0, 0, 0, 0.16)",
     padding: ["28px 20px 24px", "32px 22px 26px", "36px 20px 28px"],
     minHeight: ["auto", "auto", "220px"],
+    borderRadius: "12px",
     h2: {
         margin: "0 0 10px !important",
         maxWidth: "none",

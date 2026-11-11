@@ -47,7 +47,7 @@ const HeadBanner: React.FC<{ borderBottom?: boolean }> = ({ borderBottom = false
                     {(currentEvents.upcoming?.data?.link || currentEvents.upcoming?.link) && (
                         <Button
                             externalLink={currentEvents.upcoming.data?.link || currentEvents.upcoming.link}
-                            text={`DGK ${year}`}
+                            text={`Zur Kongressanmeldung`}
                             background={settings.colors.secondary}
                             color={settings.colors.white}
                             size="large"

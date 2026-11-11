@@ -7,7 +7,7 @@ import {
     headerMartinaVariants
 } from "./constants/variants";
 import impulsePerspektiven from "../HomeHeader/images/impulse_perspektiven.png";
-import kongressCenter from "../HomeHeader/images/kongress_center.png";
+import kongressCenter from "./images/haupteingang.jpg";
 import {
     headerMartinaContainer,
     headerMartinaEvents as headerMartinaEventsStyle,
@@ -34,10 +34,10 @@ const HeaderMartina = () => {
                     animate="animate"
                 >
                     <Button
-                        text="Zum Kongressprogramm"
+                        text="Themen der Hauptsitzungen"
                         externalLink={CONGRESS_PROGRAM_URL}
                     />
-                </motion.div>
+                </motion.div>   
             </div>
             <section css={headerMartinaStage}>
                 <img
@@ -56,6 +56,7 @@ const HeaderMartina = () => {
                             key={event.title}
                             title={event.title}
                             meta={event.meta}
+                            link={event.link}
                         />
                     ))}
                 </motion.div>

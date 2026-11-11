@@ -46,7 +46,7 @@ const HeadBanner: React.FC = () => {
                     {(currentEvents.upcoming?.data?.link || currentEvents.upcoming?.link) && (
                         <Button
                             externalLink={currentEvents.upcoming.data?.link || currentEvents.upcoming.link}
-                            text="DGK 2026"
+                            text="Zur Kongressanmeldung"
                             background={settings.colors.secondary}
                             color={settings.colors.white}
                             size="large"
