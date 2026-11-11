@@ -80,6 +80,7 @@ section {
   .content {
     width: min(var(--page-width), calc(100% - 2.5rem));
     margin: 0 auto;
+    padding: 90px 0;
   }
 }
 
