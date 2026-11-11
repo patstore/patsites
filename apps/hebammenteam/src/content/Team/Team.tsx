@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { CmsBody, Layout } from "@components";
+import { CmsBody, Layout, PageHeader } from "@components";
 import { useCollection, useFindImages } from "@provider";
 import styles from "./Team.module.css";
 
@@ -21,10 +21,8 @@ const Team = () => {
 
   return (
     <Layout>
-      <header className={styles.header}>
-        <h1 className={styles.title}>Team</h1>
-        <p className={styles.lead}>Die Hebammen, die Sie begleiten.</p>
-      </header>
+      <PageHeader eyebrow="Praxis" title="Team" lead="Die Hebammen, die Sie begleiten." />
+      <div className="page-body">
       <div className={styles.cms}>
         <CmsBody path="/team" />
       </div>
@@ -55,6 +53,7 @@ const Team = () => {
           })}
         </ul>
       )}
+      </div>
     </Layout>
   );
 };

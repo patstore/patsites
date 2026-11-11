@@ -1,4 +1,4 @@
-import { CmsBody, Layout } from "@components";
+import { CmsBody, Layout, PageHeader } from "@components";
 import styles from "./Services.module.css";
 
 const services = [
@@ -26,10 +26,12 @@ const services = [
 
 const Services = () => (
   <Layout>
-    <header className={styles.header}>
-      <h1 className={styles.title}>Leistungen</h1>
-      <p className={styles.lead}>Was Sie von der Begleitung erwarten können.</p>
-    </header>
+    <PageHeader
+      eyebrow="Angebot"
+      title="Leistungen"
+      lead="Was Sie von der Begleitung erwarten können."
+    />
+    <div className="page-body">
     <ul className={styles.list}>
       {services.map((service) => (
         <li key={service.title} className={styles.item}>
@@ -40,6 +42,7 @@ const Services = () => (
     </ul>
     <div className={styles.cms}>
       <CmsBody path="/leistungen" />
+    </div>
     </div>
   </Layout>
 );

@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { CmsBody, Layout } from "@components";
+import { CmsBody, Layout, PageHeader } from "@components";
 import { submitContactMessage } from "../../functions/forms.functions";
 import styles from "./Contact.module.css";
 
@@ -31,16 +31,15 @@ const Contact = () => {
 
   return (
     <Layout>
-      <div className={styles.layout}>
-        <header className={styles.header}>
-          <h1 className={styles.title}>Kontakt</h1>
-          <p className={styles.lead}>
-            Schreiben Sie uns. Wir melden uns, sobald wir Ihre Nachricht gelesen haben.
-          </p>
-          <div className={styles.cms}>
-            <CmsBody path="/kontakt" />
-          </div>
-        </header>
+      <PageHeader
+        eyebrow="Praxis"
+        title="Kontakt"
+        lead="Schreiben Sie uns. Wir melden uns, sobald wir Ihre Nachricht gelesen haben."
+      />
+      <div className={`${styles.layout} page-body`}>
+        <div className={styles.cms}>
+          <CmsBody path="/kontakt" />
+        </div>
         <form className={styles.form} onSubmit={onSubmit}>
           <label className={styles.field}>
             <span>Name</span>

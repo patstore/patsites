@@ -1,5 +1,6 @@
 import { EventClass } from '@data'
 import { useMemo } from 'react'
+import { PageHeader } from '@components'
 import styles from '../Course.module.css'
 
 const NexDate = ({ start, end }: { start: Date, end: Date }) => {
@@ -32,26 +33,21 @@ const CourseHeader = ({ course }: { course: EventClass }) => {
     console.log(nexDate)
 
   return (
-    <header className={"hero"}>
-      <div className="content flex column al-ce gap-md">
-        <p className={"eyebrow"}>Kurs</p>
-        <h1>{course.title || "Kurs"}</h1>
-        <p className={"lead"}>{course.description || "Kurs"}</p>
-        <div className="flex gap-md">
-            <a href="/#info">
-                <button>
-                    Mehr über den Kurs
-                </button>
-            </a>
-            <a href="#anmeldung">
-                <button>
-                    zur Anmeldung
-                </button>
-            </a>
-        </div>
-            {nexDate && <NexDate start={new Date(nexDate.start)} end={new Date(nexDate.end)} />}
+    <PageHeader
+      eyebrow="Kurs"
+      title={course.title || "Kurs"}
+      lead={course.description || "Kurs"}
+    >
+      <div className="flex gap-md">
+        <a href="/#info">
+          <button>Mehr über den Kurs</button>
+        </a>
+        <a href="#anmeldung">
+          <button>zur Anmeldung</button>
+        </a>
       </div>
-    </header>
+      {nexDate && <NexDate start={new Date(nexDate.start)} end={new Date(nexDate.end)} />}
+    </PageHeader>
   )
 }
 

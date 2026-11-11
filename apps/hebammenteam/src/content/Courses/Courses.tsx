@@ -1,25 +1,26 @@
 import { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
-import { CmsBody, Layout, excerpt } from "@components";
+import { CmsBody, Layout, PageHeader, excerpt } from "@components";
 import { courseSlug, useCollection } from "@provider";
 import styles from "./Courses.module.css";
 
 const Courses = () => {
-  const { items } = useCollection("Webpage");
+  const { items } = useCollection("Event");
   const courses = useMemo(
     () =>
       items
-        .filter((page) => courseSlug(page.path))
         .sort((a, b) => (a.title ?? "").localeCompare(b.title ?? "", "de")),
     [items],
   );
 
   return (
   <Layout>
-    <header className={styles.header}>
-      <h1 className={styles.title}>Kurse</h1>
-      <p className={styles.lead}>Geburtsvorbereitung, Rückbildung und weitere Angebote.</p>
-    </header>
+    <PageHeader
+      eyebrow="Angebot"
+      title="Kurse"
+      lead="Geburtsvorbereitung, Rückbildung und weitere Angebote."
+    />
+    <div className="page-body">
     <div className={styles.cms}>
       <CmsBody path="/kurse" />
     </div>
@@ -41,6 +42,7 @@ const Courses = () => {
         })}
       </ul>
     )}
+    </div>
   </Layout>
   );
 };

@@ -1,0 +1,4 @@
+.inner {
+  width: min(42rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+}

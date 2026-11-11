@@ -13,7 +13,6 @@ import { headerContainer, menuContainer } from "./styles";
 import main_menu from "./constants/main_menu";
 import { useOptionalScroll } from "@repo/core";
 import { useSiteContext } from "@provider";
-import { env } from "@env";
 
 const Header: React.FC = () => {
     const { user } = useSiteContext();
@@ -21,7 +20,7 @@ const Header: React.FC = () => {
     const mainMenu = main_menu({ user });
 
     const [headerAnimate, setHeaderAnimate] = useState("start");
-    const [isHome, setIsHome] = useState(false);
+    const [isHome] = useState(false);
     const scrollApi = useOptionalScroll();
 
     useEffect(() => {
@@ -66,11 +65,9 @@ const Header: React.FC = () => {
     }, [headerAnimate, isHome]);
 
 
-    useEffect(() => {
-        if (env.previewMode !== "true") {
-            setIsHome(window.location.pathname === "/");
-        }
-    }, []);
+    // useEffect(() => {
+    //     setIsHome(window.location.pathname === "/");
+    // }, []);
 
     return (
         <motion.header

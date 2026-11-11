@@ -1,4 +1,4 @@
-import { CmsBody, Layout } from "@components";
+import { CmsBody, Layout, PageHeader } from "@components";
 import { useFindWebpage } from "@provider";
 import styles from "./Privacy.module.css";
 
@@ -7,9 +7,8 @@ const Privacy = () => {
 
   return (
     <Layout>
-      <header className={styles.header}>
-        <h1 className={styles.title}>Datenschutz</h1>
-      </header>
+      <PageHeader eyebrow="Rechtliches" title="Datenschutz" lead="Wie wir mit Ihren Daten umgehen." />
+      <div className="page-body">
       {page ? (
         <CmsBody page={page} />
       ) : (
@@ -40,6 +39,7 @@ const Privacy = () => {
           </ul>
         </div>
       )}
+      </div>
     </Layout>
   );
 };

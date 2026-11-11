@@ -1,12 +1,9 @@
 import React from "react";
-import { env } from "@env";
 import { Banner, Layout } from "@components";
 import {
     ContentContainer,
     ContentElement,
-    Divider,
     FlexBox,
-    HeadContent,
     News,
     TextContentElement
 } from "@ui";
@@ -17,7 +14,6 @@ import OfferContent from "./components/OfferContent";
 import CancerContent from "./components/CancerContent";
 import OpenAccess from "./components/OpenAccess";
 import HeadBanner from "./components/HeadBanner";
-import { homeHeaderTextContent } from "./styles";
 import { HeaderMartina } from "./content";
 
 
@@ -27,18 +23,7 @@ const Home: React.FC = () => {
             {/* <PreviewWrapper preview={env.VITE_PREVIEW_MODE === "true"}>
                 <HomeHeader />
             </PreviewWrapper> */}
-             {env.previewMode === "true" ? <HeaderMartina /> : (
-             <HeadContent
-                title="Deutsche Gesellschaft für Koloproktologie"
-                content={
-                    <p css={homeHeaderTextContent}>
-                        Expertise bündeln, Wissen teilen – gemeinsam für eine
-                        starke und zukunftsorientierte Koloproktologie
-                    </p>
-                }
-                backgroundImage={"/main_header_2026.jpg"}
-            />
-            )}
+             <HeaderMartina /> 
             <HeadBanner borderBottom />
             <Banner isFixed={false} />
             <ContentContainer>

@@ -1,4 +1,4 @@
-import { CmsBody, Layout } from "@components";
+import { CmsBody, Layout, PageHeader } from "@components";
 import { useFindWebpage } from "@provider";
 import styles from "./Impressum.module.css";
 
@@ -7,9 +7,8 @@ const Impressum = () => {
 
   return (
     <Layout>
-      <header className={styles.header}>
-        <h1 className={styles.title}>Impressum</h1>
-      </header>
+      <PageHeader eyebrow="Rechtliches" title="Impressum" lead="Angaben zu dieser Website." />
+      <div className="page-body">
       {page ? (
         <CmsBody page={page} />
       ) : (
@@ -20,6 +19,7 @@ const Impressum = () => {
           <p>Die Erreichbarkeit steht auf der Kontaktseite.</p>
         </div>
       )}
+      </div>
     </Layout>
   );
 };
