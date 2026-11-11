@@ -10,9 +10,6 @@ const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
     const { findImageUrl } = useGetImages();
     const { find: findDownload } = useCollection<DownloadClass>("Download");
     const { items:categories } = useCollection<CategoryClass>("Category");
-    console.log(news);
-
-    console.log(categories);
 
     const newsCategories = categories.find((category) => news.categories?.includes(category.objectId) && category.link);
 
@@ -21,8 +18,6 @@ const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
         return path.startsWith("/") ? path : `/${path}`;
     };
 
-
-    console.log(newsCategories);
     return (
         <div
             css={{

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import {
     Outlet,
     createRootRoute,
@@ -17,21 +17,23 @@ import {
     resolveSeo,
     type ScrollOrientation
 } from "@repo/core";
-import { SiteContextProvider, client, PatstoreScope } from "@provider";
+import { SiteContextProvider, client } from "@provider";
 import { Layout } from "@components";
 import { HeadContent as PageHeadContent } from "@ui";
 import { Link, NavigateBridge } from "@router";
-import { loadPublicContent } from "../server/content";
+import { fetchCollection } from "../server/content";
 import { defaultSeo, pageFade, routeTransitions, siteLocalization } from "./-shell";
 
 export const Route = createRootRoute({
     loader: async ({ location }) => {
-        const content = await loadPublicContent();
-        return { content, seo: pageSeo(content, location.pathname) };
+        let pages: Array<{ path?: string }> = [];
+        try {
+            pages = (await fetchCollection("Webpage")) as Array<{ path?: string }>;
+        } catch {
+            pages = [];
+        }
+        return { seo: pageSeo({ Webpage: pages }, location.pathname) };
     },
-    // Keep the snapshot from the first load. A browser refetch used to replace
-    // Event and Image with empty lists and clear the congress panel.
-    staleTime: Number.POSITIVE_INFINITY,
     head: () => ({
         meta: [
             { charSet: "utf-8" },
@@ -68,12 +70,10 @@ function RootComponent() {
     const orientation = useRouterState({
         select: (state) => readOrientation(state.matches)
     });
-    const { content } = Route.useLoaderData();
-    const seo = pageSeo(content, pathname);
+    const { seo } = Route.useLoaderData();
 
     return (
         <RootDocument pathname={pathname} seo={seo}>
-            <PatstoreScope data={content}>
             <ApolloProvider client={client}>
                 <SiteContextProvider>
                     <LocalizationProvider pathname={pathname} {...siteLocalization}>
@@ -85,13 +85,14 @@ function RootComponent() {
                                 fallback={pageFade}
                             >
                                 <NavigateBridge />
-                                <Outlet />
+                                <Suspense fallback={null}>
+                                    <Outlet />
+                                </Suspense>
                             </PageTransition>
                         </SmoothScroll>
                     </LocalizationProvider>
                 </SiteContextProvider>
             </ApolloProvider>
-            </PatstoreScope>
         </RootDocument>
     );
 }

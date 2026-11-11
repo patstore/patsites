@@ -1,5 +1,5 @@
 /// <reference types="vite/client" />
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import {
   createRootRoute,
   HeadContent,
@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-router";
 import { getSiteData } from "@functions/site.functions";
 import { Framework, seo } from "@components";
-import { PatstoreScope, SiteContextProvider } from "@provider";
+import { SiteContextProvider } from "@provider";
 import globalCss from "../styles/global.scss?url";
 import "@repo/core/scroll.css";
 import favicon from "../images/tvstg_logo.png";
@@ -47,15 +47,13 @@ function RootDocument({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
-  const { patstore } = Route.useLoaderData();
-
   return (
     <SiteContextProvider>
-      <PatstoreScope data={patstore}>
-        <Framework>
+      <Framework>
+        <Suspense fallback={null}>
           <Outlet />
-        </Framework>
-      </PatstoreScope>
+        </Suspense>
+      </Framework>
     </SiteContextProvider>
   );
 }

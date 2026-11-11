@@ -1,8 +1,6 @@
 import { createFileRoute, stripSearchParams, useRouter } from "@tanstack/react-router";
 import { z } from "zod";
-import { getArticlePage } from "@functions/articles.functions";
 import { seo } from "@components";
-import { PatstoreScope } from "@provider";
 import Berichte from "../../content/Berichte/Berichte";
 
 const berichteSearchSchema = z.object({
@@ -13,14 +11,9 @@ const berichteSearchSchema = z.object({
 export const Route = createFileRoute("/medien/berichte")({
   validateSearch: berichteSearchSchema,
   search: { middlewares: [stripSearchParams({ seite: 1 })] },
-  loaderDeps: ({ search }) => ({ kategorie: search.kategorie, seite: search.seite }),
-  loader: ({ deps }) => getArticlePage({ data: deps }),
-  head: ({ loaderData }) => ({
+  head: ({ match }) => ({
     meta: seo({
-      title:
-        loaderData && loaderData.page > 1
-          ? `Berichte – Seite ${loaderData.page}`
-          : "Berichte",
+      title: match.search.seite > 1 ? `Berichte – Seite ${match.search.seite}` : "Berichte",
       description: "Aktuelle und vergangene Berichte aus dem Vereinsgeschehen",
     }),
   }),
@@ -28,30 +21,26 @@ export const Route = createFileRoute("/medien/berichte")({
 });
 
 function BerichtePage() {
-  const { patstore, page, pageCount } = Route.useLoaderData();
-  const { kategorie } = Route.useSearch();
+  const { kategorie, seite } = Route.useSearch();
   const navigate = Route.useNavigate();
   const router = useRouter();
 
   return (
-    <PatstoreScope data={patstore}>
-      <Berichte
-        kategorie={kategorie}
-        seite={page}
-        pageCount={pageCount}
-        onCategoryChange={(next) =>
-          navigate({ search: { kategorie: next }, resetScroll: false })
-        }
-        onPageChange={(seite) =>
-          navigate({ search: (prev) => ({ ...prev, seite }) })
-        }
-        pageHref={(seite) =>
-          router.buildLocation({
-            to: "/medien/berichte",
-            search: { kategorie, seite },
-          }).href
-        }
-      />
-    </PatstoreScope>
+    <Berichte
+      kategorie={kategorie}
+      seite={seite}
+      onCategoryChange={(next) =>
+        navigate({ search: { kategorie: next }, resetScroll: false })
+      }
+      onPageChange={(next) =>
+        navigate({ search: (prev) => ({ ...prev, seite: next }) })
+      }
+      pageHref={(next) =>
+        router.buildLocation({
+          to: "/medien/berichte",
+          search: { kategorie, seite: next },
+        }).href
+      }
+    />
   );
 }

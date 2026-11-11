@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import {
     Outlet,
     createRootRoute,
@@ -18,19 +18,18 @@ import {
     resolveSeo,
     type ScrollOrientation,
 } from "@repo/core";
-import { SiteContextProvider, client, PatstoreScope } from "@provider";
+import { SiteContextProvider, client } from "@provider";
 import { Layout } from "@components";
 import { HeadContent as PageHeadContent } from "@ui";
-import { loadPublicContent } from "../server/content";
+import { fetchCollection } from "../server/content";
 import { defaultSeo, pageFade, routeTransitions, siteLocalization } from "./-shell";
 import "@styles";
 
 export const Route = createRootRoute({
     loader: async ({ location }) => {
-        const content = await loadPublicContent();
         let seo: unknown = null;
         try {
-            const pages = (content.Webpage ?? []) as Array<{ path?: string }>;
+            const pages = (await fetchCollection("Webpage")) as Array<{ path?: string }>;
             const canonical = canonicalPagePath(location.pathname, siteLocalization);
             seo =
                 pages.find((page) => page.path === location.pathname || page.path === canonical) ??
@@ -39,7 +38,7 @@ export const Route = createRootRoute({
             seo = null;
         }
 
-        return { content, seo };
+        return { seo };
     },
     head: () => ({
         meta: [
@@ -69,11 +68,10 @@ function RootComponent() {
     const orientation = useRouterState({
         select: (state) => readOrientation(state.matches),
     });
-    const { content, seo } = Route.useLoaderData();
+    const { seo } = Route.useLoaderData();
 
     return (
         <RootDocument pathname={pathname} seo={seo}>
-            <PatstoreScope data={content}>
             <ApolloProvider client={client}>
                 <SiteContextProvider>
                     <LocalizationProvider pathname={pathname} {...siteLocalization}>
@@ -84,13 +82,14 @@ function RootComponent() {
                                 clonePrevious={false}
                                 fallback={pageFade}
                             >
-                                <Outlet />
+                                <Suspense fallback={null}>
+                                    <Outlet />
+                                </Suspense>
                             </PageTransition>
                         </SmoothScroll>
                     </LocalizationProvider>
                 </SiteContextProvider>
             </ApolloProvider>
-            </PatstoreScope>
         </RootDocument>
     );
 }

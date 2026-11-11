@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, StreamedSidebar } from "@components";
+import { Layout, Sidebar } from "@components";
 import {
   siteContainer,
   wrapper,
@@ -9,13 +9,12 @@ import {
 } from "@styles";
 import { FlexBox, HeadContent } from "@ui";
 import Articles from "./components/Articles";
-import { PatstoreCategory, PatstoreData } from "@types";
+import { PatstoreCategory } from "@types";
 import Mannschaften from "./components/Teams";
 
 const SportartenSeite: React.FC<{
   sport: PatstoreCategory;
-  sidebar: Promise<PatstoreData>;
-}> = ({ sport, sidebar }) => (
+}> = ({ sport }) => (
   <Layout>
     <div css={wrapper}>
       <HeadContent
@@ -45,12 +44,7 @@ const SportartenSeite: React.FC<{
             <Mannschaften category={sport.objectId} />
           </div>
           <div css={sidebarContainer}>
-            <StreamedSidebar
-              data={sidebar}
-              category={sport.objectId}
-              showCalendar
-              showNews
-            />
+            <Sidebar category={sport.objectId} showCalendar showNews />
           </div>
         </FlexBox>
       </div>

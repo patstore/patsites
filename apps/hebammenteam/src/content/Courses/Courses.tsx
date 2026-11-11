@@ -1,10 +1,20 @@
+import { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import { CmsBody, Layout, excerpt } from "@components";
-import { courseSlug } from "@provider";
-import type { PatstoreWebpage } from "@types";
+import { courseSlug, useCollection } from "@provider";
 import styles from "./Courses.module.css";
 
-const Courses = ({ courses }: { courses: PatstoreWebpage[] }) => (
+const Courses = () => {
+  const { items } = useCollection("Webpage");
+  const courses = useMemo(
+    () =>
+      items
+        .filter((page) => courseSlug(page.path))
+        .sort((a, b) => (a.title ?? "").localeCompare(b.title ?? "", "de")),
+    [items],
+  );
+
+  return (
   <Layout>
     <header className={styles.header}>
       <h1 className={styles.title}>Kurse</h1>
@@ -32,6 +42,7 @@ const Courses = ({ courses }: { courses: PatstoreWebpage[] }) => (
       </ul>
     )}
   </Layout>
-);
+  );
+};
 
 export default Courses;

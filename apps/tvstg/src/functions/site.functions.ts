@@ -3,32 +3,16 @@ import { z } from "zod";
 import type { PatstoreData } from "@types";
 import { getCollection } from "@server/patstore.server";
 import { getServerEnv } from "@server/env.server";
-import { byDateDesc, selectPageContent, withImages } from "@server/site-data.server";
+import { byDateDesc, withImages } from "@server/site-data.server";
 
 const SIDEBAR_ITEMS = 5;
 const NEWS_WINDOW_MS = 60 * 24 * 60 * 60_000;
 
-const FOOTER_CONTENT_IDS = ["footer_address", "footer_contact"];
-
-/** Data every page shares: categories and locations are referenced site-wide, plus the footer. */
-export const getSiteData = createServerFn({ method: "GET" }).handler(async () => {
-  const [categories, locations, footer] = await Promise.all([
-    getCollection("Category"),
-    getCollection("Location"),
-    selectPageContent({ contentIds: FOOTER_CONTENT_IDS }),
-  ]);
-
-  return {
-    patstore: await withImages({
-      Category: categories,
-      Location: locations,
-      Content: footer.Content,
-    }),
-    config: {
-      bytescaleAccountId: getServerEnv().bytescaleAccountId ?? null,
-    },
-  };
-});
+export const getSiteData = createServerFn({ method: "GET" }).handler(async () => ({
+  config: {
+    bytescaleAccountId: getServerEnv().bytescaleAccountId ?? null,
+  },
+}));
 
 /**
  * Sidebar news and events as an unawaited promise for loaders to stream.

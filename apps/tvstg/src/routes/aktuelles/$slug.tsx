@@ -1,7 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { getArticleBySlug } from "@functions/articles.functions";
 import { excerpt, seo } from "@components";
-import { PatstoreScope } from "@provider";
 import Bericht from "../../content/Bericht/Bericht";
 
 export const Route = createFileRoute("/aktuelles/$slug")({
@@ -14,14 +13,11 @@ export const Route = createFileRoute("/aktuelles/$slug")({
   },
   head: ({ loaderData }) => {
     const article = loaderData?.article;
-    const image = loaderData?.patstore.Image?.find(
-      (item) => item.objectId === article?.image,
-    );
     return {
       meta: seo({
         title: article?.title,
         description: excerpt(article?.text),
-        image: image?.url,
+        image: loaderData?.imageUrl,
       }),
     };
   },
@@ -29,11 +25,7 @@ export const Route = createFileRoute("/aktuelles/$slug")({
 });
 
 function ArticlePage() {
-  const { article, patstore } = Route.useLoaderData();
+  const { article } = Route.useLoaderData();
 
-  return (
-    <PatstoreScope data={patstore}>
-      <Bericht article={article} />
-    </PatstoreScope>
-  );
+  return <Bericht article={article} />;
 }

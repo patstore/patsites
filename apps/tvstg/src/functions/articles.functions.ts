@@ -62,8 +62,8 @@ export const getArticleBySlug = createServerFn({ method: "GET" })
       return null;
     }
 
-    return {
-      article,
-      patstore: await withImages({ Article: [article] }),
-    };
+    const images = await getCollection("Image");
+    const imageUrl = images.find((image) => image.objectId === article.image)?.url;
+
+    return { article, imageUrl };
   });

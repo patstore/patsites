@@ -1,6 +1,6 @@
+import { useMemo } from "react";
 import { CmsBody, Layout } from "@components";
-import { useFindImages } from "@provider";
-import type { PatstorePerson } from "@types";
+import { useCollection, useFindImages } from "@provider";
 import styles from "./Team.module.css";
 
 const initials = (name: string | null | undefined) =>
@@ -11,8 +11,13 @@ const initials = (name: string | null | undefined) =>
     .map((part) => part[0]?.toUpperCase() ?? "")
     .join("");
 
-const Team = ({ persons }: { persons: PatstorePerson[] }) => {
+const Team = () => {
+  const { items } = useCollection("Person");
   const { findImageUrl } = useFindImages();
+  const persons = useMemo(
+    () => [...items].sort((a, b) => (a.label ?? "").localeCompare(b.label ?? "", "de")),
+    [items],
+  );
 
   return (
     <Layout>
@@ -29,7 +34,7 @@ const Team = ({ persons }: { persons: PatstorePerson[] }) => {
         <ul className={styles.grid}>
           {persons.map((person) => {
             const portrait = findImageUrl(person.image);
-            const name = person.title || "Hebamme";
+            const name = person.label || "Hebamme";
             return (
               <li key={person.objectId} className={styles.card}>
                 {portrait ? (
@@ -40,7 +45,6 @@ const Team = ({ persons }: { persons: PatstorePerson[] }) => {
                   </div>
                 )}
                 <h2>{name}</h2>
-                {person.text ? <p>{person.text.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim()}</p> : null}
                 {person.email ? (
                   <a className={styles.mail} href={`mailto:${person.email}`}>
                     {person.email}

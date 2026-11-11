@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { rewriteLegacySiteLinks } from "./codegen.ts";
+import { renderPublicContent, rewriteLegacySiteLinks } from "./codegen.ts";
+import type { PatStoreModule } from "./types.ts";
 
 test("older article links use the public site domain", () => {
   const snapshot = {
@@ -26,4 +27,26 @@ test("older article links use the public site domain", () => {
     ],
     note: "https://koloproktologie.org/aktivitaeten stays",
   });
+});
+
+test("the live collection route is limited to snapshot classes", () => {
+  const module = (className: string): PatStoreModule => ({
+    objectId: className,
+    name: className,
+    connected_class: className,
+    fields: [],
+    data_fields: [],
+  });
+  const source = renderPublicContent([
+    module("Event"),
+    module("Event"),
+    module("Person"),
+    module("User"),
+    module("Email"),
+  ]);
+
+  assert.match(source, /export const publicClassNames = \["Event","Person"\] as const/);
+  assert.match(source, /Event: EventClass\[\]/);
+  assert.match(source, /mode: "ssr", states: null/);
+  assert.doesNotMatch(source, /"Event","Event"/);
 });

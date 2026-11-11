@@ -1,17 +1,14 @@
 /// <reference types="vite/client" />
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import { HeadContent, Outlet, Scripts, createRootRoute, useRouterState } from "@tanstack/react-router";
 import { PageTransition, SmoothScroll, type ScrollOrientation } from "@repo/core";
-import { getSiteData } from "@functions/site.functions";
 import { Framework, seo } from "@components";
-import { PatstoreScope, SiteContextProvider } from "@provider";
+import { SiteContextProvider } from "@provider";
 import globalCss from "../styles/global.css?url";
 import "@repo/core/scroll.css";
 import { pageFade, routeTransitions } from "./-shell";
 
 export const Route = createRootRoute({
-  loader: () => getSiteData(),
-  staleTime: 5 * 60_000,
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -54,30 +51,27 @@ function readOrientation(
 }
 
 function RootComponent() {
-  const { patstore } = Route.useLoaderData();
   const pathname = useRouterState({ select: (state) => state.location.pathname });
   const orientation = useRouterState({
     select: (state) => readOrientation(state.matches),
   });
 
-  console.log("patstore", patstore);
-
   return (
     <SiteContextProvider>
-      <PatstoreScope data={patstore}>
-        <SmoothScroll orientation={orientation}>
-          <Framework>
-            <PageTransition
-              pathname={pathname}
-              transitions={routeTransitions}
-              clonePrevious={false}
-              fallback={pageFade}
-            >
+      <SmoothScroll orientation={orientation}>
+        <Framework>
+          <PageTransition
+            pathname={pathname}
+            transitions={routeTransitions}
+            clonePrevious={false}
+            fallback={pageFade}
+          >
+            <Suspense fallback={null}>
               <Outlet />
-            </PageTransition>
-          </Framework>
-        </SmoothScroll>
-      </PatstoreScope>
+            </Suspense>
+          </PageTransition>
+        </Framework>
+      </SmoothScroll>
     </SiteContextProvider>
   );
 }

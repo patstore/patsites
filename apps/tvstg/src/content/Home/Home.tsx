@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Layout, StreamedSidebar } from "@components";
+import { Layout, Sidebar } from "@components";
 import { useCollection } from "@provider";
 import {
   mainContainer,
@@ -9,13 +9,12 @@ import {
 } from "@styles";
 import { BlogElement, FlexBox, Image, Sponsors, SportBanner } from "@ui";
 import settings from "@settings";
-import type { PatstoreData } from "@types";
 import shopTeaser from "./images/marketing-teaser-970x250.jpg";
 
 export const HOME_SIDEBAR_CATEGORY = "1cU4dGw1Mu";
 export const HOME_ARTICLE_COUNT = 5;
 
-const Home: React.FC<{ sidebar: Promise<PatstoreData> }> = ({ sidebar }) => {
+const Home: React.FC = () => {
   const { items: articles } = useCollection("Article");
 
   const blogArray = useMemo(
@@ -87,8 +86,7 @@ const Home: React.FC<{ sidebar: Promise<PatstoreData> }> = ({ sidebar }) => {
               </div>
             </div>
             <div css={sidebarContainer}>
-              <StreamedSidebar
-                data={sidebar}
+              <Sidebar
                 category={HOME_SIDEBAR_CATEGORY}
                 showCalendar
                 showNews

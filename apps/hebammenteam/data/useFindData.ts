@@ -2,12 +2,13 @@
 import { useMemo } from "react";
 import buildTimeData from "./build-time-data.json";
 import { filterByStates, readSnapshotRecords, type DataContext } from "@repo/server";
-import type { BuildTimeData, FormClass, EventClass, PersonClass } from "./types";
+import type { BuildTimeData, ImageClass, FormClass, EventClass, PersonClass } from "./types";
 
 export function useFindData() {
   const typedData = buildTimeData as BuildTimeData;
 
   return useMemo(() => {
+    function findByClassName(className: "images", states?: DataContext["states"]): ImageClass[];
     function findByClassName(className: "forms", states?: DataContext["states"]): FormClass[];
     function findByClassName(className: "events", states?: DataContext["states"]): EventClass[];
     function findByClassName(className: "persons", states?: DataContext["states"]): PersonClass[];
@@ -17,7 +18,7 @@ export function useFindData() {
       return filterByStates(rows, states ?? null);
     }
 
-    function findByObjectId<T = FormClass | EventClass | PersonClass>(
+    function findByObjectId<T = ImageClass | FormClass | EventClass | PersonClass>(
       objectId: string,
     ): T | null {
       for (const [key, value] of Object.entries(typedData)) {

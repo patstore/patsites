@@ -14,12 +14,12 @@ const ReactPaginate =
   ReactPaginateModule;
 
 const ALL = { label: "Alle", value: "alle" };
+const ARTICLES_PER_PAGE = 18;
 
 type BerichteProps = {
   kategorie?: string;
   /** 1-based page number. */
   seite: number;
-  pageCount: number;
   onCategoryChange: (kategorie: string | undefined) => void;
   onPageChange: (seite: number) => void;
   pageHref: (seite: number) => string;
@@ -28,13 +28,21 @@ type BerichteProps = {
 const Berichte: React.FC<BerichteProps> = ({
   kategorie,
   seite,
-  pageCount,
   onCategoryChange,
   onPageChange,
   pageHref,
 }) => {
   const { items: articles } = useCollection("Article");
   const { items: categorys } = useCollection("Category");
+  const visible = useMemo(() => {
+    return articles
+      .filter((article) => !kategorie || article.categories?.includes(kategorie))
+      .sort(
+        (a, b) => new Date(b.date || "").getTime() - new Date(a.date || "").getTime(),
+      );
+  }, [articles, kategorie]);
+  const pageCount = Math.max(1, Math.ceil(visible.length / ARTICLES_PER_PAGE));
+  const pageArticles = visible.slice((seite - 1) * ARTICLES_PER_PAGE, seite * ARTICLES_PER_PAGE);
 
   const buttons = useMemo(
     () => [
@@ -82,8 +90,8 @@ const Berichte: React.FC<BerichteProps> = ({
               align="stretch"
               gap={settings.sizes.medium}
             >
-              {articles.length > 0 ? (
-                articles.map((value) => (
+              {pageArticles.length > 0 ? (
+                pageArticles.map((value) => (
                   <BlogElement
                     type="tile"
                     image={value.image}

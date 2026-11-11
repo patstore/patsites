@@ -1,32 +1,23 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { getCoursePage } from "@functions/pages.functions";
-import { excerpt, seo } from "@components";
-import { PatstoreScope } from "@provider";
+import { seo } from "@components";
+import { courseSlug, useCollection } from "@provider";
 import Course from "../../content/Course/Course";
 
 export const Route = createFileRoute("/kurse/$kurs_id")({
-  loader: async ({ params }) => {
-    const result = await getCoursePage({ data: { kursId: params.kurs_id } });
-    if (!result) {
-      throw notFound();
-    }
-    return result;
-  },
-  head: ({ loaderData }) => ({
-    meta: seo({
-      title: loaderData?.course.title ?? "Seite nicht gefunden",
-      description: excerpt(loaderData?.course.subtitle || loaderData?.course.text),
-    }),
+  head: () => ({
+    meta: seo({ title: "Kurs" }),
   }),
   component: CoursePage,
 });
 
 function CoursePage() {
-  const { course, patstore } = Route.useLoaderData();
-
-  return (
-    <PatstoreScope data={patstore}>
-      <Course course={course} />
-    </PatstoreScope>
+  const { kurs_id } = Route.useParams();
+  const { items } = useCollection("Webpage");
+  const course = items.find(
+    (page) => courseSlug(page.path) === kurs_id || page.objectId === kurs_id,
   );
+  if (!course) {
+    throw notFound();
+  }
+  return <Course course={course} />;
 }

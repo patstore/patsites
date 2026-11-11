@@ -1,26 +1,17 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { getSportCategory, getTrainingData } from "@functions/sport.functions";
-import { deferSidebarData } from "@functions/site.functions";
+import { getSportCategory } from "@functions/sport.functions";
 import { seo } from "@components";
-import { PatstoreScope } from "@provider";
 import SportTemplate from "../../../content/SportTemplate/SportTemplate";
 
 export const Route = createFileRoute("/sportarten/$fachbereich/$sportart")({
   loader: async ({ params }) => {
-    const [category, training] = await Promise.all([
-      getSportCategory({
-        data: { fachbereich: params.fachbereich, sportart: params.sportart },
-      }),
-      getTrainingData(),
-    ]);
+    const category = await getSportCategory({
+      data: { fachbereich: params.fachbereich, sportart: params.sportart },
+    });
     if (!category?.sportart) {
       throw notFound();
     }
-    return {
-      sportart: category.sportart,
-      patstore: { ...training, ...category.patstore },
-      sidebar: deferSidebarData({ category: category.sportart.objectId }),
-    };
+    return { sportart: category.sportart };
   },
   head: ({ loaderData }) => ({
     meta: seo({
@@ -32,11 +23,7 @@ export const Route = createFileRoute("/sportarten/$fachbereich/$sportart")({
 });
 
 function SportartPage() {
-  const { sportart, patstore, sidebar } = Route.useLoaderData();
+  const { sportart } = Route.useLoaderData();
 
-  return (
-    <PatstoreScope data={patstore}>
-      <SportTemplate sport={sportart} sidebar={sidebar} />
-    </PatstoreScope>
-  );
+  return <SportTemplate sport={sportart} />;
 }

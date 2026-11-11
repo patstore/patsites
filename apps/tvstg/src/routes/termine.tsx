@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
-import { getAppointmentsByYear } from "@functions/pages.functions";
 import { seo } from "@components";
-import { PatstoreScope } from "@provider";
+import { getBerlinDateParts } from "@provider";
 import Termine from "../content/Termine/Termine";
 
 const termineSearchSchema = z.object({
@@ -12,7 +11,10 @@ const termineSearchSchema = z.object({
 export const Route = createFileRoute("/termine")({
   validateSearch: termineSearchSchema,
   loaderDeps: ({ search }) => ({ jahr: search.jahr }),
-  loader: ({ deps }) => getAppointmentsByYear({ data: { jahr: deps.jahr } }),
+  loader: ({ deps }) => {
+    const currentYear = getBerlinDateParts(Date.now()).year;
+    return { jahr: deps.jahr ?? currentYear, currentYear };
+  },
   head: ({ loaderData }) => ({
     meta: seo({
       title:
@@ -27,21 +29,19 @@ export const Route = createFileRoute("/termine")({
 });
 
 function TerminePage() {
-  const { jahr, currentYear, patstore } = Route.useLoaderData();
+  const { jahr, currentYear } = Route.useLoaderData();
   const navigate = Route.useNavigate();
 
   return (
-    <PatstoreScope data={patstore}>
-      <Termine
-        jahr={jahr}
-        currentYear={currentYear}
-        onYearChange={(nextYear) =>
-          navigate({
-            search: { jahr: nextYear === currentYear ? undefined : nextYear },
-            resetScroll: false,
-          })
-        }
-      />
-    </PatstoreScope>
+    <Termine
+      jahr={jahr}
+      currentYear={currentYear}
+      onYearChange={(nextYear) =>
+        navigate({
+          search: { jahr: nextYear === currentYear ? undefined : nextYear },
+          resetScroll: false,
+        })
+      }
+    />
   );
 }
