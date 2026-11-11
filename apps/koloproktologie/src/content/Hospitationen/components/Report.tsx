@@ -19,10 +19,8 @@ const Report: React.FC<ReportProps> = ({
     const { findImageUrl } = useGetImages();
     const { find: findDownload } = useCollection<DownloadClass>("Download");
 
-console.log(title)
     const downloadDocuments = documents?.map((document) => findDownload(document));
 
-console.log(downloadDocuments);
     return (
         <div
             css={{

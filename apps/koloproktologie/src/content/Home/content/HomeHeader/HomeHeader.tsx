@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Calendar, MapPin, Monitor, ArrowUpRight } from 'lucide-react'
-import { homeHeaderContainer, homeHeaderContent, homeHeaderCopy, homeHeaderFact, homeHeaderFacts, homeHeaderLink, homeHeaderMedia, homeHeaderMediaImage, homeHeaderWatermark, loaderContainer } from './styles'
+import { homeHeaderContainer, homeHeaderContent, homeHeaderCopy, homeHeaderFact, homeHeaderFacts, homeHeaderHero, homeHeaderLink, homeHeaderMedia, homeHeaderMediaImage, homeHeaderPlakat, homeHeaderWatermark, loaderContainer } from './styles'
 import HomeHeaderTrack from './components/HomeHeaderTrack'
 import { AnimatePresence, motion } from 'motion/react'
 import { homeHeaderMediaVariants, homeHeaderStaggerVariants, homeHeaderVariants } from './constants/variants'
 import saveTheDate from './images/main_header.jpg'
-import kongressPlakat from './images/kongress_center.png'
+import kongressCenter from './images/kongress_center.png'
+import kongressPlakat from './images/kongressplakat.png'
 import dgkLogo from './images/dgk-logo.png'
 import { topline } from '@styles'
 import { Button } from '@ui'
@@ -32,7 +33,7 @@ const slides = [
         topline: 'Programm',
         title: 'Impulse. Perspektiven. Ein gemeinsames Programm.',
         text: 'Der Call for Abstracts ist abgeschlossen. Herzlichen Dank an alle, die mit ihren wissenschaftlichen Beiträgen das Programm aktiv mitgestalten.',
-        image: kongressPlakat,
+        image: kongressCenter,
         imageAlt: 'Kongress am Park in Augsburg am Abend, Veranstaltungsort des Koloproktologen-Kongresses 2027',
         imageFit: 'cover' as const,
         imagePosition: 'center 82%',
@@ -54,6 +55,7 @@ const HomeHeader = () => {
 
     return (
         <div css={homeHeaderContainer()}>
+            {/* <div css={homeHeaderHero}>
             <div
                 css={homeHeaderWatermark}
                 style={{
@@ -130,6 +132,12 @@ const HomeHeader = () => {
                     </motion.div>
                 </AnimatePresence>
             </div>
+            </div> */}
+            <img
+                css={homeHeaderPlakat}
+                src={kongressPlakat}
+                alt="Programmankündigung des 53. Deutschen Koloproktologen-Kongresses 2027 in Augsburg"
+            />
         </div>
     )
 }

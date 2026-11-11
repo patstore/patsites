@@ -34,8 +34,6 @@ const Hospitationen: React.FC = () => {
         });
     };
 
-    console.log("articles", espcArticles)
-
     return (
         <Layout>
             <HeadContent

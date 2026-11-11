@@ -3,19 +3,36 @@ import settings from "@settings";
 export const homeHeaderContainer = () =>
     settings.mq({
         width: "100%",
-        height: ["auto", "auto", "640px"],
-        overflow: "hidden",
-        paddingTop: ["36px", "48px", "60px"],
-        paddingBottom: ["72px", "72px", "48px"],
+        height: "auto",
+        overflow: "visible",
+        paddingTop: ["0"],
+        paddingBottom: ["36px", "48px", "48px"],
         paddingLeft: ["18px", "24px", "0"],
         paddingRight: ["18px", "24px", "0"],
         position: "relative",
     });
 
-export const homeHeaderWatermark = {
+export const homeHeaderHero = settings.mq({
+    position: "relative",
+    height: ["auto", "auto", "640px"],
+    overflow: "hidden",
+});
+
+export const homeHeaderPlakat = settings.mq({
+    display: "block",
+    width: "100%",
+    maxWidth: ["100%", "100%", "960px"],
+    height: "auto",
+    margin: ["0 auto 0", "0 auto 0", "0 auto 0"],
+    objectFit: "contain",
+    objectPosition: "center",
+    borderRadius: settings.borderRadius.large,
+});
+
+export const homeHeaderWatermark = settings.mq({
     position: "absolute" as const,
     top: "-6%",
-    right: "-2%",
+    right: ["-2%", "-2%", "8%"],
     width: "min(460px, 42vw)",
     aspectRatio: "1",
     backgroundColor: settings.colors.primary,
@@ -29,7 +46,7 @@ export const homeHeaderWatermark = {
     maskSize: "contain",
     WebkitMaskPosition: "center",
     maskPosition: "center",
-};
+});
 
 export const homeHeaderContent = settings.mq({
         width: "100%",
