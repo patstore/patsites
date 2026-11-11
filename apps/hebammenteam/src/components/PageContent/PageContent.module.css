@@ -1,0 +1,23 @@
+.body {
+  display: grid;
+  gap: 1rem;
+}
+
+.body :global(p) {
+  margin: 0;
+}
+
+.body :global(h2),
+.body :global(h3) {
+  margin: 0.5rem 0 0;
+}
+
+.figure {
+  margin: 0;
+}
+
+.figure img {
+  display: block;
+  width: min(100%, 40rem);
+  border-radius: 1rem;
+}

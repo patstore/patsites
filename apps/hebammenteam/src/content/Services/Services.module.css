@@ -1,0 +1,46 @@
+.header {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+.title,
+.lead {
+  margin: 0;
+}
+
+.lead {
+  color: var(--color-muted);
+}
+
+.list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.15rem 1.25rem;
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface);
+  border-radius: 0 1rem 1rem 0;
+}
+
+.item h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.item p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.cms {
+  margin-top: 2rem;
+}

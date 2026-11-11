@@ -1,0 +1,25 @@
+.back {
+  display: inline-flex;
+  margin-bottom: 1.25rem;
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--color-accent-dark);
+}
+
+.header {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 42rem;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  margin: 0;
+}
+
+.body {
+  max-width: 42rem;
+}

@@ -8,6 +8,7 @@
     "dev:koloproktologie": "turbo dev --filter=koloproktologie",
     "dev:coloproktologen": "turbo dev --filter=coloproktologen",
     "dev:tvstg": "turbo dev --filter=tvstg",
+    "dev:hebammenteam": "turbo dev --filter=hebammenteam",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types"

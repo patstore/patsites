@@ -1,0 +1,25 @@
+.header {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 42rem;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  margin: 0;
+}
+
+.prose {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 42rem;
+}
+
+.prose h2 {
+  margin: 0.8rem 0 0;
+  font-size: 1.25rem;
+}
+
+.prose p {
+  margin: 0;
+}
