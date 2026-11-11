@@ -18,7 +18,7 @@ import CancerContent from "./components/CancerContent";
 import OpenAccess from "./components/OpenAccess";
 import HeadBanner from "./components/HeadBanner";
 import { homeHeaderTextContent } from "./styles";
-import {HomeHeader} from "./content";
+import { HeaderMartina } from "./content";
 
 
 const Home: React.FC = () => {
@@ -27,7 +27,7 @@ const Home: React.FC = () => {
             {/* <PreviewWrapper preview={env.VITE_PREVIEW_MODE === "true"}>
                 <HomeHeader />
             </PreviewWrapper> */}
-             {env.previewMode === "true" ? <HomeHeader /> : (
+             {env.previewMode === "true" ? <HeaderMartina /> : (
              <HeadContent
                 title="Deutsche Gesellschaft für Koloproktologie"
                 content={
