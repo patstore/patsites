@@ -136,7 +136,7 @@ const Team = () => {
 
   return (
     <Layout>
-      <PageHeader eyebrow="Praxis" title="Team" lead="Die Hebammen, die Sie begleiten." />
+      <PageHeader eyebrow="Praxis" title="Das sind wir." lead="Die Hebammen, die Sie begleiten." />
       <div className="page-body">
         <div className={styles.cms}>
           <CmsBody path="/team" />

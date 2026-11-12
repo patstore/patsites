@@ -64,12 +64,13 @@ export interface FormClass {
   createdAt?: string;
   updatedAt?: string;
   categories?: string[] | null;
+  title: string | null;
   text?: string | null;
-  label?: string | null;
-  date?: string | null;
   state?: string | null;
-  form_fields?: any | null;
   gallery?: string[] | null;
+  date?: any | null;
+  label?: string | null;
+  form_fields?: any | null;
 }
 
 export interface EventClass {

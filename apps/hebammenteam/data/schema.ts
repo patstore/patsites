@@ -49,12 +49,13 @@ export const formSchema = z.looseObject({
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
   categories: z.array(z.string()).nullable().optional(),
+  title: z.string().nullable(),
   text: z.string().nullable().optional(),
-  label: z.string().nullable().optional(),
-  date: z.string().nullable().optional(),
   state: z.string().nullable().optional(),
-  form_fields: z.any().nullable().optional(),
   gallery: z.array(z.string()).nullable().optional(),
+  date: z.any().nullable().optional(),
+  label: z.string().nullable().optional(),
+  form_fields: z.any().nullable().optional(),
 });
 
 export const eventSchema = z.looseObject({

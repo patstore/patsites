@@ -2,17 +2,17 @@
 @import url("./typography.css");
 
 :root {
-  --color-ink: #24312c;
+  --color-ink: #000;
   --color-muted: #5c6b64;
-  --color-surface: #FAF0E1;
+  --color-surface: #f2d688;
   --color-bg: #fffdf9;
   --color-accent: #2f6f62;
-  --color-accent-dark: #243E36;
-  --color-accent-soft: #959bb9;
+  --color-accent-dark: #272727;
+  --color-accent-soft: #e5f0ec;
   --color-line: #e4ddd3;
   --color-sand: #f3e6d4;
   --color-dark: #393126;
-  --font-heading: "Cormorant Garamond", serif;
+  --font-heading: "Amiri", serif;
   --font: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --header-height: 4.75rem;
   --page-width: 1240px;
@@ -110,7 +110,7 @@ section {
 }
 
 button {
-  background-color: var(--color-accent);
+  background-color: var(--color-dark);
   color: white;
   border: none;
   padding: 8px 16px;
