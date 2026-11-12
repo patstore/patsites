@@ -23,8 +23,11 @@ export const entrySchema = z.looseObject({
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
   categories: z.array(z.string()).nullable().optional(),
-  title: z.string().nullable().optional(),
+  title: z.string().nullable(),
+  description: z.string().nullable().optional(),
+  text: z.string().nullable().optional(),
   state: z.string().nullable().optional(),
+  slug: z.string().nullable().optional(),
 });
 
 export const imageSchema = z.looseObject({
@@ -84,6 +87,7 @@ export const personSchema = z.looseObject({
   email: z.string().nullable().optional(),
   gallery: z.array(z.string()).nullable().optional(),
   date: z.any().nullable().optional(),
+  slug: z.string().nullable().optional(),
   label: z.string().nullable().optional(),
   data: z.object({
     telefon: z.string().nullable().optional(),

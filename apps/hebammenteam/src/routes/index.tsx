@@ -3,6 +3,6 @@ import { seo } from "@components";
 import Home from "../content/Home/Home";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: seo({ title: "Start" }) }),
+  head: () => ({ meta: seo() }),
   component: Home,
 });

@@ -7,15 +7,24 @@ const PageHeader = ({
   lead,
   children,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: ReactNode;
   lead?: ReactNode;
   children?: ReactNode;
 }) => (
   <header className="hero">
     <div className={`${styles.inner} content flex column al-ce gap-md`}>
-      <p className="eyebrow">{eyebrow}</p>
-      <h1>{title}</h1>
+      {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
+      <h1 className={styles.title}>
+        {title}
+        <img
+          className={styles.flower}
+          src="/logo_coming_home.webp"
+          alt=""
+          width={36}
+          height={36}
+        />
+      </h1>
       {lead ? <p className="lead">{lead}</p> : null}
       {children}
     </div>

@@ -2,7 +2,6 @@ import { PageHeader } from "@components";
 
 const Header = () => (
   <PageHeader
-    eyebrow="Hebammen-Team"
     title={
       <>
         Ankommen.

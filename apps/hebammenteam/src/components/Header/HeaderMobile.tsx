@@ -42,6 +42,13 @@ const HeaderMobile = () => {
         <span className={styles.eyebrow}>Praxis</span>
         <span className={styles.brandName}>Hebammen-Team</span>
       </Link>
+      <img
+        className={styles.logo}
+        src="/logo_coming_home.webp"
+        alt="Coming Home"
+        width={40}
+        height={40}
+      />
       <button
         type="button"
         className={menuOpen ? `${styles.burger} ${styles.open}` : styles.burger}

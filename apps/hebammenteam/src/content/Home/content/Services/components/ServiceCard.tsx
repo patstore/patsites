@@ -75,8 +75,13 @@ const ServiceCard = ({
         <button
           type="button"
           className={styles.cardArrow}
-          aria-label={`${title}: zu den Leistungen`}
-          onClick={() => navigate({ to: "/leistungen" })}
+          aria-label={`${title}: zur Leistung`}
+          onClick={() =>
+            navigate({
+              to: "/leistungen",
+              ...(service.slug ? { hash: service.slug } : {}),
+            })
+          }
         >
           <ArrowIcon />
         </button>

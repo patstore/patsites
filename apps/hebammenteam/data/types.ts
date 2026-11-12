@@ -38,8 +38,11 @@ export interface EntryClass {
   createdAt?: string;
   updatedAt?: string;
   categories?: string[] | null;
-  title?: string | null;
+  title: string | null;
+  description?: string | null;
+  text?: string | null;
   state?: string | null;
+  slug?: string | null;
 }
 
 export interface ImageClass {
@@ -99,6 +102,7 @@ export interface PersonClass {
   email?: string | null;
   gallery?: string[] | null;
   date?: any | null;
+  slug?: string | null;
   label?: string | null;
   data?: {
     telefon?: string | null;

@@ -71,6 +71,10 @@
   letter-spacing: -0.03em;
 }
 
+.logo {
+  display: none;
+}
+
 .menu,
 .legal {
   display: grid;
@@ -113,12 +117,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: min(var(--page-width), calc(100% - 5.5rem));
+    width: min(var(--page-width), calc(100% - 8.25rem));
     height: 100%;
     margin-left: 1.25rem;
     color: var(--color-ink);
     text-decoration: none;
     line-height: 1.1;
+  }
+
+  .logo {
+    position: fixed;
+    top: 1.2rem;
+    right: 4.15rem;
+    z-index: 30;
+    display: block;
+    width: 2.15rem;
+    height: auto;
   }
 
   .brandBar .eyebrow {

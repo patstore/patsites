@@ -156,7 +156,6 @@ const CourseForm = ({ event }: { event: EventClass }) => {
   const textField = (
     name: TextName,
     label: string,
-    column: "left" | "right",
     options?: { type?: string; autoComplete?: string; required?: boolean },
   ) => (
     <form.Field
@@ -170,7 +169,7 @@ const CourseForm = ({ event }: { event: EventClass }) => {
       }
     >
       {(field) => (
-        <label className={`${styles.field} ${styles[column]}`}>
+        <label className={styles.field}>
           <span>{label}</span>
           <input
             id={field.name}
@@ -227,14 +226,6 @@ const CourseForm = ({ event }: { event: EventClass }) => {
             void form.handleSubmit();
           }}
         >
-          {textField("nachname", "Nachname", "left", { autoComplete: "family-name", required: true })}
-          {textField("vorname", "Vorname", "left", { autoComplete: "given-name", required: true })}
-          {textField("geburtsdatum", "Geburtsdatum", "left", { type: "date", autoComplete: "bday" })}
-          {textField("strasse", "Straße", "left", { autoComplete: "street-address" })}
-          {textField("plzOrt", "PLZ / Ort", "left", { autoComplete: "postal-code" })}
-          {textField("telefon", "Telefon-Nr.", "left", { type: "tel", autoComplete: "tel" })}
-          {textField("mobil", "Mobil", "left", { type: "tel", autoComplete: "tel" })}
-          {textField("email", "E-Mail", "left", { type: "email", autoComplete: "email", required: true })}
           <form.Field
             name="kursbeginn"
             validators={{
@@ -243,7 +234,7 @@ const CourseForm = ({ event }: { event: EventClass }) => {
             }}
           >
             {(field) => (
-              <label className={`${styles.field} ${styles.right}`}>
+              <label className={`${styles.field} ${styles.full}`}>
                 <span>Kursbeginn am / Uhrzeit</span>
                 <select
                   id={field.name}
@@ -272,12 +263,20 @@ const CourseForm = ({ event }: { event: EventClass }) => {
               </label>
             )}
           </form.Field>
-          {textField("krankenversicherung", "Krankenvers.", "right")}
-          {textField("kassenNr", "Kassen-Nr.", "right")}
-          {textField("versNr", "Vers.-Nr.", "right")}
-          {textField("partnerName", "Name des Partners / der Partnerin", "right")}
-          {textField("kind", "Wievieltes Kind?", "right")}
-          {textField("geburtstermin", "Voraussichtlicher Geburtstermin", "right", { type: "date" })}
+          {textField("vorname", "Vorname", { autoComplete: "given-name", required: true })}
+          {textField("nachname", "Nachname", { autoComplete: "family-name", required: true })}
+          {textField("geburtsdatum", "Geburtsdatum", { type: "date", autoComplete: "bday" })}
+          {textField("strasse", "Straße", { autoComplete: "street-address" })}
+          {textField("plzOrt", "PLZ / Ort", { autoComplete: "postal-code" })}
+          {textField("telefon", "Telefon-Nr.", { type: "tel", autoComplete: "tel" })}
+          {textField("mobil", "Mobil", { type: "tel", autoComplete: "tel" })}
+          {textField("email", "E-Mail", { type: "email", autoComplete: "email", required: true })}
+          {textField("krankenversicherung", "Krankenvers.")}
+          {textField("kassenNr", "Kassen-Nr.")}
+          {textField("versNr", "Vers.-Nr.")}
+          {textField("partnerName", "Name des Partners / der Partnerin")}
+          {textField("kind", "Wievieltes Kind?")}
+          {textField("geburtstermin", "Voraussichtlicher Geburtstermin", { type: "date" })}
           <form.Field
             name="privacy"
             validators={{

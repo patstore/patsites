@@ -2,7 +2,7 @@ import { ReactNode, useMemo, useContext, createContext, useState } from "react";
 import { SiteContext as SiteContextDefaultProps } from "./types";
 
 const defaultContext: SiteContextDefaultProps = {
-  siteTitle: "Hebammen-Team",
+  siteTitle: "Coming Home",
   siteDescription: "Begleitung in Schwangerschaft, Geburt und Wochenbett.",
   contactOpen: false,
   setContactOpen: () => false,
@@ -14,7 +14,7 @@ export const SiteContextProvider = ({ children }: { children: ReactNode }) => {
   const [contactOpen, setContactOpen] = useState(false);
   const siteContext: SiteContextDefaultProps = useMemo(
     () => ({
-      siteTitle: "Hebammen-Team",
+      siteTitle: "Coming Home",
       siteDescription: "Begleitung in Schwangerschaft, Geburt und Wochenbett.",
       contactOpen,
       setContactOpen,

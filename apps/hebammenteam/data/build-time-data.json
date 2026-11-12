@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-11T17:28:39.878Z",
+    "generatedAt": "2026-11-12T08:15:17.014Z",
     "projectId": "RlOdP8FOCV",
     "moduleCount": 6,
     "states": null,
@@ -215,7 +215,7 @@
         {
           "id": "title",
           "label": "Titel",
-          "required": false,
+          "required": true,
           "type": "edit_string",
           "active": true,
           "position": 1
@@ -241,7 +241,7 @@
           "label": "Beschreibung",
           "required": false,
           "type": "edit_textfield",
-          "active": false,
+          "active": true,
           "position": 2
         },
         {
@@ -249,7 +249,7 @@
           "label": "Text",
           "required": false,
           "type": "texteditor",
-          "active": false,
+          "active": true,
           "position": 3
         },
         {
@@ -369,7 +369,7 @@
           "label": "Slug",
           "required": false,
           "type": "string",
-          "active": false,
+          "active": true,
           "position": 20
         },
         {
@@ -953,7 +953,7 @@
           "label": "Slug",
           "required": false,
           "type": "string",
-          "active": false,
+          "active": true,
           "position": 20
         },
         {
@@ -1040,7 +1040,10 @@
         "04ONFOOVdp"
       ],
       "title": "Reiki",
-      "state": "published"
+      "description": null,
+      "text": "<p>Ki:‭ ‬die Kraft zum Heilen von Körper und Geist. Rei:‭ ‬vom Himmel herab kommt der Regen mit lebensspendender Energie,‭ ‬die sich aus drei Teilen zusammensetzt:‭ ‬Licht,‭ ‬Liebe und‭ ‬Weisheit‭ (‬wörtliche Übersetzung‭)‬. Reiki ist eine aus Japan stammende Heilmethode,‭ ‬bei der über die Hände des Behandlers Reiki-Energie zum Empfangenden fließt.‭ ‬Eine Reiki-Behandlung ist wohltuend und unterstützt die eigene körperliche,‭ ‬geistige und psychische Gesundheit.</p>",
+      "state": "published",
+      "slug": "reiki"
     },
     {
       "id": "RW50cnk6U2laWkFtbmljdg==",
@@ -1049,7 +1052,10 @@
         "04ONFOOVdp"
       ],
       "title": "Akupunktur",
-      "state": "published"
+      "description": null,
+      "text": "<p>Die Akupunktur ist eine jahrtausendalte östliche Heilmethode.‭ ‬Mit Hilfe dünner Nadeln werden auf den Meridianen‭ (‬Energiebahnen des Körpers‭) ‬ausgewählte Punkte aktiviert.‭ ‬So ist es möglich, ‬Schwangerschaftsbeschwerden zu lindern.‭ ‬Bei Übelkeit, Ischialgie‭ (‬Ischiasnervreizung‭)‬,‭ ‬Wassereinlagerung oder Karpaltunnelsyndrom‭ (‬Kribbeln der Hände‭) ‬kann oft mit Akupunktur Abhilfe geschaffen werden.‭ ‬Die Akupunktur lässt sich mit anderen Behandlungsformen kombinieren und ist für Schwangere eine gute Alternative.</p>",
+      "state": "published",
+      "slug": "akupunktur"
     },
     {
       "id": "RW50cnk6c3haZ2t2Z2tMcQ==",
@@ -1058,7 +1064,10 @@
         "04ONFOOVdp"
       ],
       "title": "Homöopathie",
-      "state": "published"
+      "description": null,
+      "text": "<p>Die ganzheitliche,‭ ‬homöopathische Medizin beachtet seelische und körperliche Prozesse in gleicher Weise.‭ ‬Gerade deshalb wird sie vor allem von Frauen sehr geschätzt.‭ Während Schwangerschaft, Geburt und Wochenbett bietet sie eine gute Unterstützungsmöglichkeit für Mutter und Kind.</p>",
+      "state": "published",
+      "slug": "homoopathie"
     },
     {
       "id": "RW50cnk6R2JJRTg3ejBtMw==",
@@ -1068,7 +1077,10 @@
         "HGU9ZoGvhW"
       ],
       "title": "Stillberatung",
-      "state": "published"
+      "description": null,
+      "text": "<p>Auch nach Ablauf des regulären Wochenbetts (8Wochen), kann es in der Stillzeit zu Stillproblemen oder neuen Fragen kommen. Ob bei einem Milchstau oder wenn es um Themen wie Stillen und Beruf, Zufüttern oder Abstillen geht, haben Sie weiterhin Anspruch auf Hebammenversorgung. Mit Kompetenz und Erfahrung unterstützt die Hebamme Sie und fördert die Aufrechterhaltung einer liebevollen Stillbeziehung.</p>",
+      "state": "published",
+      "slug": "stillberatung"
     },
     {
       "id": "RW50cnk6MEFWcEZjOEhnZQ==",
@@ -1078,7 +1090,10 @@
         "HGU9ZoGvhW"
       ],
       "title": "Wochenbettbetreuung",
-      "state": "published"
+      "description": null,
+      "text": "<p>Mit dem Begriff Wochenbett ist die erste Zeit nach der Geburt gemeint; die Erholung nach dem Geburtserlebnis,‭ ‬das Kennenlernen des Kindes,‭ ‬die Anfänge des Stillens,‭ ‬das Ankommen im Elternsein. Kaum eine Zeit setzt so viele unterschiedliche und tief bewegende Gefühle in uns frei. Nach der Geburt ist die Hebamme da, um Sie in dieser intensiven Zeit zu begleiten.‭ ‬Sie achtet auf die mütterlichen Rückbildungsvorgänge, kümmert sich um die Wundversorgung, beobachtet das Trinkverhalten und Gedeihen des Kindes und versorgt den Nabel. Hier ist Raum für Fragen,‭ ‬für Ängste,‭ ‬für die Verarbeitung der Geburt,‭ ‬für geteilte Freude,‭ ‬für individuelle Zuwendung‭…‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬‬ Die Ungestörtheit zu Hause ist oft die beste Voraussetzung für ein entspanntes Wochenbett und ein erfolgreiches Stillen. Nach Absprache mit der weiterbetreuenden Hebamme ist es in vielen Fällen möglich, schon wenige Stunden nach der Geburt die Klinik zu verlassen und das Wochenbett im vertrauten Rahmen zu Hause zu beginnen (Ambulante Geburt).</p>",
+      "state": "published",
+      "slug": "wochenbettbetreuung"
     },
     {
       "id": "RW50cnk6ZnZFT3lxM05NeQ==",
@@ -1089,7 +1104,10 @@
         "04ONFOOVdp"
       ],
       "title": "Hilfe bei Beschwerden",
-      "state": "published"
+      "description": null,
+      "text": "<p>In einer Zeit, in der so Vieles neu ist und große Veränderungen stattfinden, ist es wichtig, dass sich jemand Zeit nimmt, gründlich zuzuhören und Sie darin unterstützt, einen eigenen Weg zu finden.</p>",
+      "state": "published",
+      "slug": "hilfe-bei-beschwerden"
     },
     {
       "id": "RW50cnk6NE5vcXhGRWYzYg==",
@@ -1100,7 +1118,10 @@
         "04ONFOOVdp"
       ],
       "title": "Schwangerenvorsorge",
-      "state": "published"
+      "description": null,
+      "text": "<p>Vorsorge bedeutet hier eine kompetente medizinische Versorgung durch eine Hebamme oder eine/n GynäkologIn in der Schwangerschaft. Die Untersuchungen werden durch die Mutterschaftsrichtlinien vorgegeben und die Ergebnisse im Mutterpass dokumentiert. Bis zur 32. Schwangerschaftswoche finden die Vorsorgeuntersuchungen alle 4 Wochen, danach alle 2 Wochen statt. Die Schwangere entscheidet, ob die Vorsorgen beim Arzt/ bei der Ärztin, bei der Hebamme oder im Wechsel stattfinden. Hebammenbetreuung kann ab der ersten Vorsorgeuntersuchung in Anspruch genommen werden. Ziel unserer Vorsorge ist es, ganzheitlich und individuell zu beraten, ohne voreilig zu intervenieren. Empfohlene Blutentnahmen und Abstriche werden von uns durchgeführt.</p><p><br></p>",
+      "state": "published",
+      "slug": "schwangerenvorsorge"
     }
   ],
   "images": [
@@ -1266,15 +1287,16 @@
       "id": "UGVyc29uOjA0T05GT09WZHA=",
       "objectId": "04ONFOOVdp",
       "categories": null,
-      "title": "Maria Katrin Hauber",
+      "title": "Maria Katrin Hauber ",
       "description": null,
-      "text": null,
+      "text": "<p>Hebammenarbeit bedeutet für mich, Frauen zu unterstützen mit ihrer eigenen Kraft, ihrer weiblichen Intuition und Körperweisheit in Kontakt zu treten, um die Schwangerschaft, die Geburt und die Zeit danach bewusster zu erleben. Es liegt mir sehr am Herzen, das Bewusstsein über diese besondere Zeit zu stärken und zu erweitern. Dabei ist sehr bedeutend, dem Kind bereits im Mutterleib als einzigartiges Wesen liebevoll und achtsam zu begegnen. Das Wunder der Entstehung eines neuen Menschen darf bestaunt, geliebt und unterstützt werden.</p><p>Die Berührung mit der Einzigartigkeit des Lebens zeigt sich besonders während der Geburt. Doch die Geburt beginnt nicht mit der ersten Wehe. Bereits in der Schwangerschaft geht es darum, eine innere Haltung und Einverständnis dem Leben und der Geburt gegenüber zu finden, um dann dem Geburtserlebnis möglichst natürlich und entspannt zu begegnen. Je natürlicher das Kind empfangen wird, je glücklicher kann es sich als Mensch in seinem Leben entfalten. Auch die individuelle Entfaltung der Mutter und der Familie darf hierbei einen besonderen Raum mit viel Achtsamkeit und Aufmerksamkeit erhalten. Es macht mir viel Freude das Verständnis und das Vertrauen in die Natürlichkeit der Geburt näher zu vermitteln, und dabei zu begleiten.</p><p>Seid 2019 liegt nach 20 Jahren Geburtsbegleitung mein Fokus nun in der Geburtsvorbereitung. So gründete ich zusammen mit der Doula Sharifa Genoveva unser holistisches Geburtsvorbereitungskonzept<strong> <em>\"Authentic Birth\"</em></strong></p><p>Denn in meinen Auslandsaufenthalten erwarb ich wertvolle Einblicke in die natürliche Geburtshilfe (…wie unter anderem in die Lotusgeburt). Bei meinen Reisen begleitete ich Schwangere, Gebärende und Geburtshelfer in Südamerika, Australien und Afrika. Durch diese intensiven Erfahrungen formte sich immer mehr das natürliche Verstehen der Individualität von Schwangerschaft und Geburt und die Bedeutung für das menschliche Leben. Mein Leben mit all seinen Höhen und Tiefen schenkte mir viele wichtige Erfahrungen durch die ich reifen durfte. Ich entdecke es in jedem Augenblick als ein großes Mysterium voller Bewegung und Kraft. Durch meine Selbsterfahrung mit Körperarbeit und Meditation gelingt es mir mehr und mehr in den Herausforderungen des Lebens zu sein und zu wirken.</p><p></p><p>Ich sehe es als meine Berufung den Weg eines neuen Erdenbürgers voller Liebe und Achtung zu begleiten, dass es seinen Platz beschützt und geborgen einnehmen kann und sich hier willkommen fühlt. Die Geburt ist eines der wichtigsten Ereignisse im Leben jedes Menschen. Es darf behutsam gestaltet und bereitet werden. Mit offenem Herzen, helfenden Händen und fürsorglicher Liebe bin ich gerne präsent.</p><p>Danke an alle, mit denen ich diesen Weg bis heute teilen durfte.</p>",
       "image": "vfejpSIPrZ",
       "state": "published",
       "email": null,
       "gallery": null,
       "date": null,
-      "label": "Maria Katrin Hauber",
+      "slug": "maria-katrin-hauber",
+      "label": "Maria Katrin Hauber ",
       "data": null
     },
     {
@@ -1283,12 +1305,13 @@
       "categories": null,
       "title": "Anna Maisha Paust",
       "description": null,
-      "text": null,
+      "text": "<p>Ich habe den Beruf der <strong>Hebamme</strong> durch meine eigenen Erfahrungen als Mutter kennen gelernt und die Ausbildung nach der Geburt meiner dritten Tochter an der Albert-Ludwig-Universitätsklinik in Freiburg im April 2013 abgeschlossen.</p><p>Ich arbeite mit viel Freude in der Begleitung von Schwangeren und ihren Familien vor und nach der Geburt.</p><p>Durch meine&nbsp;langjährige Erfahrung&nbsp;als Hebamme habe ich&nbsp;weit reichenden Einblick in&nbsp;den Prozess des Elternwerdens.&nbsp;Ich durfte so viele Familien begleiten und&nbsp;miterleben, mit wie viel Liebe, Kraft und Kreativität Familien&nbsp;wachsen. Ich habe großen Respekt vor dem ganz eigenen&nbsp;Instinkt um die eigene Heilung, im neu werden als Familie.</p><p>Der Prozess des Elternwerdens kann&nbsp;erfüllend sein, aber auch&nbsp;an alte Wunden rühren und Trauma kann entstehen durch Überforderung, Grenzüberschreitung, körperliche und emotionale Verletzung und vieles mehr.&nbsp;</p><p>Durch meine Weiterbildung als&nbsp;<strong>Heilpraktikerin auf dem Gebiet der Psychotherapie</strong> und das Erlernen der traumatherapeutischen Methode des „Somatic Experiencing“ kann ich nun Menschen therapeutische Begleitung in der Verarbeitung von schwierigen Situationen in Schwangerschaft, Geburt und Stillzeit anbieten.</p><p>Somatic Experiencing&nbsp;bietet eine Möglichkeit,&nbsp;Menschen behutsam&nbsp;durch Prozesse der Verarbeitung von erlebtem Trauma&nbsp;zu begleiten,&nbsp;um immer freier und mit voller Kraft und Kreativität das Leben zu gestalten.</p><p>Ich arbeite jederzeit mit dem im Jetzt und Hier Möglichen.&nbsp;</p><p>Für Schwangere bedeutet dies im Einklang mit der Situation erlebtes Trauma zu verorten und sich für die anstehende Geburt traumasensibel vorzubereiten. Möglicherweise ist eine tiefere Aufarbeitung erst nach der sensiblen Zeit der Geburt und des Wochenbettes möglich.</p><p>Ich arbeite respektvoll, sanft und in einem sicheren Raum, den wir gemeinsam kreieren.&nbsp;</p><p>Eine Therapie reicht von wenigen Sitzungen bis hin zu einer längeren Begleitung, je nach Ihrem ganz individuellen Prozess. Sie findet in meiner Praxis in der Rotlaubstr. 5 in Freiburg statt.</p><p>Die therapeutische Begleitung wird nicht von den gesetzlichen Krankenkassen übernommen.</p>",
       "image": "n5yBPeFBNW",
       "state": "published",
       "email": null,
       "gallery": null,
       "date": null,
+      "slug": "anna-maisha-paust",
       "label": "Anna Maisha Paust",
       "data": null
     },
@@ -1304,6 +1327,7 @@
       "email": null,
       "gallery": null,
       "date": null,
+      "slug": "maria-canders",
       "label": "Maria Canders",
       "data": null
     }

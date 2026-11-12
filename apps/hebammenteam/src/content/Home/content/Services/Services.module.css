@@ -104,7 +104,7 @@
   height: 2.75rem;
   padding: 0;
   border-radius: 50%;
-  background: var(--color-dark);
+  background: var(--color-accent);
   color: #fff;
   line-height: 0;
 }

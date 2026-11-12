@@ -8,11 +8,13 @@ import CourseHeader from "./components/CourseHeader";
 const Course = ({ course }: { course: EventClass }) => (
   <Layout>
     <CourseHeader course={course} />
-    <section className={styles.content}>
-      <CourseInfo 
-      event={course} 
-      />
-      <CourseContent text={course.text || ""} event={course} />
+    <section className={styles.content} id="info">
+      <div className={styles.content_wrapper}>
+        <CourseInfo
+        event={course}
+        />
+        <CourseContent text={course.text || ""} event={course} />
+      </div>
     </section>
   </Layout>
 );

@@ -1,4 +1,4 @@
-export const SITE_NAME = "Hebammen-Team";
+export const SITE_NAME = "Coming Home";
 const DEFAULT_DESCRIPTION = "Begleitung in Schwangerschaft, Geburt und Wochenbett.";
 
 /** Route `head().meta` entries for a page. */

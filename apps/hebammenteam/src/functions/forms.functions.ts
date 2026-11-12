@@ -1,6 +1,8 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { createObject } from "@server/patstore.server";
+import { createObject, getCollection } from "@server/patstore.server";
+
+const COURSE_REGISTRATION_FORM_ID = "KEXkmbSYHF";
 
 export const submitContactMessage = createServerFn({ method: "POST" })
   .validator(
@@ -56,27 +58,52 @@ export const submitCourseRegistration = createServerFn({ method: "POST" })
       return { ok: true as const };
     }
 
-    await createObject("Forms", {
-      type: "course",
-      data: {
-        kurs: data.eventTitle,
-        kursId: data.eventId,
-        nachname: data.nachname,
-        vorname: data.vorname,
-        geburtsdatum: data.geburtsdatum,
-        strasse: data.strasse,
-        plzOrt: data.plzOrt,
-        telefon: data.telefon,
-        mobil: data.mobil,
-        email: data.email,
-        kursbeginn: data.kursbeginn,
-        krankenversicherung: data.krankenversicherung,
-        kassenNr: data.kassenNr,
-        versicherungsNr: data.versNr,
-        partner: data.partnerName,
-        kind: data.kind,
-        geburtstermin: data.geburtstermin,
-      },
+    const values: Record<string, string> = {
+      kurs: data.eventTitle,
+      kursId: data.eventId,
+      nachname: data.nachname,
+      vorname: data.vorname,
+      geburtsdatum: data.geburtsdatum,
+      strasse: data.strasse,
+      plzOrt: data.plzOrt,
+      telefon: data.telefon,
+      mobil: data.mobil,
+      email: data.email,
+      kursbeginn: data.kursbeginn,
+      krankenversicherung: data.krankenversicherung,
+      kassenNr: data.kassenNr,
+      versNr: data.versNr,
+      versicherungsNr: data.versNr,
+      partnerName: data.partnerName,
+      partner: data.partnerName,
+      kind: data.kind,
+      geburtstermin: data.geburtstermin,
+    };
+
+    const form = (await getCollection("Form")).find(
+      (item) => item.objectId === COURSE_REGISTRATION_FORM_ID,
+    );
+    const fieldNames = Array.isArray(form?.form_fields)
+      ? form.form_fields.flatMap((field: { name?: string; id?: string }) => {
+          const name = field.name?.trim() || field.id?.trim();
+          return name ? [name] : [];
+        })
+      : [];
+    let submissionValues = values;
+    if (fieldNames.length > 0) {
+      const allowedFields = new Set(fieldNames);
+      const filtered = Object.fromEntries(
+        Object.entries(values).filter(([name]) => allowedFields.has(name)),
+      );
+      if (Object.keys(filtered).length > 0) {
+        submissionValues = filtered;
+      }
+    }
+
+    await createObject("Item", {
+      data: submissionValues,
+      reference_id: COURSE_REGISTRATION_FORM_ID,
+      type: "form",
     });
     return { ok: true as const };
   });

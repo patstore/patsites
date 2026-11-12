@@ -7,11 +7,12 @@
   --color-surface: #FAF0E1;
   --color-bg: #fffdf9;
   --color-accent: #2f6f62;
-  --color-accent-dark: #272727;
-  --color-accent-soft: #e5f0ec;
+  --color-accent-dark: #243E36;
+  --color-accent-soft: #959bb9;
   --color-line: #e4ddd3;
   --color-sand: #f3e6d4;
   --color-dark: #393126;
+  --font-heading: "Cormorant Garamond", serif;
   --font: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --header-height: 4.75rem;
   --page-width: 1240px;
@@ -109,7 +110,7 @@ section {
 }
 
 button {
-  background-color: var(--color-dark);
+  background-color: var(--color-accent);
   color: white;
   border: none;
   padding: 8px 16px;
