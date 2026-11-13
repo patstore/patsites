@@ -1,35 +1,14 @@
 import React, { useMemo } from "react";
-import settings from "@settings";
 import { Layout } from "@components";
-import { FlexBox, HeadContent } from "@ui";
-import { siteContainer, wrapper } from "@styles";
-import {
-  useCollection,
-  useFindImages,
-} from "@provider";
+import { ContentBlock, FlexBox, HeadContent } from "@ui";
+import { useCollection } from "@provider";
 import { PatstoreDownload, UnwrapScalar } from "@types";
-import { Image } from "@ui";
-
-const boxelement = {
-  position: "relative",
-  borderTop: `5px solid ${settings.colors.secondary}`,
-  cursor: "pointer",
-  marginBottom: "0.5em",
-  padding: "0.5em 1em",
-  textAlign: "left",
-  background: settings.colors.white,
-  border: `1px solid ${settings.colors.lightgrey}`,
-  transition: "box-shadow 0.4s ease",
-  ":hover": {
-    boxShadow: "0px 6px 6px -2px rgba(0, 0, 0, 0.25)",
-    h2: { color: settings.colors.secondary },
-  },
-};
+import { Image } from "@repo/ui";
+import styles from "./Veroeffentlichungen.module.css";
 
 const Veroeffentlichungen: React.FC = () => {
   const { items: downloads } = useCollection("Download");
   const { items: categorys } = useCollection("Category");
-  const { findImage } = useFindImages();
 
   const mediaElements: UnwrapScalar<PatstoreDownload>[] = useMemo(() => {
     const mediaArray: UnwrapScalar<PatstoreDownload>[] = [];
@@ -47,12 +26,12 @@ const Veroeffentlichungen: React.FC = () => {
 
   return (
     <Layout>
-      <div css={wrapper}>
+      <div className="wrapper">
         <HeadContent
           titel="Veröffentlichungen"
           titeltext="Unsere Zeitschriften und Flyer hier in digitaler Form."
         />
-        <div css={siteContainer}>
+        <div className="site-container">
           <FlexBox
             direction="row"
             align="stretch"
@@ -60,58 +39,27 @@ const Veroeffentlichungen: React.FC = () => {
             hasFullWidth
             changeToColumn
             wrap
-            gap={settings.sizes.medium}
+            gap="12px"
           >
             {mediaElements.map((value: PatstoreDownload) => (
-              <div
-                key={value.objectId}
-                css={settings.mq([
-                  boxelement,
-                  {
-                    flex: ["100%", "100%", "50%", "30%", "30%"],
-                    maxWidth: "300px",
-                    textAlign: "left",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    margin: "1em 0",
-                  },
-                ])}
-              >
+              <ContentBlock key={value.objectId} className={styles.card}>
                 <a
                   target="__blank"
                   href={value?.file?.url || ""}
-                  css={{
-                    width: "100%",
-                    height: "100%",
-                    position: "absolute",
-                    background: "transparent",
-                    zIndex: 3,
-                  }}
+                  className={styles.cover}
                 >
-                  <span css={{ opacity: 0 }}>{value.title}</span>
+                  <span>{value.title}</span>
                 </a>
-                {value?.image && (
-                  <div css={{ width: "100%", height: "100%" }}>
-                    {findImage(value.image) && (
-                      <Image
-                        alt={value.title || "TV Freiburg St. Georgen"}
-                        image={findImage(value.image)}
-                      />
-                    )}
-                  </div>
-                )}
-                <div
-                  css={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                    textAlign: "left",
-                  }}
-                >
+                {value?.image ? (
+                  <Image
+                    id={value.image}
+                    alt={value.title || "TV Freiburg St. Georgen"}
+                  />
+                ) : null}
+                <div className={styles.copy}>
                   <p> {value?.description}</p>
                 </div>
-              </div>
+              </ContentBlock>
             ))}
           </FlexBox>
         </div>

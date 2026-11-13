@@ -1,24 +1,23 @@
 import React from "react";
 import { Layout, RenderContent } from "@components";
 import { HeadContent, SportBanner } from "@ui";
-import { siteContainer, wrapper } from "@styles";
-import { vereinsContainer } from "./styles";
+import styles from "./Verein.module.css";
 
 const Verein: React.FC = () => {
   return (
     <Layout>
-      <div css={wrapper}>
+      <div className="wrapper">
         <HeadContent
           titel="Über den Verein"
           titeltext="In aller Kürze das Wesentliche über den Verein. "
           smallContent
         />
-        <div css={[siteContainer, vereinsContainer]}>
+        <div className={`site-container-small ${styles.intro}`}>
           <RenderContent path="vorstand" />
         </div>
       </div>
-      <div css={wrapper}>
-        <div css={siteContainer}>
+      <div className="wrapper">
+        <div className="site-container">
           <SportBanner />
         </div>
       </div>

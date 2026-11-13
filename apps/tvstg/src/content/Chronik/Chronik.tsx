@@ -1,9 +1,7 @@
 import React from "react";
-import settings from "@settings";
 import { Layout } from "@components";
 import { FlexBox, HeadContent, SectionDivider } from "@ui";
-import { wrapper } from "@styles";
-import { siteContainer } from "../../styles/styles";
+import styles from "./Chronik.module.css";
 
 const Chronik = () => {
   const dateHandler = () => {
@@ -15,21 +13,18 @@ const Chronik = () => {
 
   return (
     <Layout>
-      <div css={wrapper}>
+      <div className="wrapper">
         <HeadContent
           titel="Unsere Chronik"
           titeltext={`Die Geschichte unseres Vereins reicht bis ins 19. Jahrhundert. \t Wir blicken auf die letzten ${dateHandler()} Jahre zurück.`}
         />
 
-        <div css={siteContainer}>
+        <div className="site-container">
           <FlexBox
+            className={styles.body}
             direction="column"
             align="center"
             justify="space-between"
-            styles={{
-              padding: settings.padding.large,
-              h2: { marginTop: "2em" },
-            }}
           >
             <SectionDivider title="Chronik" />
             <div>

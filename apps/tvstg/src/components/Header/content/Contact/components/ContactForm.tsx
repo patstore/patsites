@@ -17,7 +17,7 @@ const ContactForm = () => {
 
   return (
     <div>
-      <h3 css={{ margin: 0 }}>Kontaktformular</h3>
+      <h3 style={{ margin: 0 }}>Kontaktformular</h3>
       <Formik
         initialValues={initialValues}
         onSubmit={async (values, actions) => {

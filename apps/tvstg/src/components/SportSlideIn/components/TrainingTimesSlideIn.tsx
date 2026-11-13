@@ -1,6 +1,6 @@
 import React from "react";
 import { TrainingTimesSlideInProps } from "../types";
-import { sidebarElement } from "../../Sidebar";
+import styles from "./TrainingTimesSlideIn.module.css";
 
 const TrainingTimesSlideIn: React.FC<TrainingTimesSlideInProps> = ({
   weekday,
@@ -10,11 +10,11 @@ const TrainingTimesSlideIn: React.FC<TrainingTimesSlideInProps> = ({
   text,
 }) => (
   <div id="training">
-    <div css={sidebarElement}>
+    <div className="sidebar-panel">
       <h6>
         {weekday} {start && end && `${start} - ${end}`}
       </h6>
-      {text && <p css={{ fontSize: "0.8rem", fontWeight: 500 }}>{text}</p>}
+      {text && <p className={styles.note}>{text}</p>}
       {location && <p>{location}</p>}
     </div>
   </div>

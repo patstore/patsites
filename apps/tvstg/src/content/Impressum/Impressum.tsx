@@ -1,13 +1,12 @@
 import React from "react";
 import { Layout, RenderContent } from "@components";
-import { siteContainer, wrapper } from "@styles";
 import { HeadContent } from "@ui";
 
 const Impressum: React.FC = () => (
   <Layout>
-    <div css={wrapper}>
+    <div className="wrapper">
       <HeadContent titel="Impressum" />
-      <div css={[siteContainer]}>
+      <div className="site-container">
         <RenderContent path="impressum" />
       </div>
     </div>

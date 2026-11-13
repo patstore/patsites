@@ -1,7 +1,5 @@
 import React from "react";
 import { AgeFilterProps } from "../types";
-import { choiceButtonRow, label, sidebarFilterField } from "../styles";
-import SquareChoiceButton from "./SquareChoiceButton";
 
 const AgeFilter: React.FC<AgeFilterProps> = ({ ages, age, setAge }) => {
   const agesObjects: { value: number | null; label: string }[] = React.useMemo(
@@ -16,17 +14,19 @@ const AgeFilter: React.FC<AgeFilterProps> = ({ ages, age, setAge }) => {
   );
 
   return (
-    <div css={sidebarFilterField}>
-      <span css={label}>Alter</span>
-      <div css={choiceButtonRow}>
+    <div className="field">
+      <span className="field-label">Alter</span>
+      <div className="choice-row">
         {agesObjects.map((ageObject) => (
-          <SquareChoiceButton
+          <button
             key={ageObject.label}
-            shape="filter-square"
-            label={ageObject.label}
-            selected={age === ageObject.value}
+            type="button"
+            className="btn-choice square"
+            aria-pressed={age === ageObject.value}
             onClick={() => setAge(ageObject.value)}
-          />
+          >
+            {ageObject.label}
+          </button>
         ))}
       </div>
     </div>

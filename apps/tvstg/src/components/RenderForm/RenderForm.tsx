@@ -2,24 +2,16 @@ import React, { useCallback } from "react";
 import { Formik, Form, Field } from "formik";
 import { FormField, RenderFormProps } from "./types";
 import createYupSchema from "./functions/createYupSchema";
-import {
-  formError,
-  label,
-  submitButton,
-  formField,
-  fieldContainer,
-} from "./styles";
 import generateFieldType from "./functions/generateFieldType";
 import { useServerFn } from "@tanstack/react-start";
 import { submitFormEntry } from "@functions/forms.functions";
 import { FullButton } from "@ui";
+import styles from "./RenderForm.module.css";
 
 const RenderForm: React.FC<RenderFormProps> = ({
   form,
   initialValues,
   onSubmit,
-  buttonStyles,
-  buttonText,
   hasHoneypot,
 }) => {
   const [formSend, setFormSend] = React.useState(false);
@@ -71,23 +63,24 @@ const RenderForm: React.FC<RenderFormProps> = ({
       validateOnChange
       validateOnBlur
     >
-      {({ errors, isValid, submitForm }) => {
+      {({ errors, isValid }) => {
         return (
           <Form>
-            <div css={fieldContainer}>
+            <div className={styles.fields}>
               {formFields.map((field) => (
-                <div key={field.name} css={[formField, { flex: "1 1 40%" }]}>
-                  <label css={label} htmlFor={field.name}>
+                <div key={field.name} className={styles.field}>
+                  <label className="field-label" htmlFor={field.name}>
                     {field.label}
                   </label>
                   <Field
+                    className="field-input"
                     id={field.name}
                     name={field.name}
                     type={field.type}
                     as={generateFieldType(field)}
                     placeholder={field.placeholder}
                   />
-                  <div css={formError}>
+                  <div className={styles.error}>
                     {(errors[field.name] as string) && (
                       <span>{errors[field.name] as string}</span>
                     )}
@@ -96,16 +89,7 @@ const RenderForm: React.FC<RenderFormProps> = ({
               ))}
             </div>
             {hasHoneypot && (
-              <div
-                css={{
-                  position: "absolute",
-                  left: "-9999px",
-                  top: "auto",
-                  width: "1px",
-                  height: "1px",
-                  overflow: "hidden",
-                }}
-              >
+              <div className={styles.honeypot}>
                 <label htmlFor="honeypot">Leave this field blank</label>
                 <Field
                   id="honeypot"
@@ -118,7 +102,7 @@ const RenderForm: React.FC<RenderFormProps> = ({
               </div>
             )}
             {submitFailed && (
-              <p role="alert" css={formError}>
+              <p role="alert" className={styles.error}>
                 Das Formular konnte nicht gesendet werden. Bitte versuche es
                 erneut.
               </p>

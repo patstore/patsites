@@ -1,14 +1,13 @@
 import React, { useMemo } from "react";
-import { sidebarHeader } from "../styles";
 import { Button, DateTile } from "@ui";
 import { CalendarProps } from "../types";
 import { useNavigate } from "@tanstack/react-router";
-import { useCollection, useFindLocation } from "@provider";
+import { locationLabel, useCollection } from "@provider";
 
 const Calendar: React.FC<CalendarProps> = ({ category, getAllEvents }) => {
   const navigate = useNavigate();
   const { items: appointments } = useCollection("Appointment");
-  const { findLocation } = useFindLocation();
+  const { find: findLocation } = useCollection("Location");
 
   const events = useMemo(() => {
     if (getAllEvents) {
@@ -38,7 +37,7 @@ const Calendar: React.FC<CalendarProps> = ({ category, getAllEvents }) => {
 
   return (
     <div>
-      <div css={sidebarHeader}>Termine</div>
+      <div className="section-header flush">Termine</div>
       {events.length > 0 ? (
         events.map((termin) => (
           <DateTile
@@ -47,7 +46,7 @@ const Calendar: React.FC<CalendarProps> = ({ category, getAllEvents }) => {
             title={termin.title || ""}
             date={termin.date?.start || ""}
             description={termin.description || ""}
-            location={findLocation(termin.date?.place)}
+            location={locationLabel(termin.date?.place, findLocation)}
             categories={termin.categories}
           />
         ))

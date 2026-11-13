@@ -1,4 +1,4 @@
-import { useFindContent, useFindImages } from "@provider";
+import { useCollection } from "@provider";
 import { WebpageComponentTable } from "@types";
 import React from "react";
 
@@ -7,14 +7,14 @@ interface RenderTableProps {
 }
 
 const RenderTable: React.FC<RenderTableProps> = ({ contentId }) => {
-  const { findContent } = useFindContent();
+  const { find: findContent } = useCollection("Content");
   const content = findContent(contentId);
   if (!content) {
     return null;
   }
   const { columns, rows, settings } = content.data as WebpageComponentTable;
   return (
-    <div css={{ margin: "24px 0" }} className="webpage-content-table">
+    <div style={{ margin: "24px 0" }} className="webpage-content-table">
       {settings.title && settings.showHeader && <h3>{settings.title}</h3>}
       {settings.description && <p>{settings.description}</p>}
       <table>
@@ -24,7 +24,7 @@ const RenderTable: React.FC<RenderTableProps> = ({ contentId }) => {
               {columns.map((col) => (
                 <th
                   key={col.id}
-                  css={{ textAlign: (col.textAlign as "left") || "left" }}
+                  style={{ textAlign: (col.textAlign as "left") || "left" }}
                 >
                   {col.name}
                 </th>

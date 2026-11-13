@@ -1,17 +1,8 @@
 import React from "react";
 import months from "../constants/months";
 import EventElementTable from "./EventElementTable";
-import { sectionHeader } from "@styles";
-import settings from "@settings";
 import { FlexBox } from "@ui";
-import {
-  eventCategory,
-  eventDate,
-  eventInfo,
-  eventName,
-  eventPlace,
-  eventTime,
-} from "../styles";
+import styles from "../Termine.module.css";
 
 const MonthTable: React.FC<{
   month: (typeof months)[number];
@@ -19,29 +10,22 @@ const MonthTable: React.FC<{
 }> = ({ month, year }) => {
   return (
     <div>
-      <div css={sectionHeader}>
+      <div className="section-header">
         {month.name} {year}
       </div>
-      <div
-        css={{
-          width: "100%",
-          borderCollapse: "collapse",
-          position: "relative",
-          overflowX: "auto",
-        }}
-      >
+      <div className={styles.scroll}>
         <FlexBox
           hasFullWidth
           direction="row"
           align="flex-end"
           justify="space-between"
         >
-          <div css={eventName}>Event</div>
-          <div css={eventCategory}>Kategorie</div>
-          <div css={eventDate}>Datum</div>
-          <div css={eventTime}>Zeit </div>
-          <div css={eventPlace}>Ort</div>
-          <div css={eventInfo}>Info</div>
+          <div className={`${styles.col} ${styles.name}`}>Event</div>
+          <div className={`${styles.col} ${styles.category}`}>Kategorie</div>
+          <div className={`${styles.col} ${styles.date}`}>Datum</div>
+          <div className={`${styles.col} ${styles.time}`}>Zeit </div>
+          <div className={`${styles.col} ${styles.place}`}>Ort</div>
+          <div className={`${styles.col} ${styles.info}`}>Info</div>
         </FlexBox>
         {month.dates
           .sort((a, b) => {
@@ -53,9 +37,7 @@ const MonthTable: React.FC<{
             <EventElementTable
               key={value.objectId}
               date={value}
-              background={
-                index % 2 === 0 ? "transparent" : settings.colors.light
-              }
+              striped={index % 2 !== 0}
             />
           ))}
       </div>

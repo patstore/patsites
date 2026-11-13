@@ -1,0 +1,88 @@
+.filterBar {
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0 2em;
+}
+
+.count {
+  font-size: 0.7em;
+  font-weight: 400;
+}
+
+.months {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 60vh;
+  width: 100%;
+}
+
+.month,
+.scroll,
+.anchor {
+  width: 100%;
+}
+
+.scroll {
+  position: relative;
+  overflow-x: auto;
+}
+
+.anchor {
+  scroll-margin-top: 120px;
+}
+
+.row {
+  padding: 12px;
+}
+
+.col {
+  padding: 12px;
+}
+
+.name {
+  flex: 0.2;
+}
+
+.category,
+.date,
+.time {
+  flex: 0.1;
+}
+
+.place {
+  flex: 0.2;
+}
+
+.info {
+  flex: 0.3;
+}
+
+.dateValue {
+  text-align: right;
+}
+
+.note {
+  max-width: 300px;
+}
+
+.noteIcon {
+  font-size: 1em;
+  margin-right: 0.3rem;
+  color: var(--color-primary);
+}
+
+.noteText {
+  font-size: 10px;
+}
+
+@media (min-width: 1200px) {
+  .filterBar {
+    padding: 0;
+  }
+}

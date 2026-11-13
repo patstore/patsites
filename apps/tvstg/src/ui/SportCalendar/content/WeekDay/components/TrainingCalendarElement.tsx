@@ -1,31 +1,11 @@
 import React, { FC, useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import settings from "@settings";
-import {
-  listCells,
-  trainingCardContent,
-  trainingCardInfo,
-  trainingElement,
-  trainingElementuttonContainer,
-  trainingGridArrow,
-  trainingGridCardContent,
-  trainingGridCell,
-  trainingGridTags,
-  trainingImageGrid,
-  trainingListButton,
-  trainingListCell,
-  trainingListElement,
-  trainingListImage,
-  trainingListTags,
-  trainingListTime,
-  trainingListTitle,
-  trainingTag,
-  trainingTitleCell,
-} from "../styles";
 import { useCollection } from "@provider";
 import { TrainingCalendarElementProps } from "../types";
 import { SportSlideIn } from "@components";
 import { Image } from "@repo/ui";
+import { contentBlockStyles } from "../../../../ContentBlock";
+import styles from "../WeekDay.module.css";
 
 const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
   training,
@@ -45,7 +25,6 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 
   const isList = view === "list";
   const imageId = group.team?.image ?? group.image;
-  const cell = isList ? trainingListCell : undefined;
   const locationLabel = training.location || groupLocation?.title || "";
   const startAge = Number(group.data?.start_age);
   const endAge = group.data?.end_age == null || group.data?.end_age === ""
@@ -68,60 +47,45 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
   ].filter((tag) => tag !== null);
 
   const openDetails = () => setModalState(true);
+  const image = imageId ? (
+    <Image
+      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+      alt={group.team?.name || group.title || undefined}
+      id={imageId}
+    />
+  ) : null;
+
+  const tagList = (
+    <div className={contentBlockStyles.tags}>
+      {tags.map((tag) => (
+        <span key={tag.key} className={contentBlockStyles.tag}>
+          {tag.label}
+        </span>
+      ))}
+    </div>
+  );
 
   if (!isList) {
     return (
       <>
-        <button type="button" css={trainingGridCell} id={training.id} onClick={openDetails}>
-          <div css={trainingImageGrid}>
-            {imageId ? (
-              <Image
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                alt={group.team?.name || group.title || undefined}
-                id={imageId}
-              />
-            ) : null}
-          </div>
-          <div css={trainingGridCardContent}>
-            <div css={{ padding: "12px 12px 0", flexShrink: 0 }}>
-              <p
-                css={{
-                  fontWeight: 600,
-                  textAlign: "start",
-                  lineHeight: "1.2 !important",
-                  fontSize: "1.8rem !important",
-                  color: settings.colors.dark,
-                  margin: 0,
-                }}
-              >
+        <button type="button" className={styles.cell} id={training.id} onClick={openDetails}>
+          <div className={styles.gridImage}>{image}</div>
+          <div className={styles.gridBody}>
+            <div className={styles.timeBlock}>
+              <p className={styles.clock}>
                 {training.start && training.end ? `${training.start}` : "-"}
               </p>
-              <p
-                css={{
-                  textAlign: "start",
-                  fontSize: "0.7rem !important",
-                  color: settings.colors.grey,
-                  margin: 0,
-                }}
-              >
+              <p className={styles.until}>
                 bis
                 {training.start && training.end ? ` ${training.end}` : "-"}
               </p>
             </div>
-            <div css={[trainingCardInfo, { flex: "1 1 auto", minWidth: 0 }]}>
-              <div css={[trainingTitleCell, { minWidth: 0, width: "100%" }]}>
-                <h3 css={{ fontSize: "1.2rem !important", margin: 0 }}>{group.title}</h3>
-                <div css={trainingGridTags}>
-                  {tags.map((tag) => (
-                    <span key={tag.key} css={trainingTag}>
-                      {tag.label}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className={styles.info}>
+              <h3 className={styles.title}>{group.title}</h3>
+              {tagList}
             </div>
           </div>
-          <span css={trainingGridArrow} aria-hidden>
+          <span className={styles.gridArrow} aria-hidden>
             <AiOutlineArrowRight size={16} />
           </span>
         </button>
@@ -138,66 +102,26 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
   return (
     <>
       <div
-        css={[
-          trainingElement,
-          trainingListElement,
-          striped ? { backgroundColor: settings.colors.light } : null,
-        ]}
+        className={[styles.listRow, striped ? contentBlockStyles.striped : ""].filter(Boolean).join(" ")}
         id={training.id}
       >
-        <div css={[trainingCardContent, listCells]}>
-          <div css={[trainingListTime, cell]}>
-            <p
-              css={{
-                fontWeight: 600,
-                textAlign: "start",
-                lineHeight: "1.2 !important",
-                fontSize: "1rem !important",
-                color: settings.colors.dark,
-                margin: 0,
-              }}
-            >
+        <div className={styles.listCells}>
+          <div className={styles.listTime}>
+            <p className={contentBlockStyles.strong}>
               {training.start && training.end ? `${training.start}` : "-"}
             </p>
-            <p
-              css={{
-                textAlign: "start",
-                fontSize: "0.7rem !important",
-                color: settings.colors.grey,
-                margin: 0,
-              }}
-            >
+            <p className={contentBlockStyles.muted}>
               bis
               {training.start && training.end ? ` ${training.end}` : "-"}
             </p>
           </div>
-          <div css={trainingListImage}>
-            {imageId ? (
-              <Image
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                alt={group.team?.name || group.title || undefined}
-                id={imageId}
-              />
-            ) : null}
-          </div>
-          <div css={[trainingCardInfo, listCells]}>
-            <div css={[trainingTitleCell, trainingListTitle]}>
-              <h3 css={{ fontSize: "1.2rem !important", margin: 0 }}>{group.title}</h3>
-              <div css={trainingListTags}>
-                {tags.map((tag) => (
-                  <span key={tag.key} css={trainingTag}>
-                    {tag.label}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div className={styles.listImage}>{image}</div>
+          <div className={`${styles.info} ${styles.listTitle}`}>
+            <h3 className={styles.title}>{group.title}</h3>
+            {tagList}
           </div>
         </div>
-        <button
-          type="button"
-          onClick={openDetails}
-          css={[trainingElementuttonContainer, trainingListButton]}
-        >
+        <button type="button" onClick={openDetails} className={styles.listButton}>
           <AiOutlineArrowRight size={16} />
         </button>
       </div>

@@ -1,91 +1,61 @@
-import React from "react";
-
-import {
-  AiOutlineCalendar,
-  AiOutlineClockCircle,
-  AiOutlineHome,
-  AiOutlineInfoCircle,
-} from "react-icons/ai";
-import settings from "@settings";
-import { dateContainer, dateHeader, innerContainer } from "../styles";
-import { DateTileLargeProps } from "../types";
+import { AiOutlineCalendar, AiOutlineClockCircle, AiOutlineHome, AiOutlineInfoCircle } from "react-icons/ai";
+import { getDateString, useCollection } from "@provider";
+import { contentBlockStyles } from "../../ContentBlock";
 import { FlexBox } from "../../FlexBox";
-import { getDateString, useFindCategories } from "@provider";
-import { Label } from "../../Label";
+import { DateTileLargeProps } from "../types";
+import styles from "../TerminTile.module.css";
 
-const DateTileLarge: React.FC<DateTileLargeProps> = ({
-  title,
-  date,
-  location,
-  description,
-  categories,
-}) => {
-  const { findCategories } = useFindCategories();
+const DateTileLarge = ({ title, date, location, description, categories }: DateTileLargeProps) => {
+  const { find: findCategory } = useCollection("Category");
+  const when = getDateString(date);
 
   return (
-    <div css={dateContainer}>
+    <div className={`${contentBlockStyles.block} ${styles.large}`}>
       <FlexBox direction="column" align="flex-start" justify="space-between">
         <FlexBox
           direction="row"
           align="center"
           justify="space-between"
           hasFullWidth
-          styles={dateHeader}
+          className={styles.header}
         >
           <h4>
-            <AiOutlineCalendar
-              css={{
-                fontSize: "1em",
-                marginRight: "0.3rem",
-                color: settings.colors.white,
-              }}
-            />{" "}
-            {getDateString(date).date}
+            <AiOutlineCalendar className={`${styles.icon} ${styles.iconOnPrimary}`} /> {when.date}
           </h4>
           <h4>
-            <AiOutlineClockCircle
-              css={{
-                fontSize: "1em",
-                marginRight: "0.3rem",
-                color: settings.colors.white,
-              }}
-            />
-            {getDateString(date).time}
+            <AiOutlineClockCircle className={`${styles.icon} ${styles.iconOnPrimary}`} />
+            {when.time}
           </h4>
         </FlexBox>
-        <div css={innerContainer}>
+        <div className={styles.inner}>
           <div>
-            {categories &&
-              findCategories(categories) &&
-              findCategories(categories).map((category) => (
-                <Label text={category?.title || ""} />
-              ))}
+            {categories && categories.length > 0 ? (
+              <div className={contentBlockStyles.tags}>
+                {categories.map((id) => {
+                  const label = findCategory(id)?.title;
+                  if (!label) {
+                    return null;
+                  }
+                  return (
+                    <span key={id} className={contentBlockStyles.tag}>
+                      {label}
+                    </span>
+                  );
+                })}
+              </div>
+            ) : null}
             <h3>{title}</h3>
           </div>
           {location && (
-            <div>
-              <p>
-                <AiOutlineHome
-                  css={{
-                    fontSize: "1em",
-                    marginRight: "0.3rem",
-                    color: settings.colors.primary,
-                  }}
-                />
-                {location}
-              </p>
-            </div>
+            <p>
+              <AiOutlineHome className={styles.icon} />
+              {location}
+            </p>
           )}
           {description && (
-            <div css={{ maxWidth: "300px" }}>
+            <div className={styles.description}>
               <p>
-                <AiOutlineInfoCircle
-                  css={{
-                    fontSize: "1em",
-                    marginRight: "0.3rem",
-                    color: settings.colors.primary,
-                  }}
-                />
+                <AiOutlineInfoCircle className={styles.icon} />
                 {description}
               </p>
             </div>

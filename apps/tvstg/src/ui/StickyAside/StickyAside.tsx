@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
-import type { SerializedStyles } from "@emotion/react";
-import { stickyAsidePanel, stickyAsideTrack } from "./styles";
+import styles from "./StickyAside.module.css";
 
 type StickMode = "static" | "fixed" | "bottom";
 
@@ -25,16 +24,16 @@ function scrollParents(el: HTMLElement): Array<HTMLElement | Window> {
 
 type StickyAsideProps = {
   children: ReactNode;
-  panelCss?: SerializedStyles;
-  trackCss?: SerializedStyles;
+  panelClassName?: string;
+  trackClassName?: string;
   /** Minimum viewport width where fixed stickiness is enabled. */
   minWidth?: number;
 };
 
 const StickyAside: React.FC<StickyAsideProps> = ({
   children,
-  panelCss,
-  trackCss,
+  panelClassName,
+  trackClassName,
   minWidth = 992,
 }) => {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -151,10 +150,14 @@ const StickyAside: React.FC<StickyAsideProps> = ({
   return (
     <div
       ref={trackRef}
-      css={[stickyAsideTrack, trackCss]}
+      className={[styles.track, trackClassName].filter(Boolean).join(" ")}
       style={mode !== "static" && placeholderHeight > 0 ? { minHeight: placeholderHeight } : undefined}
     >
-      <div ref={panelRef} style={panelStyle} css={[stickyAsidePanel, panelCss]}>
+      <div
+        ref={panelRef}
+        style={panelStyle}
+        className={[styles.panel, panelClassName].filter(Boolean).join(" ")}
+      >
         {children}
       </div>
     </div>

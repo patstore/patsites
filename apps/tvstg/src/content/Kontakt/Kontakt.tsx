@@ -1,34 +1,26 @@
 import React from "react";
-import settings from "@settings";
 import { Layout, RenderContent, RenderForm } from "@components";
-import { sectionHeader, siteContainer, wrapper } from "@styles";
 import { FlexBox, HeadContent } from "@ui";
-import { mainContainer, sidebarContainer } from "@styles";
-import { sidebarHeader, sidebarContent } from "@components";
-import { useFindWebpage } from "@provider";
 import { useCollection } from "@provider";
+import styles from "./Kontakt.module.css";
 
 const Kontakt: React.FC = () => {
-  const webpage = useFindWebpage({ path: "kontakt" });
+  const { items: webpages } = useCollection("Webpage");
+  const webpage = webpages.find((page) => page?.path?.includes("kontakt"));
   const { items: forms } = useCollection("Form");
   const form = forms.find((form) => form.title === "Kontaktformular");
 
   return (
     <Layout>
-      <div css={wrapper}>
+      <div className="wrapper">
         <HeadContent
           titel={webpage?.title as string}
           titeltext={webpage?.subtitle}
         />
-        <div css={siteContainer}>
-          <FlexBox
-            direction="row"
-            align="flex-start"
-            justify="space-between"
-            wrap
-          >
-            <div css={mainContainer}>
-              <div css={[sectionHeader, { marginTop: 0 }]}>Kontaktformular</div>
+        <div className="site-container">
+          <div className="page-row">
+            <div className="main-column">
+              <div className={`section-header ${styles.tight}`}>Kontaktformular</div>
               {form && (
                 <RenderForm
                   form={form}
@@ -36,24 +28,20 @@ const Kontakt: React.FC = () => {
                   onSubmit={() => {
                     return null;
                   }}
-                  buttonStyles={{
-                    backgroundColor: settings.colors.dark,
-                    color: settings.colors.light,
-                  }}
                   buttonText="Formular absenden"
                   hasHoneypot
                 />
               )}
             </div>
-            <div css={sidebarContainer}>
-              <div css={sidebarHeader}>Kontakt</div>
-              <div css={sidebarContent}>
+            <div className="sidebar-column">
+              <div className="section-header flush">Kontakt</div>
+              <div className={styles.sidebarBody}>
                 <div>
                   <RenderContent contentId="contact_page" />
                 </div>
               </div>
             </div>
-          </FlexBox>
+          </div>
         </div>
       </div>
     </Layout>

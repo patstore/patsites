@@ -1,0 +1,56 @@
+.button {
+  margin-top: 12px;
+  position: relative;
+  font-family: var(--font-headline);
+  font-size: 12px;
+  text-align: left;
+  font-weight: 500;
+  padding: 6px 0;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: inherit;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: 16px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  transition: color 0.2s ease;
+  color: var(--color-text);
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.button:disabled .content {
+  color: var(--color-text-muted);
+}
+
+.underline {
+  background-color: var(--color-text);
+  height: 1.5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.track {
+  position: absolute;
+  background-color: var(--color-text-muted);
+  height: 1.5px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

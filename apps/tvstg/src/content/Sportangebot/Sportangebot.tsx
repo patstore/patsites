@@ -1,7 +1,6 @@
 import React from "react";
 import { Layout } from "@components";
 import { HeadContent, SportCalendar, SportCalendarFilters } from "@ui";
-import { siteContainer, wrapper } from "@styles";
 
 const NO_CATEGORIES: string[] = [];
 
@@ -10,9 +9,9 @@ const Sportangebot: React.FC<{
   onFiltersChange: (filters: Partial<SportCalendarFilters>) => void;
 }> = ({ filters, onFiltersChange }) => (
   <Layout>
-    <div css={wrapper}>
+    <div className="wrapper">
       <HeadContent titel="Unser Sportangebot" />
-      <div css={siteContainer}>
+      <div className="site-container">
         <SportCalendar
           categories={NO_CATEGORIES}
           filters={filters}

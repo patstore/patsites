@@ -1,0 +1,13 @@
+.group {
+  background: var(--color-surface-muted);
+  padding: var(--pad-medium);
+  border-radius: 12px;
+}
+
+.group a {
+  display: block;
+}
+
+.link {
+  margin: 0.6rem 0;
+}

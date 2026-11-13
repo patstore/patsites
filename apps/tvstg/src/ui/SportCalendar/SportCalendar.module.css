@@ -1,0 +1,46 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+}
+
+.main {
+  order: 2;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  min-height: 40vh;
+}
+
+.sidebar {
+  order: 1;
+  width: 100%;
+  flex: 0 0 auto;
+  align-self: stretch;
+}
+
+.viewSwitch {
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .layout { flex-direction: row; }
+  .main {
+    order: 1;
+    flex: 1 1 0;
+  }
+  .sidebar {
+    order: 2;
+    width: 360px;
+    flex: 0 0 360px;
+  }
+  .viewSwitch { display: flex; }
+}

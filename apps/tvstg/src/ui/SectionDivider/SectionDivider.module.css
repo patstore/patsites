@@ -1,0 +1,38 @@
+.section {
+  margin: 4.2rem 0 1.8rem;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  flex: 1 0 auto;
+  max-width: 100%;
+}
+
+.subtitle {
+  display: none;
+  margin: 0;
+}
+
+.rule {
+  height: 1px;
+  background-color: var(--color-border);
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .split {
+    max-width: 50%;
+  }
+
+  .subtitle {
+    display: inline-block;
+  }
+}

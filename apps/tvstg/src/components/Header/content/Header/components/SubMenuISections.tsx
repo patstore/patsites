@@ -1,9 +1,9 @@
 import { motion, AnimatePresence } from "motion/react";
-import React, { FC } from "react";
-import { subMenuStyle } from "../styles";
+import { FC } from "react";
 import { subMenuVariants } from "../animations";
 import { SubMenuItemsProps } from "../types";
 import { Link } from "@tanstack/react-router";
+import styles from "../Header.module.css";
 
 const SubMenuItems: FC<SubMenuItemsProps> = ({
   subMenuState,
@@ -20,7 +20,7 @@ const SubMenuItems: FC<SubMenuItemsProps> = ({
       {subMenuState === itemKey && (
         <motion.ul
           key={itemKey}
-          css={subMenuStyle}
+          className={styles.submenu}
           style={{ originX: 0 }}
           variants={subMenuVariants}
           initial="initial"

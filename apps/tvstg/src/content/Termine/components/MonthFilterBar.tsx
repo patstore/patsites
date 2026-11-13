@@ -5,9 +5,9 @@ import {
   yearMonthKey,
   type YearMonth,
 } from "../constants/monthShortLabels";
-import { monthFilterBar, monthFilterButton } from "../styles";
 import { getBerlinDateParts } from "@provider";
 import type { PatstoreDate } from "@types";
+import styles from "../Termine.module.css";
 
 type MonthFilterBarProps = {
   calendar: PatstoreDate[];
@@ -40,17 +40,12 @@ const MonthFilterBar: React.FC<MonthFilterBarProps> = ({
   const selectedKey = yearMonthKey(selected);
 
   return (
-    <div css={monthFilterBar} role="group" aria-label="Monate filtern">
+    <div className={`choice-row ${styles.filterBar}`} role="group" aria-label="Monate filtern">
       {months.map((entry) => {
         const key = yearMonthKey(entry);
         const count = eventCounts.get(key) ?? 0;
         const isDisabled = count === 0;
         const isSelected = key === selectedKey;
-        const variant = isDisabled
-          ? "disabled"
-          : isSelected
-            ? "selected"
-            : "default";
 
         return (
           <button
@@ -58,11 +53,11 @@ const MonthFilterBar: React.FC<MonthFilterBarProps> = ({
             type="button"
             disabled={isDisabled}
             aria-pressed={isSelected}
-            css={monthFilterButton(variant)}
+            className="btn-choice square"
             onClick={() => onSelect(entry)}
           >
             <span>{MONTH_SHORT_LABELS[entry.month - 1]}</span>
-            <span css={{ fontSize: "0.7em", fontWeight: 400 }}>({count})</span>
+            <span className={styles.count}>({count})</span>
           </button>
         );
       })}

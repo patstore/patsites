@@ -1,82 +1,46 @@
 import { FC } from "react";
-
 import {
   AiOutlineCalendar,
   AiOutlineClockCircle,
   AiOutlineHome,
   AiOutlineInfoCircle,
 } from "react-icons/ai";
-import settings from "@settings";
-import { FlexBox } from "../../FlexBox";
-import { sidebarElement } from "@components";
-import { DateTileMediumProps } from "../types";
 import { getDateString } from "@provider";
+import { FlexBox } from "../../FlexBox";
+import { DateTileMediumProps } from "../types";
+import styles from "../TerminTile.module.css";
 
-const TerminTileMedium: FC<DateTileMediumProps> = ({
-  title,
-  date,
-  description,
-  location,
-}) => (
-  <div css={sidebarElement}>
-    <FlexBox direction="column" gap={settings.sizes.small}>
-      <div>
-        <h4>{title}</h4>
-      </div>
-      <div>
-        <p>
-          <AiOutlineCalendar
-            css={{
-              fontSize: "1em",
-              marginRight: "0.3rem",
-              color: settings.colors.primary,
-            }}
-          />{" "}
-          {getDateString(date).date}
-        </p>
-      </div>
-      <div>
-        <p>
-          <AiOutlineClockCircle
-            css={{
-              fontSize: "1em",
-              marginRight: "0.3rem",
-              color: settings.colors.primary,
-            }}
-          />
-          {getDateString(date).time}
-        </p>
-      </div>
-      {description && (
+const TerminTileMedium: FC<DateTileMediumProps> = ({ title, date, description, location }) => {
+  const when = getDateString(date);
+
+  return (
+    <div className="sidebar-panel">
+      <FlexBox direction="column" gap="6px">
         <div>
+          <h4>{title}</h4>
+        </div>
+        <p>
+          <AiOutlineCalendar className={styles.icon} /> {when.date}
+        </p>
+        <p>
+          <AiOutlineClockCircle className={styles.icon} />
+          {when.time}
+        </p>
+        {description && (
           <p>
-            <AiOutlineInfoCircle
-              css={{
-                fontSize: "1em",
-                marginRight: "0.3rem",
-                color: settings.colors.primary,
-              }}
-            />
+            <AiOutlineInfoCircle className={styles.icon} />
             {description}
           </p>
-        </div>
-      )}
-      {location && (
-        <div>
+        )}
+        {location && (
           <p>
-            <AiOutlineHome
-              css={{
-                fontSize: "1em",
-                marginRight: "0.3rem",
-                color: settings.colors.primary,
-              }}
-            />
+            <AiOutlineHome className={styles.icon} />
             {location}
           </p>
-        </div>
-      )}
-    </FlexBox>
-  </div>
-);
+        )}
+      </FlexBox>
+    </div>
+  );
+};
 
 export default TerminTileMedium;

@@ -1,0 +1,24 @@
+.column {
+  flex: 1 1 50%;
+}
+
+.lead {
+  font-weight: 600;
+}
+
+.plainLink {
+  text-decoration: none;
+}
+
+.download,
+.notes {
+  width: 100%;
+  padding: 2em;
+}
+
+@media (min-width: 992px) {
+  .download,
+  .notes {
+    padding: 2em 0;
+  }
+}

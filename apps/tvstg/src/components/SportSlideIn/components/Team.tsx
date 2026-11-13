@@ -1,10 +1,9 @@
 import { motion, type Variants } from "motion/react";
 import React from "react";
-import settings from "@settings";
 import { FlexBox } from "@ui";
-import { useFindImages } from "@provider";
-import { Image } from "@ui";
+import { Image } from "@repo/ui";
 import { PatstoreGroup } from "@types";
+import styles from "./Team.module.css";
 
 const menuenterright2: Variants = {
   initial: {
@@ -49,45 +48,17 @@ const menuContent: Variants = {
 };
 
 const Team: React.FC<{ team: NonNullable<PatstoreGroup["team"]> }> = ({ team }) => {
-  const { findImage } = useFindImages();
-
   return (
     <motion.div
       key={team.id}
-      css={settings.mq({
-        cursor: "default",
-        width: ["20vw", "50vw", "55vw", "55vw", "55vw"],
-        right: [0, 0, "0", "33vw", "33vw"],
-        overflowY: "scroll",
-        position: "fixed",
-        height: "100vh",
-        top: "0",
-        background: settings.colors.white,
-        border: `1px solid ${settings.colors.grey}`,
-        zIndex: 11,
-      })}
+      className={styles.panel}
       initial="initial"
       animate="visible"
       exit="hidden"
       variants={menuenterright2}
     >
-      <div
-        css={{
-          position: "absolute",
-          zIndex: 2,
-          background: settings.colors.light,
-          top: 0,
-          left: 0,
-          width: "100%",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          borderBottom: `1px solid ${settings.colors.dark}`,
-          padding: "1em",
-        }}
-      >
-        <h4 css={{ margin: "0 !important" }}>Team-Info</h4>
+      <div className={styles.bar}>
+        <h4>Team-Info</h4>
       </div>
 
       <motion.div
@@ -97,29 +68,26 @@ const Team: React.FC<{ team: NonNullable<PatstoreGroup["team"]> }> = ({ team }) 
         exit="exit"
         className="slideInLarge"
       >
-        <FlexBox direction="column" styles={{ marginTop: "3em" }}>
+        <FlexBox direction="column" style={{ marginTop: "3em" }}>
           <FlexBox
             direction="column"
             align="flex-start"
             justify="flex-end"
-            styles={{ height: "100%", padding: settings.padding.medium }}
+            style={{ height: "100%", padding: "var(--pad-medium)" }}
           >
-            <h2 css={{ color: settings.colors.dark, width: "auto" }}>
-              {" "}
-              {team.name}
-            </h2>
+            <h2 className={styles.name}>{team.name}</h2>
           </FlexBox>
 
           {team.image && (
             <Image
               alt={team.name}
-              css={{
+              id={team.image}
+              style={{
                 objectFit: "cover",
                 height: "100%",
                 width: "100%",
                 maxHeight: "30em",
               }}
-              image={findImage(team.image)}
             />
           )}
 
@@ -127,7 +95,7 @@ const Team: React.FC<{ team: NonNullable<PatstoreGroup["team"]> }> = ({ team }) 
             direction="column"
             align="flex-start"
             justify="flex-end"
-            styles={{ height: "100%", padding: settings.padding.medium }}
+            style={{ height: "100%", padding: "var(--pad-medium)" }}
           >
             <div>
               {team.description && (

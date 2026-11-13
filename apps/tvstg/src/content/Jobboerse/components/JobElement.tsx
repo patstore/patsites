@@ -2,19 +2,12 @@ import React, { useState } from "react";
 import { AiOutlineArrowRight, AiOutlineClockCircle, AiOutlineInfoCircle } from "react-icons/ai";
 import { RiBuilding3Line } from "react-icons/ri";
 import { Image } from "@repo/ui";
-import { Label } from "@ui";
-import { getWeekday, useCollection, useFindImages } from "@provider";
+import { Label, contentBlockStyles } from "@ui";
+import { getWeekday, locationLabel, useCollection } from "@provider";
 import type { EventTime, PatstoreEntry, PatstoreGroup } from "@types";
-import {
-  trainingCardInfo,
-  trainingGridArrow,
-  trainingGridTags,
-  trainingImageGrid,
-  trainingTag,
-} from "../../../ui/SportCalendar/content/WeekDay/styles";
 import { findTrainingGroup } from "./findTrainingGroup";
 import JobSlideIn from "./JobSlideIn";
-import { jobCard, jobInfoIcon, jobInfoRow } from "./styles";
+import styles from "./JobElement.module.css";
 
 const WEEKDAY_ORDER: EventTime["weekday"][] = [
   "monday",
@@ -53,12 +46,12 @@ const JobElement: React.FC<{ job: PatstoreEntry }> = ({ job }) => {
   const { find: findCategory } = useCollection("Category");
   const { find: findLocation } = useCollection("Location");
   const { find: findPerson } = useCollection("Person");
-  const { findImageUrl } = useFindImages();
+  const { find: findImage } = useCollection("Image");
   const [open, setOpen] = useState(false);
 
   const group = findTrainingGroup(job, groups);
   const contact = findPerson(job.contact);
-  const imageId = [group?.team?.image, group?.image].find((id) => findImageUrl(id));
+  const imageId = [group?.team?.image, group?.image].find((id) => Boolean(id && findImage(id)));
   const categoryIds = group?.categories?.length ? group.categories : (job.categories ?? []);
   const tags = unique([
     ...categoryIds.map((id) => findCategory(id)?.title),
@@ -73,12 +66,12 @@ const JobElement: React.FC<{ job: PatstoreEntry }> = ({ job }) => {
     <>
       <button
         type="button"
-        css={jobCard}
+        className={styles.card}
         id={job.objectId}
         onClick={() => setOpen(true)}
       >
         {imageId ? (
-          <div css={trainingImageGrid}>
+          <div className={styles.image}>
             <Image
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
               alt={group?.title || job.title || ""}
@@ -86,32 +79,32 @@ const JobElement: React.FC<{ job: PatstoreEntry }> = ({ job }) => {
             />
           </div>
         ) : null}
-        <div css={[trainingCardInfo, { flex: "1 1 auto", minWidth: 0, width: "100%" }]}>
+        <div className={styles.info}>
           {group?.title ? <Label text={group.title} /> : null}
-          <h3 css={{ fontSize: "1.2rem", margin: 0 }}>{job.title}</h3>
+          <h3 className={styles.title}>{job.title}</h3>
           {tags.length > 0 ? (
-            <div css={trainingGridTags}>
+            <div className={contentBlockStyles.tags}>
               {tags.map((tag) => (
-                <span key={tag} css={trainingTag}>
+                <span key={tag} className={contentBlockStyles.tag}>
                   {tag}
                 </span>
               ))}
             </div>
           ) : null}
           {times.map((time) => {
-            const place = findLocation(time.place?.location)?.title;
+            const place = locationLabel(time.place, findLocation);
             return (
               <div key={time.id}>
-                <p css={jobInfoRow}>
-                  <AiOutlineClockCircle css={jobInfoIcon} />
+                <p className={styles.infoRow}>
+                  <AiOutlineClockCircle className={styles.infoIcon} />
                   <span>
                     {getWeekday(time.weekday)}
                     {time.start && time.end ? ` ${time.start} – ${time.end}` : ""}
                   </span>
                 </p>
                 {place ? (
-                  <p css={jobInfoRow}>
-                    <RiBuilding3Line css={jobInfoIcon} />
+                  <p className={styles.infoRow}>
+                    <RiBuilding3Line className={styles.infoIcon} />
                     <span>{place}</span>
                   </p>
                 ) : null}
@@ -119,13 +112,13 @@ const JobElement: React.FC<{ job: PatstoreEntry }> = ({ job }) => {
             );
           })}
           {job.description ? (
-            <p css={jobInfoRow}>
-              <AiOutlineInfoCircle css={jobInfoIcon} />
+            <p className={styles.infoRow}>
+              <AiOutlineInfoCircle className={styles.infoIcon} />
               <span>{job.description}</span>
             </p>
           ) : null}
         </div>
-        <span css={trainingGridArrow} aria-hidden>
+        <span className={styles.arrow} aria-hidden>
           <AiOutlineArrowRight size={16} />
         </span>
       </button>

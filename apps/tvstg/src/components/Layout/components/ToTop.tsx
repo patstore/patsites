@@ -1,7 +1,7 @@
-import settings from "@settings";
 import { AnimatePresence, motion } from "motion/react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
+import styles from "./ToTop.module.css";
 
 const ToTop = () => {
   const [scrollTop, setScrollTop] = useState(false);
@@ -33,28 +33,9 @@ const ToTop = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          css={{
-            backgroundColor: settings.colors.primary,
-            borderRadius: "50%",
-            position: "fixed",
-            right: "2em",
-            bottom: "2em",
-            width: "40px",
-            height: "40px",
-            cursor: "pointer",
-            zIndex: 8,
-          }}
+          className={styles.button}
         >
-          <div
-            css={{
-              lineHeight: "100%",
-              color: settings.colors.white,
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-          >
+          <div className={styles.icon}>
             <IoIosArrowUp />
           </div>
         </motion.div>

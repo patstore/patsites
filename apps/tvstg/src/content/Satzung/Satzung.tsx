@@ -1,11 +1,11 @@
 import { Layout, RenderContent } from "@components";
-import { wrapper, siteContainerSmall } from "@styles";
 import { HeadContent } from "@ui";
 import React from "react";
-import { useFindWebpage } from "@provider";
+import { useCollection } from "@provider";
 
 const Satzung: React.FC = () => {
-  const webpage = useFindWebpage({ path: "satzung" });
+  const { items: webpages } = useCollection("Webpage");
+  const webpage = webpages.find((page) => page?.path?.includes("satzung"));
 
   if (!webpage) {
     return null;
@@ -13,13 +13,13 @@ const Satzung: React.FC = () => {
 
   return (
     <Layout>
-      <div css={wrapper}>
+      <div className="wrapper">
         <HeadContent
           smallContent
           titel={webpage.title}
           titeltext={webpage.subtitle}
         />
-        <div css={siteContainerSmall}>
+        <div className="site-container-small">
           <RenderContent path="/satzung" />
         </div>
       </div>

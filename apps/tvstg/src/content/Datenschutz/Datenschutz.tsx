@@ -1,16 +1,15 @@
 import React from "react";
 import { Layout } from "@components";
-import { siteContainer, wrapper } from "@styles";
 import { HeadContent } from "@ui";
 
 const Datenschutzerklaerung: React.FC = () => (
   <Layout>
-    <div css={wrapper}>
+    <div className="wrapper">
       <HeadContent
         titel="Datenschutzerklärung"
         titeltext="Allgemeine Informationen zum Datenschutz"
       />
-      <div css={[siteContainer]}>
+      <div className="site-container">
         <p>
           Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der
           EU-Datenschutzgrundverordnung (DSGVO), ist:

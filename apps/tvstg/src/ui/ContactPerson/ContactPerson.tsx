@@ -1,35 +1,29 @@
-import React from "react";
+import { Image } from "@repo/ui";
 import { FlexBox } from "../FlexBox";
-import { Image } from "../Image";
 import placeholder from "./images/placeholder_m.png";
 import { PatstorePerson } from "@types";
-import { useFindImages } from "@provider";
+import styles from "./ContactPerson.module.css";
 
 type ContactPersonProps = {
   person: PatstorePerson;
 };
 
-const ContactPerson: React.FC<ContactPersonProps> = ({ person }) => {
-  const { findImage } = useFindImages();
+const ContactPerson = ({ person }: ContactPersonProps) => {
+  const name = person.title || "";
 
   return (
     <FlexBox align="center" hasFullWidth styles={{ margin: "6px 0" }}>
-      <div css={{ marginRight: "1em" }}>
-        <Image
-          alt={person.title || ""}
-          image={person.image ? findImage(person.image) : { src: placeholder }}
-          objectPosition="top"
-          width={60}
-          height={60}
-          style={{ borderRadius: "4px" }}
-        />
+      <div className={styles.portrait}>
+        {person.image ? (
+          <Image id={person.image} alt={name} className={styles.photo} style={{ width: 60, height: 60, borderRadius: 4 }} />
+        ) : (
+          <img src={placeholder} alt={name} width={60} height={60} className={styles.photo} />
+        )}
       </div>
 
       <div>
-        <h4>{person.title || ""}</h4>
-        {person.email && (
-          <a href={`mailto:${person.email}`}>E-Mail schreiben</a>
-        )}
+        <h4>{name}</h4>
+        {person.email && <a href={`mailto:${person.email}`}>E-Mail schreiben</a>}
       </div>
     </FlexBox>
   );

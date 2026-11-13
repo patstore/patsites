@@ -1,0 +1,14 @@
+.relative {
+  position: relative;
+}
+
+.external {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.16rem;
+  line-height: 1;
+}
+
+.external[data-linked="true"] {
+  text-decoration: underline;
+}

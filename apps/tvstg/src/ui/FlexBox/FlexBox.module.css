@@ -1,0 +1,24 @@
+.flex {
+  height: auto;
+  padding: 0;
+  display: flex;
+  overflow: visible;
+  position: relative;
+  min-width: 0;
+}
+
+.full {
+  width: 100%;
+}
+
+.changeToColumn {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .changeToColumn {
+    flex-direction: row;
+    align-items: var(--flex-align, flex-start);
+  }
+}

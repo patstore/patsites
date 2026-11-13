@@ -1,8 +1,6 @@
 import React from "react";
 import type { EventTime } from "@types";
 import { getWeekday } from "@provider";
-import { weekdayFilterBar, weekdayLabelFull, weekdayLabelShort } from "../../../styles";
-import SquareChoiceButton from "../../../components/SquareChoiceButton";
 import { WEEKDAY_ORDER, WEEKDAY_SHORT } from "../weekDaysUtils";
 
 type WeekdayButtonsProps = {
@@ -17,26 +15,24 @@ const WeekdayButtons: React.FC<WeekdayButtonsProps> = ({
   onSelect,
 }) => {
   return (
-    <div css={weekdayFilterBar} role="group" aria-label="Wochentage">
+    <div className="weekday-bar" role="group" aria-label="Wochentage">
       {WEEKDAY_ORDER.map((weekday) => {
         const count = counts[weekday];
         const isSelected = selected === weekday;
         return (
-          <SquareChoiceButton
+          <button
             key={weekday}
-            shape="weekday"
-            selected={isSelected}
+            type="button"
+            className="btn-choice weekday"
+            aria-pressed={isSelected}
             disabled={count === 0 && !isSelected}
-            ariaLabel={`${getWeekday(weekday)}, ${count} Gruppen`}
-            label={
-              <>
-                <span css={weekdayLabelShort}>{WEEKDAY_SHORT[weekday]}</span>
-                <span css={weekdayLabelFull}>{getWeekday(weekday)}</span>
-                <span css={{ fontSize: "0.85em", fontWeight: 400 }}>({count})</span>
-              </>
-            }
+            aria-label={`${getWeekday(weekday)}, ${count} Gruppen`}
             onClick={() => onSelect(weekday)}
-          />
+          >
+            <span className="label-short">{WEEKDAY_SHORT[weekday]}</span>
+            <span className="label-full">{getWeekday(weekday)}</span>
+            <span>({count})</span>
+          </button>
         );
       })}
     </div>

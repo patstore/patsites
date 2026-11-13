@@ -1,22 +1,22 @@
 import React from "react";
 import genders from "../constants/genders";
 import { GenderFilterProps } from "../types";
-import { choiceButtonRow, label, sidebarFilterField } from "../styles";
-import SquareChoiceButton from "./SquareChoiceButton";
 
 const GenderFilter: React.FC<GenderFilterProps> = ({ gender, setGender }) => {
   return (
-    <div css={sidebarFilterField}>
-      <span css={label}>Geschlecht</span>
-      <div css={choiceButtonRow}>
+    <div className="field">
+      <span className="field-label">Geschlecht</span>
+      <div className="choice-row">
         {genders.map((gen) => (
-          <SquareChoiceButton
+          <button
             key={gen.value}
-            shape="filter-padded"
-            label={gen.label}
-            selected={gender === gen.value}
+            type="button"
+            className="btn-choice padded"
+            aria-pressed={gender === gen.value}
             onClick={() => setGender(gen.value)}
-          />
+          >
+            {gen.label}
+          </button>
         ))}
       </div>
     </div>

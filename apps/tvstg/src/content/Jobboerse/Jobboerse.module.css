@@ -1,0 +1,15 @@
+.jobs {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2%;
+}
+
+@media (min-width: 992px) {
+  .jobs {
+    gap: 1%;
+  }
+}

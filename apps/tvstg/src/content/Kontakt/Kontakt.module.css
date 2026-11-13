@@ -1,0 +1,29 @@
+:global(.section-header).tight {
+  margin-top: 0;
+}
+
+.sidebarBody {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  gap: 0.6rem;
+  text-align: left;
+  background: transparent;
+  font-size: 12px;
+  padding: 0;
+}
+
+@media (min-width: 768px) {
+  .sidebarBody {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sidebarBody {
+    font-size: 14px;
+  }
+}

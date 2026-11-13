@@ -1,0 +1,124 @@
+.card {
+  position: relative;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  flex: var(--blog-flex, 100%);
+  height: auto;
+  overflow: hidden;
+  color: var(--color-text);
+  transition:
+    box-shadow 0.2s ease,
+    background 0.4s ease,
+    color 0.2s ease,
+    transform 0.4s ease;
+}
+
+.card.card {
+  width: auto;
+}
+
+.card:hover h2,
+.card:hover h3,
+.header:hover h2,
+.header:hover h3 {
+  text-decoration: underline;
+}
+
+@media (min-width: 576px) {
+  .card {
+    flex: var(--blog-flex-sm, var(--blog-flex, 45%));
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex: var(--blog-flex-md, var(--blog-flex-sm, var(--blog-flex, 45%)));
+  }
+}
+
+@media (min-width: 992px) {
+  .card {
+    flex: var(--blog-flex-lg, var(--blog-flex-md, var(--blog-flex, 45%)));
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    flex: var(--blog-flex-xl, var(--blog-flex-lg, var(--blog-flex, 45%)));
+  }
+}
+
+.link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+}
+
+.image {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 6px;
+  aspect-ratio: 16 / 9;
+}
+
+.header {
+  position: relative;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  flex: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  color: var(--color-text);
+  transition:
+    box-shadow 0.2s ease,
+    background 0.4s ease,
+    color 0.2s ease,
+    transform 0.4s ease;
+}
+
+.headerImage {
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.headerBody {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 420px;
+  padding: var(--pad-medium);
+  padding-bottom: 18px;
+}
+
+.headerBody.headerBody {
+  width: auto;
+}
+
+.footer {
+  padding: var(--pad-small);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.title {
+  margin-bottom: 18px;
+  padding: var(--pad-small);
+}
+
+.title h3 {
+  margin: 0;
+}

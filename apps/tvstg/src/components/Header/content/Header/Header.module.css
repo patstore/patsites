@@ -1,0 +1,163 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 8;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5em;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.logoWrap {
+  width: auto;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logoLink {
+  display: block;
+  width: 180px;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.menu {
+  width: auto;
+  list-style: none;
+  display: inline;
+  position: relative;
+  padding: 0;
+}
+
+.menu li {
+  position: relative;
+  display: inline;
+  margin: 0 1.4rem;
+  color: inherit;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.4px;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.menu a {
+  margin-bottom: 0;
+  color: inherit;
+  font-family: Inter, sans-serif;
+  letter-spacing: -0.3px;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+  font-size: inherit;
+  line-height: inherit;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: inherit;
+}
+
+.dropdown {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  position: absolute;
+  top: 24px;
+  left: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 18rem;
+  z-index: 9;
+}
+
+.dropdown ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  margin-left: 0;
+  padding: 0;
+}
+
+.dropdown ul li {
+  margin: 0;
+  display: inline-block;
+  cursor: pointer;
+  padding: var(--pad-small);
+  font-size: 12px;
+  font-weight: 600;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.dropdown ul li:hover {
+  color: #fff;
+  background-color: var(--color-primary);
+}
+
+.list {
+  position: relative;
+}
+
+.submenu {
+  background-color: var(--color-surface);
+  font-weight: 500;
+  top: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 18rem;
+  position: absolute;
+  z-index: 9;
+  transform: translate(100%, 0);
+}
+
+.submenu ul li {
+  display: block;
+}
+
+.notice {
+  display: none;
+  order: 3;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: 200px;
+  height: auto;
+  background-color: var(--color-primary);
+  color: #fff;
+  margin-top: 2.4rem;
+  padding: 0.3rem 1.2rem;
+}
+
+.noticeText {
+  text-align: center;
+}
+
+@media (min-width: 576px) {
+  .header {
+    padding: 0 1em;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 0 2em;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    display: flex;
+  }
+}

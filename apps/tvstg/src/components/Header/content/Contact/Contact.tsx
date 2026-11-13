@@ -1,12 +1,11 @@
 import React from "react";
-import { contactIndicatorTwo, contactSlideIn, overlay } from "./styles";
 import ContactContent from "./components/ContactContent";
 import { AnimatePresence, motion } from "motion/react";
-import settings from "@settings";
 import { slideInAnimation } from "./animations";
 import { MessagesSquare } from "lucide-react";
 import { useSiteContext } from "@provider";
 import { ContactProps } from "./types";
+import styles from "./Contact.module.css";
 
 const Contact: React.FC<ContactProps> = ({ showMenu, setShowMenu }) => {
   const { contactOpen, setContactOpen } = useSiteContext();
@@ -28,7 +27,7 @@ const Contact: React.FC<ContactProps> = ({ showMenu, setShowMenu }) => {
       <AnimatePresence>
         {contactOpen && (
           <motion.div
-            css={overlay}
+            className={styles.overlay}
             key="slideIn-overlay"
             transition={{ duration: 0.3 }}
             initial={{ opacity: 0 }}
@@ -45,20 +44,13 @@ const Contact: React.FC<ContactProps> = ({ showMenu, setShowMenu }) => {
         animate={
           contactOpen ? slideInAnimation.animate : slideInAnimation.initial
         }
-        css={settings.mq([
-          contactSlideIn,
-          { width: ["95vw", "95vw", "50vw", "33vw"] },
-        ])}
+        className={styles.panel}
         transition={{ ease: "easeOut" }}
       >
         <ContactContent />
       </motion.div>
-      <div css={contactIndicatorTwo} onClick={() => contactOpenHandler()}>
-        <MessagesSquare
-          size={16}
-          strokeWidth={1.75}
-          color={settings.colors.white}
-        />
+      <div className={styles.indicator} onClick={() => contactOpenHandler()}>
+        <MessagesSquare size={16} strokeWidth={1.75} />
       </div>
     </>
   );

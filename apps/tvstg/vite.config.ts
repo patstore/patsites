@@ -80,9 +80,7 @@ export default defineConfig(({ mode }) => {
       tsconfigPaths(),
       tanstackStart(),
       nitro(process.env.VERCEL ? { preset: "vercel" } : {}),
-      viteReact({
-        jsxImportSource: "@emotion/react",
-      }),
+      viteReact(),
     ],
   });
 });

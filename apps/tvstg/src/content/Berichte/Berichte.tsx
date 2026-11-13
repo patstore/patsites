@@ -1,11 +1,9 @@
 import React, { useMemo } from "react";
-import settings from "@settings";
 import { useCollection } from "@provider";
 import { Layout } from "@components";
 import { BlogElement, FlexBox, HeadContent, SwitchButton } from "@ui";
-import { siteContainer, wrapper } from "@styles";
-import { switchButtonContainer } from "./styles";
 import ReactPaginateModule from "react-paginate";
+import styles from "./Berichte.module.css";
 import "./styles.css";
 
 // Under Node SSR the CommonJS-only build resolves to the module object, not the component.
@@ -57,20 +55,20 @@ const Berichte: React.FC<BerichteProps> = ({
 
   return (
     <Layout>
-      <div css={wrapper}>
+      <div className="wrapper">
         <HeadContent
           titel="Beiträge"
           titeltext="Aktuelle und vergangene Berichte aus dem Vereinsgeschehen"
         />
-        <div css={siteContainer}>
+        <div className="site-container">
           <FlexBox direction="column" align="center" justify="center">
             <FlexBox
+              className={styles.filters}
               direction="row"
               align="center"
               justify="center"
               wrap
-              gap={settings.sizes.medium}
-              styles={switchButtonContainer}
+              gap="12px"
             >
               {buttons.map((value) => (
                 <SwitchButton
@@ -88,7 +86,7 @@ const Berichte: React.FC<BerichteProps> = ({
               justify="space-between"
               wrap
               align="stretch"
-              gap={settings.sizes.medium}
+              gap="12px"
             >
               {pageArticles.length > 0 ? (
                 pageArticles.map((value) => (

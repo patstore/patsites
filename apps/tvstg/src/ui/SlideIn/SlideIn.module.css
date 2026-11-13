@@ -1,0 +1,84 @@
+.overlay {
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup {
+  z-index: 16;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 95vw;
+  background-color: var(--color-surface);
+  padding: var(--pad-medium);
+  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.popup label {
+  margin-top: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+@media (min-width: 992px) {
+  .small {
+    width: 33vw;
+  }
+
+  .medium {
+    width: 50vw;
+  }
+
+  .large {
+    width: 95vw;
+  }
+}
+
+.bar {
+  position: absolute;
+  z-index: 2;
+  background: var(--color-header);
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border-bottom: 1px solid var(--color-text);
+  padding: 1em;
+}
+
+.close {
+  margin: 0;
+  cursor: pointer;
+}
+
+.content {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.locked {
+  overflow: hidden;
+}
+
+.actions {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}

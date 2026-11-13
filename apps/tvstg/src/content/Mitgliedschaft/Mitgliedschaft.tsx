@@ -1,13 +1,13 @@
 import React from "react";
-import settings from "@settings";
 import "./styles.scss";
 import { Layout, RenderContent } from "@components";
 import { Divider, FlexBox, FullButton, HeadContent } from "@ui";
-import { siteContainer, wrapper } from "@styles";
-import { useFindWebpage, useCollection } from "@provider";
+import { useCollection } from "@provider";
+import styles from "./Mitgliedschaft.module.css";
 
 const Mitgliedschaft: React.FC = () => {
-  const webpage = useFindWebpage({ path: "/mitgliedschaft" });
+  const { items: webpages } = useCollection("Webpage");
+  const webpage = webpages.find((page) => page?.path?.includes("/mitgliedschaft"));
   const { items: downloads } = useCollection("Download");
 
   const mitgliedsAntrag = downloads.find(
@@ -16,23 +16,23 @@ const Mitgliedschaft: React.FC = () => {
 
   return (
     <Layout>
-      <div css={wrapper}>
+      <div className="wrapper">
         <HeadContent
           titel={webpage?.title || ""}
           titeltext={webpage?.subtitle || ""}
         />
-        <div css={siteContainer}>
+        <div className="site-container">
           <FlexBox
             direction="row"
             align="flex-start"
             justify="space-between"
-            gap={settings.sizes.medium}
+            gap="12px"
             hasFullWidth
             changeToColumn
           >
-            <div css={{ flex: "1 1 50%" }}>
+            <div className={styles.column}>
               <h2>Online-Anmeldung</h2>
-              <p css={{ fontWeight: 600 }}>
+              <p className={styles.lead}>
                 Melden Sie sich einfach über unser Online-Portal an.
               </p>
               <a
@@ -47,18 +47,14 @@ const Mitgliedschaft: React.FC = () => {
               </a>
             </div>
 
-            <div css={{ flex: "1 1 50%" }}>
+            <div className={styles.column}>
               <h2>Mitgliedsantrag</h2>
-              <div
-                css={settings.mq({
-                  padding: ["2em 2em", "2em 2em", "2em 2em", "2em 0", "2em 0"],
-                })}
-              >
+              <div className={styles.download}>
                 <a
                   href={mitgliedsAntrag?.file?.url || ""}
                   target="_blank"
                   rel="noreferrer"
-                  css={{ textDecoration: "none" }}
+                  className={styles.plainLink}
                 >
                   <FullButton
                     text="Mitgliedsantrag herunterladen"
@@ -73,13 +69,10 @@ const Mitgliedschaft: React.FC = () => {
           <FlexBox direction="column" align="stretch" justify="space-between">
             <RenderContent path="/mitgliedschaft" />
             <FlexBox
+              className={styles.notes}
               direction="column"
               align="flex-start"
               justify="center"
-              styles={{
-                width: "100%",
-                padding: ["2em 2em", "2em 2em", "2em 2em", "2em 0", "2em 0"],
-              }}
             >
               <p>Die Beiträge werden jeweils jährlich im Voraus abgebucht.</p>
               <p>

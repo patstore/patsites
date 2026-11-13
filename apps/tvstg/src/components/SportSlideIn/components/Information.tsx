@@ -1,16 +1,11 @@
 import React, { useMemo } from "react";
 import { InformationProps } from "../types";
 import { ContactPerson, FlexBox } from "@ui";
-import {
-  getWeekday,
-  useFindImages,
-  useCollection,
-} from "@provider";
+import { getWeekday, locationLabel, useCollection } from "@provider";
 import { PatstorePerson } from "@types";
-import { sidebarElement } from "../../Sidebar/styles";
+import { Image } from "@repo/ui";
 import TrainingTimesSlideIn from "./TrainingTimesSlideIn";
-import { sectionHeader } from "@styles";
-import { Image } from "@ui";
+import styles from "./Information.module.css";
 
 export const Information: React.FC<InformationProps> = ({
   titel,
@@ -25,7 +20,6 @@ export const Information: React.FC<InformationProps> = ({
   type,
 }) => {
   const { items: persons } = useCollection("Person");
-  const { findImage } = useFindImages();
   const { find: findLocation } = useCollection("Location");
 
   const groupData = useMemo(() => {
@@ -53,14 +47,14 @@ export const Information: React.FC<InformationProps> = ({
         <FlexBox
           direction="column"
           align="stretch"
-          styles={{ padding: "3em 0" }}
+          style={{ padding: "3em 0" }}
         >
-          <h1 css={{ padding: "0.5em", fontSize: "1.8rem" }}>{titel}</h1>
+          <h1 className={styles.title}>{titel}</h1>
           {email && (
-            <div css={{ width: "100%" }}>
-              <div css={sectionHeader}>Kontakt</div>
-              <div css={{ padding: "0 1em", width: "100%" }}>
-                <div css={sidebarElement}>
+            <div className={styles.full}>
+              <div className="section-header">Kontakt</div>
+              <div className={styles.inset}>
+                <div className="sidebar-panel">
                   <h3>Kontakt E-Mail</h3>
 
                   <a href={`mailto:${email}`}>{email}</a>
@@ -68,8 +62,8 @@ export const Information: React.FC<InformationProps> = ({
               </div>
             </div>
           )}
-          <div css={sectionHeader}>Übungsleiter*innen</div>
-          <div css={{ padding: "0 1em", width: "100%" }}>
+          <div className="section-header">Übungsleiter*innen</div>
+          <div className={styles.inset}>
             {groupData.trainers.map((person: PatstorePerson) => (
               <ContactPerson person={person} key={person.objectId} />
             ))}
@@ -77,55 +71,55 @@ export const Information: React.FC<InformationProps> = ({
         </FlexBox>
       </div>
       {startalter && (
-        <div css={{ height: "auto", overflowY: "hidden" }}>
-          <div css={sectionHeader}>Alter</div>
-          <div css={{ padding: "0 1em" }}>
+        <div className={styles.clip}>
+          <div className="section-header">Alter</div>
+          <div className={styles.insetNarrow}>
             <p>{groupData.alter}</p>
           </div>
         </div>
       )}
       {info && (
-        <div css={{ height: "auto", overflowY: "hidden" }}>
-          <div css={sectionHeader}>Info</div>
-          <div css={{ padding: "0 1em" }}>
+        <div className={styles.clip}>
+          <div className="section-header">Info</div>
+          <div className={styles.insetNarrow}>
             <p>{info}</p>
           </div>
         </div>
       )}
       {beschreibung && (
         <div>
-          <div css={sectionHeader}>Beschreibung</div>
+          <div className="section-header">Beschreibung</div>
           <div dangerouslySetInnerHTML={{ __html: beschreibung }} />
         </div>
       )}
-      <div css={{ overflowY: "hidden" }}>
-        <div css={sectionHeader}>Trainingszeiten</div>
+      <div className={styles.clipAuto}>
+        <div className="section-header">Trainingszeiten</div>
         {trainingszeiten.map((value) => (
           <TrainingTimesSlideIn
             key={value.id}
             weekday={getWeekday(value.weekday)}
             start={value.start}
             end={value.end}
-            location={findLocation(value?.place?.location as string)?.title || ""}
-            text={value.text ||  ""}
+            location={locationLabel(value.place, findLocation) || ""}
+            text={value.text || ""}
           />
         ))}
       </div>
       <div>
         {type === "mobile" && team && (
           <div>
-            <div css={sectionHeader}>Die Mannschaft</div>
-            <FlexBox direction="column" styles={{ marginTop: "3em" }}>
+            <div className="section-header">Die Mannschaft</div>
+            <FlexBox direction="column" style={{ marginTop: "3em" }}>
               {team.image && (
                 <Image
                   alt={titel}
-                  css={{
+                  id={team.image}
+                  style={{
                     objectFit: "cover",
                     height: "100%",
                     width: "100%",
                     maxHeight: "30em",
                   }}
-                  image={findImage(team.image)}
                 />
               )}
 
@@ -133,7 +127,7 @@ export const Information: React.FC<InformationProps> = ({
                 direction="column"
                 align="flex-start"
                 justify="flex-end"
-                styles={{ height: "100%", padding: "0.5em 2em" }}
+                style={{ height: "100%", padding: "0.5em 2em" }}
               >
                 <div>
                   {team.description && (

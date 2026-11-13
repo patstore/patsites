@@ -1,18 +1,15 @@
 import React, { useMemo } from "react";
-import settings from "@settings";
-import { sidebarElement, sidebarElementContainer, sidebarElementContent, sidebarElementHeader, sidebarHeader } from "../styles";
 import { NewsProps } from "../types";
 import { Button, FlexBox, Label } from "@ui";
 import { getDateString, useCollection } from "@provider";
 import { Link } from "@tanstack/react-router";
+import styles from "./News.module.css";
 
 const News: React.FC<NewsProps> = ({ category, displayAllNews = false }) => {
   const { items: news } = useCollection("Entry");
 
-  console.log(news);
-
   const newsArray = useMemo(() => {
-    const sixtyDaysAgo = new Date();  
+    const sixtyDaysAgo = new Date();
     sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60);
     const now = new Date();
     const actualNews = news.filter((value) => {
@@ -33,30 +30,33 @@ const News: React.FC<NewsProps> = ({ category, displayAllNews = false }) => {
   }, [news, category, displayAllNews]);
 
   return (
-    <div
-        css={sidebarElement}
-    >
-      <div css={sidebarElementHeader}>Jobbörse</div>
+    <div className="sidebar-panel">
+      <div className="section-header flush">Jobbörse</div>
       {newsArray.length > 0 ? (
         <FlexBox
           direction="column"
           align="stretch"
           hasFullWidth
-          gap={settings.sizes.medium}
-          styles={{padding: settings.padding.small}}
+          gap="12px"
+          style={{ padding: "var(--pad-small)" }}
         >
-          {newsArray.sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()).map((value) => (
-            <div key={value.objectId} css={sidebarElementContent}>
-                <Label text={getDateString(value.date!).date} color={settings.colors.primary} />
+          {newsArray
+            .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime())
+            .map((value) => (
+              <div key={value.objectId} className="sidebar-block">
+                <Label text={getDateString(value.date!).date} color="var(--color-primary)" />
                 <h4>{value.title}</h4>
-                <div css={{marginTop: settings.sizes.large}}>
-                  <Link to={`/jobboerse`} hash={value.slug} css={{textDecoration: "none !important"}}>
-                    <Button text="Mehr erfahren" onClick={() => (`/news/${value.objectId}`)} />
+                <div className={styles.more}>
+                  <Link
+                    to={`/jobboerse`}
+                    hash={(value as { slug?: string | null }).slug || undefined}
+                    className={styles.link}
+                  >
+                    <Button text="Mehr erfahren" onClick={() => `/news/${value.objectId}`} />
                   </Link>
+                </div>
               </div>
-              
-            </div>
-          ))}
+            ))}
         </FlexBox>
       ) : (
         <div>

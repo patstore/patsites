@@ -3,9 +3,10 @@ import React, { FC, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { Link, useNavigate } from "@tanstack/react-router";
 import { RiArrowDropRightFill } from "react-icons/ri";
-import { menuStyle } from "../styles";
 import { menuItemVariants, menuVariants } from "../animations";
 import { MenuSectionMobileProps } from "../types";
+import menuStyles from "../Header.module.css";
+import styles from "./MenuSectionMobile.module.css";
 
 const MenuSectionMobile: FC<MenuSectionMobileProps> = ({
   dropdownItem,
@@ -17,16 +18,11 @@ const MenuSectionMobile: FC<MenuSectionMobileProps> = ({
 
   if (dropdownItem?.link?.includes("http")) {
     return (
-      <div css={{ position: "relative" }}>
+      <div className={styles.relative}>
         <a
-          css={{
-            color: dropdownItem.color
-              ? `${dropdownItem.color} !important`
-              : "inherit",
-            textDecoration: dropdownItem.link ? "underline !important" : "none",
-            fontSize: "1.16rem !important",
-            lineHeight: "1 !important",
-          }}
+          className={styles.external}
+          data-linked={dropdownItem.link ? "true" : undefined}
+          style={dropdownItem.color ? { color: dropdownItem.color } : undefined}
           href={dropdownItem.link}
           target="_blank"
           rel="noreferrer"
@@ -56,7 +52,7 @@ const MenuSectionMobile: FC<MenuSectionMobileProps> = ({
       <AnimatePresence mode="wait">
         {isOpen === true && (
           <motion.div
-            css={menuStyle}
+            className={menuStyles.dropdown}
             style={{ originY: 0, originX: 0 }}
             variants={menuVariants}
             initial="initial"

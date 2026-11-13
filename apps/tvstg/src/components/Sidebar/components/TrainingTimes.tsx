@@ -1,58 +1,29 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { RiBuilding3Line } from "react-icons/ri";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { sidebarElement, sidebarHeader } from "../styles";
-import { useCollection } from "@provider";
+import { locationLabel, useCollection } from "@provider";
 import { Button, FlexBox } from "@ui";
-import { PatstoreGroup, PatstoreLocation } from "@types";
+import { PatstoreGroup } from "@types";
 import { SportSlideIn } from "../../SportSlideIn";
+import styles from "./TrainingTimes.module.css";
 
 const TrainingElement: React.FC<{ training: PatstoreGroup }> = ({
   training,
 }) => {
   const [modalState, setModalState] = useState(false);
-  const { items: locations } = useCollection("Location");
-  const getTrainingLocations: (
-    time: PatstoreGroup["times"][number],
-  ) => PatstoreLocation | null | undefined = useCallback(
-    (time: PatstoreGroup["times"][number]) => {
-      if (!locations) {
-        return undefined;
-      }
-      const location = locations.find(
-        (location) => location.objectId === time.place.location,
-      );
-      return location;
-    },
-    [training, locations],
-  );
+  const { find: findLocation } = useCollection("Location");
 
   return (
-    <div key={training.objectId} css={sidebarElement}>
-      <div
-        css={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          gap: "0",
-          padding: "0.6rem 0",
-        }}
-      >
+    <div key={training.objectId} className="sidebar-panel">
+      <div className={styles.meta}>
         <h3>{training.title}</h3>
       </div>
       <FlexBox direction="column" gap=".6rem">
         {training.times?.length > 0 &&
           training.times.map((trainingszeit: PatstoreGroup["times"][number]) => (
             <div key={trainingszeit.id}>
-              <p
-                css={{
-                  display: "flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "flex-start",
-                }}
-              >
-                <span css={{ marginRight: ".3rem", minWidth: "18px" }}>
+              <p className={styles.row}>
+                <span className={styles.icon}>
                   <AiOutlineClockCircle />
                 </span>
                 {`${trainingszeit.weekday}: `}
@@ -60,17 +31,16 @@ const TrainingElement: React.FC<{ training: PatstoreGroup }> = ({
                   trainingszeit.end &&
                   `${trainingszeit.start} - ${trainingszeit.end}`}
               </p>
-              {/* <div css={{width: "100%", height: "1px", backgroundColor: grey}} /> */}
               <p>
-                <span css={{ marginRight: ".3rem", minWidth: "18px" }}>
+                <span className={styles.icon}>
                   <RiBuilding3Line />
                 </span>
-                {getTrainingLocations(trainingszeit)?.title}
+                {locationLabel(trainingszeit.place, findLocation)}
               </p>
             </div>
           ))}
       </FlexBox>
-      <div css={{ marginTop: ".6rem" }}>
+      <div className={styles.action}>
         <Button
           size="small"
           color="dark"
@@ -112,8 +82,8 @@ const TrainingTimes = ({ category }: { category: string }) => {
 
   return (
     <>
-      <div css={sidebarHeader}>Trainingsgruppen</div>
-      <div css={{ display: "flex", flexDirection: "column", gap: ".6rem" }}>
+      <div className="section-header flush">Trainingsgruppen</div>
+      <div className={styles.list}>
         {traininigsGruppen.trainingsgruppenArray.map((trainingsgruppe) => (
           <TrainingElement
             training={trainingsgruppe}

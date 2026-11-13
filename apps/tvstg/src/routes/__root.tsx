@@ -27,7 +27,12 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: globalCss },
       { rel: "icon", type: "image/png", href: favicon },
     ],
-    scripts: [{ src: "https://scripts.simpleanalyticscdn.com/latest.js", async: true }],
+    scripts: [
+      { src: "https://scripts.simpleanalyticscdn.com/latest.js", async: true },
+      {
+        children: `try{var t=localStorage.getItem("tvstg-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}`,
+      },
+    ],
   }),
   shellComponent: RootDocument,
   component: RootComponent,

@@ -1,0 +1,79 @@
+.gallery {
+  width: 100%;
+  position: relative;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 16px 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.mosaic {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.tile {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+  min-width: 120px;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.tile:hover:not(:disabled),
+.tile:focus-visible:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tile:disabled {
+  cursor: default;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.dialog {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 10000;
+  line-height: 1;
+}

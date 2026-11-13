@@ -1,21 +1,12 @@
 import React from "react";
-import styled from "@emotion/styled";
-import settings from "@settings";
+import styles from "./Label.module.css";
 
-const Label: React.FC<{ text: string, color?: string }> = ({ text, color }) => {
-  const StyledLabel = styled.div({
-    fontSize: settings.fontSize.tiny,
-    width: "auto",
-    display: "inline-block",
-    fontFamily: "Inter, sans-serif",
-    color: color ?? settings.colors.darkgrey,
-    fontWeight: 500,
-    lineHeight: "0.8em",
-    letterSpacing: "1px",
-    textTransform: "uppercase",
-  });
-
-  return <StyledLabel>{text}</StyledLabel>;
+const Label: React.FC<{ text: string; color?: string }> = ({ text, color }) => {
+  return (
+    <div className={styles.label} style={color ? { ["--label-color" as string]: color } : undefined}>
+      {text}
+    </div>
+  );
 };
 
 export default Label;

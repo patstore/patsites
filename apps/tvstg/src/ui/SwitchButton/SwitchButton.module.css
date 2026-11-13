@@ -1,0 +1,27 @@
+.switch {
+  font-family: var(--font-headline);
+  font-weight: 500;
+  text-transform: uppercase;
+  width: auto;
+  padding: var(--pad-small);
+  letter-spacing: 0.06em;
+  font-size: 12px;
+  background-color: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  border-radius: 18px;
+  border: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.switch:hover:not(:disabled),
+.switch.active {
+  background-color: var(--color-text);
+  color: var(--color-inverse);
+}
+
+.switch:disabled {
+  cursor: default;
+}

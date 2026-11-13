@@ -1,6 +1,19 @@
-import React from "react";
-import styled from "@emotion/styled";
-import settings from "@settings";
+import React, { type CSSProperties } from "react";
+import styles from "./FlexBox.module.css";
+
+type FlexBoxProps = {
+  children: React.ReactNode;
+  direction?: CSSProperties["flexDirection"];
+  align?: CSSProperties["alignItems"];
+  justify?: CSSProperties["justifyContent"];
+  gap?: CSSProperties["gap"];
+  wrap?: boolean;
+  changeToColumn?: boolean;
+  hasFullWidth?: boolean;
+  className?: string;
+  style?: CSSProperties;
+  styles?: CSSProperties;
+};
 
 const FlexBox: React.FC<FlexBoxProps> = ({
   children = "",
@@ -10,42 +23,35 @@ const FlexBox: React.FC<FlexBoxProps> = ({
   gap = "0",
   wrap = false,
   changeToColumn = false,
-  styles = {},
+  className,
+  style,
+  styles: styleProp,
   hasFullWidth = false,
 }) => {
-  const StyledFlexBox = styled.div(
-    settings.mq({
-      height: "auto",
-      padding: 0,
-      display: "flex",
-      overflow: "visible",
-      position: "relative",
-      minWidth: 0,
-      justifyContent: justify,
-      alignItems: changeToColumn ? ["flex-start", "flex-start", align] : align,
-      flexDirection: changeToColumn
-        ? ["column", "column", "row", "row"]
-        : direction,
-      width: hasFullWidth ? "100%" : "auto",
-      gap,
-      flexWrap: wrap ? "wrap" : "no-wrap",
-      ...styles,
-    }),
+  return (
+    <div
+      className={[
+        styles.flex,
+        hasFullWidth ? styles.full : "",
+        changeToColumn ? styles.changeToColumn : "",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      style={{
+        flexDirection: changeToColumn ? undefined : direction,
+        alignItems: changeToColumn ? undefined : align,
+        justifyContent: justify,
+        gap,
+        flexWrap: wrap ? "wrap" : "nowrap",
+        ["--flex-align" as string]: align,
+        ...styleProp,
+        ...style,
+      }}
+    >
+      {children}
+    </div>
   );
-
-  return <StyledFlexBox>{children}</StyledFlexBox>;
-};
-
-type FlexBoxProps = {
-  children: React.ReactNode;
-  direction?: string;
-  align?: string;
-  justify?: string;
-  gap?: string;
-  wrap?: boolean;
-  changeToColumn?: boolean;
-  hasFullWidth?: boolean;
-  styles?: object;
 };
 
 export default FlexBox;

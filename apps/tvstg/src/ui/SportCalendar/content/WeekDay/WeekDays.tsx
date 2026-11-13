@@ -1,9 +1,6 @@
 import React, { FC, useMemo } from "react";
-
-import settings from "@settings";
 import WeekDay from "./WeekDay";
 import { FlexBox } from "@ui";
-import { weekDaysList } from "./styles";
 import type { EventTime } from "@types";
 import { WeekDaysProps } from "./types";
 import { groupByWeekday, weekdaySortIndex } from "./weekDaysUtils";
@@ -20,8 +17,8 @@ const WeekDays: FC<WeekDaysProps> = ({ trainingszeiten, view, selectedWeekday })
       direction="column"
       align="stretch"
       justify="space-between"
-      gap={settings.sizes.medium}
-      styles={weekDaysList}
+      gap="12px"
+      style={{ width: "100%" }}
       hasFullWidth
     >
       {Object.keys(weekDays)

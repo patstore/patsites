@@ -1,11 +1,11 @@
-import { CSSObject } from "@emotion/react";
+import type { CSSProperties } from "react";
 import { PatstoreForm } from "@types";
 
 export type RenderFormProps = {
   form: UnwrapScalar<PatstoreForm>;
   initialValues: { [key: string]: any };
   onSubmit: (values: { [key: string]: any }) => void;
-  buttonStyles?: CSSObject;
+  buttonStyles?: CSSProperties;
   buttonText?: string;
   hasHoneypot?: boolean;
 };

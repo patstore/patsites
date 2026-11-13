@@ -1,20 +1,16 @@
-import settings from "@settings";
-import React from "react";
-import { logoContainer, sponsorsContainer } from "./styles";
+import { contentBlockStyles } from "../ContentBlock";
 import { Divider } from "../Divider";
 import ganter from "./images/ganter.png";
 import sparkasse from "./images/sparkasse.jpg";
-import { sectionHeader } from "@styles";
+import styles from "./Sponsors.module.css";
 
-const Sponsors: React.FC = () => (
-  <div css={sponsorsContainer}>
-    <div css={sectionHeader}>
-      Unsere Sponsoren
-    </div>
+const Sponsors = () => (
+  <div className={`${contentBlockStyles.block} ${styles.sponsors}`}>
+    <div className="section-header">Unsere Sponsoren</div>
     <Divider />
-    <div css={logoContainer}>
-      <img alt="Ganter Brauerei" src={ganter} height={100} loading="lazy" css={{ width: "auto" }} />
-      <img alt="Sparkasse" src={sparkasse} height={80} loading="lazy" css={{ width: "auto" }} />
+    <div className={styles.logos}>
+      <img alt="Ganter Brauerei" src={ganter} height={100} loading="lazy" className={styles.logo} />
+      <img alt="Sparkasse" src={sparkasse} height={80} loading="lazy" className={styles.logo} />
     </div>
   </div>
 );

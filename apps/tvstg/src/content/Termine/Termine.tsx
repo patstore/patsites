@@ -1,13 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { termineContainer } from "./styles";
 import { getBerlinDateParts, useCollection } from "@provider";
 import { Layout } from "@components";
 import { FlexBox, HeadContent } from "@ui";
-import { siteContainer, wrapper } from "@styles";
 import months from "./constants/months";
 import MonthTable from "./components/MonthTable";
 import MonthFilterBar from "./components/MonthFilterBar";
 import type { YearMonth } from "./constants/monthShortLabels";
+import styles from "./Termine.module.css";
 
 const Termine: React.FC = () => {
   const { items: calendar } = useCollection("Appointment");
@@ -40,22 +39,22 @@ const Termine: React.FC = () => {
 
   return (
     <Layout>
-      <div css={wrapper}>
+      <div className="wrapper">
         <HeadContent
           titel="Termine"
           titeltext="Was steht an? Kommende Termine und Veranstaltungen unseres Vereins und der Abteilungen siehst Du hier."
           centerHeader
         />
-        <div css={[siteContainer, { flexDirection: "column", width: "100%" }]}>
+        <div className="site-container">
           <FlexBox direction="column" align="center" justify="space-between">
             <MonthFilterBar
               calendar={calendar}
               selected={selectedMonth}
               onSelect={setSelectedMonth}
             />
-            <div css={termineContainer}>
+            <div className={styles.months}>
               <div
-                css={{ width: "100%" }}
+                className={styles.month}
                 key={`${selectedMonth.year}-${selectedMonth.month}`}
                 id={`month-${selectedMonth.month}`}
               >

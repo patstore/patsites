@@ -3,10 +3,10 @@ import React, { FC, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useNavigate } from "@tanstack/react-router";
 import { RiArrowDropRightFill } from "react-icons/ri";
-import { menuStyle } from "../styles";
 import { menuItemVariants, menuVariants } from "../animations";
 import SubMenuItems from "./SubMenuISections";
 import { MenuSectionProps } from "../types";
+import styles from "../Header.module.css";
 
 const MenuSection: FC<MenuSectionProps> = ({ dropdownItem, menuItems }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,12 +17,7 @@ const MenuSection: FC<MenuSectionProps> = ({ dropdownItem, menuItems }) => {
     return (
       <li>
         <a
-          css={{
-            color: dropdownItem.color
-              ? `${dropdownItem.color} !important`
-              : "inherit",
-            textDecoration: "none",
-          }}
+          style={dropdownItem.color ? { color: dropdownItem.color } : undefined}
           href={dropdownItem.link}
           target="_blank"
           rel="noreferrer"
@@ -41,7 +36,6 @@ const MenuSection: FC<MenuSectionProps> = ({ dropdownItem, menuItems }) => {
     <li
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
-      css={{ position: "relative" }}
     >
       <span
         aria-hidden="true"
@@ -57,14 +51,14 @@ const MenuSection: FC<MenuSectionProps> = ({ dropdownItem, menuItems }) => {
       <AnimatePresence mode="wait">
         {isOpen === true && (
           <motion.div
-            css={menuStyle}
+            className={styles.dropdown}
             style={{ originY: 0, originX: 0 }}
             variants={menuVariants}
             initial="initial"
             animate="animate"
             exit="exit"
           >
-            <motion.ul css={{ position: "relative" }}>
+            <motion.ul className={styles.list}>
               {menuItems.map((menuItem) => {
                 if (menuItem.hasSubmenu === true) {
                   return (
@@ -80,7 +74,7 @@ const MenuSection: FC<MenuSectionProps> = ({ dropdownItem, menuItems }) => {
                           }
                           return null;
                         }}
-                        css={{
+                        style={{
                           textDecoration: menuItem.link ? "underline" : "none",
                         }}
                       >
@@ -100,10 +94,6 @@ const MenuSection: FC<MenuSectionProps> = ({ dropdownItem, menuItems }) => {
                   <motion.li
                     key={menuItem.key}
                     variants={menuItemVariants}
-                    // css={{
-                    // 	textDecoration: menuItem.link ? 'underline' : 'none'
-
-                    // }}
                     onClick={() => {
                       if (menuItem.link && menuItem.link !== "") {
                         return navigate({ to: menuItem.link });

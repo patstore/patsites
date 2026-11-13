@@ -5,6 +5,7 @@ import { useMediaQuery } from "usehooks-ts";
 import { SlideIn } from "@ui";
 import Team from "./components/Team";
 import Information from "./components/Information";
+import styles from "./SportSlideIn.module.css";
 
 const SportSlideIn: React.FC<SportSlideInProps> = ({
   group,
@@ -24,15 +25,7 @@ const SportSlideIn: React.FC<SportSlideInProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { delay: 0.5 } }}
             exit={{ opacity: 0, transition: { delay: 0, duration: 0.4 } }}
-            css={{
-              position: "fixed",
-              left: 0,
-              top: 0,
-              width: "100vw",
-              height: "100vh",
-              background: "rgba(0,0,0,0.3)",
-              zIndex: 9,
-            }}
+            className={styles.overlay}
           />
         )}
         {smallDevice && (

@@ -1,0 +1,26 @@
+.title {
+  padding: 0.5em;
+  font-size: 1.8rem;
+}
+
+.full {
+  width: 100%;
+}
+
+.inset {
+  padding: 0 1em;
+  width: 100%;
+}
+
+.insetNarrow {
+  padding: 0 1em;
+}
+
+.clip {
+  height: auto;
+  overflow-y: hidden;
+}
+
+.clipAuto {
+  overflow-y: hidden;
+}

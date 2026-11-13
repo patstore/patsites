@@ -14,7 +14,7 @@ const RenderVideo: React.FC<RenderVideoProps> = ({ video }) => {
       controls
       preload="metadata"
       width="100%"
-      css={{ width: "100%", height: "auto" }}
+      style={{ width: "100%", height: "auto" }}
       src={getFileUrl(config.bytescaleAccountId, video)}
     />
   );

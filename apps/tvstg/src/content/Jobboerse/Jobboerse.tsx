@@ -1,10 +1,10 @@
 import React from "react";
 import { Layout } from "@components";
-import { FlexBox, HeadContent } from "@ui";
-import { siteContainer, wrapper } from "@styles";
+import { HeadContent } from "@ui";
 import { useCollection } from "@provider";
 import JobElement from "./components/JobElement";
 import { JOBBOERSE_CATEGORY } from "./components/findTrainingGroup";
+import styles from "./Jobboerse.module.css";
 
 export const JOBBOERSE_TITLE = "Jobbörse";
 export const JOBBOERSE_TEXT =
@@ -17,22 +17,15 @@ const Jobboerse: React.FC = () => {
 
   return (
     <Layout>
-      <div css={wrapper}>
+      <div className="wrapper">
         <HeadContent titel={JOBBOERSE_TITLE} titeltext={JOBBOERSE_TEXT} />
-        <div css={siteContainer}>
+        <div className="site-container">
           {actualJobs.length > 0 ? (
-            <FlexBox
-              direction="row"
-              align="stretch"
-              justify="flex-start"
-              styles={{ gap: ["2%", "2%", "2%", "1%"] }}
-              wrap
-              hasFullWidth
-            >
+            <div className={styles.jobs}>
               {actualJobs.map((job) => (
                 <JobElement key={job.objectId} job={job} />
               ))}
-            </FlexBox>
+            </div>
           ) : (
             <p>Aktuell sind keine Stellen ausgeschrieben.</p>
           )}

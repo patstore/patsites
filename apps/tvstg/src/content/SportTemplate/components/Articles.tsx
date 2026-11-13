@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import settings from "@settings";
 import { useCollection } from "@provider";
 import { BlogElement, FlexBox } from "@ui";
 
@@ -23,7 +22,7 @@ const Articles: React.FC<{ category: string }> = ({ category }) => {
       direction="row"
       align="stretch"
       justify="flex-start"
-      gap={settings.sizes.medium}
+      gap="12px"
       wrap
     >
       {siteArticles.map((value) => (

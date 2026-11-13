@@ -1,187 +1,128 @@
-import React, { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import { Image } from "../Image";
+import { Image } from "@repo/ui";
+import { useCollection } from "@provider";
 import { GalleryProps } from "./types";
-import {
-	galleryContainerStyle,
-	horizontalGalleryWrapperStyle,
-	mosaicGalleryWrapperStyle,
-	mosaicImageContainerStyle,
-	mosaicImageStyle,
-	modalOverlayStyle,
-	modalContentStyle,
-	modalCloseButtonStyle
-} from "./styles";
+import styles from "./Gallery.module.css";
 
-export const Gallery: React.FC<GalleryProps> = ({
-	imageIds,
-	findImage,
-	displayMode = "horizontal",
-	getAltText,
-	showThumbnails = true,
-	showFullscreenButton = true,
-	showPlayButton = false,
-	autoPlay = false,
-	slideInterval = 3000,
-	containerStyle
-}) => {
-	const [modalOpen, setModalOpen] = useState(false);
-	const [currentImageIndex, setCurrentImageIndex] = useState(0);
+export const Gallery = ({
+  imageIds,
+  displayMode = "horizontal",
+  getAltText,
+  showThumbnails = true,
+  showFullscreenButton = true,
+  showPlayButton = false,
+  autoPlay = false,
+  slideInterval = 3000,
+  containerStyle,
+}: GalleryProps) => {
+  const { find: findStoredImage } = useCollection("Image");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-	// Filter out invalid image IDs and get image data
-	const validImages = useMemo(() => {
-		return imageIds
-			.map((id, index) => {
-				const src = findImage(id);
-				if (!src) return null;
-				return {
-					id,
-					index,
-					src,
-					alt: getAltText ? getAltText(id, index) : `Image ${index + 1}`
-				};
-			})
-			.filter((img) => img !== null);
-	}, [imageIds, findImage, getAltText]);
+  const tiles = useMemo(() => {
+    const next: Array<{
+      id: string;
+      alt: string;
+      url?: string;
+      lightboxIndex: number;
+    }> = [];
+    let lightboxIndex = 0;
 
-	// Prepare images for react-image-gallery format
-	const galleryImages = useMemo(() => {
-		return validImages.map((img) => ({
-			original: img.src,
-			thumbnail: img.src,
-			originalAlt: img.alt,
-			thumbnailAlt: img.alt,
-			renderItem: () => (
-				<div style={{ width: "100%", height: "100%" }}>
-					<Image src={img.src}
-						alt={img.alt}
-						style={{ width: "100%", height: "100%" }}
-						imgStyle={{ objectFit: "contain" }}
-					/>
-				</div>
-			),
-			renderThumbInner: () => (
-				<Image src={img.src}
-					alt={img.alt}
-					style={{ width: "100%", height: "100%" }}
-					imgStyle={{ objectFit: "cover" }}
-				/>
-			)
-		}));
-	}, [validImages]);
+    imageIds.forEach((id, index) => {
+      const url = findStoredImage(id)?.url;
+      next.push({
+        id,
+        alt: getAltText ? getAltText(id, index) : `Image ${index + 1}`,
+        url,
+        lightboxIndex: url ? lightboxIndex++ : -1,
+      });
+    });
 
-	if (validImages.length === 0) {
-		return null;
-	}
-	const handleMosaicImageClick = (index: number) => {
-		setCurrentImageIndex(index);
-		setModalOpen(true);
-	};
+    return next;
+  }, [imageIds, findStoredImage, getAltText]);
 
-	const handleCloseModal = () => {
-		setModalOpen(false);
-	};
+  const galleryImages = useMemo(
+    () =>
+      tiles
+        .filter((tile) => tile.url)
+        .map((tile) => ({
+          original: tile.url as string,
+          thumbnail: tile.url as string,
+          originalAlt: tile.alt,
+          thumbnailAlt: tile.alt,
+        })),
+    [tiles],
+  );
 
-	const handleModalKeyDown = (e: React.KeyboardEvent) => {
-		if (e.key === "Escape") {
-			handleCloseModal();
-		}
-	};
+  if (imageIds.length === 0) {
+    return null;
+  }
 
-	// Mosaic view
-	if (displayMode === "mosaic" || displayMode === "horizontal") {
-		return (
-			<>
-				<div
-					style={{
-						...galleryContainerStyle,
-						...containerStyle
-					}}
-				>
-					<div style={displayMode === "mosaic" ? mosaicGalleryWrapperStyle : horizontalGalleryWrapperStyle}>
-						{validImages.map((img, index) => (
-							<div
-								key={img.id}
-								css={mosaicImageContainerStyle} // eslint-disable-line react/no-unknown-property
-								onClick={() => handleMosaicImageClick(index)}
-								role="button"
-								tabIndex={0}
-								onKeyDown={(e) => {
-									if (e.key === "Enter" || e.key === " ") {
-										handleMosaicImageClick(index);
-									}
-								}}
-							>
-								<Image src={img.src}
-									alt={img.alt}
-									style={mosaicImageStyle}
-									imgStyle={{ objectFit: "cover" }}
-								/>
-							</div>
-						))}
-					</div>
-				</div>
+  const openLightbox = (lightboxIndex: number) => {
+    if (lightboxIndex < 0) {
+      return;
+    }
+    setCurrentImageIndex(lightboxIndex);
+    setModalOpen(true);
+  };
 
-				{/* Modal with full gallery */}
-				{modalOpen && (
-					<div
-						style={modalOverlayStyle}
-						onClick={handleCloseModal}
-						onKeyDown={handleModalKeyDown}
-						role="dialog"
-						aria-modal="true"
-						tabIndex={-1}
-					>
-						<button
-							style={modalCloseButtonStyle}
-							onClick={handleCloseModal}
-							aria-label="Close gallery"
-						>
-							×
-						</button>
-						<div
-							style={modalContentStyle}
-							onClick={(e) => e.stopPropagation()}
-						>
-							<ImageGallery
-								items={galleryImages}
-								startIndex={currentImageIndex}
-								showThumbnails={showThumbnails}
-								showFullscreenButton={showFullscreenButton}
-								showPlayButton={showPlayButton}
-								autoPlay={autoPlay}
-								slideInterval={slideInterval}
-								showNav={true}
-							/>
-						</div>
-					</div>
-				)}
-			</>
-		);
-	}
+  return (
+    <>
+      <div className={styles.gallery} style={containerStyle}>
+        <div className={displayMode === "mosaic" ? styles.mosaic : styles.row}>
+          {tiles.map((tile, index) => (
+            <button
+              key={`${tile.id}-${index}`}
+              type="button"
+              className={styles.tile}
+              disabled={tile.lightboxIndex < 0}
+              onClick={() => openLightbox(tile.lightboxIndex)}
+            >
+              <Image id={tile.id} alt={tile.alt} style={{ width: "100%", height: "100%" }} />
+            </button>
+          ))}
+        </div>
+      </div>
 
-	// Horizontal gallery view
-	return (
-		<div
-			style={{
-				...galleryContainerStyle,
-				...containerStyle
-			}}
-		>
-			<div style={horizontalGalleryWrapperStyle}>
-				<ImageGallery
-					items={galleryImages}
-					showThumbnails={showThumbnails}
-					showFullscreenButton={showFullscreenButton}
-					showPlayButton={showPlayButton}
-					autoPlay={autoPlay}
-					slideInterval={slideInterval}
-					showNav={true}
-				/>
-			</div>
-		</div>
-	);
+      {modalOpen && galleryImages.length > 0 && (
+        <div
+          className={styles.overlay}
+          onClick={() => setModalOpen(false)}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setModalOpen(false);
+            }
+          }}
+          role="dialog"
+          aria-modal="true"
+          tabIndex={-1}
+        >
+          <div className={styles.dialog} onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className={styles.close}
+              onClick={() => setModalOpen(false)}
+              aria-label="Close gallery"
+            >
+              ×
+            </button>
+            <ImageGallery
+              items={galleryImages}
+              startIndex={currentImageIndex}
+              showThumbnails={showThumbnails}
+              showFullscreenButton={showFullscreenButton}
+              showPlayButton={showPlayButton}
+              autoPlay={autoPlay}
+              slideInterval={slideInterval}
+              showNav
+            />
+          </div>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default Gallery;

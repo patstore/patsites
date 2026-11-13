@@ -1,14 +1,7 @@
-import React from "react";
-import { FC, useState } from "react";
-import {
-  buttonContentContainer,
-  extendedButtonContainer,
-  underline,
-  underlineGrey,
-} from "./styles";
+import { useState, type FC } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { motion } from "motion/react";
-import settings from "@settings";
+import styles from "./ExtendedButton.module.css";
 
 type ExtendedButtonProps = {
   text: string;
@@ -16,43 +9,30 @@ type ExtendedButtonProps = {
   disabled?: boolean;
 };
 
-const ExtendedButton: FC<ExtendedButtonProps> = ({
-  text,
-  onClick,
-  disabled = false,
-}) => {
+const ExtendedButton: FC<ExtendedButtonProps> = ({ text, onClick, disabled = false }) => {
   const [hover, setHover] = useState(false);
 
   return (
     <button
-      css={extendedButtonContainer}
+      className={styles.button}
       onClick={() => onClick()}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       disabled={disabled}
+      type="button"
     >
-      <div
-        css={[
-          buttonContentContainer,
-          !disabled
-            ? { color: hover ? settings.colors.dark : settings.colors.darkgrey }
-            : { color: settings.colors.grey },
-        ]}
-      >
+      <div className={styles.content}>
         <span>{text}</span>
-        <AiOutlineArrowRight height={"30px"} width={"30px"} />
+        <AiOutlineArrowRight height="30px" width="30px" />
       </div>
       {!disabled && (
         <motion.div
-          css={underline}
+          className={styles.underline}
           animate={{ width: hover ? "100%" : "0" }}
           transition={{ duration: 0.2, ease: "easeOut" }}
         />
       )}
-      <motion.div
-        css={underlineGrey}
-        transition={{ duration: 0.2, ease: "easeOut" }}
-      />
+      <div className={styles.track} />
     </button>
   );
 };

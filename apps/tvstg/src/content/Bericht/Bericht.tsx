@@ -1,69 +1,42 @@
 import React from "react";
 import { Layout } from "@components";
-import { siteContainer, wrapper } from "@styles";
-import settings from "@settings";
-import { FlexBox, Label, SportBanner, Gallery, Image } from "@ui";
+import { FlexBox, Label, SportBanner, Gallery } from "@ui";
+import { Image } from "@repo/ui";
 import { PatstoreArticle } from "@types";
-import { useCollection, useFindCategories, useFindImages } from "@provider";
-import { imageContainer } from "./styles";
+import { useCollection } from "@provider";
+import styles from "./Bericht.module.css";
 
 const Blog: React.FC<{ article: PatstoreArticle }> = ({ article }) => {
-  const { find: findCategories } = useCollection("Category");
-  const { find: findImage } = useCollection("Image");
+  const { find: findCategory } = useCollection("Category");
 
-  const label = findCategories(article.categories)[0]?.title ?? "";
+  const label = findCategory(article.categories?.[0])?.title ?? "";
 
   return (
     <Layout>
-      <div css={wrapper}>
-        <div css={siteContainer}>
-          <div css={{ marginTop: "2em" }}>
+      <div className="wrapper">
+        <div className="site-container">
+          <div className={styles.page}>
             <FlexBox direction="column" gap="40px">
-              <div
-                css={settings.mq({
-                  width: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  justifyContent: "center",
-                })}
-              >
+              <div className={styles.heading}>
                 <div>{label && <Label text={label} />}</div>
-                <h1
-                  css={settings.mq({
-                    marginBottom: "1.2rem",
-                    wordBreak: "normal",
-                    color: settings.colors.dark,
-                  })}
-                >
-                  {article.title}
-                </h1>
+                <h1>{article.title}</h1>
               </div>
-              {article.image && (
-                <div css={imageContainer}>
+              {article.image ? (
+                <div className={styles.imageFrame}>
                   <Image
-                    css={{
-                      height: "100%",
-                      maxHeight: "600px",
-                      borderRadius: settings.sizes.medium,
-                      aspectRatio: "16/9",
-                      width: "100%",
-                    }}
+                    id={article.image}
                     alt={article.title ?? ""}
-                    image={findImage(article.image)}
-                    objectPosition="center"
-                    loading="eager"
+                    style={{ width: "100%", maxHeight: "600px", aspectRatio: "16 / 9" }}
                   />
                 </div>
-              )}
+              ) : null}
               <div>
                 <div dangerouslySetInnerHTML={{ __html: article.text ?? "" }} />
               </div>
 
-              {article.gallery.length > 0 && (
+              {article.gallery?.length > 0 && (
                 <Gallery
                   imageIds={article.gallery}
-                  findImage={findImageUrl}
                   displayMode="mosaic"
                   getAltText={(_id, index) => `${article.title} - Bild ${index + 1}`}
                 />
@@ -72,8 +45,8 @@ const Blog: React.FC<{ article: PatstoreArticle }> = ({ article }) => {
           </div>
         </div>
       </div>
-      <div css={wrapper}>
-        <div css={{ background: settings.colors.dark }}>
+      <div className="wrapper">
+        <div className={styles.bannerBand}>
           <SportBanner />
         </div>
       </div>

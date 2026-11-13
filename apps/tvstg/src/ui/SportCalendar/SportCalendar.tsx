@@ -1,21 +1,10 @@
 import React, { useMemo, useState } from "react";
 import { AiOutlineAppstore, AiOutlineUnorderedList } from "react-icons/ai";
-import settings from "@settings";
 import type { EventTime } from "@types";
 import { FlexBox } from "../FlexBox";
 import { StickyAside } from "../StickyAside";
-import {
-  calendarFiltersPanel,
-  calendarFiltersSidebar,
-  calendarFiltersStack,
-  calendarLayout,
-  calendarMain,
-  calendarContainer,
-  sidebarFilterField,
-  viewSwitchContainer,
-  label,
-  styledInput,
-} from "./styles";
+import { ContentBlock } from "../ContentBlock";
+import styles from "./SportCalendar.module.css";
 import WeekDays from "./content/WeekDay";
 import { CalendarView } from "./content/WeekDay/types";
 import useGetTrainingTimes from "./hooks/useGetTrainingTimes";
@@ -23,7 +12,6 @@ import { useDebounceCallback } from "usehooks-ts";
 import { Divider } from "../Divider";
 import GenderFilter from "./components/GenderFilter";
 import AgeFilter from "./components/AgeFilter";
-import SquareChoiceButton from "./components/SquareChoiceButton";
 import { SportCalendarFilters } from "./filters";
 import WeekdayButtons from "./content/WeekDay/components/WeekdayButtons";
 import { berlinWeekday, countGroupsByWeekday } from "./content/WeekDay/weekDaysUtils";
@@ -66,20 +54,19 @@ const SportKalender: React.FC<SportKalenderProps> = ({
   const [view, setView] = useState<CalendarView>("list");
 
   return (
-    <div css={calendarLayout}>
+    <div className={styles.layout}>
       <WeekdayButtons
         counts={groupCounts}
         selected={selectedWeekday}
         onSelect={setSelectedWeekday}
       />
 
-      <div css={calendarMain}>
+      <ContentBlock className={styles.main}>
         <FlexBox
           direction="column"
           align="stretch"
           justify="space-between"
-          gap={settings.sizes.medium}
-          styles={calendarContainer}
+          gap="12px"
           wrap
           hasFullWidth
         >
@@ -89,27 +76,30 @@ const SportKalender: React.FC<SportKalenderProps> = ({
             selectedWeekday={selectedWeekday}
           />
         </FlexBox>
-      </div>
+      </ContentBlock>
 
-      <aside css={calendarFiltersSidebar} aria-label="Trainingszeiten filtern">
-        <StickyAside panelCss={calendarFiltersPanel}>
-          <div css={calendarFiltersStack}>
-            <div css={viewSwitchContainer} role="group" aria-label="Ansicht">
+      <aside className={styles.sidebar} aria-label="Trainingszeiten filtern">
+        <StickyAside panelClassName="content-block padded">
+          <div className="content-stack">
+            <div className={styles.viewSwitch} role="group" aria-label="Ansicht">
               {VIEWS.map((option) => (
-                <SquareChoiceButton
+                <button
                   key={option.value}
-                  label={option.icon}
-                  ariaLabel={option.label}
-                  selected={view === option.value}
+                  type="button"
+                  className="btn-choice square"
+                  aria-label={option.label}
+                  aria-pressed={view === option.value}
                   onClick={() => setView(option.value)}
-                />
+                >
+                  {option.icon}
+                </button>
               ))}
             </div>
 
             <Divider />
 
-            <div css={sidebarFilterField}>
-              <label css={label} htmlFor="sport-calendar-search">
+            <div className="field">
+              <label className="field-label" htmlFor="sport-calendar-search">
                 Suche
               </label>
               <input
@@ -118,7 +108,7 @@ const SportKalender: React.FC<SportKalenderProps> = ({
                 defaultValue={filters.suche}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Suche ..."
-                css={styledInput}
+                className="field-input"
               />
             </div>
 

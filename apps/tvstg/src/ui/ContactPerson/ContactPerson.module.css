@@ -1,0 +1,13 @@
+.portrait {
+  margin-right: 1em;
+  flex: 0 0 auto;
+}
+
+.photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}

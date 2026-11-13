@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useFindWebpage, useCollection } from "@provider";
+import { useCollection } from "@provider";
 import { ContentElement, RenderContentProps } from "./types";
 import RenderText from "./components/RenderText";
 import { WebpageContentDivider } from "@types";
@@ -9,11 +9,13 @@ import RenderTable from "./components/RenderTable";
 import RenderDivider from "./components/RenderDivider";
 
 const RenderContent: React.FC<RenderContentProps> = ({ path, contentId }) => {
-  const webpage = useFindWebpage({ path: path });
+  const { items: webpages } = useCollection("Webpage");
   const { items: contents, find: findContent } = useCollection("Content");
 
   const currentContent: ContentElement[] = useMemo(() => {
-    const currentWebsite = webpage;
+    const webpage = path
+      ? webpages.find((page) => page?.path?.includes(path))
+      : undefined;
     if (contentId) {
       const contentArray = contents.filter(
         (content) => content.content_id === contentId,
@@ -24,11 +26,11 @@ const RenderContent: React.FC<RenderContentProps> = ({ path, contentId }) => {
         id: content.objectId,
       }));
     }
-    if (currentWebsite) {
-      return currentWebsite.content || [];
+    if (webpage) {
+      return webpage.content || [];
     }
     return [];
-  }, [path, webpage, contentId, contents]);
+  }, [path, webpages, contentId, contents]);
 
   return (
     <>

@@ -1,0 +1,52 @@
+.icon {
+  font-size: 1em;
+  margin-right: 0.3rem;
+  color: var(--color-primary);
+  vertical-align: middle;
+}
+
+.iconOnPrimary {
+  color: #fff;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.large {
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 2em;
+  border: 1px solid var(--color-text-muted);
+  border-top: 5px solid var(--color-primary);
+}
+
+.large p {
+  margin-bottom: 0;
+}
+
+.large h2 {
+  margin-top: 0;
+}
+
+.header {
+  background-color: var(--color-primary);
+  padding: var(--pad-small);
+  color: #fff;
+}
+
+.header h4 {
+  color: #fff;
+  margin: 0;
+}
+
+.inner {
+  padding: var(--pad-small);
+}
+
+.description {
+  max-width: 300px;
+}

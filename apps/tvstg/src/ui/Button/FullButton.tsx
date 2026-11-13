@@ -1,8 +1,5 @@
-import { FC, useMemo } from "react";
-import { fullButton } from "./styles";
+import { FC } from "react";
 import { ButtonProps } from "./types";
-import { motion } from "motion/react";
-import settings from "@settings";
 
 const FullButton: FC<ButtonProps> = ({
   text,
@@ -10,56 +7,21 @@ const FullButton: FC<ButtonProps> = ({
   onClick,
   color = "dark",
   disabled = false,
-  styles = {},
+  className,
   type = "button",
 }) => {
-  const buttonColors = useMemo(() => {
-    if (color === "white") {
-      return {
-        color: settings.colors.dark,
-        background: settings.colors.white,
-      };
-    }
-    if (color === "dark") {
-      return {
-        color: settings.colors.white,
-        background: settings.colors.dark,
-      };
-    }
-    if (color === "primary") {
-      return {
-        color: settings.colors.white,
-        background: settings.colors.primary,
-      };
-    }
-
-    return {
-      color: settings.colors.dark,
-      background: settings.colors.white,
-    };
-  }, [color]);
+  const tone = color === "primary" ? "primary" : color === "white" ? "light" : "";
 
   return (
-    <motion.button
-      css={[
-        fullButton(disabled),
-        {
-          ...styles,
-          backgroundColor: disabled
-            ? settings.colors.grey
-            : buttonColors.background,
-          color: buttonColors.color,
-
-          border: `2px solid ${buttonColors.background}`,
-        },
-      ]}
+    <button
+      className={["btn", "solid", tone, className].filter(Boolean).join(" ")}
       onClick={onClick}
       disabled={disabled}
       type={type}
     >
-      {icon && icon}
+      {icon}
       {text}
-    </motion.button>
+    </button>
   );
 };
 

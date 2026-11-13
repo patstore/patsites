@@ -2,18 +2,8 @@ import React, { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { getDateString, slugify, useCollection } from "@provider";
-import settings from "@settings";
-import {
-  appointmentDate,
-  appointmentLinkButton,
-  appointmentMain,
-  appointmentRow,
-  appointmentTag,
-  appointmentTags,
-  appointmentTitle,
-  appointmentsList,
-  homeAppointmentsHeader,
-} from "../styles";
+import { ContentBlock, contentBlockStyles } from "@ui";
+
 const HomeAppointments: React.FC = () => {
   const { items: appointments } = useCollection("Appointment");
   const { find: findCategory } = useCollection("Category");
@@ -35,10 +25,10 @@ const HomeAppointments: React.FC = () => {
   }
 
   return (
-    <section css={appointmentsList}>
-      <div css={homeAppointmentsHeader}>Kommende Termine</div>
-      <div css={{padding: settings.padding.small}}>
-        {events.map((termin, index) => {
+    <ContentBlock as="section" className={contentBlockStyles.list}>
+      <div className="section-header">Kommende Termine</div>
+      <div>
+        {events.map((termin) => {
           const slug = slugify(termin.title ?? termin.objectId ?? "");
           const start = getDateString(termin.date?.start);
           const end =
@@ -47,50 +37,29 @@ const HomeAppointments: React.FC = () => {
               : null;
           return (
             <Link
+              key={termin.objectId}
               to="/termine"
               hash={slug}
               aria-label={`Termin ${termin.title ?? ""} auf der Termine-Seite anzeigen`}
-              css={{textDecoration: "none !important", margin: "0 !important"}}
+              className={`${contentBlockStyles.row} ${contentBlockStyles.rowHome}`}
             >
-            <article
-              key={termin.objectId}
-              css={[
-                appointmentRow,
-                // index % 2 === 1 ? { backgroundColor: settings.colors.light } : null,
-              ]}
-            >
-              <div css={appointmentDate}>
-                <p
-                  css={{
-                    margin: 0,
-                    fontWeight: 600,
-                    fontSize: "1rem !important",
-                    lineHeight: "1.2 !important",
-                  }}
-                >
-                  {start.date}
-                </p>
-                <p
-                  css={{
-                    margin: 0,
-                    fontSize: "0.75rem !important",
-                    color: settings.colors.grey,
-                  }}
-                >
+              <div className={contentBlockStyles.date}>
+                <p className={contentBlockStyles.strong}>{start.date}</p>
+                <p className={contentBlockStyles.muted}>
                   {end ? `${start.time} – ${end.time}` : start.time}
                 </p>
               </div>
-              <div css={appointmentMain}>
-                <h3 css={appointmentTitle}>{termin.title}</h3>
+              <div className={contentBlockStyles.main}>
+                <h3 className={contentBlockStyles.title}>{termin.title}</h3>
                 {termin.categories && termin.categories.length > 0 ? (
-                  <div css={appointmentTags}>
+                  <div className={contentBlockStyles.tags}>
                     {termin.categories.map((categoryId) => {
                       const category = findCategory(categoryId);
                       if (!category?.title) {
                         return null;
                       }
                       return (
-                        <span key={categoryId} css={appointmentTag}>
+                        <span key={categoryId} className={contentBlockStyles.tag}>
                           {category.title}
                         </span>
                       );
@@ -98,16 +67,14 @@ const HomeAppointments: React.FC = () => {
                   </div>
                 ) : null}
               </div>
-             
-                <div css={appointmentLinkButton}>
-                  <AiOutlineArrowRight size={16} />
-                </div>
-            </article>
-              </Link>
+              <div className={contentBlockStyles.arrow}>
+                <AiOutlineArrowRight size={16} />
+              </div>
+            </Link>
           );
         })}
       </div>
-    </section>
+    </ContentBlock>
   );
 };
 

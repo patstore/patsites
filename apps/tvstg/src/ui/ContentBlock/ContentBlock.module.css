@@ -1,0 +1,138 @@
+.block {
+  background: var(--color-surface);
+  color: var(--color-text);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.padded {
+  padding: var(--pad-medium);
+}
+
+.list {
+  margin-top: 6px;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  padding: var(--pad-medium);
+  border-top: 0.6px solid var(--color-border);
+  text-decoration: none;
+  color: inherit;
+}
+
+.row:last-child {
+  border-bottom: 0.6px solid var(--color-border);
+}
+
+a.row:hover,
+button.row:hover {
+  background: var(--color-surface-muted);
+}
+
+.striped {
+  background: var(--color-surface-muted);
+}
+
+@media (min-width: 992px) {
+  .rowHome {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr) 48px;
+    align-items: stretch;
+    gap: 0;
+    min-height: 72px;
+    padding: 0;
+  }
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  gap: 2px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.muted {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.strong {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+.main {
+  min-width: 0;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.tag {
+  display: inline-block;
+  max-width: 100%;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 3px 8px;
+  border-radius: var(--border-radius);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-text-muted);
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  min-height: 48px;
+  width: 100%;
+  padding: var(--pad-small);
+  color: var(--color-text);
+}
+
+@media (min-width: 992px) {
+  .date {
+    padding: 6px 10px;
+    border-right: 0.6px solid var(--color-border);
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 16px;
+  }
+
+  .arrow {
+    border-left: 0.6px solid var(--color-border);
+    height: 100%;
+    min-height: 72px;
+  }
+}
