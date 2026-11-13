@@ -22,6 +22,7 @@
     "typescript": "7.0.2"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
     "@repo/server": "workspace:*",
     "react": "19.2.8",
     "react-dom": "19.2.8"

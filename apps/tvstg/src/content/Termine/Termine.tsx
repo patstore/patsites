@@ -1,57 +1,42 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { termineContainer } from "./styles";
 import { getBerlinDateParts, useCollection } from "@provider";
 import { Layout } from "@components";
-import { FlexBox, HeadContent, SwitchButton } from "@ui";
+import { FlexBox, HeadContent } from "@ui";
 import { siteContainer, wrapper } from "@styles";
 import months from "./constants/months";
 import MonthTable from "./components/MonthTable";
-import settings from "@settings";
+import MonthFilterBar from "./components/MonthFilterBar";
+import type { YearMonth } from "./constants/monthShortLabels";
 
-type TermineProps = {
-  jahr: number;
-  /** Current year in Berlin, as determined by the loader. */
-  currentYear: number;
-  onYearChange: (jahr: number) => void;
-};
-
-const Termine: React.FC<TermineProps> = ({ jahr, currentYear, onYearChange }) => {
+const Termine: React.FC = () => {
   const { items: calendar } = useCollection("Appointment");
 
-  const switchButtons = useMemo(
-    () =>
-      [currentYear - 1, currentYear, currentYear + 1].map((value) => ({
-        value,
-        label: value.toString(),
-      })),
-    [currentYear],
-  );
-  const activeYear = { value: jahr, label: jahr.toString() };
+  const berlinNow = useMemo(() => getBerlinDateParts(Date.now()), []);
 
-  const monthArray = useMemo(() => {
-    const monthBuckets = months.map((month) => ({ ...month, dates: [...month.dates] }));
-    calendar.forEach((termin) => {
+  const [selectedMonth, setSelectedMonth] = useState<YearMonth>(() => ({
+    year: berlinNow.year,
+    month: berlinNow.month,
+  }));
+
+  const displayedMonth = useMemo(() => {
+    const meta = months[selectedMonth.month - 1];
+    const dates = calendar.filter((termin) => {
       if (!termin.date?.start) {
-        return;
+        return false;
       }
       const { year, month } = getBerlinDateParts(termin.date.start);
-      if (year === jahr) {
-        monthBuckets[month - 1].dates.push(termin);
-      }
+      return year === selectedMonth.year && month === selectedMonth.month;
     });
-    return monthBuckets;
-  }, [calendar, jahr]);
+    return { ...meta, dates };
+  }, [calendar, selectedMonth]);
 
   useEffect(() => {
-    if (jahr !== currentYear) {
-      return;
-    }
-    const { month } = getBerlinDateParts(Date.now());
-    document.getElementById(`month-${month}`)?.scrollIntoView({
+    document.getElementById(`month-${selectedMonth.month}`)?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
-  }, [jahr, currentYear]);
+  }, [selectedMonth]);
 
   return (
     <Layout>
@@ -61,49 +46,21 @@ const Termine: React.FC<TermineProps> = ({ jahr, currentYear, onYearChange }) =>
           titeltext="Was steht an? Kommende Termine und Veranstaltungen unseres Vereins und der Abteilungen siehst Du hier."
           centerHeader
         />
-        <div css={siteContainer}>
-          <FlexBox
-            direction="column"
-            align="center"
-            justify="center"
-            styles={{ padding: ["0 2em", "0 2em", "0 2em", "0 2em", 0] }}
-          >
-            <FlexBox
-              direction="row"
-              align="center"
-              justify="center"
-              wrap
-              styles={{
-                marginTop: "2rem",
-                backgroundColor: settings.colors.light,
-                borderRadius: settings.sizes.medium,
-                padding: settings.padding.small,
-              }}
-            >
-              {switchButtons.map((button) => (
-                <SwitchButton
-                  key={button.value}
-                  state={activeYear}
-                  initialState={button}
-                  text={button.label}
-                  onClick={() => onYearChange(button.value)}
-                />
-              ))}
-            </FlexBox>
-          </FlexBox>
-        </div>
         <div css={[siteContainer, { flexDirection: "column", width: "100%" }]}>
           <FlexBox direction="column" align="center" justify="space-between">
+            <MonthFilterBar
+              calendar={calendar}
+              selected={selectedMonth}
+              onSelect={setSelectedMonth}
+            />
             <div css={termineContainer}>
-              {monthArray.map((month) => (
-                <div
-                  css={{ width: "100%" }}
-                  key={month.number}
-                  id={`month-${month.number}`}
-                >
-                  <MonthTable month={month} year={jahr} />
-                </div>
-              ))}
+              <div
+                css={{ width: "100%" }}
+                key={`${selectedMonth.year}-${selectedMonth.month}`}
+                id={`month-${selectedMonth.month}`}
+              >
+                <MonthTable month={displayedMonth} year={selectedMonth.year} />
+              </div>
             </div>
           </FlexBox>
         </div>

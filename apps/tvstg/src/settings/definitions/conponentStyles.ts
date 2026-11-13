@@ -5,7 +5,7 @@ const componentStyles = {
     large: "12px",
   },
   siteInnerContent: {
-    maxWidth: "1040px",
+    maxWidth: "1240px",
     marginLeft: "auto",
     marginRight: "auto",
     position: "relative",

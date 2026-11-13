@@ -4,12 +4,12 @@ import { siteContainer, wrapper } from "@styles";
 import settings from "@settings";
 import { FlexBox, Label, SportBanner, Gallery, Image } from "@ui";
 import { PatstoreArticle } from "@types";
-import { useFindCategories, useFindImages } from "@provider";
+import { useCollection, useFindCategories, useFindImages } from "@provider";
 import { imageContainer } from "./styles";
 
 const Blog: React.FC<{ article: PatstoreArticle }> = ({ article }) => {
-  const { findCategories } = useFindCategories();
-  const { findImage, findImageUrl } = useFindImages();
+  const { find: findCategories } = useCollection("Category");
+  const { find: findImage } = useCollection("Image");
 
   const label = findCategories(article.categories)[0]?.title ?? "";
 

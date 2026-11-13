@@ -12,6 +12,7 @@ import { SiteContextProvider } from "@provider";
 import globalCss from "../styles/global.scss?url";
 import "@repo/core/scroll.css";
 import favicon from "../images/tvstg_logo.png";
+import "@data";
 
 export const Route = createRootRoute({
   loader: () => getSiteData(),

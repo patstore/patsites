@@ -10,6 +10,7 @@ export * from "./Label";
 export * from "./SectionDivider";
 export * from "./SwitchButton";
 export * from "./SlideIn";
+export * from "./StickyAside";
 export * from "./ContactPerson";
 export * from "./SportCalendar";
 export * from "./Sponsors";

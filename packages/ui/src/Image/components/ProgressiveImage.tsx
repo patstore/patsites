@@ -31,6 +31,11 @@ export function ProgressiveImage({
   const showThumb = Boolean(thumbnailSrc) && !thumbFailed;
   const showFull = Boolean(fullSrc);
   const stacked = showThumb && showFull;
+  const fillsFrame =
+    style?.height != null ||
+    style?.minHeight != null ||
+    style?.maxHeight != null ||
+    style?.aspectRatio != null;
 
   useEffect(() => {
     const image = fullRef.current;
@@ -41,7 +46,9 @@ export function ProgressiveImage({
     return <ImagePlaceholder alt={alt} className={className} style={style} />;
   }
 
-  const frameClass = [styles.frame, hoverOnZoom && styles.zoom, className].filter(Boolean).join(" ");
+  const frameClass = [styles.frame, fillsFrame && styles.fill, hoverOnZoom && styles.zoom, className]
+    .filter(Boolean)
+    .join(" ");
   const fullClass = [styles.image, stacked && styles.full, stacked && fullReady && styles.ready]
     .filter(Boolean)
     .join(" ");

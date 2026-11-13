@@ -7,7 +7,7 @@ import {
   useCollection,
 } from "@provider";
 import { PatstorePerson } from "@types";
-import { sidebarelement } from "../../Sidebar/styles";
+import { sidebarElement } from "../../Sidebar/styles";
 import TrainingTimesSlideIn from "./TrainingTimesSlideIn";
 import { sectionHeader } from "@styles";
 import { Image } from "@ui";
@@ -60,7 +60,7 @@ export const Information: React.FC<InformationProps> = ({
             <div css={{ width: "100%" }}>
               <div css={sectionHeader}>Kontakt</div>
               <div css={{ padding: "0 1em", width: "100%" }}>
-                <div css={sidebarelement}>
+                <div css={sidebarElement}>
                   <h3>Kontakt E-Mail</h3>
 
                   <a href={`mailto:${email}`}>{email}</a>

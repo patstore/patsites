@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 import settings from "@settings";
 import { FlexBox } from "../../FlexBox";
-import { sidebarelement } from "@components";
+import { sidebarElement } from "@components";
 import { DateTileMediumProps } from "../types";
 import { getDateString } from "@provider";
 
@@ -18,7 +18,7 @@ const TerminTileMedium: FC<DateTileMediumProps> = ({
   description,
   location,
 }) => (
-  <div css={sidebarelement}>
+  <div css={sidebarElement}>
     <FlexBox direction="column" gap={settings.sizes.small}>
       <div>
         <h4>{title}</h4>

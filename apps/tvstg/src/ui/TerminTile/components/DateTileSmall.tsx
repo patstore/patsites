@@ -6,7 +6,7 @@ import {
 } from "react-icons/ai";
 import settings from "@settings";
 import { DateTileSmallProps } from "../types";
-import { sidebarelement } from "@components";
+import { sidebarElement } from "@components";
 import { FlexBox, Label } from "@ui";
 import { getDateString, useFindCategories } from "@provider";
 
@@ -19,7 +19,7 @@ const TerminTileSmall: React.FC<DateTileSmallProps> = ({
   const { findCategories } = useFindCategories();
 
   return (
-    <div css={sidebarelement}>
+    <div css={sidebarElement}>
       <FlexBox direction="column" gap={settings.sizes.small}>
         {categories &&
           findCategories(categories).map((category) => (

@@ -21,7 +21,7 @@ const HeadContent: FC<HeadContentProps> = ({
 
   return (
   <div
-    css={[siteHeaderContainer, { maxWidth: smallContent ? "720px" : "1040px" }]}
+    css={[siteHeaderContainer, { maxWidth: smallContent ? "720px" : "1240px" }]}
   >
     <FlexBox
       direction="row"

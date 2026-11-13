@@ -13,7 +13,7 @@ export const menuContainer = css({
     display: "inline",
     marginBottom: 0,
     color: "inherit",
-    fontFamily: "Oswald, sans-serif",
+    fontFamily: "Inter, sans-serif",
     letterSpacing: "0.4px",
     fontWeight: 500,
     textRendering: "optimizeLegibility",
@@ -26,7 +26,7 @@ export const menuContainer = css({
   a: {
     marginBottom: 0,
     color: "inherit",
-    fontFamily: "Oswald, sans-serif",
+    fontFamily: "Inter, sans-serif",
     letterSpacing: "-0.3px",
     fontWeight: 500,
     textRendering: "optimizeLegibility",
@@ -50,7 +50,7 @@ export const headerContainer = settings.mq({
   justifyContent: "space-between",
   alignItems: "center",
   padding: ["0 0.5em", "0 1em", "0 2em", "0 2em"],
-  backgroundColor: settings.colors.white,
+  backgroundColor: settings.colors.light,
   color: settings.colors.dark,
   // borderBottom: `1px solid ${ settings.colors.grey}`
 });

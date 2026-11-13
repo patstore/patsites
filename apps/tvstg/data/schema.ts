@@ -39,16 +39,17 @@ export const categorySchema = z.looseObject({
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
   categories: z.array(z.string()).nullable().optional(),
-  title: z.string().nullable().optional(),
-  type: z.string().nullable().optional(),
+  title: z.string().nullable(),
   description: z.string().nullable().optional(),
-  image: z.string().nullable().optional(),
-  category_id: z.string().nullable().optional(),
   text: z.string().nullable().optional(),
-  label: z.string().nullable().optional(),
+  image: z.string().nullable().optional(),
   state: z.string().nullable().optional(),
-  date: z.string().nullable().optional(),
   gallery: z.array(z.string()).nullable().optional(),
+  date: z.any().nullable().optional(),
+  slug: z.string().nullable().optional(),
+  type: z.string().nullable().optional(),
+  category_id: z.string().nullable().optional(),
+  label: z.string().nullable().optional(),
 });
 
 export const appointmentSchema = z.looseObject({
@@ -63,6 +64,7 @@ export const appointmentSchema = z.looseObject({
   image: z.string().nullable().optional(),
   state: z.string().nullable().optional(),
   date: z.any().nullable().optional(),
+  slug: z.string().nullable().optional(),
   label: z.string().nullable().optional(),
 });
 
@@ -176,12 +178,14 @@ export const articleSchema = z.looseObject({
   createdAt: z.string().optional(),
   updatedAt: z.string().optional(),
   categories: z.array(z.string()).nullable().optional(),
+  author: z.string().nullable().optional(),
   title: z.string().nullable(),
   text: z.string().nullable().optional(),
   image: z.string().nullable().optional(),
   date: z.any().nullable().optional(),
   state: z.string().nullable().optional(),
   gallery: z.array(z.string()).nullable().optional(),
+  slug: z.string().nullable().optional(),
   label: z.string().nullable().optional(),
 });
 
@@ -197,6 +201,7 @@ export const entrySchema = z.looseObject({
   image: z.string().nullable().optional(),
   date: z.any().nullable().optional(),
   state: z.string().nullable().optional(),
+  slug: z.string().nullable().optional(),
   label: z.string().nullable().optional(),
 });
 

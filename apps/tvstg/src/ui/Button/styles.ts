@@ -15,10 +15,10 @@ export const buttonContainer = css({
 
 export const button = (disabled: boolean) =>
   css({
-    fontFamily: "Oswald, sans-serif",
+    fontFamily: "Inter, sans-serif",
     fontWeight: 500,
     textTransform: "uppercase",
-    letterSpacing: "2px",
+    letterSpacing: "1px",
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
@@ -27,14 +27,13 @@ export const button = (disabled: boolean) =>
     cursor: disabled ? "not-allowed" : "pointer",
     opacity: disabled ? 0.5 : 1,
     transformOrigin: "left",
-    borderRadius: "18px",
   });
 export const fullButton = (disabled: boolean) =>
   settings.mq({
-    fontFamily: "Oswald, sans-serif",
+    fontFamily: "Inter, sans-serif",
     fontWeight: 500,
     textTransform: "uppercase",
-    letterSpacing: "2px",
+    letterSpacing: "1px",
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
@@ -43,7 +42,6 @@ export const fullButton = (disabled: boolean) =>
     cursor: disabled ? "not-allowed" : "pointer",
     opacity: disabled ? 0.5 : 1,
     transformOrigin: "left",
-    borderRadius: "18px",
     padding: [settings.padding.tiny, settings.padding.small],
     fontSize: [settings.fontSize.tiny, settings.fontSize.small],
   });

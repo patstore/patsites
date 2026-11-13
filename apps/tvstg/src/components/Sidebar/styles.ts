@@ -22,7 +22,7 @@ export const sidebarContent = settings.mq({
   padding: [0],
 });
 
-export const sidebarHeader = [sectionHeader, { marginTop: "0 !important" }];
+export const sidebarHeader = [sectionHeader, { marginTop: "0 !important", paddingTop: "60px" }];
 
 export const sidebarSubHeader = css({
   fontFamily: "Oswald, sans-serif",
@@ -42,30 +42,33 @@ export const sidebarSubHeader = css({
   textAlign: "center",
 });
 
-export const sidebarelement = css({
-  position: "relative",
-  width: "100%",
-  maxWidth: ["580px", "580px", "580px", "100%", "100%"],
-  marginLeft: ["auto", "auto", "auto", "auto", "auto"],
-  marginRight: ["auto", "auto", "auto", "auto", "auto"],
-  borderRight: `0.6px solid ${settings.colors.grey}`,
-  borderLeft: `0.6px solid ${settings.colors.grey}`,
-  borderTop: `0.6px solid ${settings.colors.grey}`,
+export const sidebarElement = css({
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "stretch",
+    width: "100%",
+    background: settings.colors.white,
+});
+
+export const sidebarElementHeader = [sectionHeader, { marginTop: "0 !important", paddingTop: "60px" }];
+
+export const sidebarElementContent = css({
   display: "flex",
   flexDirection: "column",
-  ":last-child": {
-    borderBottom: `0.6px solid ${settings.colors.grey}`,
-  },
-  // border: `1px solid ${ lightcolor}`,
+  alignItems: "stretch",
+  justifyContent: "flex-start",
+  gap: settings.sizes.medium,
+  borderTop: `0.6px solid ${settings.colors.grey}`,
+  paddingTop: settings.sizes.medium,
+  paddingBottom: settings.sizes.large,
 });
 
-export const sidebarElementContainer = (isLast: boolean) => css({
+export const sidebarElementContainer = css({
   width: "100%",
-  padding: settings.padding.small,
-  borderBottom: isLast ? "none" : `0.6px solid ${settings.colors.grey}`,
+  paddingTop: settings.sizes.small,
+  paddingBottom: settings.sizes.small,
 });
-
-
 
 export const label = css({
   padding: "0.4em 1em",

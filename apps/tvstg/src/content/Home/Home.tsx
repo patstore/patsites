@@ -10,9 +10,17 @@ import {
 import { BlogElement, FlexBox, Image, Sponsors, SportBanner } from "@ui";
 import settings from "@settings";
 import shopTeaser from "./images/marketing-teaser-970x250.jpg";
+import HomeAppointments from "./components/HomeAppointments";
+import HomeStickySidebar from "./components/HomeStickySidebar";
+import { HOME_ARTICLE_COUNT, HOME_SIDEBAR_CATEGORY } from "./constants";
+import {
+  homeSectionGap,
+  homeSidebarColumn,
+  homeSidebarInner,
+  homeTwoColumnRow,
+} from "./styles";
 
-export const HOME_SIDEBAR_CATEGORY = "1cU4dGw1Mu";
-export const HOME_ARTICLE_COUNT = 5;
+export { HOME_ARTICLE_COUNT, HOME_SIDEBAR_CATEGORY } from "./constants";
 
 const Home: React.FC = () => {
   const { items: articles } = useCollection("Article");
@@ -31,39 +39,37 @@ const Home: React.FC = () => {
     <Layout>
       <div css={wrapper}>
         <div css={[siteContainer]}>
-          <FlexBox direction="row" align="stretch" justify="space-between" wrap>
-            <div css={mainContainer}>
-              <div
-                css={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "stretch",
-                  gap: "1em",
-                  justifyContent: "space-between",
-                  flexWrap: "wrap",
-                }}
+          <FlexBox
+            direction="row"
+            align="flex-start"
+            justify="space-between"
+            wrap
+            styles={homeTwoColumnRow}
+          >
+            <div css={[mainContainer, homeSectionGap]}>
+              <FlexBox
+                direction="row"
+                align="stretch"
+                justify="space-between"
+                wrap
+                gap={settings.sizes.medium}
+                styles={{ width: "100%" }}
               >
-                <FlexBox
-                  direction="row"
-                  align="stretch"
-                  justify="space-between"
-                  wrap
-                  gap={settings.sizes.medium}
-                  styles={{ width: "100%" }}
-                >
-                  {blogArray.slice(0, HOME_ARTICLE_COUNT).map((value, index) => (
-                    <BlogElement
-                      flex={["100%", "45%"]}
-                      type={index === 0 ? "header" : "tile"}
-                      image={value.image}
-                      categories={value.categories || []}
-                      title={value.title}
-                      date={value.date}
-                      key={value.objectId}
-                    />
-                  ))}
-                </FlexBox>
-              </div>
+                {blogArray.slice(0, HOME_ARTICLE_COUNT).map((value, index) => (
+                  <BlogElement
+                    flex={["100%", "45%"]}
+                    type={index === 0 ? "header" : "tile"}
+                    image={value.image}
+                    categories={value.categories || []}
+                    title={value.title}
+                    date={value.date}
+                    key={value.objectId}
+                  />
+                ))}
+              </FlexBox>
+
+              <HomeAppointments />
+
               <div>
                 <a
                   href="https://tvstg.fan12.de"
@@ -79,20 +85,22 @@ const Home: React.FC = () => {
                       height: "auto",
                       maxWidth: "800px",
                       marginTop: "2em",
-                      borderRadius: "8px",
                     }}
                   />
                 </a>
               </div>
             </div>
-            <div css={sidebarContainer}>
-              <Sidebar
-                category={HOME_SIDEBAR_CATEGORY}
-                showCalendar
-                showNews
-                displayAllNews
-                displayAllEvents
-              />
+            <div css={[sidebarContainer, homeSidebarColumn]}>
+              <HomeStickySidebar>
+                <div css={homeSidebarInner}>
+                  <Sidebar
+                    category={HOME_SIDEBAR_CATEGORY}
+                    showCalendar={false}
+                    showNews
+                    displayAllNews
+                  />
+                </div>
+              </HomeStickySidebar>
             </div>
           </FlexBox>
         </div>

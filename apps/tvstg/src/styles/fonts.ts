@@ -35,7 +35,7 @@ export const h3 = settings.mq({
   padding: 0,
   letterSpacing: "0.05rem",
   color: "inherit",
-  fontWeight: 500,
+  fontWeight: 600,
   textRendering: "optimizeLegibility",
   lineHeight: 1.2,
 });
@@ -45,7 +45,7 @@ export const h4 = css({
   padding: 0,
   color: "inherit",
   fontFamily: "Inter, sans-serif",
-  fontWeight: 400,
+  fontWeight: 500,
   textRendering: "optimizeLegibility",
   fontSize: "1.1rem",
 });
@@ -83,7 +83,7 @@ export const hgroup = css({
 export const p = css({
   fontFamily: "Open Sans, sans-serif",
   fontSize: ["0.84rem", "0.9rem"],
-  lineHeight: "1.6",
+  lineHeight: "1.8",
   padding: 0,
   marginBlockEnd: "0",
 });
@@ -94,4 +94,5 @@ export const a = css({
   lineHeight: "1.2rem",
   margin: 0,
   padding: 0,
+  textDecoration: "none",
 });

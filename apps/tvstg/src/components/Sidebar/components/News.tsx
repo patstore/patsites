@@ -1,19 +1,23 @@
 import React, { useMemo } from "react";
 import settings from "@settings";
-import { sidebarelement, sidebarElementContainer, sidebarHeader } from "../styles";
+import { sidebarElement, sidebarElementContainer, sidebarElementContent, sidebarElementHeader, sidebarHeader } from "../styles";
 import { NewsProps } from "../types";
-import { FlexBox, Label } from "@ui";
+import { Button, FlexBox, Label } from "@ui";
 import { getDateString, useCollection } from "@provider";
+import { Link } from "@tanstack/react-router";
 
 const News: React.FC<NewsProps> = ({ category, displayAllNews = false }) => {
   const { items: news } = useCollection("Entry");
 
+  console.log(news);
+
   const newsArray = useMemo(() => {
-    const sixtyDaysAgo = new Date();
+    const sixtyDaysAgo = new Date();  
     sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60);
     const now = new Date();
     const actualNews = news.filter((value) => {
       if (!value?.date) return false;
+      if (!value.categories?.includes("YLHdF8iCjA")) return false;
       const newsDate = new Date(value.date);
       return newsDate <= now && newsDate >= sixtyDaysAgo;
     });
@@ -30,38 +34,25 @@ const News: React.FC<NewsProps> = ({ category, displayAllNews = false }) => {
 
   return (
     <div
-      css={[
-        {
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-        },
-      ]}
+        css={sidebarElement}
     >
-      <div css={sidebarHeader}>Jobbörse</div>
+      <div css={sidebarElementHeader}>Jobbörse</div>
       {newsArray.length > 0 ? (
         <FlexBox
           direction="column"
           align="stretch"
           hasFullWidth
           gap={settings.sizes.medium}
+          styles={{padding: settings.padding.small}}
         >
           {newsArray.sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()).map((value) => (
-            <div key={value.objectId} css={sidebarelement}>
-              <div css={sidebarElementContainer(false)}>
-                <p>
-                  {getDateString(value.date!).date}
-                </p>
-                
-              </div>
-              <div css={sidebarElementContainer(true)}>
+            <div key={value.objectId} css={sidebarElementContent}>
+                <Label text={getDateString(value.date!).date} color={settings.colors.primary} />
                 <h4>{value.title}</h4>
-                {value.text && (
-                  <div dangerouslySetInnerHTML={{ __html: value.text }} />
-                )}
-
+                <div css={{marginTop: settings.sizes.large}}>
+                  <Link to={`/jobboerse`} hash={value.slug} css={{textDecoration: "none !important"}}>
+                    <Button text="Mehr erfahren" onClick={() => (`/news/${value.objectId}`)} />
+                  </Link>
               </div>
               
             </div>

@@ -54,16 +54,17 @@ export interface CategoryClass {
   createdAt?: string;
   updatedAt?: string;
   categories?: string[] | null;
-  title?: string | null;
-  type?: string | null;
+  title: string | null;
   description?: string | null;
-  image?: string | null;
-  category_id?: string | null;
   text?: string | null;
-  label?: string | null;
+  image?: string | null;
   state?: string | null;
-  date?: string | null;
   gallery?: string[] | null;
+  date?: any | null;
+  slug?: string | null;
+  type?: string | null;
+  category_id?: string | null;
+  label?: string | null;
 }
 
 export interface AppointmentClass {
@@ -78,6 +79,7 @@ export interface AppointmentClass {
   image?: string | null;
   state?: string | null;
   date?: any | null;
+  slug?: string | null;
   label?: string | null;
 }
 
@@ -191,12 +193,14 @@ export interface ArticleClass {
   createdAt?: string;
   updatedAt?: string;
   categories?: string[] | null;
+  author?: string | null;
   title: string | null;
   text?: string | null;
   image?: string | null;
   date?: any | null;
   state?: string | null;
   gallery?: string[] | null;
+  slug?: string | null;
   label?: string | null;
 }
 
@@ -212,6 +216,7 @@ export interface EntryClass {
   image?: string | null;
   date?: any | null;
   state?: string | null;
+  slug?: string | null;
   label?: string | null;
 }
 

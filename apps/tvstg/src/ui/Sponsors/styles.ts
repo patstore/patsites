@@ -1,7 +1,7 @@
 import settings from "@settings";
 
 export const sponsorsContainer = settings.mq({
-  backgroundColor: settings.colors.light,
+  backgroundColor: settings.colors.white,
   display: "flex",
   flexDirection: ["column"],
   justifyContent: [
@@ -15,6 +15,7 @@ export const sponsorsContainer = settings.mq({
   margin: "3rem 0",
   borderRadius: settings.sizes.medium,
   padding: "3em",
+
 });
 
 export const logoContainer = settings.mq({

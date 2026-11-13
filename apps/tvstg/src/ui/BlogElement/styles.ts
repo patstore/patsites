@@ -6,11 +6,10 @@ export const blogContainer = (flex: string[] | undefined) =>
     position: "relative",
     marginBottom: "1rem",
     cursor: "pointer",
-    background: "white",
+    background: settings.colors.white,
     // border: `1px solid ${ settings.colors.grey}`,
     flex: flex ? flex : ["100%, 45%"],
     height: "auto",
-    maxWidth: "400px",
     overflow: "hidden",
     color: settings.colors.dark,
     transitionDelay: "500ms",
@@ -35,7 +34,6 @@ export const blogContainerHeader = settings.mq({
   flexDirection: "row",
   alignItems: "stretch",
   color: settings.colors.dark,
-  borderRadius: `${settings.sizes.medium} ${settings.sizes.medium} 0 ${settings.sizes.medium}`,
   // border: `1px solid ${settings.colors.grey}`,
   transitionDelay: "500ms",
   transition:
@@ -63,8 +61,31 @@ export const imageContainer = css({
   padding: "0",
   position: "relative",
   overflow: "hidden",
-  borderRadius: settings.sizes.medium,
   marginBottom: settings.sizes.small,
+});
+
+export const imageContainerTile = css({
+  width: "100%",
+  height: "auto",
+  position: "relative",
+  overflow: "hidden",
+  marginBottom: settings.sizes.small,
+  aspectRatio: "16 / 9",
+  "& > *": {
+    display: "block",
+    width: "100%",
+    height: "100%",
+  },
+});
+
+export const imageContainerHeader = settings.mq({
+  width: "100%",
+  maxWidth: "800px",
+  overflow: "hidden",
+  display: "inline-block",
+  position: "relative",
+  flex: "1 1 auto",
+  minWidth: 0,
 });
 
 export const image = css({
@@ -92,9 +113,17 @@ export const mainContainerHeader = css({
   right: 0,
   maxWidth: "420px",
   paddingBottom: settings.sizes.large,
-  borderTopLeftRadius: settings.sizes.medium,
 });
 
 export const fontContainer = css({
   marginBottom: settings.sizes.large,
+  padding: settings.padding.small,
+});
+
+export const footerContainer = css({
+  padding: settings.padding.small,
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-between"
 });

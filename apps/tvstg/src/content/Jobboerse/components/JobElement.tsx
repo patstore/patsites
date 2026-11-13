@@ -1,107 +1,140 @@
 import React, { useState } from "react";
-import { AiOutlineClockCircle, AiOutlineInfoCircle } from "react-icons/ai";
-import { RiTeamLine } from "react-icons/ri";
-import settings from "@settings";
-import { FlexBox, FullButton, Image, Label } from "@ui";
-import { useFindImages, useCollection } from "@provider";
-import { PatstoreEntry } from "@types";
+import { AiOutlineArrowRight, AiOutlineClockCircle, AiOutlineInfoCircle } from "react-icons/ai";
+import { RiBuilding3Line } from "react-icons/ri";
+import { Image } from "@repo/ui";
+import { Label } from "@ui";
+import { getWeekday, useCollection, useFindImages } from "@provider";
+import type { EventTime, PatstoreEntry, PatstoreGroup } from "@types";
 import {
-  trainingElement,
-  trainingElementuttonContainer,
-  trainingImage,
+  trainingCardInfo,
+  trainingGridArrow,
+  trainingGridTags,
+  trainingImageGrid,
+  trainingTag,
 } from "../../../ui/SportCalendar/content/WeekDay/styles";
+import { findTrainingGroup } from "./findTrainingGroup";
 import JobSlideIn from "./JobSlideIn";
+import { jobCard, jobInfoIcon, jobInfoRow } from "./styles";
 
-const iconStyle = { marginRight: ".3rem", minWidth: "18px" };
+const WEEKDAY_ORDER: EventTime["weekday"][] = [
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+  "sunday",
+];
+
+const ageLabel = (group: PatstoreGroup) => {
+  const startAge = Number(group.data?.start_age);
+  if (!startAge) return "";
+  const endAge =
+    group.data?.end_age == null || group.data?.end_age === ""
+      ? null
+      : Number(group.data.end_age);
+  if (startAge >= 18) return "Erwachsene";
+  if (endAge == null || Number.isNaN(endAge)) return `Ab ${startAge} Jahren`;
+  return `Von ${startAge} bis ${endAge} Jahre`;
+};
+
+const unique = (labels: Array<string | null | undefined>) => {
+  const seen = new Set<string>();
+  return labels.filter((label): label is string => {
+    const text = label?.trim();
+    if (!text || seen.has(text)) return false;
+    seen.add(text);
+    return true;
+  });
+};
 
 const JobElement: React.FC<{ job: PatstoreEntry }> = ({ job }) => {
-  const { find: findGroup } = useCollection("Group");
+  const { items: groups } = useCollection("Group");
+  const { find: findCategory } = useCollection("Category");
+  const { find: findLocation } = useCollection("Location");
   const { find: findPerson } = useCollection("Person");
-  const { findImage, findImageUrl } = useFindImages();
-  const [modalState, setModalState] = useState(false);
+  const { findImageUrl } = useFindImages();
+  const [open, setOpen] = useState(false);
 
-  const group = findGroup(job.group);
+  const group = findTrainingGroup(job, groups);
   const contact = findPerson(job.contact);
   const imageId = [group?.team?.image, group?.image].find((id) => findImageUrl(id));
-  const image = imageId ? findImage(imageId) : null;
+  const categoryIds = group?.categories?.length ? group.categories : (job.categories ?? []);
+  const tags = unique([
+    ...categoryIds.map((id) => findCategory(id)?.title),
+    group ? ageLabel(group) : "",
+  ]).filter((label) => label !== "Jobbörse");
+  const times = [...(group?.times ?? [])].sort((a, b) => {
+    const day = WEEKDAY_ORDER.indexOf(a.weekday) - WEEKDAY_ORDER.indexOf(b.weekday);
+    return day || a.start.localeCompare(b.start);
+  });
 
   return (
     <>
-      <div css={trainingElement}>
-        <FlexBox
-          direction="column"
-          align="stretch"
-          justify="flex-start"
-          gap={settings.sizes.medium}
-        >
-          <div css={trainingImage}>
-            {image ? (
-              <Image alt={group?.title} image={image} />
-            ) : (
-              <div
-                css={{
-                  width: "100%",
-                  height: "150px",
-                  backgroundColor: settings.colors.grey,
-                }}
-              />
-            )}
+      <button
+        type="button"
+        css={jobCard}
+        id={job.objectId}
+        onClick={() => setOpen(true)}
+      >
+        {imageId ? (
+          <div css={trainingImageGrid}>
+            <Image
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              alt={group?.title || job.title || ""}
+              id={imageId}
+            />
           </div>
-          <FlexBox
-            direction="column"
-            align="flex-start"
-            justify="center"
-            gap={settings.sizes.small}
-            styles={{ padding: settings.padding.small }}
-          >
-            {group?.title && <Label text={group.title} />}
-            <h4>{job.title}</h4>
-            <div>
-              <p css={{ fontWeight: 600, maxWidth: "240px" }}>
-                <span css={iconStyle}>
-                  <AiOutlineClockCircle />
+        ) : null}
+        <div css={[trainingCardInfo, { flex: "1 1 auto", minWidth: 0, width: "100%" }]}>
+          {group?.title ? <Label text={group.title} /> : null}
+          <h3 css={{ fontSize: "1.2rem", margin: 0 }}>{job.title}</h3>
+          {tags.length > 0 ? (
+            <div css={trainingGridTags}>
+              {tags.map((tag) => (
+                <span key={tag} css={trainingTag}>
+                  {tag}
                 </span>
-                {job.time || "-"}
-              </p>
+              ))}
             </div>
-            {group?.title && (
-              <div>
-                <p css={{ fontWeight: 600, maxWidth: "240px" }}>
-                  <span css={iconStyle}>
-                    <RiTeamLine />
-                  </span>{" "}
-                  {group.title}
+          ) : null}
+          {times.map((time) => {
+            const place = findLocation(time.place?.location)?.title;
+            return (
+              <div key={time.id}>
+                <p css={jobInfoRow}>
+                  <AiOutlineClockCircle css={jobInfoIcon} />
+                  <span>
+                    {getWeekday(time.weekday)}
+                    {time.start && time.end ? ` ${time.start} – ${time.end}` : ""}
+                  </span>
                 </p>
+                {place ? (
+                  <p css={jobInfoRow}>
+                    <RiBuilding3Line css={jobInfoIcon} />
+                    <span>{place}</span>
+                  </p>
+                ) : null}
               </div>
-            )}
-            {job.description && (
-              <div>
-                <p>
-                  <span
-                    css={{ color: settings.colors.primary, marginRight: ".3rem" }}
-                  >
-                    <AiOutlineInfoCircle />
-                  </span>{" "}
-                  {job.description}
-                </p>
-              </div>
-            )}
-          </FlexBox>
-        </FlexBox>
-        <div css={trainingElementuttonContainer}>
-          <FullButton
-            text="mehr Infos"
-            color="primary"
-            onClick={() => setModalState(true)}
-          />
+            );
+          })}
+          {job.description ? (
+            <p css={jobInfoRow}>
+              <AiOutlineInfoCircle css={jobInfoIcon} />
+              <span>{job.description}</span>
+            </p>
+          ) : null}
         </div>
-      </div>
+        <span css={trainingGridArrow} aria-hidden>
+          <AiOutlineArrowRight size={16} />
+        </span>
+      </button>
       <JobSlideIn
         job={job}
         group={group}
         contact={contact}
-        open={modalState}
-        onClose={() => setModalState(false)}
+        open={open}
+        onClose={() => setOpen(false)}
       />
     </>
   );

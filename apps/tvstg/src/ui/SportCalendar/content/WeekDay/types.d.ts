@@ -1,6 +1,4 @@
 import { EventTime, TrainingTime } from "@types";
-import WeekDay from "./WeekDay";
-import { ReactNode } from "react";
 
 /** `list` shows table-like rows on desktop; smaller screens always get cards. */
 export type CalendarView = "list" | "grid";
@@ -17,13 +15,8 @@ export type TrainingCalendarElementProps = {
   striped?: boolean;
 };
 
-export type WeekDayButtonsProps = {
-  weekDayButtons: string[];
-  setWeekDayButtons: React.Dispatch<React.SetStateAction<string[]>>;
-  allWeekdays: EventTime["weekday"][];
-};
-
 export type WeekDaysProps = {
   trainingszeiten: TrainingTime[];
   view: CalendarView;
+  selectedWeekday: EventTime["weekday"];
 };

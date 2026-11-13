@@ -4,33 +4,35 @@ import settings from "@settings";
 export const wrapper = settings.mq({
   marginLeft: "auto",
   marginRight: "auto",
-  overflowX: "hidden",
+  overflowX: "clip",
   width: "100%",
   paddingTop: "30px",
 });
 
 export const mainContainer = settings.mq({
-  width: ["100%", "100%", "100%", "calc(100% - 320px)"],
+  width: ["100%", "100%", "100%", "calc(100% - 33%)"],
   height: "auto",
   ul: { fontSize: ".9rem" },
   li: { fontSize: ".9rem" },
+  paddingRight: ["0", "0", "0", "24px"],
 });
 
 export const sidebarContainer = settings.mq({
-  width: ["100%", "100%", "100%", "320px"],
+  width: ["100%", "100%", "100%", "33%"],
   height: "auto",
   display: "flex",
   flexDirection: ["column", "column", "column", "column"],
   alignItems: "center",
   gap: "1em",
-  padding: ["2em 0", "2em 0", "2em 0", "0 2em 0 2em", "0 0 0 2em"],
+  // padding: ["2em 0", "2em 0", "2em 0", "0 2em 0 2em", "0 0 0 2em"],
+  borderLeft: `1px solid ${settings.colors.light}`,
 });
 
 export const siteContainer = settings.mq({
   marginTop: "0",
   marginLeft: "auto",
   marginRight: "auto",
-  maxWidth: "1040px",
+  maxWidth: "1240px",
   width: "100%",
   height: "auto",
   position: "relative",
@@ -61,12 +63,11 @@ export const tr = {
 };
 
 export const sectionHeader = css({
-  marginTop: settings.sizes.medium,
+  marginTop: "60px",
   fontFamily: "Inter, sans-serif",
   letterSpacing: "0.1rem",
-  fontSize: "0.9rem",
+  fontSize: "1.8rem",
   textTransform: "uppercase",
-  // borderRadius: settings.sizes.small,
   fontWeight: 600,
   color: settings.colors.dark,
   // backgroundColor: settings.colors.primary,
@@ -74,9 +75,10 @@ export const sectionHeader = css({
   paddingBottom: "0.5em",
   display: "flex",
   flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "center",
-  textAlign: "center",
+  alignItems: "flex-start",
+  justifyContent: "flex-start",
+  padding: settings.padding.small,
+  textAlign: "left",
   position: "relative",
   width: "100%",
 });

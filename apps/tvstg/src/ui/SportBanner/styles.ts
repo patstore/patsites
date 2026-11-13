@@ -14,6 +14,5 @@ export const sportBannerContainer = settings.mq({
   width: "100%",
   margin: "3rem 0",
   background: settings.colors.darkgrey,
-  borderRadius: settings.sizes.medium,
   padding: "3em",
 });

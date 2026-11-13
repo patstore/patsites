@@ -3,23 +3,19 @@ import React from "react";
 import {
   blogContainer,
   fontContainer,
-  imageContainer,
+  imageContainerHeader,
+  imageContainerTile,
   linkContainer,
   mainContainerHeader,
   blogContainerHeader,
-  mainContainer,
+  footerContainer,
 } from "./styles";
-import {
-  getDateString,
-  slugify,
-  useFindCategories,
-  useFindImages
-} from "@provider";
+import { getDateString, slugify, useCollection } from "@provider";
 import { BlogElementProps } from "./types";
 import settings from "@settings";
 import { Label } from "../Label";
 import { FlexBox } from "../FlexBox";
-import { Image } from "../Image";
+import { Image } from "@repo/ui";
 
 const BlogElement: React.FC<BlogElementProps> = ({
   type = "tile",
@@ -29,8 +25,9 @@ const BlogElement: React.FC<BlogElementProps> = ({
   date,
   flex,
 }) => {
-  const { findCategories } = useFindCategories();
-  const { findImage } = useFindImages();
+  const { find: findCategories } = useCollection("Category");
+  const imageId = image || "";
+
   const articleLink = (
     <Link
       to="/aktuelles/$slug"
@@ -45,40 +42,33 @@ const BlogElement: React.FC<BlogElementProps> = ({
     return (
       <div css={blogContainer(flex)}>
         {articleLink}
-        <div css={imageContainer}>
+        <div css={imageContainerTile}>
           <Image
-            alt={title || "TV Freiburg St. Georgen"}
-            style={{ width: "100%" }}
-            imgStyle={{ width: "100%", height: "240px" }}
-            sizes="(max-width: 800px) 100vw, 400px"
-            image={findImage(image)}
+            id={imageId}
+            style={{ width: "100%", height: "100%" }}
+            hoverOnZoom
           />
         </div>
         <div>
-          <FlexBox
-            direction="row"
-            align="center"
-            justify="flex-start"
-            gap={settings.sizes.small}
-          >
-            {categories && categories.length > 0
-              ? findCategories(categories).map((category, index) => {
-                  return <Label text={category?.title || ""} key={index} />;
-                })
-              : null}
-          </FlexBox>
+          <div css={footerContainer}>
+            <FlexBox
+              direction="row"
+              align="center"
+              justify="flex-start"
+              gap={settings.sizes.small}
+            >
+              {categories && categories.length > 0
+                ? categories.map((category: string) => (
+                    <Label text={findCategories(category)?.title || ""} key={category} color={settings.colors.primary} />
+                  ))
+                : null}
+            </FlexBox>
+            <div>
+             <Label text={getDateString(date).date} color={settings.colors.grey}/>
+            </div>
+          </div>
           <div css={fontContainer}>
             <h3>{title}</h3>
-          </div>
-          <div>
-            <h4
-              css={{
-                marginBottom: 0,
-                color: `${settings.colors.grey} !important`,
-              }}
-            >
-              {getDateString(date).date}
-            </h4>
           </div>
         </div>
       </div>
@@ -88,21 +78,8 @@ const BlogElement: React.FC<BlogElementProps> = ({
   return (
     <div css={blogContainerHeader}>
       {articleLink}
-      <div
-        css={settings.mq({
-          width: "100%",
-          maxWidth: "800px",
-          overflow: "hidden",
-          display: "inline-block",
-        })}
-      >
-        <Image
-          alt={title || "TV Freiburg St. Georgen"}
-          css={[imageContainer, { height: "auto !important" }]}
-          loading="eager"
-          sizes="(max-width: 800px) 100vw, 800px"
-          image={findImage(image)}
-        />
+      <div css={imageContainerHeader}>
+        <Image id={imageId} style={{ width: "100%" }} hoverOnZoom />
       </div>
       <div css={mainContainerHeader}>
         <FlexBox
@@ -112,9 +89,9 @@ const BlogElement: React.FC<BlogElementProps> = ({
           gap={settings.sizes.small}
         >
           {categories && categories.length > 0
-            ? findCategories(categories).map((category, index) => {
-                return <Label text={category?.title || ""} key={index} />;
-              })
+            ? categories.map((category: string) => (
+                <Label text={findCategories(category)?.title || ""} key={category} color={settings.colors.primary} />
+              ))
             : null}
         </FlexBox>
         <h2>{title}</h2>

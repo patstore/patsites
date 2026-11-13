@@ -15,19 +15,26 @@ const Header: React.FC = () => {
   const [headerAnimate, setHeaderAnimate] = useState("start");
 
   const handleScroll = () => {
-    if (window.scrollY > 200) {
+    const compact = window.scrollY > 200;
+    if (compact) {
       setHeaderAnimate("site");
     } else {
       setHeaderAnimate("start");
     }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, false);
+    document.documentElement.style.setProperty(
+      "--tvstg-site-header",
+      compact ? "70px" : "100px",
+    );
     document.documentElement.style.setProperty(
       "--scroll-y",
       `${window.scrollY}px`,
     );
+  };
+
+  useEffect(() => {
+    document.documentElement.style.setProperty("--tvstg-site-header", "100px");
+    window.addEventListener("scroll", handleScroll, false);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll, false);
   }, []);
 
@@ -69,7 +76,7 @@ const Header: React.FC = () => {
         styles={{
           width: "100%",
           margin: "0 auto",
-          maxWidth: "1040px",
+          maxWidth: "1240px",
           justifyContent: "space-between",
           height: "100%",
         }}

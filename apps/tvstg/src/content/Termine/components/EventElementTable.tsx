@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { getDateString, useFindCategories, useFindLocation } from "@provider";
+import { getDateString, slugify, useFindCategories, useFindLocation } from "@provider";
 import { PatstoreDate } from "@types";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import settings from "@settings";
@@ -32,7 +32,10 @@ const EventElementTable: React.FC<{
     }
   }, []);
 
+  const anchorId = slugify(date.title ?? date.objectId ?? "");
+
   return (
+    <div id={anchorId} css={{ scrollMarginTop: "120px", width: "100%" }}>
     <FlexBox
       changeToColumn
       direction="row"
@@ -77,6 +80,7 @@ const EventElementTable: React.FC<{
         </div>
       </div>
     </FlexBox>
+    </div>
   );
 };
 

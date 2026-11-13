@@ -1,6 +1,56 @@
 import { css } from "@emotion/react";
 import settings from "@settings";
 
+export const monthFilterBar = settings.mq({
+  display: "flex",
+  flexDirection: "row",
+  flexWrap: "wrap",
+  alignItems: "stretch",
+  justifyContent: "center",
+  gap: settings.sizes.small,
+  width: "100%",
+  marginBottom: settings.sizes.large,
+  padding: ["0 2em", "0 2em", "0 2em", "0 2em", 0],
+});
+
+type MonthFilterButtonVariant = "disabled" | "default" | "selected";
+
+export const monthFilterButton = (variant: MonthFilterButtonVariant) =>
+  css({
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    minWidth: "3.25rem",
+    minHeight: "3.25rem",
+    padding: settings.padding.small,
+    border: "none",
+    borderRadius: 0,
+    fontFamily: "Oswald",
+    fontWeight: 600,
+    fontSize: settings.fontSize.small,
+    letterSpacing: "0.06em",
+    lineHeight: 1.2,
+    cursor: variant === "disabled" ? "default" : "pointer",
+    color: settings.colors.white,
+    backgroundColor:
+      variant === "disabled"
+        ? settings.colors.grey
+        : variant === "selected"
+          ? settings.colors.primary
+          : settings.colors.dark,
+    transition: "background-color 0.2s ease",
+    ":hover":
+      variant === "disabled"
+        ? undefined
+        : {
+            backgroundColor:
+              variant === "selected"
+                ? settings.colors.primary
+                : settings.colors.darkgrey,
+          },
+  });
+
 export const termineContainer = settings.mq({
   marginTop: settings.sizes.large,
   display: "flex",

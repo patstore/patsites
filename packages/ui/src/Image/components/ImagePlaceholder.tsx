@@ -14,7 +14,12 @@ type ImagePlaceholderProps = {
 };
 
 export function ImagePlaceholder({ alt, className, style }: ImagePlaceholderProps) {
-  const frameClass = [styles.frame, className].filter(Boolean).join(" ");
+  const fillsFrame =
+    style?.height != null ||
+    style?.minHeight != null ||
+    style?.maxHeight != null ||
+    style?.aspectRatio != null;
+  const frameClass = [styles.frame, fillsFrame && styles.fill, className].filter(Boolean).join(" ");
 
   if (imagePlaceholderSrc) {
     return (

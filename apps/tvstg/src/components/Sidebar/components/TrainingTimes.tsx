@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState } from "react";
 import { RiBuilding3Line } from "react-icons/ri";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { sidebarelement, sidebarHeader } from "../styles";
+import { sidebarElement, sidebarHeader } from "../styles";
 import { useCollection } from "@provider";
 import { Button, FlexBox } from "@ui";
 import { PatstoreGroup, PatstoreLocation } from "@types";
@@ -28,7 +28,7 @@ const TrainingElement: React.FC<{ training: PatstoreGroup }> = ({
   );
 
   return (
-    <div key={training.objectId} css={sidebarelement}>
+    <div key={training.objectId} css={sidebarElement}>
       <div
         css={{
           display: "flex",

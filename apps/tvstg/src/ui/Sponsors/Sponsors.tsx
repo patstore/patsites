@@ -4,11 +4,12 @@ import { logoContainer, sponsorsContainer } from "./styles";
 import { Divider } from "../Divider";
 import ganter from "./images/ganter.png";
 import sparkasse from "./images/sparkasse.jpg";
+import { sectionHeader } from "@styles";
 
 const Sponsors: React.FC = () => (
   <div css={sponsorsContainer}>
-    <div css={settings.mq({ flex: 1 })}>
-      <h2 css={{ marginTop: "0 !important" }}>Unsere Sponsoren</h2>
+    <div css={sectionHeader}>
+      Unsere Sponsoren
     </div>
     <Divider />
     <div css={logoContainer}>

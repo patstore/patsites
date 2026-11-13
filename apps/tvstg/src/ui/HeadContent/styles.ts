@@ -15,7 +15,7 @@ export const siteHeaderContainer = settings.mq({
   paddingBottom: ["18px", "24px", "42px"],
   marginLeft: "auto",
   marginRight: "auto",
-  maxWidth: "1040px",
+  maxWidth: "1240px",
   width: "100%",
   h1: { color: settings.colors.dark, textAlign: "left" },
 });

@@ -42,13 +42,13 @@ const Button: FC<ButtonProps> = ({
           color: buttonColors.color,
           padding: settings.padding.small,
           fontSize: settings.fontSize.small,
-          border: `2px solid ${buttonColors.color}`,
+          border: `1px solid ${buttonColors.color}`,
+          textDecoration: "none",
           "&:hover": {
             backgroundColor: disabled
               ? settings.colors.grey
               : buttonColors.color,
             color: buttonColors.hover,
-            border: `2px solid ${buttonColors.color}`,
           },
         },
       ]}

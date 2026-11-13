@@ -1,6 +1,6 @@
 import React from "react";
 import { TrainingTimesSlideInProps } from "../types";
-import { sidebarelement } from "../../Sidebar";
+import { sidebarElement } from "../../Sidebar";
 
 const TrainingTimesSlideIn: React.FC<TrainingTimesSlideInProps> = ({
   weekday,
@@ -10,7 +10,7 @@ const TrainingTimesSlideIn: React.FC<TrainingTimesSlideInProps> = ({
   text,
 }) => (
   <div id="training">
-    <div css={sidebarelement}>
+    <div css={sidebarElement}>
       <h6>
         {weekday} {start && end && `${start} - ${end}`}
       </h6>

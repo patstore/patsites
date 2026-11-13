@@ -4,11 +4,12 @@ import { h1, h2, h3, h4, h5, h6, p, th, tr } from "@styles";
 
 export const layoutContainer = settings.mq({
   position: "relative",
-  overflow: "hidden",
+  overflowX: "clip",
   main: {
-    overflow: "hidden",
+    overflowX: "clip",
+    overflowY: "visible",
     width: "100%",
-    height: "100%",
+    minHeight: "100%",
     position: "relative",
   },
   h1: h1,
@@ -21,13 +22,13 @@ export const layoutContainer = settings.mq({
   ul: {
     marginBlockEnd: settings.sizes.medium,
   },
-  a: [
-    p,
-    {
-      textDecoration: "underline",
-      marginBlockEnd: "0 !important",
-    },
-  ],
+  // a: [
+  //   p,
+  //   {
+  //     textDecoration: "underline",
+  //     marginBlockEnd: "0 !important",
+  //   },
+  // ],
   table: {
     borderCollapse: "collapse",
     thead: {
@@ -42,7 +43,7 @@ export const layoutContainer = settings.mq({
 export const siteContentContainer = settings.mq({
   position: "relative",
   overflowY: "auto",
-  overflowX: "hidden",
+  overflowX: "clip",
   height: "100%",
   width: "100%",
   paddingLeft: ["12px", "12px", "48px"],
@@ -50,7 +51,7 @@ export const siteContentContainer = settings.mq({
 });
 
 export const siteInnerContent = settings.mq({
-  maxWidth: "1040px",
+  maxWidth: "1240px",
   paddingTop: ["60px", "60px", "90px"],
   marginLeft: "auto",
   marginRight: "auto",
