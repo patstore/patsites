@@ -27,6 +27,7 @@ import { Route as ApiDownloadRouteImport } from './routes/api/download'
 import { Route as ApiGeocode_postalcodeRouteImport } from './routes/api/geocode_postalcode'
 import { Route as ApiLoginRouteImport } from './routes/api/login'
 import { Route as ApiLogoutRouteImport } from './routes/api/logout'
+import { Route as ApiPreviewRouteImport } from './routes/api/preview'
 import { Route as ApiRssRouteImport } from './routes/api/rss'
 import { Route as ApiSearch_specialistsRouteImport } from './routes/api/search_specialists'
 import { Route as ApiSessionRouteImport } from './routes/api/session'
@@ -141,6 +142,11 @@ const ApiLoginRoute = ApiLoginRouteImport.update({
 const ApiLogoutRoute = ApiLogoutRouteImport.update({
   id: '/api/logout',
   path: '/api/logout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPreviewRoute = ApiPreviewRouteImport.update({
+  id: '/api/preview',
+  path: '/api/preview',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiRssRoute = ApiRssRouteImport.update({
@@ -288,6 +294,7 @@ export interface FileRoutesByFullPath {
   '/api/geocode_postalcode': typeof ApiGeocode_postalcodeRoute
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/api/rss': typeof ApiRssRoute
   '/api/search_specialists': typeof ApiSearch_specialistsRoute
   '/api/session': typeof ApiSessionRoute
@@ -332,6 +339,7 @@ export interface FileRoutesByTo {
   '/api/geocode_postalcode': typeof ApiGeocode_postalcodeRoute
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/api/rss': typeof ApiRssRoute
   '/api/search_specialists': typeof ApiSearch_specialistsRoute
   '/api/session': typeof ApiSessionRoute
@@ -378,6 +386,7 @@ export interface FileRoutesById {
   '/api/geocode_postalcode': typeof ApiGeocode_postalcodeRoute
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/api/rss': typeof ApiRssRoute
   '/api/search_specialists': typeof ApiSearch_specialistsRoute
   '/api/session': typeof ApiSessionRoute
@@ -425,6 +434,7 @@ export interface FileRouteTypes {
     | '/api/geocode_postalcode'
     | '/api/login'
     | '/api/logout'
+    | '/api/preview'
     | '/api/rss'
     | '/api/search_specialists'
     | '/api/session'
@@ -469,6 +479,7 @@ export interface FileRouteTypes {
     | '/api/geocode_postalcode'
     | '/api/login'
     | '/api/logout'
+    | '/api/preview'
     | '/api/rss'
     | '/api/search_specialists'
     | '/api/session'
@@ -514,6 +525,7 @@ export interface FileRouteTypes {
     | '/api/geocode_postalcode'
     | '/api/login'
     | '/api/logout'
+    | '/api/preview'
     | '/api/rss'
     | '/api/search_specialists'
     | '/api/session'
@@ -560,6 +572,7 @@ export interface RootRouteChildren {
   ApiGeocode_postalcodeRoute: typeof ApiGeocode_postalcodeRoute
   ApiLoginRoute: typeof ApiLoginRoute
   ApiLogoutRoute: typeof ApiLogoutRoute
+  ApiPreviewRoute: typeof ApiPreviewRoute
   ApiRssRoute: typeof ApiRssRoute
   ApiSearch_specialistsRoute: typeof ApiSearch_specialistsRoute
   ApiSessionRoute: typeof ApiSessionRoute
@@ -705,6 +718,13 @@ declare module '@tanstack/react-router' {
       path: '/api/logout'
       fullPath: '/api/logout'
       preLoaderRoute: typeof ApiLogoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/preview': {
+      id: '/api/preview'
+      path: '/api/preview'
+      fullPath: '/api/preview'
+      preLoaderRoute: typeof ApiPreviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/rss': {
@@ -930,6 +950,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiGeocode_postalcodeRoute: ApiGeocode_postalcodeRoute,
   ApiLoginRoute: ApiLoginRoute,
   ApiLogoutRoute: ApiLogoutRoute,
+  ApiPreviewRoute: ApiPreviewRoute,
   ApiRssRoute: ApiRssRoute,
   ApiSearch_specialistsRoute: ApiSearch_specialistsRoute,
   ApiSessionRoute: ApiSessionRoute,

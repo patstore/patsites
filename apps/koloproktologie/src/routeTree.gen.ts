@@ -28,6 +28,7 @@ import { Route as AktivitaetenZertifizierungRouteImport } from './routes/aktivit
 import { Route as ApiLoginRouteImport } from './routes/api/login'
 import { Route as ApiLogoutRouteImport } from './routes/api/logout'
 import { Route as ApiRssRouteImport } from './routes/api/rss'
+import { Route as ApiPreviewRouteImport } from './routes/api/preview'
 import { Route as ApiSessionRouteImport } from './routes/api/session'
 import { Route as AppIndexRouteImport } from './routes/app/index'
 import { Route as AppMitgliederbereichRouteImport } from './routes/app/mitgliederbereich'
@@ -156,6 +157,11 @@ const ApiLogoutRoute = ApiLogoutRouteImport.update({
 const ApiRssRoute = ApiRssRouteImport.update({
   id: '/api/rss',
   path: '/api/rss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPreviewRoute = ApiPreviewRouteImport.update({
+  id: '/api/preview',
+  path: '/api/preview',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiSessionRoute = ApiSessionRouteImport.update({
@@ -326,6 +332,7 @@ export interface FileRoutesByFullPath {
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
   '/api/rss': typeof ApiRssRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/api/session': typeof ApiSessionRoute
   '/app/mitgliederbereich': typeof AppMitgliederbereichRoute
   '/app/profile': typeof AppProfileRoute
@@ -375,6 +382,7 @@ export interface FileRoutesByTo {
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
   '/api/rss': typeof ApiRssRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/api/session': typeof ApiSessionRoute
   '/app/mitgliederbereich': typeof AppMitgliederbereichRoute
   '/app/profile': typeof AppProfileRoute
@@ -426,6 +434,7 @@ export interface FileRoutesById {
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
   '/api/rss': typeof ApiRssRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/api/session': typeof ApiSessionRoute
   '/app/mitgliederbereich': typeof AppMitgliederbereichRoute
   '/app/profile': typeof AppProfileRoute
@@ -478,6 +487,7 @@ export interface FileRouteTypes {
     | '/api/login'
     | '/api/logout'
     | '/api/rss'
+    | '/api/preview'
     | '/api/session'
     | '/app/mitgliederbereich'
     | '/app/profile'
@@ -527,6 +537,7 @@ export interface FileRouteTypes {
     | '/api/login'
     | '/api/logout'
     | '/api/rss'
+    | '/api/preview'
     | '/api/session'
     | '/app/mitgliederbereich'
     | '/app/profile'
@@ -577,6 +588,7 @@ export interface FileRouteTypes {
     | '/api/login'
     | '/api/logout'
     | '/api/rss'
+    | '/api/preview'
     | '/api/session'
     | '/app/mitgliederbereich'
     | '/app/profile'
@@ -628,6 +640,7 @@ export interface RootRouteChildren {
   ApiLoginRoute: typeof ApiLoginRoute
   ApiLogoutRoute: typeof ApiLogoutRoute
   ApiRssRoute: typeof ApiRssRoute
+  ApiPreviewRoute: typeof ApiPreviewRoute
   ApiSessionRoute: typeof ApiSessionRoute
   DgkBeitragsordnungRoute: typeof DgkBeitragsordnungRoute
   DgkCongressRoute: typeof DgkCongressRoute
@@ -789,6 +802,13 @@ declare module '@tanstack/react-router' {
       path: '/api/rss'
       fullPath: '/api/rss'
       preLoaderRoute: typeof ApiRssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/preview': {
+      id: '/api/preview'
+      path: '/api/preview'
+      fullPath: '/api/preview'
+      preLoaderRoute: typeof ApiPreviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/session': {
@@ -1033,6 +1053,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiLoginRoute: ApiLoginRoute,
   ApiLogoutRoute: ApiLogoutRoute,
   ApiRssRoute: ApiRssRoute,
+  ApiPreviewRoute: ApiPreviewRoute,
   ApiSessionRoute: ApiSessionRoute,
   DgkBeitragsordnungRoute: DgkBeitragsordnungRoute,
   DgkCongressRoute: DgkCongressRoute,

@@ -18,6 +18,7 @@ import { Route as MitgliedschaftRouteImport } from './routes/mitgliedschaft'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermineRouteImport } from './routes/termine'
 import { Route as AktuellesSlugRouteImport } from './routes/aktuelles/$slug'
+import { Route as ApiPreviewRouteImport } from './routes/api/preview'
 import { Route as MedienBerichteRouteImport } from './routes/medien/berichte'
 import { Route as MedienDownloadsRouteImport } from './routes/medien/downloads'
 import { Route as MedienVeroeffentlichungenRouteImport } from './routes/medien/veroeffentlichungen'
@@ -72,6 +73,11 @@ const TermineRoute = TermineRouteImport.update({
 const AktuellesSlugRoute = AktuellesSlugRouteImport.update({
   id: '/aktuelles/$slug',
   path: '/aktuelles/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPreviewRoute = ApiPreviewRouteImport.update({
+  id: '/api/preview',
+  path: '/api/preview',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MedienBerichteRoute = MedienBerichteRouteImport.update({
@@ -138,6 +144,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termine': typeof TermineRoute
   '/aktuelles/$slug': typeof AktuellesSlugRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/medien/berichte': typeof MedienBerichteRoute
   '/medien/downloads': typeof MedienDownloadsRoute
   '/medien/veroeffentlichungen': typeof MedienVeroeffentlichungenRoute
@@ -159,6 +166,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termine': typeof TermineRoute
   '/aktuelles/$slug': typeof AktuellesSlugRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/medien/berichte': typeof MedienBerichteRoute
   '/medien/downloads': typeof MedienDownloadsRoute
   '/medien/veroeffentlichungen': typeof MedienVeroeffentlichungenRoute
@@ -181,6 +189,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termine': typeof TermineRoute
   '/aktuelles/$slug': typeof AktuellesSlugRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/medien/berichte': typeof MedienBerichteRoute
   '/medien/downloads': typeof MedienDownloadsRoute
   '/medien/veroeffentlichungen': typeof MedienVeroeffentlichungenRoute
@@ -204,6 +213,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/termine'
     | '/aktuelles/$slug'
+    | '/api/preview'
     | '/medien/berichte'
     | '/medien/downloads'
     | '/medien/veroeffentlichungen'
@@ -225,6 +235,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/termine'
     | '/aktuelles/$slug'
+    | '/api/preview'
     | '/medien/berichte'
     | '/medien/downloads'
     | '/medien/veroeffentlichungen'
@@ -246,6 +257,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/termine'
     | '/aktuelles/$slug'
+    | '/api/preview'
     | '/medien/berichte'
     | '/medien/downloads'
     | '/medien/veroeffentlichungen'
@@ -268,6 +280,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermineRoute: typeof TermineRoute
   AktuellesSlugRoute: typeof AktuellesSlugRoute
+  ApiPreviewRoute: typeof ApiPreviewRoute
   MedienBerichteRoute: typeof MedienBerichteRoute
   MedienDownloadsRoute: typeof MedienDownloadsRoute
   MedienVeroeffentlichungenRoute: typeof MedienVeroeffentlichungenRoute
@@ -343,6 +356,13 @@ declare module '@tanstack/react-router' {
       path: '/aktuelles/$slug'
       fullPath: '/aktuelles/$slug'
       preLoaderRoute: typeof AktuellesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/preview': {
+      id: '/api/preview'
+      path: '/api/preview'
+      fullPath: '/api/preview'
+      preLoaderRoute: typeof ApiPreviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/medien/berichte': {
@@ -428,6 +448,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermineRoute: TermineRoute,
   AktuellesSlugRoute: AktuellesSlugRoute,
+  ApiPreviewRoute: ApiPreviewRoute,
   MedienBerichteRoute: MedienBerichteRoute,
   MedienDownloadsRoute: MedienDownloadsRoute,
   MedienVeroeffentlichungenRoute: MedienVeroeffentlichungenRoute,

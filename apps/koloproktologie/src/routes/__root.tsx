@@ -21,12 +21,16 @@ import {
 import { SiteContextProvider, client } from "@provider";
 import { Layout } from "@components";
 import { HeadContent as PageHeadContent } from "@ui";
+import { isDraftMode } from "@repo/server";
+import { DraftGate } from "@repo/ui/Draft";
 import { fetchCollection } from "../server/content";
+import { readPreviewSession } from "../server/preview.server";
 import { defaultSeo, pageFade, routeTransitions, siteLocalization } from "./-shell";
 import "@styles";
 
 export const Route = createRootRoute({
     loader: async ({ location }) => {
+        const preview = await readPreviewSession();
         let seo: unknown = null;
         try {
             const pages = (await fetchCollection("Webpage")) as Array<{ path?: string }>;
@@ -38,7 +42,7 @@ export const Route = createRootRoute({
             seo = null;
         }
 
-        return { seo };
+        return { seo, preview };
     },
     head: () => ({
         meta: [
@@ -68,28 +72,30 @@ function RootComponent() {
     const orientation = useRouterState({
         select: (state) => readOrientation(state.matches),
     });
-    const { seo } = Route.useLoaderData();
+    const { seo, preview } = Route.useLoaderData();
 
     return (
         <RootDocument pathname={pathname} seo={seo}>
-            <ApolloProvider client={client}>
-                <SiteContextProvider>
-                    <LocalizationProvider pathname={pathname} {...siteLocalization}>
-                        <SmoothScroll orientation={orientation}>
-                            <PageTransition
-                                pathname={pathname}
-                                transitions={routeTransitions}
-                                clonePrevious={false}
-                                fallback={pageFade}
-                            >
-                                <Suspense fallback={null}>
-                                    <Outlet />
-                                </Suspense>
-                            </PageTransition>
-                        </SmoothScroll>
-                    </LocalizationProvider>
-                </SiteContextProvider>
-            </ApolloProvider>
+            <DraftGate preview={preview} locked={isDraftMode() && !preview}>
+                <ApolloProvider client={client}>
+                    <SiteContextProvider>
+                        <LocalizationProvider pathname={pathname} {...siteLocalization}>
+                            <SmoothScroll orientation={orientation}>
+                                <PageTransition
+                                    pathname={pathname}
+                                    transitions={routeTransitions}
+                                    clonePrevious={false}
+                                    fallback={pageFade}
+                                >
+                                    <Suspense fallback={null}>
+                                        <Outlet />
+                                    </Suspense>
+                                </PageTransition>
+                            </SmoothScroll>
+                        </LocalizationProvider>
+                    </SiteContextProvider>
+                </ApolloProvider>
+            </DraftGate>
         </RootDocument>
     );
 }

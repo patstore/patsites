@@ -2,13 +2,17 @@
 import { Suspense, type ReactNode } from "react";
 import { HeadContent, Outlet, Scripts, createRootRoute, useRouterState } from "@tanstack/react-router";
 import { PageTransition, SmoothScroll, type ScrollOrientation } from "@repo/core";
+import { isDraftMode } from "@repo/server";
+import { DraftGate } from "@repo/ui/Draft";
 import { Framework, seo } from "@components";
 import { SiteContextProvider } from "@provider";
+import { readPreviewSession } from "../server/preview.server";
 import globalCss from "../styles/global.css?url";
 import "@repo/core/scroll.css";
 import { pageFade, routeTransitions } from "./-shell";
 
 export const Route = createRootRoute({
+  loader: () => readPreviewSession(),
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -55,23 +59,26 @@ function RootComponent() {
   const orientation = useRouterState({
     select: (state) => readOrientation(state.matches),
   });
+  const preview = Route.useLoaderData();
 
   return (
-    <SiteContextProvider>
-      <SmoothScroll orientation={orientation}>
-        <Framework>
-          <PageTransition
-            pathname={pathname}
-            transitions={routeTransitions}
-            clonePrevious={false}
-            fallback={pageFade}
-          >
-            <Suspense fallback={null}>
-              <Outlet />
-            </Suspense>
-          </PageTransition>
-        </Framework>
-      </SmoothScroll>
-    </SiteContextProvider>
+    <DraftGate preview={preview} locked={isDraftMode() && !preview}>
+      <SiteContextProvider>
+        <SmoothScroll orientation={orientation}>
+          <Framework>
+            <PageTransition
+              pathname={pathname}
+              transitions={routeTransitions}
+              clonePrevious={false}
+              fallback={pageFade}
+            >
+              <Suspense fallback={null}>
+                <Outlet />
+              </Suspense>
+            </PageTransition>
+          </Framework>
+        </SmoothScroll>
+      </SiteContextProvider>
+    </DraftGate>
   );
 }

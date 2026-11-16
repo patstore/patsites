@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ApiPreviewRouteImport } from './routes/api/preview'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as ImpressumRouteImport } from './routes/impressum'
@@ -18,6 +19,11 @@ import { Route as TeamRouteImport } from './routes/team'
 import { Route as KurseIndexRouteImport } from './routes/kurse/index'
 import { Route as KurseKurs_idRouteImport } from './routes/kurse/$kurs_id'
 
+const ApiPreviewRoute = ApiPreviewRouteImport.update({
+  id: '/api/preview',
+  path: '/api/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -61,6 +67,7 @@ const KurseKurs_idRoute = KurseKurs_idRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
@@ -71,6 +78,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
@@ -82,6 +90,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
@@ -94,6 +103,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/api/preview'
     | '/datenschutz'
     | '/impressum'
     | '/kontakt'
@@ -104,6 +114,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/api/preview'
     | '/datenschutz'
     | '/impressum'
     | '/kontakt'
@@ -114,6 +125,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/api/preview'
     | '/datenschutz'
     | '/impressum'
     | '/kontakt'
@@ -124,6 +136,7 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  ApiPreviewRoute: typeof ApiPreviewRoute
   IndexRoute: typeof IndexRoute
   DatenschutzRoute: typeof DatenschutzRoute
   ImpressumRoute: typeof ImpressumRoute
@@ -136,6 +149,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/api/preview': {
+      id: '/api/preview'
+      path: '/api/preview'
+      fullPath: '/api/preview'
+      preLoaderRoute: typeof ApiPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -196,6 +216,7 @@ declare module '@tanstack/react-router' {
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  ApiPreviewRoute: ApiPreviewRoute,
   IndexRoute: IndexRoute,
   DatenschutzRoute: DatenschutzRoute,
   ImpressumRoute: ImpressumRoute,

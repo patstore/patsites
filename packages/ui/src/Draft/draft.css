@@ -1,0 +1,55 @@
+.draft-border {
+  border: 2px solid #f5c518;
+}
+
+.draft-label {
+  position: relative;
+}
+
+.draft-label::before {
+  content: "Entwurf";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 0.1rem 0.35rem;
+  background: #f5c518;
+  color: #1a1a1a;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.draft-site::before {
+  content: "Entwurf.";
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0.2rem 0.5rem;
+  background: #f5c518;
+  color: #1a1a1a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.draft-banner {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  margin: 0;
+  padding: 0.4rem 0.7rem;
+  background: #f5c518;
+  color: #1a1a1a;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.draft-locked {
+  margin: 2rem 1rem;
+  color: #1a1a1a;
+  font-family: sans-serif;
+}

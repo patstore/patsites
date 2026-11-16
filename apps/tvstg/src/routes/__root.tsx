@@ -7,15 +7,21 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { getSiteData } from "@functions/site.functions";
+import { isDraftMode } from "@repo/server";
+import { DraftGate } from "@repo/ui/Draft";
 import { Framework, seo } from "@components";
 import { SiteContextProvider } from "@provider";
+import { readPreviewSession } from "../server/preview.server";
 import globalCss from "../styles/global.scss?url";
 import "@repo/core/scroll.css";
 import favicon from "../images/tvstg_logo.png";
 import "@data";
 
 export const Route = createRootRoute({
-  loader: () => getSiteData(),
+  loader: async () => {
+    const [site, preview] = await Promise.all([getSiteData(), readPreviewSession()]);
+    return { ...site, preview };
+  },
   staleTime: 5 * 60_000,
   head: () => ({
     meta: [
@@ -53,13 +59,17 @@ function RootDocument({ children }: { children: ReactNode }) {
 }
 
 function RootComponent() {
+  const { preview } = Route.useLoaderData();
+
   return (
-    <SiteContextProvider>
-      <Framework>
-        <Suspense fallback={null}>
-          <Outlet />
-        </Suspense>
-      </Framework>
-    </SiteContextProvider>
+    <DraftGate preview={preview} locked={isDraftMode() && !preview}>
+      <SiteContextProvider>
+        <Framework>
+          <Suspense fallback={null}>
+            <Outlet />
+          </Suspense>
+        </Framework>
+      </SiteContextProvider>
+    </DraftGate>
   );
 }

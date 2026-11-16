@@ -5,6 +5,8 @@
   "exports": {
     "./Image": "./src/Image/Image.tsx",
     ".": "./src/index.ts",
+    "./Draft": "./src/Draft/index.ts",
+    "./Draft/draft.css": "./src/Draft/draft.css",
     "./*": "./src/*.tsx"
   },
   "scripts": {

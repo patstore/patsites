@@ -1,5 +1,8 @@
 const YEAR_SECONDS = 60 * 60 * 24 * 365;
 
+/** Separate from the member session cookie, and limited to the browser session. */
+export const PREVIEW_COOKIE_NAME = "preview";
+
 export function readCookie(header: string | null, name: string): string {
   if (!header) {
     return "";
@@ -20,6 +23,11 @@ export function sessionCookieHeader(name: string, token: string): string {
 
 export function clearCookieHeader(name: string): string {
   return `${name}=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0${secureAttribute()}`;
+}
+
+/** No Max-Age: the browser drops this cookie when the session ends. */
+export function previewCookieHeader(token: string): string {
+  return `${PREVIEW_COOKIE_NAME}=${encodeURIComponent(token)}; Path=/; HttpOnly; SameSite=Strict${secureAttribute()}`;
 }
 
 function secureAttribute(): string {

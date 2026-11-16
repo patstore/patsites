@@ -1,4 +1,11 @@
-import { clearCookieHeader, jsonWithCookie, readCookie, sessionCookieHeader } from "./cookie.ts";
+import {
+  PREVIEW_COOKIE_NAME,
+  clearCookieHeader,
+  jsonWithCookie,
+  previewCookieHeader,
+  readCookie,
+  sessionCookieHeader,
+} from "./cookie.ts";
 import {
   asRecord,
   callFunction,
@@ -234,6 +241,53 @@ export async function requireUser(
   }
 }
 
+/** Relative preview path. Anything else, including another site, becomes `/`. */
+export function previewNextPath(value: string | null): string {
+  if (!value || !value.startsWith("/") || value.startsWith("//") || value.startsWith("/\\")) {
+    return "/";
+  }
+  if (value.includes("\\") || value.includes("://") || /[\r\n]/.test(value)) {
+    return "/";
+  }
+  return value;
+}
+
+async function previewUser(config: AuthConfig, token: string): Promise<boolean> {
+  if (!token || !configured(config)) {
+    return false;
+  }
+  try {
+    const user = asRecord(
+      await parseFetch(config, "/users/me", { method: "GET", sessionToken: token }),
+    );
+    return typeof user?.objectId === "string" && user.objectId.length > 0;
+  } catch {
+    return false;
+  }
+}
+
+export async function hasPreviewSession(request: Request, config: AuthConfig): Promise<boolean> {
+  return previewUser(config, readCookie(request.headers.get("cookie"), PREVIEW_COOKIE_NAME));
+}
+
+export async function acceptPreview(request: Request, config: AuthConfig): Promise<Response> {
+  const url = new URL(request.url);
+  const token = url.searchParams.get("sessionToken") ?? "";
+  const next = previewNextPath(url.searchParams.get("next"));
+  if (!(await previewUser(config, token))) {
+    return new Response("Nicht authentifiziert", { status: 401 });
+  }
+  return new Response(null, {
+    status: 302,
+    headers: {
+      Location: next,
+      "Set-Cookie": previewCookieHeader(token),
+      "Cache-Control": "no-store",
+      "Referrer-Policy": "no-referrer",
+    },
+  });
+}
+
 export function createSessionApi(config: AuthConfig) {
   return {
     config,
@@ -241,6 +295,8 @@ export function createSessionApi(config: AuthConfig) {
     logout: (request: Request) => logout(request, config),
     session: (request: Request) => session(request, config),
     requireUser: (request: Request) => requireUser(request, config),
+    acceptPreview: (request: Request) => acceptPreview(request, config),
+    hasPreviewSession: (request: Request) => hasPreviewSession(request, config),
     getUserRoles: (userId: string, sessionToken: string) =>
       getUserRoles(config, userId, sessionToken),
     readToken: (request: Request) => readCookie(request.headers.get("cookie"), config.cookieName),
