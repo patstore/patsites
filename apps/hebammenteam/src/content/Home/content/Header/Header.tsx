@@ -1,4 +1,5 @@
 import { PageHeader } from "@components";
+import { Link } from "@tanstack/react-router";
 
 const Header = () => (
   <PageHeader
@@ -10,7 +11,13 @@ const Header = () => (
       </>
     }
     lead="Wir begleiten euch auf eurem Weg ins Elternsein."
-  />
+  >
+    <Link to="/team">
+      <button>
+        Lerne uns kennen
+      </button>
+    </Link>
+    </PageHeader>
 );
 
 export default Header

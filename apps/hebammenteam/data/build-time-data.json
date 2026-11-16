@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-12T11:18:49.048Z",
+    "generatedAt": "2026-11-16T08:33:41.102Z",
     "projectId": "RlOdP8FOCV",
     "moduleCount": 6,
     "states": null,
@@ -1129,6 +1129,14 @@
   ],
   "downloadedFiles": [
     {
+      "objectId": "WNRwTQAQdI",
+      "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bea172366141ab441be6b81ed745c3a4_anna.jpg",
+      "localPath": "WNRwTQAQdI-Anna.jpg",
+      "filename": "WNRwTQAQdI-Anna.jpg",
+      "type": "image",
+      "thumbnailPath": "thumbnails/WNRwTQAQdI-Anna-480w.webp"
+    },
+    {
       "objectId": "O3Cit5vMiq",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/fc4c6f19f3ae84293275f0bd6e95eaa0_anna_paust.jpg",
       "localPath": "O3Cit5vMiq-Anna.jpg",
@@ -1269,6 +1277,19 @@
     }
   ],
   "images": [
+    {
+      "id": "SW1hZ2U6V05Sd1RRQVFkSQ==",
+      "objectId": "WNRwTQAQdI",
+      "categories": [],
+      "file": {
+        "name": "bea172366141ab441be6b81ed745c3a4_anna.jpg",
+        "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bea172366141ab441be6b81ed745c3a4_anna.jpg"
+      },
+      "title": "Anna",
+      "connected_elements": [],
+      "filePath": "WNRwTQAQdI-Anna.jpg",
+      "thumbnailPath": "thumbnails/WNRwTQAQdI-Anna-480w.webp"
+    },
     {
       "id": "SW1hZ2U6TzNDaXQ1dk1pcQ==",
       "objectId": "O3Cit5vMiq",
@@ -1475,7 +1496,7 @@
       "title": "Anna Maisha Paust",
       "description": null,
       "text": "<p>Ich habe den Beruf der <strong>Hebamme</strong> durch meine eigenen Erfahrungen als Mutter kennen gelernt und die Ausbildung nach der Geburt meiner dritten Tochter an der Albert-Ludwig-Universitätsklinik in Freiburg im April 2013 abgeschlossen.</p><p>Ich arbeite mit viel Freude in der Begleitung von Schwangeren und ihren Familien vor und nach der Geburt.</p><p>Durch meine&nbsp;langjährige Erfahrung&nbsp;als Hebamme habe ich&nbsp;weit reichenden Einblick in&nbsp;den Prozess des Elternwerdens.&nbsp;Ich durfte so viele Familien begleiten und&nbsp;miterleben, mit wie viel Liebe, Kraft und Kreativität Familien&nbsp;wachsen. Ich habe großen Respekt vor dem ganz eigenen&nbsp;Instinkt um die eigene Heilung, im neu werden als Familie.</p><p>Der Prozess des Elternwerdens kann&nbsp;erfüllend sein, aber auch&nbsp;an alte Wunden rühren und Trauma kann entstehen durch Überforderung, Grenzüberschreitung, körperliche und emotionale Verletzung und vieles mehr.&nbsp;</p><p>Durch meine Weiterbildung als&nbsp;<strong>Heilpraktikerin auf dem Gebiet der Psychotherapie</strong> und das Erlernen der traumatherapeutischen Methode des „Somatic Experiencing“ kann ich nun Menschen therapeutische Begleitung in der Verarbeitung von schwierigen Situationen in Schwangerschaft, Geburt und Stillzeit anbieten.</p><p>Somatic Experiencing&nbsp;bietet eine Möglichkeit,&nbsp;Menschen behutsam&nbsp;durch Prozesse der Verarbeitung von erlebtem Trauma&nbsp;zu begleiten,&nbsp;um immer freier und mit voller Kraft und Kreativität das Leben zu gestalten.</p><p>Ich arbeite jederzeit mit dem im Jetzt und Hier Möglichen.&nbsp;</p><p>Für Schwangere bedeutet dies im Einklang mit der Situation erlebtes Trauma zu verorten und sich für die anstehende Geburt traumasensibel vorzubereiten. Möglicherweise ist eine tiefere Aufarbeitung erst nach der sensiblen Zeit der Geburt und des Wochenbettes möglich.</p><p>Ich arbeite respektvoll, sanft und in einem sicheren Raum, den wir gemeinsam kreieren.&nbsp;</p><p>Eine Therapie reicht von wenigen Sitzungen bis hin zu einer längeren Begleitung, je nach Ihrem ganz individuellen Prozess. Sie findet in meiner Praxis in der Rotlaubstr. 5 in Freiburg statt.</p><p>Die therapeutische Begleitung wird nicht von den gesetzlichen Krankenkassen übernommen.</p>",
-      "image": "O3Cit5vMiq",
+      "image": "WNRwTQAQdI",
       "state": "published",
       "email": null,
       "gallery": null,

@@ -4,8 +4,8 @@
 :root {
   --color-ink: #000;
   --color-muted: #5c6b64;
-  --color-surface: #f2d688;
-  --color-bg: #fffdf9;
+  --color-surface: #FFDB0B;
+  --color-bg: #f2edd8;
   --color-accent: #2f6f62;
   --color-accent-dark: #272727;
   --color-accent-soft: #e5f0ec;
@@ -14,7 +14,7 @@
   --color-dark: #393126;
   --font-heading: "Amiri", serif;
   --font: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  --header-height: 4.75rem;
+  --header-height: 60px;
   --page-width: 1240px;
   color: var(--color-ink);
   background-color: var(--color-bg);
@@ -74,7 +74,6 @@ textarea {
 }
 
 .hero {
-  background-color: var(--color-surface);
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -110,14 +109,16 @@ section {
 }
 
 button {
-  background-color: var(--color-dark);
-  color: white;
+  font-family: var(--font-heading);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
   border: none;
-  padding: 8px 16px;
-  border-radius:4px;
+  padding: 12px 24px;
+  border-radius:48px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: calc(14px + 0.3vw);
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .eyebrow {
@@ -131,6 +132,7 @@ button {
 .lead {
   color: var(--color-muted);
   font-size: 1.2rem;
+  margin: 0;
 }
 
 .page-body {
