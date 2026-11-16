@@ -24,7 +24,7 @@ import { Link, NavigateBridge } from "@router";
 import { isDraftMode } from "@repo/server";
 import { DraftGate } from "@repo/ui/Draft";
 import { fetchCollection } from "../server/content";
-import { readPreviewSession } from "../server/preview.server";
+import { readPreviewSession } from "../server/preview";
 import { defaultSeo, pageFade, routeTransitions, siteLocalization } from "./-shell";
 
 export const Route = createRootRoute({

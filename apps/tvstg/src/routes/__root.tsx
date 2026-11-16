@@ -11,7 +11,7 @@ import { isDraftMode } from "@repo/server";
 import { DraftGate } from "@repo/ui/Draft";
 import { Framework, seo } from "@components";
 import { SiteContextProvider } from "@provider";
-import { readPreviewSession } from "../server/preview.server";
+import { readPreviewSession } from "../server/preview";
 import globalCss from "../styles/global.scss?url";
 import "@repo/core/scroll.css";
 import favicon from "../images/tvstg_logo.png";

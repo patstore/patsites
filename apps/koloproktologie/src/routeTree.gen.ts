@@ -27,8 +27,8 @@ import { Route as AktivitaetenSchirmherrschaftRouteImport } from './routes/aktiv
 import { Route as AktivitaetenZertifizierungRouteImport } from './routes/aktivitaeten/zertifizierung'
 import { Route as ApiLoginRouteImport } from './routes/api/login'
 import { Route as ApiLogoutRouteImport } from './routes/api/logout'
-import { Route as ApiRssRouteImport } from './routes/api/rss'
 import { Route as ApiPreviewRouteImport } from './routes/api/preview'
+import { Route as ApiRssRouteImport } from './routes/api/rss'
 import { Route as ApiSessionRouteImport } from './routes/api/session'
 import { Route as AppIndexRouteImport } from './routes/app/index'
 import { Route as AppMitgliederbereichRouteImport } from './routes/app/mitgliederbereich'
@@ -154,14 +154,14 @@ const ApiLogoutRoute = ApiLogoutRouteImport.update({
   path: '/api/logout',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiRssRoute = ApiRssRouteImport.update({
-  id: '/api/rss',
-  path: '/api/rss',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ApiPreviewRoute = ApiPreviewRouteImport.update({
   id: '/api/preview',
   path: '/api/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiRssRoute = ApiRssRouteImport.update({
+  id: '/api/rss',
+  path: '/api/rss',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiSessionRoute = ApiSessionRouteImport.update({
@@ -331,8 +331,8 @@ export interface FileRoutesByFullPath {
   '/aktivitaeten/zertifizierung': typeof AktivitaetenZertifizierungRoute
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
-  '/api/rss': typeof ApiRssRoute
   '/api/preview': typeof ApiPreviewRoute
+  '/api/rss': typeof ApiRssRoute
   '/api/session': typeof ApiSessionRoute
   '/app/mitgliederbereich': typeof AppMitgliederbereichRoute
   '/app/profile': typeof AppProfileRoute
@@ -381,8 +381,8 @@ export interface FileRoutesByTo {
   '/aktivitaeten/zertifizierung': typeof AktivitaetenZertifizierungRoute
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
-  '/api/rss': typeof ApiRssRoute
   '/api/preview': typeof ApiPreviewRoute
+  '/api/rss': typeof ApiRssRoute
   '/api/session': typeof ApiSessionRoute
   '/app/mitgliederbereich': typeof AppMitgliederbereichRoute
   '/app/profile': typeof AppProfileRoute
@@ -433,8 +433,8 @@ export interface FileRoutesById {
   '/aktivitaeten/zertifizierung': typeof AktivitaetenZertifizierungRoute
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
-  '/api/rss': typeof ApiRssRoute
   '/api/preview': typeof ApiPreviewRoute
+  '/api/rss': typeof ApiRssRoute
   '/api/session': typeof ApiSessionRoute
   '/app/mitgliederbereich': typeof AppMitgliederbereichRoute
   '/app/profile': typeof AppProfileRoute
@@ -486,8 +486,8 @@ export interface FileRouteTypes {
     | '/aktivitaeten/zertifizierung'
     | '/api/login'
     | '/api/logout'
-    | '/api/rss'
     | '/api/preview'
+    | '/api/rss'
     | '/api/session'
     | '/app/mitgliederbereich'
     | '/app/profile'
@@ -536,8 +536,8 @@ export interface FileRouteTypes {
     | '/aktivitaeten/zertifizierung'
     | '/api/login'
     | '/api/logout'
-    | '/api/rss'
     | '/api/preview'
+    | '/api/rss'
     | '/api/session'
     | '/app/mitgliederbereich'
     | '/app/profile'
@@ -587,8 +587,8 @@ export interface FileRouteTypes {
     | '/aktivitaeten/zertifizierung'
     | '/api/login'
     | '/api/logout'
-    | '/api/rss'
     | '/api/preview'
+    | '/api/rss'
     | '/api/session'
     | '/app/mitgliederbereich'
     | '/app/profile'
@@ -639,8 +639,8 @@ export interface RootRouteChildren {
   AktivitaetenZertifizierungRoute: typeof AktivitaetenZertifizierungRoute
   ApiLoginRoute: typeof ApiLoginRoute
   ApiLogoutRoute: typeof ApiLogoutRoute
-  ApiRssRoute: typeof ApiRssRoute
   ApiPreviewRoute: typeof ApiPreviewRoute
+  ApiRssRoute: typeof ApiRssRoute
   ApiSessionRoute: typeof ApiSessionRoute
   DgkBeitragsordnungRoute: typeof DgkBeitragsordnungRoute
   DgkCongressRoute: typeof DgkCongressRoute
@@ -797,18 +797,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiLogoutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/rss': {
-      id: '/api/rss'
-      path: '/api/rss'
-      fullPath: '/api/rss'
-      preLoaderRoute: typeof ApiRssRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/api/preview': {
       id: '/api/preview'
       path: '/api/preview'
       fullPath: '/api/preview'
       preLoaderRoute: typeof ApiPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/rss': {
+      id: '/api/rss'
+      path: '/api/rss'
+      fullPath: '/api/rss'
+      preLoaderRoute: typeof ApiRssRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/session': {
@@ -1052,8 +1052,8 @@ const rootRouteChildren: RootRouteChildren = {
   AktivitaetenZertifizierungRoute: AktivitaetenZertifizierungRoute,
   ApiLoginRoute: ApiLoginRoute,
   ApiLogoutRoute: ApiLogoutRoute,
-  ApiRssRoute: ApiRssRoute,
   ApiPreviewRoute: ApiPreviewRoute,
+  ApiRssRoute: ApiRssRoute,
   ApiSessionRoute: ApiSessionRoute,
   DgkBeitragsordnungRoute: DgkBeitragsordnungRoute,
   DgkCongressRoute: DgkCongressRoute,
