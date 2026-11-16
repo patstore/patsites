@@ -35,7 +35,7 @@ const News: React.FC<NewsProps> = ({
     }, [counter]);
 
     return (
-        <div css={newsContainer} className="draft-border">
+        <div css={newsContainer}>
             <FlexBox
                 direction="row"
                 align="flex-end"
