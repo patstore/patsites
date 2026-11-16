@@ -41,6 +41,11 @@ export const Route = createRootRoute({
                 name: "viewport",
                 content: "width=device-width, initial-scale=1"
             }
+        ],
+        links: [
+            { rel: "icon", type: "image/png", href: "/favicon.png" },
+            { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+            { rel: "apple-touch-icon", href: "/apple-touch-icon.png" }
         ]
     }),
     component: RootComponent,

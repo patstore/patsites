@@ -52,6 +52,7 @@ const Enddarmerkrankungen: React.FC = () => {
                     <AppImage
                         src={staticAsset0} alt="Enddarmerkrankungen"
                         objectFit="cover"
+                        objectPosition="center left"
                         css={{ width: "100%", height: "100%" }}
                     />
                 </div>

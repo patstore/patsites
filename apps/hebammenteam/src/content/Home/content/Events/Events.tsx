@@ -14,7 +14,6 @@ const Events = () => {
                         <EventCard key={event.objectId} event={event} />
                     ))}
                 </div>
-
             </div>
     </section>
   )

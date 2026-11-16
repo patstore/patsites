@@ -28,7 +28,7 @@ const Wundpflege: React.FC<WundpflegeProps> = ({inline = false}) => {
             <h3>
                 Anleitung zur Wundpflege
             </h3>
-            {inline ?  <video src="/videos/BCD_Wundpflege_Video.mp4"
+            {inline ?  <video src="/videos/Bcd_Wundpflege_Video.mp4"
                 controls
                 css={{ width: "100%", height: "auto" }} /> : <Button text="Video ansehen" onClick={handleModalOpen} />}
             
@@ -48,7 +48,7 @@ const Wundpflege: React.FC<WundpflegeProps> = ({inline = false}) => {
                         <div css={videoContainer}>
                             <video
                                 controls
-                                src="/videos/BCD_Wundpflege_Video.mp4"
+                                src="/videos/Bcd_Wundpflege_Video.mp4"
                                 autoPlay
                             />
                         </div>
