@@ -24,7 +24,7 @@ const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
                 width: "300px",
                 height: "fit-content"
             }}
-            className="draft-border"
+            className={news.state === "draft" ? "draft-border" : ""}
         >
             <ContentBox
                 key={news.title}
