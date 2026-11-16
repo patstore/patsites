@@ -1,0 +1,106 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  affected:
+    name: Affected apps
+    runs-on: ubuntu-latest
+    outputs:
+      apps: ${{ steps.select.outputs.apps }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/setup@v3
+        with:
+          runtime: node@24
+          install: false
+
+      - name: Select affected apps
+        id: select
+        env:
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+
+          all='[
+            {"name":"hebammenteam","secret":"COOLIFY_WEBHOOK_HEBAMMENTEAM"},
+            {"name":"koloproktologie","secret":"COOLIFY_WEBHOOK_KOLOPROKTOLOGIE"},
+            {"name":"coloproktologen","secret":"COOLIFY_WEBHOOK_COLOPROKTOLOGEN"},
+            {"name":"tvstg","secret":"COOLIFY_WEBHOOK_TVSTG"}
+          ]'
+
+          select_all=0
+          if [ -z "$PUSH_BEFORE" ] || [ "$PUSH_BEFORE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "${PUSH_BEFORE}^{commit}" 2>/dev/null; then
+            echo "The previous commit is not in this checkout. Selecting every app."
+            select_all=1
+          elif git diff --name-only "$PUSH_BEFORE" HEAD -- Dockerfile .dockerignore vite.config.ts pnpm-workspace.yaml | grep -q .; then
+            echo "A shared build file changed. Selecting every app."
+            select_all=1
+          fi
+
+          if [ "$select_all" -eq 1 ]; then
+            apps="$(node -e 'console.log(JSON.stringify(JSON.parse(process.argv[1])))' "$all")"
+          else
+            pnpm dlx turbo@2.11.10 query affected \
+              --packages hebammenteam koloproktologie coloproktologen tvstg \
+              --base "$PUSH_BEFORE" \
+              --head HEAD > affected.json
+            apps="$(ALL_APPS="$all" node --input-type=module -e '
+              import fs from "node:fs"
+              const text = fs.readFileSync("affected.json", "utf8")
+              const parsed = JSON.parse(text.slice(text.indexOf("{")))
+              const wanted = new Set(parsed.data.affectedPackages.items.map((item) => item.name))
+              const all = JSON.parse(process.env.ALL_APPS)
+              console.log(JSON.stringify(all.filter((app) => wanted.has(app.name))))
+            ')"
+          fi
+
+          echo "apps=$apps" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Apps to deploy"
+            if [ "$apps" = "[]" ]; then
+              echo "None. This push does not affect a deployed app."
+            else
+              echo "$apps" | jq -r '.[] | "- \(.name)"'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  deploy:
+    name: Deploy ${{ matrix.name }}
+    needs: affected
+    if: needs.affected.outputs.apps != '[]'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-${{ matrix.name }}
+      cancel-in-progress: false
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(needs.affected.outputs.apps) }}
+    steps:
+      - name: Deploy ${{ matrix.name }}
+        env:
+          WEBHOOK: ${{ secrets[matrix.secret] }}
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [ -z "${WEBHOOK}" ] || [ -z "${COOLIFY_TOKEN}" ]; then
+            echo "Add the COOLIFY_TOKEN secret and the ${{ matrix.secret }} secret."
+            echo "In Coolify, set this application to Manual deployments only. Otherwise a push still rebuilds every app."
+            exit 1
+          fi
+          case "$WEBHOOK" in
+            *\?*) url="${WEBHOOK}&cancel_previous=queued" ;;
+            *) url="${WEBHOOK}?cancel_previous=queued" ;;
+          esac
+          curl --fail-with-body --silent --show-error --request POST "$url" \
+            --header "Authorization: Bearer ${COOLIFY_TOKEN}"
