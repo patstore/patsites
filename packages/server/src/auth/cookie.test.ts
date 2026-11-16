@@ -25,7 +25,7 @@ test("preview cookie lasts for the browser session", () => {
   const set = previewCookieHeader("secret");
   assert.match(set, /^preview=secret;/);
   assert.match(set, /HttpOnly/);
-  assert.match(set, /SameSite=Strict/);
+  assert.match(set, /SameSite=Lax/);
   assert.doesNotMatch(set, /Max-Age/);
   assert.doesNotMatch(set, /Expires/);
 });

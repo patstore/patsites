@@ -25,9 +25,13 @@ export function clearCookieHeader(name: string): string {
   return `${name}=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0${secureAttribute()}`;
 }
 
-/** No Max-Age: the browser drops this cookie when the session ends. */
+/**
+ * No Max-Age: the browser drops this cookie when the session ends.
+ * Lax, not Strict: the CMS opens the preview link from another site, and the
+ * browser only attaches the cookie to that top-level navigation when it is Lax.
+ */
 export function previewCookieHeader(token: string): string {
-  return `${PREVIEW_COOKIE_NAME}=${encodeURIComponent(token)}; Path=/; HttpOnly; SameSite=Strict${secureAttribute()}`;
+  return `${PREVIEW_COOKIE_NAME}=${encodeURIComponent(token)}; Path=/; HttpOnly; SameSite=Lax${secureAttribute()}`;
 }
 
 function secureAttribute(): string {

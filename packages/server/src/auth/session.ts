@@ -277,15 +277,26 @@ export async function acceptPreview(request: Request, config: AuthConfig): Promi
   if (!(await previewUser(config, token))) {
     return new Response("Nicht authentifiziert", { status: 401 });
   }
-  return new Response(null, {
-    status: 302,
+  // A 302 is still part of the cross-site click from the CMS, so the browser
+  // does not send a cookie that was just set. Commit a page on this host first.
+  return new Response(previewContinueHtml(next), {
+    status: 200,
     headers: {
-      Location: next,
+      "Content-Type": "text/html; charset=utf-8",
       "Set-Cookie": previewCookieHeader(token),
       "Cache-Control": "no-store",
       "Referrer-Policy": "no-referrer",
     },
   });
+}
+
+function previewContinueHtml(next: string): string {
+  const safe = next
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=${safe}"><title>Vorschau</title></head><body><p><a href="${safe}">Weiter zur Vorschau</a></p></body></html>`;
 }
 
 export function createSessionApi(config: AuthConfig) {

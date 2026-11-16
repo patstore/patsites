@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { isDraftMode, loadStaticRecords } from "@repo/server";
+import { createDataContext, isDraftMode, loadContent, loadStaticRecords } from "@repo/server";
 import {
   getLiveCollection,
   publicClassNames,
@@ -32,7 +32,11 @@ function liveEntry(className: PublicClassName): LiveEntry {
     status: "pending",
   };
   liveEntries.set(className, entry);
-  entry.promise = getLiveCollection({ data: className }).then(
+  // A server-function call here fetches this same request and never returns.
+  const rows = typeof window === "undefined"
+    ? loadContent(className, createDataContext({ mode: "ssr", states: null }))
+    : getLiveCollection({ data: className });
+  entry.promise = rows.then(
     (rows) => {
       const list = Array.isArray(rows) ? (rows as unknown[]) : [];
       entry.status = "ready";
