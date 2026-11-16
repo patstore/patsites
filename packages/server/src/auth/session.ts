@@ -291,12 +291,16 @@ export async function acceptPreview(request: Request, config: AuthConfig): Promi
 }
 
 function previewContinueHtml(next: string): string {
-  const safe = next
+  const href = next
     .replace(/&/g, "&amp;")
     .replace(/"/g, "&quot;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
-  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=${safe}"><title>Vorschau</title></head><body><p><a href="${safe}">Weiter zur Vorschau</a></p></body></html>`;
+  // A meta refresh is still the original cross-site navigation, so the cookie
+  // just set is missing and the draft stays locked. A script navigation starts
+  // after this document is the current page, which is a same-site request.
+  const target = JSON.stringify(next).replace(/</g, "\\u003c").replace(/>/g, "\\u003e");
+  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Vorschau</title></head><body><p><a href="${href}">Weiter zur Vorschau</a></p><script>document.addEventListener("DOMContentLoaded",function(){location.replace(${target})})</script></body></html>`;
 }
 
 export function createSessionApi(config: AuthConfig) {
