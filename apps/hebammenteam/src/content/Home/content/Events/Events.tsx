@@ -6,7 +6,8 @@ const Events = () => {
 	return (
 		<section>
 			<div className="content">
-				<h2>Unsere Kurse</h2>
+				<div className="eyebrow">Kurse & Workshops</div>
+				<h2>Unsere Kurse & Workshops</h2>
 				<div className="events">
 					{items.map((event) => (
 						<EventCard key={event.objectId} event={event} />
