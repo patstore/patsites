@@ -7,7 +7,7 @@ const Events = () => {
 		<section>
 			<div className="content">
 				<div className="eyebrow">Kurse & Workshops</div>
-				<h2>Unsere Kurse & Workshops</h2>
+				<h2>Erfahre mehr über unsere Kurse & Workshops</h2>
 				<div className="events">
 					{items.map((event) => (
 						<EventCard key={event.objectId} event={event} />
