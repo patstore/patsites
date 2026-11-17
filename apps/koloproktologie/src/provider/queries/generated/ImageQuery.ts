@@ -1,5 +1,4 @@
-
-        export const query = `
+export const query = `
         query AllImage {
             allPatstoreImage {
             edges {
@@ -23,4 +22,3 @@
             }
         }
         `;
-    

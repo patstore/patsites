@@ -1,5 +1,4 @@
-
-        export const query = `
+export const query = `
             query AllEvent {
                 allPatstoreEvent {
                     edges {
@@ -26,4 +25,3 @@
                 }
             }
         `;
-    

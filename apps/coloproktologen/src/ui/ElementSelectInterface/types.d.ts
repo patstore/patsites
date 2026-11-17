@@ -1,26 +1,26 @@
 export type SelectElement = {
-  value: string;
-  label: string;
-  element?: ReactNode;
-  selected?: boolean;
-  single?: boolean;
-  disabled?: boolean;
+	value: string;
+	label: string;
+	element?: ReactNode;
+	selected?: boolean;
+	single?: boolean;
+	disabled?: boolean;
 } & any;
 
 export type ElementSelectInterfaceProps = {
-  title?: string;
-  elements: SelectElement[];
-  selectedElements: SelectElement[];
-  onSelect: (elements: SelectElement[]) => void;
-  min?: number;
-  max?: number;
-  isSearchable?: boolean;
-  selectProperty?: boolean;
-  isHorizontal?: boolean;
+	title?: string;
+	elements: SelectElement[];
+	selectedElements: SelectElement[];
+	onSelect: (elements: SelectElement[]) => void;
+	min?: number;
+	max?: number;
+	isSearchable?: boolean;
+	selectProperty?: boolean;
+	isHorizontal?: boolean;
 };
 
 export type ListElementProps = {
-  element: SelectElement;
-  isSelected: boolean;
-  onSelect: (element: SelectElement) => void;
+	element: SelectElement;
+	isSelected: boolean;
+	onSelect: (element: SelectElement) => void;
 };

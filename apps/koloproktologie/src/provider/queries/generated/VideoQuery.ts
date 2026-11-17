@@ -1,5 +1,4 @@
-
-        export const query = `
+export const query = `
             query AllVideo {
                 allPatstoreVideo {
                     edges {
@@ -20,4 +19,3 @@
                 }
             }
         `;
-    

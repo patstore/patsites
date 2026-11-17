@@ -7,14 +7,21 @@ import styles from "./Images.module.css";
 const HEADER_IMAGES: Record<string, string> = { blog, start2, gym, calendar };
 
 const Images = ({ image }: { image: string }) => {
-  const src = HEADER_IMAGES[image];
-  if (!src) {
-    return null;
-  }
+	const src = HEADER_IMAGES[image];
+	if (!src) {
+		return null;
+	}
 
-  return (
-    <img src={src} alt={image} width={1240} height={500} loading="eager" className={styles.image} />
-  );
+	return (
+		<img
+			src={src}
+			alt={image}
+			width={1240}
+			height={500}
+			loading="eager"
+			className={styles.image}
+		/>
+	);
 };
 
 export default Images;

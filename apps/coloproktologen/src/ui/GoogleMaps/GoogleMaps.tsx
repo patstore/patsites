@@ -29,10 +29,7 @@ interface MarkerProps {
 }
 
 const Marker = ({ children, text, onClick }: MarkerProps): JSX.Element => (
-	<div
-		style={markerContainerStyle}
-		onClick={onClick}
-	>
+	<div style={markerContainerStyle} onClick={onClick}>
 		{children ?? (
 			<div style={markerPinStyle}>
 				<div style={markerTextStyle}>{text ?? "📍"}</div>
@@ -139,7 +136,9 @@ export const GoogleMaps: React.FC<GoogleMapsProps> = ({
 		return (
 			<div style={consentContainerStyle(mapContainerStyle)}>
 				<div style={consentContentStyle}>
-					<h3 style={consentTitleStyle}>Google Maps Nutzungsbedingungen</h3>
+					<h3 style={consentTitleStyle}>
+						Google Maps Nutzungsbedingungen
+					</h3>
 					<p style={consentTextStyle}>{termsText}</p>
 					<div style={consentButtonsContainerStyle}>
 						<button
@@ -190,7 +189,8 @@ export const GoogleMaps: React.FC<GoogleMapsProps> = ({
 			<div style={declinedContainerStyle(mapContainerStyle)}>
 				<div>
 					<p style={declinedTextStyle}>
-						Google Maps ist deaktiviert. Sie können es durch Akzeptieren der Bedingungen aktivieren.
+						Google Maps ist deaktiviert. Sie können es durch
+						Akzeptieren der Bedingungen aktivieren.
 					</p>
 					<button
 						onClick={handleAccept}

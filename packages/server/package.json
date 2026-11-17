@@ -25,6 +25,7 @@
   "scripts": {
     "build": "vite build",
     "check-types": "tsc --noEmit",
+    "lint": "eslint .",
     "generate": "node --experimental-strip-types src/cli.ts",
     "test": "node --experimental-strip-types --test src/state.test.ts src/content.test.ts src/fields.test.ts src/codegen.test.ts src/publish-files.test.ts src/files.test.ts src/fetch.test.ts src/auth/cookie.test.ts src/auth/roles.test.ts"
   },
@@ -38,8 +39,10 @@
     "vite": "^8.0.0"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "26.4.1",
+    "eslint": "10.9.1",
     "typescript": "7.0.2",
     "vite": "^8.0.0"
   }

@@ -3,6 +3,6 @@ import { seo } from "@components";
 import Datenschutz from "../content/Datenschutz/Datenschutz";
 
 export const Route = createFileRoute("/datenschutzerklaerung")({
-  head: () => ({ meta: seo({ title: "Datenschutzerklärung" }) }),
-  component: Datenschutz,
+	head: () => ({ meta: seo({ title: "Datenschutzerklärung" }) }),
+	component: Datenschutz
 });

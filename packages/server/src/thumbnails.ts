@@ -9,38 +9,38 @@ import sharp from "sharp";
 import { THUMBNAIL_WIDTH, thumbnailRelativePath } from "./files.ts";
 
 export async function writeImageThumbnail(
-  filesDir: string,
-  filename: string,
+	filesDir: string,
+	filename: string
 ): Promise<string | null> {
-  const relative = thumbnailRelativePath(filename);
-  if (!relative) {
-    return null;
-  }
+	const relative = thumbnailRelativePath(filename);
+	if (!relative) {
+		return null;
+	}
 
-  const source = path.join(filesDir, filename);
-  if (!fs.existsSync(source) || !fs.statSync(source).isFile()) {
-    return null;
-  }
+	const source = path.join(filesDir, filename);
+	if (!fs.existsSync(source) || !fs.statSync(source).isFile()) {
+		return null;
+	}
 
-  const target = path.join(filesDir, ...relative.split("/"));
-  const sourceTime = fs.statSync(source).mtimeMs;
-  if (fs.existsSync(target) && fs.statSync(target).mtimeMs >= sourceTime) {
-    return relative;
-  }
+	const target = path.join(filesDir, ...relative.split("/"));
+	const sourceTime = fs.statSync(source).mtimeMs;
+	if (fs.existsSync(target) && fs.statSync(target).mtimeMs >= sourceTime) {
+		return relative;
+	}
 
-  fs.mkdirSync(path.dirname(target), { recursive: true });
-  try {
-    await sharp(source)
-      .rotate()
-      .resize({ width: THUMBNAIL_WIDTH, withoutEnlargement: true })
-      .webp({ quality: 60 })
-      .toFile(target);
-  } catch (error) {
-    console.warn(
-      `Skipped thumbnail for ${filename}: ${error instanceof Error ? error.message : error}`,
-    );
-    return null;
-  }
+	fs.mkdirSync(path.dirname(target), { recursive: true });
+	try {
+		await sharp(source)
+			.rotate()
+			.resize({ width: THUMBNAIL_WIDTH, withoutEnlargement: true })
+			.webp({ quality: 60 })
+			.toFile(target);
+	} catch (error) {
+		console.warn(
+			`Skipped thumbnail for ${filename}: ${error instanceof Error ? error.message : error}`
+		);
+		return null;
+	}
 
-  return relative;
+	return relative;
 }

@@ -1,17 +1,21 @@
-import { WebpageContentImage, WebpageContentText, WebpageContentVideo } from "@types";
+import {
+	WebpageContentImage,
+	WebpageContentText,
+	WebpageContentVideo
+} from "@types";
 
 export type RenderContentProps = {
-    path: string;
-}
+	path: string;
+};
 
 export type RenderTextProps = {
-    text: WebpageContentText;
-}
+	text: WebpageContentText;
+};
 
 export type RenderImageProps = {
-    image: WebpageContentImage;
-}
+	image: WebpageContentImage;
+};
 
 export type RenderVideoProps = {
-    video: WebpageContentVideo;
-}
+	video: WebpageContentVideo;
+};

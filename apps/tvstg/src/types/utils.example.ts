@@ -7,17 +7,17 @@
 
 import type { Maybe, Scalars } from "./Patstore";
 import {
-  requireString,
-  requireNumber,
-  requireBoolean,
-  requireId,
-  requireValue,
-  withDefault,
-  makeFieldsRequired,
-  withDefaults,
-  type UnwrapScalar,
-  type RequireFields,
-  type DeepRequire,
+	requireString,
+	requireNumber,
+	requireBoolean,
+	requireId,
+	requireValue,
+	withDefault,
+	makeFieldsRequired,
+	withDefaults,
+	type UnwrapScalar,
+	type RequireFields,
+	type DeepRequire
 } from "./utils";
 
 // =============================================================================
@@ -26,11 +26,11 @@ import {
 
 // Define a type with Maybe fields (typical GraphQL response)
 type UserResponse = {
-  id: Maybe<Scalars["ID"]["output"]>;
-  name: Maybe<Scalars["String"]["output"]>;
-  email: Maybe<Scalars["String"]["output"]>;
-  age: Maybe<Scalars["Int"]["output"]>;
-  isActive: Maybe<Scalars["Boolean"]["output"]>;
+	id: Maybe<Scalars["ID"]["output"]>;
+	name: Maybe<Scalars["String"]["output"]>;
+	email: Maybe<Scalars["String"]["output"]>;
+	age: Maybe<Scalars["Int"]["output"]>;
+	isActive: Maybe<Scalars["Boolean"]["output"]>;
 };
 
 // Convert all Maybe fields to required using DeepRequire
@@ -46,20 +46,20 @@ type PartialUser = RequireFields<UserResponse, "id" | "name">;
 // =============================================================================
 
 function processUser(userResponse: UserResponse) {
-  // Convert Maybe<Scalars['String']['output']> to string
-  const name = requireString(userResponse.name, "name"); // throws if null/undefined
-  const email = requireString(userResponse.email, "email");
+	// Convert Maybe<Scalars['String']['output']> to string
+	const name = requireString(userResponse.name, "name"); // throws if null/undefined
+	const email = requireString(userResponse.email, "email");
 
-  // Convert Maybe<Scalars['Int']['output']> to number
-  const age = requireNumber(userResponse.age, "age");
+	// Convert Maybe<Scalars['Int']['output']> to number
+	const age = requireNumber(userResponse.age, "age");
 
-  // Convert Maybe<Scalars['Boolean']['output']> to boolean
-  const isActive = requireBoolean(userResponse.isActive, "isActive");
+	// Convert Maybe<Scalars['Boolean']['output']> to boolean
+	const isActive = requireBoolean(userResponse.isActive, "isActive");
 
-  // Convert Maybe<Scalars['ID']['output']> to string
-  const id = requireId(userResponse.id, "id");
+	// Convert Maybe<Scalars['ID']['output']> to string
+	const id = requireId(userResponse.id, "id");
 
-  return { id, name, email, age, isActive };
+	return { id, name, email, age, isActive };
 }
 
 // =============================================================================
@@ -67,11 +67,11 @@ function processUser(userResponse: UserResponse) {
 // =============================================================================
 
 function processGeneric(userResponse: UserResponse) {
-  // Use generic requireValue for any type
-  const name = requireValue(userResponse.name, "name");
-  const age = requireValue(userResponse.age, "age");
+	// Use generic requireValue for any type
+	const name = requireValue(userResponse.name, "name");
+	const age = requireValue(userResponse.age, "age");
 
-  return { name, age };
+	return { name, age };
 }
 
 // =============================================================================
@@ -79,12 +79,12 @@ function processGeneric(userResponse: UserResponse) {
 // =============================================================================
 
 function processWithDefaults(userResponse: UserResponse) {
-  // Provide default values for nullable fields
-  const name = withDefault(userResponse.name, "Anonymous");
-  const age = withDefault(userResponse.age, 0);
-  const isActive = withDefault(userResponse.isActive, false);
+	// Provide default values for nullable fields
+	const name = withDefault(userResponse.name, "Anonymous");
+	const age = withDefault(userResponse.age, 0);
+	const isActive = withDefault(userResponse.isActive, false);
 
-  return { name, age, isActive };
+	return { name, age, isActive };
 }
 
 // =============================================================================
@@ -92,24 +92,24 @@ function processWithDefaults(userResponse: UserResponse) {
 // =============================================================================
 
 function transformUserObject(userResponse: UserResponse) {
-  // Make specific fields required (throws if they're null/undefined)
-  const user = makeFieldsRequired(userResponse, ["id", "name", "email"]);
-  // user has type: RequireFields<UserResponse, 'id' | 'name' | 'email'>
-  // id, name, email are guaranteed to be non-null
+	// Make specific fields required (throws if they're null/undefined)
+	const user = makeFieldsRequired(userResponse, ["id", "name", "email"]);
+	// user has type: RequireFields<UserResponse, 'id' | 'name' | 'email'>
+	// id, name, email are guaranteed to be non-null
 
-  return user;
+	return user;
 }
 
 function transformWithDefaults(userResponse: UserResponse) {
-  // Provide defaults for the entire object
-  const user = withDefaults(userResponse, {
-    name: "Anonymous",
-    age: 0,
-    isActive: false,
-    email: "no-email@example.com",
-  });
+	// Provide defaults for the entire object
+	const user = withDefaults(userResponse, {
+		name: "Anonymous",
+		age: 0,
+		isActive: false,
+		email: "no-email@example.com"
+	});
 
-  return user;
+	return user;
 }
 
 // =============================================================================
@@ -117,38 +117,41 @@ function transformWithDefaults(userResponse: UserResponse) {
 // =============================================================================
 
 type ArticleResponse = {
-  id: Maybe<Scalars["ID"]["output"]>;
-  title: Maybe<Scalars["String"]["output"]>;
-  content: Maybe<Scalars["String"]["output"]>;
-  author: Maybe<{
-    name: Maybe<Scalars["String"]["output"]>;
-    email: Maybe<Scalars["String"]["output"]>;
-  }>;
-  publishedAt: Maybe<Scalars["Date"]["output"]>;
+	id: Maybe<Scalars["ID"]["output"]>;
+	title: Maybe<Scalars["String"]["output"]>;
+	content: Maybe<Scalars["String"]["output"]>;
+	author: Maybe<{
+		name: Maybe<Scalars["String"]["output"]>;
+		email: Maybe<Scalars["String"]["output"]>;
+	}>;
+	publishedAt: Maybe<Scalars["Date"]["output"]>;
 };
 
 function processArticle(article: ArticleResponse) {
-  const id = requireId(article.id, "article.id");
-  const title = requireString(article.title, "article.title");
-  const content = requireString(article.content, "article.content");
+	const id = requireId(article.id, "article.id");
+	const title = requireString(article.title, "article.title");
+	const content = requireString(article.content, "article.content");
 
-  // Handle nested Maybe values
-  const author = requireValue(article.author, "article.author");
-  const authorName = requireString(author.name, "article.author.name");
-  const authorEmail = requireString(author.email, "article.author.email");
+	// Handle nested Maybe values
+	const author = requireValue(article.author, "article.author");
+	const authorName = requireString(author.name, "article.author.name");
+	const authorEmail = requireString(author.email, "article.author.email");
 
-  const publishedAt = requireValue(article.publishedAt, "article.publishedAt");
+	const publishedAt = requireValue(
+		article.publishedAt,
+		"article.publishedAt"
+	);
 
-  return {
-    id,
-    title,
-    content,
-    author: {
-      name: authorName,
-      email: authorEmail,
-    },
-    publishedAt,
-  };
+	return {
+		id,
+		title,
+		content,
+		author: {
+			name: authorName,
+			email: authorEmail
+		},
+		publishedAt
+	};
 }
 
 // =============================================================================
@@ -170,25 +173,25 @@ type RequiredBoolean = UnwrapScalar<MaybeBoolean>; // boolean
 // =============================================================================
 
 function safeProcessUser(userResponse: UserResponse) {
-  try {
-    const name = requireString(userResponse.name, "name");
-    const email = requireString(userResponse.email, "email");
+	try {
+		const name = requireString(userResponse.name, "name");
+		const email = requireString(userResponse.email, "email");
 
-    return { success: true, data: { name, email } };
-  } catch (error) {
-    return {
-      success: false,
-      error: error instanceof Error ? error.message : "Unknown error",
-    };
-  }
+		return { success: true, data: { name, email } };
+	} catch (error) {
+		return {
+			success: false,
+			error: error instanceof Error ? error.message : "Unknown error"
+		};
+	}
 }
 
 export {
-  processUser,
-  processGeneric,
-  processWithDefaults,
-  transformUserObject,
-  transformWithDefaults,
-  processArticle,
-  safeProcessUser,
+	processUser,
+	processGeneric,
+	processWithDefaults,
+	transformUserObject,
+	transformWithDefaults,
+	processArticle,
+	safeProcessUser
 };

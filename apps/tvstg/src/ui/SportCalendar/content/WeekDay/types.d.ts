@@ -4,19 +4,19 @@ import { EventTime, TrainingTime } from "@types";
 export type CalendarView = "list" | "grid";
 
 export type WeekDayProps = {
-  weekday: EventTime["weekday"];
-  trainingszeiten: TrainingTime[];
-  view: CalendarView;
+	weekday: EventTime["weekday"];
+	trainingszeiten: TrainingTime[];
+	view: CalendarView;
 };
 
 export type TrainingCalendarElementProps = {
-  training: TrainingTime;
-  view: CalendarView;
-  striped?: boolean;
+	training: TrainingTime;
+	view: CalendarView;
+	striped?: boolean;
 };
 
 export type WeekDaysProps = {
-  trainingszeiten: TrainingTime[];
-  view: CalendarView;
-  selectedWeekday: EventTime["weekday"];
+	trainingszeiten: TrainingTime[];
+	view: CalendarView;
+	selectedWeekday: EventTime["weekday"];
 };

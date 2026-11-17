@@ -43,7 +43,9 @@ export const markerTextStyle: React.CSSProperties = {
 };
 
 // Consent Dialog Styles
-export const consentContainerStyle = (mapContainerStyle?: React.CSSProperties): React.CSSProperties => ({
+export const consentContainerStyle = (
+	mapContainerStyle?: React.CSSProperties
+): React.CSSProperties => ({
 	...mapContainerStyle,
 	display: "flex",
 	flexDirection: "column",
@@ -118,7 +120,9 @@ export const consentLinkStyle: React.CSSProperties = {
 };
 
 // Declined State Styles
-export const declinedContainerStyle = (mapContainerStyle?: React.CSSProperties): React.CSSProperties => ({
+export const declinedContainerStyle = (
+	mapContainerStyle?: React.CSSProperties
+): React.CSSProperties => ({
 	...mapContainerStyle,
 	display: "flex",
 	alignItems: "center",

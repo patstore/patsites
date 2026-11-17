@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-16T08:33:41.102Z",
+    "generatedAt": "2026-11-17T08:18:16.291Z",
     "projectId": "RlOdP8FOCV",
     "moduleCount": 6,
     "states": null,
@@ -1129,6 +1129,14 @@
   ],
   "downloadedFiles": [
     {
+      "objectId": "8iwdrmuMq2",
+      "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/49acaf6c653a7b3ee0cf38e8b30fa25f_extend-the-image-to-the.png",
+      "localPath": "8iwdrmuMq2-Maria_1_1.png",
+      "filename": "8iwdrmuMq2-Maria_1_1.png",
+      "type": "image",
+      "thumbnailPath": "thumbnails/8iwdrmuMq2-Maria_1_1-480w.webp"
+    },
+    {
       "objectId": "WNRwTQAQdI",
       "originalUrl": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/bea172366141ab441be6b81ed745c3a4_anna.jpg",
       "localPath": "WNRwTQAQdI-Anna.jpg",
@@ -1277,6 +1285,19 @@
     }
   ],
   "images": [
+    {
+      "id": "SW1hZ2U6OGl3ZHJtdU1xMg==",
+      "objectId": "8iwdrmuMq2",
+      "categories": [],
+      "file": {
+        "name": "49acaf6c653a7b3ee0cf38e8b30fa25f_extend-the-image-to-the.png",
+        "url": "https://uefbsna5l6ijyse42wipewpjwu804d.files-sashido.cloud/49acaf6c653a7b3ee0cf38e8b30fa25f_extend-the-image-to-the.png"
+      },
+      "title": "Maria_1_1",
+      "connected_elements": [],
+      "filePath": "8iwdrmuMq2-Maria_1_1.png",
+      "thumbnailPath": "thumbnails/8iwdrmuMq2-Maria_1_1-480w.webp"
+    },
     {
       "id": "SW1hZ2U6V05Sd1RRQVFkSQ==",
       "objectId": "WNRwTQAQdI",
@@ -1512,7 +1533,7 @@
       "title": "Maria Canders",
       "description": null,
       "text": "<p>1994,‎ ‏damals noch Studentin und jobbende Taxifahrerin in Freiburg,‭ ‬hatte ich das Glück,‭ ‬an drei Hausgeburten meiner Freundinnen teilnehmen zu dürfen‭ ‬– eine in der Schweiz,‭ ‬eine in Freiburg und eine in Dublin.‭ ‬Spätestens bei der dritten Geburt wurde mir bewusst,‭ ‬dass ich hier meine Berufung gefunden hatte.‭ ‬Ich absolvierte meine Ausbildung an der Hebammenschule in Lahr.‭ ‬Meine ersten Erfahrungen als junge Hebamme machte ich dann in einem Geburtshaus in der Schweiz.‭ ‬Dort erwarb ich viel Wissen über Geburten außerhalb der Klinik.‭ ‬Anschließend gründete ich mit zwei Kolleginnen eine Praxis in Konstanz.‭ ‬Mit viel Freude und Engagement begleiteten wir Familien durch Schwangerschaft,‭ ‬Geburt,‭ ‬Wochenbett und die Zeit danach.</p><p>2005‎ ‏kündigte sich bei mir selbst Nachwuchs an.‭ ‬Im folgenden Jahr,‭ ‬kurz nach der Geburt unserer Tochter,‭ ‬zog ich zur‭ „‬Familienzusammenführung‭“‬ zu meinem Partner nach Freiburg.‭ ‬Bei Coming Home habe ich nun Hebammen gefunden,‭ ‬die ihren Beruf mit der gleichen Leidenschaft und Herzenswärme ausüben.‭</p><p>Zur Zeit betreue ich keine Geburten, kümmere mich aber mit Begeisterung um das „Davor“ und „Danach“.</p>",
-      "image": "BifB5hLXxP",
+      "image": "8iwdrmuMq2",
       "state": "published",
       "email": null,
       "gallery": null,

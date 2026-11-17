@@ -3,8 +3,7 @@ export type ContentPreviewProps = {
 	date: string;
 	content: ContentBlock[];
 	attachments?: string[];
-}
-
+};
 
 export interface ContentBlock {
 	id: string;

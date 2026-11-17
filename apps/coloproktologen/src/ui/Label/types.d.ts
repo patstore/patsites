@@ -1,4 +1,4 @@
 export type LabelProps = {
-  text: string;
-  noMarginBottom?: boolean;
+	text: string;
+	noMarginBottom?: boolean;
 };

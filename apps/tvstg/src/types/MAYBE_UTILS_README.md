@@ -29,8 +29,8 @@ Converts all `Maybe` fields in an object type to required fields:
 
 ```typescript
 type UserResponse = {
-  id: Maybe<Scalars["ID"]["output"]>;
-  name: Maybe<Scalars["String"]["output"]>;
+	id: Maybe<Scalars["ID"]["output"]>;
+	name: Maybe<Scalars["String"]["output"]>;
 };
 
 type User = DeepRequire<UserResponse>;
@@ -117,9 +117,9 @@ Provide default values for nullable fields:
 
 ```typescript
 const user = withDefaults(userResponse, {
-  name: "Anonymous",
-  age: 0,
-  isActive: false,
+	name: "Anonymous",
+	age: 0,
+	isActive: false
 });
 ```
 
@@ -131,11 +131,11 @@ const user = withDefaults(userResponse, {
 import { requireString, requireNumber, requireId } from "./types";
 
 function processUser(userResponse: UserResponse) {
-  const id = requireId(userResponse.id, "id");
-  const name = requireString(userResponse.name, "name");
-  const age = requireNumber(userResponse.age, "age");
+	const id = requireId(userResponse.id, "id");
+	const name = requireString(userResponse.name, "name");
+	const age = requireNumber(userResponse.age, "age");
 
-  return { id, name, age };
+	return { id, name, age };
 }
 ```
 
@@ -145,10 +145,10 @@ function processUser(userResponse: UserResponse) {
 import { withDefault } from "./types";
 
 function processUser(userResponse: UserResponse) {
-  const name = withDefault(userResponse.name, "Anonymous");
-  const age = withDefault(userResponse.age, 0);
+	const name = withDefault(userResponse.name, "Anonymous");
+	const age = withDefault(userResponse.age, 0);
 
-  return { name, age };
+	return { name, age };
 }
 ```
 
@@ -158,12 +158,12 @@ function processUser(userResponse: UserResponse) {
 import { requireString } from "./types";
 
 function safeProcessUser(userResponse: UserResponse) {
-  try {
-    const name = requireString(userResponse.name, "name");
-    return { success: true, data: { name } };
-  } catch (error) {
-    return { success: false, error: error.message };
-  }
+	try {
+		const name = requireString(userResponse.name, "name");
+		return { success: true, data: { name } };
+	} catch (error) {
+		return { success: false, error: error.message };
+	}
 }
 ```
 
@@ -177,9 +177,9 @@ const user = makeFieldsRequired(userResponse, ["id", "name"]);
 
 // Option 2: Provide defaults for all nullable fields
 const user = withDefaults(userResponse, {
-  name: "Anonymous",
-  email: "no-email@example.com",
-  age: 0,
+	name: "Anonymous",
+	email: "no-email@example.com",
+	age: 0
 });
 ```
 

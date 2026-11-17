@@ -1,84 +1,84 @@
 .header {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  height: auto;
-  padding: 0 0 18px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1240px;
-  width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	overflow: hidden;
+	height: auto;
+	padding: 0 0 18px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1240px;
+	width: 100%;
 }
 
 .header h1 {
-  color: var(--color-text);
-  text-align: left;
+	color: var(--color-text);
+	text-align: left;
 }
 
 .narrow {
-  max-width: 720px;
+	max-width: 720px;
 }
 
 .centered h1,
 .subCenter {
-  text-align: center;
+	text-align: center;
 }
 
 .headline {
-  width: 100%;
-  z-index: 5;
-  height: 100%;
-  text-align: left;
+	width: 100%;
+	z-index: 5;
+	height: 100%;
+	text-align: left;
 }
 
 .centered .headline {
-  text-align: center;
+	text-align: center;
 }
 
 .startCopy {
-  width: 100%;
-  z-index: 5;
+	width: 100%;
+	z-index: 5;
 }
 
 .startTitle {
-  margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 
 .sub {
-  font-family: "Open Sans", sans-serif;
-  letter-spacing: 0.02rem;
-  text-transform: none;
-  line-height: 1;
-  color: var(--color-text);
-  width: 100%;
-  max-width: 560px;
-  padding-top: 1rem;
-  font-size: 1rem;
+	font-family: "Open Sans", sans-serif;
+	letter-spacing: 0.02rem;
+	text-transform: none;
+	line-height: 1;
+	color: var(--color-text);
+	width: 100%;
+	max-width: 560px;
+	padding-top: 1rem;
+	font-size: 1rem;
 }
 
 @media (min-width: 576px) {
-  .header {
-    padding-top: 18px;
-    padding-bottom: 24px;
-  }
+	.header {
+		padding-top: 18px;
+		padding-bottom: 24px;
+	}
 
-  .sub {
-    font-size: 1.1rem;
-  }
+	.sub {
+		font-size: 1.1rem;
+	}
 }
 
 @media (min-width: 768px) {
-  .header {
-    padding-top: 42px;
-    padding-bottom: 42px;
-  }
+	.header {
+		padding-top: 42px;
+		padding-bottom: 42px;
+	}
 }
 
 @media (min-width: 992px) {
-  .startCopy {
-    width: 48%;
-  }
+	.startCopy {
+		width: 48%;
+	}
 }

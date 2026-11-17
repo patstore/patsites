@@ -9,12 +9,14 @@ const outputDir = path.resolve(outputArg ?? "data");
 const dataFile = path.join(outputDir, "build-time-data.json");
 const raw = JSON.parse(fs.readFileSync(dataFile, "utf8")) as ContentSnapshot;
 const modules = Array.isArray(raw._modules)
-  ? raw._modules.map((module) => normalizeModule(module as unknown as Record<string, unknown>))
-  : [];
+	? raw._modules.map((module) =>
+			normalizeModule(module as unknown as Record<string, unknown>)
+		)
+	: [];
 
 writeContentArtifacts(outputDir, {
-  ...raw,
-  _modules: modules,
+	...raw,
+	_modules: modules
 });
 
 console.log(`Wrote content artifacts to ${outputDir}`);

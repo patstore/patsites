@@ -6,10 +6,10 @@ import { defineConfig, type UserConfig } from "vite";
  * Turborepo runs each package's `vite build` / `vite dev` script.
  */
 export const monorepoCompiler = {
-  build: {
-    sourcemap: true,
-    target: "es2022",
-  },
+	build: {
+		sourcemap: true,
+		target: "es2022"
+	}
 } satisfies UserConfig;
 
 export default defineConfig(monorepoCompiler);

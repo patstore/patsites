@@ -1,5 +1,4 @@
-
-        export const query = `
+export const query = `
             query AllEntry {
                 allPatstoreEntry {
                     edges {
@@ -36,4 +35,3 @@
                 }
             }
         `;
-    

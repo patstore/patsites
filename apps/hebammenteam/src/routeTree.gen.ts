@@ -9,21 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ApiPreviewRouteImport } from './routes/api/preview'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as LeistungenRouteImport } from './routes/leistungen'
 import { Route as TeamRouteImport } from './routes/team'
+import { Route as ApiPreviewRouteImport } from './routes/api/preview'
 import { Route as KurseIndexRouteImport } from './routes/kurse/index'
 import { Route as KurseKurs_idRouteImport } from './routes/kurse/$kurs_id'
 
-const ApiPreviewRoute = ApiPreviewRouteImport.update({
-  id: '/api/preview',
-  path: '/api/preview',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -54,6 +49,11 @@ const TeamRoute = TeamRouteImport.update({
   path: '/team',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPreviewRoute = ApiPreviewRouteImport.update({
+  id: '/api/preview',
+  path: '/api/preview',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KurseIndexRoute = KurseIndexRouteImport.update({
   id: '/kurse/',
   path: '/kurse/',
@@ -67,35 +67,35 @@ const KurseKurs_idRoute = KurseKurs_idRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/api/preview': typeof ApiPreviewRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
   '/team': typeof TeamRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/kurse/$kurs_id': typeof KurseKurs_idRoute
   '/kurse/': typeof KurseIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/api/preview': typeof ApiPreviewRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
   '/team': typeof TeamRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/kurse/$kurs_id': typeof KurseKurs_idRoute
   '/kurse': typeof KurseIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/api/preview': typeof ApiPreviewRoute
   '/datenschutz': typeof DatenschutzRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
   '/team': typeof TeamRoute
+  '/api/preview': typeof ApiPreviewRoute
   '/kurse/$kurs_id': typeof KurseKurs_idRoute
   '/kurse/': typeof KurseIndexRoute
 }
@@ -103,59 +103,52 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/api/preview'
     | '/datenschutz'
     | '/impressum'
     | '/kontakt'
     | '/leistungen'
     | '/team'
+    | '/api/preview'
     | '/kurse/$kurs_id'
     | '/kurse/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/api/preview'
     | '/datenschutz'
     | '/impressum'
     | '/kontakt'
     | '/leistungen'
     | '/team'
+    | '/api/preview'
     | '/kurse/$kurs_id'
     | '/kurse'
   id:
     | '__root__'
     | '/'
-    | '/api/preview'
     | '/datenschutz'
     | '/impressum'
     | '/kontakt'
     | '/leistungen'
     | '/team'
+    | '/api/preview'
     | '/kurse/$kurs_id'
     | '/kurse/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  ApiPreviewRoute: typeof ApiPreviewRoute
   IndexRoute: typeof IndexRoute
   DatenschutzRoute: typeof DatenschutzRoute
   ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
   LeistungenRoute: typeof LeistungenRoute
   TeamRoute: typeof TeamRoute
+  ApiPreviewRoute: typeof ApiPreviewRoute
   KurseKurs_idRoute: typeof KurseKurs_idRoute
   KurseIndexRoute: typeof KurseIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/api/preview': {
-      id: '/api/preview'
-      path: '/api/preview'
-      fullPath: '/api/preview'
-      preLoaderRoute: typeof ApiPreviewRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -198,6 +191,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TeamRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/preview': {
+      id: '/api/preview'
+      path: '/api/preview'
+      fullPath: '/api/preview'
+      preLoaderRoute: typeof ApiPreviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kurse/': {
       id: '/kurse/'
       path: '/kurse'
@@ -216,13 +216,13 @@ declare module '@tanstack/react-router' {
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  ApiPreviewRoute: ApiPreviewRoute,
   IndexRoute: IndexRoute,
   DatenschutzRoute: DatenschutzRoute,
   ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
   LeistungenRoute: LeistungenRoute,
   TeamRoute: TeamRoute,
+  ApiPreviewRoute: ApiPreviewRoute,
   KurseKurs_idRoute: KurseKurs_idRoute,
   KurseIndexRoute: KurseIndexRoute,
 }

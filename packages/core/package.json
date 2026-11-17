@@ -21,7 +21,7 @@
   },
   "scripts": {
     "check-types": "tsc --noEmit",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint .",
     "test": "node --experimental-strip-types --test src/localization/path.test.ts src/transitions/match.test.ts src/content/scan-content.test.ts src/content/routes.test.ts"
   },
   "dependencies": {

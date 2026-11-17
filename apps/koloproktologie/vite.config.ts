@@ -9,88 +9,88 @@ import { serverDataPlugin } from "@repo/server/vite";
 import { contentPlugin } from "@repo/core/vite";
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), "");
-  for (const [key, value] of Object.entries(env)) {
-    if (process.env[key] === undefined) {
-      process.env[key] = value;
-    }
-  }
+	const env = loadEnv(mode, process.cwd(), "");
+	for (const [key, value] of Object.entries(env)) {
+		if (process.env[key] === undefined) {
+			process.env[key] = value;
+		}
+	}
 
-  return mergeConfig(monorepoCompiler, {
-    cacheDir: path.resolve(import.meta.dirname, ".cache/vite"),
-    publicDir: "static",
-    server: {
-      port: 4000,
-      fs: {
-        allow: [path.resolve(import.meta.dirname, "../..")],
-      },
-    },
-    resolve: {
-      alias: {
-        "@data": path.resolve(import.meta.dirname, "./data/index.ts"),
-      },
-    },
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: "modern-compiler",
-        },
-      },
-    },
-    ssr: {
-      noExternal: [
-        "@apollo/client",
-        "@apollo/client/core",
-        "@apollo/client/react",
-        "@repo/core",
-        "@repo/server",
-        "@tanstack/react-router",
-        "lodash-es",
-        "date-fns",
-      ],
-    },
-    optimizeDeps: {
-      exclude: ["@repo/server"],
-      holdUntilCrawlEnd: true,
-      include: [
-        "@apollo/client/core",
-        "@apollo/client/react",
-        "@tanstack/react-router",
-        "lodash-es",
-        "date-fns",
-      ],
-    },
-    plugins: [
-      serverDataPlugin({
-        env,
-        outputDir: "data",
-        filesDir: "data/files",
-        states: null,
-      }),
-      contentPlugin({
-        routesDir: "src/routes",
-        outputDir: "data",
-        env,
-      }),
-      tsconfigPaths(),
-      tanstackStart(),
-      nitro({
-        publicAssets: [
-          {
-            baseURL: "/",
-            dir: path.resolve(import.meta.dirname, "static"),
-            fallthrough: true,
-          },
-        ],
-        routeRules: {
-          "/app/profile": {
-            redirect: { to: "/app/mitgliederbereich", status: 301 },
-          },
-        },
-      }),
-      viteReact({
-        jsxImportSource: "@emotion/react",
-      }),
-    ],
-  });
+	return mergeConfig(monorepoCompiler, {
+		cacheDir: path.resolve(import.meta.dirname, ".cache/vite"),
+		publicDir: "static",
+		server: {
+			port: 4000,
+			fs: {
+				allow: [path.resolve(import.meta.dirname, "../..")]
+			}
+		},
+		resolve: {
+			alias: {
+				"@data": path.resolve(import.meta.dirname, "./data/index.ts")
+			}
+		},
+		css: {
+			preprocessorOptions: {
+				scss: {
+					api: "modern-compiler"
+				}
+			}
+		},
+		ssr: {
+			noExternal: [
+				"@apollo/client",
+				"@apollo/client/core",
+				"@apollo/client/react",
+				"@repo/core",
+				"@repo/server",
+				"@tanstack/react-router",
+				"lodash-es",
+				"date-fns"
+			]
+		},
+		optimizeDeps: {
+			exclude: ["@repo/server"],
+			holdUntilCrawlEnd: true,
+			include: [
+				"@apollo/client/core",
+				"@apollo/client/react",
+				"@tanstack/react-router",
+				"lodash-es",
+				"date-fns"
+			]
+		},
+		plugins: [
+			serverDataPlugin({
+				env,
+				outputDir: "data",
+				filesDir: "data/files",
+				states: null
+			}),
+			contentPlugin({
+				routesDir: "src/routes",
+				outputDir: "data",
+				env
+			}),
+			tsconfigPaths(),
+			tanstackStart(),
+			nitro({
+				publicAssets: [
+					{
+						baseURL: "/",
+						dir: path.resolve(import.meta.dirname, "static"),
+						fallthrough: true
+					}
+				],
+				routeRules: {
+					"/app/profile": {
+						redirect: { to: "/app/mitgliederbereich", status: 301 }
+					}
+				}
+			}),
+			viteReact({
+				jsxImportSource: "@emotion/react"
+			})
+		]
+	});
 });

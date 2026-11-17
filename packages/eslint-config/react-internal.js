@@ -7,14 +7,23 @@ import { config as baseConfig } from "./base.js";
  *
  * @type {import("eslint").Linter.Config[]} */
 export const config = [
-  ...baseConfig,
-  {
-    languageOptions: {
-      globals: {
-        ...globals.serviceworker,
-        ...globals.browser,
-      },
-    },
-  },
-  pluginReactHooks.configs.flat.recommended,
+	...baseConfig,
+	{
+		languageOptions: {
+			globals: {
+				...globals.serviceworker,
+				...globals.browser,
+				...globals.node
+			}
+		}
+	},
+	{
+		plugins: {
+			"react-hooks": pluginReactHooks
+		},
+		rules: {
+			"react-hooks/rules-of-hooks": "error",
+			"react-hooks/exhaustive-deps": "off"
+		}
+	}
 ];

@@ -6,34 +6,44 @@ import { contentBox } from "@styles";
 import settings from "@settings";
 
 const Login: React.FC = () => {
-    const [open, setOpen] = useState(true);
-    return (
-        <Layout showKongress={false}>
-            <HeadContent
-                title="Mitglieder-Login"
-                description="Hier können Sie sich auf der Seite des BCD anmelden."
-                isInline
-            />
+	const [open, setOpen] = useState(true);
+	return (
+		<Layout showKongress={false}>
+			<HeadContent
+				title="Mitglieder-Login"
+				description="Hier können Sie sich auf der Seite des BCD anmelden."
+				isInline
+			/>
 
-            <ContentContainer noPaddingTop>
-                <FlexBox direction="row"
-                    align="stretch"
-                    justify="center"
-                    changeToColumn>
-                    <div css={{ flex: "1 1 50%" }}>
-                        <LoginForm title="Login" text="Bitte geben Sie Ihre Login-Daten ein." />
-                    </div>
-                    <div css={[contentBox(), { flex: "1 1 50%" }]}>
-                        <h3>Noch kein Login?</h3>
-                        <p>
-                            Wenn Sie Mitglied des BCD sind, aber noch keinen Login haben, oder Sie bei Ihrem bisherigen Account keine E-Mail Adresse hinterlegt hatten, dann wenden Sie sich bitte an unseren Support.
-
-                        </p>
-                        <Button text="Kontakt Homepage" externalLink="mailto:homepage@coloproktologen.de" />
-                    </div>
-                </FlexBox>
-            </ContentContainer>
-            {/* <Dialog 
+			<ContentContainer noPaddingTop>
+				<FlexBox
+					direction="row"
+					align="stretch"
+					justify="center"
+					changeToColumn
+				>
+					<div css={{ flex: "1 1 50%" }}>
+						<LoginForm
+							title="Login"
+							text="Bitte geben Sie Ihre Login-Daten ein."
+						/>
+					</div>
+					<div css={[contentBox(), { flex: "1 1 50%" }]}>
+						<h3>Noch kein Login?</h3>
+						<p>
+							Wenn Sie Mitglied des BCD sind, aber noch keinen
+							Login haben, oder Sie bei Ihrem bisherigen Account
+							keine E-Mail Adresse hinterlegt hatten, dann wenden
+							Sie sich bitte an unseren Support.
+						</p>
+						<Button
+							text="Kontakt Homepage"
+							externalLink="mailto:homepage@coloproktologen.de"
+						/>
+					</div>
+				</FlexBox>
+			</ContentContainer>
+			{/* <Dialog 
                 open={open}
                 onClose={() => setOpen(false)}
                 maxWidth="600px"
@@ -59,8 +69,8 @@ const Login: React.FC = () => {
                     In anderen Fällen oder bei Problemen schreiben Sie bitte eine E-Mail an <a href="mailto:homepage@coloproktologen.de">homepage@coloproktologen.de</a>
                 </p>
             </Dialog> */}
-        </Layout>
-    );
+		</Layout>
+	);
 };
 
 export default Login;

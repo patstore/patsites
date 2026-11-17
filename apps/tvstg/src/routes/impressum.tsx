@@ -3,6 +3,6 @@ import { seo } from "@components";
 import Impressum from "../content/Impressum/Impressum";
 
 export const Route = createFileRoute("/impressum")({
-  head: () => ({ meta: seo({ title: "Impressum" }) }),
-  component: Impressum,
+	head: () => ({ meta: seo({ title: "Impressum" }) }),
+	component: Impressum
 });

@@ -39,7 +39,9 @@ export const Gallery: React.FC<GalleryProps> = ({
 					id,
 					index,
 					imageData,
-					alt: getAltText ? getAltText(id, index) : `Image ${index + 1}`
+					alt: getAltText
+						? getAltText(id, index)
+						: `Image ${index + 1}`
 				};
 			})
 			.filter((img) => img !== null);
@@ -57,7 +59,11 @@ export const Gallery: React.FC<GalleryProps> = ({
 					<AppImage
 						src={img.imageData}
 						alt={img.alt}
-						style={{ width: "100%", height: "100%", objectFit: "contain" }}
+						style={{
+							width: "100%",
+							height: "100%",
+							objectFit: "contain"
+						}}
 					/>
 				</div>
 			),
@@ -65,7 +71,11 @@ export const Gallery: React.FC<GalleryProps> = ({
 				<AppImage
 					src={img.imageData}
 					alt={img.alt}
-					style={{ width: "100%", height: "100%", objectFit: "cover" }}
+					style={{
+						width: "100%",
+						height: "100%",
+						objectFit: "cover"
+					}}
 				/>
 			)
 		}));
@@ -99,11 +109,17 @@ export const Gallery: React.FC<GalleryProps> = ({
 						...containerStyle
 					}}
 				>
-					<div style={displayMode === "mosaic" ? mosaicGalleryWrapperStyle : horizontalGalleryWrapperStyle}>
+					<div
+						style={
+							displayMode === "mosaic"
+								? mosaicGalleryWrapperStyle
+								: horizontalGalleryWrapperStyle
+						}
+					>
 						{validImages.map((img, index) => (
 							<div
 								key={img.id}
-								css={mosaicImageContainerStyle} // eslint-disable-line react/no-unknown-property
+								css={mosaicImageContainerStyle}
 								onClick={() => handleMosaicImageClick(index)}
 								role="button"
 								tabIndex={0}
@@ -116,7 +132,10 @@ export const Gallery: React.FC<GalleryProps> = ({
 								<AppImage
 									src={img.imageData}
 									alt={img.alt}
-									style={{ ...mosaicImageStyle, objectFit: "cover" }}
+									style={{
+										...mosaicImageStyle,
+										objectFit: "cover"
+									}}
 								/>
 							</div>
 						))}

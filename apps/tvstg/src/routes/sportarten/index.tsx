@@ -4,32 +4,32 @@ import { SPORT_CALENDAR_DEFAULTS, sportCalendarSearchSchema } from "@ui";
 import Sportangebot from "../../content/Sportangebot/Sportangebot";
 
 export const Route = createFileRoute("/sportarten/")({
-  validateSearch: sportCalendarSearchSchema,
-  search: { middlewares: [stripSearchParams(SPORT_CALENDAR_DEFAULTS)] },
-  head: () => ({
-    meta: seo({
-      title: "Sportangebot",
-      description:
-        "Alle Trainingszeiten des TV Freiburg St. Georgen – filterbar nach Sportart, Alter und Geschlecht.",
-    }),
-  }),
-  component: SportangebotPage,
+	validateSearch: sportCalendarSearchSchema,
+	search: { middlewares: [stripSearchParams(SPORT_CALENDAR_DEFAULTS)] },
+	head: () => ({
+		meta: seo({
+			title: "Sportangebot",
+			description:
+				"Alle Trainingszeiten des TV Freiburg St. Georgen – filterbar nach Sportart, Alter und Geschlecht."
+		})
+	}),
+	component: SportangebotPage
 });
 
 function SportangebotPage() {
-  const filters = Route.useSearch();
-  const navigate = Route.useNavigate();
+	const filters = Route.useSearch();
+	const navigate = Route.useNavigate();
 
-  return (
-    <Sportangebot
-      filters={filters}
-      onFiltersChange={(next) =>
-        navigate({
-          search: (prev) => ({ ...prev, ...next }),
-          replace: true,
-          resetScroll: false,
-        })
-      }
-    />
-  );
+	return (
+		<Sportangebot
+			filters={filters}
+			onFiltersChange={(next) =>
+				navigate({
+					search: (prev) => ({ ...prev, ...next }),
+					replace: true,
+					resetScroll: false
+				})
+			}
+		/>
+	);
 }

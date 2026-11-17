@@ -1,89 +1,100 @@
 import { useCallback } from "react";
-import { createDataContext, isDraftMode, loadContent, loadStaticRecords } from "@repo/server";
 import {
-  getLiveCollection,
-  publicClassNames,
-  type PublicClassName,
+	createDataContext,
+	isDraftMode,
+	loadContent,
+	loadStaticRecords
+} from "@repo/server";
+import {
+	getLiveCollection,
+	publicClassNames,
+	type PublicClassName
 } from "../../../data/public-content";
 
 const publicNames: readonly string[] = publicClassNames;
 
 function isPublicClass(className: string): className is PublicClassName {
-  return publicNames.includes(className);
+	return publicNames.includes(className);
 }
 
 type LiveEntry = {
-  promise: Promise<unknown[]>;
-  status: "pending" | "ready" | "error";
-  result?: unknown[];
-  error?: unknown;
+	promise: Promise<unknown[]>;
+	status: "pending" | "ready" | "error";
+	result?: unknown[];
+	error?: unknown;
 };
 
 const liveEntries = new Map<string, LiveEntry>();
 
 function liveEntry(className: PublicClassName): LiveEntry {
-  const existing = liveEntries.get(className);
-  if (existing) {
-    return existing;
-  }
+	const existing = liveEntries.get(className);
+	if (existing) {
+		return existing;
+	}
 
-  const entry: LiveEntry = {
-    promise: Promise.resolve([]),
-    status: "pending",
-  };
-  liveEntries.set(className, entry);
-  // A server-function call here fetches this same request and never returns.
-  const rows = typeof window === "undefined"
-    ? loadContent(className, createDataContext({ mode: "ssr", states: null }))
-    : getLiveCollection({ data: className });
-  entry.promise = rows.then(
-    (rows) => {
-      const list = Array.isArray(rows) ? (rows as unknown[]) : [];
-      entry.status = "ready";
-      entry.result = list;
-      if (typeof window === "undefined") {
-        setTimeout(() => {
-          if (liveEntries.get(className) === entry) {
-            liveEntries.delete(className);
-          }
-        }, 0);
-      }
-      return list;
-    },
-    (error: unknown) => {
-      entry.status = "error";
-      entry.error = error;
-      liveEntries.delete(className);
-      throw error;
-    },
-  );
-  return entry;
+	const entry: LiveEntry = {
+		promise: Promise.resolve([]),
+		status: "pending"
+	};
+	liveEntries.set(className, entry);
+	// A server-function call here fetches this same request and never returns.
+	const rows =
+		typeof window === "undefined"
+			? loadContent(
+					className,
+					createDataContext({ mode: "ssr", states: null })
+				)
+			: getLiveCollection({ data: className });
+	entry.promise = rows.then(
+		(rows) => {
+			const list = Array.isArray(rows) ? (rows as unknown[]) : [];
+			entry.status = "ready";
+			entry.result = list;
+			if (typeof window === "undefined") {
+				setTimeout(() => {
+					if (liveEntries.get(className) === entry) {
+						liveEntries.delete(className);
+					}
+				}, 0);
+			}
+			return list;
+		},
+		(error: unknown) => {
+			entry.status = "error";
+			entry.error = error;
+			liveEntries.delete(className);
+			throw error;
+		}
+	);
+	return entry;
 }
 
 function readLiveCollection(className: PublicClassName): unknown[] {
-  const entry = liveEntry(className);
-  if (entry.status === "pending") {
-    throw entry.promise;
-  }
-  if (entry.status === "error") {
-    throw entry.error;
-  }
-  return entry.result ?? [];
+	const entry = liveEntry(className);
+	if (entry.status === "pending") {
+		throw entry.promise;
+	}
+	if (entry.status === "error") {
+		throw entry.error;
+	}
+	return entry.result ?? [];
 }
 
 export function usePatstoreCollection(className: string): unknown[] {
-  if (isDraftMode() && isPublicClass(className)) {
-    return readLiveCollection(className);
-  }
-  return loadStaticRecords(className, { states: ["published"] });
+	if (isDraftMode() && isPublicClass(className)) {
+		return readLiveCollection(className);
+	}
+	return loadStaticRecords(className, { states: ["published"] });
 }
 
-export function useCollection<T extends { objectId?: string | null }>(className: string) {
-  const items = usePatstoreCollection(className) as T[];
-  const find = useCallback(
-    (id: string | null | undefined) =>
-      id ? items.find((item) => item.objectId === id) : undefined,
-    [items],
-  );
-  return { items, find };
+export function useCollection<T extends { objectId?: string | null }>(
+	className: string
+) {
+	const items = usePatstoreCollection(className) as T[];
+	const find = useCallback(
+		(id: string | null | undefined) =>
+			id ? items.find((item) => item.objectId === id) : undefined,
+		[items]
+	);
+	return { items, find };
 }

@@ -4,3 +4,24 @@ packages:
 allowBuilds:
   '@parcel/watcher': true
   esbuild: true
+overrides:
+  typescript-eslint>typescript: 6.0.3
+  "@typescript-eslint/eslint-plugin>typescript": 6.0.3
+  "@typescript-eslint/parser>typescript": 6.0.3
+  "@typescript-eslint/project-service>typescript": 6.0.3
+  "@typescript-eslint/tsconfig-utils>typescript": 6.0.3
+  "@typescript-eslint/type-utils>typescript": 6.0.3
+  "@typescript-eslint/typescript-estree>typescript": 6.0.3
+  "@typescript-eslint/utils>typescript": 6.0.3
+minimumReleaseAgeExclude:
+  - '@typescript-eslint/eslint-plugin@8.73.0'
+  - '@typescript-eslint/parser@8.73.0'
+  - '@typescript-eslint/project-service@8.73.0'
+  - '@typescript-eslint/scope-manager@8.73.0'
+  - '@typescript-eslint/tsconfig-utils@8.73.0'
+  - '@typescript-eslint/type-utils@8.73.0'
+  - '@typescript-eslint/types@8.73.0'
+  - '@typescript-eslint/typescript-estree@8.73.0'
+  - '@typescript-eslint/utils@8.73.0'
+  - '@typescript-eslint/visitor-keys@8.73.0'
+  - typescript-eslint@8.73.0

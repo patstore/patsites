@@ -1,5 +1,4 @@
-
-        export const query = `
+export const query = `
             query AllPerson {
                 allPatstorePerson {
                     edges {
@@ -23,4 +22,3 @@
                 }
             }
         `;
-    

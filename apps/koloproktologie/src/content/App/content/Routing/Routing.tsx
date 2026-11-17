@@ -4,17 +4,17 @@ import { Profile } from "../Profile";
 import { Mitgliederbereich } from "../Mitgliederbereich";
 
 const Routing: React.FC<{ id?: string }> = ({ id }) => {
-    const { pathname } = useLocation();
+	const { pathname } = useLocation();
 
-    if (!id) {
-        return <Navigate to="/login" />;
-    }
+	if (!id) {
+		return <Navigate to="/login" />;
+	}
 
-    if (pathname.includes("/profile")) {
-        return <Profile />;
-    }
+	if (pathname.includes("/profile")) {
+		return <Profile />;
+	}
 
-    return <Mitgliederbereich />;
+	return <Mitgliederbereich />;
 };
 
 export default Routing;

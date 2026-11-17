@@ -8,52 +8,67 @@ const gallery: SupplementalField = { id: "gallery", type: "gallery" };
  * The snapshot generator skips a name the GraphQL type does not have.
  */
 export const supplementFields: Record<string, SupplementalField[]> = {
-  Article: [text("label")],
-  Appointment: [text("date"), text("image"), text("text"), text("label")],
-  Category: [
-    text("title"),
-    text("type"),
-    text("description"),
-    text("image"),
-    text("category_id"),
-    text("text"),
-    text("label"),
-    text("state"),
-    text("date"),
-    gallery,
-  ],
-  Download: [text("label"), text("text"), text("date"), gallery],
-  Entry: [text("description"), text("image"), text("label")],
-  Form: [text("text"), text("label"), text("date"), text("state"), { id: "form_fields", type: "form_fields" }, gallery],
-  Group: [text("label"), text("date"), gallery],
-  Location: [text("text"), text("label"), text("date"), gallery],
-  Person: [text("label"), text("date"), gallery],
-  Webpage: [
-    text("path"),
-    text("text"),
-    text("subtitle"),
-    text("label"),
-    text("state"),
-    text("date"),
-    text("image"),
-    { id: "content", type: "edit_webpage_components" },
-    gallery,
-  ],
+	Article: [text("label")],
+	Appointment: [text("date"), text("image"), text("text"), text("label")],
+	Category: [
+		text("title"),
+		text("type"),
+		text("description"),
+		text("image"),
+		text("category_id"),
+		text("text"),
+		text("label"),
+		text("state"),
+		text("date"),
+		gallery
+	],
+	Download: [text("label"), text("text"), text("date"), gallery],
+	Entry: [text("description"), text("image"), text("label")],
+	Form: [
+		text("text"),
+		text("label"),
+		text("date"),
+		text("state"),
+		{ id: "form_fields", type: "form_fields" },
+		gallery
+	],
+	Group: [text("label"), text("date"), gallery],
+	Location: [text("text"), text("label"), text("date"), gallery],
+	Person: [text("label"), text("date"), gallery],
+	Webpage: [
+		text("path"),
+		text("text"),
+		text("subtitle"),
+		text("label"),
+		text("state"),
+		text("date"),
+		text("image"),
+		{ id: "content", type: "edit_webpage_components" },
+		gallery
+	]
 };
 
 export const extraClasses: ExtraClassFetch[] = [
-  {
-    className: "Content",
-    moduleClass: "Webpage",
-    fields: [
-      text("title"),
-      text("label"),
-      text("text"),
-      text("state"),
-      text("content_id"),
-      { id: "active", type: "checkbox" },
-      gallery,
-    ],
-    dataFields: [{ id: "data", type: "json", label: "data", name: "data", position: 0 }],
-  },
+	{
+		className: "Content",
+		moduleClass: "Webpage",
+		fields: [
+			text("title"),
+			text("label"),
+			text("text"),
+			text("state"),
+			text("content_id"),
+			{ id: "active", type: "checkbox" },
+			gallery
+		],
+		dataFields: [
+			{
+				id: "data",
+				type: "json",
+				label: "data",
+				name: "data",
+				position: 0
+			}
+		]
+	}
 ];

@@ -1,6 +1,6 @@
 export type PersonProps = {
-  img?: string;
-  name: string;
-  info?: string;
-  email?: string;
+	img?: string;
+	name: string;
+	info?: string;
+	email?: string;
 };

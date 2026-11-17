@@ -118,18 +118,18 @@ function MyAutoplayGallery() {
 
 ## Props
 
-| Prop                    | Type                                           | Default        | Description                                                        |
-| ----------------------- | ---------------------------------------------- | -------------- | ------------------------------------------------------------------ |
-| `imageIds`              | `string[]`                                     | **Required**   | Array of image IDs to display in the gallery                      |
-| `findImage`             | `(id: string) => IGatsbyImageData`             | **Required**   | Function to resolve image IDs to Gatsby image data                 |
-| `displayMode`           | `"horizontal" \| "mosaic"`                     | `"horizontal"` | Display mode for the gallery                                       |
-| `getAltText`            | `(imageId: string, index: number) => string`   | -              | Optional function to generate alt text for images                  |
-| `showThumbnails`        | `boolean`                                      | `true`         | Show thumbnails in horizontal mode                                 |
-| `showFullscreenButton`  | `boolean`                                      | `true`         | Show fullscreen button                                             |
-| `showPlayButton`        | `boolean`                                      | `false`        | Show play button for autoplay                                      |
-| `autoPlay`              | `boolean`                                      | `false`        | Auto play the gallery                                              |
-| `slideInterval`         | `number`                                       | `3000`         | Slide interval in milliseconds when auto playing                   |
-| `containerStyle`        | `React.CSSProperties`                          | -              | Custom container style                                             |
+| Prop                   | Type                                         | Default        | Description                                        |
+| ---------------------- | -------------------------------------------- | -------------- | -------------------------------------------------- |
+| `imageIds`             | `string[]`                                   | **Required**   | Array of image IDs to display in the gallery       |
+| `findImage`            | `(id: string) => IGatsbyImageData`           | **Required**   | Function to resolve image IDs to Gatsby image data |
+| `displayMode`          | `"horizontal" \| "mosaic"`                   | `"horizontal"` | Display mode for the gallery                       |
+| `getAltText`           | `(imageId: string, index: number) => string` | -              | Optional function to generate alt text for images  |
+| `showThumbnails`       | `boolean`                                    | `true`         | Show thumbnails in horizontal mode                 |
+| `showFullscreenButton` | `boolean`                                    | `true`         | Show fullscreen button                             |
+| `showPlayButton`       | `boolean`                                    | `false`        | Show play button for autoplay                      |
+| `autoPlay`             | `boolean`                                    | `false`        | Auto play the gallery                              |
+| `slideInterval`        | `number`                                     | `3000`         | Slide interval in milliseconds when auto playing   |
+| `containerStyle`       | `React.CSSProperties`                        | -              | Custom container style                             |
 
 ## Display Modes
 
@@ -201,4 +201,3 @@ The Gallery component supports all modern browsers. Make sure your Gatsby build 
 ## Related Components
 
 - [GoogleMaps](../GoogleMaps/README.md) - Map component with consent management
-

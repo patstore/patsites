@@ -1,1 +1,1 @@
-export { default as Kongress } from './Kongress';
+export { default as Kongress } from "./Kongress";

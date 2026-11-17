@@ -1,1 +1,1 @@
-export {default as PreviewWrapper} from "./PreviewWrapper";
+export { default as PreviewWrapper } from "./PreviewWrapper";

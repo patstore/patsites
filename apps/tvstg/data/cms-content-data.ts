@@ -5,17 +5,20 @@ import { bindCmsContent, type CmsContentFile } from "@repo/core/content";
 const api = bindCmsContent(content as unknown as CmsContentFile);
 
 export function isCmsContentReady(): boolean {
-  return api.isCmsContentReady();
+	return api.isCmsContentReady();
 }
 
-export function getPageContent(pagePath: string, locale: string): Record<string, unknown> {
-  return api.getPageContent(pagePath, locale);
+export function getPageContent(
+	pagePath: string,
+	locale: string
+): Record<string, unknown> {
+	return api.getPageContent(pagePath, locale);
 }
 
 export function getAllPageContent() {
-  return api.getAllPageContent();
+	return api.getAllPageContent();
 }
 
 export function pageEntries(pagePath: string) {
-  return api.pageEntries(pagePath);
+	return api.pageEntries(pagePath);
 }

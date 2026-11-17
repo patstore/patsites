@@ -1,6 +1,10 @@
 import React from "react";
 
-export const backdropStyle = (open: boolean, animationDuration: number, useBackdrop: boolean): React.CSSProperties => ({
+export const backdropStyle = (
+	open: boolean,
+	animationDuration: number,
+	useBackdrop: boolean
+): React.CSSProperties => ({
 	position: "fixed",
 	top: 0,
 	left: 0,
@@ -36,7 +40,9 @@ export const dialogContainerStyle = (
 	flexDirection: "column"
 });
 
-export const closeButtonContainerStyle = (title: string): React.CSSProperties => ({
+export const closeButtonContainerStyle = (
+	title: string
+): React.CSSProperties => ({
 	display: "flex",
 	flexDirection: "row",
 	alignItems: "center",

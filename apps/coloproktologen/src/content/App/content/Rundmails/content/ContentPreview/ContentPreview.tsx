@@ -18,50 +18,53 @@ export const infoContainer = settings.mq({
 	justifyContent: "space-between",
 	padding: "30px 15px",
 	borderBottom: `0.6px solid ${settings.colors.grey}`,
-	gap: 0,
-  });
-  
+	gap: 0
+});
 
 const ContentPreview: React.FC<ContentPreviewProps> = ({
 	title,
 	date,
 	content,
-	attachments,
+	attachments
 }) => {
 	const [open, setOpen] = useState(false);
 
 	return (
 		<>
-		 <div css={infoContainer}>
-			<div>
-				{date && <div css={topline}>{getDateString(date).date}</div>}
-				<h3>{title}</h3>
+			<div css={infoContainer}>
+				<div>
+					{date && (
+						<div css={topline}>{getDateString(date).date}</div>
+					)}
+					<h3>{title}</h3>
+				</div>
+				{/* <p>{description}</p> */}
+				<Button
+					text="Öffnen"
+					onClick={() => setOpen(true)}
+					color="white"
+				/>
 			</div>
-			{/* <p>{description}</p> */}
-			<Button
-			text="Öffnen"
-			onClick={() => setOpen(true)}
-			color="white"
-			/>
-      </div>
-		
-		<SlideIn
-			open={open}
-			cancelButtonHandler={() => setOpen(false)}
-			width="medium"
-			hasNoOverflow={false}
-		>
-			<div className="content-preview">
-				{attachments?.length ? <Attachments attachments={attachments} /> : null}
-				<div className="content-preview-body">
-					<div className="web-preview">
-						<div className="web-preview-container">
-							{transformToWeb(content)}
+
+			<SlideIn
+				open={open}
+				cancelButtonHandler={() => setOpen(false)}
+				width="medium"
+				hasNoOverflow={false}
+			>
+				<div className="content-preview">
+					{attachments?.length ? (
+						<Attachments attachments={attachments} />
+					) : null}
+					<div className="content-preview-body">
+						<div className="web-preview">
+							<div className="web-preview-container">
+								{transformToWeb(content)}
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</SlideIn>
+			</SlideIn>
 		</>
 	);
 };

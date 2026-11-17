@@ -6,85 +6,92 @@ import React from "react";
 const congressUrl = "https://www.koloproktologen-kongress.de/index.php";
 
 const highlights = [
-    {
-        title: "Wissenschaftliches Programm",
-        text: "Aktuelle Themen, Trends und Forschungsergebnisse sowie Leitlinien-Updates und innovative Entwicklungen in der Koloproktologie."
-    },
-    {
-        title: "Fort- und Weiterbildung",
-        text: "Zertifizierte CME-Fortbildungen, praxisorientierte Workshops und Seminare auf hohem fachlichen Niveau."
-    },
-    {
-        title: "Netzwerken",
-        text: "Möglichkeiten zur fachübergreifenden Vernetzung und zum kollegialen Austausch im Rahmen begleitender Veranstaltungen."
-    }
+	{
+		title: "Wissenschaftliches Programm",
+		text: "Aktuelle Themen, Trends und Forschungsergebnisse sowie Leitlinien-Updates und innovative Entwicklungen in der Koloproktologie."
+	},
+	{
+		title: "Fort- und Weiterbildung",
+		text: "Zertifizierte CME-Fortbildungen, praxisorientierte Workshops und Seminare auf hohem fachlichen Niveau."
+	},
+	{
+		title: "Netzwerken",
+		text: "Möglichkeiten zur fachübergreifenden Vernetzung und zum kollegialen Austausch im Rahmen begleitender Veranstaltungen."
+	}
 ];
 
 const CongressPreview: React.FC = () => {
-    return (
-        <ContentContainer largeBackground={settings.colors.light}>
-            <FlexBox
-                direction="column"
-                align="flex-start"
-                gap={settings.sizes.small}
-                hasFullWidth
-            >
-                <div css={topline}>
-                    Kongressvorschau
-                </div>
-                <h2 css={{maxWidth: "100% !important"}}>Der BCD beim Koloproktologen-Kongress 2027 </h2>
-                <h3>Der Berufsverband Coloproktologie Deutschland (BCD) gestaltet den 53. Deutschen Koloproktologen-Kongress aktiv mit!</h3>
-                <p css={{ marginBlockEnd: 0, fontWeight: "600 !important" }}>
-                    11.–13. März 2027 · Kongress am Park, Augsburg – HYBRID
-                </p>
-            </FlexBox>
-            <p>
-                Neben dem wissenschaftlichen Programm stehen insbesondere praxisorientierte Fortbildungsangebote, die berufliche Weiterentwicklung und aktuelle berufspolitische Fragestellungen im Mittelpunkt unseres Engagements.
-            </p>
-            <FlexBox
-                direction="row"
-                align="stretch"
-                changeToColumn
-                gap={settings.sizes.medium}
-                hasFullWidth
-            >
-                {highlights.map((item) => (
-                    <div
-                        key={item.title}
-                        css={[
-                            contentBox(["1 1 100%", "1 1 100%", "1 1 30%"]),
-                            { backgroundColor: settings.colors.white }
-                        ]}
-                    >
-                        <h3>{item.title}</h3>
-                        <p css={{ marginBlockEnd: 0 }}>{item.text}</p>
-                    </div>
-                ))}
-            </FlexBox>
-            <FlexBox
-                direction="row"
-                align="center"
-                changeToColumn
-                gap={settings.sizes.medium}
-                hasFullWidth
-            >
-                <Button
-                    text="Zur Kongressseite"
-                    externalLink={congressUrl}
-                    background={settings.colors.primary}
-                    color={settings.colors.white}
-                    size="medium"
-                />
-                <Button
-                    text="Zum Programm"
-                    externalLink="https://www.koloproktologen-kongress.de/programm.php"
-                    background={settings.colors.secondary}
-                    color={settings.colors.white}
-                    size="medium"
-                />
-            </FlexBox>
-        </ContentContainer>
-    );
+	return (
+		<ContentContainer largeBackground={settings.colors.light}>
+			<FlexBox
+				direction="column"
+				align="flex-start"
+				gap={settings.sizes.small}
+				hasFullWidth
+			>
+				<div css={topline}>Kongressvorschau</div>
+				<h2 css={{ maxWidth: "100% !important" }}>
+					Der BCD beim Koloproktologen-Kongress 2027{" "}
+				</h2>
+				<h3>
+					Der Berufsverband Coloproktologie Deutschland (BCD)
+					gestaltet den 53. Deutschen Koloproktologen-Kongress aktiv
+					mit!
+				</h3>
+				<p css={{ marginBlockEnd: 0, fontWeight: "600 !important" }}>
+					11.–13. März 2027 · Kongress am Park, Augsburg – HYBRID
+				</p>
+			</FlexBox>
+			<p>
+				Neben dem wissenschaftlichen Programm stehen insbesondere
+				praxisorientierte Fortbildungsangebote, die berufliche
+				Weiterentwicklung und aktuelle berufspolitische Fragestellungen
+				im Mittelpunkt unseres Engagements.
+			</p>
+			<FlexBox
+				direction="row"
+				align="stretch"
+				changeToColumn
+				gap={settings.sizes.medium}
+				hasFullWidth
+			>
+				{highlights.map((item) => (
+					<div
+						key={item.title}
+						css={[
+							contentBox(["1 1 100%", "1 1 100%", "1 1 30%"]),
+							{ backgroundColor: settings.colors.white }
+						]}
+					>
+						<h3>{item.title}</h3>
+						<p css={{ marginBlockEnd: 0 }}>{item.text}</p>
+					</div>
+				))}
+			</FlexBox>
+			<FlexBox
+				direction="row"
+				align="center"
+				changeToColumn
+				gap={settings.sizes.medium}
+				hasFullWidth
+			>
+				<Button
+					text="Zur Kongressseite"
+					externalLink={congressUrl}
+					background={settings.colors.primary}
+					color={settings.colors.white}
+					size="medium"
+				/>
+				<Button
+					text="Zum Programm"
+					externalLink="https://www.koloproktologen-kongress.de/programm.php"
+					background={settings.colors.secondary}
+					color={settings.colors.white}
+					size="medium"
+				/>
+			</FlexBox>
+		</ContentContainer>
+	);
 };
 
 export default CongressPreview;

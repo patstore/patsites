@@ -52,7 +52,11 @@ export const Dialog: React.FC<DialogProps> = ({
 	}, [open, onClose]);
 
 	const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-		if (useBackdrop && closeOnBackdropClick && e.target === e.currentTarget) {
+		if (
+			useBackdrop &&
+			closeOnBackdropClick &&
+			e.target === e.currentTarget
+		) {
 			onClose();
 		}
 	};

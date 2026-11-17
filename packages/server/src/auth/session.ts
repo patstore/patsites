@@ -1,23 +1,23 @@
 import {
-  PREVIEW_COOKIE_NAME,
-  clearCookieHeader,
-  jsonWithCookie,
-  previewCookieHeader,
-  readCookie,
-  sessionCookieHeader,
+	PREVIEW_COOKIE_NAME,
+	clearCookieHeader,
+	jsonWithCookie,
+	previewCookieHeader,
+	readCookie,
+	sessionCookieHeader
 } from "./cookie.ts";
 import {
-  asRecord,
-  callFunction,
-  createObject,
-  parseFetch,
-  ParseFailure,
-  updateUser,
+	asRecord,
+	callFunction,
+	createObject,
+	parseFetch,
+	ParseFailure,
+	updateUser
 } from "./parse.ts";
 import {
-  PROBEMITGLIED_ROLE_ID,
-  getUserRoles,
-  probationLoginBlocked,
+	PROBEMITGLIED_ROLE_ID,
+	getUserRoles,
+	probationLoginBlocked
 } from "./roles.ts";
 import type { AuthConfig, SessionUser } from "./types.ts";
 
@@ -28,301 +28,368 @@ const EXPIRED_MEMBERSHIP = "Ihre Mitgliedschaft ist abgelaufen";
 const ROLE_LOOKUP_FAILED = "Die Mitgliedschaft konnte nicht geprüft werden";
 
 function configured(config: AuthConfig): boolean {
-  return Boolean(config.apiUrl && config.appId && config.restKey);
+	return Boolean(config.apiUrl && config.appId && config.restKey);
 }
 
 async function roleIdsFor(
-  config: AuthConfig,
-  user: Record<string, unknown>,
-  sessionToken: string,
+	config: AuthConfig,
+	user: Record<string, unknown>,
+	sessionToken: string
 ): Promise<string[]> {
-  const userId = user.objectId;
-  if (typeof userId !== "string" || userId.length === 0) {
-    return [];
-  }
-  const roles = await getUserRoles(config, userId, sessionToken);
-  const ids = roles.map((role) => role.objectId);
-  user.roles = ids;
-  return ids;
+	const userId = user.objectId;
+	if (typeof userId !== "string" || userId.length === 0) {
+		return [];
+	}
+	const roles = await getUserRoles(config, userId, sessionToken);
+	const ids = roles.map((role) => role.objectId);
+	user.roles = ids;
+	return ids;
 }
 
 async function probationBlocked(
-  config: AuthConfig,
-  user: Record<string, unknown>,
-  sessionToken: string,
+	config: AuthConfig,
+	user: Record<string, unknown>,
+	sessionToken: string
 ): Promise<boolean> {
-  if (!config.rejectExpiredMembership) {
-    return false;
-  }
-  const ids = await roleIdsFor(config, user, sessionToken);
-  return probationLoginBlocked(
-    ids,
-    user.createdAt,
-    config.probationRoleId ?? PROBEMITGLIED_ROLE_ID,
-  );
+	if (!config.rejectExpiredMembership) {
+		return false;
+	}
+	const ids = await roleIdsFor(config, user, sessionToken);
+	return probationLoginBlocked(
+		ids,
+		user.createdAt,
+		config.probationRoleId ?? PROBEMITGLIED_ROLE_ID
+	);
 }
 
 function cleared(config: AuthConfig, body: unknown, status = 200): Response {
-  return jsonWithCookie(body, clearCookieHeader(config.cookieName), status);
+	return jsonWithCookie(body, clearCookieHeader(config.cookieName), status);
 }
 
-export async function login(request: Request, config: AuthConfig): Promise<Response> {
-  if (!configured(config)) {
-    return Response.json({ message: "not valid keys" }, { status: 500 });
-  }
+export async function login(
+	request: Request,
+	config: AuthConfig
+): Promise<Response> {
+	if (!configured(config)) {
+		return Response.json({ message: "not valid keys" }, { status: 500 });
+	}
 
-  const body = asRecord(await request.json().catch(() => ({}))) ?? {};
-  const username = typeof body.username === "string" ? body.username : "";
-  const password = typeof body.password === "string" ? body.password : "";
-  const email = username.includes("@") ? username : undefined;
-  const userName = username.includes("@") ? undefined : username;
+	const body = asRecord(await request.json().catch(() => ({}))) ?? {};
+	const username = typeof body.username === "string" ? body.username : "";
+	const password = typeof body.password === "string" ? body.password : "";
+	const email = username.includes("@") ? username : undefined;
+	const userName = username.includes("@") ? undefined : username;
 
-  try {
-    const userData = asRecord(
-      await parseFetch(config, "/functions/get_user_data", {
-        method: "POST",
-        body: { email, username: userName, project: config.projectId },
-      }),
-    );
-    const user = asRecord(asRecord(userData?.result)?.user);
+	try {
+		const userData = asRecord(
+			await parseFetch(config, "/functions/get_user_data", {
+				method: "POST",
+				body: { email, username: userName, project: config.projectId }
+			})
+		);
+		const user = asRecord(asRecord(userData?.result)?.user);
 
-    if (!user) {
-      return Response.json(
-        { message: config.noAccessMessage ?? NO_ACCESS },
-        { status: 500 },
-      );
-    }
+		if (!user) {
+			return Response.json(
+				{ message: config.noAccessMessage ?? NO_ACCESS },
+				{ status: 500 }
+			);
+		}
 
-    try {
-      const response = asRecord(
-        await parseFetch(config, "/login", {
-          method: "POST",
-          body: { username: email || userName, password },
-        }),
-      );
-      const token = response?.sessionToken;
-      if (typeof token !== "string" || token.length === 0 || !response) {
-        return Response.json(
-          { message: config.invalidCredentialsMessage ?? INVALID_CREDENTIALS },
-          { status: 401 },
-        );
-      }
-      if (config.rejectExpiredMembership) {
-        try {
-          const signedInUser = { ...response, createdAt: response.createdAt ?? user.createdAt };
-          if (await probationBlocked(config, signedInUser, token)) {
-            await parseFetch(config, "/logout", { method: "POST", sessionToken: token }).catch(
-              () => undefined,
-            );
-            return Response.json(
-              { message: config.expiredMembershipMessage ?? EXPIRED_MEMBERSHIP },
-              { status: 401 },
-            );
-          }
-        } catch {
-          await parseFetch(config, "/logout", { method: "POST", sessionToken: token }).catch(
-            () => undefined,
-          );
-          return Response.json({ message: ROLE_LOOKUP_FAILED }, { status: 500 });
-        }
-      }
-      return jsonWithCookie(
-        { message: "Nutzer eingeloggt" },
-        sessionCookieHeader(config.cookieName, token),
-      );
-    } catch (error) {
-      const userId = user.objectId;
-      if (config.logFailedLoginService && typeof userId === "string") {
-        await parseFetch(config, "/functions/create_log", {
-          method: "POST",
-          body: {
-            type: "error",
-            operation: "login",
-            className: "User",
-            message: `Ungültiger Login: ${error instanceof ParseFailure ? error.message : ""}`,
-            data: { username: email || userName },
-            service: config.logFailedLoginService,
-            userId,
-            objectId: userId,
-            projectId: config.projectId,
-          },
-        }).catch(() => undefined);
-      }
-      return Response.json(
-        { message: config.invalidCredentialsMessage ?? INVALID_CREDENTIALS },
-        { status: 401 },
-      );
-    }
-  } catch (error) {
-    if (process.env.NODE_ENV === "development") {
-      console.error(error);
-    }
-    return Response.json(
-      { message: config.unknownAccountMessage ?? UNKNOWN_ACCOUNT },
-      { status: 500 },
-    );
-  }
+		try {
+			const response = asRecord(
+				await parseFetch(config, "/login", {
+					method: "POST",
+					body: { username: email || userName, password }
+				})
+			);
+			const token = response?.sessionToken;
+			if (typeof token !== "string" || token.length === 0 || !response) {
+				return Response.json(
+					{
+						message:
+							config.invalidCredentialsMessage ??
+							INVALID_CREDENTIALS
+					},
+					{ status: 401 }
+				);
+			}
+			if (config.rejectExpiredMembership) {
+				try {
+					const signedInUser = {
+						...response,
+						createdAt: response.createdAt ?? user.createdAt
+					};
+					if (await probationBlocked(config, signedInUser, token)) {
+						await parseFetch(config, "/logout", {
+							method: "POST",
+							sessionToken: token
+						}).catch(() => undefined);
+						return Response.json(
+							{
+								message:
+									config.expiredMembershipMessage ??
+									EXPIRED_MEMBERSHIP
+							},
+							{ status: 401 }
+						);
+					}
+				} catch {
+					await parseFetch(config, "/logout", {
+						method: "POST",
+						sessionToken: token
+					}).catch(() => undefined);
+					return Response.json(
+						{ message: ROLE_LOOKUP_FAILED },
+						{ status: 500 }
+					);
+				}
+			}
+			return jsonWithCookie(
+				{ message: "Nutzer eingeloggt" },
+				sessionCookieHeader(config.cookieName, token)
+			);
+		} catch (error) {
+			const userId = user.objectId;
+			if (config.logFailedLoginService && typeof userId === "string") {
+				await parseFetch(config, "/functions/create_log", {
+					method: "POST",
+					body: {
+						type: "error",
+						operation: "login",
+						className: "User",
+						message: `Ungültiger Login: ${error instanceof ParseFailure ? error.message : ""}`,
+						data: { username: email || userName },
+						service: config.logFailedLoginService,
+						userId,
+						objectId: userId,
+						projectId: config.projectId
+					}
+				}).catch(() => undefined);
+			}
+			return Response.json(
+				{
+					message:
+						config.invalidCredentialsMessage ?? INVALID_CREDENTIALS
+				},
+				{ status: 401 }
+			);
+		}
+	} catch (error) {
+		if (process.env.NODE_ENV === "development") {
+			console.error(error);
+		}
+		return Response.json(
+			{ message: config.unknownAccountMessage ?? UNKNOWN_ACCOUNT },
+			{ status: 500 }
+		);
+	}
 }
 
-export async function logout(request: Request, config: AuthConfig): Promise<Response> {
-  const token = readCookie(request.headers.get("cookie"), config.cookieName);
-  if (token && configured(config)) {
-    await parseFetch(config, "/logout", { method: "POST", sessionToken: token }).catch(
-      () => undefined,
-    );
-  }
-  return cleared(config, { ok: true });
+export async function logout(
+	request: Request,
+	config: AuthConfig
+): Promise<Response> {
+	const token = readCookie(request.headers.get("cookie"), config.cookieName);
+	if (token && configured(config)) {
+		await parseFetch(config, "/logout", {
+			method: "POST",
+			sessionToken: token
+		}).catch(() => undefined);
+	}
+	return cleared(config, { ok: true });
 }
 
-export async function session(request: Request, config: AuthConfig): Promise<Response> {
-  const token = readCookie(request.headers.get("cookie"), config.cookieName);
-  if (!token || !configured(config)) {
-    return Response.json({ user: null });
-  }
+export async function session(
+	request: Request,
+	config: AuthConfig
+): Promise<Response> {
+	const token = readCookie(request.headers.get("cookie"), config.cookieName);
+	if (!token || !configured(config)) {
+		return Response.json({ user: null });
+	}
 
-  try {
-    const user = asRecord(
-      await parseFetch(config, "/users/me", { method: "GET", sessionToken: token }),
-    );
-    if (!user) {
-      return cleared(config, { user: null });
-    }
-    try {
-      if (await probationBlocked(config, user, token)) {
-        await parseFetch(config, "/logout", { method: "POST", sessionToken: token }).catch(
-          () => undefined,
-        );
-        return cleared(config, { user: null, expired: true });
-      }
-      if (!config.rejectExpiredMembership) {
-        await roleIdsFor(config, user, token);
-      }
-    } catch {
-      user.roles = Array.isArray(user.roles) ? user.roles : [];
-    }
-    return Response.json({ user });
-  } catch {
-    return cleared(config, { user: null });
-  }
+	try {
+		const user = asRecord(
+			await parseFetch(config, "/users/me", {
+				method: "GET",
+				sessionToken: token
+			})
+		);
+		if (!user) {
+			return cleared(config, { user: null });
+		}
+		try {
+			if (await probationBlocked(config, user, token)) {
+				await parseFetch(config, "/logout", {
+					method: "POST",
+					sessionToken: token
+				}).catch(() => undefined);
+				return cleared(config, { user: null, expired: true });
+			}
+			if (!config.rejectExpiredMembership) {
+				await roleIdsFor(config, user, token);
+			}
+		} catch {
+			user.roles = Array.isArray(user.roles) ? user.roles : [];
+		}
+		return Response.json({ user });
+	} catch {
+		return cleared(config, { user: null });
+	}
 }
 
 export async function requireUser(
-  request: Request,
-  config: AuthConfig,
+	request: Request,
+	config: AuthConfig
 ): Promise<SessionUser | Response> {
-  const token = readCookie(request.headers.get("cookie"), config.cookieName);
-  if (!token || !configured(config)) {
-    return Response.json({ message: "Nicht authentifiziert" }, { status: 401 });
-  }
+	const token = readCookie(request.headers.get("cookie"), config.cookieName);
+	if (!token || !configured(config)) {
+		return Response.json(
+			{ message: "Nicht authentifiziert" },
+			{ status: 401 }
+		);
+	}
 
-  try {
-    const user = asRecord(
-      await parseFetch(config, "/users/me", { method: "GET", sessionToken: token }),
-    );
-    if (!user || typeof user.objectId !== "string") {
-      return cleared(config, { message: "Ungültige Sitzung" }, 401);
-    }
-    try {
-      if (await probationBlocked(config, user, token)) {
-        await parseFetch(config, "/logout", { method: "POST", sessionToken: token }).catch(
-          () => undefined,
-        );
-        return cleared(config, { message: EXPIRED_MEMBERSHIP }, 401);
-      }
-      if (!config.rejectExpiredMembership) {
-        await roleIdsFor(config, user, token);
-      }
-    } catch {
-      user.roles = Array.isArray(user.roles) ? user.roles : [];
-    }
-    return { token, user };
-  } catch {
-    return cleared(config, { message: "Ungültige Sitzung" }, 401);
-  }
+	try {
+		const user = asRecord(
+			await parseFetch(config, "/users/me", {
+				method: "GET",
+				sessionToken: token
+			})
+		);
+		if (!user || typeof user.objectId !== "string") {
+			return cleared(config, { message: "Ungültige Sitzung" }, 401);
+		}
+		try {
+			if (await probationBlocked(config, user, token)) {
+				await parseFetch(config, "/logout", {
+					method: "POST",
+					sessionToken: token
+				}).catch(() => undefined);
+				return cleared(config, { message: EXPIRED_MEMBERSHIP }, 401);
+			}
+			if (!config.rejectExpiredMembership) {
+				await roleIdsFor(config, user, token);
+			}
+		} catch {
+			user.roles = Array.isArray(user.roles) ? user.roles : [];
+		}
+		return { token, user };
+	} catch {
+		return cleared(config, { message: "Ungültige Sitzung" }, 401);
+	}
 }
 
 /** Relative preview path. Anything else, including another site, becomes `/`. */
 export function previewNextPath(value: string | null): string {
-  if (!value || !value.startsWith("/") || value.startsWith("//") || value.startsWith("/\\")) {
-    return "/";
-  }
-  if (value.includes("\\") || value.includes("://") || /[\r\n]/.test(value)) {
-    return "/";
-  }
-  return value;
+	if (
+		!value ||
+		!value.startsWith("/") ||
+		value.startsWith("//") ||
+		value.startsWith("/\\")
+	) {
+		return "/";
+	}
+	if (value.includes("\\") || value.includes("://") || /[\r\n]/.test(value)) {
+		return "/";
+	}
+	return value;
 }
 
-async function previewUser(config: AuthConfig, token: string): Promise<boolean> {
-  if (!token || !configured(config)) {
-    return false;
-  }
-  try {
-    const user = asRecord(
-      await parseFetch(config, "/users/me", { method: "GET", sessionToken: token }),
-    );
-    return typeof user?.objectId === "string" && user.objectId.length > 0;
-  } catch {
-    return false;
-  }
+async function previewUser(
+	config: AuthConfig,
+	token: string
+): Promise<boolean> {
+	if (!token || !configured(config)) {
+		return false;
+	}
+	try {
+		const user = asRecord(
+			await parseFetch(config, "/users/me", {
+				method: "GET",
+				sessionToken: token
+			})
+		);
+		return typeof user?.objectId === "string" && user.objectId.length > 0;
+	} catch {
+		return false;
+	}
 }
 
-export async function hasPreviewSession(request: Request, config: AuthConfig): Promise<boolean> {
-  return previewUser(config, readCookie(request.headers.get("cookie"), PREVIEW_COOKIE_NAME));
+export async function hasPreviewSession(
+	request: Request,
+	config: AuthConfig
+): Promise<boolean> {
+	return previewUser(
+		config,
+		readCookie(request.headers.get("cookie"), PREVIEW_COOKIE_NAME)
+	);
 }
 
-export async function acceptPreview(request: Request, config: AuthConfig): Promise<Response> {
-  const url = new URL(request.url);
-  const token = url.searchParams.get("sessionToken") ?? "";
-  const next = previewNextPath(url.searchParams.get("next"));
-  if (!(await previewUser(config, token))) {
-    return new Response("Nicht authentifiziert", { status: 401 });
-  }
-  // A 302 is still part of the cross-site click from the CMS, so the browser
-  // does not send a cookie that was just set. Commit a page on this host first.
-  return new Response(previewContinueHtml(next), {
-    status: 200,
-    headers: {
-      "Content-Type": "text/html; charset=utf-8",
-      "Set-Cookie": previewCookieHeader(token),
-      "Cache-Control": "no-store",
-      "Referrer-Policy": "no-referrer",
-    },
-  });
+export async function acceptPreview(
+	request: Request,
+	config: AuthConfig
+): Promise<Response> {
+	const url = new URL(request.url);
+	const token = url.searchParams.get("sessionToken") ?? "";
+	const next = previewNextPath(url.searchParams.get("next"));
+	if (!(await previewUser(config, token))) {
+		return new Response("Nicht authentifiziert", { status: 401 });
+	}
+	// A 302 is still part of the cross-site click from the CMS, so the browser
+	// does not send a cookie that was just set. Commit a page on this host first.
+	return new Response(previewContinueHtml(next), {
+		status: 200,
+		headers: {
+			"Content-Type": "text/html; charset=utf-8",
+			"Set-Cookie": previewCookieHeader(token),
+			"Cache-Control": "no-store",
+			"Referrer-Policy": "no-referrer"
+		}
+	});
 }
 
 function previewContinueHtml(next: string): string {
-  const href = next
-    .replace(/&/g, "&amp;")
-    .replace(/"/g, "&quot;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-  // A meta refresh is still the original cross-site navigation, so the cookie
-  // just set is missing and the draft stays locked. A script navigation starts
-  // after this document is the current page, which is a same-site request.
-  const target = JSON.stringify(next).replace(/</g, "\\u003c").replace(/>/g, "\\u003e");
-  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Vorschau</title></head><body><p><a href="${href}">Weiter zur Vorschau</a></p><script>document.addEventListener("DOMContentLoaded",function(){location.replace(${target})})</script></body></html>`;
+	const href = next
+		.replace(/&/g, "&amp;")
+		.replace(/"/g, "&quot;")
+		.replace(/</g, "&lt;")
+		.replace(/>/g, "&gt;");
+	// A meta refresh is still the original cross-site navigation, so the cookie
+	// just set is missing and the draft stays locked. A script navigation starts
+	// after this document is the current page, which is a same-site request.
+	const target = JSON.stringify(next)
+		.replace(/</g, "\\u003c")
+		.replace(/>/g, "\\u003e");
+	return `<!doctype html><html lang="de"><head><meta charset="utf-8"><title>Vorschau</title></head><body><p><a href="${href}">Weiter zur Vorschau</a></p><script>document.addEventListener("DOMContentLoaded",function(){location.replace(${target})})</script></body></html>`;
 }
 
 export function createSessionApi(config: AuthConfig) {
-  return {
-    config,
-    login: (request: Request) => login(request, config),
-    logout: (request: Request) => logout(request, config),
-    session: (request: Request) => session(request, config),
-    requireUser: (request: Request) => requireUser(request, config),
-    acceptPreview: (request: Request) => acceptPreview(request, config),
-    hasPreviewSession: (request: Request) => hasPreviewSession(request, config),
-    getUserRoles: (userId: string, sessionToken: string) =>
-      getUserRoles(config, userId, sessionToken),
-    readToken: (request: Request) => readCookie(request.headers.get("cookie"), config.cookieName),
-    callFunction: (name: string, payload: unknown, sessionToken?: string) =>
-      callFunction(config, name, payload, sessionToken),
-    updateUser: (sessionToken: string, userId: string, fields: Record<string, unknown>) =>
-      updateUser(config, sessionToken, userId, fields),
-    createObject: (
-      className: string,
-      fields: Record<string, unknown>,
-      sessionToken?: string,
-    ) => createObject(config, className, fields, sessionToken),
-  };
+	return {
+		config,
+		login: (request: Request) => login(request, config),
+		logout: (request: Request) => logout(request, config),
+		session: (request: Request) => session(request, config),
+		requireUser: (request: Request) => requireUser(request, config),
+		acceptPreview: (request: Request) => acceptPreview(request, config),
+		hasPreviewSession: (request: Request) =>
+			hasPreviewSession(request, config),
+		getUserRoles: (userId: string, sessionToken: string) =>
+			getUserRoles(config, userId, sessionToken),
+		readToken: (request: Request) =>
+			readCookie(request.headers.get("cookie"), config.cookieName),
+		callFunction: (name: string, payload: unknown, sessionToken?: string) =>
+			callFunction(config, name, payload, sessionToken),
+		updateUser: (
+			sessionToken: string,
+			userId: string,
+			fields: Record<string, unknown>
+		) => updateUser(config, sessionToken, userId, fields),
+		createObject: (
+			className: string,
+			fields: Record<string, unknown>,
+			sessionToken?: string
+		) => createObject(config, className, fields, sessionToken)
+	};
 }

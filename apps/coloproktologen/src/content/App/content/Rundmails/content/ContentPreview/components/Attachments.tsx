@@ -35,21 +35,25 @@ const Attachments: React.FC<AttachmentsProps> = ({ attachments }) => {
 			type: "find",
 			objectName: "Document",
 			queryName: "documents",
-			fields: ["objectId", "title", "file {name url}"],
+			fields: ["objectId", "title", "file {name url}"]
 		}),
 		{
 			variables: {
 				params: {
-					objectId: { in: attachments },
-				},
+					objectId: { in: attachments }
+				}
 			},
-			skip: !attachments?.length,
+			skip: !attachments?.length
 		}
 	);
 
 	const documents = useMemo(() => {
 		const edges = data?.documents?.edges;
-		return edges?.map((edge: any) => sanitizeGraphQlNode(edge.node) as Document) || [];
+		return (
+			edges?.map(
+				(edge: any) => sanitizeGraphQlNode(edge.node) as Document
+			) || []
+		);
 	}, [data]);
 
 	if (documents.length === 0) return null;

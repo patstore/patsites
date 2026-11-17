@@ -8,6 +8,7 @@
     "build": "vite build",
     "start": "node .output/server/index.mjs",
     "preview": "vite preview",
+    "lint": "eslint .",
     "check-types": "tsc --noEmit",
     "generate": "pnpm --filter @repo/server generate -- ../../apps/koloproktologie/data"
   },
@@ -54,6 +55,7 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.13.5",
+    "@repo/eslint-config": "workspace:*",
     "@types/facepaint": "^1.2.5",
     "@types/isomorphic-fetch": "^0.0.39",
     "@types/js-cookie": "^3.0.6",
@@ -64,6 +66,7 @@
     "@types/react-image-gallery": "^1.2.4",
     "@types/tinycolor2": "^1.4.6",
     "@vitejs/plugin-react": "^6.0.2",
+    "eslint": "10.9.1",
     "typescript": "~5.8.2",
     "vite": "^8.0.0",
     "vite-tsconfig-paths": "^5.1.4"

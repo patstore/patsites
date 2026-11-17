@@ -3,11 +3,11 @@ import { seo } from "@components";
 import Verein from "../../content/Verein/Verein";
 
 export const Route = createFileRoute("/verein/vorstand")({
-  head: () => ({
-    meta: seo({
-      title: "Vorstand",
-      description: "In aller Kürze das Wesentliche über den Verein.",
-    }),
-  }),
-  component: Verein,
+	head: () => ({
+		meta: seo({
+			title: "Vorstand",
+			description: "In aller Kürze das Wesentliche über den Verein."
+		})
+	}),
+	component: Verein
 });

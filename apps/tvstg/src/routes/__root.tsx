@@ -1,10 +1,10 @@
 /// <reference types="vite/client" />
 import { Suspense, type ReactNode } from "react";
 import {
-  createRootRoute,
-  HeadContent,
-  Outlet,
-  Scripts,
+	createRootRoute,
+	HeadContent,
+	Outlet,
+	Scripts
 } from "@tanstack/react-router";
 import { getSiteData } from "@functions/site.functions";
 import { isDraftMode } from "@repo/server";
@@ -18,58 +18,67 @@ import favicon from "../images/tvstg_logo.png";
 import "@data";
 
 export const Route = createRootRoute({
-  loader: async () => {
-    const [site, preview] = await Promise.all([getSiteData(), readPreviewSession()]);
-    return { ...site, preview };
-  },
-  staleTime: 5 * 60_000,
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      ...seo(),
-    ],
-    links: [
-      { rel: "stylesheet", href: globalCss },
-      { rel: "icon", type: "image/png", href: favicon },
-    ],
-    scripts: [
-      { src: "https://scripts.simpleanalyticscdn.com/latest.js", async: true },
-      {
-        children: `try{var t=localStorage.getItem("tvstg-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}`,
-      },
-    ],
-  }),
-  shellComponent: RootDocument,
-  component: RootComponent,
+	loader: async () => {
+		const [site, preview] = await Promise.all([
+			getSiteData(),
+			readPreviewSession()
+		]);
+		return { ...site, preview };
+	},
+	staleTime: 5 * 60_000,
+	head: () => ({
+		meta: [
+			{ charSet: "utf-8" },
+			{
+				name: "viewport",
+				content: "width=device-width, initial-scale=1"
+			},
+			...seo()
+		],
+		links: [
+			{ rel: "stylesheet", href: globalCss },
+			{ rel: "icon", type: "image/png", href: favicon }
+		],
+		scripts: [
+			{
+				src: "https://scripts.simpleanalyticscdn.com/latest.js",
+				async: true
+			},
+			{
+				children: `try{var t=localStorage.getItem("tvstg-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t}catch(e){}`
+			}
+		]
+	}),
+	shellComponent: RootDocument,
+	component: RootComponent
 });
 
 function RootDocument({ children }: { children: ReactNode }) {
-  return (
-    <html lang="de">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
+	return (
+		<html lang="de">
+			<head>
+				<HeadContent />
+			</head>
+			<body>
+				{children}
+				<Scripts />
+			</body>
+		</html>
+	);
 }
 
 function RootComponent() {
-  const { preview } = Route.useLoaderData();
+	const { preview } = Route.useLoaderData();
 
-  return (
-    <DraftGate preview={preview} locked={isDraftMode() && !preview}>
-      <SiteContextProvider>
-        <Framework>
-          <Suspense fallback={null}>
-            <Outlet />
-          </Suspense>
-        </Framework>
-      </SiteContextProvider>
-    </DraftGate>
-  );
+	return (
+		<DraftGate preview={preview} locked={isDraftMode() && !preview}>
+			<SiteContextProvider>
+				<Framework>
+					<Suspense fallback={null}>
+						<Outlet />
+					</Suspense>
+				</Framework>
+			</SiteContextProvider>
+		</DraftGate>
+	);
 }

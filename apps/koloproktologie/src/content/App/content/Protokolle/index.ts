@@ -1,1 +1,1 @@
-export {default as Protokolle} from "./Protokolle";
+export { default as Protokolle } from "./Protokolle";

@@ -6,77 +6,86 @@ import { getDateString, useCollection, useGetImages } from "@provider";
 import type { CategoryClass, DownloadClass } from "@data";
 
 const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
-    const [open, setOpen] = useState(false);
-    const { findImageUrl } = useGetImages();
-    const { find: findDownload } = useCollection<DownloadClass>("Download");
-    const { items:categories } = useCollection<CategoryClass>("Category");
+	const [open, setOpen] = useState(false);
+	const { findImageUrl } = useGetImages();
+	const { find: findDownload } = useCollection<DownloadClass>("Download");
+	const { items: categories } = useCollection<CategoryClass>("Category");
 
-    const newsCategories = categories.find((category) => news.categories?.includes(category.objectId) && category.link);
+	const newsCategories = categories.find(
+		(category) =>
+			news.categories?.includes(category.objectId) && category.link
+	);
 
-    const createInternalLink = (link: string) => {
-        const path = link.replace(/^https?:\/\/(?:www\.)?koloproktologie\.org/i, "");
-        return path.startsWith("/") ? path : `/${path}`;
-    };
+	const createInternalLink = (link: string) => {
+		const path = link.replace(
+			/^https?:\/\/(?:www\.)?koloproktologie\.org/i,
+			""
+		);
+		return path.startsWith("/") ? path : `/${path}`;
+	};
 
-    return (
-        <div
-            css={{
-                width: "300px",
-                height: "fit-content"
-            }}
-            className={news.state === "draft" ? "draft-border" : ""}
-        >
-            <ContentBox
-                key={news.title}
-                title={news.title}
-                text={news.description}
-                // link={news.link}
-                label="Aktuelles"
-                date={getDateString(news.date).date}
-                background={background}
-                image={news.image}
-                color={settings.colors.dark}
-                buttonBackground={settings.colors.primary}
-                buttonText="Weiter lesen"
-                onClick={() => setOpen(true)}
-                labelBackground={"transparent"}
-            ></ContentBox>
-            <SlideIn
-                width="small"
-                open={open}
-                cancelButtonHandler={() => setOpen(false)}
-            >
-                <FlexBox direction="row" align="center" justify="center">
-                    {news.image && (
-                        <AppImage
-                            src={findImageUrl(news.image)}
-                            alt={news.title}
-                            objectFit="contain"
-                            css={{ height: "300px", borderRadius: "24px" }}
-                        />
-                    )}
-                </FlexBox>
-                <Divider />
-                <h2>{news.title}</h2>
-                <div dangerouslySetInnerHTML={{ __html: news.text }} />
-                {newsCategories?.link && createInternalLink(newsCategories?.link) &&  
-                <a href={createInternalLink(newsCategories.link)}>Den kompletten Beitrag finden Sie hier</a>
-                }
-                {news.documents &&
-                    news.documents.map((document: string) => (
-                        <div key={document}>
-                            <a
-                                href={findDownload(document)?.file?.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {findDownload(document)?.title}
-                            </a>
-                        </div>
-                    ))}
-            </SlideIn>
-        </div>
-    );
+	return (
+		<div
+			css={{
+				width: "300px",
+				height: "fit-content"
+			}}
+			className={news.state === "draft" ? "draft-border" : ""}
+		>
+			<ContentBox
+				key={news.title}
+				title={news.title}
+				text={news.description}
+				// link={news.link}
+				label="Aktuelles"
+				date={getDateString(news.date).date}
+				background={background}
+				image={news.image}
+				color={settings.colors.dark}
+				buttonBackground={settings.colors.primary}
+				buttonText="Weiter lesen"
+				onClick={() => setOpen(true)}
+				labelBackground={"transparent"}
+			></ContentBox>
+			<SlideIn
+				width="small"
+				open={open}
+				cancelButtonHandler={() => setOpen(false)}
+			>
+				<FlexBox direction="row" align="center" justify="center">
+					{news.image && (
+						<AppImage
+							src={findImageUrl(news.image)}
+							alt={news.title}
+							objectFit="contain"
+							css={{ height: "300px", borderRadius: "24px" }}
+						/>
+					)}
+				</FlexBox>
+				<Divider />
+				<h2>{news.title}</h2>
+				<div dangerouslySetInnerHTML={{ __html: news.text }} />
+				{newsCategories?.link &&
+					createInternalLink(newsCategories?.link) && (
+						<a href={createInternalLink(newsCategories.link)}>
+							Den kompletten Beitrag finden Sie hier
+						</a>
+					)}
+				{news.documents &&
+					news.documents.map((document: string) => (
+						<div key={document}>
+							<a
+								href={findDownload(document)?.file?.url}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								{findDownload(document)?.title}
+							</a>
+						</div>
+					))}
+			</SlideIn>
+		</div>
+	);
 };
 
 export default NewsElement;

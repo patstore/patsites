@@ -1,31 +1,31 @@
 import {
-  WebpageContentImage,
-  WebpageContentText,
-  WebpageContentVideo,
+	WebpageContentImage,
+	WebpageContentText,
+	WebpageContentVideo
 } from "@types";
 
 export type RenderContentProps = {
-  path?: string;
-  contentId?: string;
+	path?: string;
+	contentId?: string;
 };
 
 export type RenderTextProps = {
-  text: string;
+	text: string;
 };
 
 export type RenderImageProps = {
-  image?: string;
-  name?: string;
+	image?: string;
+	name?: string;
 };
 
 export type RenderVideoProps = {
-  video: string;
+	video: string;
 };
 
 export type ContentElement = {
-  id: string;
-  type: string;
-  value: string;
-  active: boolean;
-  [key: string]: any;
+	id: string;
+	type: string;
+	value: string;
+	active: boolean;
+	[key: string]: any;
 };

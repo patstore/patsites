@@ -1,5 +1,4 @@
-
-        export const query = `
+export const query = `
             query AllDownload {
                 allPatstoreDownload {
                     edges {
@@ -33,4 +32,3 @@
                 }
             }
         `;
-    

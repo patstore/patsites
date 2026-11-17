@@ -3,12 +3,12 @@ import { seo } from "@components";
 import Mitgliedschaft from "../content/Mitgliedschaft/Mitgliedschaft";
 
 export const Route = createFileRoute("/mitgliedschaft")({
-  head: () => ({
-    meta: seo({
-      title: "Mitgliedschaft",
-      description:
-        "Werde Mitglied im TV Freiburg St. Georgen: Online-Anmeldung, Mitgliedsantrag und Beiträge.",
-    }),
-  }),
-  component: Mitgliedschaft,
+	head: () => ({
+		meta: seo({
+			title: "Mitgliedschaft",
+			description:
+				"Werde Mitglied im TV Freiburg St. Georgen: Online-Anmeldung, Mitgliedsantrag und Beiträge."
+		})
+	}),
+	component: Mitgliedschaft
 });

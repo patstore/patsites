@@ -17,10 +17,15 @@ const source = `
 `;
 
 test("scans nested sections and ignores fields outside them", () => {
-  const manifest = scanSourceContent(source);
-  const flat = Object.fromEntries(flattenManifestToPaths(manifest).map((entry) => [entry.path, entry.value]));
-  assert.equal(flat["page.hero.title"], "Home");
-  assert.equal(flat["page.hero.image"], "/hero.jpg");
-  assert.deepEqual(flat["page.members"], [{ name: "Jane" }]);
-  assert.equal(flat.ignored, undefined);
+	const manifest = scanSourceContent(source);
+	const flat = Object.fromEntries(
+		flattenManifestToPaths(manifest).map((entry) => [
+			entry.path,
+			entry.value
+		])
+	);
+	assert.equal(flat["page.hero.title"], "Home");
+	assert.equal(flat["page.hero.image"], "/hero.jpg");
+	assert.deepEqual(flat["page.members"], [{ name: "Jane" }]);
+	assert.equal(flat.ignored, undefined);
 });

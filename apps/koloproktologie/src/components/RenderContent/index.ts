@@ -1,1 +1,1 @@
-export {default as RenderContent} from './RenderContent';
+export { default as RenderContent } from "./RenderContent";

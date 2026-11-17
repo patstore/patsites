@@ -1,0 +1,16 @@
+node_modules
+dist
+.output
+.turbo
+.cache
+.vercel
+coverage
+pnpm-lock.yaml
+package-lock.json
+**/*.gen.ts
+**/data/index.ts
+**/data/schema.ts
+**/data/types.ts
+**/data/useFindData.ts
+**/data/public-content.ts
+**/data/cms-content-data.ts

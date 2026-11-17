@@ -6,17 +6,15 @@ import CourseContent from "./components/CourseContent";
 import CourseHeader from "./components/CourseHeader";
 
 const Course = ({ course }: { course: EventClass }) => (
-  <Layout>
-    <CourseHeader course={course} />
-    <section className={styles.content} id="info">
-      <div className={styles.content_wrapper}>
-        <CourseInfo
-        event={course}
-        />
-        <CourseContent text={course.text || ""} event={course} />
-      </div>
-    </section>
-  </Layout>
+	<Layout>
+		<CourseHeader course={course} />
+		<section className={styles.content} id="info">
+			<div className={styles.content_wrapper}>
+				<CourseInfo event={course} />
+				<CourseContent text={course.text || ""} event={course} />
+			</div>
+		</section>
+	</Layout>
 );
 
 export default Course;
