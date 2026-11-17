@@ -156,14 +156,18 @@ const Team = () => {
 	return (
 		<section aria-label="Team">
 			<div className="content">
-				<h2>Team</h2>
-				<div>
+				<div className="eyebrow">Team</div>
+				<h2>
+					Ob große Fragen oder kleine Sorgen, wunderschöne erste
+					Momente oder herausfordernde Tage – wir sind für euch da.
+				</h2>
+				{/* <div>
 					<p className="lead">
 						Ob große Fragen oder kleine Sorgen, wunderschöne erste
 						Momente oder herausfordernde Tage – wir sind für euch
 						da.
 					</p>
-				</div>
+				</div> */}
 				<ul className={styles.list}>
 					{persons.map((person, index) => {
 						const name = displayName(person);

@@ -129,6 +129,7 @@ button {
 	font-size: 0.78rem;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
+	text-align: center;
 }
 
 .lead {
@@ -138,7 +139,7 @@ button {
 }
 
 .page-body {
-	width: min(var(--page-width), calc(100% - 2.5rem));
+	width: min(var(--page-width), calc(100% - 24px));
 	margin: 0 auto;
 	padding: 3rem 0 4.5rem;
 }
