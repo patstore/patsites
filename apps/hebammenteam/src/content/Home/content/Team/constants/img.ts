@@ -4,7 +4,7 @@ export const imgStyling: Record<string, { rotate: number }> = {
 	"2": { rotate: 15 }
 };
 
-/** Extra vertical travel, in pixels, while a portrait crosses the viewport. */
+/** Extra vertical travel, in pixels, while a member crosses the viewport. */
 export const imgParallax: Record<string, number> = {
 	"0": 64,
 	"1": -36,

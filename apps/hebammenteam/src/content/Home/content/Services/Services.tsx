@@ -81,7 +81,7 @@ const Services = () => {
 			aria-label="Leistungen"
 			ref={sectionRef}
 		>
-			<div className="content">
+			<div>
 				<h2 className={styles.heading}>Leistungen</h2>
 				<div className={styles.frame}>
 					<div className={styles.track} ref={trackRef}>

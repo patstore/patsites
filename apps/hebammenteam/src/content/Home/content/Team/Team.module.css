@@ -12,6 +12,7 @@
 	display: flex;
 	flex: 0 0 calc((100% - 3rem) / 3);
 	max-width: 300px;
+	background-color: var(--color-surface);
 }
 
 .person {

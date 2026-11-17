@@ -15,11 +15,12 @@ import tseslint from "typescript-eslint";
 export const config = tseslint.config(
 	{
 		ignores: [
-			"dist/**",
-			".output/**",
-			".turbo/**",
-			".cache/**",
-			"coverage/**",
+			"**/dist/**",
+			"**/.output/**",
+			"**/.vercel/**",
+			"**/.turbo/**",
+			"**/.cache/**",
+			"**/coverage/**",
 			"**/*.gen.ts",
 			"**/data/index.ts",
 			"**/data/schema.ts",

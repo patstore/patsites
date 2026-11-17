@@ -3,7 +3,8 @@ import {
 	useEffect,
 	useLayoutEffect,
 	useMemo,
-	useRef
+	useRef,
+	type ReactNode
 } from "react";
 import { Link } from "@tanstack/react-router";
 import type { ImageClass, PersonClass } from "@data";
@@ -51,24 +52,24 @@ const valueForIndex = <T,>(
 	return key === undefined ? fallback : (values[key] ?? fallback);
 };
 
-type PortraitRegistration = {
-	element: HTMLImageElement;
+type MemberRegistration = {
+	element: HTMLElement;
 	y: MotionValue<number>;
 	parallax: number;
 };
 
-const Portrait = ({
-	src,
+const Member = ({
 	rotate,
 	parallax,
-	register
+	register,
+	children
 }: {
-	src: string;
 	rotate: number;
 	parallax: number;
-	register: (portrait: PortraitRegistration) => () => void;
+	register: (member: MemberRegistration) => () => void;
+	children: ReactNode;
 }) => {
-	const ref = useRef<HTMLImageElement>(null);
+	const ref = useRef<HTMLLIElement>(null);
 	const y = useMotionValue(0);
 
 	useLayoutEffect(() => {
@@ -80,23 +81,19 @@ const Portrait = ({
 	}, [parallax, register, y]);
 
 	return (
-		<motion.img
-			ref={ref}
-			className={styles.portrait}
-			src={src}
-			alt=""
-			style={{ rotate, y }}
-		/>
+		<motion.li ref={ref} className={styles.item} style={{ rotate, y }}>
+			{children}
+		</motion.li>
 	);
 };
 
 const Team = () => {
 	const scroll = useOptionalScroll();
-	const portraits = useRef(new Set<PortraitRegistration>());
-	const register = useRef((portrait: PortraitRegistration) => {
-		portraits.current.add(portrait);
+	const members = useRef(new Set<MemberRegistration>());
+	const register = useRef((member: MemberRegistration) => {
+		members.current.add(member);
 		return () => {
-			portraits.current.delete(portrait);
+			members.current.delete(member);
 		};
 	}).current;
 	const { items } = useCollection("Person");
@@ -120,15 +117,15 @@ const Team = () => {
 			"(prefers-reduced-motion: reduce)"
 		).matches;
 
-		portraits.current.forEach((portrait) => {
+		members.current.forEach((member) => {
 			if (reduceMotion) {
-				portrait.y.set(0);
+				member.y.set(0);
 				return;
 			}
-			const applied = portrait.y.get();
-			const rect = portrait.element.getBoundingClientRect();
+			const applied = member.y.get();
+			const rect = member.element.getBoundingClientRect();
 			const naturalCenter = rect.top - applied + rect.height / 2;
-			portrait.y.set((naturalCenter / height - 0.5) * portrait.parallax);
+			member.y.set((naturalCenter / height - 0.5) * member.parallax);
 		});
 	}, []);
 
@@ -172,28 +169,26 @@ const Team = () => {
 						const name = displayName(person);
 						const portrait = portraitFor(person.image);
 						return (
-							<li key={person.objectId} className={styles.item}>
+							<Member
+								key={person.objectId}
+								rotate={
+									valueForIndex(imgStyling, index, {
+										rotate: 0
+									}).rotate
+								}
+								parallax={valueForIndex(imgParallax, index, 0)}
+								register={register}
+							>
 								<Link
 									to="/team"
 									hash={person.slug || undefined}
 									className={styles.person}
 								>
 									{portrait ? (
-										<Portrait
+										<img
+											className={styles.portrait}
 											src={portrait}
-											rotate={
-												valueForIndex(
-													imgStyling,
-													index,
-													{ rotate: 0 }
-												).rotate
-											}
-											parallax={valueForIndex(
-												imgParallax,
-												index,
-												0
-											)}
-											register={register}
+											alt=""
 										/>
 									) : (
 										<span
@@ -205,7 +200,7 @@ const Team = () => {
 									)}
 									<span className={styles.name}>{name}</span>
 								</Link>
-							</li>
+							</Member>
 						);
 					})}
 				</ul>

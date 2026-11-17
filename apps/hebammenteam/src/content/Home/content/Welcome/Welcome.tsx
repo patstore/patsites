@@ -1,7 +1,7 @@
 const Welcome = () => {
 	return (
-		<section aria-label="Bereiche">
-			<div className="content padding-md">
+		<section aria-label="Wilkommen">
+			<div className="content padding-md bg-surface border-radius-full">
 				<h2>Schön dass ihr da seid!</h2>
 				<p className="center">
 					Wir sind Coming Home – ein Hebammenteam aus Freiburg, das

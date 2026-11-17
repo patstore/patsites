@@ -1,0 +1,106 @@
+.marquee {
+	position: relative;
+	background-color: var(--color-surface);
+	color: var(--color-accent);
+	border-top: 1.2px solid var(--color-accent);
+	border-bottom: 1.2px solid var(--color-accent);
+	overflow: hidden;
+}
+
+.viewport {
+	overflow: hidden;
+	width: 100%;
+	padding-block: 0.7rem;
+}
+
+.track {
+	display: flex;
+	width: max-content;
+	animation: scroll calc(var(--marquee-span) * 3.4s) linear infinite;
+}
+
+.group {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	gap: 1.35rem;
+	padding-right: 1.35rem;
+	flex: none;
+}
+
+.label {
+	font-family: var(--font-heading);
+	font-size: calc(18px + 0.35vw);
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	line-height: 1;
+	white-space: nowrap;
+	color: var(--color-accent);
+}
+
+.flower {
+	width: 1.7rem;
+	height: auto;
+	flex: none;
+	pointer-events: none;
+}
+
+.item:nth-child(6n + 1) .flower {
+	transform: rotate(0deg);
+}
+
+.item:nth-child(6n + 2) .flower {
+	transform: rotate(-50deg);
+}
+
+.item:nth-child(6n + 3) .flower {
+	transform: rotate(20deg);
+}
+
+.item:nth-child(6n + 4) .flower {
+	transform: rotate(-30deg);
+}
+
+.item:nth-child(6n + 5) .flower {
+	transform: rotate(40deg);
+}
+
+.item:nth-child(6n + 6) .flower {
+	transform: rotate(-10deg);
+}
+
+.srOnly {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+	list-style: none;
+}
+
+@keyframes scroll {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.track {
+		animation: none;
+	}
+}
