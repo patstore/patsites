@@ -29,6 +29,7 @@ export {
 	resolveLocalizedPath,
 	useContent,
 	useLocalization,
+	useOptionalLocalization,
 	type ContentProviderProps,
 	type LocalizationConfig,
 	type LocalizationProviderProps
@@ -55,6 +56,7 @@ export {
 } from "./transitions/index.ts";
 export {
 	getPageContent,
+	localizeRecord,
 	pageEntries,
 	toLocale,
 	type CmsPathValue

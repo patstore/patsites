@@ -1,0 +1,128 @@
+{
+  "pages": {
+    "/about": {
+      "About": {
+        "type": "section",
+        "label": "About",
+        "content": {
+          "eyebrow": {
+            "type": "text",
+            "label": "Eyebrow",
+            "default": "The people behind this site"
+          },
+          "title": {
+            "type": "text",
+            "label": "Title",
+            "default": "About Us"
+          },
+          "content": {
+            "type": "richtext",
+            "label": "Content",
+            "default": "We are Flawia and Theresa, two female photographers who have been working at Nordic Combined competitions for many years. Following the IOC&apos;s devastating decision against accepting female NC athletes for the 2026 Olympics, we are now more determined than ever to get them there! Our goal is to give them a platform and to promote them with a professional online presence to attract sponsors and broaden their opportunities. We created this website where we are mainly sharing pictures and short news from the competitions. We aim to convey how undenialably strong, hard working and determined the women competing in NC are. If you are interested in supporting our project please don&apos;t hesitate to contact us. nocogirls@nocogirls.comor just visit our instagram page @nocogirls."
+          }
+        }
+      }
+    },
+    "/athletes/$slug": {
+      "Athlete": {
+        "type": "section",
+        "label": "Athlete",
+        "content": {
+          "eyebrow": {
+            "type": "text",
+            "label": "Eyebrow",
+            "default": "Athlete Profile"
+          }
+        }
+      }
+    },
+    "/athletes": {
+      "Athletes": {
+        "type": "section",
+        "label": "Athletes",
+        "content": {
+          "eyebrow": {
+            "type": "text",
+            "label": "Eyebrow",
+            "default": "Get information about our"
+          },
+          "label": {
+            "type": "text",
+            "label": "Label",
+            "default": "Search for athletes"
+          }
+        }
+      }
+    },
+    "/": {
+      "home-athletes": {
+        "type": "section",
+        "label": "Home Athletes",
+        "content": {
+          "eyebrow": {
+            "type": "text",
+            "label": "Eyebrow",
+            "default": "Unsere"
+          },
+          "title": {
+            "type": "text",
+            "label": "Title",
+            "default": "Athleten"
+          },
+          "button": {
+            "type": "text",
+            "label": "Button",
+            "default": "Alle Athleten"
+          },
+          "no-athletes-found": {
+            "type": "text",
+            "label": "No Athletes Found",
+            "default": "No athletes found"
+          }
+        }
+      },
+      "home-gallery": {
+        "type": "section",
+        "label": "Home Gallery",
+        "content": {
+          "eyebrow": {
+            "type": "text",
+            "label": "Eyebrow",
+            "default": "Besuche unsere"
+          },
+          "title": {
+            "type": "text",
+            "label": "Title",
+            "default": "Galerie"
+          },
+          "button": {
+            "type": "text",
+            "label": "Button",
+            "default": "Zur Galerie"
+          }
+        }
+      },
+      "home-news": {
+        "type": "section",
+        "label": "Home News",
+        "content": {
+          "eyebrow": {
+            "type": "text",
+            "label": "Eyebrow",
+            "default": "Lies hier die aktuelle"
+          },
+          "title": {
+            "type": "text",
+            "label": "Title",
+            "default": "NEWS"
+          },
+          "no-news-found": {
+            "type": "text",
+            "label": "No News Found",
+            "default": "Keine Nachrichten gefunden"
+          }
+        }
+      }
+    }
+  }
+}

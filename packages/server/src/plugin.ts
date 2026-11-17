@@ -146,7 +146,8 @@ export function serverDataPlugin(
 						projectId: env.projectId,
 						moduleCount: fetched.modules.length,
 						states,
-						recordScope: options.recordScope ?? "project"
+						recordScope: options.recordScope ?? "project",
+						translations: fetched.translations
 					},
 					_modules: fetched.modules,
 					downloadedFiles: fetched.downloadedFiles,

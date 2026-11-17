@@ -1,10 +1,11 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-13T14:56:17.716Z",
+    "generatedAt": "2026-11-17T18:30:44.939Z",
     "projectId": "lt4HonzqK3",
     "moduleCount": 13,
     "states": null,
-    "recordScope": "module"
+    "recordScope": "module",
+    "translations": false
   },
   "_modules": [
     {
@@ -23286,7 +23287,7 @@
       "text": "<p></p>",
       "image": "TG1DQV8k7J",
       "date": null,
-      "state": "published",
+      "state": "draft",
       "times": [
         {
           "id": "322cdfa4-dac6-4c09-b1fa-7a44dac08ebc",
@@ -25749,7 +25750,7 @@
         },
         {
           "id": "2fef70f7-be12-4bf7-b6ee-475f35d465a5",
-          "start": "18:00",
+          "start": "18:15",
           "end": "20:00",
           "weekday": "thursday",
           "place": {

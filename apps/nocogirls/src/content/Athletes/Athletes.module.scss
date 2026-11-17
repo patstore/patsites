@@ -1,0 +1,68 @@
+.athletes {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	@media (max-width: 768px) {
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: stretch;
+	}
+	.display_section {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+	.athletes_header {
+		flex: 1;
+		top: 60px;
+		position: sticky;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		background-color: var(--bg);
+		gap: var(--space-md);
+		@media (max-width: 768px) {
+			flex-direction: row;
+			position: relative;
+			top: 0;
+			z-index: 1;
+			align-items: flex-end;
+			flex-wrap: wrap;
+		}
+	}
+	.athletes_list {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+	.athlete_item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-md);
+		width: 100%;
+		// margin: var(--space-md) 0;
+		padding: var(--space-md);
+		// background-color: var(--light);
+		border-top: 1px solid var(--light);
+		border-bottom: 1px solid var(--light);
+		cursor: pointer;
+		&:hover {
+			background-color: var(--lightgrey);
+		}
+
+		.title {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-start;
+			gap: var(--space-sm);
+		}
+	}
+}

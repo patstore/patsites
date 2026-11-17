@@ -22,7 +22,7 @@
   "scripts": {
     "check-types": "tsc --noEmit",
     "lint": "eslint .",
-    "test": "node --experimental-strip-types --test src/localization/path.test.ts src/transitions/match.test.ts src/content/scan-content.test.ts src/content/routes.test.ts"
+    "test": "node --experimental-strip-types --test src/localization/path.test.ts src/transitions/match.test.ts src/content/scan-content.test.ts src/content/routes.test.ts src/content/record-translations.test.ts"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

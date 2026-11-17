@@ -3,6 +3,7 @@ import {
 	fetchClassRecords,
 	fetchModules
 } from "./fetch.ts";
+import { projectUsesTranslations } from "./locales.ts";
 import { findModule, readPatStoreEnv, readProcessEnv } from "./modules.ts";
 import { getStaticSnapshot, readSnapshotModules } from "./snapshot.ts";
 import { filterByStates } from "./state.ts";
@@ -48,7 +49,8 @@ export async function loadLiveRecords<
 		module,
 		env.projectId,
 		context.states,
-		scope
+		scope,
+		await projectUsesTranslations(env)
 	);
 	return filterByStates(records, context.states) as T[];
 }

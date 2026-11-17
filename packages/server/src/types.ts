@@ -44,6 +44,11 @@ export interface ContentMeta {
 	 * `module` keeps records attached to each module. Some projects only set the module.
 	 */
 	recordScope?: "project" | "module";
+	/**
+	 * True when this snapshot was generated for a project with localization
+	 * settings. Otherwise class rows keep their regular fields only.
+	 */
+	translations?: boolean;
 }
 
 export interface ContentSnapshot {

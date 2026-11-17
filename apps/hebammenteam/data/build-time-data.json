@@ -1,10 +1,11 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-17T08:18:16.291Z",
+    "generatedAt": "2026-11-17T18:30:40.004Z",
     "projectId": "RlOdP8FOCV",
     "moduleCount": 6,
     "states": null,
-    "recordScope": "module"
+    "recordScope": "module",
+    "translations": false
   },
   "_modules": [
     {

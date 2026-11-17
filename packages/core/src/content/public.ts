@@ -11,6 +11,7 @@ export {
 	pageContentKeys,
 	toLocale
 } from "./locale.ts";
+export { localizeRecord, translationLocale } from "./record-translations.ts";
 export type {
 	CmsContentFile,
 	CmsContentMap,

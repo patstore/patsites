@@ -1,0 +1,9 @@
+TypeError: Unknown file extension ".tsx" for C:\Users\phanke\GitHub\patsites\packages\core\src\animations\AnimateInView.tsx
+    at Object.getFileProtocolModuleFormat [as file:] (node:internal/modules/esm/get_format:219:9)
+    at defaultGetFormat (node:internal/modules/esm/get_format:245:36)
+    at defaultLoadSync (node:internal/modules/esm/load:162:16)
+    at ModuleLoader.load (node:internal/modules/esm/loader:831:12)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:609:31)
+    at #createModuleJob (node:internal/modules/esm/loader:640:36)
+    at #getJobFromResolveResult (node:internal/modules/esm/loader:353:34)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:321:41)

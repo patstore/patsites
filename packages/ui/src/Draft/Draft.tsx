@@ -6,6 +6,14 @@ import {
 } from "react";
 import "./draft.css";
 
+/** Local `vite dev` with `VITE_DRAFT_MODE=true` previews drafts without a CMS session. */
+function developmentDraftMode(): boolean {
+	return (
+		import.meta.env.DEV === true &&
+		import.meta.env.VITE_DRAFT_MODE === "true"
+	);
+}
+
 type MarkedElement = ReactElement<{ className?: string }>;
 
 function withClass(children: MarkedElement, draft: boolean, className: string) {
@@ -61,7 +69,8 @@ export function DraftGate({
 	locked?: boolean;
 	children: ReactNode;
 }) {
-	if (locked) {
+	const devDraft = developmentDraftMode();
+	if (locked && !devDraft) {
 		return (
 			<p className="draft-locked">
 				Diese Vorschau ist nur mit einer gültigen Sitzung aus dem CMS
@@ -72,7 +81,7 @@ export function DraftGate({
 	return (
 		<>
 			{children}
-			{preview ? <DraftBanner /> : null}
+			{preview || devDraft ? <DraftBanner /> : null}
 		</>
 	);
 }

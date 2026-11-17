@@ -1,0 +1,212 @@
+{
+  "_meta": {
+    "generatedAt": "2026-11-17T18:30:38.147Z",
+    "projectId": "H7eK6Fv3cn",
+    "source": "cms",
+    "languages": [
+      "de-DE",
+      "en-EN"
+    ]
+  },
+  "pages": {
+    "/about": [
+      {
+        "path": "home-news.eyebrow",
+        "value": "Lies hier die aktuellen"
+      },
+      {
+        "path": "home-news.title",
+        "value": "NEWS"
+      },
+      {
+        "path": "home-news.no-news-found",
+        "value": "Keine Nachrichten gefunden"
+      },
+      {
+        "path": "home-gallery.eyebrow",
+        "value": "Besuche unsere"
+      },
+      {
+        "path": "home-gallery.title",
+        "value": "Galerie"
+      },
+      {
+        "path": "home-gallery.button",
+        "value": "Zur Galerie"
+      },
+      {
+        "path": "home-athletes.eyebrow",
+        "value": "Unsere"
+      },
+      {
+        "path": "home-athletes.title",
+        "value": "Athleten"
+      },
+      {
+        "path": "home-athletes.button",
+        "value": "Alle Athleten"
+      },
+      {
+        "path": "home-athletes.no-athletes-found",
+        "value": "No athletes found"
+      },
+      {
+        "path": "Athletes.eyebrow",
+        "value": "Get information about our"
+      },
+      {
+        "path": "Athletes.label",
+        "value": "Search for athletes"
+      },
+      {
+        "path": "About.eyebrow",
+        "value": "The people behind this sitte"
+      },
+      {
+        "path": "About.title",
+        "value": "About Us"
+      },
+      {
+        "path": "About.content",
+        "value": "We are Flawia and Theresa, two female photographers who have been working at Nordic Combined competitions for many years. Following the IOC`&apos`s devastating decision against accepting female NC athletes for the 2026 Olympics, we are now more determined than ever to get them there! Our goal is to give them a platform and to promote them with a professional online presence to attract sponsors and broaden their opportunities. We created this website where we are mainly sharing pictures and short news from the competitions. We aim to convey how undenialably strong, hard working and determined the women competing in NC are. If you are interested in supporting our project please don`&apos`t hesitate to contact us.nocogirls@nocogirls.comor just visit our instagram page @nocogirls."
+      },
+      {
+        "path": "Athlete.eyebrow",
+        "value": "Athlete Profile"
+      }
+    ],
+    "/athletes/$slug": [],
+    "/athletes": [
+      {
+        "path": "home-news.eyebrow",
+        "value": "Lies hier die aktuellen"
+      },
+      {
+        "path": "home-news.title",
+        "value": "NEWS"
+      },
+      {
+        "path": "home-news.no-news-found",
+        "value": "Keine Nachrichten gefunden"
+      },
+      {
+        "path": "home-gallery.eyebrow",
+        "value": "Besuche unsere"
+      },
+      {
+        "path": "home-gallery.title",
+        "value": "Galerie"
+      },
+      {
+        "path": "home-gallery.button",
+        "value": "Zur Galerie"
+      },
+      {
+        "path": "home-athletes.eyebrow",
+        "value": "Unsere"
+      },
+      {
+        "path": "home-athletes.title",
+        "value": "Athleten"
+      },
+      {
+        "path": "home-athletes.button",
+        "value": "Alle Athleten"
+      },
+      {
+        "path": "home-athletes.no-athletes-found",
+        "value": "No athletes found"
+      },
+      {
+        "path": "Athletes.eyebrow",
+        "value": "Get information about our"
+      },
+      {
+        "path": "Athletes.label",
+        "value": "Search for athletes"
+      },
+      {
+        "path": "Athlete.eyebrow",
+        "value": "Athlete Profile"
+      },
+      {
+        "path": "About.eyebrow",
+        "value": "The people behind this site"
+      },
+      {
+        "path": "About.title",
+        "value": "About Us"
+      },
+      {
+        "path": "About.content",
+        "value": "We are Flawia and Theresa, two female photographers who have been working at Nordic Combined competitions for many years. Following the IOC`&apos`s devastating decision against accepting female NC athletes for the 2026 Olympics, we are now more determined than ever to get them there! Our goal is to give them a platform and to promote them with a professional online presence to attract sponsors and broaden their opportunities. We created this website where we are mainly sharing pictures and short news from the competitions. We aim to convey how undenialably strong, hard working and determined the women competing in NC are. If you are interested in supporting our project please don`&apos`t hesitate to contact us.nocogirls@nocogirls.comor just visit our instagram page @nocogirls."
+      }
+    ],
+    "/": [
+      {
+        "path": "Athletes.eyebrow",
+        "value": "Get information about our"
+      },
+      {
+        "path": "Athletes.label",
+        "value": "Search for athletes"
+      },
+      {
+        "path": "About.eyebrow",
+        "value": "The people behind this sitte"
+      },
+      {
+        "path": "About.title",
+        "value": "About Us"
+      },
+      {
+        "path": "About.content",
+        "value": "We are Flawia and Theresa, two female photographers who have been working at Nordic Combined competitions for many years. Following the IOC`&apos`s devastating decision against accepting female NC athletes for the 2026 Olympics, we are now more determined than ever to get them there! Our goal is to give them a platform and to promote them with a professional online presence to attract sponsors and broaden their opportunities. We created this website where we are mainly sharing pictures and short news from the competitions. We aim to convey how undenialably strong, hard working and determined the women competing in NC are. If you are interested in supporting our project please don`&apos`t hesitate to contact us.nocogirls@nocogirls.comor just visit our instagram page @nocogirls."
+      },
+      {
+        "path": "Athlete.eyebrow",
+        "value": "Athlete Profile"
+      },
+      {
+        "path": "home-athletes.eyebrow",
+        "value": "Find images for the"
+      },
+      {
+        "path": "home-athletes.title",
+        "value": "Athletes"
+      },
+      {
+        "path": "home-athletes.button",
+        "value": "All Athletes"
+      },
+      {
+        "path": "home-athletes.no-athletes-found",
+        "value": "No athletes found"
+      },
+      {
+        "path": "home-gallery.eyebrow",
+        "value": "Visit our"
+      },
+      {
+        "path": "home-gallery.title",
+        "value": "Gallery"
+      },
+      {
+        "path": "home-gallery.button",
+        "value": "To the Gallery"
+      },
+      {
+        "path": "home-news.eyebrow",
+        "value": "Read the recent"
+      },
+      {
+        "path": "home-news.title",
+        "value": "NEWS"
+      },
+      {
+        "path": "home-news.no-news-found",
+        "value": "Keine Nachrichten gefunden"
+      }
+    ]
+  }
+}

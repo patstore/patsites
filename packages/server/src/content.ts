@@ -1,4 +1,5 @@
 import { shouldStoreClass } from "./collection-keys.ts";
+import { omitTranslations } from "./locales.ts";
 import { readSnapshotRecords, getStaticSnapshot } from "./snapshot.ts";
 import { createDataContext, filterByStates } from "./state.ts";
 import type { DataContext } from "./types.ts";
@@ -12,8 +13,14 @@ export function loadStaticRecords<
 	if (!snapshot) {
 		return [];
 	}
-	const records = readSnapshotRecords(snapshot, className);
-	return filterByStates(records, context.states) as T[];
+	const records = filterByStates(
+		readSnapshotRecords(snapshot, className),
+		context.states
+	);
+	if (snapshot._meta?.translations === true) {
+		return records as T[];
+	}
+	return records.map((record) => omitTranslations(record)) as T[];
 }
 
 /**

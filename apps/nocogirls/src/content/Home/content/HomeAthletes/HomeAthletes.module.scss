@@ -1,0 +1,97 @@
+.home_athletes {
+	overflow: visible;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	@media (max-width: 768px) {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.athletes_title {
+		flex: 1;
+		position: sticky;
+		top: 72px;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+		gap: var(--space-md);
+		background-color: var(--bg);
+		padding-bottom: var(--space-md);
+		@media (max-width: 768px) {
+			position: relative;
+			flex-direction: row;
+			top: 0;
+			z-index: 1;
+			align-items: flex-end;
+		}
+	}
+	.athletes_lane_wrap {
+		position: relative;
+		width: 100%;
+		overflow: visible;
+	}
+	.athletes_list {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--space-md);
+		width: max-content;
+		max-width: 100%;
+	}
+	.athlete_card {
+		flex-shrink: 0;
+		width: 100%;
+		max-width: 480px;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: center;
+		gap: var(--space-md);
+
+		.athlete_card_image {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			overflow: hidden;
+			position: relative;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		.athlete_card_content {
+			position: absolute;
+			left: 6px;
+			bottom: 6px;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-end;
+			justify-content: space-between;
+			gap: var(--space-xs);
+		}
+		.athlete_card_title {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: var(--space-xs);
+			.athlete_card_title_phrase {
+				display: inline-block;
+				white-space: nowrap;
+				overflow: hidden;
+				animation: marquee 10s linear infinite;
+				margin: 0 3px;
+				background-color: var(--bg-elevated);
+				padding: 4px 8px;
+				border: 1px solid var(--dark);
+			}
+		}
+	}
+	.athlete_card_button {
+		position: relative;
+	}
+}

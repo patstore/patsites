@@ -18,15 +18,19 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "26.4.1",
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.5",
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
     "eslint": "10.9.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "typescript": "7.0.2"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
-    "@repo/server": "workspace:*",
-    "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "@repo/server": "workspace:*"
   }
 }

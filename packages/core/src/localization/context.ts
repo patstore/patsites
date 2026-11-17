@@ -10,8 +10,12 @@ export type LocalizationContextValue = LocalizationConfig & {
 export const LocalizationContext =
 	createContext<LocalizationContextValue | null>(null);
 
+export function useOptionalLocalization(): LocalizationContextValue | null {
+	return useContext(LocalizationContext);
+}
+
 export function useLocalization(): LocalizationContextValue {
-	const value = useContext(LocalizationContext);
+	const value = useOptionalLocalization();
 	if (!value) {
 		throw new Error(
 			"useLocalization must be used within LocalizationProvider"

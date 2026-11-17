@@ -1,0 +1,51 @@
+@use 'variables';
+
+.round_button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid var(--border);
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out;
+	background-color: var(--white);
+	color: var(--text);
+	&:disabled {
+		background-color: var(--light);
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--space-md) var(--space-lg);
+	background-color: var(--white);
+	color: var(--text);
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: var(--font-size-sm);
+	transition: background-color 0.2 s ease-in-out;
+	border: 1px solid var(--border);
+	gap: var(--space-xs);
+	text-decoration: none;
+	> * {
+		text-decoration: none;
+	}
+	&.active {
+		background-color: var(--primary);
+		color: var(--white);
+	}
+	&.small {
+		padding: var(--space-xs) var(--space-md);
+	}
+	&.dark {
+		background-color: var(--dark);
+		color: var(--white);
+	}
+}

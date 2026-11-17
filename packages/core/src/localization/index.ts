@@ -28,7 +28,7 @@ export {
 	LocalizationProvider,
 	type LocalizationProviderProps
 } from "./LocalizationProvider.tsx";
-export { useLocalization } from "./context.ts";
+export { useLocalization, useOptionalLocalization } from "./context.ts";
 export {
 	canonicalPagePath,
 	isRoutablePath,

@@ -1,7 +1,12 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { getStorageKey, shouldStoreClass } from "./collection-keys.ts";
-import { classTypeName, describeModule, schemaExportName } from "./fields.ts";
+import {
+	classTypeName,
+	describeModule,
+	propertyKey,
+	schemaExportName
+} from "./fields.ts";
 import type { ContentSnapshot, PatStoreModule } from "./types.ts";
 
 /** Older article HTML still points at the retired Netlify host. */
@@ -137,7 +142,7 @@ function renderInterface(module: PatStoreModule): string {
 	];
 	for (const field of describeModule(module)) {
 		const optional = field.required ? "" : "?";
-		lines.push(`  ${field.id}${optional}: ${field.tsType};`);
+		lines.push(`  ${propertyKey(field.id)}${optional}: ${field.tsType};`);
 	}
 	return `export interface ${classTypeName(module.connected_class)} {\n${lines.join("\n")}\n}`;
 }
@@ -152,7 +157,7 @@ function renderSchema(modules: PatStoreModule[]): string {
 				"  createdAt: z.string().optional(),",
 				"  updatedAt: z.string().optional(),",
 				...describeModule(module).map(
-					(field) => `  ${field.id}: ${field.zodExpr},`
+					(field) => `  ${propertyKey(field.id)}: ${field.zodExpr},`
 				)
 			];
 			return `export const ${schemaExportName(module.connected_class)} = z.looseObject({\n${fields.join("\n")}\n});`;

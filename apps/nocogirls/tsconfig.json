@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"target": "ES2022",
+		"lib": ["DOM", "DOM.Iterable", "ES2022"],
+		"jsx": "react-jsx",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true,
+		"allowImportingTsExtensions": true,
+		"noEmit": true,
+		"types": ["vite/client", "node"],
+		"baseUrl": ".",
+		"paths": {
+			"@animations": ["./src/animations/index.ts"],
+			"@cms-content": ["./data/cms-content-data.ts"],
+			"@components": ["./src/components/index.ts"],
+			"@content/*": ["./src/content/*"],
+			"@context": ["./src/context/index.ts"],
+			"@data": ["./data/index.ts"],
+			"@provider": ["./src/provider/index.ts"],
+			"@server/*": ["./src/server/*"],
+			"@styles": ["./src/styles/main.scss"],
+			"@types": ["./src/types/index.ts"],
+			"@ui": ["./src/ui/index.ts"]
+		}
+	},
+	"include": ["./src/**/*", "./data/**/*", "./vite.config.ts"],
+	"exclude": ["node_modules", "dist", ".cache", ".output"]
+}

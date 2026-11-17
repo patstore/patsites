@@ -106,6 +106,25 @@ test("graphql selection skips inactive fields", () => {
 	assert.doesNotMatch(selection, /\binternal\b/);
 });
 
+test("graphql selection skips field ids that are not GraphQL names", () => {
+	const selection = buildSelection({
+		...article,
+		fields: [
+			...article.fields,
+			{
+				id: "8d3c7ff0-5148-42c8-8557-36531efaf8f3",
+				label: "UUID",
+				required: false,
+				type: "edit_string",
+				active: true,
+				position: 4
+			}
+		]
+	});
+	assert.doesNotMatch(selection, /8d3c7ff0/);
+	assert.match(selection, /\btitle\b/);
+});
+
 test("image records keep a local thumbnail path out of the graphql selection", () => {
 	const image: PatStoreModule = {
 		objectId: "image-module",

@@ -32,6 +32,7 @@ export {
 	loadContent,
 	loadStaticRecords
 } from "./content.ts";
+export { omitTranslations } from "./locales.ts";
 export {
 	activeFields,
 	findModule,

@@ -7,9 +7,11 @@ import {
 import {
 	buildSelection,
 	isDownloadableFileField,
-	selectionWithoutMissingField
+	selectionWithoutMissingField,
+	stripSelectionField
 } from "./fields.ts";
 import { FileDownloader } from "./files.ts";
+import { omitTranslations, projectUsesTranslations } from "./locales.ts";
 import {
 	moduleHasStateField,
 	normalizeModule,
@@ -22,6 +24,8 @@ export interface StaticRecords {
 	modules: PatStoreModule[];
 	collections: Record<string, Record<string, unknown>[]>;
 	downloadedFiles: DownloadedFile[];
+	/** True only when the project has localization settings with several languages. */
+	translations: boolean;
 }
 
 function authHeaders(env: PatStoreEnv): Record<string, string> {
@@ -90,18 +94,40 @@ export async function fetchModules(
 	);
 }
 
+/** Adds the locale map when the class selection does not already request it. */
+export function appendTranslationsSelection(selection: string): string {
+	if (/(^|\s)translations(\s|$)/.test(selection)) {
+		return selection;
+	}
+	return `${selection}\ntranslations`.trim();
+}
+
+/** Projects without localization settings never select `translations`. */
+export function selectionForTranslations(
+	selection: string,
+	enabled: boolean
+): string {
+	return enabled
+		? appendTranslationsSelection(selection)
+		: stripSelectionField(selection, "translations");
+}
+
 export async function fetchClassRecords(
 	client: GraphQLClient,
 	module: PatStoreModule,
 	projectId: string,
 	states: readonly string[] | null,
-	scope: RecordScope = "project"
+	scope: RecordScope = "project",
+	translations = false
 ): Promise<Record<string, unknown>[]> {
 	const className = module.connected_class;
 	if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(className)) {
 		throw new Error(`Unsupported class name: ${className}`);
 	}
-	let selection = buildSelection(module);
+	let selection = selectionForTranslations(
+		buildSelection(module),
+		translations
+	);
 	const where = recordsWhere(
 		scope,
 		{ projectId, moduleId: module.objectId },
@@ -119,9 +145,14 @@ export async function fetchClassRecords(
       }
     `;
 		try {
-			return await paginate(client, query, collectionKey, where, (node) =>
-				normalizeRecord(node)
+			const rows = await paginate(
+				client,
+				query,
+				collectionKey,
+				where,
+				(node) => normalizeRecord(node)
 			);
+			return translations ? rows : rows.map(omitTranslations);
 		} catch (error) {
 			const next = selectionWithoutMissingField(selection, error);
 			if (!next) {
@@ -202,6 +233,7 @@ export async function fetchStaticRecords(
 ): Promise<StaticRecords> {
 	const client = createGraphQLClient(env);
 	const scope = options.recordScope ?? "project";
+	const translations = await projectUsesTranslations(env);
 	const modules = applySupplementalFields(
 		await fetchModules(client, env.projectId),
 		options.supplementFields
@@ -225,7 +257,8 @@ export async function fetchStaticRecords(
 			module,
 			env.projectId,
 			states,
-			scope
+			scope,
+			translations
 		);
 		if (downloader) {
 			const fileFields = module.fields
@@ -260,7 +293,8 @@ export async function fetchStaticRecords(
 			module,
 			env.projectId,
 			states,
-			scope
+			scope,
+			translations
 		);
 		if (downloader) {
 			const fileFields = module.fields
@@ -279,7 +313,8 @@ export async function fetchStaticRecords(
 	return {
 		modules,
 		collections,
-		downloadedFiles: downloader?.list() ?? []
+		downloadedFiles: downloader?.list() ?? [],
+		translations
 	};
 }
 

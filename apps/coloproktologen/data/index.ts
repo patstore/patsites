@@ -10,18 +10,18 @@ export { applicationSchemas } from "./schema";
 export type { Application } from "./schema";
 export { default as buildTimeData } from "./build-time-data.json";
 export type {
-	BuildTimeData,
-	DownloadedFile,
-	FileRecord,
-	FileClass,
-	EmailClass,
-	LocationClass,
-	EventClass,
-	PersonClass,
-	CategoryClass,
-	EntryClass,
-	DownloadClass,
-	WebpageClass,
-	ImageClass,
-	UserClass
+  BuildTimeData,
+  DownloadedFile,
+  FileRecord,
+  FileClass,
+  EmailClass,
+  LocationClass,
+  EventClass,
+  PersonClass,
+  CategoryClass,
+  EntryClass,
+  DownloadClass,
+  WebpageClass,
+  ImageClass,
+  UserClass,
 } from "./types";

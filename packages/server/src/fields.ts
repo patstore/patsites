@@ -77,8 +77,13 @@ export function moduleHasDownloadableFile(module: PatStoreModule): boolean {
 	return activeFields(module).some((field) => isDownloadableFileField(field));
 }
 
-function prop(name: string): string {
+/** Quotes keys that are not valid TypeScript identifiers, such as UUID field ids. */
+export function propertyKey(name: string): string {
 	return /^[A-Za-z_$][\w$]*$/.test(name) ? name : JSON.stringify(name);
+}
+
+function isGraphQLName(name: string): boolean {
+	return /^[_A-Za-z][_0-9A-Za-z]*$/.test(name);
 }
 
 function elementSelection(id: string): string {
@@ -86,6 +91,9 @@ function elementSelection(id: string): string {
 }
 
 function selectionFor(field: ModuleField): string {
+	if (!isGraphQLName(field.id)) {
+		return "";
+	}
 	if (
 		field.id === "file" ||
 		field.id === "portrait" ||
@@ -282,8 +290,8 @@ export function describeModule(module: PatStoreModule): FieldDescription[] {
 			const id = field.name || field.id;
 			const described = dataFieldType(field);
 			shape[id] = described.zodType.optional();
-			tsLines.push(`${prop(id)}?: ${described.tsType};`);
-			zodLines.push(`${prop(id)}: ${described.zodExpr}.optional()`);
+			tsLines.push(`${propertyKey(id)}?: ${described.tsType};`);
+			zodLines.push(`${propertyKey(id)}: ${described.zodExpr}.optional()`);
 		}
 		push({
 			id: "data",

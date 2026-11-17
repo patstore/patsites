@@ -9,6 +9,9 @@ export const monorepoCompiler = {
 	build: {
 		sourcemap: true,
 		target: "es2022"
+	},
+	resolve: {
+		dedupe: ["react", "react-dom"]
 	}
 } satisfies UserConfig;
 

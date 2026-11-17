@@ -1,10 +1,11 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-16T10:48:28.443Z",
+    "generatedAt": "2026-11-17T18:30:47.025Z",
     "projectId": "EgRR0prozh",
     "moduleCount": 10,
     "states": null,
-    "recordScope": "project"
+    "recordScope": "project",
+    "translations": false
   },
   "_modules": [
     {
@@ -17614,38 +17615,7 @@
           "full_day": true
         }
       ],
-      "link": "https://www.edh.de/wp-content/uploads/2026/11/Institut-fuer-Koloproktologie_Repetitorium_2027_web.pdf",
-      "documents": null
-    },
-    {
-      "id": "RXZlbnQ6bElKMHBiZ1hjbg==",
-      "objectId": "lIJ0pbgXcn",
-      "categories": null,
-      "title": "Hannoveraner Repetitorium Proktologie",
-      "description": "edh – End- und Dickdarmzentrum Hannover",
-      "text": "<p><span style=\"color: rgb(0, 107, 179); font-size: 16px;\"><strong>Hannoveraner Repetitorium Proktologie</strong></span></p><p>Dieses Repetitorium vermittelt in kompakter Form das gesamte praxisrelevante Spektrum der Proktologie mit seinen interdisziplinären Facetten aus dem Konzept einer konservativ und operativ tätigen, spezialisierten Groß- praxis und bietet dem Einsteiger einen kompletten Überblick, dem schon praktisch Tätigen ein Update für den proktologischen Alltag.</p><p>Durch Beschränkung der Teilnehmerzahl soll eine kollegiale Diskussion ermöglicht und gefördert werden.</p><p><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.edh.de/wissenschaft/veranstaltungen/hannoveraner-repetitorium-proktologie/\">Weitere Infos auf der Veranstaltungsseite.</a></p>",
-      "image": null,
-      "gallery": null,
-      "dates": [
-        {
-          "id": "b8dfc0a3-d224-4b77-8dda-71caaea5349b",
-          "start": "2027-02-20T10:53",
-          "end": "",
-          "label": "",
-          "text": "",
-          "place": {
-            "type": "address",
-            "address": "Hannover",
-            "map": {
-              "latitude": 0,
-              "longitude": 0
-            },
-            "online": ""
-          },
-          "full_day": true
-        }
-      ],
-      "link": "https://www.edh.de/wp-content/uploads/2026/11/Institut-fuer-Koloproktologie_Repetitorium_2027_web.pdf",
+      "link": "https://www.edh.de/wissenschaft/veranstaltungen/hannoveraner-repetitorium-proktologie/ ",
       "documents": null
     },
     {
