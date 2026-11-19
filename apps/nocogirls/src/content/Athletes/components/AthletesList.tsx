@@ -12,7 +12,7 @@ function CategoryImage({ imageId, title }: { imageId: string; title: string }) {
 	if (!src) {
 		return null;
 	}
-	return <img src={src} alt={title} height={24} />;
+	return <img src={src} alt={title} height={18} />;
 }
 
 export function AthletesList({

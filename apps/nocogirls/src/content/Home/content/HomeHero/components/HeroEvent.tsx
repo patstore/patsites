@@ -8,8 +8,6 @@ export function HeroEvent({ event }: { event: EventRecord }) {
 	const title = event.title ?? "";
 	const src = event.image ? resolveImage(event.image) : undefined;
 
-	console.log(event);
-
 	return (
 		<div className={styles.hero_event}>
 			{src ? (
