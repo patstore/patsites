@@ -35,7 +35,8 @@ jobs:
             {"name":"hebammenteam","secret":"COOLIFY_WEBHOOK_HEBAMMENTEAM"},
             {"name":"koloproktologie","secret":"COOLIFY_WEBHOOK_KOLOPROKTOLOGIE"},
             {"name":"coloproktologen","secret":"COOLIFY_WEBHOOK_COLOPROKTOLOGEN"},
-            {"name":"tvstg","secret":"COOLIFY_WEBHOOK_TVSTG"}
+            {"name":"tvstg","secret":"COOLIFY_WEBHOOK_TVSTG"},
+            {"name":"nocogirls","secret":"COOLIFY_WEBHOOK_NOCOGIRLS"}
           ]'
 
           select_all=0
@@ -51,7 +52,7 @@ jobs:
             apps="$(node -e 'console.log(JSON.stringify(JSON.parse(process.argv[1])))' "$all")"
           else
             pnpm dlx turbo@2.11.10 query affected \
-              --packages hebammenteam koloproktologie coloproktologen tvstg \
+              --packages hebammenteam koloproktologie coloproktologen tvstg nocogirls \
               --base "$PUSH_BEFORE" \
               --head HEAD > affected.json
             apps="$(ALL_APPS="$all" node --input-type=module -e '
