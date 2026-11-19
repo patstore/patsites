@@ -1,6 +1,11 @@
 import { useCollection } from "@repo/provider";
 import { Footer } from "@components";
-import type { EntryRecord, EventRecord, ImageRecord, PersonRecord } from "@types";
+import type {
+	EntryRecord,
+	EventRecord,
+	ImageRecord,
+	PersonRecord
+} from "@types";
 import { HomeAthletes, HomeGallery, HomeHero, HomeNews } from "./content";
 
 export function Home() {

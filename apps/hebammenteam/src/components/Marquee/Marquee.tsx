@@ -31,13 +31,19 @@ const Marquee = () => {
 					style={{ ["--marquee-span" as string]: loop.length }}
 				>
 					{[0, 1].map((copy) => (
-						<ul key={copy} className={styles.group} aria-hidden="true">
+						<ul
+							key={copy}
+							className={styles.group}
+							aria-hidden="true"
+						>
 							{loop.map((service, index) => (
 								<li
 									key={`${copy}-${service.objectId}-${index}`}
 									className={styles.item}
 								>
-									<span className={styles.label}>{service.title}</span>
+									<span className={styles.label}>
+										{service.title}
+									</span>
 									<img
 										className={styles.flower}
 										src={FLOWER}

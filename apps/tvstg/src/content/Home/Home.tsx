@@ -7,7 +7,6 @@ import HomeAppointments from "./components/HomeAppointments";
 import HomeStickySidebar from "./components/HomeStickySidebar";
 import { HOME_ARTICLE_COUNT, HOME_SIDEBAR_CATEGORY } from "./constants";
 import styles from "./Home.module.css";
-
 export { HOME_ARTICLE_COUNT, HOME_SIDEBAR_CATEGORY } from "./constants";
 
 const Home: React.FC = () => {

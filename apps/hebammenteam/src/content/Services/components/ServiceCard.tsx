@@ -25,6 +25,7 @@ const ServiceCard = ({
 	<article className={styles.card} id={id}>
 		<div className={styles.copy}>
 			<h2>{title}</h2>
+			<div className="divider"></div>
 			{description ? <p className={styles.text}>{description}</p> : null}
 		</div>
 		<div className={styles.cardFooter}>

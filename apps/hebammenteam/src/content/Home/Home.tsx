@@ -1,4 +1,4 @@
-import { Layout, Marquee } from "@components";
+import { ContactElement, Layout, Marquee } from "@components";
 import { Events, Header, Services, Team, Welcome } from "./content";
 
 const Home = () => (
@@ -9,6 +9,7 @@ const Home = () => (
 		<Team />
 		<Events />
 		<Services />
+		<ContactElement />
 	</Layout>
 );
 

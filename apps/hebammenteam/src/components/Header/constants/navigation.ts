@@ -1,7 +1,6 @@
 export const mainNav = [
-	{ label: "Start", to: "/" },
-	{ label: "Kurse", to: "/kurse" },
 	{ label: "Team", to: "/team" },
+	{ label: "Kurse", to: "/kurse" },
 	{ label: "Leistungen", to: "/leistungen" },
 	{ label: "Kontakt", to: "/kontakt" }
 ] as const;

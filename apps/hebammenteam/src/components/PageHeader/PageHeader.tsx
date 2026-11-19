@@ -25,7 +25,11 @@ const PageHeader = ({
 					height={36}
 				/>
 			</h1>
-			{lead ? <p className="lead">{lead}</p> : null}
+			{lead ? (
+				<p className="lead" style={{ textAlign: "center" }}>
+					{lead}
+				</p>
+			) : null}
 			{children}
 		</div>
 	</header>

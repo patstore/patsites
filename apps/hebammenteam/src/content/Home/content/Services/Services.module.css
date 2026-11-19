@@ -22,7 +22,7 @@
 	padding: 1.35rem 1.35rem 1.15rem;
 	scroll-snap-align: start;
 	border-radius: var(--border-radius);
-	background: var(--color-surface);
+	background: var(--color-surface-light);
 	box-shadow: var(--shadow);
 	aspect-ratio: 1 / 1;
 }

@@ -6,6 +6,7 @@
 	padding: 90px 0;
 	gap: 24px;
 	scroll-margin-top: calc(var(--header-height) + 1.75rem);
+	margin-top: 0 !important;
 }
 
 .content_wrapper {
@@ -40,7 +41,7 @@
 	align-items: flex-start;
 	justify-content: flex-start;
 	gap: 1.5rem;
-	background-color: var(--color-surface);
+	background-color: var(--color-surface-light);
 	padding: var(--padding-md);
 	border-radius: var(--border-radius);
 	box-shadow: var(--shadow);
@@ -133,7 +134,7 @@
 	justify-content: space-between;
 	gap: 0.5rem;
 	min-width: 480px;
-	background-color: var(--color-bg);
+	background-color: var(--color-surface-light);
 	padding: var(--padding-md);
 	border-radius: var(--border-radius);
 	box-shadow: var(--shadow);

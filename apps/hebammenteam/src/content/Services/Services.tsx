@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocation } from "@tanstack/react-router";
-import { CmsBody, Layout, PageHeader } from "@components";
+import { ContactElement, Layout, PageHeader } from "@components";
 import type { EntryClass, ImageClass, PersonClass } from "@data";
 import { useOptionalScroll } from "@repo/core";
 import { useCollection } from "@provider";
@@ -111,14 +111,10 @@ const Services = () => {
 	return (
 		<Layout>
 			<PageHeader
-				eyebrow="Angebot"
 				title="Leistungen"
-				lead="Was Sie von der Begleitung erwarten können."
+				lead="Unsere individuellen und persönlichen Leistungen umfassen alles rund um die Schwangerschaft und dem Wochenbett."
 			/>
 			<div className="page-body">
-				<div className={styles.cms}>
-					<CmsBody path="/leistungen" />
-				</div>
 				{services.length === 0 ? (
 					<p className={styles.empty}>
 						Leistungen erscheinen hier, sobald sie veröffentlicht
@@ -177,6 +173,7 @@ const Services = () => {
 				}))}
 				onClose={() => setOpenId(null)}
 			/>
+			<ContactElement />
 		</Layout>
 	);
 };

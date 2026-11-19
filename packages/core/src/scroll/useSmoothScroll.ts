@@ -1,4 +1,4 @@
-import { useEffect, useRef, type RefObject } from "react";
+import { useCallback, useEffect, useRef, type RefObject } from "react";
 import gsap from "gsap";
 import type {
 	ScrollOrientation,
@@ -181,9 +181,15 @@ export function useSmoothScroll({
 		};
 	}, [viewportRef, contentRef, orientation, options]);
 
-	return {
-		scrollTo: (target, scrollOptions) => {
+	const scrollTo = useCallback(
+		(
+			target: number | string | HTMLElement,
+			scrollOptions?: ScrollToOptions
+		) => {
 			scrollToRef.current(target, scrollOptions);
-		}
-	};
+		},
+		[]
+	);
+
+	return { scrollTo };
 }

@@ -1,0 +1,15 @@
+.contact_element {
+	background-color: var(--color-surface--light);
+	border-radius: 16px;
+	padding: 24px;
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+}
+
+.button_container {
+	grid-column: 2 / span 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

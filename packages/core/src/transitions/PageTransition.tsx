@@ -43,6 +43,7 @@ type PendingTransition = {
 	transition: RouteTransition;
 	ghost: HTMLElement | null;
 	outgoing: Map<string, DOMRect>;
+	outgoingNodes: Map<string, HTMLElement>;
 };
 
 const containerStyle: CSSProperties = {
@@ -108,10 +109,12 @@ export function PageTransition({
 
 		const shouldClone = transition.clonePrevious ?? clonePrevious;
 		const outgoing = new Map<string, DOMRect>();
+		const outgoingNodes = new Map<string, HTMLElement>();
 		for (const element of transition.elements ?? []) {
 			const node = elementByTransitionId(content, element.id);
 			if (node) {
 				outgoing.set(element.id, node.getBoundingClientRect());
+				outgoingNodes.set(element.id, node);
 			}
 		}
 
@@ -120,19 +123,44 @@ export function PageTransition({
 			ghost = content.cloneNode(true) as HTMLElement;
 			ghost.setAttribute("aria-hidden", "true");
 			ghost.inert = true;
-			Object.assign(ghost.style, {
-				position: "absolute",
-				inset: "0",
-				width: "100%",
-				margin: "0",
-				pointerEvents: "none",
-				zIndex: "1"
-			});
+			const box = content.getBoundingClientRect();
+			Object.assign(
+				ghost.style,
+				transition.pinPrevious
+					? {
+							position: "fixed",
+							top: `${box.top}px`,
+							left: `${box.left}px`,
+							width: `${box.width}px`,
+							height: `${box.height}px`,
+							margin: "0",
+							pointerEvents: "none",
+							zIndex: "1"
+						}
+					: {
+							position: "absolute",
+							inset: "0",
+							width: "100%",
+							margin: "0",
+							pointerEvents: "none",
+							zIndex: "1"
+						}
+			);
 			copyScrollOffsets(content, ghost);
-			parent.insertBefore(ghost, content);
+			if (transition.pinPrevious) {
+				document.body.appendChild(ghost);
+			} else {
+				parent.insertBefore(ghost, content);
+			}
 		}
 
-		pending.current = { to: pathname, transition, ghost, outgoing };
+		pending.current = {
+			to: pathname,
+			transition,
+			ghost,
+			outgoing,
+			outgoingNodes
+		};
 		setActivePath(pathname);
 	}, [
 		pathname,
@@ -169,13 +197,17 @@ export function PageTransition({
 			? { autoAlpha: 0, x: "100vw" }
 			: { autoAlpha: 0 };
 		const overlays: HTMLElement[] = [];
+		const hidden: HTMLElement[] = [];
+		let raf = 0;
 
 		const context = gsap.context(() => {
 			const timeline = gsap.timeline({
 				defaults: { duration: pageDuration, ease: pageEase },
 				onComplete: () => {
+					hidden.forEach((node) => {
+						gsap.set(node, { clearProps: "opacity,visibility" });
+					});
 					job.ghost?.remove();
-					overlays.forEach((node) => node.remove());
 					gsap.set(next, {
 						clearProps: "transform,opacity,visibility"
 					});
@@ -183,7 +215,11 @@ export function PageTransition({
 			});
 
 			if (job.ghost) {
-				timeline.to(job.ghost, { autoAlpha: 0, x: -300 }, 0);
+				timeline.to(
+					job.ghost,
+					job.transition.exit ?? { autoAlpha: 0, x: -300 },
+					0
+				);
 			}
 			if (job.transition.page || !hasSharedElements) {
 				timeline.fromTo(
@@ -198,69 +234,124 @@ export function PageTransition({
 				);
 			}
 
-			for (const element of job.transition.elements ?? []) {
-				const target = elementByTransitionId(next, element.id);
-				if (!target) {
-					continue;
+			const launched = new Set<string>();
+			const tryFly = (tries: number) => {
+				const root = currentRef.current;
+				if (!root) {
+					return;
 				}
-				if (job.ghost) {
-					const previous = elementByTransitionId(
-						job.ghost,
-						element.id
-					);
-					if (previous) {
-						previous.style.visibility = "hidden";
+				let waiting = false;
+				for (const element of job.transition.elements ?? []) {
+					if (launched.has(element.id)) {
+						continue;
 					}
-				}
-				if (element.from || element.to) {
-					timeline.fromTo(
-						target,
-						{ ...element.from, immediateRender: false },
-						{ ...element.to, immediateRender: false },
-						0
+					const previousNode = job.outgoingNodes.get(element.id);
+					const matches = [
+						...root.querySelectorAll<HTMLElement>(
+							`[data-transition-id="${CSS.escape(element.id)}"]`
+						)
+					].filter(
+						(node) =>
+							node !== previousNode &&
+							!node.closest('[aria-hidden="true"]')
 					);
-					continue;
-				}
-
-				const start = job.outgoing.get(element.id);
-				if (!start) {
-					continue;
-				}
-				const end = target.getBoundingClientRect();
-				const overlay = target.cloneNode(true) as HTMLElement;
-				Object.assign(overlay.style, {
-					position: "fixed",
-					left: `${start.left}px`,
-					top: `${start.top}px`,
-					width: `${start.width}px`,
-					height: `${start.height}px`,
-					margin: "0",
-					pointerEvents: "none",
-					zIndex: "50"
-				});
-				document.body.appendChild(overlay);
-				overlays.push(overlay);
-				gsap.set(target, { autoAlpha: 0 });
-				timeline.to(
-					overlay,
-					{
-						left: end.left,
-						top: end.top,
-						width: end.width,
-						height: end.height,
-						onComplete: () => {
-							gsap.set(target, {
-								autoAlpha: 1,
-								clearProps: "visibility"
-							});
+					if (element.from || element.to) {
+						const target = matches[0];
+						if (!target) {
+							waiting = true;
+							continue;
 						}
-					},
-					0
-				);
-			}
+						launched.add(element.id);
+						timeline.fromTo(
+							target,
+							{ ...element.from, immediateRender: false },
+							{ ...element.to, immediateRender: false },
+							0
+						);
+						continue;
+					}
+					const start = job.outgoing.get(element.id);
+					const target = matches[0];
+					if (!start || !target) {
+						waiting = Boolean(start);
+						continue;
+					}
+					const end = target.getBoundingClientRect();
+					const moved =
+						Math.abs(end.left - start.left) > 1 ||
+						Math.abs(end.top - start.top) > 1 ||
+						Math.abs(end.width - start.width) > 1 ||
+						Math.abs(end.height - start.height) > 1;
+					if (!moved) {
+						waiting = true;
+						continue;
+					}
+					launched.add(element.id);
+					if (job.ghost) {
+						const previous = elementByTransitionId(
+							job.ghost,
+							element.id
+						);
+						if (previous) {
+							previous.style.visibility = "hidden";
+						}
+					}
+					const overlay = target.cloneNode(true) as HTMLElement;
+					Object.assign(overlay.style, {
+						position: "fixed",
+						left: `${start.left}px`,
+						top: `${start.top}px`,
+						width: `${start.width}px`,
+						height: `${start.height}px`,
+						maxWidth: "none",
+						maxHeight: "none",
+						margin: "0",
+						objectFit: "cover",
+						pointerEvents: "none",
+						zIndex: "50"
+					});
+					document.body.appendChild(overlay);
+					overlays.push(overlay);
+					hidden.push(target);
+					gsap.set(target, { autoAlpha: 0 });
+					const flight = overlay.animate(
+						[
+							{
+								left: `${start.left}px`,
+								top: `${start.top}px`,
+								width: `${start.width}px`,
+								height: `${start.height}px`
+							},
+							{
+								left: `${end.left}px`,
+								top: `${end.top}px`,
+								width: `${end.width}px`,
+								height: `${end.height}px`
+							}
+						],
+						{
+							duration: pageDuration * 1000,
+							easing: "cubic-bezier(0.77, 0, 0.175, 1)",
+							fill: "forwards"
+						}
+					);
+					flight.onfinish = () => {
+						gsap.set(target, {
+							autoAlpha: 1,
+							clearProps: "opacity,visibility"
+						});
+						overlay.remove();
+					};
+				}
+				if (waiting && tries < 12) {
+					raf = window.requestAnimationFrame(() => tryFly(tries + 1));
+				}
+			};
+			tryFly(0);
 		});
 
 		return () => {
+			window.cancelAnimationFrame(raf);
 			context.revert();
 			job.ghost?.remove();
 			overlays.forEach((node) => node.remove());

@@ -18,6 +18,8 @@ import { Route as TeamRouteImport } from './routes/team'
 import { Route as ApiPreviewRouteImport } from './routes/api/preview'
 import { Route as KurseIndexRouteImport } from './routes/kurse/index'
 import { Route as KurseKurs_idRouteImport } from './routes/kurse/$kurs_id'
+import { Route as TeamIndexRouteImport } from './routes/team/index'
+import { Route as TeamSlugRouteImport } from './routes/team/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -64,6 +66,16 @@ const KurseKurs_idRoute = KurseKurs_idRouteImport.update({
   path: '/kurse/$kurs_id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TeamIndexRoute = TeamIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TeamRoute,
+} as any)
+const TeamSlugRoute = TeamSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => TeamRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -71,10 +83,12 @@ export interface FileRoutesByFullPath {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
-  '/team': typeof TeamRoute
+  '/team': typeof TeamRouteWithChildren
   '/api/preview': typeof ApiPreviewRoute
   '/kurse/$kurs_id': typeof KurseKurs_idRoute
+  '/team/$slug': typeof TeamSlugRoute
   '/kurse/': typeof KurseIndexRoute
+  '/team/': typeof TeamIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -82,10 +96,11 @@ export interface FileRoutesByTo {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
-  '/team': typeof TeamRoute
   '/api/preview': typeof ApiPreviewRoute
   '/kurse/$kurs_id': typeof KurseKurs_idRoute
+  '/team/$slug': typeof TeamSlugRoute
   '/kurse': typeof KurseIndexRoute
+  '/team': typeof TeamIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -94,10 +109,12 @@ export interface FileRoutesById {
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
-  '/team': typeof TeamRoute
+  '/team': typeof TeamRouteWithChildren
   '/api/preview': typeof ApiPreviewRoute
   '/kurse/$kurs_id': typeof KurseKurs_idRoute
+  '/team/$slug': typeof TeamSlugRoute
   '/kurse/': typeof KurseIndexRoute
+  '/team/': typeof TeamIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -110,7 +127,9 @@ export interface FileRouteTypes {
     | '/team'
     | '/api/preview'
     | '/kurse/$kurs_id'
+    | '/team/$slug'
     | '/kurse/'
+    | '/team/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -118,10 +137,11 @@ export interface FileRouteTypes {
     | '/impressum'
     | '/kontakt'
     | '/leistungen'
-    | '/team'
     | '/api/preview'
     | '/kurse/$kurs_id'
+    | '/team/$slug'
     | '/kurse'
+    | '/team'
   id:
     | '__root__'
     | '/'
@@ -132,7 +152,9 @@ export interface FileRouteTypes {
     | '/team'
     | '/api/preview'
     | '/kurse/$kurs_id'
+    | '/team/$slug'
     | '/kurse/'
+    | '/team/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -141,7 +163,7 @@ export interface RootRouteChildren {
   ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
   LeistungenRoute: typeof LeistungenRoute
-  TeamRoute: typeof TeamRoute
+  TeamRoute: typeof TeamRouteWithChildren
   ApiPreviewRoute: typeof ApiPreviewRoute
   KurseKurs_idRoute: typeof KurseKurs_idRoute
   KurseIndexRoute: typeof KurseIndexRoute
@@ -212,8 +234,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KurseKurs_idRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/team/': {
+      id: '/team/'
+      path: '/'
+      fullPath: '/team/'
+      preLoaderRoute: typeof TeamIndexRouteImport
+      parentRoute: typeof TeamRoute
+    }
+    '/team/$slug': {
+      id: '/team/$slug'
+      path: '/$slug'
+      fullPath: '/team/$slug'
+      preLoaderRoute: typeof TeamSlugRouteImport
+      parentRoute: typeof TeamRoute
+    }
   }
 }
+
+interface TeamRouteChildren {
+  TeamSlugRoute: typeof TeamSlugRoute
+  TeamIndexRoute: typeof TeamIndexRoute
+}
+
+const TeamRouteChildren: TeamRouteChildren = {
+  TeamSlugRoute: TeamSlugRoute,
+  TeamIndexRoute: TeamIndexRoute,
+}
+
+const TeamRouteWithChildren = TeamRoute._addFileChildren(TeamRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -221,7 +269,7 @@ const rootRouteChildren: RootRouteChildren = {
   ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
   LeistungenRoute: LeistungenRoute,
-  TeamRoute: TeamRoute,
+  TeamRoute: TeamRouteWithChildren,
   ApiPreviewRoute: ApiPreviewRoute,
   KurseKurs_idRoute: KurseKurs_idRoute,
   KurseIndexRoute: KurseIndexRoute,

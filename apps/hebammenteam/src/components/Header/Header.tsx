@@ -27,36 +27,42 @@ const Header = () => {
 
 	return (
 		<header className={styles.bar} data-scrolled={hasScrolled || undefined}>
-			<div className={styles.inner}>
+			<nav className={styles.inner} aria-label="Hauptnavigation">
 				<Link to="/" className={styles.brand}>
 					<img
 						className={styles.logo}
-						src="/logo_coming_home.webp"
+						src="/logo_coming_home.png"
 						alt="Coming Home"
 						width={40}
 						height={40}
+						style={{
+							borderRadius: "50%",
+							objectPosition: "center"
+						}}
 					/>
-					<span className={styles.name}>Coming Home</span>
+					<div className={styles.brand_content}>
+						<span className={styles.eyebrow}>Hebammenteam</span>
+						<span className={styles.name}>Coming Home</span>
+					</div>
 				</Link>
-				<nav aria-label="Hauptnavigation">
-					<ul className={styles.menu}>
-						{mainNav.map((item) => (
-							<li key={item.to}>
-								<Link
-									to={item.to}
-									className={styles.link}
-									activeOptions={{ exact: item.to === "/" }}
-									activeProps={{
-										className: `${styles.link} ${styles.active}`
-									}}
-								>
-									{item.label}
-								</Link>
-							</li>
-						))}
-					</ul>
-				</nav>
-			</div>
+
+				<ul className={styles.menu + " " + styles.right}>
+					{mainNav.map((item) => (
+						<li key={item.to}>
+							<Link
+								to={item.to}
+								className={styles.link}
+								activeOptions={{ exact: item.to === "/" }}
+								activeProps={{
+									className: `${styles.link} ${styles.active}`
+								}}
+							>
+								{item.label}
+							</Link>
+						</li>
+					))}
+				</ul>
+			</nav>
 		</header>
 	);
 };

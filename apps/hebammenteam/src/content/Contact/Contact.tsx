@@ -1,103 +1,64 @@
-import { FormEvent, useState } from "react";
-import { CmsBody, Layout, PageHeader } from "@components";
-import { submitContactMessage } from "../../functions/forms.functions";
-import styles from "./Contact.module.css";
-
-type Status = "idle" | "sending" | "sent" | "error";
+import { useMemo, useState } from "react";
+import { CmsBody, ContactModal, Layout } from "@components";
+import type { PersonClass } from "@data";
+import { useCollection } from "@provider";
+import teamStyles from "../Team/Team.module.css";
+import { displayName, initials, phoneHref, portraitSrc } from "../Team/person";
+import TeamRoster from "../Team/roster/TeamRoster";
 
 const Contact = () => {
-	const [status, setStatus] = useState<Status>("idle");
-
-	const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-		const form = event.currentTarget;
-		const data = new FormData(form);
-		setStatus("sending");
-		try {
-			await submitContactMessage({
-				data: {
-					name: String(data.get("name") ?? ""),
-					email: String(data.get("email") ?? ""),
-					message: String(data.get("message") ?? ""),
-					honeypot: String(data.get("company") ?? "")
-				}
-			});
-			form.reset();
-			setStatus("sent");
-		} catch {
-			setStatus("error");
+	const { items: images } = useCollection("Image");
+	const [person, setPerson] = useState<PersonClass | null>(null);
+	const name = person ? displayName(person) : "";
+	const portrait = useMemo(() => {
+		if (!person) {
+			return null;
 		}
-	};
+		const image = images.find((item) => item.objectId === person.image);
+		return portraitSrc(image);
+	}, [images, person]);
+	const email = person?.email?.trim() || null;
+	const phone = person?.data?.telefon?.trim() || null;
+	const address = person?.data?.adresse?.trim() || null;
+	const phoneLink = phone ? phoneHref(phone) : null;
 
 	return (
 		<Layout>
-			<PageHeader
-				eyebrow="Praxis"
-				title="Kontakt"
-				lead="Schreiben Sie uns. Wir melden uns, sobald wir Ihre Nachricht gelesen haben."
-			/>
-			<div className={`${styles.layout} page-body`}>
-				<div className={styles.cms}>
-					<CmsBody path="/kontakt" />
+			<header className={teamStyles.hero}>
+				<div className={teamStyles.intro}>
+					<h1 className={teamStyles.title}>
+						Kontakt
+						<img
+							className={teamStyles.flower}
+							src="/logo_coming_home.webp"
+							alt=""
+							width={36}
+							height={36}
+						/>
+					</h1>
+					<p className="lead" style={{ textAlign: "left" }}>
+						Schreiben Sie einer Hebamme. Wir melden uns, sobald wir
+						die Nachricht gelesen haben.
+					</p>
 				</div>
-				<form className={styles.form} onSubmit={onSubmit}>
-					<label className={styles.field}>
-						<span>Name</span>
-						<input
-							name="name"
-							autoComplete="name"
-							required
-							maxLength={200}
-						/>
-					</label>
-					<label className={styles.field}>
-						<span>E-Mail</span>
-						<input
-							name="email"
-							type="email"
-							autoComplete="email"
-							required
-						/>
-					</label>
-					<label className={styles.field}>
-						<span>Nachricht</span>
-						<textarea
-							name="message"
-							rows={6}
-							required
-							maxLength={5000}
-						/>
-					</label>
-					<label className={styles.honeypot} aria-hidden="true">
-						Firma
-						<input
-							name="company"
-							tabIndex={-1}
-							autoComplete="off"
-						/>
-					</label>
-					<button
-						className={styles.submit}
-						type="submit"
-						disabled={status === "sending"}
-					>
-						{status === "sending"
-							? "Wird gesendet …"
-							: "Nachricht senden"}
-					</button>
-					{status === "sent" ? (
-						<p className={styles.status}>
-							Danke, die Nachricht ist angekommen.
-						</p>
-					) : null}
-					{status === "error" ? (
-						<p className={styles.status}>
-							Die Nachricht konnte nicht gesendet werden. Bitte
-							versuchen Sie es später erneut.
-						</p>
-					) : null}
-				</form>
-			</div>
+				<div className={teamStyles.roster}>
+					<TeamRoster empty onSelect={setPerson} isContact />
+				</div>
+			</header>
+
+			<ContactModal
+				open={person !== null}
+				onClose={() => setPerson(null)}
+				personId={person?.objectId ?? ""}
+				categories={person?.categories}
+				name={name}
+				portrait={portrait}
+				fallback={initials(name) || "H"}
+				email={email}
+				phone={phone}
+				phoneLink={phoneLink}
+				address={address}
+			/>
 		</Layout>
 	);
 };

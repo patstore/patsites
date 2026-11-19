@@ -1,7 +1,7 @@
 .marquee {
 	position: relative;
-	background-color: var(--color-surface);
-	color: var(--color-accent);
+	background-color: var(--color-accent-dark);
+	color: var(--color-surface);
 	border-top: 1.2px solid var(--color-accent);
 	border-bottom: 1.2px solid var(--color-accent);
 	overflow: hidden;
@@ -37,16 +37,15 @@
 
 .label {
 	font-family: var(--font-heading);
-	font-size: calc(18px + 0.35vw);
-	font-weight: 600;
+	font-size: calc(12px + 0.35vw);
+	font-weight: 500;
 	letter-spacing: 0.03em;
-	line-height: 1;
+	line-height: 0.5;
 	white-space: nowrap;
-	color: var(--color-accent);
 }
 
 .flower {
-	width: 1.7rem;
+	width: 18px;
 	height: auto;
 	flex: none;
 	pointer-events: none;

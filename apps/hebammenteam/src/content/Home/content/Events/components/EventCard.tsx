@@ -1,5 +1,6 @@
 import { EventClass } from "@data";
 import styles from "../Event.module.css";
+import { ChevronRightIcon } from "lucide-react";
 
 const EventCard = ({ event }: { event: EventClass }) => {
 	return (
@@ -12,7 +13,12 @@ const EventCard = ({ event }: { event: EventClass }) => {
 			</div>
 			<div className={styles.cell}>
 				<a href={`/kurse/${event.slug}`}>
-					<button>Zur Veranstaltung</button>
+					<button className="inverted with-icon">
+						Zur Veranstaltung
+						<span className="icon">
+							<ChevronRightIcon />
+						</span>
+					</button>
 				</a>
 			</div>
 		</div>

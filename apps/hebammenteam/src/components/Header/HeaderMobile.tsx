@@ -41,16 +41,22 @@ const HeaderMobile = () => {
 	return (
 		<div className={styles.bar}>
 			<Link to="/" className={styles.brandBar}>
-				<span className={styles.eyebrow}>Praxis</span>
-				<span className={styles.brandName}>Hebammen-Team</span>
+				<img
+					className={styles.logo}
+					src="/logo_coming_home.png"
+					alt="Coming Home"
+					width={40}
+					height={40}
+					style={{
+						borderRadius: "50%",
+						objectPosition: "center"
+					}}
+				/>
+				<div>
+					<span className={styles.eyebrow}>Hebammenteam</span>
+					<span className={styles.name}>Coming Home</span>
+				</div>
 			</Link>
-			<img
-				className={styles.logo}
-				src="/logo_coming_home.webp"
-				alt="Coming Home"
-				width={40}
-				height={40}
-			/>
 			<button
 				type="button"
 				className={
@@ -75,8 +81,8 @@ const HeaderMobile = () => {
 					data-lenis-prevent
 				>
 					<Link to="/" className={styles.brand}>
-						<span className={styles.eyebrow}>Praxis</span>
-						<span className={styles.brandName}>Hebammen-Team</span>
+						<span className={styles.eyebrow}>Hebammenteam</span>
+						<span className={styles.name}>Coming Home</span>
 					</Link>
 					<nav aria-label="Mobil">
 						<ul className={styles.menu}>

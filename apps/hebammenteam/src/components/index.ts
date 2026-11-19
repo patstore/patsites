@@ -5,3 +5,5 @@ export * from "./Header";
 export * from "./PageContent";
 export * from "./StatusPages";
 export * from "./Marquee";
+export * from "./ContactModal";
+export * from "./ContactElement";

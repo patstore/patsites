@@ -8,6 +8,10 @@ export type TransitionMotion = {
 	autoAlpha?: number;
 	width?: number | string;
 	height?: number | string;
+	/** GSAP delay, in seconds. Not a tweened property. */
+	delay?: number;
+	/** Overrides the timeline duration for this tween. */
+	duration?: number;
 };
 
 export type SharedElementTransition = {
@@ -27,8 +31,15 @@ export type RouteTransition = {
 	to: string;
 	/** Overrides the `clonePrevious` prop for this pair. */
 	clonePrevious?: boolean;
+	/**
+	 * Pin the cloned page to the viewport so a scroll reset does not move it.
+	 * Use this when a shared element should leave from the spot the user clicked.
+	 */
+	pinPrevious?: boolean;
 	duration?: number;
 	ease?: string;
+	/** Motion of the cloned previous page. Defaults to fading and sliding left. */
+	exit?: TransitionMotion;
 	/** Motion of the incoming page. A clone, when enabled, leaves toward the left on its own. */
 	page?: {
 		from?: TransitionMotion;

@@ -24,15 +24,15 @@ h6 {
 	line-height: 1.15;
 	font-weight: 500;
 	letter-spacing: -0.02em;
+	color: var(--color-accent-dark);
 }
 
 h1 {
-	font-size: calc(24px + 4.8vw);
+	font-size: calc(30px + 2.1vw);
 	text-align: center;
 	margin: 0;
-	color: var(--color-accent-dark);
-	font-weight: 600;
-	letter-spacing: 2px;
+	font-weight: 500;
+	letter-spacing: 1.2px;
 }
 
 h2 {
@@ -40,6 +40,9 @@ h2 {
 	font-weight: 650;
 	text-align: center;
 	letter-spacing: 1px;
+	&.left {
+		text-align: left !important;
+	}
 }
 
 h3 {

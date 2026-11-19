@@ -19,7 +19,7 @@ import { SiteContextProvider } from "@provider";
 import { readPreviewSession } from "../server/preview";
 import globalCss from "../styles/global.css?url";
 import "@repo/core/scroll.css";
-import { pageFade, routeTransitions } from "./-shell";
+import { pageFade, usePageTransitions } from "./-shell";
 
 export const Route = createRootRoute({
 	loader: () => readPreviewSession(),
@@ -79,21 +79,35 @@ function RootComponent() {
 	return (
 		<DraftGate preview={preview} locked={isDraftMode() && !preview}>
 			<SiteContextProvider>
-				<SmoothScroll orientation={orientation}>
-					<Framework>
-						<PageTransition
-							pathname={pathname}
-							transitions={routeTransitions}
-							clonePrevious={false}
-							fallback={pageFade}
-						>
-							<Suspense fallback={null}>
-								<Outlet />
-							</Suspense>
-						</PageTransition>
-					</Framework>
-				</SmoothScroll>
+				<RoutedPages pathname={pathname} orientation={orientation} />
 			</SiteContextProvider>
 		</DraftGate>
+	);
+}
+
+function RoutedPages({
+	pathname,
+	orientation
+}: {
+	pathname: string;
+	orientation: ScrollOrientation;
+}) {
+	const transitions = usePageTransitions();
+
+	return (
+		<SmoothScroll orientation={orientation}>
+			<Framework>
+				<PageTransition
+					pathname={pathname}
+					transitions={transitions}
+					clonePrevious={false}
+					fallback={pageFade}
+				>
+					<Suspense fallback={null}>
+						<Outlet />
+					</Suspense>
+				</PageTransition>
+			</Framework>
+		</SmoothScroll>
 	);
 }
