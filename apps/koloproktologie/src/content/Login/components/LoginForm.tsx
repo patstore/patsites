@@ -1,8 +1,9 @@
 import { Button, Divider } from "@ui";
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { horizontalContainer, formContainer } from "../styles";
 import { LoginFormProps } from "../types";
 import { useNavigate } from "@tanstack/react-router";
+import { useSiteContext } from "@provider";
 import ResetPassword from "./ResetPassword";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -17,6 +18,7 @@ const loginSchema = Yup.object().shape({
 const LoginForm: FC<LoginFormProps> = ({ title, text }) => {
 	const [error, setError] = useState<string | null>(null);
 	const navigate = useNavigate();
+	const { getUser } = useSiteContext();
 
 	return (
 		<div css={formContainer}>
@@ -49,6 +51,9 @@ const LoginForm: FC<LoginFormProps> = ({ title, text }) => {
 						return;
 					}
 
+					// Refresh the session in the site context first, otherwise
+					// /app still sees the old (logged out) user and redirects back.
+					await getUser();
 					setSubmitting(false);
 					navigate({ to: "/app/mitgliederbereich" });
 				}}

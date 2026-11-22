@@ -1,4 +1,4 @@
-import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
+import { createFileRoute, Navigate, Outlet } from "@tanstack/react-router";
 import { Layout } from "@components";
 import { useSiteContext } from "@provider";
 
@@ -13,8 +13,10 @@ export const Route = createFileRoute("/app")({
 function AppLayout() {
 	const { loading, user } = useSiteContext();
 
+	// Redirect with a component instead of throwing during render, which
+	// surfaces as an uncaught error in the route's error boundary.
 	if (!loading && !user) {
-		throw redirect({ to: "/login" });
+		return <Navigate to="/login" replace />;
 	}
 
 	return (
