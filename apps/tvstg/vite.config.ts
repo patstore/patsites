@@ -54,6 +54,7 @@ export default defineConfig(({ mode }) => {
 		ssr: {
 			noExternal: [
 				"@repo/core",
+				"@repo/provider",
 				"@repo/server",
 				"@tanstack/react-router",
 				"date-fns",
@@ -61,7 +62,7 @@ export default defineConfig(({ mode }) => {
 			]
 		},
 		optimizeDeps: {
-			exclude: ["@repo/server"],
+			exclude: ["@repo/provider", "@repo/server"],
 			holdUntilCrawlEnd: true,
 			include: ["@tanstack/react-router", "date-fns", "react-spinners"]
 		},

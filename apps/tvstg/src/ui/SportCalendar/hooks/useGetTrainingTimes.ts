@@ -7,9 +7,24 @@ import { getWeekday, useCollection } from "@provider";
 import findAgeInGroups from "../functions/findAgeInGroups";
 import findAgeInGroup from "../functions/findAgeInGroup";
 
+const FUSE_OPTIONS = {
+	includeScore: true,
+	findAllMatches: true,
+	// ignoreLocation: true,
+	threshold: 0.3,
+	keys: [
+		{ name: "categories", weight: 0.3 },
+		{ name: "search_name", weight: 0.3 },
+		{ name: "search_weekday", weight: 0.2 },
+		{ name: "search_time", weight: 0.1 },
+		{ name: "location", weight: 0.1 }
+	]
+};
+
 const useGetTrainingTimes: UseGetTrainingTimes = ({
 	categories,
-	searchValue,
+	searchTerms,
+	category,
 	age,
 	gender
 }) => {
@@ -89,6 +104,7 @@ const useGetTrainingTimes: UseGetTrainingTimes = ({
 						...time,
 						group_id: group.objectId as string,
 						categories: groupCategories(group.categories),
+						category_ids: group.categories ?? [],
 						group_name: group.title as string,
 						search_name: search_name,
 						search_time: search_time,
@@ -104,27 +120,26 @@ const useGetTrainingTimes: UseGetTrainingTimes = ({
 		return tz;
 	}, [groups, getLocation, categories.join(",")]);
 
-	const options = {
-		includeScore: true,
-		findAllMatches: true,
-		// ignoreLocation: true,
-		threshold: 0.3,
-		keys: [
-			{ name: "categories", weight: 0.3 },
-			{ name: "search_name", weight: 0.3 },
-			{ name: "search_weekday", weight: 0.2 },
-			{ name: "search_time", weight: 0.1 },
-			{ name: "location", weight: 0.1 }
-		]
-	};
+	const fuse = useMemo(
+		() => new Fuse(trainingszeiten, FUSE_OPTIONS),
+		[trainingszeiten]
+	);
 
 	const filteredTrainingszeiten = useMemo(() => {
-		const fuse = new Fuse(trainingszeiten, options);
-		const fuzeResult = fuse.search(searchValue);
-		let result =
-			fuzeResult.length > 0
-				? fuzeResult.map((item) => item.item)
-				: trainingszeiten;
+		let result = trainingszeiten;
+
+		if (category) {
+			result = result.filter((item) =>
+				item.category_ids.includes(category)
+			);
+		}
+
+		for (const term of searchTerms) {
+			const matches = new Set(
+				fuse.search(term).map((match) => match.item)
+			);
+			result = result.filter((item) => matches.has(item));
+		}
 
 		if (gender !== "all") {
 			const filteredResults = result.filter(
@@ -150,7 +165,7 @@ const useGetTrainingTimes: UseGetTrainingTimes = ({
 		}
 
 		return result;
-	}, [searchValue, gender, age, trainingszeiten]);
+	}, [searchTerms, category, gender, age, trainingszeiten, fuse]);
 
 	const ages: number[] = findAgeInGroups({ groups });
 

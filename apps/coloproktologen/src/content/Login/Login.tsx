@@ -1,12 +1,10 @@
 import { Layout } from "@components";
-import { Button, ContentContainer, FlexBox, HeadContent, Dialog } from "@ui";
-import React, { useState } from "react";
+import { Button, ContentContainer, FlexBox, HeadContent } from "@ui";
+import React from "react";
 import LoginForm from "./components/LoginForm";
 import { contentBox } from "@styles";
-import settings from "@settings";
 
 const Login: React.FC = () => {
-	const [open, setOpen] = useState(true);
 	return (
 		<Layout showKongress={false}>
 			<HeadContent

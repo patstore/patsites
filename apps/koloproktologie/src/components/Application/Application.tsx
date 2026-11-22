@@ -32,13 +32,24 @@ const Application: React.FC = () => {
 		{} as Record<string, any>
 	);
 	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState<string | null>(null);
 
 	const dataHandler = async (values: typeof initialValues) => {
 		setLoading(true);
+		setError(null);
 
-		await apiRequest("/api/membership/apply", values);
-		setLoading(false);
-		setApplicationOpen(false);
+		try {
+			await apiRequest("/api/membership/apply", values);
+			setApplicationOpen(false);
+		} catch (err) {
+			setError(
+				err instanceof Error && err.message
+					? err.message
+					: "Der Antrag konnte nicht gesendet werden."
+			);
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	const buttons = useMemo(() => {
@@ -70,12 +81,17 @@ const Application: React.FC = () => {
 								}}
 							/>
 							{loading && <p>Bitte warten...</p>}
+							{error && !loading && (
+								<p role="alert" style={{ color: "red" }}>
+									{error}
+								</p>
+							)}
 						</FlexBox>
 					);
 				}}
 			</FormikConsumer>
 		);
-	}, [loading]);
+	}, [loading, error]);
 
 	return (
 		<SlideIn

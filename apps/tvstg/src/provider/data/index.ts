@@ -1,2 +1,1 @@
-export { usePatstoreCollection } from "./usePatstoreCollection";
-export type { CollectionItems, CollectionName } from "./usePatstoreCollection";
+export { useCollection, usePatstoreCollection } from "./collections";

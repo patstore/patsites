@@ -1,23 +1,20 @@
 import React, { useMemo } from "react";
 import { InformationProps } from "../types";
-import { ContactPerson, FlexBox } from "@ui";
+import { ContactPerson, Divider, FlexBox, type ContactGroup } from "@ui";
 import { getWeekday, locationLabel, useCollection } from "@provider";
 import { PatstorePerson } from "@types";
-import { Image } from "@repo/ui";
 import TrainingTimesSlideIn from "./TrainingTimesSlideIn";
 import styles from "./Information.module.css";
 
 export const Information: React.FC<InformationProps> = ({
 	titel,
 	trainingszeiten,
-	team,
 	beschreibung,
 	startalter,
 	endalter,
 	email,
 	info,
-	trainer,
-	type
+	trainer
 }) => {
 	const { items: persons } = useCollection("Person");
 	const { find: findLocation } = useCollection("Location");
@@ -43,79 +40,96 @@ export const Information: React.FC<InformationProps> = ({
 		};
 	}, []);
 
+	const contactGroup: ContactGroup = {
+		title: titel,
+		times: trainingszeiten.map((value) => ({
+			id: value.id,
+			label: `${getWeekday(value.weekday)}${
+				value.start && value.end ? ` ${value.start} - ${value.end}` : ""
+			}`,
+			location: locationLabel(value.place, findLocation) || "",
+			text: value.text || ""
+		}))
+	};
+
 	return (
-		<>
+		<div className={styles.information}>
 			<div>
-				<FlexBox
-					direction="column"
-					align="stretch"
-					style={{ padding: "3em 0" }}
-				>
-					<h1 className={styles.title}>{titel}</h1>
+				<h2>{titel}</h2>
+				<Divider showLine />
+				<FlexBox direction="column" align="stretch">
 					{email && (
 						<div className={styles.full}>
-							<div className="section-header">Kontakt</div>
+							<h3>Kontakt</h3>
 							<div className={styles.inset}>
 								<div className="sidebar-panel">
 									<h3>Kontakt E-Mail</h3>
-
-									<a href={`mailto:${email}`}>{email}</a>
+									<div className={styles.inset}>
+										<a href={`mailto:${email}`}>{email}</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					)}
-					<div className="section-header">Übungsleiter*innen</div>
+					<h3>Übungsleiter*innen</h3>
 					<div className={styles.inset}>
 						{groupData.trainers.map((person: PatstorePerson) => (
 							<ContactPerson
 								person={person}
+								group={contactGroup}
 								key={person.objectId}
 							/>
 						))}
 					</div>
 				</FlexBox>
 			</div>
+			<div className={styles.clipAuto}>
+				<h3>Trainingszeiten</h3>
+				<div className={styles.inset}>
+					{trainingszeiten.map((value) => (
+						<TrainingTimesSlideIn
+							key={value.id}
+							weekday={getWeekday(value.weekday)}
+							start={value.start}
+							end={value.end}
+							location={
+								locationLabel(value.place, findLocation) || ""
+							}
+							text={value.text || ""}
+						/>
+					))}
+				</div>
+			</div>
 			{startalter && (
 				<div className={styles.clip}>
-					<div className="section-header">Alter</div>
-					<div className={styles.insetNarrow}>
+					<h3>Alter</h3>
+					<div className={styles.inset}>
 						<p>{groupData.alter}</p>
 					</div>
 				</div>
 			)}
 			{info && (
 				<div className={styles.clip}>
-					<div className="section-header">Info</div>
-					<div className={styles.insetNarrow}>
+					<h3>Info</h3>
+					<div className={styles.inset}>
 						<p>{info}</p>
 					</div>
 				</div>
 			)}
 			{beschreibung && (
 				<div>
-					<div className="section-header">Beschreibung</div>
-					<div dangerouslySetInnerHTML={{ __html: beschreibung }} />
+					<h3>Beschreibung</h3>
+					<div
+						className={styles.inset}
+						dangerouslySetInnerHTML={{ __html: beschreibung }}
+					/>
 				</div>
 			)}
-			<div className={styles.clipAuto}>
-				<div className="section-header">Trainingszeiten</div>
-				{trainingszeiten.map((value) => (
-					<TrainingTimesSlideIn
-						key={value.id}
-						weekday={getWeekday(value.weekday)}
-						start={value.start}
-						end={value.end}
-						location={
-							locationLabel(value.place, findLocation) || ""
-						}
-						text={value.text || ""}
-					/>
-				))}
-			</div>
-			<div>
-				{type === "mobile" && team && (
+
+			{/* <div>
+				{type === "mobile" && team && team.name && (
 					<div>
-						<div className="section-header">Die Mannschaft</div>
+						<h3>Die Mannschaft</h3>
 						<FlexBox
 							direction="column"
 							style={{ marginTop: "3em" }}
@@ -137,7 +151,10 @@ export const Information: React.FC<InformationProps> = ({
 								direction="column"
 								align="flex-start"
 								justify="flex-end"
-								style={{ height: "100%", padding: "0.5em 2em" }}
+								style={{
+									height: "100%",
+									padding: "0.5em 2em"
+								}}
 							>
 								<div>
 									{team.description && (
@@ -151,9 +168,9 @@ export const Information: React.FC<InformationProps> = ({
 							</FlexBox>
 						</FlexBox>
 					</div>
-				)}
-			</div>
-		</>
+				)} */}
+			{/* </div> */}
+		</div>
 	);
 };
 

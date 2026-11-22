@@ -540,6 +540,9 @@ importers:
       '@repo/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@repo/provider':
+        specifier: workspace:*
+        version: link:../../packages/provider
       '@repo/server':
         specifier: workspace:*
         version: link:../../packages/server

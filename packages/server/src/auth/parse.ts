@@ -82,7 +82,8 @@ export async function parseFetch(
 		body:
 			options.body === undefined
 				? undefined
-				: JSON.stringify(options.body)
+				: JSON.stringify(options.body),
+		signal: AbortSignal.timeout(20_000)
 	});
 	const data = await response.json().catch(() => ({}));
 	if (!response.ok) {

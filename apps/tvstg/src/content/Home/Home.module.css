@@ -12,6 +12,10 @@
 	padding-top: 2em;
 }
 
+.sidebarSticky {
+	width: 100%;
+}
+
 .sidebarInner {
 	width: 100%;
 }
@@ -44,5 +48,14 @@
 		align-self: stretch;
 		align-items: stretch;
 		padding-top: 0;
+	}
+
+	/* The sidebar column stretches to the height of the main column; the
+	   sticky child travels inside it and stops at its bottom edge. */
+	.sidebarSticky {
+		position: sticky;
+		top: calc(var(--tvstg-site-header, 100px) + 1rem);
+		max-height: calc(100vh - var(--tvstg-site-header, 100px) - 2rem);
+		overflow-y: auto;
 	}
 }

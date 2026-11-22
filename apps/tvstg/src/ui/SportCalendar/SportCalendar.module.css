@@ -31,7 +31,43 @@
 	width: 100%;
 }
 
-@media (min-width: 1200px) {
+/* Collapsed by default while the filter sits above the calendar. */
+.filterToggle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: var(--pad-small);
+	background: var(--color-surface);
+	color: var(--color-text);
+	font-family: var(--font-headline);
+	font-weight: 600;
+	font-size: 0.85rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.filterToggleIcon {
+	transition: transform 0.2s ease;
+}
+
+.sidebar[data-expanded="true"] .filterToggleIcon {
+	transform: rotate(180deg);
+}
+
+.filterPanel {
+	display: none;
+	margin-top: 12px;
+}
+
+.sidebar[data-expanded="true"] .filterPanel {
+	display: block;
+}
+
+/* Desktop: the filter column sits to the right of the calendar. Below this
+   width it stacks on top of the calendar, collapsed behind a toggle. */
+@media (min-width: 992px) {
 	.layout {
 		flex-direction: row;
 	}
@@ -41,10 +77,94 @@
 	}
 	.sidebar {
 		order: 2;
-		width: 360px;
-		flex: 0 0 360px;
+		width: 300px;
+		flex: 0 0 300px;
 	}
 	.viewSwitch {
 		display: flex;
 	}
+
+	.filterToggle {
+		display: none;
+	}
+
+	.filterPanel {
+		display: block;
+		margin-top: 0;
+	}
+
+	/* The sidebar stretches to the height of the main column; the sticky
+	   child travels inside it and stops at its bottom edge. */
+	.sidebarSticky {
+		position: sticky;
+		top: calc(var(--tvstg-site-header, 100px) + 1rem);
+		max-height: calc(100vh - var(--tvstg-site-header, 100px) - 2rem);
+		overflow-y: auto;
+	}
+}
+
+@media (min-width: 1200px) {
+	.sidebar {
+		width: 360px;
+		flex: 0 0 360px;
+	}
+}
+
+.searchTags {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.searchTag {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	max-width: 100%;
+	margin: 0;
+	padding: 3px 4px 3px 8px;
+	font-size: 0.75rem;
+	line-height: 1.2;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	border-radius: var(--border-radius);
+	color: var(--color-text);
+	background: var(--color-surface);
+	border: 1px solid var(--color-primary);
+}
+
+.searchTag span {
+	overflow-wrap: anywhere;
+}
+
+.searchTagRemove {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.25rem;
+	height: 1.25rem;
+	padding: 0;
+	border: none;
+	border-radius: 50%;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+}
+
+.searchTagRemove:hover,
+.searchTagRemove:focus-visible {
+	background: var(--color-primary);
+	color: #fff;
+}
+
+.empty {
+	margin: 0;
+	padding: var(--pad-medium);
+	color: var(--color-text-muted);
 }

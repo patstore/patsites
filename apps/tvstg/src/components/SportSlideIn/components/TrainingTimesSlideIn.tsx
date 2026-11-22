@@ -9,7 +9,7 @@ const TrainingTimesSlideIn: React.FC<TrainingTimesSlideInProps> = ({
 	location,
 	text
 }) => (
-	<div id="training">
+	<div id="training" className={styles.training}>
 		<div className="sidebar-panel">
 			<h6>
 				{weekday} {start && end && `${start} - ${end}`}

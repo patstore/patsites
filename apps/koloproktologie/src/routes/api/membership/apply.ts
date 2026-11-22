@@ -3,6 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import getEmailArray from "../../../components/Application/functions/getEmails";
 import { sessionApi } from "../../../server/auth";
 
+function asRecord(value: unknown): Record<string, unknown> | undefined {
+	return value && typeof value === "object" && !Array.isArray(value)
+		? (value as Record<string, unknown>)
+		: undefined;
+}
+
 function text(value: unknown): string {
 	return typeof value === "string" ? value : "";
 }
@@ -21,51 +27,69 @@ export const Route = createFileRoute("/api/membership/apply")({
 						: null;
 
 				try {
-					await sessionApi.callFunction("create_user_from_data", {
-						pre_title: values.title,
-						title: values.address,
-						project_id: sessionApi.config.projectId,
-						name: `${text(values.first_name)} ${text(values.last_name)}`,
-						email: values.email,
-						first_name: values.first_name,
-						last_name: values.last_name,
-						password: values.password,
-						roles: ["tEsx6N2IUm"],
-						data: {
-							dgk: {
-								address: "",
-								title: "",
-								name: "",
-								postal_code: "",
-								city: "",
-								country: ""
-							},
-							bcd: {
-								klinikposition: "",
-								fachrichtung: "",
-								belegklinik: "",
-								tel: "",
-								fax: "",
-								email: "",
-								location: ""
-							}
-						},
-						newsletter_optin: newsletter?.toString() === "true",
-						newsletter_email:
-							values.newsletter_email === "existing"
-								? values.email
-								: values.newsletter_email_address,
-						type: "dgk",
-						settings: {
-							dgk: { accept_search: false },
-							bcd: { publish_specialist: false }
-						},
-						emails: getEmailArray(
-							"dgk",
-							text(values.email),
-							newsLetterEmail || undefined
-						)
-					});
+					const created = asRecord(
+						asRecord(
+							await sessionApi.callFunction(
+								"create_user_from_data",
+								{
+									pre_title: values.title,
+									title: values.address,
+									project_id: sessionApi.config.projectId,
+									name: `${text(values.first_name)} ${text(values.last_name)}`,
+									email: values.email,
+									first_name: values.first_name,
+									last_name: values.last_name,
+									password: values.password,
+									roles: ["tEsx6N2IUm"],
+									data: {
+										dgk: {
+											address: "",
+											title: "",
+											name: "",
+											postal_code: "",
+											city: "",
+											country: ""
+										},
+										bcd: {
+											klinikposition: "",
+											fachrichtung: "",
+											belegklinik: "",
+											tel: "",
+											fax: "",
+											email: "",
+											location: ""
+										}
+									},
+									newsletter_optin:
+										newsletter?.toString() === "true",
+									newsletter_email:
+										values.newsletter_email === "existing"
+											? values.email
+											: values.newsletter_email_address,
+									type: "dgk",
+									settings: {
+										dgk: { accept_search: false },
+										bcd: { publish_specialist: false }
+									},
+									emails: getEmailArray(
+										"dgk",
+										text(values.email),
+										newsLetterEmail || undefined
+									)
+								}
+							)
+						)?.result
+					);
+					if (created?.success !== true) {
+						const message =
+							typeof created?.message === "string"
+								? created.message
+								: "Der Antrag konnte nicht gesendet werden.";
+						return Response.json(
+							{ message, error: message, type: created?.type },
+							{ status: created?.type === "user-exists" ? 409 : 400 }
+						);
+					}
 
 					await sessionApi.callFunction("send_form_notification", {
 						project_id: sessionApi.config.projectId,

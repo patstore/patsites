@@ -1,5 +1,21 @@
+const REQUEST_TIMEOUT_MS = 30_000;
+
+async function request(path: string, init?: RequestInit): Promise<Response> {
+	try {
+		return await fetch(path, {
+			...init,
+			signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
+		});
+	} catch (error) {
+		if (error instanceof DOMException && error.name === "TimeoutError") {
+			throw new Error("Zeitüberschreitung bei der Anfrage");
+		}
+		throw new Error("Server nicht erreichbar");
+	}
+}
+
 export async function apiRequest<T>(path: string, body?: unknown): Promise<T> {
-	const response = await fetch(path, {
+	const response = await request(path, {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify(body ?? {})
@@ -8,7 +24,7 @@ export async function apiRequest<T>(path: string, body?: unknown): Promise<T> {
 }
 
 export async function apiGet<T>(path: string): Promise<T> {
-	return readResponse<T>(await fetch(path));
+	return readResponse<T>(await request(path));
 }
 
 async function readResponse<T>(response: Response): Promise<T> {

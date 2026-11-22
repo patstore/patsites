@@ -28,32 +28,21 @@ type LiveEntry = {
 	status: "pending" | "ready" | "error";
 	result?: unknown[];
 	error?: unknown;
+	/** Server only: a ready entry is dropped once it has not been read for this long. */
+	expiresAt: number;
 };
 
 const liveEntries = new Map<string, LiveEntry>();
-let clearScheduled = false;
 
 /**
- * Drop server results only after every in-flight read has settled.
- * Clearing on the next tick races the next suspended collection and
- * makes server rendering fetch the same class forever.
+ * How long a server result survives without being read.
+ * Server rendering suspends on one collection at a time and re-renders the
+ * boundary after each one settles, so every read must find the earlier results
+ * again. Clearing on a timer races those re-renders: the retry finds an empty
+ * cache, fetches again, suspends again, and the response never finishes.
+ * Each read pushes the expiry back, so a result lives as long as a render uses it.
  */
-function scheduleServerCacheClear() {
-	if (typeof window !== "undefined" || clearScheduled) {
-		return;
-	}
-	clearScheduled = true;
-	setTimeout(() => {
-		clearScheduled = false;
-		for (const entry of liveEntries.values()) {
-			if (entry.status === "pending") {
-				scheduleServerCacheClear();
-				return;
-			}
-		}
-		liveEntries.clear();
-	}, 0);
-}
+const SERVER_ENTRY_TTL_MS = 10_000;
 
 function isPublicClass(className: string): boolean {
 	return registry?.publicClassNames.includes(className) ?? false;
@@ -80,13 +69,23 @@ function loadLiveRows(className: string): Promise<unknown[]> {
 }
 
 function liveEntry(className: string): LiveEntry {
+	const onServer = typeof window === "undefined";
 	const existing = liveEntries.get(className);
 	if (existing) {
-		return existing;
+		if (!onServer || existing.status !== "ready") {
+			return existing;
+		}
+		const now = Date.now();
+		if (existing.expiresAt > now) {
+			existing.expiresAt = now + SERVER_ENTRY_TTL_MS;
+			return existing;
+		}
+		liveEntries.delete(className);
 	}
 	const entry: LiveEntry = {
 		promise: Promise.resolve([]),
-		status: "pending"
+		status: "pending",
+		expiresAt: Infinity
 	};
 	liveEntries.set(className, entry);
 	entry.promise = loadLiveRows(className).then(
@@ -94,7 +93,7 @@ function liveEntry(className: string): LiveEntry {
 			const list = Array.isArray(result) ? result : [];
 			entry.status = "ready";
 			entry.result = list;
-			scheduleServerCacheClear();
+			entry.expiresAt = Date.now() + SERVER_ENTRY_TTL_MS;
 			return list;
 		},
 		(error: unknown) => {

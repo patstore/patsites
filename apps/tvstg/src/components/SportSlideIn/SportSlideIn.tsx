@@ -1,9 +1,8 @@
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import React from "react";
 import { SportSlideInProps } from "./types";
 import { useMediaQuery } from "usehooks-ts";
 import { SlideIn } from "@ui";
-import Team from "./components/Team";
 import Information from "./components/Information";
 import styles from "./SportSlideIn.module.css";
 
@@ -47,23 +46,13 @@ const SportSlideIn: React.FC<SportSlideInProps> = ({
 							beschreibung={group.text || group.data?.description}
 							key={group.objectId}
 							titel={group.title || ""}
-							team={group.team}
 							trainingszeiten={group.times}
 							info={group.description || ""}
 							trainer={group.persons}
-							type="mobile"
 						/>
 					</SlideIn>
 				)}
 
-				<AnimatePresence>
-					{group.team &&
-						group?.team?.id &&
-						modalState === true &&
-						largeDevice && (
-							<Team team={group.team} key={group.team.id} />
-						)}
-				</AnimatePresence>
 				{largeDevice && (
 					<SlideIn
 						open={modalState}
@@ -76,10 +65,8 @@ const SportSlideIn: React.FC<SportSlideInProps> = ({
 							beschreibung={group.text || group.data?.description}
 							key={group.objectId}
 							titel={group.title || ""}
-							team={group.team}
 							trainingszeiten={group.times}
 							info={group.description || ""}
-							type="regular"
 							trainer={group.persons}
 						/>
 					</SlideIn>

@@ -58,7 +58,9 @@ export const getSportCategory = createServerFn({ method: "GET" })
 		}
 
 		const articles = (await getCollection("Article"))
-			.filter((article) => article.categories.includes(sportart.objectId))
+			.filter((article) =>
+				article.categories?.includes(sportart.objectId)
+			)
 			.sort(byDateDesc)
 			.slice(0, SPORT_PAGE_ARTICLES)
 			.map(summarizeArticle);

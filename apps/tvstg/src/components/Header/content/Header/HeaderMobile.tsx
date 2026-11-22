@@ -9,9 +9,10 @@ import {
 	menuenterrightVariants
 } from "./animations";
 import "./header.scss";
-import { FlexBox, ThemeToggle } from "@ui";
+import { currentTheme, FlexBox, ThemeToggle } from "@ui";
 import main_menu from "./constants/main_menu";
-import logo from "./images/logo_neu_rot_klein.png";
+import logo from "./images/logo_red_lettering.png";
+import logoWhite from "./images/logo_white_lettering.png";
 import styles from "./HeaderMobile.module.css";
 
 const HeaderMobile: React.FC = () => {
@@ -19,6 +20,7 @@ const HeaderMobile: React.FC = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const [menuState, setMenuState] = useState("menu");
 	const [headerAnimate, setHeaderAnimate] = useState("start");
+	const [theme, setTheme] = useState<"light" | "dark">("light");
 
 	const handleScroll = () => {
 		const compact = window.scrollY > 200;
@@ -60,33 +62,28 @@ const HeaderMobile: React.FC = () => {
 		}
 	};
 
+	useEffect(() => {
+		const sync = () => setTheme(currentTheme());
+		sync();
+		window.addEventListener("tvstg-theme", sync);
+		return () => window.removeEventListener("tvstg-theme", sync);
+	}, []);
+
 	return (
 		<>
-			<motion.div
-				onClick={() => setMenuOpen(!menuOpen)}
-				className={styles.burger}
+			<button
+				type="button"
+				className={
+					menuOpen ? `${styles.burger} ${styles.open}` : styles.burger
+				}
+				aria-expanded={menuOpen}
+				aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+				onClick={() => setMenuOpen((open) => !open)}
 			>
-				<motion.div
-					animate={menuOpen === true ? { top: 0 } : { top: 0 }}
-					className={styles.bar}
-				/>
-				<motion.div
-					animate={
-						menuOpen === true
-							? { top: "6px", transform: "rotate(-45deg)" }
-							: { top: "8px", transform: "rotate(0deg)" }
-					}
-					className={styles.bar}
-				/>
-				<motion.div
-					animate={
-						menuOpen === true
-							? { top: "6px", transform: "rotate(45deg)" }
-							: { top: "16px", transform: "rotate(0deg)" }
-					}
-					className={styles.bar}
-				/>
-			</motion.div>
+				<span />
+				<span />
+				<span />
+			</button>
 			<header className={styles.header}>
 				<FlexBox
 					direction="row"
@@ -107,16 +104,12 @@ const HeaderMobile: React.FC = () => {
 						<div className={styles.brand}>
 							<Link to="/" className={styles.logoLink}>
 								<img
-									src={logo}
+									src={theme === "light" ? logo : logoWhite}
 									alt="TV Freiburg St. Georgen von 1897 e.V."
-									width={42}
+									width={150}
 									className={styles.logo}
 								/>
 							</Link>
-
-							<h6 className={styles.title}>
-								TV Freiburg St. Georgen von 1897 e.V.
-							</h6>
 						</div>
 					</motion.div>
 					<div className={styles.toggle}>

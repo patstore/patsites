@@ -11,14 +11,12 @@ export type SportSlideInProps = {
 export type InformationProps = {
 	titel: string;
 	trainingszeiten: EventTime[];
-	team?: PatstoreGroup["team"];
 	beschreibung: string;
 	startalter: number;
 	endalter: number | null;
 	email: string;
 	info: string;
 	trainer: string[];
-	type: "regular" | "mobile";
 };
 
 export type TrainingTimesSlideInProps = {

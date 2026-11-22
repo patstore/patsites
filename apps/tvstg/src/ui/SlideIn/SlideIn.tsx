@@ -30,27 +30,6 @@ const SlideIn = ({
 }: SlideInProps) => {
 	const hydrated = useHydrated();
 
-	useEffect(() => {
-		if (open === false) {
-			const { body } = document;
-			const html = document.documentElement;
-			setTimeout(() => {
-				body.style.overflowY = "visible";
-				body.style.paddingRight = "0px";
-				html.style.overflowY = "visible";
-			}, 800);
-		}
-
-		if (open === true) {
-			document.documentElement.style.getPropertyValue("--scroll-y");
-			const { body } = document;
-			const html = document.documentElement;
-			body.style.overflowY = "hidden";
-			body.style.paddingRight = "10px";
-			html.style.overflowY = "hidden";
-		}
-	}, [open]);
-
 	if (!hydrated) {
 		return null;
 	}

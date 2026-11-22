@@ -1,0 +1,160 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 30;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog {
+	position: fixed;
+	z-index: 31;
+	top: 5dvh;
+	left: 50%;
+	display: flex;
+	flex-direction: column;
+	width: min(70rem, 94vw);
+	max-height: 90dvh;
+	background: var(--color-surface);
+	color: var(--color-text);
+	box-shadow: 0 0 2vw 1vw rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1.25rem var(--pad-medium);
+	background: var(--color-header);
+	border-bottom: 1px solid var(--color-text);
+}
+
+.header h2 {
+	margin: 0;
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
+
+.close {
+	flex: 0 0 auto;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+	color: inherit;
+	font: inherit;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.body {
+	display: grid;
+	grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
+	min-height: 0;
+	overflow: auto;
+}
+
+.formSide {
+	min-width: 0;
+	padding: var(--pad-medium);
+}
+
+.formSide h3 {
+	margin-top: 0;
+}
+
+.groupSide {
+	min-width: 0;
+	padding: var(--pad-medium);
+	background: var(--color-surface-muted);
+	border-left: 1px solid var(--color-border);
+}
+
+.groupTitle {
+	margin-top: 0;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.75rem;
+	width: 100%;
+}
+
+.row {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	gap: 1rem;
+	width: 100%;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-width: 0;
+}
+
+.optional {
+	margin-left: 0.5rem;
+	color: var(--color-text-muted);
+	font-size: 0.8em;
+	font-weight: 400;
+	text-transform: none;
+}
+
+.textarea {
+	min-height: 11rem;
+	resize: vertical;
+	font: inherit;
+}
+
+.error {
+	margin: 6px 0 0;
+	font-size: 0.85rem;
+	color: #d75055;
+}
+
+.success {
+	margin: 0;
+	font-size: 1.2rem;
+	color: var(--color-secondary);
+}
+
+.honeypot {
+	position: absolute;
+	left: -9999px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+@media (max-width: 800px) {
+	.dialog {
+		top: 2dvh;
+		max-height: 96dvh;
+		height: 100%;
+	}
+
+	.body {
+		grid-template-columns: minmax(0, 1fr);
+		height: 100%;
+	}
+
+	.groupSide {
+		padding-top: 24px;
+		border-left: 0;
+		border-top: 1px solid var(--color-border);
+	}
+}
+
+@media (max-width: 560px) {
+	.row {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}

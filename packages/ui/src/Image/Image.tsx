@@ -20,6 +20,9 @@ export function Image({
 	hoverOnZoom = false
 }: ImageProps) {
 	const sources = imageSources(findStoredImage(id));
+
+	console.log({ id });
+	console.log({ sources });
 	return (
 		<ProgressiveImage
 			key={id}

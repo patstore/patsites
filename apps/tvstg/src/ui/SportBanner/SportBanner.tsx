@@ -1,17 +1,18 @@
 import { useNavigate } from "@tanstack/react-router";
 import { FullButton } from "../Button";
 import styles from "./SportBanner.module.css";
-
-const SPORT_AREAS = [
-	{ text: "Ballsport", fachbereich: "ballsport" },
-	{ text: "Gesundheitssport", fachbereich: "gesundheitssport" },
-	{ text: "Tanz und Rope Skipping", fachbereich: "tanz-und-rope-skipping" },
-	{ text: "Turnen", fachbereich: "turnen" },
-	{ text: "Leichtathletik", fachbereich: "leichtathletik" }
-];
+import { useCollection } from "@provider";
 
 const SportBanner = () => {
 	const navigate = useNavigate();
+	const { items: categories } = useCollection("Category");
+	console.log(categories);
+
+	const filteredCategories = categories.filter(
+		(category) =>
+			category.category_id === "237be678-1f6f-418c-82bf-d4493cb28798"
+	);
+	console.log(filteredCategories);
 
 	return (
 		<div className={styles.banner}>
@@ -21,15 +22,15 @@ const SportBanner = () => {
 				</h2>
 			</div>
 			<div className={styles.actions}>
-				{SPORT_AREAS.map(({ text, fachbereich }) => (
+				{filteredCategories.map((fachbereich) => (
 					<FullButton
-						key={fachbereich}
+						key={fachbereich.objectId}
 						color="white"
-						text={text}
+						text={fachbereich.title ?? ""}
 						onClick={() =>
 							navigate({
-								to: "/sportarten/$fachbereich",
-								params: { fachbereich }
+								to: `/sportangebot?kategorie=${fachbereich.objectId}`
+								// params: { slug: fachbereich }
 							})
 						}
 					/>

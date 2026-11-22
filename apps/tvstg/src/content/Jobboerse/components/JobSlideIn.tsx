@@ -1,5 +1,8 @@
 import React from "react";
-import { ContactPerson, FlexBox, SlideIn } from "@ui";
+import { Link } from "@tanstack/react-router";
+import { AiOutlineArrowDown } from "react-icons/ai";
+import { ContactPerson, FlexBox, SlideIn, groupSlug } from "@ui";
+import { useCollection } from "@provider";
 import type { PatstoreEntry, PatstoreGroup, PatstorePerson } from "@types";
 import Information from "../../../components/SportSlideIn/components/Information";
 import styles from "./JobSlideIn.module.css";
@@ -31,6 +34,7 @@ const JobSlideIn: React.FC<JobSlideInProps> = ({
 	open,
 	onClose
 }) => {
+	const { items: groups } = useCollection("Group");
 	const startAge = numberOrNull(group?.data?.start_age);
 	const description =
 		group?.text ||
@@ -50,6 +54,21 @@ const JobSlideIn: React.FC<JobSlideInProps> = ({
 			>
 				<h1 className={styles.title}>{job.title}</h1>
 			</FlexBox>
+			{group ? (
+				<div className={styles.section}>
+					<Link
+						to="/sportangebot/$slug"
+						params={{ slug: groupSlug(group, groups) }}
+						className={styles.groupLink}
+					>
+						<h3>{group.title}</h3>
+						<span className={styles.groupCue}>
+							<AiOutlineArrowDown aria-hidden />
+							Zur Trainingsgruppe
+						</span>
+					</Link>
+				</div>
+			) : null}
 			{job.description ? (
 				<div>
 					<div className="section-header">Info</div>
@@ -82,20 +101,6 @@ const JobSlideIn: React.FC<JobSlideInProps> = ({
 						<ContactPerson person={contact} />
 					</div>
 				</div>
-			) : null}
-			{group ? (
-				<Information
-					email={email}
-					startalter={startAge ?? 0}
-					endalter={numberOrNull(group.data?.end_age)}
-					beschreibung={description}
-					titel={group.title || ""}
-					team={groupTeam(group)}
-					trainingszeiten={group.times ?? []}
-					info={group.description || ""}
-					trainer={group.persons ?? []}
-					type="mobile"
-				/>
 			) : null}
 		</SlideIn>
 	);

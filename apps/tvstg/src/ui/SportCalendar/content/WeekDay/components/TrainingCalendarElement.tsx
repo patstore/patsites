@@ -7,6 +7,14 @@ import { Image } from "@repo/ui";
 import { contentBlockStyles } from "../../../../ContentBlock";
 import styles from "../WeekDay.module.css";
 
+const previewWords = (text: string, limit: number) => {
+	const words = text.trim().split(/\s+/).filter(Boolean);
+	if (words.length <= limit) {
+		return words.join(" ");
+	}
+	return `${words.slice(0, limit).join(" ")} …`;
+};
+
 const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 	training,
 	view,
@@ -47,7 +55,6 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 		ageLabel ? { key: "age", label: ageLabel } : null
 	].filter((tag) => tag !== null);
 
-	const openDetails = () => setModalState(true);
 	const image = imageId ? (
 		<Image
 			style={{ width: "100%", height: "100%", objectFit: "cover" }}
@@ -55,6 +62,8 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 			id={imageId}
 		/>
 	) : null;
+
+	const openDetails = () => setModalState(true);
 
 	const tagList = (
 		<div className={contentBlockStyles.tags}>
@@ -75,29 +84,45 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 					id={training.id}
 					onClick={openDetails}
 				>
-					<div className={styles.gridImage}>{image}</div>
-					<div className={styles.gridBody}>
-						<div className={styles.timeBlock}>
-							<p className={styles.clock}>
-								{training.start && training.end
-									? `${training.start}`
-									: "-"}
-							</p>
-							<p className={styles.until}>
-								bis
-								{training.start && training.end
-									? ` ${training.end}`
-									: "-"}
-							</p>
-						</div>
-						<div className={styles.info}>
-							<h3 className={styles.title}>{group.title}</h3>
-							{tagList}
+					<div>
+						<div className={styles.gridImage}>{image}</div>
+						<div className={styles.gridBody}>
+							<div className={styles.timeBlock}>
+								<p className={styles.clock}>
+									{training.start && training.end
+										? `${training.start}`
+										: "-"}
+								</p>
+								<p className={styles.until}>
+									bis
+									{training.start && training.end
+										? ` ${training.end}`
+										: "-"}
+								</p>
+							</div>
+							<div className={styles.info}>
+								<h3 className={styles.title}>{group.title}</h3>
+								{tagList}
+							</div>
+							{group.description && (
+								<div className={styles.infoTextContainer}>
+									<div className={styles.infoText}>
+										<p>
+											{previewWords(
+												group.description,
+												20
+											)}
+										</p>
+									</div>
+								</div>
+							)}
 						</div>
 					</div>
-					<span className={styles.gridArrow} aria-hidden>
-						<AiOutlineArrowRight size={16} />
-					</span>
+					<div>
+						<span className={styles.gridArrow} aria-hidden>
+							<AiOutlineArrowRight size={16} />
+						</span>
+					</div>
 				</button>
 				<SportSlideIn
 					group={group}
@@ -111,7 +136,7 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 
 	return (
 		<>
-			<div
+			<button
 				className={[
 					styles.listRow,
 					striped ? contentBlockStyles.striped : ""
@@ -119,6 +144,8 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 					.filter(Boolean)
 					.join(" ")}
 				id={training.id}
+				type="button"
+				onClick={openDetails}
 			>
 				<div className={styles.listCells}>
 					<div className={styles.listTime}>
@@ -139,15 +166,23 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 						<h3 className={styles.title}>{group.title}</h3>
 						{tagList}
 					</div>
+					{group.description && (
+						<div className={styles.infoTextContainer}>
+							<div className={styles.infoText}>
+								<p>{previewWords(group.description, 20)}</p>
+							</div>
+						</div>
+					)}
 				</div>
 				<button
 					type="button"
 					onClick={openDetails}
 					className={styles.listButton}
+					aria-label={`${group.title ?? "Gruppe"}: Details anzeigen`}
 				>
 					<AiOutlineArrowRight size={16} />
 				</button>
-			</div>
+			</button>
 			<SportSlideIn
 				group={group}
 				setModalState={setModalState}

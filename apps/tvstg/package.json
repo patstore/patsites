@@ -15,6 +15,7 @@
   "dependencies": {
     "@bytescale/sdk": "^3.51.0",
     "@repo/core": "workspace:*",
+    "@repo/provider": "workspace:*",
     "@repo/server": "workspace:*",
     "@repo/ui": "workspace:*",
     "@tanstack/react-router": "^1.170.16",

@@ -50,7 +50,7 @@ const LoginForm: FC<LoginFormProps> = ({ title, text }) => {
 					}
 
 					setSubmitting(false);
-					navigate({ to: "/app/profile" });
+					navigate({ to: "/app/mitgliederbereich" });
 				}}
 			>
 				{({

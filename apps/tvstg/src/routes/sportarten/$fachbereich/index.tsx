@@ -1,50 +1,20 @@
 import {
 	createFileRoute,
-	notFound,
+	redirect,
 	stripSearchParams
 } from "@tanstack/react-router";
-import { getSportCategory } from "@functions/sport.functions";
-import { seo } from "@components";
 import { SPORT_CALENDAR_DEFAULTS, sportCalendarSearchSchema } from "@ui";
-import Fachabteilung from "../../../content/Fachabteilung/Fachabteilung";
 
+/** Legacy URL, permanently moved to `/sportangebot/<fachbereich>`. */
 export const Route = createFileRoute("/sportarten/$fachbereich/")({
 	validateSearch: sportCalendarSearchSchema,
 	search: { middlewares: [stripSearchParams(SPORT_CALENDAR_DEFAULTS)] },
-	loader: async ({ params }) => {
-		const category = await getSportCategory({
-			data: { fachbereich: params.fachbereich }
+	beforeLoad: ({ params, search }) => {
+		throw redirect({
+			to: "/sportangebot/$slug",
+			params: { slug: params.fachbereich },
+			search,
+			statusCode: 301
 		});
-		if (!category) {
-			throw notFound();
-		}
-		return { fachbereich: category.fachbereich };
-	},
-	head: ({ loaderData }) => ({
-		meta: seo({
-			title: loaderData?.fachbereich.title,
-			description: loaderData?.fachbereich.description
-		})
-	}),
-	component: FachbereichPage
+	}
 });
-
-function FachbereichPage() {
-	const { fachbereich } = Route.useLoaderData();
-	const filters = Route.useSearch();
-	const navigate = Route.useNavigate();
-
-	return (
-		<Fachabteilung
-			fachabteilung={fachbereich}
-			filters={filters}
-			onFiltersChange={(next) =>
-				navigate({
-					search: (prev) => ({ ...prev, ...next }),
-					replace: true,
-					resetScroll: false
-				})
-			}
-		/>
-	);
-}

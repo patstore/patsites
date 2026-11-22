@@ -4,56 +4,8 @@ const main_menu: Menu = [
 	{
 		name: "Unser Sportangebot",
 		key: "sportangebot",
-		link: "/sportarten",
-		menuItems: [
-			{
-				name: "Ballsport",
-				key: "ballsport",
-				hasSubmenu: true,
-				link: "/sportarten/ballsport",
-				subMenuItems: [
-					{
-						name: "Prellball",
-						key: "prellball",
-						link: "/sportarten/ballsport/prellball"
-					},
-					{
-						name: "Volleyball",
-						key: "volleyball",
-						link: "/sportarten/ballsport/volleyball"
-					},
-					{
-						name: "Tischtennis",
-						key: "tischtennis",
-						link: "/sportarten/ballsport/tischtennis"
-					}
-				]
-			},
-			{
-				name: "Tanz und Rope Skipping",
-				key: "tanzundshow",
-				hasSubmenu: false,
-				link: "/sportarten/tanz-und-rope-skipping"
-			},
-			{
-				name: "Turnen",
-				key: "turnen",
-				hasSubmenu: false,
-				link: "/sportarten/turnen"
-			},
-			{
-				name: "Gesund und Fit",
-				key: "gesundheitssport",
-				hasSubmenu: false,
-				link: "/sportarten/gesundheitssport"
-			},
-			{
-				name: "Leichtathletik",
-				key: "leichtathletik",
-				hasSubmenu: false,
-				link: "/sportarten/leichtathletik"
-			}
-		]
+		link: "/sportangebot",
+		menuItems: []
 	},
 	{
 		name: "Über den Verein",

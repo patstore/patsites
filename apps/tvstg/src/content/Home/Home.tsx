@@ -4,12 +4,13 @@ import { useCollection } from "@provider";
 import { BlogElement, Sponsors, SportBanner } from "@ui";
 import shopTeaser from "./images/marketing-teaser-970x250.jpg";
 import HomeAppointments from "./components/HomeAppointments";
-import HomeStickySidebar from "./components/HomeStickySidebar";
 import { HOME_ARTICLE_COUNT, HOME_SIDEBAR_CATEGORY } from "./constants";
 import styles from "./Home.module.css";
+import { useMediaQuery } from "usehooks-ts";
 export { HOME_ARTICLE_COUNT, HOME_SIDEBAR_CATEGORY } from "./constants";
 
 const Home: React.FC = () => {
+	const isMobile = useMediaQuery("(max-width: 768px)");
 	const { items: articles } = useCollection("Article");
 
 	const blogArray = useMemo(
@@ -27,7 +28,7 @@ const Home: React.FC = () => {
 			<div className="wrapper">
 				<div className="site-container">
 					<div className="page-row">
-						<div className={`main-column ${styles.gap}`}>
+						<div className={`main-column`}>
 							<div className={styles.articles}>
 								{blogArray
 									.slice(0, HOME_ARTICLE_COUNT)
@@ -35,7 +36,9 @@ const Home: React.FC = () => {
 										<BlogElement
 											flex={["100%", "45%"]}
 											type={
-												index === 0 ? "header" : "tile"
+												index === 0 && !isMobile
+													? "header"
+													: "tile"
 											}
 											image={value.image}
 											categories={value.categories || []}
@@ -64,7 +67,7 @@ const Home: React.FC = () => {
 							</div>
 						</div>
 						<div className={`sidebar-column ${styles.sidebar}`}>
-							<HomeStickySidebar>
+							<div className={styles.sidebarSticky}>
 								<div className={styles.sidebarInner}>
 									<Sidebar
 										category={HOME_SIDEBAR_CATEGORY}
@@ -73,7 +76,7 @@ const Home: React.FC = () => {
 										displayAllNews
 									/>
 								</div>
-							</HomeStickySidebar>
+							</div>
 						</div>
 					</div>
 				</div>

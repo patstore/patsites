@@ -5,6 +5,7 @@ export type Trainingszeit = EventTime & {
 	group_id: string;
 	group_name: string;
 	categories: string[];
+	category_ids: string[];
 	search_name: string;
 	search_time: string;
 	search_weekday: string;
@@ -16,7 +17,10 @@ export type Trainingszeit = EventTime & {
 
 export type UseGetTrainingTimes = (T: {
 	categories: string[];
-	searchValue: string;
+	/** Every term must match (AND). */
+	searchTerms: string[];
+	/** `objectId` of the selected Fachbereich or Sportart. */
+	category: string | null;
 	age: number | null;
 	gender: SportCalendarFilters["geschlecht"];
 }) => {

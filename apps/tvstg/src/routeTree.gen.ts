@@ -22,11 +22,14 @@ import { Route as ApiPreviewRouteImport } from './routes/api/preview'
 import { Route as MedienBerichteRouteImport } from './routes/medien/berichte'
 import { Route as MedienDownloadsRouteImport } from './routes/medien/downloads'
 import { Route as MedienVeroeffentlichungenRouteImport } from './routes/medien/veroeffentlichungen'
+import { Route as SportangebotIndexRouteImport } from './routes/sportangebot/index'
+import { Route as SportangebotSlugRouteImport } from './routes/sportangebot/$slug'
 import { Route as SportartenIndexRouteImport } from './routes/sportarten/index'
 import { Route as VereinJugendordnungRouteImport } from './routes/verein/jugendordnung'
 import { Route as VereinPraeventionRouteImport } from './routes/verein/praevention'
 import { Route as VereinSatzungRouteImport } from './routes/verein/satzung'
 import { Route as VereinVorstandRouteImport } from './routes/verein/vorstand'
+import { Route as SportangebotFachbereichSportartRouteImport } from './routes/sportangebot/$fachbereich/$sportart'
 import { Route as SportartenFachbereichIndexRouteImport } from './routes/sportarten/$fachbereich/index'
 import { Route as SportartenFachbereichSportartRouteImport } from './routes/sportarten/$fachbereich/$sportart'
 
@@ -96,6 +99,16 @@ const MedienVeroeffentlichungenRoute =
     path: '/medien/veroeffentlichungen',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SportangebotIndexRoute = SportangebotIndexRouteImport.update({
+  id: '/sportangebot/',
+  path: '/sportangebot/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SportangebotSlugRoute = SportangebotSlugRouteImport.update({
+  id: '/sportangebot/$slug',
+  path: '/sportangebot/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SportartenIndexRoute = SportartenIndexRouteImport.update({
   id: '/sportarten/',
   path: '/sportarten/',
@@ -121,6 +134,12 @@ const VereinVorstandRoute = VereinVorstandRouteImport.update({
   path: '/verein/vorstand',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SportangebotFachbereichSportartRoute =
+  SportangebotFachbereichSportartRouteImport.update({
+    id: '/sportangebot/$fachbereich/$sportart',
+    path: '/sportangebot/$fachbereich/$sportart',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SportartenFachbereichIndexRoute =
   SportartenFachbereichIndexRouteImport.update({
     id: '/sportarten/$fachbereich/',
@@ -148,11 +167,14 @@ export interface FileRoutesByFullPath {
   '/medien/berichte': typeof MedienBerichteRoute
   '/medien/downloads': typeof MedienDownloadsRoute
   '/medien/veroeffentlichungen': typeof MedienVeroeffentlichungenRoute
+  '/sportangebot/$slug': typeof SportangebotSlugRoute
   '/verein/jugendordnung': typeof VereinJugendordnungRoute
   '/verein/praevention': typeof VereinPraeventionRoute
   '/verein/satzung': typeof VereinSatzungRoute
   '/verein/vorstand': typeof VereinVorstandRoute
+  '/sportangebot/': typeof SportangebotIndexRoute
   '/sportarten/': typeof SportartenIndexRoute
+  '/sportangebot/$fachbereich/$sportart': typeof SportangebotFachbereichSportartRoute
   '/sportarten/$fachbereich/$sportart': typeof SportartenFachbereichSportartRoute
   '/sportarten/$fachbereich/': typeof SportartenFachbereichIndexRoute
 }
@@ -170,11 +192,14 @@ export interface FileRoutesByTo {
   '/medien/berichte': typeof MedienBerichteRoute
   '/medien/downloads': typeof MedienDownloadsRoute
   '/medien/veroeffentlichungen': typeof MedienVeroeffentlichungenRoute
+  '/sportangebot/$slug': typeof SportangebotSlugRoute
   '/verein/jugendordnung': typeof VereinJugendordnungRoute
   '/verein/praevention': typeof VereinPraeventionRoute
   '/verein/satzung': typeof VereinSatzungRoute
   '/verein/vorstand': typeof VereinVorstandRoute
+  '/sportangebot': typeof SportangebotIndexRoute
   '/sportarten': typeof SportartenIndexRoute
+  '/sportangebot/$fachbereich/$sportart': typeof SportangebotFachbereichSportartRoute
   '/sportarten/$fachbereich/$sportart': typeof SportartenFachbereichSportartRoute
   '/sportarten/$fachbereich': typeof SportartenFachbereichIndexRoute
 }
@@ -193,11 +218,14 @@ export interface FileRoutesById {
   '/medien/berichte': typeof MedienBerichteRoute
   '/medien/downloads': typeof MedienDownloadsRoute
   '/medien/veroeffentlichungen': typeof MedienVeroeffentlichungenRoute
+  '/sportangebot/$slug': typeof SportangebotSlugRoute
   '/verein/jugendordnung': typeof VereinJugendordnungRoute
   '/verein/praevention': typeof VereinPraeventionRoute
   '/verein/satzung': typeof VereinSatzungRoute
   '/verein/vorstand': typeof VereinVorstandRoute
+  '/sportangebot/': typeof SportangebotIndexRoute
   '/sportarten/': typeof SportartenIndexRoute
+  '/sportangebot/$fachbereich/$sportart': typeof SportangebotFachbereichSportartRoute
   '/sportarten/$fachbereich/$sportart': typeof SportartenFachbereichSportartRoute
   '/sportarten/$fachbereich/': typeof SportartenFachbereichIndexRoute
 }
@@ -217,11 +245,14 @@ export interface FileRouteTypes {
     | '/medien/berichte'
     | '/medien/downloads'
     | '/medien/veroeffentlichungen'
+    | '/sportangebot/$slug'
     | '/verein/jugendordnung'
     | '/verein/praevention'
     | '/verein/satzung'
     | '/verein/vorstand'
+    | '/sportangebot/'
     | '/sportarten/'
+    | '/sportangebot/$fachbereich/$sportart'
     | '/sportarten/$fachbereich/$sportart'
     | '/sportarten/$fachbereich/'
   fileRoutesByTo: FileRoutesByTo
@@ -239,11 +270,14 @@ export interface FileRouteTypes {
     | '/medien/berichte'
     | '/medien/downloads'
     | '/medien/veroeffentlichungen'
+    | '/sportangebot/$slug'
     | '/verein/jugendordnung'
     | '/verein/praevention'
     | '/verein/satzung'
     | '/verein/vorstand'
+    | '/sportangebot'
     | '/sportarten'
+    | '/sportangebot/$fachbereich/$sportart'
     | '/sportarten/$fachbereich/$sportart'
     | '/sportarten/$fachbereich'
   id:
@@ -261,11 +295,14 @@ export interface FileRouteTypes {
     | '/medien/berichte'
     | '/medien/downloads'
     | '/medien/veroeffentlichungen'
+    | '/sportangebot/$slug'
     | '/verein/jugendordnung'
     | '/verein/praevention'
     | '/verein/satzung'
     | '/verein/vorstand'
+    | '/sportangebot/'
     | '/sportarten/'
+    | '/sportangebot/$fachbereich/$sportart'
     | '/sportarten/$fachbereich/$sportart'
     | '/sportarten/$fachbereich/'
   fileRoutesById: FileRoutesById
@@ -284,11 +321,14 @@ export interface RootRouteChildren {
   MedienBerichteRoute: typeof MedienBerichteRoute
   MedienDownloadsRoute: typeof MedienDownloadsRoute
   MedienVeroeffentlichungenRoute: typeof MedienVeroeffentlichungenRoute
+  SportangebotSlugRoute: typeof SportangebotSlugRoute
   VereinJugendordnungRoute: typeof VereinJugendordnungRoute
   VereinPraeventionRoute: typeof VereinPraeventionRoute
   VereinSatzungRoute: typeof VereinSatzungRoute
   VereinVorstandRoute: typeof VereinVorstandRoute
+  SportangebotIndexRoute: typeof SportangebotIndexRoute
   SportartenIndexRoute: typeof SportartenIndexRoute
+  SportangebotFachbereichSportartRoute: typeof SportangebotFachbereichSportartRoute
   SportartenFachbereichSportartRoute: typeof SportartenFachbereichSportartRoute
   SportartenFachbereichIndexRoute: typeof SportartenFachbereichIndexRoute
 }
@@ -386,6 +426,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MedienVeroeffentlichungenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sportangebot/': {
+      id: '/sportangebot/'
+      path: '/sportangebot'
+      fullPath: '/sportangebot/'
+      preLoaderRoute: typeof SportangebotIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sportangebot/$slug': {
+      id: '/sportangebot/$slug'
+      path: '/sportangebot/$slug'
+      fullPath: '/sportangebot/$slug'
+      preLoaderRoute: typeof SportangebotSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sportarten/': {
       id: '/sportarten/'
       path: '/sportarten'
@@ -421,6 +475,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VereinVorstandRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sportangebot/$fachbereich/$sportart': {
+      id: '/sportangebot/$fachbereich/$sportart'
+      path: '/sportangebot/$fachbereich/$sportart'
+      fullPath: '/sportangebot/$fachbereich/$sportart'
+      preLoaderRoute: typeof SportangebotFachbereichSportartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sportarten/$fachbereich/': {
       id: '/sportarten/$fachbereich/'
       path: '/sportarten/$fachbereich'
@@ -452,11 +513,14 @@ const rootRouteChildren: RootRouteChildren = {
   MedienBerichteRoute: MedienBerichteRoute,
   MedienDownloadsRoute: MedienDownloadsRoute,
   MedienVeroeffentlichungenRoute: MedienVeroeffentlichungenRoute,
+  SportangebotSlugRoute: SportangebotSlugRoute,
   VereinJugendordnungRoute: VereinJugendordnungRoute,
   VereinPraeventionRoute: VereinPraeventionRoute,
   VereinSatzungRoute: VereinSatzungRoute,
   VereinVorstandRoute: VereinVorstandRoute,
+  SportangebotIndexRoute: SportangebotIndexRoute,
   SportartenIndexRoute: SportartenIndexRoute,
+  SportangebotFachbereichSportartRoute: SportangebotFachbereichSportartRoute,
   SportartenFachbereichSportartRoute: SportartenFachbereichSportartRoute,
   SportartenFachbereichIndexRoute: SportartenFachbereichIndexRoute,
 }

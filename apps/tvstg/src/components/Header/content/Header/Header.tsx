@@ -5,13 +5,15 @@ import { IoIosConstruct } from "react-icons/io";
 import "./header.scss";
 import MenuSection from "./components/MenuSection";
 import { headerVariants } from "./animations";
-import { FlexBox, ThemeToggle } from "@ui";
+import { currentTheme, FlexBox, ThemeToggle } from "@ui";
 import logoLettering from "./images/logo_red_lettering.png";
+import logoLetteringWhite from "./images/logo_white_lettering.png";
 import main_menu from "./constants/main_menu";
 import styles from "./Header.module.css";
 
 const Header: React.FC = () => {
 	const [headerAnimate, setHeaderAnimate] = useState("start");
+	const [theme, setTheme] = useState<"light" | "dark">("light");
 
 	const handleScroll = () => {
 		const compact = window.scrollY > 200;
@@ -38,6 +40,13 @@ const Header: React.FC = () => {
 		window.addEventListener("scroll", handleScroll, false);
 		handleScroll();
 		return () => window.removeEventListener("scroll", handleScroll, false);
+	}, []);
+
+	useEffect(() => {
+		const sync = () => setTheme(currentTheme());
+		sync();
+		window.addEventListener("tvstg-theme", sync);
+		return () => window.removeEventListener("tvstg-theme", sync);
 	}, []);
 
 	return (
@@ -70,17 +79,25 @@ const Header: React.FC = () => {
 				>
 					<FlexBox align="center">
 						<Link to="/" className={styles.logoLink}>
-							<img
-								src={logoLettering}
-								alt="TV Freiburg St. Georgen von 1897 e.V."
-								width={180}
-								className={styles.logo}
-							/>
+							{theme === "light" ? (
+								<img
+									src={logoLettering}
+									alt="TV Freiburg St. Georgen von 1897 e.V."
+									width={180}
+									className={styles.logo}
+								/>
+							) : (
+								<img
+									src={logoLetteringWhite}
+									alt="TV Freiburg St. Georgen von 1897 e.V."
+									width={180}
+									className={styles.logo}
+								/>
+							)}
 						</Link>
 					</FlexBox>
 				</motion.div>
 
-				<ThemeToggle />
 				<ul className={styles.menu}>
 					{main_menu.map((entry) => [
 						<MenuSection
@@ -95,6 +112,7 @@ const Header: React.FC = () => {
 						/>
 					])}
 				</ul>
+				<ThemeToggle />
 			</FlexBox>
 			<div className={styles.notice}>
 				<p className={styles.noticeText}>

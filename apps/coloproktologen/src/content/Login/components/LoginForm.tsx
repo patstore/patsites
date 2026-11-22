@@ -1,6 +1,6 @@
 import { navigate } from "@router";
 import { Button, Divider } from "@ui";
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { horizontalContainer, formContainer } from "../styles";
 import { LoginFormProps } from "../types";
 import ResetPassword from "./ResetPassword";
@@ -46,7 +46,7 @@ const LoginForm: FC<LoginFormProps> = ({ title, text }) => {
 						return;
 					}
 					setSubmitting(false);
-					navigate("/app/profile");
+					navigate("/app/benutzerkonto");
 				}}
 			>
 				{({

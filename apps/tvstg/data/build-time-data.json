@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-17T18:57:00.392Z",
+    "generatedAt": "2026-11-21T17:37:15.891Z",
     "projectId": "lt4HonzqK3",
     "moduleCount": 13,
     "states": null,
@@ -22687,6 +22687,18 @@
   ],
   "forms": [
     {
+      "id": "Rm9ybTpHR0lCcTVFNkdB",
+      "objectId": "GGIBq5E6GA",
+      "categories": null,
+      "title": "Übungsleiter",
+      "text": null,
+      "date": null,
+      "state": "draft",
+      "gallery": null,
+      "label": "Übungsleiter",
+      "form_fields": []
+    },
+    {
       "id": "Rm9ybTppRlR0ekV1NkJ6",
       "objectId": "iFTtzEu6Bz",
       "categories": null,
@@ -23788,7 +23800,7 @@
         "FwHFUX113b"
       ],
       "title": "Wichtelturnen 2",
-      "description": " Leider, leider müsssen wir wegen der Nachmittagsbetreuung der Grundschulen dieses Angebot ab sofort um 10 minuten kürzen! \nEltern, Omas, Opas etc. ....turnen und erobern die Welt der Bewegung mit ihren  Kindern ab 2 Jahren bis 4Jahre  \nInfos bzw. Anfrage: \nsusanne.kirsch@tvstg.de\n\n",
+      "description": "! \nEltern, Omas, Opas etc. ....turnen und erobern die Welt der Bewegung mit ihren  Kindern ab 2 Jahren bis zum Ende des 4. Lebensjahres.\nInfos bzw. Anfrage: \nsusanne.kirsch@tvstg.de\n\n",
       "text": "<p>Spielerisch in einer wöchentlich wechselnden Bewegungslandschaft werden hier die kleinen Sportfans an die motorischen Grundlagen in Begleitung vom Mama, oder Papa, oder Oma etc.Opa etc. herangeführt.</p><p><br></p>",
       "image": "sEMVuxqH1S",
       "date": null,
@@ -23796,7 +23808,7 @@
       "times": [
         {
           "id": "d91b6a56-9e74-4eea-8339-f843c3e42911",
-          "start": "17:20",
+          "start": "17:15",
           "end": "18:10",
           "weekday": "thursday",
           "place": {
@@ -23872,7 +23884,7 @@
         "FwHFUX113b"
       ],
       "title": "Wichtelturnen 1",
-      "description": "Leider, leider müsssen wir wegen der Nachmittagsbetreuung der Grundschulen dieses Angebot ab sofort um 15 Minuten kürzen und 30 minuten später beginnen! Diese Gruppe ist am Donnerstag leider bereits voll, sehr voll! - Bei Interesse bitte Mail an die verantwortliche Übungsleiterin bzw. am besten warten bis nach den Sommerferien!\n\n",
+      "description": " Diese Gruppe ist am Donnerstag leider bereits voll, sehr voll! - Bei Interesse bitte Mail an die verantwortliche Übungsleiterin.\n",
       "text": "<p>Eltern, Omas, Opas turnen &nbsp;spielerisch unter fachlicher Anleitung mit ihren Kindern von 2-4 Jahren an verschiedensten Gerätelandschaften.</p><p><br></p>",
       "image": "ugO9bSu5qZ",
       "date": null,
@@ -23880,8 +23892,8 @@
       "times": [
         {
           "id": "488ec6c8-14ce-41dc-9544-579faee82467",
-          "start": "16:30",
-          "end": "17:20",
+          "start": "17:15",
+          "end": "18:10",
           "weekday": "thursday",
           "place": {
             "type": "location",
@@ -24300,7 +24312,7 @@
       ],
       "title": "Volleyball Damen 3 Kreisliga",
       "description": "Wir führen eine Warteliste.",
-      "text": "<p><strong>DAS sind WIR:</strong></p><p>Unser Team besteht aus den Spielerinnen Amelie, Anuk, Azra, Lei, Lisa, Lorena, Marie H., Marie W., Pia, Rim, Saya, Whitney, Yara und Yvonne, unserem Trainerteam Petra und Marcus sowie unserem Maskottchen Fuchs und unserem megacoolen Getränkehalter namens Egon 3.0.<br></p><p>Leider müssen uns mehrere Spielerinnen verlassen. So ist das Leben: zum Studieren wegziehen, ins Auslandsschuljahr gehen oder den Fokus einfach auch auf die Gesundheit legen. Danke für alles liebe Ella, Eva, Lahja und Sarah 😊 Alles Gute wünschen wir euch und sagen: auf Wiedersehen!<br></p><p>Neu in unserem Team sind Amelie, Marie und Whitney - wir heißen euch herzlich willkommen!<br><br></p><p><strong>DU willst Teil unseres Teams werden?</strong></p><p>Und du bringst bereits aktive Volleyballerfahrung mit und kennst dich auch schon mit dem Spielsystem aus? Dann melde dich bitte bei Petra.&nbsp;Wir führen zwar eine Warteliste; freuen uns aber immer über neue Kontakte.</p><p>&nbsp;</p><p><strong>Unsere Saison ist zu Ende. Wir freuen uns schon auf den 10. Oktober - dann geht's wieder los!</strong></p><p>&nbsp;</p><p>ZICK - ZACK - BOOOOOOOOOM :)</p>",
+      "text": "<p><strong>DAS sind WIR:</strong></p><p>Unser Team besteht aus den Spielerinnen Amelie B., Amelie T., Anuk, Azra, Lei, Lisa, Lorena, Marie H., Marie W., Merle, Pia, Rim, Saya, Whitney, Yara und Yvonne, unserem Trainerteam Petra und Marcus sowie unserem Maskottchen Fuchs und unserem megacoolen Getränkehalter namens Egon 3.0.<br></p><p><strong>DU willst Teil unseres Teams werden? </strong></p><p>Und du bringst bereits aktive Volleyballerfahrung mit und kennst dich auch schon mit dem Spielsystem aus? Dann melde dich bitte bei Petra.&nbsp;Wir führen zwar eine Warteliste; freuen uns aber immer über neue Kontakte.</p><p>&nbsp;</p><p>ZICK - ZACK - BOOOOOOOOOM :)</p>",
       "image": "xtVa8TtmwC",
       "date": null,
       "state": "published",
@@ -24336,7 +24348,7 @@
       "team": {
         "id": "d621b499-fadb-4cf0-919d-7a4c2a4e8dfa",
         "name": "Damen 3 Kreisliga",
-        "description": "<p><strong>DAS sind WIR:</strong></p><p>Unser Team besteht aus den Spielerinnen Amelie, Anuk, Azra, Lei, Lisa, Lorena, Marie H., Marie W., Pia, Rim, Saya, Whitney, Yara und Yvonne, unserem Trainerteam Petra und Marcus sowie unserem Maskottchen Fuchs und unserem megacoolen Getränkehalter namens Egon 3.0.</p><p>Leider müssen uns mehrere Spielerinnen verlassen. So ist das Leben: zum Studieren wegziehen, ins Auslandsschuljahr gehen oder den Fokus einfach auch auf die Gesundheit legen. Danke für alles liebe Ella, Eva, Lahja und Sarah 😊 Alles Gute wünschen wir euch und sagen: auf Wiedersehen!</p><p>Neu in unserem Team sind Amelie, Marie und Whitney - wir heißen euch herzlich willkommen!<br></p><p><strong>DU willst Teil unseres Teams werden?</strong></p><p>Und du bringst bereits aktive Volleyballerfahrung mit und kennst dich auch schon mit dem Spielsystem aus? Dann melde dich bitte bei Petra.&nbsp;Wir führen zwar eine Warteliste; freuen uns aber immer über neue Kontakte.</p><p>&nbsp;</p><p><strong>Unsere Saison geht am 10. Oktober wieder los!</strong></p><p>&nbsp;</p><p>ZICK - ZACK - BOOOOOOOOOM :)</p>",
+        "description": "<p><strong>DAS sind WIR:</strong></p><p>Unser Team besteht aus den Spielerinnen Amelie B., Amelie T., Anuk, Azra, Lei, Lisa, Lorena, Marie H., Marie W., Merle, Pia, Rim, Saya, Whitney, Yara und Yvonne, unserem Trainerteam Petra und Marcus sowie unserem Maskottchen Fuchs und unserem megacoolen Getränkehalter namens Egon 3.0.</p><p></p><p><strong>DU willst Teil unseres Teams werden?</strong></p><p>Und du bringst bereits aktive Volleyballerfahrung mit und kennst dich auch schon mit dem Spielsystem aus? Dann melde dich bitte bei Petra.&nbsp;Wir führen zwar eine Warteliste; freuen uns aber immer über neue Kontakte.</p><p>&nbsp;</p><p>ZICK - ZACK - BOOOOOOOOOM :)</p>",
         "image": "5FbHw2eq0Z"
       },
       "persons": [
