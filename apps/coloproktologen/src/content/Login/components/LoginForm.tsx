@@ -1,4 +1,5 @@
 import { navigate } from "@router";
+import { useSiteContext } from "@provider";
 import { Button, Divider } from "@ui";
 import { FC, useState } from "react";
 import { horizontalContainer, formContainer } from "../styles";
@@ -16,6 +17,7 @@ const loginSchema = Yup.object().shape({
 
 const LoginForm: FC<LoginFormProps> = ({ title, text }) => {
 	const [error, setError] = useState<string | null>(null);
+	const { getUser } = useSiteContext();
 	return (
 		<div css={formContainer}>
 			{title && <h3>{title}</h3>}
@@ -45,6 +47,9 @@ const LoginForm: FC<LoginFormProps> = ({ title, text }) => {
 						setSubmitting(false);
 						return;
 					}
+					// Refresh the session in the site context first, otherwise
+					// /app still sees the old (logged out) user and redirects back.
+					await getUser();
 					setSubmitting(false);
 					navigate("/app/benutzerkonto");
 				}}
