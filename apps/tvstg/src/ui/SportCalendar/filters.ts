@@ -12,7 +12,9 @@ export const sportCalendarSearchSchema = z.object({
 	alter: z.coerce.number().int().min(0).max(99).optional().catch(undefined),
 	geschlecht: z.enum(GENDER_VALUES).default("all").catch("all"),
 	/** `objectId` of the selected Fachbereich or Sportart. */
-	kategorie: z.string().trim().max(60).optional().catch(undefined)
+	kategorie: z.string().trim().max(60).optional().catch(undefined),
+	/** Slug of the group whose slide-in is open (shown masked as its own URL). */
+	gruppe: z.string().trim().max(120).optional().catch(undefined)
 });
 
 export type SportCalendarFilters = z.infer<typeof sportCalendarSearchSchema>;

@@ -1,10 +1,12 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useCollection } from "@provider";
 import { TrainingCalendarElementProps } from "../types";
 import { SportSlideIn } from "@components";
 import { Image } from "@repo/ui";
 import { contentBlockStyles } from "../../../../ContentBlock";
+import { groupSlug } from "../../../functions/groupSlug";
+import { useGroupSlideIn } from "../../../hooks/useGroupSlideIn";
 import styles from "../WeekDay.module.css";
 
 const previewWords = (text: string, limit: number) => {
@@ -22,10 +24,13 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 }) => {
 	const { find: findGroup } = useCollection("Group");
 	const { find: findLocation } = useCollection("Location");
-	const [modalState, setModalState] = useState(false);
+	const { items: groups } = useCollection("Group");
 
 	const group = findGroup(training.group_id);
 	const groupLocation = findLocation(training.place.location);
+	const { modalState, setModalState } = useGroupSlideIn(
+		group ? groupSlug(group, groups) : ""
+	);
 
 	if (!group) {
 		return null;
@@ -177,7 +182,6 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 				</div>
 				<button
 					type="button"
-					onClick={openDetails}
 					className={styles.listButton}
 					aria-label={`${group.title ?? "Gruppe"}: Details anzeigen`}
 				>

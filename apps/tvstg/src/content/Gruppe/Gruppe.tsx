@@ -16,11 +16,9 @@ const Gruppe: React.FC<{ group: PatstoreGroup }> = ({ group }) => (
 					endalter={group.data?.end_age}
 					beschreibung={group.text || group.data?.description}
 					titel={group.title || ""}
-					team={group.team}
 					trainingszeiten={group.times}
 					info={group.description || ""}
 					trainer={group.persons}
-					type="mobile"
 				/>
 			</div>
 		</div>

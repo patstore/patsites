@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-23T07:46:25.352Z",
+    "generatedAt": "2026-11-23T10:55:18.672Z",
     "projectId": "lt4HonzqK3",
     "moduleCount": 13,
     "states": null,
@@ -2163,7 +2163,7 @@
         },
         {
           "id": "description",
-          "label": "Beschreibung",
+          "label": "Infotext",
           "required": false,
           "type": "edit_textfield",
           "active": true,
@@ -22061,6 +22061,22 @@
   ],
   "locations": [
     {
+      "id": "TG9jYXRpb246RDJWblplV0h2dQ==",
+      "objectId": "D2VnZeWHvu",
+      "categories": null,
+      "title": "Einsegnungshalle Friedhof Freiburg St. Georgen",
+      "text": null,
+      "date": null,
+      "state": "published",
+      "coordinates": {
+        "latitude": 47.9815641861759,
+        "longitude": 7.789723353526191
+      },
+      "address": "Tiengener Str. 10, 79111 Freiburg im Breisgau",
+      "gallery": null,
+      "label": "Einsegnungshalle Friedhof Freiburg St. Georgen"
+    },
+    {
       "id": "TG9jYXRpb246SmN1RUNtdmNSWQ==",
       "objectId": "JcuECmvcRY",
       "categories": null,
@@ -26276,7 +26292,7 @@
             "address": "",
             "map": {},
             "online": "",
-            "location": "93VNeq5eCf"
+            "location": "D2VnZeWHvu"
           }
         }
       ],
@@ -27406,20 +27422,6 @@
       "state": "published",
       "gallery": null,
       "label": "Malaika Treiber"
-    },
-    {
-      "id": "UGVyc29uOjUyVnhTanV5dkU=",
-      "objectId": "52VxSjuyvE",
-      "categories": null,
-      "title": "Lucie Schömmel",
-      "description": null,
-      "text": null,
-      "email": "lucie.schoemmel@tvstg.de",
-      "image": null,
-      "date": null,
-      "state": "published",
-      "gallery": null,
-      "label": "Lucie Schömmel"
     },
     {
       "id": "UGVyc29uOlQwM0hMUmNrcmI=",
@@ -31910,6 +31912,22 @@
     }
   ],
   "entrys": [
+    {
+      "id": "RW50cnk6U2VteHZqNU5VYw==",
+      "objectId": "Semxvj5NUc",
+      "categories": [
+        "YLHdF8iCjA",
+        "JkN5RR1iaM"
+      ],
+      "title": "Mithilfe in der Geschäftsstelle",
+      "description": "Wir suchen jemanden für die GS",
+      "text": "<p>Wir suchen jemanden für die GS:</p><ul><li><p>5 Stunden die Woche</p></li><li><p>Kommunikativ</p></li><li><p>Kenntnissreich</p></li></ul><p></p>",
+      "image": null,
+      "date": null,
+      "state": "draft",
+      "slug": "mithilfe-in-der-geschaftsstelle",
+      "label": "Mithilfe in der Geschäftsstelle"
+    },
     {
       "id": "RW50cnk6aElDZHRCMlh0OA==",
       "objectId": "hICdtB2Xt8",

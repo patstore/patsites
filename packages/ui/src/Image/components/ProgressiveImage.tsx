@@ -1,6 +1,20 @@
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import {
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+	type CSSProperties
+} from "react";
 import styles from "../Image.module.css";
 import { ImagePlaceholder } from "./ImagePlaceholder";
+
+/** True when the browser can decode the image immediately (already cached). */
+function isImageCached(src?: string): boolean {
+	if (!src || typeof Image === "undefined") return false;
+	const probe = new Image();
+	probe.src = src;
+	return probe.complete && probe.naturalWidth > 0;
+}
 
 type ProgressiveImageProps = {
 	alt: string;
@@ -32,7 +46,8 @@ export function ProgressiveImage({
 
 	const fullSrc =
 		!localFailed && src ? src : !remoteFailed ? remoteSrc : undefined;
-	const showThumb = Boolean(thumbnailSrc) && !thumbFailed;
+	const fullCached = useMemo(() => isImageCached(fullSrc), [fullSrc]);
+	const showThumb = Boolean(thumbnailSrc) && !thumbFailed && !fullCached;
 	const showFull = Boolean(fullSrc);
 	const stacked = showThumb && showFull;
 	const fillsFrame =
