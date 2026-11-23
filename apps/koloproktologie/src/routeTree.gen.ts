@@ -25,6 +25,7 @@ import { Route as AktivitaetenKongressRouteImport } from './routes/aktivitaeten/
 import { Route as AktivitaetenLeitlinienRouteImport } from './routes/aktivitaeten/leitlinien'
 import { Route as AktivitaetenSchirmherrschaftRouteImport } from './routes/aktivitaeten/schirmherrschaft'
 import { Route as AktivitaetenZertifizierungRouteImport } from './routes/aktivitaeten/zertifizierung'
+import { Route as ApiApplication_emailRouteImport } from './routes/api/application_email'
 import { Route as ApiLoginRouteImport } from './routes/api/login'
 import { Route as ApiLogoutRouteImport } from './routes/api/logout'
 import { Route as ApiPreviewRouteImport } from './routes/api/preview'
@@ -144,6 +145,11 @@ const AktivitaetenZertifizierungRoute =
     path: '/aktivitaeten/zertifizierung',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiApplication_emailRoute = ApiApplication_emailRouteImport.update({
+  id: '/api/application_email',
+  path: '/api/application_email',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiLoginRoute = ApiLoginRouteImport.update({
   id: '/api/login',
   path: '/api/login',
@@ -329,6 +335,7 @@ export interface FileRoutesByFullPath {
   '/aktivitaeten/leitlinien': typeof AktivitaetenLeitlinienRoute
   '/aktivitaeten/schirmherrschaft': typeof AktivitaetenSchirmherrschaftRoute
   '/aktivitaeten/zertifizierung': typeof AktivitaetenZertifizierungRoute
+  '/api/application_email': typeof ApiApplication_emailRoute
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
   '/api/preview': typeof ApiPreviewRoute
@@ -379,6 +386,7 @@ export interface FileRoutesByTo {
   '/aktivitaeten/leitlinien': typeof AktivitaetenLeitlinienRoute
   '/aktivitaeten/schirmherrschaft': typeof AktivitaetenSchirmherrschaftRoute
   '/aktivitaeten/zertifizierung': typeof AktivitaetenZertifizierungRoute
+  '/api/application_email': typeof ApiApplication_emailRoute
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
   '/api/preview': typeof ApiPreviewRoute
@@ -431,6 +439,7 @@ export interface FileRoutesById {
   '/aktivitaeten/leitlinien': typeof AktivitaetenLeitlinienRoute
   '/aktivitaeten/schirmherrschaft': typeof AktivitaetenSchirmherrschaftRoute
   '/aktivitaeten/zertifizierung': typeof AktivitaetenZertifizierungRoute
+  '/api/application_email': typeof ApiApplication_emailRoute
   '/api/login': typeof ApiLoginRoute
   '/api/logout': typeof ApiLogoutRoute
   '/api/preview': typeof ApiPreviewRoute
@@ -484,6 +493,7 @@ export interface FileRouteTypes {
     | '/aktivitaeten/leitlinien'
     | '/aktivitaeten/schirmherrschaft'
     | '/aktivitaeten/zertifizierung'
+    | '/api/application_email'
     | '/api/login'
     | '/api/logout'
     | '/api/preview'
@@ -534,6 +544,7 @@ export interface FileRouteTypes {
     | '/aktivitaeten/leitlinien'
     | '/aktivitaeten/schirmherrschaft'
     | '/aktivitaeten/zertifizierung'
+    | '/api/application_email'
     | '/api/login'
     | '/api/logout'
     | '/api/preview'
@@ -585,6 +596,7 @@ export interface FileRouteTypes {
     | '/aktivitaeten/leitlinien'
     | '/aktivitaeten/schirmherrschaft'
     | '/aktivitaeten/zertifizierung'
+    | '/api/application_email'
     | '/api/login'
     | '/api/logout'
     | '/api/preview'
@@ -637,6 +649,7 @@ export interface RootRouteChildren {
   AktivitaetenLeitlinienRoute: typeof AktivitaetenLeitlinienRoute
   AktivitaetenSchirmherrschaftRoute: typeof AktivitaetenSchirmherrschaftRoute
   AktivitaetenZertifizierungRoute: typeof AktivitaetenZertifizierungRoute
+  ApiApplication_emailRoute: typeof ApiApplication_emailRoute
   ApiLoginRoute: typeof ApiLoginRoute
   ApiLogoutRoute: typeof ApiLogoutRoute
   ApiPreviewRoute: typeof ApiPreviewRoute
@@ -781,6 +794,13 @@ declare module '@tanstack/react-router' {
       path: '/aktivitaeten/zertifizierung'
       fullPath: '/aktivitaeten/zertifizierung'
       preLoaderRoute: typeof AktivitaetenZertifizierungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/application_email': {
+      id: '/api/application_email'
+      path: '/api/application_email'
+      fullPath: '/api/application_email'
+      preLoaderRoute: typeof ApiApplication_emailRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/login': {
@@ -1050,6 +1070,7 @@ const rootRouteChildren: RootRouteChildren = {
   AktivitaetenLeitlinienRoute: AktivitaetenLeitlinienRoute,
   AktivitaetenSchirmherrschaftRoute: AktivitaetenSchirmherrschaftRoute,
   AktivitaetenZertifizierungRoute: AktivitaetenZertifizierungRoute,
+  ApiApplication_emailRoute: ApiApplication_emailRoute,
   ApiLoginRoute: ApiLoginRoute,
   ApiLogoutRoute: ApiLogoutRoute,
   ApiPreviewRoute: ApiPreviewRoute,

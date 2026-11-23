@@ -40,6 +40,12 @@ const Application: React.FC = () => {
 
 		try {
 			await apiRequest("/api/membership/apply", values);
+			const { password: _password, ...application } = values;
+			try {
+				await apiRequest("/api/application_email", application);
+			} catch (emailError) {
+				console.error(emailError);
+			}
 			setApplicationOpen(false);
 		} catch (err) {
 			setError(
