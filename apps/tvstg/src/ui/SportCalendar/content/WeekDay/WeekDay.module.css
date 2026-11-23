@@ -124,6 +124,10 @@
 	background: var(--color-surface);
 	color: var(--color-text);
 	padding: 0;
+	cursor: pointer;
+	&:hover {
+		background: var(--color-surface-muted);
+	}
 }
 
 .listRow:last-child {
@@ -183,13 +187,12 @@
 }
 
 .infoTextContainer {
-	padding: var(--pad-medium);
+	padding: var(--pad-small);
 	/* border-top: 0.6px solid var(--color-border); */
 }
 
 .infoText {
 	background: var(--color-surface-muted);
-	border-top: 0.6px solid var(--color-border);
 	padding: var(--pad-small);
 	flex: 1 1 auto;
 	text-align: left;

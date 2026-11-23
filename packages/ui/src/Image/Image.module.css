@@ -35,6 +35,13 @@
 	object-position: center;
 }
 
+.fallback,
+.fill .fallback {
+	object-fit: contain;
+	object-position: center;
+	background-color: #ffffff;
+}
+
 .fill .placeholder {
 	position: absolute;
 	inset: 0;

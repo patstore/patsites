@@ -7,6 +7,8 @@ type ProgressiveImageProps = {
 	thumbnailSrc?: string;
 	src?: string;
 	remoteSrc?: string;
+	/** Shown when no stored file can be displayed. */
+	placeholder?: string;
 	className?: string;
 	style?: CSSProperties;
 	hoverOnZoom?: boolean;
@@ -17,6 +19,7 @@ export function ProgressiveImage({
 	thumbnailSrc,
 	src,
 	remoteSrc,
+	placeholder,
 	className,
 	style,
 	hoverOnZoom = false
@@ -47,7 +50,12 @@ export function ProgressiveImage({
 
 	if (!showThumb && !showFull) {
 		return (
-			<ImagePlaceholder alt={alt} className={className} style={style} />
+			<ImagePlaceholder
+				alt={alt}
+				src={placeholder}
+				className={className}
+				style={style}
+			/>
 		);
 	}
 

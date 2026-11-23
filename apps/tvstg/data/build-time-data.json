@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-21T17:37:15.891Z",
+    "generatedAt": "2026-11-23T07:46:25.352Z",
     "projectId": "lt4HonzqK3",
     "moduleCount": 13,
     "states": null,
@@ -23294,7 +23294,7 @@
       "categories": [
         "AcERj1M0Dj"
       ],
-      "title": "Neu: Fit am Donnerstagvormittag für Senior:Innen",
+      "title": "Neu: Fit am Donnerstagvormittag für Senior:Innen   ",
       "description": "zusätzlich zum Dienstagvormittag bieten wir für die gleiche Zielgruppe noch ein weiteres Angebot für die Verbesserung bzw. Erhaltung der Fitness an! ",
       "text": "<p></p>",
       "image": "TG1DQV8k7J",
@@ -23319,7 +23319,7 @@
       "gallery": null,
       "team": null,
       "persons": null,
-      "label": "Neu: Fit am Donnerstagvormittag für Senior:Innen",
+      "label": "Neu: Fit am Donnerstagvormittag für Senior:Innen   ",
       "data": null
     },
     {
@@ -23617,7 +23617,7 @@
         "FwHFUX113b"
       ],
       "title": "Vorschulkinderturnen 2 Mittwoch\t",
-      "description": " Die Kinder können hier ihre motorischen Fähigkeiten ausprobieren und entwickeln - siehe auch die Stuinde davor:)! ",
+      "description": " Die Kinder können hier ihre motorischen Fähigkeiten ausprobieren und entwickeln - siehe auch die Stuinde davor ....!",
       "text": "<p>Bei Interesse gerne melden, wir führen eine Warteliste. </p>",
       "image": "a5Kh6YOeyi",
       "date": null,
@@ -23800,7 +23800,7 @@
         "FwHFUX113b"
       ],
       "title": "Wichtelturnen 2",
-      "description": "! \nEltern, Omas, Opas etc. ....turnen und erobern die Welt der Bewegung mit ihren  Kindern ab 2 Jahren bis zum Ende des 4. Lebensjahres.\nInfos bzw. Anfrage: \nsusanne.kirsch@tvstg.de\n\n",
+      "description": "Eltern, Omas, Opas etc. ....turnen und erobern die Welt der Bewegung mit ihren  Kindern ab 2 Jahren bis zum Ende des 4. Lebensjahres.\nInfos bzw. Anfrage: \nsusanne.kirsch@tvstg.de\n\n",
       "text": "<p>Spielerisch in einer wöchentlich wechselnden Bewegungslandschaft werden hier die kleinen Sportfans an die motorischen Grundlagen in Begleitung vom Mama, oder Papa, oder Oma etc.Opa etc. herangeführt.</p><p><br></p>",
       "image": "sEMVuxqH1S",
       "date": null,
@@ -23884,7 +23884,7 @@
         "FwHFUX113b"
       ],
       "title": "Wichtelturnen 1",
-      "description": " Diese Gruppe ist am Donnerstag leider bereits voll, sehr voll! - Bei Interesse bitte Mail an die verantwortliche Übungsleiterin.\n",
+      "description": "Diese Gruppe ist bereits voll - Bei Interesse bitte Mail an die verantwortliche Übungsleiterin.\n",
       "text": "<p>Eltern, Omas, Opas turnen &nbsp;spielerisch unter fachlicher Anleitung mit ihren Kindern von 2-4 Jahren an verschiedensten Gerätelandschaften.</p><p><br></p>",
       "image": "ugO9bSu5qZ",
       "date": null,
@@ -23892,8 +23892,8 @@
       "times": [
         {
           "id": "488ec6c8-14ce-41dc-9544-579faee82467",
-          "start": "17:15",
-          "end": "18:10",
+          "start": "16:15",
+          "end": "17:10",
           "weekday": "thursday",
           "place": {
             "type": "location",

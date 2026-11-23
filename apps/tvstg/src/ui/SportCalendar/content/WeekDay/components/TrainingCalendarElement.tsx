@@ -32,7 +32,7 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 	}
 
 	const isList = view === "list";
-	const imageId = group.team?.image ?? group.image;
+	const imageId = group.team?.image || group.image;
 	const locationLabel = training.location || groupLocation?.title || "";
 	const startAge = Number(group.data?.start_age);
 	const endAge =
@@ -55,13 +55,14 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 		ageLabel ? { key: "age", label: ageLabel } : null
 	].filter((tag) => tag !== null);
 
-	const image = imageId ? (
+	const image = (
 		<Image
 			style={{ width: "100%", height: "100%", objectFit: "cover" }}
-			alt={group.team?.name || group.title || undefined}
+			alt={group.team?.name || group.title || ""}
 			id={imageId}
+			placeholder="/tvstg_placeholder.png"
 		/>
-	) : null;
+	);
 
 	const openDetails = () => setModalState(true);
 
@@ -103,19 +104,19 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 							<div className={styles.info}>
 								<h3 className={styles.title}>{group.title}</h3>
 								{tagList}
-							</div>
-							{group.description && (
-								<div className={styles.infoTextContainer}>
-									<div className={styles.infoText}>
-										<p>
-											{previewWords(
-												group.description,
-												20
-											)}
-										</p>
+								{group.description && (
+									<div className={styles.infoTextContainer}>
+										<div className={styles.infoText}>
+											<p>
+												{previewWords(
+													group.description,
+													20
+												)}
+											</p>
+										</div>
 									</div>
-								</div>
-							)}
+								)}
+							</div>
 						</div>
 					</div>
 					<div>
@@ -165,14 +166,14 @@ const TrainingCalendarElement: FC<TrainingCalendarElementProps> = ({
 					<div className={`${styles.info} ${styles.listTitle}`}>
 						<h3 className={styles.title}>{group.title}</h3>
 						{tagList}
-					</div>
-					{group.description && (
-						<div className={styles.infoTextContainer}>
-							<div className={styles.infoText}>
-								<p>{previewWords(group.description, 20)}</p>
+						{group.description && (
+							<div className={styles.infoTextContainer}>
+								<div className={styles.infoText}>
+									<p>{previewWords(group.description, 20)}</p>
+								</div>
 							</div>
-						</div>
-					)}
+						)}
+					</div>
 				</div>
 				<button
 					type="button"

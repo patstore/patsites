@@ -1,7 +1,41 @@
-.more {
-	margin-top: 18px;
+button.block {
+	flex-direction: row;
+	align-items: stretch;
+	gap: 0;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
 }
 
-.link {
-	text-decoration: none;
+.block:hover {
+	background: var(--color-surface);
+}
+
+.copy {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 12px;
+	flex: 1 1 auto;
+	min-width: 0;
+	padding: 12px;
+}
+
+.copy h4 {
+	margin: 0;
+}
+
+.arrow {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	border-left: 0.6px solid var(--color-text-muted);
+	color: var(--color-text);
 }

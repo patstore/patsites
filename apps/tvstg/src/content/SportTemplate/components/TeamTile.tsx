@@ -11,7 +11,7 @@ const TeamTile: React.FC<{
 	group: PatstoreGroup;
 }> = ({ team, group }) => {
 	const [modalState, setModalState] = useState(false);
-	const imageId = team.image || group.image || "";
+	const imageId = team.image || group.image;
 
 	const menuHandler = () => {
 		setModalState(!modalState);
@@ -21,19 +21,18 @@ const TeamTile: React.FC<{
 		<>
 			<motion.div onClick={() => menuHandler()} className={styles.card}>
 				<div className={styles.media}>
-					{imageId ? (
-						<div className={styles.photo}>
-							<Image
-								id={imageId}
-								alt={team.name}
-								style={{
-									width: "100%",
-									height: "100%",
-									objectFit: "cover"
-								}}
-							/>
-						</div>
-					) : null}
+					<div className={styles.photo}>
+						<Image
+							id={imageId}
+							placeholder="/tvstg_placeholder.png"
+							alt={team.name}
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "cover"
+							}}
+						/>
+					</div>
 				</div>
 				<div className={styles.body}>
 					<h3>{team.name}</h3>

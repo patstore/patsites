@@ -1,22 +1,55 @@
-import React, { useMemo } from "react";
-import { NewsProps } from "../types";
-import { Button, FlexBox, Label } from "@ui";
+import React, { useMemo, useState } from "react";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { FlexBox, Label } from "@ui";
 import { getDateString, useCollection } from "@provider";
-import { Link } from "@tanstack/react-router";
+import type { PatstoreEntry } from "@types";
+import JobSlideIn from "../../../content/Jobboerse/components/JobSlideIn";
+import { findTrainingGroup } from "../../../content/Jobboerse/components/findTrainingGroup";
+import { NewsProps } from "../types";
 import styles from "./News.module.css";
+
+const JobSidebarItem: React.FC<{ job: PatstoreEntry }> = ({ job }) => {
+	const { items: groups } = useCollection("Group");
+	const { find: findPerson } = useCollection("Person");
+	const [open, setOpen] = useState(false);
+	const group = findTrainingGroup(job, groups);
+	const contact = findPerson(job.contact);
+
+	return (
+		<>
+			<button
+				type="button"
+				className={`sidebar-block ${styles.block}`}
+				onClick={() => setOpen(true)}
+			>
+				<div className={styles.copy}>
+					{job.date ? (
+						<Label text={getDateString(job.date).date} />
+					) : null}
+					<h4>{job.title}</h4>
+				</div>
+				<span className={styles.arrow} aria-hidden>
+					<AiOutlineArrowRight size={16} />
+				</span>
+			</button>
+			<JobSlideIn
+				job={job}
+				group={group}
+				contact={contact}
+				open={open}
+				onClose={() => setOpen(false)}
+			/>
+		</>
+	);
+};
 
 const News: React.FC<NewsProps> = ({ category, displayAllNews = false }) => {
 	const { items: news } = useCollection("Entry");
 
 	const newsArray = useMemo(() => {
-		const sixtyDaysAgo = new Date();
-		sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 60);
-		const now = new Date();
 		const actualNews = news.filter((value) => {
-			if (!value?.date) return false;
 			if (!value.categories?.includes("YLHdF8iCjA")) return false;
-			const newsDate = new Date(value.date);
-			return newsDate <= now && newsDate >= sixtyDaysAgo;
+			return true;
 		});
 		if (displayAllNews) {
 			return actualNews.slice(0, 5);
@@ -33,13 +66,7 @@ const News: React.FC<NewsProps> = ({ category, displayAllNews = false }) => {
 		<div className="sidebar-panel">
 			<div className="section-header flush">Jobbörse</div>
 			{newsArray.length > 0 ? (
-				<FlexBox
-					direction="column"
-					align="stretch"
-					hasFullWidth
-					gap="12px"
-					style={{ padding: "var(--pad-small)" }}
-				>
+				<FlexBox direction="column" align="stretch" hasFullWidth>
 					{newsArray
 						.sort(
 							(a, b) =>
@@ -47,30 +74,7 @@ const News: React.FC<NewsProps> = ({ category, displayAllNews = false }) => {
 								new Date(a.date!).getTime()
 						)
 						.map((value) => (
-							<div key={value.objectId} className="sidebar-block">
-								<Label
-									text={getDateString(value.date!).date}
-									color="var(--color-primary)"
-								/>
-								<h4>{value.title}</h4>
-								<div className={styles.more}>
-									<Link
-										to={`/jobboerse`}
-										hash={
-											(value as { slug?: string | null })
-												.slug || undefined
-										}
-										className={styles.link}
-									>
-										<Button
-											text="Mehr erfahren"
-											onClick={() =>
-												`/news/${value.objectId}`
-											}
-										/>
-									</Link>
-								</div>
-							</div>
+							<JobSidebarItem key={value.objectId} job={value} />
 						))}
 				</FlexBox>
 			) : (

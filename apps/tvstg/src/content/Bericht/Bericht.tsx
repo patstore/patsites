@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout } from "@components";
-import { FlexBox, Label, SportBanner, Gallery } from "@ui";
+import { FlexBox, Gallery, Label, SportBanner } from "@ui";
 import { Image } from "@repo/ui";
 import { PatstoreArticle } from "@types";
 import { useCollection } from "@provider";
@@ -21,19 +21,18 @@ const Blog: React.FC<{ article: PatstoreArticle }> = ({ article }) => {
 								<div>{label && <Label text={label} />}</div>
 								<h1>{article.title}</h1>
 							</div>
-							{article.image ? (
-								<div className={styles.imageFrame}>
-									<Image
-										id={article.image}
-										alt={article.title ?? ""}
-										style={{
-											width: "100%",
-											maxHeight: "600px",
-											aspectRatio: "16 / 9"
-										}}
-									/>
-								</div>
-							) : null}
+							<div className={styles.imageFrame}>
+								<Image
+									id={article.image}
+									placeholder="/tvstg_placeholder.png"
+									alt={article.title ?? ""}
+									style={{
+										width: "100%",
+										maxHeight: "600px",
+										aspectRatio: "16 / 9"
+									}}
+								/>
+							</div>
 							<div>
 								<div
 									dangerouslySetInnerHTML={{

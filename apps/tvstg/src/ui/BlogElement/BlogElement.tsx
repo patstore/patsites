@@ -55,7 +55,6 @@ const BlogElement = ({
 	date,
 	flex
 }: BlogElementProps) => {
-	const imageId = image || "";
 	const categoryIds = categories ?? [];
 	const articleLink = (
 		<Link
@@ -76,7 +75,8 @@ const BlogElement = ({
 				{articleLink}
 				<div className={styles.image}>
 					<Image
-						id={imageId}
+						id={image}
+						placeholder="/tvstg_placeholder.png"
 						alt={title ?? ""}
 						style={{ width: "100%", height: "100%" }}
 						hoverOnZoom
@@ -102,7 +102,8 @@ const BlogElement = ({
 			{articleLink}
 			<div className={styles.headerImage}>
 				<Image
-					id={imageId}
+					id={image}
+					placeholder="/tvstg_placeholder.png"
 					alt={title ?? ""}
 					style={{ width: "100%" }}
 					hoverOnZoom

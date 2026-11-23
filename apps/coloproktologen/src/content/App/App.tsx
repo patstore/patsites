@@ -6,7 +6,7 @@ const App = () => {
 	const { loading, user } = useSiteContext();
 
 	// Redirect with a component instead of throwing during render, which
-	// surfaces as an uncaught error in the route's error boundary.
+	// surfaces as an uncaught error in the route's error boundary.0
 	if (!loading && !user) {
 		return <Navigate to="/login" replace />;
 	}

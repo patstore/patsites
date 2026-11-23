@@ -2,19 +2,22 @@ import type { CSSProperties } from "react";
 import styles from "../Image.module.css";
 
 /**
- * Shown when an image record has no local file and no remote url.
- * Leave unset until a placeholder asset is chosen.
+ * App-wide fallback used when a call site does not pass `placeholder`.
+ * Leave unset until a shared asset is chosen.
  */
 export const imagePlaceholderSrc: string | null = null;
 
 type ImagePlaceholderProps = {
 	alt: string;
+	/** Path or URL. Overrides `imagePlaceholderSrc` for this render. */
+	src?: string | null;
 	className?: string;
 	style?: CSSProperties;
 };
 
 export function ImagePlaceholder({
 	alt,
+	src,
 	className,
 	style
 }: ImagePlaceholderProps) {
@@ -26,13 +29,14 @@ export function ImagePlaceholder({
 	const frameClass = [styles.frame, fillsFrame && styles.fill, className]
 		.filter(Boolean)
 		.join(" ");
+	const placeholderSrc = src || imagePlaceholderSrc;
 
-	if (imagePlaceholderSrc) {
+	if (placeholderSrc) {
 		return (
 			<span className={frameClass} style={style}>
 				<img
-					className={styles.image}
-					src={imagePlaceholderSrc}
+					className={`${styles.image} ${styles.fallback}`}
+					src={placeholderSrc}
 					alt={alt}
 				/>
 			</span>

@@ -63,9 +63,7 @@ const EventElementTable: React.FC<{
 						})}
 					</FlexBox>
 				</div>
-				<div
-					className={`${styles.col} ${styles.date} ${styles.dateValue}`}
-				>
+				<div className={`${styles.col} ${styles.date}`}>
 					<p>{getDateString(date.date.start).date}</p>
 				</div>
 				<div className={`${styles.col} ${styles.time}`}>

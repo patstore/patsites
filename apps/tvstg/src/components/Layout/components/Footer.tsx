@@ -10,9 +10,11 @@ const Footer: React.FC = () => {
 	const navigate = useNavigate();
 
 	return (
-		<div className="wrapper">
-			<div className="site-container">
-				<FlexBox style={{ width: "100%", padding: 0 }}>
+		<footer className="wrapper">
+			<section className="site-content">
+				<FlexBox
+					style={{ width: "100%", padding: 0, marginTop: "60px" }}
+				>
 					<div className={styles.top}>
 						<div>
 							<h6>Anschrift</h6>
@@ -30,9 +32,9 @@ const Footer: React.FC = () => {
 						</div>
 					</div>
 				</FlexBox>
-			</div>
-			<footer className={styles.footer}>
-				<div className="site-container">
+			</section>
+			<section className={styles.footer}>
+				<div className="site-content">
 					<FlexBox style={{ marginTop: 0, padding: "0" }}>
 						<FlexBox
 							direction="row"
@@ -69,8 +71,8 @@ const Footer: React.FC = () => {
 						</FlexBox>
 					</FlexBox>
 				</div>
-			</footer>
-		</div>
+			</section>
+		</footer>
 	);
 };
 

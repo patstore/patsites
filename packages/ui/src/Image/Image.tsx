@@ -4,7 +4,12 @@ import { findStoredImage, imageSources } from "./findImage";
 
 export type ImageProps = {
 	/** `objectId` or GraphQL `id` of an image in the generated snapshot. */
-	id: string;
+	id?: string | null;
+	/**
+	 * Rendered when `id` is missing or no file can be resolved for it.
+	 * A path or URL, for example `/placeholder.png`.
+	 */
+	placeholder?: string;
 	alt?: string;
 	className?: string;
 	style?: CSSProperties;
@@ -14,6 +19,7 @@ export type ImageProps = {
 
 export function Image({
 	id,
+	placeholder,
 	className,
 	style,
 	alt,
@@ -21,15 +27,14 @@ export function Image({
 }: ImageProps) {
 	const sources = imageSources(findStoredImage(id));
 
-	console.log({ id });
-	console.log({ sources });
 	return (
 		<ProgressiveImage
-			key={id}
+			key={id || placeholder || "image"}
 			alt={alt ?? sources.alt}
 			thumbnailSrc={sources.thumbnailSrc}
 			src={sources.src}
 			remoteSrc={sources.remoteSrc}
+			placeholder={placeholder}
 			className={className}
 			style={style}
 			hoverOnZoom={hoverOnZoom}

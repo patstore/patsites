@@ -36,30 +36,39 @@ const Praevention: React.FC = () => {
 							<RenderContent path="/verein/praevention" />
 						</div>
 						<div className="sidebar-column">
-							<div className="section-header flush">
-								Ansprechpartner:Innen
+							<div className="sidebar-panel">
+								<div className="section-header flush">
+									Ansprechpartner:
+									<br />
+									Innen
+								</div>
+								<div className="sidebar-block">
+									{praPersons.map((value) => (
+										<ContactPerson
+											person={value}
+											key={value.objectId}
+										/>
+									))}
+								</div>
 							</div>
-							<div className={styles.sidebarBody}>
-								{praPersons.map((value) => (
-									<ContactPerson
-										person={value}
-										key={value.objectId}
-									/>
-								))}
+							{/* </div> */}
+							<div className="sidebar-panel">
+								<div className="section-header flush">
+									Dokumente
+								</div>
+								<div className="sidebar-block">
+									{praeventionDownloads?.map((download) => (
+										<a
+											key={download.objectId}
+											target="__blank"
+											href={download.file?.url || ""}
+											className={styles.docLink}
+										>
+											{download.title}
+										</a>
+									))}
+								</div>
 							</div>
-							<div className="section-header flush">
-								Dokumente
-							</div>
-							{praeventionDownloads?.map((download) => (
-								<a
-									key={download.objectId}
-									target="__blank"
-									href={download.file?.url || ""}
-									className={styles.docLink}
-								>
-									{download.title}
-								</a>
-							))}
 						</div>
 					</div>
 				</div>

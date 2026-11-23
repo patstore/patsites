@@ -1,23 +1,51 @@
 import React, { useMemo } from "react";
 import { Layout } from "@components";
-import { FlexBox, HeadContent } from "@ui";
+import { HeadContent } from "@ui";
 import { PatstoreCategory, PatstoreDownload } from "@types";
 import { useCollection } from "@provider";
 import styles from "./Downloads.module.css";
+
+const EXCLUDED_CATEGORY_ID = "3voTJpShwb";
+const COLUMNS = 12;
+
+const spanClass: Record<number, string | undefined> = {
+	3: styles.span3,
+	4: styles.span4,
+	5: styles.span5,
+	6: styles.span6,
+	7: styles.span7,
+	8: styles.span8,
+	9: styles.span9,
+	10: styles.span10,
+	11: styles.span11,
+	12: styles.span12,
+};
+
+type DownloadGroup = {
+	category: PatstoreCategory;
+	files: PatstoreDownload[];
+};
 
 const Downloads: React.FC = () => {
 	const { items: downloads } = useCollection("Download");
 	const { items: categorys } = useCollection("Category");
 
-	const downloadCategoryArray: PatstoreCategory[] = useMemo(() => {
-		const downloadKategorienArray: PatstoreCategory[] = [];
-		categorys.forEach((category: PatstoreCategory) => {
-			if (category.type === "downloads") {
-				downloadKategorienArray.push(category);
-			}
-		});
-		return downloadKategorienArray;
-	}, [categorys]);
+	const groups = useMemo(() => {
+		const downloadGroups: DownloadGroup[] = categorys
+			.filter(
+				(category: PatstoreCategory) =>
+					category.type === "downloads" &&
+					category.objectId !== EXCLUDED_CATEGORY_ID
+			)
+			.map((category) => ({
+				category,
+				files: downloads.filter((download: PatstoreDownload) =>
+					download?.categories?.includes(category.objectId as string)
+				),
+			}));
+
+		return packMosaic(downloadGroups);
+	}, [categorys, downloads]);
 
 	return (
 		<Layout>
@@ -27,54 +55,83 @@ const Downloads: React.FC = () => {
 			/>
 			<div className="wrapper">
 				<div className="site-container">
-					<FlexBox
-						direction="column"
-						align="stretch"
-						justify="space-between"
-						gap="12px"
-						wrap
-						hasFullWidth
-					>
-						{downloadCategoryArray.map(
-							(kategorie) =>
-								kategorie.objectId !== "3voTJpShwb" && (
-									<div
-										className={styles.group}
-										key={kategorie.objectId}
+					<div className={styles.mosaic}>
+						{groups.map(({ category, files, span }) => (
+							<section
+								className={[
+									styles.group,
+									spanClass[span],
+									files.length >= 7 ? styles.large : "",
+								]
+									.filter(Boolean)
+									.join(" ")}
+								key={category.objectId}
+							>
+								<h3>{category.title}</h3>
+								{files.map((download) => (
+									<a
+										className={styles.link}
+										key={download.objectId}
+										target="_blank"
+										rel="noopener noreferrer"
+										href={download.file?.url || ""}
 									>
-										<h3>{kategorie.title}</h3>
-										{downloads.map(
-											(download: PatstoreDownload) => {
-												if (
-													download?.categories?.includes(
-														kategorie.objectId as string
-													)
-												) {
-													return (
-														<a
-															className={`linkStyle ${styles.link}`}
-															key={download.title}
-															target="__blank"
-															href={
-																download.file
-																	?.url || ""
-															}
-														>
-															{download.title}
-														</a>
-													);
-												}
-												return null;
-											}
-										)}
-									</div>
-								)
-						)}
-					</FlexBox>
+										{download.title}
+									</a>
+								))}
+							</section>
+						))}
+					</div>
 				</div>
 			</div>
 		</Layout>
 	);
 };
+
+function baseSpan(count: number): number {
+	if (count >= 7) {
+		return 6;
+	}
+	if (count >= 4) {
+		return 4;
+	}
+	return 3;
+}
+
+function packMosaic(groups: DownloadGroup[]) {
+	const sorted = [...groups].sort((a, b) => b.files.length - a.files.length);
+	const placed: Array<DownloadGroup & { span: number }> = [];
+	let row: Array<DownloadGroup & { span: number }> = [];
+	let used = 0;
+
+	const closeRow = () => {
+		let extra = COLUMNS - used;
+		const bySize = [...row].sort((a, b) => b.files.length - a.files.length);
+		let index = 0;
+		while (extra > 0 && bySize.length > 0) {
+			bySize[index % bySize.length].span += 1;
+			extra -= 1;
+			index += 1;
+		}
+		placed.push(...row);
+		row = [];
+		used = 0;
+	};
+
+	for (const group of sorted) {
+		const span = baseSpan(group.files.length);
+		if (row.length > 0 && used + span > COLUMNS) {
+			closeRow();
+		}
+		row.push({ ...group, span });
+		used += span;
+	}
+
+	if (row.length > 0) {
+		closeRow();
+	}
+
+	return placed;
+}
 
 export default Downloads;
