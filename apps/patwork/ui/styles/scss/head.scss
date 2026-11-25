@@ -1,0 +1,136 @@
+.head-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+}
+
+.patwork-container {
+    display: none;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    line-height: 1;
+    font-weight: bold;
+    color: var(--color-dark);
+    text-align: center;
+    margin: 0 auto;
+    font-family: "Coco Sharp";
+    background-color: var(--color-bg);
+    box-sizing: border-box;
+    // border-left: 24px solid var(--color-dark);
+    // border-right: 24px solid var(--color-dark);
+    // border-bottom: 24px solid var(--color-dark);
+}
+
+.head-row-block {
+    flex: 1;
+    border-bottom: 0.9px solid var(--darkgrey);
+    border-top: 0.9px solid var(--darkgrey);
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    max-height: calc(100vh - 60px);
+    @media (max-width: 576px) {
+        flex-direction: column;
+    }
+}
+
+.head-column-block {
+    flex: 1;
+    border-bottom: 0.9px solid var(--darkgrey);
+    border-top: 0.9px solid var(--darkgrey);
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: calc(100vh - 60px);
+}
+
+.head-navigation-container {
+    height: 60px;
+    flex: 0 !important;
+    padding: 6px 12px;
+    // background-color: var(--color-dark);
+    // color: var(--color-white);
+}
+
+.head-title-card {
+    padding: 18px;
+    background-color: var(--yellow);
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--white);
+    text-align: center;
+    margin: 0 auto;
+    font-family: "Coco Sharp";
+    box-shadow: var(--shadow);
+    transform: rotate(-3deg);
+    z-index: 2;
+}
+
+.head-contact-icon-container {
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    top: 60px;
+    right: calc(6vw - 35px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+    @media (max-width: 576px) {
+        display: none;
+    }
+}
+
+.head-contact-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.head-contact-icon-orbit {
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    animation: spin 10s linear infinite;
+    transform-origin: center;
+}
+
+
+// Head Button
+
+.head-button {
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--color-dark);
+    text-align: center;
+    font-family: "Coco Sharp";
+    cursor: pointer;
+    user-select: none;
+    z-index: 2;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 30%;
+    left: 0;
+}

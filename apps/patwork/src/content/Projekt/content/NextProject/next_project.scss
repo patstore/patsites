@@ -1,0 +1,28 @@
+.next-project-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--size-medium);
+    text-decoration: none;
+    color: inherit;
+
+    img {
+        width: 160px;
+        height: 100px;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+    }
+
+    p {
+        margin: 0;
+        font-size: var(--font-size-large);
+    }
+}
+
+@media (max-width: 840px) {
+    .next-project-preview img {
+        width: 120px;
+        height: 80px;
+    }
+}

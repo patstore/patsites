@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "types": ["vite/client", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/ui": ["./ui/ui/index.ts"],
+      "@/ui/*": ["./ui/ui/*"],
+      "@/settings": ["./ui/settings/index.ts"],
+      "@/settings/*": ["./ui/settings/*"],
+      "@/styles": ["./ui/styles/index.ts"],
+      "@/styles/*": ["./ui/styles/*"],
+      "@components": ["./src/components/index.ts"],
+      "@content": ["./src/content/index.ts"],
+      "@data": ["./data/index.ts"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["./src/**/*", "./data/**/*", "./vite.config.ts"],
+  "exclude": ["node_modules", "dist", ".cache", ".output"]
+}

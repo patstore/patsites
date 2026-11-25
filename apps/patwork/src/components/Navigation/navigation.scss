@@ -1,0 +1,323 @@
+// Fixed navigation bar (matches former Emotion styles in styles.ts)
+
+$nav-shadow: 0.5em 0.5em 0 0 #00000026;
+
+@keyframes nav-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-slide-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  color: var(--color-dark);
+  z-index: 10;
+  // border-bottom: var(--border-width) solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2vw;
+  padding-right: 2vw;
+
+  &--visible {
+    animation: nav-slide-down 0.4s ease;
+  }
+
+  &--initial {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+  }
+
+  &--hidden {
+    animation: nav-slide-up 0.4s ease forwards;
+    pointer-events: none;
+  }
+
+  // Content inside fixed nav: override hero `head.scss` tokens for this bar
+}
+
+.head-navigation-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--color-text);
+  // max-width: 1480px;
+  margin: 0 auto;
+}
+
+.head-navigation-content-links {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  gap: 0;
+  height: 100%;
+  position: relative;
+  .head-navigation-link {
+    font-family: 'Coco Sharp', var(--font-sans);
+    width: 96px;
+    color: inherit;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 24px;
+    text-decoration: none !important;
+    font-size: var(--font-size-semismall) !important;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    text-align: center;
+  }
+}
+
+.head-navigation-content-patwork {
+  flex: 1 1 25%;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-transform: lowercase;
+  text-align: left;
+  font-family: 'Coco Sharp', var(--font-sans);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+
+  span {
+    color: #fff;
+  }
+}
+
+.navigation:not(.navigation--blend) {
+  .head-navigation-content-patwork span {
+    visibility: hidden;
+  }
+
+  .head-navigation-link {
+    color: transparent;
+  }
+}
+
+.navigation--blend {
+  z-index: 11;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  color: #fff;
+
+  .head-navigation-content,
+  .head-navigation-link {
+    color: #fff;
+  }
+
+  .head-navigation-content-patwork-spacer {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+}
+
+.head-navigation-content-right {
+  display: none;
+  flex: 1 1 25%;
+  // display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}
+
+.head-navigation-theme-toggle {
+  display: flex;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  align-items: center;
+  gap: 8px;
+}
+
+// Hamburger button — hidden on desktop, visible on mobile
+.head-navigation-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  overflow: visible;
+  color: #fff;
+  z-index: 12;
+
+  &::before {
+    display: none;
+  }
+
+  &:hover {
+    color: #fff !important;
+
+    &::before {
+      display: none;
+      transform: none;
+    }
+  }
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    transform-origin: center;
+    transition: transform 240ms ease, opacity 240ms ease, width 240ms ease;
+  }
+
+  &--open {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      width: 0;
+    }
+
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+.navigation:not(.navigation--blend) .head-navigation-burger span {
+  opacity: 0;
+}
+
+// Mobile drawer
+.head-navigation-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100vh);
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 60px 24px;
+  transform: translateX(100%);
+  transition: transform 320ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  pointer-events: none;
+
+  &--open {
+    transform: translateX(0);
+    pointer-events: all;
+  }
+}
+
+.head-navigation-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  .head-navigation-content-separator-mobile {
+    background-color: var(--color-border);
+    height: calc(var(--border-width));
+    width: 100%;
+  }
+}
+
+.head-navigation-link-mobile {
+  font-size: var(--font-size-semilarge);
+  font-weight: 700 !important;
+  letter-spacing: 1px;
+  text-transform: none;
+  text-decoration: none;
+  color: inherit;
+  padding: 14px 0;
+  position: relative;
+  transition: opacity 180ms ease;
+  &--active {
+    background-color: var(--color-lightgrey);
+  }
+  &.sublink {
+    font-size: var(--font-size-medium);
+  }
+
+
+  &--secondary {
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    opacity: 1;
+    border-bottom: none;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  
+}
+
+.head-navigation-mobile-links-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 4px;
+  border-top: var(--border-width) solid var(--color-border);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  a {
+    font-size: var(--font-size-semismall);
+  }
+}
+
+.head-navigation-mobile-separator {
+  height: 32px;
+}
+
+@media (max-width: 768px) {
+  .head-navigation-content-links {
+    display: none;
+  }
+
+  .head-navigation-burger {
+    display: flex;
+  }
+}
+

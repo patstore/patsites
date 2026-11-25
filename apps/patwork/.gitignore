@@ -1,0 +1,15 @@
+node_modules/
+.cache/
+dist/
+.output/
+.vercel/output
+.tanstack/
+
+# Downloaded CMS files. The committed snapshot stays in data/.
+data/files/
+data/build-time-data.json.backup
+
+# Secrets stay on the machine. Names are listed in .env.example.
+.env
+.env.*
+!.env.example

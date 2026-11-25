@@ -1,0 +1,218 @@
+.section-container.project-grid {
+    isolation: isolate;
+    gap: var(--size-extralarge);
+
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     inset: 0;
+    //     pointer-events: none;
+    //     z-index: -1;
+    //     background-image: repeating-linear-gradient(
+    //         to right,
+    //         transparent,
+    //         transparent calc(33.333% - var(--border-width)),
+    //         var(--color-border) calc(33.333% - var(--border-width)),
+    //         var(--color-border) 33.333%
+    //     );
+
+    //     @media (max-width: 840px) {
+    //         display: none;
+    //     }
+    // }
+}
+
+.project-grid-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    width: 100%;
+}
+
+.project-grid-image {
+    min-width: 0;
+}
+
+.project-grid-info {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--size-large);
+}
+
+.project-grid-info-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-medium);
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+}
+
+.project-grid-year {
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: var(--font-size-semismall);
+}
+
+.project-grid-title {
+    margin: 0;
+    font-size: calc(16px + 0.4vw);
+    text-transform: none;
+    letter-spacing: -0.3px;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.project-grid-media-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-grid-cta {
+    position: relative;
+    font-family: var(--font-family);
+    font-size: var(--font-size-semismall);
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 14px 26px;
+    border: none;
+    font-weight: 600;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: color 250ms ease;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-dark);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 250ms ease;
+        z-index: 0;
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &:hover {
+        color: var(--color-white) !important;
+
+        &::before {
+            transform: scaleY(1);
+        }
+    }
+}
+
+.project-grid-row.is-left {
+    .project-grid-image {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .project-grid-info {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+.project-grid-row.is-right {
+    .project-grid-image {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .project-grid-info {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+.project-grid-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+
+    img {
+        width: 100%;
+        height: auto;
+        min-height: 280px;
+        max-height: 520px;
+        object-fit: cover;
+        object-position: top;
+        display: block;
+    }
+
+    &--parallax {
+        overflow: hidden;
+
+        img {
+            will-change: transform;
+            transform-origin: center center;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-grid-card--parallax img {
+        will-change: auto;
+        transform: none;
+    }
+}
+
+@media (max-width: 840px) {
+    .section-container.project-grid {
+        gap: var(--size-extralarge);
+    }
+
+    .project-grid-row,
+    .project-grid-row.is-left,
+    .project-grid-row.is-right {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--size-medium);
+    }
+
+    .project-grid-image {
+        order: 1;
+        width: 100%;
+    }
+
+    .project-grid-info {
+        order: 2;
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .project-grid-info-inner {
+        max-width: none;
+        text-align: left;
+    }
+
+    .project-grid-card img {
+        min-height: 220px;
+        max-height: 360px;
+    }
+}

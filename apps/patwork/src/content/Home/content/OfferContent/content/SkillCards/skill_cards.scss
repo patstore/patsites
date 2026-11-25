@@ -1,0 +1,78 @@
+.skill-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 90px;
+    width: 100%;
+    overflow: hidden;
+    align-self: flex-end;
+    flex-wrap: wrap;
+    .skill-card {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+        // background-color: var(--color-lightgrey);
+        // padding: var(--size-large);
+        flex: 1 1 45%;
+     
+        .skill-card-heading-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(calc(-100% - 12px));
+        };
+
+        .skill-card-heading {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            gap: var(--size-small);
+            margin-bottom: 0;
+            width: 100%;
+            padding-bottom: var(--size-medium);
+           
+            // h3 {
+            //     text-transform: uppercase;
+            // }
+            .skill-card-heading-dot {
+                width: 6px;
+                height: 6px;
+                background-color: var(--color-darkgrey);
+                border-radius: 50%;
+            }
+           
+        }
+        .skill-card-content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: var(--size-small);
+            border-top: var(--border-width) solid var(--color-border);
+            transform-origin: bottom;
+            will-change: transform;
+            transition: transform 0.4s ease-in-out;
+            overflow: hidden;
+            @media (max-width: 840px) {
+                flex-direction: column;
+                padding: var(--size-medium);
+            }
+            .skill-card-content-text {
+                max-width: 360px;
+                padding-top: var(--size-medium);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: var(--size-small);
+            }
+           
+        }
+    }
+}

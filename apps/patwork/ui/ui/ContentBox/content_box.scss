@@ -1,0 +1,100 @@
+.content_box {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-top: var(--size-large);
+    @media (max-width: 840px) {
+        flex: 1 1 50%;
+        border: none !important;
+    }
+    &[data-left="true"] {
+        border-left: var(--border-width) solid var(--color-border);
+    }
+    &[data-right="true"] {
+        border-right: var(--border-width) solid var(--color-border);
+    }
+    &[data-top="true"] {
+        border-top: var(--border-width) solid var(--color-border);
+    }
+    &[data-bottom="true"] {
+        border-bottom: var(--border-width) solid var(--color-border);
+    }
+    .content_container {
+        &[data-row="true"] {
+            padding: var(--size-large) var(--size-large);
+            padding-bottom: var(--size-extralarge);
+            padding-top: var(--size-extralarge);
+        }
+    }
+    
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        &.horizontal {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 48px;
+        }
+        &[data-row="true"] {
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            >.number {
+                margin-bottom: 0;
+            }
+        }
+        .number {
+            font-size: var(--font-size-semismall);
+            font-weight: 800;
+            line-height: 1;
+            text-transform: uppercase;
+            z-index:2;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &[data-row="true"] {
+                margin-bottom: 0;
+            }
+        }
+        h3 {
+            margin-bottom: 12px;
+        }
+        
+    }
+    .content {
+        p {
+            max-width: 480px;
+        }
+        &[data-row="true"] {
+            padding-left: 78px;
+        }
+        &.horizontal {
+            padding-left: 78px;
+        }
+        &.center {
+            p {
+               text-align: center;
+            }
+        }
+    }
+    .image {
+        justify-self: flex-end;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    .button {
+        padding: var(--size-medium);
+        border-top: var(--border-width) solid var(--color-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,68 @@
+@keyframes insert-slide-up {
+  from {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes insert-slide-down {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+.insert {
+  position: fixed;
+  bottom: 24px;
+  right: 0;
+  z-index: 8;
+  display: flex;
+  pointer-events: none;
+  mix-blend-mode: difference;
+
+  &--visible {
+    animation: insert-slide-up 0.4s ease forwards;
+    pointer-events: auto;
+  }
+
+  &--initial {
+    opacity: 0;
+    transform: translateY(100%);
+    pointer-events: none;
+  }
+
+  &--hidden {
+    animation: insert-slide-down 0.4s ease forwards;
+    pointer-events: none;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    background-color: #fff;
+    color: #000;
+
+    &::before {
+      content: none;
+    }
+
+    &:hover {
+      color: #000 !important;
+    }
+  }
+}

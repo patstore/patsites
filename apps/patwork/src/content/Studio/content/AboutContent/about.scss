@@ -1,0 +1,25 @@
+.about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1 1 auto;
+    height: 100%;
+    width: max-content;
+    width: 100%;
+    padding: 24px 60px;
+}
+
+.portrait-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    img {
+        height: 180px;
+    }
+    @media (max-width: 720px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
