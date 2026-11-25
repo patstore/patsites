@@ -25,7 +25,9 @@ export function Footer({ size = "large" }: FooterProps) {
 				</div>
 				<div className={styles.footer_bottom_list}>
 					<a>Impressum</a>
-					<a>Privacy</a>
+					<a href={toLocalizedHref("/datenschutz", language)}>
+						{language === "en" ? "Privacy" : "Datenschutz"}
+					</a>
 					<a>Contact</a>
 				</div>
 			</div>
@@ -69,8 +71,8 @@ export function Footer({ size = "large" }: FooterProps) {
 				</div>
 				<div className="flex row align-center gap-md justify-center">
 					<div className="footer_links">
-						<a href="https://www.no-co-girls.com/datenschutz">
-							Datenschutz
+						<a href={toLocalizedHref("/datenschutz", language)}>
+							{language === "en" ? "Privacy" : "Datenschutz"}
 						</a>
 					</div>
 					<div className="footer_links">

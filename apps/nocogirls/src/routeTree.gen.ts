@@ -11,12 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as Char123LangChar125RouteRouteImport } from './routes/{-$lang}/route'
 import { Route as ApiPreviewRouteImport } from './routes/api/preview'
 import { Route as AthletesIndexRouteImport } from './routes/athletes/index'
 import { Route as AthletesSlugRouteImport } from './routes/athletes/$slug'
 import { Route as Char123LangChar125IndexRouteImport } from './routes/{-$lang}/index'
 import { Route as Char123LangChar125AboutRouteImport } from './routes/{-$lang}/about'
+import { Route as Char123LangChar125DatenschutzRouteImport } from './routes/{-$lang}/datenschutz'
 import { Route as Char123LangChar125AthletesIndexRouteImport } from './routes/{-$lang}/athletes/index'
 import { Route as Char123LangChar125AthletesSlugRouteImport } from './routes/{-$lang}/athletes/$slug'
 
@@ -28,6 +30,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DatenschutzRoute = DatenschutzRouteImport.update({
+  id: '/datenschutz',
+  path: '/datenschutz',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Char123LangChar125RouteRoute = Char123LangChar125RouteRouteImport.update({
@@ -60,6 +67,12 @@ const Char123LangChar125AboutRoute = Char123LangChar125AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => Char123LangChar125RouteRoute,
 } as any)
+const Char123LangChar125DatenschutzRoute =
+  Char123LangChar125DatenschutzRouteImport.update({
+    id: '/datenschutz',
+    path: '/datenschutz',
+    getParentRoute: () => Char123LangChar125RouteRoute,
+  } as any)
 const Char123LangChar125AthletesIndexRoute =
   Char123LangChar125AthletesIndexRouteImport.update({
     id: '/athletes/',
@@ -77,9 +90,11 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/{-$lang}': typeof Char123LangChar125RouteRouteWithChildren
   '/about': typeof AboutRoute
+  '/datenschutz': typeof DatenschutzRoute
   '/api/preview': typeof ApiPreviewRoute
   '/athletes/$slug': typeof AthletesSlugRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
+  '/{-$lang}/datenschutz': typeof Char123LangChar125DatenschutzRoute
   '/athletes/': typeof AthletesIndexRoute
   '/{-$lang}/': typeof Char123LangChar125IndexRoute
   '/{-$lang}/athletes/$slug': typeof Char123LangChar125AthletesSlugRoute
@@ -88,9 +103,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/datenschutz': typeof DatenschutzRoute
   '/api/preview': typeof ApiPreviewRoute
   '/athletes/$slug': typeof AthletesSlugRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
+  '/{-$lang}/datenschutz': typeof Char123LangChar125DatenschutzRoute
   '/athletes': typeof AthletesIndexRoute
   '/{-$lang}': typeof Char123LangChar125IndexRoute
   '/{-$lang}/athletes/$slug': typeof Char123LangChar125AthletesSlugRoute
@@ -101,9 +118,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/{-$lang}': typeof Char123LangChar125RouteRouteWithChildren
   '/about': typeof AboutRoute
+  '/datenschutz': typeof DatenschutzRoute
   '/api/preview': typeof ApiPreviewRoute
   '/athletes/$slug': typeof AthletesSlugRoute
   '/{-$lang}/about': typeof Char123LangChar125AboutRoute
+  '/{-$lang}/datenschutz': typeof Char123LangChar125DatenschutzRoute
   '/athletes/': typeof AthletesIndexRoute
   '/{-$lang}/': typeof Char123LangChar125IndexRoute
   '/{-$lang}/athletes/$slug': typeof Char123LangChar125AthletesSlugRoute
@@ -115,9 +134,11 @@ export interface FileRouteTypes {
     | '/'
     | '/{-$lang}'
     | '/about'
+    | '/datenschutz'
     | '/api/preview'
     | '/athletes/$slug'
     | '/{-$lang}/about'
+    | '/{-$lang}/datenschutz'
     | '/athletes/'
     | '/{-$lang}/'
     | '/{-$lang}/athletes/$slug'
@@ -126,9 +147,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/datenschutz'
     | '/api/preview'
     | '/athletes/$slug'
     | '/{-$lang}/about'
+    | '/{-$lang}/datenschutz'
     | '/athletes'
     | '/{-$lang}'
     | '/{-$lang}/athletes/$slug'
@@ -138,9 +161,11 @@ export interface FileRouteTypes {
     | '/'
     | '/{-$lang}'
     | '/about'
+    | '/datenschutz'
     | '/api/preview'
     | '/athletes/$slug'
     | '/{-$lang}/about'
+    | '/{-$lang}/datenschutz'
     | '/athletes/'
     | '/{-$lang}/'
     | '/{-$lang}/athletes/$slug'
@@ -151,6 +176,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   Char123LangChar125RouteRoute: typeof Char123LangChar125RouteRouteWithChildren
   AboutRoute: typeof AboutRoute
+  DatenschutzRoute: typeof DatenschutzRoute
   ApiPreviewRoute: typeof ApiPreviewRoute
   AthletesSlugRoute: typeof AthletesSlugRoute
   AthletesIndexRoute: typeof AthletesIndexRoute
@@ -170,6 +196,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/datenschutz': {
+      id: '/datenschutz'
+      path: '/datenschutz'
+      fullPath: '/datenschutz'
+      preLoaderRoute: typeof DatenschutzRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/{-$lang}': {
@@ -214,6 +247,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Char123LangChar125AboutRouteImport
       parentRoute: typeof Char123LangChar125RouteRoute
     }
+    '/{-$lang}/datenschutz': {
+      id: '/{-$lang}/datenschutz'
+      path: '/datenschutz'
+      fullPath: '/{-$lang}/datenschutz'
+      preLoaderRoute: typeof Char123LangChar125DatenschutzRouteImport
+      parentRoute: typeof Char123LangChar125RouteRoute
+    }
     '/{-$lang}/athletes/': {
       id: '/{-$lang}/athletes/'
       path: '/athletes'
@@ -233,6 +273,7 @@ declare module '@tanstack/react-router' {
 
 interface Char123LangChar125RouteRouteChildren {
   Char123LangChar125AboutRoute: typeof Char123LangChar125AboutRoute
+  Char123LangChar125DatenschutzRoute: typeof Char123LangChar125DatenschutzRoute
   Char123LangChar125IndexRoute: typeof Char123LangChar125IndexRoute
   Char123LangChar125AthletesSlugRoute: typeof Char123LangChar125AthletesSlugRoute
   Char123LangChar125AthletesIndexRoute: typeof Char123LangChar125AthletesIndexRoute
@@ -241,6 +282,7 @@ interface Char123LangChar125RouteRouteChildren {
 const Char123LangChar125RouteRouteChildren: Char123LangChar125RouteRouteChildren =
   {
     Char123LangChar125AboutRoute: Char123LangChar125AboutRoute,
+    Char123LangChar125DatenschutzRoute: Char123LangChar125DatenschutzRoute,
     Char123LangChar125IndexRoute: Char123LangChar125IndexRoute,
     Char123LangChar125AthletesSlugRoute: Char123LangChar125AthletesSlugRoute,
     Char123LangChar125AthletesIndexRoute: Char123LangChar125AthletesIndexRoute,
@@ -255,6 +297,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   Char123LangChar125RouteRoute: Char123LangChar125RouteRouteWithChildren,
   AboutRoute: AboutRoute,
+  DatenschutzRoute: DatenschutzRoute,
   ApiPreviewRoute: ApiPreviewRoute,
   AthletesSlugRoute: AthletesSlugRoute,
   AthletesIndexRoute: AthletesIndexRoute,

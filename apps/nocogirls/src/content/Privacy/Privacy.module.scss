@@ -1,0 +1,19 @@
+.privacy {
+	max-width: 42rem;
+	margin: 0 auto;
+	padding: var(--space-xl) var(--space-md);
+
+	h1 {
+		margin: 0 0 var(--space-md);
+	}
+
+	h2 {
+		margin: var(--space-lg) 0 var(--space-sm);
+		font-size: 1.25rem;
+	}
+
+	p {
+		line-height: 1.7;
+		margin: 0 0 var(--space-sm);
+	}
+}

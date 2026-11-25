@@ -25,7 +25,8 @@ export const h2 = settings.mq({
 	// marginTop: 0,
 	letterSpacing: "2px",
 	fontWeight: 600,
-	color: "inherit"
+	color: "inherit",
+	marginBlockStart: "24px"
 });
 
 export const h3 = settings.mq({

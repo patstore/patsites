@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from "react";
+import { FC, useMemo } from "react";
 import WeekDay from "./WeekDay";
 import { FlexBox } from "@ui";
 import type { EventTime } from "@types";

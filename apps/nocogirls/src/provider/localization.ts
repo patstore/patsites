@@ -10,6 +10,7 @@ function isKnownPage(canonicalPath: string): boolean {
 	return (
 		canonicalPath === "/" ||
 		canonicalPath === "/about" ||
+		canonicalPath === "/datenschutz" ||
 		canonicalPath === "/athletes" ||
 		canonicalPath.startsWith("/athletes/")
 	);

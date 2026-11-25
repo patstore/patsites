@@ -1,8 +1,8 @@
 import { getCurrentEvents, useFindImages, useCollection } from "@provider";
 import type { EventClass } from "@types";
 import settings from "@settings";
-import { buttonsContainer } from "@styles";
-import { Button, ContentContainer, Label, Gallery } from "@ui";
+import { buttonsContainer, topline } from "@styles";
+import { Button, ContentContainer, Gallery } from "@ui";
 import React from "react";
 
 const Congress: React.FC = () => {
@@ -17,7 +17,7 @@ const Congress: React.FC = () => {
 	return (
 		<ContentContainer largeBackground={settings.colors.light}>
 			<div>
-				<Label text="Rückblick" />
+				<div css={topline}>Kongressrückblicke</div>
 				<h2>{currentEvents?.current?.title}</h2>
 				<Gallery
 					imageIds={currentEvents?.current?.gallery || []}

@@ -1,6 +1,6 @@
 import staticAsset0 from "../images/congress.jpg";
 import settings from "@settings";
-import { buttonsContainer, contentBox, headlineContainer } from "@styles";
+import { contentBox, headlineContainer, topline } from "@styles";
 import { AppImage, Button, ContentContainer, FlexBox } from "@ui";
 import React from "react";
 
@@ -20,11 +20,16 @@ const Dgk: React.FC = () => {
 					changeToColumn
 				>
 					<div css={headlineContainer}>
+						<div css={topline}>Zusammenarbeit mit der DGK</div>
 						<h2>Zusammenarbeit mit der DGK</h2>
 						<p>
 							Wir sind eng verbunden mit der
 							<strong>
-								<em>Dt. Gesellschaft für Koloproktologie, </em>
+								{" "}
+								<em>
+									Deutschen Gesellschaft für
+									Koloproktologie,{" "}
+								</em>
 							</strong>
 							der wissenschaftlichen Gesellschaft unseres
 							Fachgebietes. Zwei Organisationen, die gemeinsame

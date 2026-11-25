@@ -24,6 +24,10 @@ const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
 		return path.startsWith("/") ? path : `/${path}`;
 	};
 
+	if (!news.title) {
+		return null;
+	}
+
 	return (
 		<div
 			css={{
@@ -34,13 +38,13 @@ const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
 		>
 			<ContentBox
 				key={news.title}
-				title={news.title}
-				text={news.description}
+				title={news.title ?? ""}
+				text={news.description ?? ""}
 				// link={news.link}
 				label="Aktuelles"
 				date={getDateString(news.date).date}
 				background={background}
-				image={news.image}
+				image={news.image ?? undefined}
 				color={settings.colors.dark}
 				buttonBackground={settings.colors.primary}
 				buttonText="Weiter lesen"
@@ -64,7 +68,9 @@ const NewsElement: React.FC<NewsElementProps> = ({ news, background }) => {
 				</FlexBox>
 				<Divider />
 				<h2>{news.title}</h2>
-				<div dangerouslySetInnerHTML={{ __html: news.text }} />
+				{news.text && (
+					<div dangerouslySetInnerHTML={{ __html: news.text }} />
+				)}
 				{newsCategories?.link &&
 					createInternalLink(newsCategories?.link) && (
 						<a href={createInternalLink(newsCategories.link)}>

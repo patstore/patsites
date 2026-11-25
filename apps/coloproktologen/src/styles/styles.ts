@@ -89,7 +89,7 @@ export const topline = settings.mq({
 	letterSpacing: "0.1rem",
 	fontSize: "0.8rem",
 	color: settings.colors.primary,
-	marginBottom: ["12px"]
+	marginBottom: ["6px"]
 });
 
 export const highlightText = settings.mq({

@@ -19,7 +19,7 @@ const Datenschutzerklaerung: React.FC = () => {
 						<br />
 						Telefon: 0761 70 438 - 113
 						<br />
-						E-Mail:
+						E-Mail:{" "}
 						<a href="mailto:info@koloproktologie.org">
 							info@koloproktologie.org
 						</a>
@@ -38,88 +38,105 @@ const Datenschutzerklaerung: React.FC = () => {
 				</section>
 
 				<section>
-					<h2>3. Hosting der Website (Vercel)</h2>
+					<h2>3. Hosting der Website</h2>
 					<p>
-						Unsere Website wird bei <strong>Vercel Inc.</strong>,
-						440 N Barranca Avenue #4133, Covina, CA 91723, USA,
-						gehostet. Vercel stellt die Infrastruktur und
-						Plattformleistungen zur Verfügung, die für den Betrieb
-						unserer Website erforderlich sind.
+						Unsere Website wird auf einem virtuellen Server (VPS) im
+						Rechenzentrum in Nürnberg betrieben. Anbieter der
+						Infrastruktur ist die{" "}
+						<strong>
+							netcup GmbH, Emmy-Noether-Straße 10, 76131 Karlsruhe
+						</strong>
+						,{" "}
+						<a
+							href="https://www.netcup.com/de"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							https://www.netcup.com/de
+						</a>
+						.
 					</p>
 					<p>
-						Beim Aufruf unserer Website erfasst Vercel automatisch
-						bestimmte technische Informationen (Server-Logfiles),
-						darunter:
+						Beim Aufruf der Website erfasst der Server automatisch
+						technische Informationen (Server-Logfiles), darunter:
 					</p>
 					<ul>
 						<li>IP-Adresse</li>
 						<li>Datum und Uhrzeit des Zugriffs</li>
-						<li>Browsertyp und -version</li>
-						<li>Betriebssystem</li>
+						<li>Browsertyp und Betriebssystem</li>
 						<li>Referrer-URL</li>
 						<li>Name und URL der abgerufenen Datei</li>
 					</ul>
 					<p>
-						Die Verarbeitung dieser Daten erfolgt auf Grundlage von{" "}
-						<strong>Art. 6 Abs. 1 lit. f DSGVO</strong>{" "}
-						(berechtigtes Interesse an einem störungsfreien und
-						sicheren Betrieb der Website).
+						Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1
+						lit. f DSGVO. Unser berechtigtes Interesse ist der
+						störungsfreie und sichere Betrieb der Website. Die
+						Logfiles werden nur so lange gespeichert, wie es für
+						diesen Zweck erforderlich ist, und danach gelöscht,
+						sofern keine längere Aufbewahrung zur Aufklärung eines
+						Sicherheitsvorfalls nötig ist.
 					</p>
 					<p>
-						Vercel hat seinen Sitz in den USA. Eine Übermittlung
-						personenbezogener Daten in ein Drittland außerhalb der
-						EU/EWR kann daher stattfinden. Vercel ist nach dem
-						EU‑U.S. Data Privacy Framework zertifiziert. Weitere
-						Informationen:
+						netcup verarbeitet diese Daten in unserem Auftrag auf
+						Grundlage eines Vertrags nach Art. 28 DSGVO. Die
+						Verarbeitung findet in Deutschland statt. Mit dem
+						Hosting ist keine Übermittlung in ein Land außerhalb der
+						EU oder des EWR verbunden. Weitere Informationen:{" "}
 						<a
-							href="https://vercel.com/legal/privacy-policy"
+							href="https://www.netcup.com/de/kontakt/datenschutzerklaerung"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							https://vercel.com/legal/privacy-policy
+							https://www.netcup.com/de/kontakt/datenschutzerklaerung
 						</a>
 						.
 					</p>
 				</section>
 
 				<section>
-					<h2>4. Registrierung auf der Website</h2>
+					<h2>4. Mitgliedschaft, Konto und Anträge</h2>
 					<p>
-						Auf bestimmten Bereichen unserer Website ist eine
-						Registrierung möglich. Dabei erfassen wir folgende
-						Daten:
+						Für die Mitgliedschaft und den geschützten Bereich
+						verarbeiten wir die Angaben, die Sie im Antrag oder in
+						Ihrem Profil machen. Dazu können gehören:
 					</p>
 					<ul>
-						<li>Vor- und Nachname</li>
-						<li>E-Mail-Adresse</li>
-						<li>Benutzername</li>
-						<li>Passwort (als Hash gespeichert)</li>
-						<li>ggf. weitere freiwillige Profildaten</li>
+						<li>Anrede, Titel, Vor- und Nachname</li>
+						<li>E-Mail-Adresse und Telefonnummer</li>
+						<li>Anschrift</li>
+						<li>
+							Angaben zur Ausbildung und beruflichen Qualifikation
+						</li>
+						<li>
+							Zugangsdaten; das Passwort wird ausschließlich als
+							Hash gespeichert
+						</li>
+						<li>
+							bei Erteilung eines SEPA-Mandats die
+							Kontoverbindung (Kontoinhaber, IBAN, BIC)
+						</li>
 					</ul>
 					<p>
-						Die Datenverarbeitung erfolgt auf Grundlage Ihrer
-						Einwilligung (
-						<strong>Art. 6 Abs. 1 lit. a DSGVO</strong>) bzw. zur
-						Erfüllung vertraglicher Leistungen (
-						<strong>Art. 6 Abs. 1 lit. b DSGVO</strong>).
+						Die Verarbeitung ist erforderlich, um den
+						Mitgliedschaftsvertrag durchzuführen und den
+						Mitgliederbereich bereitzustellen (Art. 6 Abs. 1 lit. b
+						DSGVO). Gesetzliche Aufbewahrungspflichten, insbesondere
+						für Beitrags- und Zahlungsunterlagen, bleiben unberührt
+						(Art. 6 Abs. 1 lit. c DSGVO).
 					</p>
 				</section>
 
 				<section>
-					<h2>
-						5. Speicherung und Verarbeitung der Nutzerdaten
-						(Sashido)
-					</h2>
+					<h2>5. Speicherung der Kontodaten (Sashido)</h2>
 					<p>
-						Die bei Registrierung und Nutzung erhobenen
-						personenbezogenen Daten werden auf Servern unseres
-						Dienstleisters <strong>Sashido</strong> gespeichert und
-						verarbeitet. Sashido betreibt seine Infrastruktur
-						überwiegend auf Servern von Amazon Web Services (AWS)
-						innerhalb der EU; eine Übermittlung in Drittländer (z.B.
-						USA) kann nicht ausgeschlossen werden. Sashido sorgt
-						durch entsprechende Verträge für ein angemessenes
-						Datenschutzniveau.
+						Kontodaten, Mitgliedsanträge und Formulareinträge werden
+						über unseren Dienstleister <strong>Sashido</strong>{" "}
+						gespeichert und verarbeitet. Sashido betreibt die
+						Infrastruktur überwiegend auf Servern von Amazon Web
+						Services innerhalb der EU. Eine Übermittlung in Länder
+						außerhalb der EU oder des EWR kann nicht ausgeschlossen
+						werden. Sashido ist vertraglich auf ein angemessenes
+						Datenschutzniveau verpflichtet.
 					</p>
 					<p>
 						Datenschutzerklärung von Sashido:{" "}
@@ -136,140 +153,88 @@ const Datenschutzerklaerung: React.FC = () => {
 				<section>
 					<h2>6. Newsletter</h2>
 					<p>
-						Wenn Sie unseren Newsletter abonnieren, verwenden wir
-						Ihre E-Mail-Adresse, um Ihnen regelmäßig Informationen
-						zu unseren Veranstaltungen, Neuigkeiten und Angeboten
-						zuzusenden. Die Anmeldung erfolgt im{" "}
-						<strong>Double‑Opt‑In‑Verfahren</strong>.
-						Rechtsgrundlage ist Ihre Einwilligung (
-						<strong>Art. 6 Abs. 1 lit. a DSGVO</strong>).
+						Wenn Sie den Newsletter abonnieren, verwenden wir Ihre
+						E-Mail-Adresse, um Ihnen Informationen zu
+						Veranstaltungen, Neuigkeiten und Angeboten der
+						Gesellschaft zu senden. Die Anmeldung erfolgt im
+						Double-Opt-in-Verfahren. Rechtsgrundlage ist Ihre
+						Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
 					</p>
 					<p>
-						Sie können den Newsletter jederzeit abbestellen
-						(Abmeldelink im Newsletter oder E-Mail an{" "}
+						Sie können den Newsletter jederzeit abbestellen, über
+						den Abmeldelink in der E-Mail oder per Nachricht an{" "}
 						<a href="mailto:info@koloproktologie.org">
 							info@koloproktologie.org
 						</a>
-						).
+						.
 					</p>
 				</section>
 
 				<section>
-					<h2>7. Cookies und Tracking</h2>
+					<h2>7. Cookies und Sitzung</h2>
 					<p>
-						Unsere Website verwendet Cookies, um die Nutzung der
-						Website zu analysieren, Funktionen bereitzustellen und
-						Ihre Präferenzen zu speichern. Dabei unterscheiden wir:
-					</p>
-					<ul>
-						<li>
-							<strong>Essenzielle Cookies:</strong> Notwendig für
-							die Funktion der Website.
-						</li>
-						<li>
-							<strong>Statistik-/Analyse-Cookies:</strong> Zur
-							anonymisierten Auswertung der Nutzung (z.B. Google
-							Analytics, sofern aktiviert).
-						</li>
-						<li>
-							<strong>Marketing-Cookies:</strong> Werden nur nach
-							ausdrücklicher Einwilligung gesetzt.
-						</li>
-					</ul>
-					<p>
-						Beim ersten Besuch erscheint ein Consent-Banner, über
-						das Sie Ihre Einwilligungen für Cookies und Tracking
-						geben oder verweigern können. Ihre Entscheidung kann
-						jederzeit über die Cookie-Einstellungen auf der Website
-						geändert werden.
+						Für den öffentlichen Aufruf der Website setzen wir keine
+						Analyse- oder Marketing-Cookies. Nach der Anmeldung wird
+						ein Sitzungs-Cookie gesetzt, damit der Mitgliederbereich
+						Sie als angemeldete Person erkennt. Dieses Cookie ist
+						für die Bereitstellung des Kontos erforderlich (Art. 6
+						Abs. 1 lit. b DSGVO) und wird mit dem Ende der Sitzung
+						oder der Abmeldung gelöscht.
 					</p>
 					<p>
-						Die Rechtsgrundlage für das Setzen von Cookies und
-						Tracking ist <strong>Art. 6 Abs. 1 lit. a DSGVO</strong>{" "}
-						(Einwilligung).
+						Für die redaktionelle Vorschau kann ein weiteres
+						technisch erforderliches Cookie gesetzt werden.
+						Besucherinnen und Besucher der öffentlichen Website
+						erhalten dieses Cookie nicht.
 					</p>
 				</section>
 
 				<section>
-					<h2>8. Zweckbindung und Speicherfristen</h2>
+					<h2>8. Videos (Vimeo)</h2>
 					<p>
-						Wir verarbeiten personenbezogene Daten nur soweit dies
-						für die jeweiligen Zwecke erforderlich ist.
-						Personenbezogene Daten werden gelöscht oder gesperrt,
-						sobald der Zweck entfällt, es sei denn, gesetzliche
-						Aufbewahrungsfristen stehen dem entgegen.
+						Auf einzelnen Seiten betten wir Aufzeichnungen über den
+						Dienst <strong>Vimeo</strong> ein (Vimeo.com, Inc., 330
+						West 34th Street, 10th Floor, New York, NY 10001, USA).
+						Beim Aufruf
+						einer Seite mit einem Videoplayer stellt Ihr Browser
+						eine Verbindung zu Vimeo her. Dabei können IP-Adresse,
+						Browserdaten und Informationen zur Wiedergabe an Vimeo
+						übermittelt und in die USA weitergegeben werden.
+					</p>
+					<p>
+						Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser
+						berechtigtes Interesse ist die Bereitstellung der
+						Vortragsaufzeichnungen. Sie können die Übermittlung
+						vermeiden, indem Sie diese Seiten nicht aufrufen.
+						Weitere Informationen:{" "}
+						<a
+							href="https://vimeo.com/legal/privacy/policy"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							https://vimeo.com/legal/privacy/policy
+						</a>
+						.
 					</p>
 				</section>
 
 				<section>
-					<h2>9. Weitergabe von Daten</h2>
+					<h2>9. LinkedIn</h2>
 					<p>
-						Eine Weitergabe an Dritte erfolgt nur, wenn dies zur
-						Vertragserfüllung, auf Basis Ihrer Einwilligung,
-						gesetzlich vorgeschrieben oder zur Wahrung berechtigter
-						Interessen notwendig ist. Dazu zählen technische
-						Dienstleister wie Netlify oder Sashido.
-					</p>
-				</section>
-
-				<section>
-					<h2>10. Ihre Rechte</h2>
-					<ul>
-						<li>
-							Auskunft über gespeicherte Daten (Art. 15 DSGVO)
-						</li>
-						<li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
-						<li>Löschung (Art. 17 DSGVO)</li>
-						<li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
-						<li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-						<li>Widerspruch gegen Verarbeitung (Art. 21 DSGVO)</li>
-						<li>
-							Widerruf erteilter Einwilligungen (Art. 7 Abs. 3
-							DSGVO)
-						</li>
-						<li>Beschwerde bei Aufsichtsbehörde (Art. 77 DSGVO)</li>
-					</ul>
-					<p>
-						Zur Ausübung wenden Sie sich an die Kontaktdaten unter
-						Punkt 1.
-					</p>
-				</section>
-
-				<section>
-					<h2>11. Sicherheit</h2>
-					<p>
-						Wir setzen technische und organisatorische Maßnahmen
-						ein, um Ihre Daten vor Verlust, Missbrauch oder
-						unberechtigtem Zugriff zu schützen. Die Maßnahmen werden
-						regelmäßig angepasst.
-					</p>
-				</section>
-
-				<section>
-					<h2>12. LinkedIn-Account</h2>
-					<p>
-						Wir betreiben eine Präsenz auf <strong>LinkedIn</strong>
-						, einem sozialen Netzwerk der{" "}
+						Wir unterhalten eine Seite bei{" "}
 						<strong>
 							LinkedIn Ireland Unlimited Company, Wilton Place,
 							Dublin 2, Irland
 						</strong>
-						. Wenn Sie Inhalte unseres LinkedIn-Accounts aufrufen
-						oder unserem Account folgen, können Daten an LinkedIn
-						übermittelt werden, z.B.: IP-Adresse, Datum/Uhrzeit des
-						Zugriffs, ggf. Profilinformationen.
+						. Ein Link auf unserer Website übermittelt allein noch
+						keine Daten an LinkedIn. Wenn Sie die Seite aufrufen
+						oder ihr folgen, verarbeitet LinkedIn Daten nach den
+						eigenen Bestimmungen, etwa IP-Adresse, Zeitpunkt des
+						Zugriffs und, falls Sie angemeldet sind,
+						Profildaten.
 					</p>
 					<p>
-						Die Verarbeitung erfolgt auf Grundlage unseres
-						berechtigten Interesses (
-						<strong>Art. 6 Abs. 1 lit. f DSGVO</strong>), um unsere
-						berufliche Präsenz zu betreiben und mit Mitgliedern,
-						Partnern und Interessenten zu kommunizieren.
-					</p>
-					<p>
-						LinkedIn verarbeitet die Daten selbstständig.
-						Informationen zu Datenerhebung und Nutzung durch
-						LinkedIn finden Sie hier:{" "}
+						Informationen von LinkedIn:{" "}
 						<a
 							href="https://www.linkedin.com/legal/privacy-policy"
 							target="_blank"
@@ -279,20 +244,64 @@ const Datenschutzerklaerung: React.FC = () => {
 						</a>
 						.
 					</p>
+				</section>
+
+				<section>
+					<h2>10. Weitergabe von Daten</h2>
 					<p>
-						Wenn Sie nicht möchten, dass LinkedIn Daten über Sie
-						erhebt, müssen Sie vor dem Zugriff aus Ihrem
-						LinkedIn-Konto ausgeloggt sein oder die Inhalte nicht
-						aufrufen.
+						Eine Weitergabe an Dritte erfolgt, wenn sie zur
+						Durchführung der Mitgliedschaft erforderlich ist, Sie
+						eingewilligt haben, wir gesetzlich dazu verpflichtet
+						sind oder sie zur Wahrung berechtigter Interessen
+						erforderlich ist. Technische Dienstleister in diesem
+						Sinn sind insbesondere netcup, Sashido und, beim Abruf
+						eingebetteter Videos, Vimeo.
 					</p>
 				</section>
 
 				<section>
-					<h2>13. Änderungen der Datenschutzerklärung</h2>
+					<h2>11. Ihre Rechte</h2>
+					<ul>
+						<li>
+							Auskunft über gespeicherte Daten (Art. 15 DSGVO)
+						</li>
+						<li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+						<li>Löschung (Art. 17 DSGVO)</li>
+						<li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+						<li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+						<li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+						<li>
+							Widerruf erteilter Einwilligungen (Art. 7 Abs. 3
+							DSGVO)
+						</li>
+						<li>Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO)</li>
+					</ul>
 					<p>
-						Diese Datenschutzerklärung kann bei Bedarf angepasst
-						werden. Maßgeblich ist jeweils die aktuelle Fassung
-						(Stand: 2. Oktober 2025).
+						Zur Ausübung Ihrer Rechte genügen die Kontaktdaten unter
+						Punkt 1. Zuständige Aufsichtsbehörde ist der Landesbeauftragte
+						für den Datenschutz und die Informationsfreiheit
+						Baden-Württemberg.
+					</p>
+				</section>
+
+				<section>
+					<h2>12. Sicherheit</h2>
+					<p>
+						Die Übertragung zwischen Ihrem Browser und unserem
+						Server erfolgt verschlüsselt über HTTPS. Wir setzen
+						technische und organisatorische Maßnahmen ein, um Ihre
+						Daten vor Verlust, Missbrauch und unberechtigtem Zugriff
+						zu schützen, und passen diese Maßnahmen an.
+					</p>
+				</section>
+
+				<section>
+					<h2>13. Änderungen</h2>
+					<p>
+						Diese Datenschutzerklärung kann angepasst werden, wenn
+						sich die Verarbeitung oder die Rechtslage ändert.
+						Maßgeblich ist die auf dieser Seite veröffentlichte
+						Fassung (Stand: 25. November 2026).
 					</p>
 				</section>
 			</ContentContainer>

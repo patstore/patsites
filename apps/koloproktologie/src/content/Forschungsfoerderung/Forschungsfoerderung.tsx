@@ -61,7 +61,9 @@ const Forschungsfoerderung: React.FC = () => {
 				</FlexBox>
 			</ContentContainer>
 			<ContentContainer noPaddingTop>
-				<h2>Aktuell geförderte Forschungsprojekte</h2>
+				<h2 id="forschungsprojekte">
+					Aktuell geförderte Forschungsprojekte
+				</h2>
 				<FlexBox
 					direction="row"
 					align="stretch"

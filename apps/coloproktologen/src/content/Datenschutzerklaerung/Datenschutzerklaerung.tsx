@@ -38,119 +38,102 @@ const Datenschutzerklaerung: React.FC = () => {
 				</section>
 
 				<section className="imp_data_section">
-					<h2>3. Hosting der Website (Netlify)</h2>
+					<h2>3. Hosting der Website</h2>
 					<p>
-						Unsere Website wird bei <strong>Netlify, Inc.</strong>,
-						2325 3rd Street, Suite 215, San Francisco, California
-						94107, USA, gehostet. Netlify stellt die Infrastruktur
-						und Plattformleistungen zur Verfügung, die für den
-						Betrieb unserer Website erforderlich sind.
+						Unsere Website wird auf einem virtuellen Server (VPS) im
+						Rechenzentrum in Nürnberg betrieben. Anbieter der
+						Infrastruktur ist die{" "}
+						<strong>
+							netcup GmbH, Emmy-Noether-Straße 10, 76131 Karlsruhe
+						</strong>
+						,{" "}
+						<a
+							href="https://www.netcup.com/de"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							https://www.netcup.com/de
+						</a>
+						.
 					</p>
 					<p>
-						Beim Aufruf unserer Website erfasst Netlify automatisch
-						bestimmte technische Informationen (Server-Logfiles),
-						darunter:
+						Beim Aufruf der Website erfasst der Server automatisch
+						technische Informationen (Server-Logfiles), darunter:
 					</p>
 					<ul>
 						<li>IP-Adresse</li>
 						<li>Datum und Uhrzeit des Zugriffs</li>
-						<li>Browsertyp und -version</li>
-						<li>Betriebssystem</li>
+						<li>Browsertyp und Betriebssystem</li>
 						<li>Referrer-URL</li>
 						<li>Name und URL der abgerufenen Datei</li>
 					</ul>
 					<p>
-						Die Verarbeitung dieser Daten erfolgt auf Grundlage von{" "}
-						<strong>Art. 6 Abs. 1 lit. f DSGVO</strong>{" "}
-						(berechtigtes Interesse an einem störungsfreien und
-						sicheren Betrieb der Website).
+						Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1
+						lit. f DSGVO. Unser berechtigtes Interesse ist der
+						störungsfreie und sichere Betrieb der Website. Die
+						Logfiles werden nur so lange gespeichert, wie es für
+						diesen Zweck erforderlich ist, und danach gelöscht,
+						sofern keine längere Aufbewahrung zur Aufklärung eines
+						Sicherheitsvorfalls nötig ist.
 					</p>
 					<p>
-						Netlify hat seinen Sitz in den USA. Eine Übermittlung
-						personenbezogener Daten in ein Drittland außerhalb der
-						EU/EWR kann daher stattfinden. Netlify ist nach dem
-						EU‑U.S. Data Privacy Framework zertifiziert. Weitere
-						Informationen:{" "}
+						netcup verarbeitet diese Daten in unserem Auftrag auf
+						Grundlage eines Vertrags nach Art. 28 DSGVO. Anmeldung,
+						Mitgliederbereich und Formulare werden von dieser
+						Website auf demselben Server ausgeliefert. Die
+						Verarbeitung findet in Deutschland statt. Mit dem
+						Hosting ist keine Übermittlung in ein Land außerhalb der
+						EU oder des EWR verbunden. Weitere Informationen:{" "}
 						<a
-							href="https://www.netlify.com/privacy/"
+							href="https://www.netcup.com/de/kontakt/datenschutzerklaerung"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							https://www.netlify.com/privacy/
+							https://www.netcup.com/de/kontakt/datenschutzerklaerung
 						</a>
 						.
 					</p>
-					<h3>
-						Verarbeitung personenbezogener Daten über Netlify
-						Functions (Login)
-					</h3>
-					<p>
-						Für die Bereitstellung unserer Login-Funktion verwenden
-						wir serverlose Funktionen („Netlify Functions“) des
-						Dienstanbieters Netlify Inc. (2325 3rd Street, Suite
-						215, San Francisco, CA 94107, USA). Bei der Nutzung des
-						Logins werden technische Daten wie IP-Adresse, Zeitpunkt
-						der Anfrage sowie Browser-Informationen verarbeitet.
-						Zudem werden die von Ihnen eingegebenen Login-Daten (z.
-						B. E-Mail-Adresse, Passwort oder entsprechende Tokens)
-						an die Funktion übermittelt, um Ihre Anmeldung zu
-						ermöglichen.
-					</p>
-					<p>
-						Netlify verarbeitet diese Daten ausschließlich in
-						unserem Auftrag und nach unseren Weisungen. Hierfür
-						besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28
-						DSGVO. Eine Übermittlung in die USA erfolgt auf
-						Grundlage der hierfür geltenden datenschutzrechtlichen
-						Garantien (z. B. Standardvertragsklauseln oder
-						Angemessenheitsbeschluss).
-					</p>
-					<p>
-						Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1
-						lit. b DSGVO, da sie für die Durchführung des Logins und
-						damit für die Erfüllung des Nutzungsverhältnisses
-						erforderlich ist.
-					</p>
 				</section>
 
 				<section className="imp_data_section">
-					<h2>4. Registrierung auf der Website</h2>
+					<h2>4. Mitgliedskonto</h2>
 					<p>
-						Auf bestimmten Bereichen unserer Website ist eine
-						Registrierung möglich. Dabei erfassen wir folgende
-						Daten:
+						Für das Mitgliedskonto verarbeiten wir die Angaben, die
+						für die Führung der Mitgliedschaft und des
+						geschützten Bereichs erforderlich sind, insbesondere:
 					</p>
 					<ul>
-						<li>Vor- und Nachname</li>
+						<li>Anrede, Titel, Vor- und Nachname</li>
 						<li>E-Mail-Adresse</li>
-						<li>Benutzername</li>
-						<li>Passwort (als Hash gespeichert)</li>
-						<li>ggf. weitere freiwillige Profildaten</li>
+						<li>Mitgliedsnummer und Fachrichtung</li>
+						<li>
+							Zugangsdaten; das Passwort wird ausschließlich als
+							Hash gespeichert
+						</li>
+						<li>
+							Angaben, die Sie freiwillig im Profil hinterlegen,
+							etwa Praxis- und Kontaktdaten
+						</li>
 					</ul>
 					<p>
-						Die Datenverarbeitung erfolgt auf Grundlage Ihrer
-						Einwilligung (
-						<strong>Art. 6 Abs. 1 lit. a DSGVO</strong>) bzw. zur
-						Erfüllung vertraglicher Leistungen (
-						<strong>Art. 6 Abs. 1 lit. b DSGVO</strong>).
+						Die Verarbeitung erfolgt zur Durchführung der
+						Mitgliedschaft (Art. 6 Abs. 1 lit. b DSGVO). Gesetzliche
+						Aufbewahrungspflichten bleiben unberührt (Art. 6 Abs. 1
+						lit. c DSGVO).
 					</p>
 				</section>
 
 				<section className="imp_data_section">
-					<h2>
-						5. Speicherung und Verarbeitung der Nutzerdaten
-						(Sashido)
-					</h2>
+					<h2>5. Speicherung der Kontodaten (Sashido)</h2>
 					<p>
-						Die bei Registrierung und Nutzung erhobenen
-						personenbezogenen Daten werden auf Servern unseres
-						Dienstleisters <strong>Sashido</strong> gespeichert und
-						verarbeitet. Sashido betreibt seine Infrastruktur
-						überwiegend auf Servern von Amazon Web Services (AWS)
-						innerhalb der EU; eine Übermittlung in Drittländer (z.B.
-						USA) kann nicht ausgeschlossen werden. Sashido sorgt
-						durch entsprechende Verträge für ein angemessenes
-						Datenschutzniveau.
+						Kontodaten und zugehörige Einträge werden über unseren
+						Dienstleister <strong>Sashido</strong> gespeichert und
+						verarbeitet. Sashido betreibt die Infrastruktur
+						überwiegend auf Servern von Amazon Web Services
+						innerhalb der EU. Eine Übermittlung in Länder außerhalb
+						der EU oder des EWR kann nicht ausgeschlossen werden.
+						Sashido ist vertraglich auf ein angemessenes
+						Datenschutzniveau verpflichtet.
 					</p>
 					<p>
 						Datenschutzerklärung von Sashido:{" "}
@@ -167,124 +150,141 @@ const Datenschutzerklaerung: React.FC = () => {
 				<section className="imp_data_section">
 					<h2>6. Newsletter</h2>
 					<p>
-						Wenn Sie unseren Newsletter abonnieren, verwenden wir
-						Ihre E-Mail-Adresse, um Ihnen regelmäßig Informationen
-						zu unseren Veranstaltungen, Neuigkeiten und Angeboten
-						zuzusenden. Die Anmeldung erfolgt im{" "}
-						<strong>Double‑Opt‑In‑Verfahren</strong>.
-						Rechtsgrundlage ist Ihre Einwilligung (
-						<strong>Art. 6 Abs. 1 lit. a DSGVO</strong>).
+						Wenn Sie den Newsletter abonnieren, verwenden wir Ihre
+						E-Mail-Adresse, um Ihnen Informationen zu
+						Veranstaltungen, Neuigkeiten und Angeboten des Verbands
+						zu senden. Die Anmeldung erfolgt im
+						Double-Opt-in-Verfahren. Rechtsgrundlage ist Ihre
+						Einwilligung (Art. 6 Abs. 1 lit. a DSGVO).
 					</p>
 					<p>
-						Sie können den Newsletter jederzeit abbestellen
-						(Abmeldelink im Newsletter oder E-Mail an{" "}
+						Sie können den Newsletter jederzeit abbestellen, über
+						den Abmeldelink in der E-Mail oder per Nachricht an{" "}
 						<a href="mailto:info@coloproktologen.de">
 							info@coloproktologen.de
-						</a>
-						).
-					</p>
-				</section>
-
-				<section className="imp_data_section">
-					<h2>7. Cookies und Session-Tokens</h2>
-					<p>
-						Unsere Website verwendet keine Tracking-Cookies oder
-						Analyse-Cookies. Wir setzen ausschließlich technisch
-						notwendige Session-Tokens und Cookies für die Einbindung
-						von Google Maps ein.
-					</p>
-
-					<h3>7.1 Session-Tokens</h3>
-					<p>
-						Wir verwenden Session-Tokens, um angemeldete Benutzer in
-						unserer Datenbank zu identifizieren und die
-						Funktionalität der Website zu gewährleisten.
-					</p>
-					<p>Diese Session-Tokens sind:</p>
-					<ul>
-						<li>
-							<strong>Technisch erforderlich:</strong> Sie
-							ermöglichen die Authentifizierung und sichere
-							Nutzung der Website.
-						</li>
-						<li>
-							<strong>Temporär:</strong> Sie werden nach dem Ende
-							Ihrer Sitzung oder nach Ablauf einer bestimmten Zeit
-							automatisch gelöscht.
-						</li>
-						<li>
-							<strong>Nicht für Tracking:</strong> Sie dienen
-							ausschließlich der Benutzeridentifikation und werden
-							nicht für Analyse- oder Marketingzwecke verwendet.
-						</li>
-					</ul>
-					<p>
-						Die Rechtsgrundlage für das Setzen dieser Session-Tokens
-						ist <strong>Art. 6 Abs. 1 lit. b DSGVO</strong>{" "}
-						(Vertragserfüllung) bzw.{" "}
-						<strong>Art. 6 Abs. 1 lit. f DSGVO</strong>{" "}
-						(berechtigtes Interesse an der technischen
-						Funktionsfähigkeit der Website).
-					</p>
-
-					<h3>7.2 Google Maps</h3>
-					<p>
-						Zur Darstellung von Standorten und Karten nutzen wir
-						Google Maps, einen Kartendienst der Google Ireland
-						Limited, Gordon House, Barrow Street, Dublin 4, Irland.
-					</p>
-					<p>
-						Bei der Nutzung von Google Maps werden Cookies gesetzt
-						und Daten wie Ihre IP-Adresse und Ihr Standort an Google
-						übertragen. Diese Daten können auch in die USA
-						übertragen werden. Google kann diese Informationen
-						nutzen, um Ihre Nutzung der Website auszuwerten und
-						weitere Dienstleistungen zu erbringen.
-					</p>
-					<p>
-						Die Rechtsgrundlage für die Nutzung von Google Maps ist{" "}
-						<strong>Art. 6 Abs. 1 lit. a DSGVO</strong>{" "}
-						(Einwilligung). Sie können Ihre Einwilligung jederzeit
-						widerrufen, indem Sie die entsprechende Funktion in den
-						Cookie-Einstellungen deaktivieren.
-					</p>
-					<p>
-						Weitere Informationen finden Sie in den{" "}
-						<a
-							href="https://policies.google.com/privacy"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							Datenschutzbestimmungen von Google
 						</a>
 						.
 					</p>
 				</section>
 
 				<section className="imp_data_section">
-					<h2>8. Zweckbindung und Speicherfristen</h2>
+					<h2>7. Cookies und Sitzung</h2>
 					<p>
-						Wir verarbeiten personenbezogene Daten nur soweit dies
-						für die jeweiligen Zwecke erforderlich ist.
-						Personenbezogene Daten werden gelöscht oder gesperrt,
-						sobald der Zweck entfällt, es sei denn, gesetzliche
-						Aufbewahrungsfristen stehen dem entgegen.
+						Wir setzen keine Analyse- oder Marketing-Cookies. Nach
+						der Anmeldung wird ein Sitzungs-Cookie gesetzt, damit
+						der Mitgliederbereich Sie als angemeldete Person
+						erkennt. Dieses Cookie ist für die Bereitstellung des
+						Kontos erforderlich (Art. 6 Abs. 1 lit. b DSGVO) und
+						wird mit dem Ende der Sitzung oder der Abmeldung
+						gelöscht.
+					</p>
+					<p>
+						Für Google Maps speichern wir Ihre Entscheidung
+						(zugestimmt oder abgelehnt) in einem Cookie, damit die
+						Abfrage nicht bei jedem Aufruf erneut erscheint.
+						Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO. Sie
+						können das Cookie in Ihrem Browser löschen; die Karte
+						wird danach erst wieder nach einer neuen Zustimmung
+						geladen.
 					</p>
 				</section>
 
 				<section className="imp_data_section">
-					<h2>9. Weitergabe von Daten</h2>
+					<h2>8. Reichweitenmessung mit Simple Analytics</h2>
 					<p>
-						Eine Weitergabe an Dritte erfolgt nur, wenn dies zur
-						Vertragserfüllung, auf Basis Ihrer Einwilligung,
-						gesetzlich vorgeschrieben oder zur Wahrung berechtigter
-						Interessen notwendig ist. Dazu zählen technische
-						Dienstleister wie Netlify oder Sashido.
+						Wir nutzen Simple Analytics, einen Dienst der{" "}
+						<strong>
+							Simple Analytics B.V., Jacob van Lennepstraat 78 H,
+							1053 HM Amsterdam, Niederlande
+						</strong>
+						, um zu verstehen, welche Seiten aufgerufen werden. Das
+						Skript wird von{" "}
+						<code>scripts.simpleanalyticscdn.com</code> geladen.
+					</p>
+					<p>
+						Simple Analytics setzt keine Cookies und speichert nach
+						eigenen Angaben keine IP-Adressen. Erfasst werden
+						aggregierte Angaben wie aufgerufene Seite, Referrer,
+						Browsertyp, Betriebssystem, Gerätetyp und das Land des
+						Aufrufs. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
+						Weitere Informationen:{" "}
+						<a
+							href="https://www.simpleanalytics.com/privacy"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							https://www.simpleanalytics.com/privacy
+						</a>
+						.
 					</p>
 				</section>
 
 				<section className="imp_data_section">
-					<h2>10. Ihre Rechte</h2>
+					<h2>9. Google Maps</h2>
+					<p>
+						Zur Darstellung von Praxis- und Klinikstandorten und zur
+						Prüfung eingegebener Adressen nutzen wir Google Maps und
+						die Geocoding-Schnittstelle der{" "}
+						<strong>
+							Google Ireland Limited, Gordon House, Barrow Street,
+							Dublin 4, Irland
+						</strong>
+						. Die Karte wird erst geladen, wenn Sie dem Hinweis auf
+						der Seite zustimmen.
+					</p>
+					<p>
+						Danach übermittelt Ihr Browser technische Daten,
+						insbesondere die IP-Adresse, an Google. Bei der
+						Adressprüfung werden die eingegebene Straße, Postleitzahl
+						und der Ort an Google übermittelt, um die Adresse zu
+						prüfen und Koordinaten zu ermitteln. Google kann diese
+						Daten auf Servern außerhalb der EU, auch in den USA,
+						verarbeiten.
+					</p>
+					<p>
+						Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1
+						lit. a DSGVO). Sie können die Einwilligung verweigern
+						oder später widerrufen, indem Sie das Zustimmungs-Cookie
+						löschen und die Karte nicht erneut aktivieren. Die
+						Spezialistensuche bleibt ohne Kartenansicht nutzbar.
+						Vorgeschlagene Adresskorrekturen können Sie ablehnen.
+					</p>
+					<p>
+						Weitere Informationen:{" "}
+						<a
+							href="https://policies.google.com/privacy"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							https://policies.google.com/privacy
+						</a>{" "}
+						und{" "}
+						<a
+							href="https://www.google.com/intl/de_de/help/terms_maps/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Nutzungsbedingungen von Google Maps
+						</a>
+						.
+					</p>
+				</section>
+
+				<section className="imp_data_section">
+					<h2>10. Weitergabe von Daten</h2>
+					<p>
+						Eine Weitergabe an Dritte erfolgt, wenn sie zur
+						Durchführung der Mitgliedschaft erforderlich ist, Sie
+						eingewilligt haben, wir gesetzlich dazu verpflichtet
+						sind oder sie zur Wahrung berechtigter Interessen
+						erforderlich ist. Technische Dienstleister in diesem
+						Sinn sind insbesondere netcup, Sashido, Simple Analytics
+						und, nach Ihrer Zustimmung, Google.
+					</p>
+				</section>
+
+				<section className="imp_data_section">
+					<h2>11. Ihre Rechte</h2>
 					<ul>
 						<li>
 							Auskunft über gespeicherte Daten (Art. 15 DSGVO)
@@ -293,118 +293,39 @@ const Datenschutzerklaerung: React.FC = () => {
 						<li>Löschung (Art. 17 DSGVO)</li>
 						<li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
 						<li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
-						<li>Widerspruch gegen Verarbeitung (Art. 21 DSGVO)</li>
+						<li>Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
 						<li>
 							Widerruf erteilter Einwilligungen (Art. 7 Abs. 3
 							DSGVO)
 						</li>
-						<li>Beschwerde bei Aufsichtsbehörde (Art. 77 DSGVO)</li>
+						<li>Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO)</li>
 					</ul>
 					<p>
-						Zur Ausübung wenden Sie sich an die Kontaktdaten unter
-						Punkt 1.
+						Zur Ausübung Ihrer Rechte genügen die Kontaktdaten unter
+						Punkt 1. Zuständige Aufsichtsbehörde ist der
+						Landesbeauftragte für den Datenschutz und die
+						Informationsfreiheit Baden-Württemberg.
 					</p>
 				</section>
 
 				<section className="imp_data_section">
-					<h2>11. Sicherheit</h2>
+					<h2>12. Sicherheit</h2>
 					<p>
-						Wir setzen technische und organisatorische Maßnahmen
-						ein, um Ihre Daten vor Verlust, Missbrauch oder
-						unberechtigtem Zugriff zu schützen. Die Maßnahmen werden
-						regelmäßig angepasst.
+						Die Übertragung zwischen Ihrem Browser und unserem
+						Server erfolgt verschlüsselt über HTTPS. Wir setzen
+						technische und organisatorische Maßnahmen ein, um Ihre
+						Daten vor Verlust, Missbrauch und unberechtigtem Zugriff
+						zu schützen, und passen diese Maßnahmen an.
 					</p>
 				</section>
 
 				<section className="imp_data_section">
-					<h2>12. Google Maps</h2>
+					<h2>13. Änderungen</h2>
 					<p>
-						Diese Website nutzt den Kartendienst{" "}
-						<strong>Google Maps</strong> der{" "}
-						<strong>
-							Google Ireland Limited, Gordon House, Barrow Street,
-							Dublin 4, Irland
-						</strong>{" "}
-						(&#34;Google&#34;). Google Maps wird verwendet, um
-						Standortinformationen von Praxen und Kliniken anzuzeigen
-						und zur Validierung von Adressdaten im Rahmen der
-						Spezialistensuche.
-					</p>
-					<p>
-						Bei der Nutzung von Google Maps werden Daten an Google
-						übermittelt und auf Servern von Google gespeichert. Dies
-						umfasst insbesondere:
-					</p>
-					<ul>
-						<li>IP-Adresse des Nutzers</li>
-						<li>Datum und Uhrzeit des Zugriffs</li>
-						<li>
-							Eingegebene oder angezeigte Standortinformationen
-							(Adressen, Koordinaten)
-						</li>
-						<li>
-							Technische Informationen (Browser, Betriebssystem,
-							Bildschirmauflösung)
-						</li>
-					</ul>
-					<p>
-						Die Verarbeitung erfolgt auf Grundlage unseres
-						berechtigten Interesses (
-						<strong>Art. 6 Abs. 1 lit. f DSGVO</strong>) an einer
-						benutzerfreundlichen Darstellung von Standorten und der
-						Validierung von Adressdaten zur Sicherstellung korrekter
-						Kontaktinformationen. Google verwendet die Daten
-						möglicherweise auch für eigene Zwecke, z.B. zur
-						Verbesserung der Dienste oder für Werbezwecke.
-					</p>
-					<p>
-						<strong>Google Maps Geocoding API:</strong> Zur
-						Validierung und Korrektur von Adressdaten verwenden wir
-						die Google Maps Geocoding API. Dabei werden die von
-						Nutzern eingegebenen Adressdaten (Straße, PLZ, Ort) an
-						Google übermittelt, um die Korrektheit zu überprüfen und
-						Koordinaten zu ermitteln. Diese Verarbeitung erfolgt nur
-						bei der Eingabe oder Bearbeitung von Praxisdaten durch
-						eingeloggte Mitglieder.
-					</p>
-					<p>
-						Weitere Informationen zur Datenverarbeitung durch Google
-						finden Sie in der Datenschutzerklärung von Google:{" "}
-						<a
-							href="https://policies.google.com/privacy"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							https://policies.google.com/privacy
-						</a>
-						. Informationen zu den Nutzungsbedingungen von Google
-						Maps finden Sie hier:{" "}
-						<a
-							href="https://www.google.com/intl/de_de/help/terms_maps/"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							https://www.google.com/intl/de_de/help/terms_maps/
-						</a>
-						.
-					</p>
-					<p>
-						<strong>Widerspruchsmöglichkeit:</strong> Sie können die
-						Datenübertragung an Google verhindern, indem Sie die
-						Nutzung von Google Maps auf unserer Website unterlassen.
-						Die Spezialistensuche ist auch ohne die Kartenansicht
-						nutzbar. Bei der Adressvalidierung können Sie die
-						vorgeschlagenen Korrekturen ablehnen und Ihre
-						ursprünglichen Eingaben beibehalten.
-					</p>
-				</section>
-
-				<section className="imp_data_section">
-					<h2>13. Änderungen der Datenschutzerklärung</h2>
-					<p>
-						Diese Datenschutzerklärung kann bei Bedarf angepasst
-						werden. Maßgeblich ist jeweils die aktuelle Fassung
-						(Stand: 2. Oktober 2025).
+						Diese Datenschutzerklärung kann angepasst werden, wenn
+						sich die Verarbeitung oder die Rechtslage ändert.
+						Maßgeblich ist die auf dieser Seite veröffentlichte
+						Fassung (Stand: 25. November 2026).
 					</p>
 				</section>
 			</ContentContainer>

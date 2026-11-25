@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "generatedAt": "2026-11-23T11:32:27.390Z",
+    "generatedAt": "2026-11-23T12:15:47.989Z",
     "projectId": "JRxDkaxCoI",
     "moduleCount": 12,
     "states": null,
@@ -3937,6 +3937,13 @@
     }
   ],
   "categorys": [
+    {
+      "id": "Q2F0ZWdvcnk6YkF4bUk3VGFBWA==",
+      "objectId": "bAxmI7TaAX",
+      "categories": null,
+      "title": "Forschungsprojekt",
+      "link": "https://koloproktologie.org/aktivitaeten/forschungsfoerderung#forschungsprojekte"
+    },
     {
       "id": "Q2F0ZWdvcnk6OWJQYjdzVXdZVg==",
       "objectId": "9bPb7sUwYV",
@@ -8192,12 +8199,12 @@
       "id": "QXJ0aWNsZTp1OWpxQTFpdXVx",
       "objectId": "u9jqA1iuuq",
       "categories": [
-        "dTmCePMOsW",
-        "7YhCZBw7MY"
+        "bAxmI7TaAX",
+        "dTmCePMOsW"
       ],
       "author": null,
       "image": "b0TPjp3PEX",
-      "title": "Test",
+      "title": "Erfassung des „Low Anterior Resection Syndrome (LARS)“ nach Rektumresektion bei Patientinnen und Patienten mit Rektumkarzinom – eine multizentrische Studie",
       "description": "test",
       "text": "<p>123</p>",
       "date": "2026-11-12",

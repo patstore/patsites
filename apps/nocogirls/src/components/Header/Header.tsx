@@ -177,8 +177,15 @@ export function Header() {
 								</div>
 								<div className="flex row align-center gap-md justify-center">
 									<div className="footer_links">
-										<a href="https://www.no-co-girls.com/datenschutz">
-											Datenschutz
+										<a
+											href={toLocalizedHref(
+												"/datenschutz",
+												language
+											)}
+										>
+											{language === "en"
+												? "Privacy"
+												: "Datenschutz"}
 										</a>
 									</div>
 									<div className="footer_links">

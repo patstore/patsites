@@ -34,13 +34,13 @@ const FirstContent: React.FC = () => {
 					text="Zusatzbezeichnung Proktologie"
 					background={settings.colors.primary}
 					color={settings.colors.white}
-					internalLink="#zusatzbezeichnung"
+					internalLink="/fortbildung/#zusatzbezeichnung"
 				/>
 				<Button
 					text="Koloproktologischer Grundkurs"
 					background={settings.colors.primary}
 					color={settings.colors.white}
-					internalLink="#koloproktologischer-grundkurs"
+					internalLink="/fortbildung/#koloproktologischer-grundkurs"
 				/>
 			</div>
 		</ContentContainer>

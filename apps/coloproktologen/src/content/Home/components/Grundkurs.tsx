@@ -1,6 +1,6 @@
 import settings from "@settings";
 import { contentBox, topline } from "@styles";
-import { Button, ContentBox, ContentContainer, FlexBox, Label } from "@ui";
+import { Button, ContentBox, ContentContainer, FlexBox } from "@ui";
 import React from "react";
 import { env } from "@env";
 
