@@ -20,6 +20,7 @@ import Cooperation from "./components/Cooperation";
 import { CongressTeaser } from "../Home";
 import { upcomingKongressContainer } from "./styles";
 import { Default, Preview, PreviewWrapper } from "@repo/ui";
+import { PatstoreEvent } from "@types";
 
 const Kongress: React.FC = () => {
 	const { events } = useGetEvent();
@@ -27,7 +28,7 @@ const Kongress: React.FC = () => {
 
 	const currentEvents = getCurrentEvents(events || []);
 
-	const getYear = (event: EventClass) => {
+	const getYear = (event: PatstoreEvent) => {
 		if (isArray(event.dates) && event.dates.length > 0) {
 			const date = event.dates[0].start;
 			return new Date(date).getFullYear();
@@ -102,7 +103,7 @@ const Kongress: React.FC = () => {
 							</div>
 						</ContentContainer>
 					)}
-				</Default>
+				</Regular>
 			</PreviewWrapper>
 			<CongressTeaser />
 			<Cooperation />

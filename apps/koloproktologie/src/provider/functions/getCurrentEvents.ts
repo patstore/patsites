@@ -1,8 +1,8 @@
-import { EventClass } from "@data";
+import { PatstoreEvent } from "@types";
 
 const now = new Date();
 
-export const getCurrentEvents = (events: EventClass[]) => {
+export const getCurrentEvents = (events: PatstoreEvent[]) => {
 	const eventsWithDate = events.filter(
 		(event) =>
 			event.dates &&
@@ -10,20 +10,22 @@ export const getCurrentEvents = (events: EventClass[]) => {
 			event?.categories?.includes("6Die3pBJXA")
 	);
 
-	const sortedEvents = eventsWithDate.sort((a: EventClass, b: EventClass) => {
-		const aStart = a.dates?.[0]?.start;
-		const bStart = b.dates?.[0]?.start;
-		if (!aStart || !bStart) {
-			return 0;
+	const sortedEvents = eventsWithDate.sort(
+		(a: PatstoreEvent, b: PatstoreEvent) => {
+			const aStart = a.dates?.[0]?.start;
+			const bStart = b.dates?.[0]?.start;
+			if (!aStart || !bStart) {
+				return 0;
+			}
+			const aDate = new Date(aStart);
+			const bDate = new Date(bStart);
+			return aDate.getTime() - bDate.getTime();
 		}
-		const aDate = new Date(aStart);
-		const bDate = new Date(bStart);
-		return aDate.getTime() - bDate.getTime();
-	});
+	);
 
 	// Find current event (most recent past event)
 	const current = sortedEvents
-		.filter((event: EventClass) => {
+		.filter((event: PatstoreEvent) => {
 			const eventEndDate = new Date(
 				event.dates?.[event.dates.length - 1]?.end ?? ""
 			);
@@ -32,7 +34,7 @@ export const getCurrentEvents = (events: EventClass[]) => {
 		.pop();
 
 	// Find upcoming event (next future event)
-	const upcoming = sortedEvents.find((event: EventClass) => {
+	const upcoming = sortedEvents.find((event: PatstoreEvent) => {
 		const startDate = event.dates?.[0]?.end;
 		if (!startDate) {
 			return false;
@@ -41,7 +43,7 @@ export const getCurrentEvents = (events: EventClass[]) => {
 		return eventStartDate > now;
 	});
 
-	const past = sortedEvents.filter((event: EventClass) => {
+	const past = sortedEvents.filter((event: PatstoreEvent) => {
 		const startDate = event.dates?.[0]?.start;
 		if (!startDate) {
 			return false;

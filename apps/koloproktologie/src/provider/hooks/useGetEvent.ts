@@ -1,4 +1,3 @@
-import type { EventClass } from "@data";
 import { useCollection } from "../data";
 import { getDateString } from "../functions";
 
@@ -8,19 +7,19 @@ interface LocationClass {
 }
 
 const useGetEvent: () => {
-	findEvent: (id: string) => EventClass | undefined;
-	events: EventClass[];
-	getEventDateString: (dates: EventClass["dates"]) => {
+	findEvent: (id: string) => PatstoreEvent | undefined;
+	events: PatstoreEvent[];
+	getEventDateString: (dates: PatstoreEvent["dates"]) => {
 		date: string;
 		location: string;
 	};
 } = () => {
 	const { items: events, find: findEvent } =
-		useCollection<EventClass>("Event");
+		useCollection<PatstoreEvent>("Event");
 	const { items: allLocation } = useCollection<LocationClass>("Location");
 
 	const getEventLocationString = (
-		location: NonNullable<EventClass["dates"]>[0]["place"]
+		location: NonNullable<PatstoreEvent["dates"]>[0]["place"]
 	) => {
 		if (!location) {
 			return "";
@@ -49,7 +48,7 @@ const useGetEvent: () => {
 		return "-";
 	};
 
-	const getEventDateString = (dates: EventClass["dates"]) => {
+	const getEventDateString = (dates: PatstoreEvent["dates"]) => {
 		const date = {
 			date: "",
 			location: ""
