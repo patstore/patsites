@@ -1,3 +1,4 @@
+import { PatstoreEvent } from "@types";
 import { useCollection } from "../data";
 import { getDateString } from "../functions";
 

@@ -103,7 +103,7 @@ const Kongress: React.FC = () => {
 							</div>
 						</ContentContainer>
 					)}
-				</Regular>
+				</Default>
 			</PreviewWrapper>
 			<CongressTeaser />
 			<Cooperation />
