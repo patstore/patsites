@@ -8,12 +8,12 @@ import type { FC } from "react";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-    return (
-        <>
-            <main id="main">{children}</main>
-            <Footer />
-        </>
-    );
+	return (
+		<>
+			<main id="main">{children}</main>
+			{/* <Footer /> */}
+		</>
+	);
 };
 
 export default Layout;

@@ -5,4 +5,5 @@ export type WorkProps = {
     number: string;
     length: string;
     index: number;
+    duplicate?: boolean;
 };

@@ -1,232 +1,254 @@
 .works-section {
-    height: calc(100vh - 60px);
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 150px;
-    overflow-x: hidden;
-
-    @media (max-width: 840px) {
-        height: auto;
-        margin-top: 120px;
-    }
+	height: calc(100vh - 60px);
+	width: 100vw;
+	max-width: 100vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	overflow-x: hidden;
+	position: absolute;
+	left: 0;
+	bottom: 60px;
+	max-height: 240px;
+	@media (max-width: 840px) {
+		position: relative;
+		left: auto;
+		bottom: auto;
+		order: 2;
+		height: 180px;
+		max-height: none;
+		margin-top: 24px;
+	}
 }
 
 .works-section-inner {
-    flex: 1;
-    min-height: 0;
-    min-width: 0;
-    height: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 24px;
-    padding-bottom: 24px;
+	position: relative;
+	flex: 1;
+	min-height: 0;
+	min-width: 0;
+	height: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 .works-section-cta {
-    flex: none;
-    padding-top: 24px;
+	flex: none;
+	padding-top: 24px;
+	display: none;
 }
 
 .works-marquee-viewport {
-    flex: 1;
-    min-height: 0;
-    min-width: 0;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    overscroll-behavior: none;
-    touch-action: pan-y;
-    container-type: inline-size;
-    container-name: works-track;
+	flex: 1;
+	min-height: 0;
+	min-width: 0;
+	width: 100%;
+	max-width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	overscroll-behavior-x: contain;
+	touch-action: pan-x pan-y;
+	scroll-behavior: auto;
+	scrollbar-width: none;
+	cursor: grab;
+	container-type: inline-size;
+	container-name: works-track;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	&:active {
+		cursor: grabbing;
+	}
+
+	img {
+		-webkit-user-drag: none;
+		user-select: none;
+	}
 }
 
 .works-marquee-track {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: stretch;
-    height: 100%;
-    width: max-content;
-    gap: 90px;
-    will-change: transform;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	height: 100%;
+	width: max-content;
+	gap: 90px;
+	user-select: none;
 }
 
 .work-card-container {
-    flex: 0 0 auto;
-    width: fit-content;
-    height: 100%;
-    max-height: 420px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: flex-start;
-    gap: 0;
-    .header {
-        padding: 6px 12px;
-        writing-mode: sideways-lr;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-    }
-    .title {
-        writing-mode: sideways-lr;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-    }
+	flex: 0 0 auto;
+	width: fit-content;
+	height: 100%;
+	max-height: 420px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: flex-start;
+	gap: 0;
+	.header {
+		padding: 6px 12px;
+		writing-mode: sideways-lr;
+		display: none;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+	}
+	.title {
+		writing-mode: sideways-lr;
+		display: none;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+	}
 }
 
 .work-card {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	box-sizing: border-box;
 }
 
 .work-card-body {
-    max-width: 450px;
-    width: fit-content;
-    padding: 24px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-right: 24px;
-    box-sizing: border-box;
+	max-width: 450px;
+	width: fit-content;
+	padding: 24px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding-right: 24px;
+	box-sizing: border-box;
 }
 
 .work-card-body-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-    width: 100%;
-    margin-bottom: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 12px;
+	width: 100%;
+	margin-bottom: 12px;
 }
 
 .work-card-body-copy {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 12px;
+	width: 100%;
 
-    h3 {
-        margin: 0;
-        max-width: none;
-    }
+	h3 {
+		margin: 0;
+		max-width: none;
+	}
 }
 
 .work-card-image {
-    width: auto;
-    height: 100%;
-    overflow: hidden;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top;
-        display: block;
-    }
+	width: auto;
+	height: 100%;
+	overflow: hidden;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top;
+		display: block;
+		aspect-ratio: 16/9;
+	}
 }
 
 .works-mobile-layout {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 24px 0 48px;
-    gap: 24px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 24px 0 48px;
+	gap: 24px;
 }
 
 .work-mobile-card {
-    display: flex;
-    flex-direction: column;
-    padding: 24px;
-    padding-bottom: 48px;
-    border-bottom: var(--border-width) solid var(--color-darkgrey);
-    margin-bottom: 48px;
-    margin-top: 24px;
+	display: flex;
+	flex-direction: column;
+	padding: 24px;
+	padding-bottom: 48px;
+	border-bottom: var(--border-width) solid var(--color-darkgrey);
+	margin-bottom: 48px;
+	margin-top: 24px;
 
-    &:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-    }
+	&:last-child {
+		border-bottom: none;
+		margin-bottom: 0;
+	}
 
-    h4 {
-        margin: 0;
-        font-size: var(--font-size-large);
-    }
+	h4 {
+		margin: 0;
+		font-size: var(--font-size-large);
+	}
 
-    img {
-        width: 100%;
-        height: auto;
-        max-height: 320px;
-        object-fit: cover;
-        object-position: top;
-        display: block;
-        aspect-ratio: 16/9;
-    }
+	img {
+		width: 100%;
+		height: auto;
+		max-height: 320px;
+		object-fit: cover;
+		object-position: top;
+		display: block;
+		aspect-ratio: 16/9;
+	}
 
-    .work-mobile-card-body {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
+	.work-mobile-card-body {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
 
-    .work-mobile-card-row {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 12px;
+	.work-mobile-card-row {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 12px;
 
-        p {
-            margin: 0;
-            flex: 1;
+		p {
+			margin: 0;
+			flex: 1;
 
-            &.bold {
-                font-weight: 600;
-            }
-        }
+			&.bold {
+				font-weight: 600;
+			}
+		}
 
-        > div {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-    }
+		> div {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+	}
 }
 
 @media (max-width: 840px) {
-    .works-section-inner {
-        height: auto;
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
+	.works-section-inner {
+		height: 100%;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 
-    .works-marquee-viewport {
-        overflow: visible;
-        height: auto;
-    }
+	.works-marquee-viewport {
+		height: 100%;
+	}
 
-    .works-marquee-track {
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        will-change: auto;
-        transform: none !important;
-    }
+	.works-marquee-track {
+		gap: 24px;
+	}
 }

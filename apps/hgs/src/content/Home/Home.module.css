@@ -1,0 +1,251 @@
+.hero {
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: 70vh;
+	padding: 7.5rem 0 7rem;
+	overflow: hidden;
+}
+
+.heroCopy {
+	position: relative;
+	z-index: 1;
+	max-width: 420px;
+}
+
+.heroCopy p {
+	max-width: 300px;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.heroMosaic {
+	position: absolute;
+	top: 4.5rem;
+	right: 0;
+}
+
+.eyebrow {
+	margin-bottom: 0.8rem;
+	color: var(--red);
+	font-family: var(--display);
+	font-size: 0.9rem;
+	font-weight: 500;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+}
+
+.section {
+	position: relative;
+	padding: 4.2rem 0;
+	background: var(--white);
+}
+
+.sectionMuted {
+	background: var(--light);
+}
+
+.copy {
+	max-width: 640px;
+}
+
+.services {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 1.4rem;
+	margin-top: 2rem;
+}
+
+.service img {
+	width: 88px;
+	height: 88px;
+	object-fit: contain;
+}
+
+.service h3,
+.teamCard h3 {
+	text-align: left;
+}
+
+.band {
+	background: var(--green);
+	color: var(--white);
+}
+
+.bandInner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.2rem;
+	padding: 1.6rem 0;
+}
+
+.band h2,
+.band p {
+	color: var(--white);
+}
+
+.band p {
+	margin: 0;
+	font-size: 1.15rem;
+}
+
+.band img,
+.bandIcon {
+	width: 8rem;
+}
+
+.objects {
+	display: grid;
+	gap: 2rem;
+}
+
+.objectGrid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+}
+
+.objectCard {
+	overflow: hidden;
+	border-radius: 15px;
+	background: var(--white);
+	box-shadow: var(--shadow);
+}
+
+.objectCard img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+}
+
+.objectCard h4 {
+	margin: 0.7rem;
+}
+
+.team {
+	position: relative;
+	overflow: hidden;
+}
+
+.teamMosaic {
+	position: absolute;
+	right: 0;
+	bottom: 2rem;
+}
+
+.teamGrid {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.4rem;
+	margin-top: 1.5rem;
+}
+
+.teamCard {
+	width: min(100%, 240px);
+}
+
+.teamMark {
+	display: grid;
+	place-items: center;
+	height: 180px;
+	border-radius: 15px;
+	background: var(--slate);
+	color: var(--white);
+	font-family: var(--display);
+	font-size: 3rem;
+	letter-spacing: 1px;
+}
+
+.partners {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	margin-top: 1.5rem;
+}
+
+.partner {
+	display: grid;
+	place-items: center;
+	height: 110px;
+	padding: 1.2rem 1.6rem;
+	border-radius: 10px;
+	background: var(--white);
+	box-shadow: var(--shadow-soft);
+}
+
+.partner img {
+	max-height: 64px;
+	width: auto;
+	object-fit: contain;
+}
+
+.partner:hover {
+	transform: translateY(-2px);
+}
+
+.contact {
+	display: grid;
+	gap: 1.5rem;
+	align-items: center;
+}
+
+.contactCard {
+	position: relative;
+	z-index: 1;
+	padding: 1.3rem;
+	border-radius: 20px;
+	background: var(--white);
+	box-shadow: var(--shadow);
+}
+
+.contactMosaic {
+	display: none;
+}
+
+@media (min-width: 800px) {
+	.objects {
+		grid-template-columns: 0.8fr 1.2fr;
+		align-items: center;
+	}
+
+	.objectGrid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.partners {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.contact {
+		grid-template-columns: 0.8fr 1fr;
+	}
+
+	.contactMosaic {
+		position: absolute;
+		top: 1rem;
+		right: 0;
+		display: block;
+	}
+}
+
+@media (max-width: 720px) {
+	.hero {
+		min-height: auto;
+		text-align: center;
+	}
+
+	.heroCopy,
+	.heroCopy p {
+		max-width: none;
+		margin-inline: auto;
+	}
+
+	.heroMosaic {
+		top: 0;
+		right: -20px;
+	}
+}

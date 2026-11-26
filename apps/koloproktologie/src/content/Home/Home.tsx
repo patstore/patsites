@@ -15,6 +15,8 @@ import CancerContent from "./components/CancerContent";
 import OpenAccess from "./components/OpenAccess";
 import HeadBanner from "./components/HeadBanner";
 import { HeaderMartina } from "./content";
+import CongressTeaser from "./components/CongressTeaser";
+import { Preview, PreviewWrapper } from "@repo/ui";
 
 const Home: React.FC = () => {
 	return (
@@ -25,6 +27,11 @@ const Home: React.FC = () => {
 			<HeaderMartina />
 			<HeadBanner borderBottom />
 			<Banner isFixed={false} />
+			<PreviewWrapper>
+				<Preview>
+					<CongressTeaser />
+				</Preview>
+			</PreviewWrapper>
 			<ContentContainer>
 				<ContentElement
 					elements={[

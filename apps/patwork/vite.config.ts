@@ -53,6 +53,7 @@ export default defineConfig(({ mode }) => {
         ssr: {
             noExternal: [
                 "@repo/core",
+                "@repo/provider",
                 "@repo/server",
                 "@tanstack/react-router",
                 "react-icons"

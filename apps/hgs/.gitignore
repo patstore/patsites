@@ -1,0 +1,11 @@
+node_modules/
+.cache/
+dist/
+.output/
+.vercel/output
+.tanstack/
+
+# Secrets stay on the machine. Names are listed in .env.example.
+.env
+.env.*
+!.env.example

@@ -85,6 +85,40 @@ export const manualLabelContainer = settings.mq({
 	zIndex: 2
 });
 
+export const congressProgram = settings.mq({
+	marginTop: settings.sizes.large,
+	display: "flex",
+	flexDirection: "column",
+	gap: "30px",
+	backgroundColor: settings.colors.light,
+	padding: settings.sizes.large,
+	width: "100%",
+	h3: {
+		marginTop: 0,
+		marginBottom: settings.sizes.medium
+	}
+});
+
+export const programTopics = settings.mq({
+	display: "flex",
+	flexDirection: "column",
+	gap: settings.sizes.medium
+});
+
+export const programTopic = settings.mq({
+	padding: `${settings.sizes.medium} ${settings.sizes.large}`,
+	backgroundColor: settings.colors.light,
+	borderLeft: `3px solid ${settings.colors.primary}`,
+	h4: {
+		marginTop: 0,
+		marginBottom: settings.sizes.small,
+		color: settings.colors.primary
+	},
+	p: {
+		marginBottom: 0
+	}
+});
+
 export const homeHeaderTextContent = settings.mq({
 	fontSize: ["18px !important", "18px !important", "21px !important"],
 	letterSpacing: "1.6px",

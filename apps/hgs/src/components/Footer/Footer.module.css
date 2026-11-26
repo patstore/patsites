@@ -1,0 +1,29 @@
+.footer {
+	padding: 2.4rem 0 1rem;
+}
+
+.grid {
+	display: grid;
+	gap: 1.2rem;
+}
+
+.grid p {
+	max-width: 360px;
+}
+
+.legal {
+	margin-top: 0.6rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--line);
+}
+
+.legal a:hover {
+	text-decoration: underline;
+}
+
+@media (min-width: 900px) {
+	.grid {
+		grid-template-columns: 1.4fr 1fr 1fr;
+		align-items: end;
+	}
+}

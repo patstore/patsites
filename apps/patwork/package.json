@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.14.1",
     "@gsap/react": "2.1.2",
     "@repo/core": "workspace:*",
+    "@repo/provider": "workspace:*",
     "@repo/server": "workspace:*",
     "@tanstack/react-router": "^1.170.16",
     "@tanstack/react-start": "^1.168.26",

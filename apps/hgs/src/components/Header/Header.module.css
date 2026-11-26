@@ -1,0 +1,149 @@
+.top,
+.bottom {
+	position: fixed;
+	z-index: 20;
+	left: 0;
+	width: 100%;
+	padding-inline: 16px;
+	pointer-events: none;
+}
+
+.top {
+	top: 10px;
+}
+
+.bottom {
+	bottom: 16px;
+}
+
+.bar,
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: min(1240px, 100%);
+	margin-inline: auto;
+	pointer-events: auto;
+}
+
+.logo {
+	display: flex;
+	padding: 0.35rem 0.7rem;
+	border-radius: 15px;
+	background: var(--white);
+	box-shadow: var(--shadow);
+}
+
+.logo:hover {
+	transform: scale(0.97);
+}
+
+.actions,
+.navLinks {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
+
+.iconButton {
+	display: grid;
+	place-items: center;
+	width: 2.6rem;
+	height: 2.6rem;
+	border-radius: 50%;
+	background: var(--teal);
+	color: var(--white);
+	box-shadow: var(--shadow-teal);
+}
+
+.iconButton:hover {
+	transform: scale(0.96);
+}
+
+.iconButton svg {
+	width: 1.15rem;
+	height: 1.15rem;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.8;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.navLinks,
+.back {
+	border-radius: 15px;
+	background: var(--teal);
+	color: var(--white);
+	box-shadow: var(--shadow-teal);
+}
+
+.navLinks {
+	gap: 1.1rem;
+	padding: 0.45rem 1.2rem;
+}
+
+.back {
+	padding: 0.55rem 1.3rem;
+	font-family: var(--display);
+	font-size: 1.15rem;
+	letter-spacing: 0.4px;
+	text-transform: uppercase;
+}
+
+.link {
+	padding: 0.2rem 0;
+	border: 0;
+	border-bottom: 3px solid transparent;
+	background: transparent;
+	color: inherit;
+	font-family: var(--display);
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: 1.5px;
+	line-height: 1;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.link[data-active="true"],
+.link:hover {
+	border-bottom-color: var(--white);
+}
+
+.hire {
+	display: none;
+}
+
+@media (min-width: 800px) {
+	.iconButton {
+		width: 3rem;
+		height: 3rem;
+	}
+
+	.navLinks {
+		gap: 1.6rem;
+		padding: 0.6rem 1.8rem;
+	}
+
+	.hire {
+		display: inline-flex;
+	}
+
+	.hireMobile {
+		display: none;
+	}
+}
+
+@media (max-width: 799px) {
+	.navLinks {
+		gap: 0.7rem;
+		padding: 0.4rem 0.8rem;
+		overflow-x: auto;
+	}
+
+	.link {
+		font-size: 0.78rem;
+		letter-spacing: 0.8px;
+	}
+}

@@ -21,10 +21,6 @@ const HeadBanner: React.FC<{ borderBottom?: boolean }> = ({
 
 	const date = dateString.date;
 	const place = dateString.location;
-	const year = date.includes(new Date().getFullYear().toString())
-		? new Date().getFullYear()
-		: new Date().getFullYear() + 1;
-
 	return (
 		<div
 			css={[

@@ -87,7 +87,10 @@ export const Route = createFileRoute("/api/membership/apply")({
 								: "Der Antrag konnte nicht gesendet werden.";
 						return Response.json(
 							{ message, error: message, type: created?.type },
-							{ status: created?.type === "user-exists" ? 409 : 400 }
+							{
+								status:
+									created?.type === "user-exists" ? 409 : 400
+							}
 						);
 					}
 

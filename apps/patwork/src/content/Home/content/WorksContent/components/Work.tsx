@@ -4,7 +4,7 @@ import type { ImageClass } from "@data";
 import type { WorkProps } from "../types";
 import type { FC } from "react";
 
-const Work: FC<WorkProps> = ({ work, number, length }) => {
+const Work: FC<WorkProps> = ({ work, number, length, duplicate = false }) => {
     const { findByObjectId } = useFindData();
     const image = findByObjectId<ImageClass & { filePath?: string }>(
         work.image || ""
@@ -12,7 +12,10 @@ const Work: FC<WorkProps> = ({ work, number, length }) => {
     const year = work.date ? new Date(work.date).getFullYear() : null;
 
     return (
-        <article className="work-card-container">
+        <article
+            className="work-card-container"
+            aria-hidden={duplicate ? true : undefined}
+        >
             <div className="header">
                 <div>
                     <p className="bold">{year ? year : null}</p>
@@ -26,10 +29,12 @@ const Work: FC<WorkProps> = ({ work, number, length }) => {
                 to="/projekte/$slug"
                 params={{ slug: work.slug as string }}
                 className="work-card-image"
+                tabIndex={duplicate ? -1 : undefined}
             >
                 <img
                     src={`/data/files/${image?.filePath}`}
-                    alt={work.title as string}
+                    alt={duplicate ? "" : (work.title as string)}
+                    draggable={false}
                 />
             </Link>
             <div className="title">

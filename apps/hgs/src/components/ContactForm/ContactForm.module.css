@@ -1,0 +1,54 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	margin-bottom: 0.7rem;
+	color: var(--slate);
+	font-family: var(--form);
+	font-size: 0.9rem;
+	font-weight: 600;
+}
+
+.field input,
+.field textarea {
+	width: 100%;
+	padding: 0.7rem 0.2rem;
+	border: 0;
+	border-bottom: 2px solid var(--slate);
+	background: transparent;
+	color: var(--ink);
+	font-family: var(--form);
+	font-weight: 500;
+	resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+	outline: none;
+	border-bottom-color: var(--red);
+}
+
+.error {
+	color: var(--red);
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
+.success {
+	margin: 0;
+	font-weight: 700;
+}
+
+.honeypot {
+	position: absolute;
+	left: -10000px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}

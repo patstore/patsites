@@ -27,9 +27,7 @@ export const buttonContainer = ({
 		fontWeight: 600,
 		letterSpacing: "0.6px",
 		fontSize:
-			size === "large"
-				? settings.fontSize.medium
-				: settings.fontSize.tiny,
+			size === "large" ? settings.fontSize.small : settings.fontSize.tiny,
 		a: {
 			textDecoration: "none !important"
 		},

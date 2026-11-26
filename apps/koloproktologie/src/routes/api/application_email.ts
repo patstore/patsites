@@ -1,6 +1,7 @@
 import { parseErrorResponse, readBody } from "@repo/server/auth";
 import { createFileRoute } from "@tanstack/react-router";
 import { sessionApi } from "../../server/auth";
+import { formatDate } from "date-fns/format";
 
 const RECIPIENT = {
 	email: "info@koloproktologie.org",
@@ -15,8 +16,11 @@ function yesNo(value: unknown): string {
 	return value === true || value === "true" ? "Ja" : "Nein";
 }
 
-function display(value: unknown): string {
-	const rendered = text(value);
+function display(value: unknown, type?: "date"): string {
+	const rendered =
+		type === "date"
+			? formatDate(new Date(value as string), "dd.MM.yyyy")
+			: text(value);
 	return rendered || "—";
 }
 
@@ -31,7 +35,8 @@ function escapeHtml(value: string): string {
 function applicationDetails(
 	values: Record<string, unknown>
 ): Array<[string, string]> {
-	const newsletter = values.newsletter === true || values.newsletter === "true";
+	const newsletter =
+		values.newsletter === true || values.newsletter === "true";
 	const newsletterEmail = !newsletter
 		? "—"
 		: values.newsletter_email === "existing"
@@ -105,6 +110,9 @@ export const Route = createFileRoute("/api/application_email")({
 							"Mitgliedschaftsantrag Deutsche Gesellschaft für Koloproktologie e.V.",
 						project_id: sessionApi.config.projectId,
 						content: `
+							<p style="margin-bottom: 24px">
+								Mandatsreferenz:
+							</p>
 							<h1>Details</h1>
 							<ul>
 								${renderApplication(values)}

@@ -3,146 +3,141 @@
 
 // ─── h1 ──────────────────────────────────────────────────────────────────────
 h1 {
-  font-family: 'Coco Sharp', var(--font-sans);
-  letter-spacing: -1.4px;
-  font-weight: 300;
-  color: inherit;
-  text-transform: none;
-  margin: 0;
-  line-height: 1;
-  font-size: calc(32px + 1.5vw);
-  vertical-align: bottom;
+	font-family: "Coco Sharp", var(--font-sans);
+	letter-spacing: -1.4px;
+	font-weight: 300;
+	color: inherit;
+	text-transform: none;
+	margin: 0;
+	line-height: 1;
+	font-size: calc(18px + 1.5vw);
+	vertical-align: bottom;
 }
 
 // ─── h2 ──────────────────────────────────────────────────────────────────────
 h2 {
-  font-family: 'Coco Sharp', var(--font-sans);
-  letter-spacing: -1.2px;
-  font-weight: 500;
-  color: inherit;
-  text-transform: none;
-  margin: 0;
-  line-height: 1.1;
-  font-size: calc(24px + 2.4vw);
-  vertical-align: bottom;
-  text-transform: uppercase;
+	font-family: "Coco Sharp", var(--font-sans);
+	letter-spacing: -1.2px;
+	font-weight: 500;
+	color: inherit;
+	text-transform: none;
+	margin: 0;
+	line-height: 1.1;
+	font-size: calc(24px + 2.4vw);
+	vertical-align: bottom;
+	text-transform: uppercase;
 }
 
 // ─── h3 ──────────────────────────────────────────────────────────────────────
 h3 {
-  font-family: 'Coco Sharp', var(--font-sans);
-  font-weight: 600;
-  margin: 0;
-  letter-spacing: 1.8px;
-  line-height: 1.2;
-  font-size: 15px;
-  max-width: 900px;
-  color: inherit;
-  text-transform: uppercase;
-  display: inline-block;
-  font-size: var(--font-size-medium);
-  &.large {
-    font-size: calc(24px + 2.4vw);
-  }
-  &.center {
-    text-align: center;
-  }
-
+	font-family: "Coco Sharp", var(--font-sans);
+	font-weight: 600;
+	margin: 0;
+	letter-spacing: 1.8px;
+	line-height: 1.2;
+	font-size: 15px;
+	max-width: 900px;
+	color: inherit;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: var(--font-size-medium);
+	&.large {
+		font-size: calc(24px + 2.4vw);
+	}
+	&.center {
+		text-align: center;
+	}
 }
 
 // ─── h4 ──────────────────────────────────────────────────────────────────────
 h4 {
-  
-  font-family: 'Coco Sharp', var(--font-sans);
-  font-weight: 300;
-  font-size: var(--font-size-large); // 20px
-  letter-spacing: 1.2px;
-  max-width: 480px;
-  line-height: 1.5;
-  margin: 0;
-  margin-bottom: var(--size-small);  // 6px
-  color: var(--color-dark);
+	font-family: "Coco Sharp", var(--font-sans);
+	font-weight: 300;
+	font-size: var(--font-size-large); // 20px
+	letter-spacing: 1.2px;
+	max-width: 480px;
+	line-height: 1.5;
+	margin: 0;
+	margin-bottom: var(--size-small); // 6px
+	color: var(--color-dark);
 }
 
 // ─── h5 ──────────────────────────────────────────────────────────────────────
 h5 {
-  font-family: 'Coco Sharp', var(--font-sans);
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: calc(24px + 0.9vw); // 14px
-  letter-spacing: 1.2px;
-  max-width: 660px;
-  line-height: 1.24;
-  margin: 0;
-  margin-bottom: 18px;
-  color: var(--color-dark);
-
+	font-family: "Coco Sharp", var(--font-sans);
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: calc(24px + 0.9vw); // 14px
+	letter-spacing: 1.2px;
+	max-width: 660px;
+	line-height: 1.24;
+	margin: 0;
+	margin-bottom: 18px;
+	color: var(--color-dark);
 }
 
 // ─── h6 ──────────────────────────────────────────────────────────────────────
 h6 {
-  font-family: 'Coco Sharp', var(--font-sans);
-  font-weight: 300;
-  font-size: calc(12px + 0.6vw); // 14px
-  letter-spacing: -0.9px;
-  max-width: 660px;
-  line-height: 1.5;
-  margin: 12px 0;
-  color: var(--color-dark);
+	font-family: "Coco Sharp", var(--font-sans);
+	font-weight: 300;
+	font-size: calc(12px + 0.6vw); // 14px
+	letter-spacing: -0.9px;
+	max-width: 660px;
+	line-height: 1.5;
+	margin: 12px 0;
+	color: var(--color-dark);
 }
 
 // ─── p ───────────────────────────────────────────────────────────────────────
 p {
-  font-family: 'Space Mono', var(--font-sans);
-  font-weight: 500;
-  font-size: var(--font-size-paragraph);
-  max-width: 420px;
-  letter-spacing: 1px;
-  line-height: 1.8;
-  margin-top: 0;
-  margin-bottom: 12px;
-  margin-block-end: 12px; // 12px
-  color: var(--color-text);
-  
-  &.bold {
-    font-weight: 600;
-  }
-  &.large {
-    font-size: var(--font-size-large);
-    max-width: 600px;
-    line-height: 1.2;
-    margin-bottom: 24px;
-  }
-  &.padding {
-    padding-left: 60px;
-  }
-  &.center {
-    text-align: center;
-  }
-  &.with-line {
-    padding-left: 12px;
-    border-left: var(--border-width) solid var(--color-dark);
-  }
+	font-family: "Space Mono", var(--font-sans);
+	font-weight: 500;
+	font-size: var(--font-size-paragraph);
+	max-width: 420px;
+	letter-spacing: 1px;
+	line-height: 1.8;
+	margin-top: 0;
+	margin-bottom: 12px;
+	margin-block-end: 12px; // 12px
+	color: var(--color-text);
 
-  &.dark-background {
-    color: var(--color-white);
-    [data-theme="dark"] & {
-      color: inherit;
-    }
-  }
-  // color: var(--color-dark);
+	&.bold {
+		font-weight: 600;
+	}
+	&.large {
+		font-size: var(--font-size-large);
+		max-width: 600px;
+		line-height: 1.2;
+		margin-bottom: 24px;
+	}
+	&.padding {
+		padding-left: 60px;
+	}
+	&.center {
+		text-align: center;
+	}
+	&.with-line {
+		padding-left: 12px;
+		border-left: var(--border-width) solid var(--color-dark);
+	}
+
+	&.dark-background {
+		color: var(--color-white);
+		[data-theme="dark"] & {
+			color: inherit;
+		}
+	}
+	// color: var(--color-dark);
 }
-
-
 
 // ─── a ───────────────────────────────────────────────────────────────────────
 a {
-  font-family: 'Coco Sharp', var(--font-sans);
-  font-weight: 400;
-  font-size: inherit;
-  text-decoration: underline;
-  color: var(--color-darkgrey);
-  margin-block-end: 0;
+	font-family: "Coco Sharp", var(--font-sans);
+	font-weight: 400;
+	font-size: inherit;
+	text-decoration: underline;
+	color: var(--color-darkgrey);
+	margin-block-end: 0;
 }
 
 // ─── Dark mode overrides ──────────────────────────────────────────────────────
@@ -150,152 +145,153 @@ a {
 // via [data-theme="dark"], so color references above adapt automatically.
 // Only add explicit overrides here for values not covered by CSS variables.
 [data-theme="dark"] {
-  h2 {
-    // h2 uses color: inherit — ensure the inherited value reads correctly
-    // against dark backgrounds by falling back to the remapped token
-    color: var(--color-dark);
-  }
+	h2 {
+		// h2 uses color: inherit — ensure the inherited value reads correctly
+		// against dark backgrounds by falling back to the remapped token
+		color: var(--color-dark);
+	}
 }
 
-code, kbd, pre, samp {
-    font-family: var(--font-mono);
-    font-size: 1em;
-    line-height: inherit;
-  }
-  
-  hr {
-    box-sizing: content-box;
-    overflow: visible;
-    margin: 0 0 calc(var(--space-4) - 1px) 0;
-    background: hsla(0, 0%, 0%, 0.2);
-    border: none;
-    height: 1px;
-  }
-  
-  
-  ul, ol {
-    list-style-position: outside;
-    list-style-image: none;
-  }
-  
-  pre {
-    margin: 0 0 var(--space-4) 0;
-    font-size: 0.875rem;
-    line-height: var(--line-height-normal);
-    background: hsla(0, 0%, 0%, 0.04);
-    border-radius: var(--border-radius);
-    overflow: auto;
-    word-wrap: normal;
-    padding: var(--space-4);
-  }
+code,
+kbd,
+pre,
+samp {
+	font-family: var(--font-mono);
+	font-size: 1em;
+	line-height: inherit;
+}
 
-  ul {
-    margin: 0;
-    margin-bottom: 24px;
-    // margin-top: 6px;
-  }
-  
-  li {
-    font-size: calc(10px + 0.3vw);
-    font-weight: 400;
-    letter-spacing: 1px;
-    margin-bottom: calc(var(--space-4) / 2);
-    list-style: none;
-    padding-left: 12px;
-    position: relative;
+hr {
+	box-sizing: content-box;
+	overflow: visible;
+	margin: 0 0 calc(var(--space-4) - 1px) 0;
+	background: hsla(0, 0%, 0%, 0.2);
+	border: none;
+	height: 1px;
+}
 
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background-color: var(--color-dark);
-    }
-  }
-  
- 
-  li > ol, li > ul {
-    margin-bottom: calc(var(--space-4) / 2);
-    margin-left: var(--space-4);
-    margin-top: calc(var(--space-4) / 2);
-  }
-  
- 
-  code, kbd, samp {
-    font-size: 0.875rem;
-  }
-  
-  tt, code {
-    background-color: var(--color-code-bg);
-    border-radius: var(--border-radius);
-    color: var(--color-code);
-    font-family: var(--font-mono);
-    padding: 0.25em 0;
-    word-break: normal;
-  }
-  
-  pre code {
-    background: none;
-  }
+ul,
+ol {
+	list-style-position: outside;
+	list-style-image: none;
+}
 
-  .number {
-    font-family: 'Coco Sharp', var(--font-sans);
-    font-weight: 700;
-    font-size: 30px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: inherit;
-    text-align: left;
-  }
+pre {
+	margin: 0 0 var(--space-4) 0;
+	font-size: 0.875rem;
+	line-height: var(--line-height-normal);
+	background: hsla(0, 0%, 0%, 0.04);
+	border-radius: var(--border-radius);
+	overflow: auto;
+	word-wrap: normal;
+	padding: var(--space-4);
+}
 
-  .label {
-    font-size: calc(12px + 0.3vw);
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: calc(var(--space-4));
-    list-style: none;
-    padding-left: 24px;
-    position: relative;
-    color: var(--color-dark);
+ul {
+	margin: 0;
+	margin-bottom: 24px;
+	// margin-top: 6px;
+}
 
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: var(--color-dark);
-      transform: translateY(-25%);
-    }
-  }
+li {
+	font-size: calc(10px + 0.3vw);
+	font-weight: 400;
+	letter-spacing: 1px;
+	margin-bottom: calc(var(--space-4) / 2);
+	list-style: none;
+	padding-left: 12px;
+	position: relative;
 
-  .topline {
-    font-size: var(--font-size-paragraph);
-    text-transform: uppercase;
-    font-weight: 700;
-    opacity: 0.6;
-    letter-spacing: 1px;
-    margin-bottom: calc(var(--space-4));
-    list-style: none;
-    position: relative;
-    color: var(--color-dark);
-    &.light {
-      color: var(--color-white);
-    }
-  }
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background-color: var(--color-dark);
+	}
+}
 
-  .underline-text {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-  }
+li > ol,
+li > ul {
+	margin-bottom: calc(var(--space-4) / 2);
+	margin-left: var(--space-4);
+	margin-top: calc(var(--space-4) / 2);
+}
 
+code,
+kbd,
+samp {
+	font-size: 0.875rem;
+}
 
+tt,
+code {
+	background-color: var(--color-code-bg);
+	border-radius: var(--border-radius);
+	color: var(--color-code);
+	font-family: var(--font-mono);
+	padding: 0.25em 0;
+	word-break: normal;
+}
 
+pre code {
+	background: none;
+}
 
+.number {
+	font-family: "Coco Sharp", var(--font-sans);
+	font-weight: 700;
+	font-size: 30px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: inherit;
+	text-align: left;
+}
+
+.label {
+	font-size: calc(12px + 0.3vw);
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: calc(var(--space-4));
+	list-style: none;
+	padding-left: 24px;
+	position: relative;
+	color: var(--color-dark);
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: var(--color-dark);
+		transform: translateY(-25%);
+	}
+}
+
+.topline {
+	font-size: var(--font-size-paragraph);
+	text-transform: uppercase;
+	font-weight: 700;
+	opacity: 0.6;
+	letter-spacing: 1px;
+	margin-bottom: calc(var(--space-4));
+	list-style: none;
+	position: relative;
+	color: var(--color-dark);
+	&.light {
+		color: var(--color-white);
+	}
+}
+
+.underline-text {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}

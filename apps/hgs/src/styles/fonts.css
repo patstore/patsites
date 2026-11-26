@@ -1,0 +1,47 @@
+@font-face {
+	font-family: "Lato";
+	src: url("./fonts/lato-v17-latin-regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url("./fonts/lato-v17-latin-700.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Saira Extra Condensed";
+	src: url("./fonts/saira-extra-condensed-v6-latin-500.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Saira Extra Condensed";
+	src: url("./fonts/saira-extra-condensed-v6-latin-600.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("./fonts/open-sans-v18-latin-regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Open Sans";
+	src: url("./fonts/open-sans-v18-latin-600.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}

@@ -11,6 +11,7 @@
     "dev:hebammenteam": "turbo dev --filter=hebammenteam",
     "dev:nocogirls": "turbo dev --filter=nocogirls",
     "dev:patwork": "turbo dev --filter=patwork",
+    "dev:hgs": "turbo dev --filter=hgs",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,js,mjs,cjs,css,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,cjs,css,md}\"",

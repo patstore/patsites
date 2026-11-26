@@ -58,7 +58,7 @@ const OfferContent: React.FC = () => {
 
 	return (
 		<div>
-			<div css={topline}>unsere aktivitäten</div>
+			<div css={topline}>Unsere Aktivitäten</div>
 			<h2>Werte, die uns leiten</h2>
 			<p>
 				Seit unseren Anfängen im Jahre 1990 werden wir stets von den

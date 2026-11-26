@@ -1,4 +1,4 @@
-export { PreviewWrapper } from "./PreviewWrapper";
+export { PreviewWrapper, Preview, Default } from "./PreviewWrapper";
 export { Image } from "./Image";
 export {
 	DraftBanner,
