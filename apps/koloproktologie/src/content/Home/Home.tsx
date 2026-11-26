@@ -21,9 +21,6 @@ import { Preview, PreviewWrapper } from "@repo/ui";
 const Home: React.FC = () => {
 	return (
 		<Layout>
-			{/* <PreviewWrapper preview={env.VITE_PREVIEW_MODE === "true"}>
-                <HomeHeader />
-            </PreviewWrapper> */}
 			<HeaderMartina />
 			<HeadBanner borderBottom />
 			<Banner isFixed={false} />
