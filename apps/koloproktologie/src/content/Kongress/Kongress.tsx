@@ -12,12 +12,14 @@ import {
 import settings from "@settings";
 import { useGetEvent, getCurrentEvents, useCollection } from "@provider";
 import { EventClass, DownloadClass } from "@data";
-import { upcomingKongressContainer } from "./styles";
 import { topline } from "../../styles/styles";
 import KongressArchive from "./components/KongressArchive";
 import CongressArticle from "./components/CongressArticle";
 import { isArray } from "lodash-es";
 import Cooperation from "./components/Cooperation";
+import { CongressTeaser } from "../Home";
+import { upcomingKongressContainer } from "./styles";
+import { Default, Preview, PreviewWrapper } from "@repo/ui";
 
 const Kongress: React.FC = () => {
 	const { events } = useGetEvent();
@@ -61,34 +63,48 @@ const Kongress: React.FC = () => {
 					</p>
 				</TextContentElement>
 			</ContentContainer>
-			{currentEvents?.upcoming && (
-				<ContentContainer largeBackground={settings.colors.primary}>
-					<div css={upcomingKongressContainer}>
-						<h2>{currentEvents?.upcoming?.title}</h2>
-						<div
-							dangerouslySetInnerHTML={{
-								__html: currentEvents?.upcoming?.text || ""
-							}}
-						/>
-						{(currentEvents.upcoming.data?.link ||
-							currentEvents.upcoming.link) && (
-							<>
-								<Divider />
-								<Button
-									size="large"
-									background={settings.colors.secondary}
-									color={settings.colors.primary}
-									text={`zur Kongressseite ${getYear(currentEvents.upcoming)}`}
-									externalLink={
-										currentEvents.upcoming.data?.link ||
-										currentEvents.upcoming.link
-									}
+			<PreviewWrapper>
+				<Preview>
+					<CongressTeaser />
+				</Preview>
+				<Default>
+					{currentEvents?.upcoming && (
+						<ContentContainer
+							largeBackground={settings.colors.primary}
+						>
+							<div css={upcomingKongressContainer}>
+								<h2>{currentEvents?.upcoming?.title}</h2>
+								<div
+									dangerouslySetInnerHTML={{
+										__html:
+											currentEvents?.upcoming?.text || ""
+									}}
 								/>
-							</>
-						)}
-					</div>
-				</ContentContainer>
-			)}
+								{(currentEvents.upcoming.data?.link ||
+									currentEvents.upcoming.link) && (
+									<>
+										<Divider />
+										<Button
+											size="large"
+											background={
+												settings.colors.secondary
+											}
+											color={settings.colors.primary}
+											text={`zur Kongressseite ${getYear(currentEvents.upcoming)}`}
+											externalLink={
+												currentEvents.upcoming.data
+													?.link ||
+												currentEvents.upcoming.link
+											}
+										/>
+									</>
+								)}
+							</div>
+						</ContentContainer>
+					)}
+				</Default>
+			</PreviewWrapper>
+			<CongressTeaser />
 			<Cooperation />
 			{currentEvents?.current && (
 				<ContentContainer>
