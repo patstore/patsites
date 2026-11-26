@@ -7,8 +7,6 @@ type PreviewWrapperProps = {
 	preview?: boolean;
 };
 
-console.log("VITE_PREVIEW_MODE", process.env.VITE_PREVIEW_MODE);
-
 const previewEnvVar = import.meta.env.VITE_PREVIEW_MODE === "true";
 
 const usePreviewStore = create<{
