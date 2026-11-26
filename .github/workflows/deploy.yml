@@ -36,7 +36,7 @@ jobs:
             {"name":"koloproktologie","secret":"COOLIFY_WEBHOOK_KOLOPROKTOLOGIE"},
             {"name":"coloproktologen","secret":"COOLIFY_WEBHOOK_COLOPROKTOLOGEN"},
             {"name":"tvstg","secret":"COOLIFY_WEBHOOK_TVSTG"},
-            {"name":"nocogirls","secret":"COOLIFY_WEBHOOK_NOCOGIRLS"},
+            {"name":"nocogirls","secret":"COOLIFY_WEBHOOK_NOCOGIRLS"}
           ]'
 
           select_all=0
