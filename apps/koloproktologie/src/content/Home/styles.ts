@@ -85,14 +85,63 @@ export const manualLabelContainer = settings.mq({
 	zIndex: 2
 });
 
-export const congressProgram = settings.mq({
-	marginTop: settings.sizes.large,
+export const congressFacts = settings.mq({
+	display: "flex",
+	flexDirection: ["column", "row", "row"],
+	gap: ["12px", "12px", "16px"],
+	marginTop: settings.sizes.extraLarge,
+	width: "100%"
+});
+
+export const congressFact = settings.mq({
+	flex: 1,
 	display: "flex",
 	flexDirection: "column",
-	gap: "30px",
-	backgroundColor: settings.colors.light,
-	padding: settings.sizes.large,
+	gap: "2px",
+	padding: `${settings.sizes.medium} ${settings.sizes.veryLarge}`,
+	backgroundColor: settings.colors.white,
+	borderTop: `4px solid ${settings.colors.primary}`,
+	boxShadow: "0 4px 14px rgba(0, 0, 0, 0.06)",
+	span: {
+		fontSize: "12px",
+		fontWeight: 600,
+		letterSpacing: "1.6px",
+		textTransform: "uppercase",
+		color: settings.colors.primary
+	},
+	strong: {
+		fontSize: ["20px", "22px", "24px"],
+		fontWeight: 600,
+		lineHeight: 1.2,
+		color: settings.colors.dark
+	}
+});
+
+export const congressLead = settings.mq({
+	marginTop: settings.sizes.extraLarge,
+	display: "grid",
+	gridTemplateColumns: ["1fr", "1fr", "1fr 1fr"],
+	gap: ["12px", "18px", "30px"],
+	strong: {
+		color: settings.colors.primary,
+		fontWeight: 700
+	}
+});
+
+export const congressProgram = settings.mq({
+	marginTop: settings.sizes.extraLarge,
+	display: "flex",
+	flexDirection: "column",
+	gap: "36px",
+	backgroundColor: settings.colors.white,
+	borderRadius: settings.sizes.medium,
+	padding: [
+		settings.sizes.large,
+		settings.sizes.veryLarge,
+		settings.sizes.extraLarge
+	],
 	width: "100%",
+	boxShadow: "0 6px 24px rgba(0, 0, 0, 0.08)",
 	h3: {
 		marginTop: 0,
 		marginBottom: settings.sizes.medium
@@ -100,22 +149,54 @@ export const congressProgram = settings.mq({
 });
 
 export const programTopics = settings.mq({
-	display: "flex",
-	flexDirection: "column",
-	gap: settings.sizes.medium
+	display: "grid",
+	gridTemplateColumns: ["1fr", "1fr", "repeat(3, 1fr)"],
+	gap: settings.sizes.large,
+	counterReset: "topic"
 });
 
 export const programTopic = settings.mq({
-	padding: `${settings.sizes.medium} ${settings.sizes.large}`,
-	backgroundColor: settings.colors.light,
-	borderLeft: `3px solid ${settings.colors.primary}`,
+	position: "relative",
+	counterIncrement: "topic",
+	padding: `${settings.sizes.veryLarge} ${settings.sizes.large} ${settings.sizes.large}`,
+	backgroundColor: settings.colors.lightgrey,
+	borderTop: `4px solid ${settings.colors.primary}`,
+	"&::before": {
+		content: "counter(topic, decimal-leading-zero)",
+		display: "block",
+		fontSize: "36px",
+		fontWeight: 700,
+		lineHeight: 1,
+		marginBottom: settings.sizes.medium,
+		color: settings.colors.primaryLight
+	},
 	h4: {
 		marginTop: 0,
-		marginBottom: settings.sizes.small,
+		marginBottom: settings.sizes.medium,
 		color: settings.colors.primary
 	},
 	p: {
-		marginBottom: 0
+		marginBottom: 0,
+		fontSize: "15px",
+		lineHeight: 1.5
+	}
+});
+
+export const programFormats = settings.mq({
+	display: "flex",
+	flexWrap: "wrap",
+	gap: settings.sizes.small,
+	margin: `0 0 ${settings.sizes.large} 0`,
+	padding: 0,
+	li: {
+		listStyle: "none",
+		padding: "3px 6px",
+		borderRadius: "3px",
+		backgroundColor: settings.colors.primaryLight,
+		color: settings.colors.dark,
+		fontSize: "11px",
+		textTransform: "uppercase",
+		fontWeight: 600
 	}
 });
 

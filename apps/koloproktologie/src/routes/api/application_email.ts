@@ -12,6 +12,18 @@ function text(value: unknown): string {
 	return typeof value === "string" ? value.trim() : "";
 }
 
+function salutation(value: unknown): string | null {
+	const rendered = text(value);
+	if (
+		!rendered ||
+		rendered === "Keine Angabe" ||
+		rendered === "Keine Anrede"
+	) {
+		return null;
+	}
+	return rendered;
+}
+
 function yesNo(value: unknown): string {
 	return value === true || value === "true" ? "Ja" : "Nein";
 }
@@ -44,8 +56,8 @@ function applicationDetails(
 			: display(values.newsletter_email_address);
 
 	return [
-		["Anrede", display(values.address)],
-		["Titel", display(values.title)],
+		["Anrede", display(salutation(values.title))],
+		["Titel", display(values.pre_title)],
 		["Vorname", display(values.first_name)],
 		["Nachname", display(values.last_name)],
 		["Email", display(values.email)],

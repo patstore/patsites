@@ -21,15 +21,21 @@ const form_data = {
 			{
 				label: "Anrede *",
 				value: "",
-				key: "address",
-				type: "input",
+				key: "title",
+				type: "select",
 				required: true,
-				placeHolder: "Anrede"
+				placeHolder: "Anrede",
+				options: [
+					{ value: "Herr", label: "Herr" },
+					{ value: "Frau", label: "Frau" },
+					{ value: "Keine Anrede", label: "Keine Anrede" },
+					{ value: "Keine Angabe", label: "Keine Angabe" }
+				]
 			},
 			{
 				label: "Titel",
 				value: "",
-				key: "title",
+				key: "pre_title",
 				type: "input",
 				required: false,
 				placeHolder: "Titel"
@@ -105,7 +111,15 @@ const form_data = {
 				key: "password",
 				type: "password",
 				required: true,
-				placeHolder: "******"
+				placeHolder: "Mindestens 8 Zeichen"
+			},
+			{
+				label: "Passwort wiederholen *",
+				value: "",
+				key: "password_confirm",
+				type: "password",
+				required: true,
+				placeHolder: "Passwort wiederholen"
 			},
 			{
 				label: "Telefon *",
@@ -277,10 +291,10 @@ const form_data = {
 				placeHolder: "IBAN"
 			},
 			{
-				label: "BIC",
+				label: "BIC (optional)",
 				value: "",
 				key: "sepa_bic",
-				required: true,
+				required: false,
 				type: "input",
 				placeHolder: "BIC"
 			}

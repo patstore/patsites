@@ -96,7 +96,7 @@ const RenderFields: React.FC<RenderFieldsProps> = ({
 					id={field.key}
 					className="form-input w-full px-3 py-2 border rounded"
 					required={field.required}
-					placeHolder={field.placeHolder}
+					placeholder={field.placeHolder}
 					disabled={disabledHandler(field.key, values)}
 					css={{
 						width: "240px",
@@ -114,7 +114,7 @@ const RenderFields: React.FC<RenderFieldsProps> = ({
 					id={field.key}
 					className="form-input w-full px-3 py-2 border rounded"
 					required={field.required}
-					placeHolder={field.placeHolder}
+					placeholder={field.placeHolder}
 					disabled={disabledHandler(field.key, values)}
 					css={{
 						width: "240px",

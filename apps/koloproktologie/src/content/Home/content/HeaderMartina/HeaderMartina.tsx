@@ -6,7 +6,7 @@ import {
 	headerMartinaStaggerVariants,
 	headerMartinaVariants
 } from "./constants/variants";
-import impulsePerspektiven from "../HomeHeader/images/impulse_perspektiven.png";
+import impulsePerspektiven from "./images/start_11_2026.png";
 import kongressCenter from "./images/haupteingang.jpg";
 import {
 	headerMartinaContainer,

@@ -25,7 +25,8 @@ export const formHeader = settings.mq({
 
 export const formFooter = settings.mq({
 	paddingTop: settings.sizes.large,
-	flexShrink: "0"
+	flexShrink: "0",
+	width: "100%"
 });
 
 export const radioOrCheckboxfieldContainer = settings.mq({
