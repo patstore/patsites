@@ -33,7 +33,9 @@ export default function PreviewWrapper({ children }: PreviewWrapperProps) {
 	return (
 		<>
 			{children}
-			<PreviewToggle preview={preview} setPreview={setPreview} />
+			{previewEnvVar && (
+				<PreviewToggle preview={preview} setPreview={setPreview} />
+			)}
 		</>
 	);
 }
